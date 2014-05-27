@@ -1,0 +1,16 @@
+{
+    "contents" : "Time Match Dot Come\n========================================================\ntransition: rotate\ntransition-speed: slow\ncss: IDSLabCSS.css\n\nUnit 1 - Lab 10\n\nDirections: Follow along with the slides and answer the questions in **red** font in your journal.\n\n```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}\nrequire(mosaic)\n```\n\nHow do we compare?\n==================\n\n- For this lab, we'll be comparing how your class spends their time versus how other Americans spend their time.\n- **Load the full American Time Use Survey `atus.Rdata`**\n- **load your classes data and call it `my_atus`**.\n- Run the following command again to format our data\n```{r,eval=FALSE}\nmy_atus <- atus_format(my_atus)\n```\n\nWhat does atus_format do again?\n===============================\n\n- The function `atus_format` takes every individual student's data and takes the average of how they spent their time over 5 days.\n    - This let's us see how a student spends a **typical** day.\n- Every class member will be a single observation in `my_atus`.\n    - This is similar to how different individuals are the observations for the larger `atus` data.\n    \nLet the comparisons, begin!\n===========================\n\n- Using what you've learned in prior labs, make comparisons between how your class spends it's time versus how Americans in general spend their time:\n- Suggestions\n    - **Find some variables that are in both data sets**\n    - **How do the typical values for your class compare to Americans in general?**\n    - **Create plots of each groups variables. How are they similar? Different?**\n    \n    \nWatch out! \n==========\n\n- You might want to `subset` your data so you compare apples to apples. \n    - For instance, not all Americans are in school, and so will spend 0 minutes doing homework.\n    - It would be better to make comparisons using just the subset of the data of people who did at least 1 minute of homework.\n    - Then you can compare how much time your class spends on homework against other people who also spend at least some time doing homework.\n    \nAnd away you go:\n================\n\n- *assignment?*",
+    "created" : 1400486380312.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3207936241",
+    "id" : "47941F45",
+    "lastKnownWriteTime" : 1400487261,
+    "path" : "~/Dropbox/IDS Curriculum Design/Labs/Unit 1 Labs/Lab 10/Lab1-10_Time_Match_Dot_Com.Rpres",
+    "project_path" : "Unit 1 Labs/Lab 10/Lab1-10_Time_Match_Dot_Com.Rpres",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_presentation"
+}
