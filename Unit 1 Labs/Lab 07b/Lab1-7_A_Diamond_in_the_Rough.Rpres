@@ -118,13 +118,14 @@ What's with() phys_challenge?
 A level by any other name...
 ===========================
 
-- If we know that `01` means `Male` and `02` means `female` then we can use the following code to rename the **`levels`** of _gender_.
+- If we know that `01` means `Male` and `02` means `female` then we can use the following code to revalue the **`levels`** of _gender_.
 - Type the following command into your console:
 ```{r, results='hide'}
-revalue(gender, 
-        c("01" = "Male", 
-          "02" = "Female"), 
-        data = atus_dirty)
+atus_dirty <- transform(atus_dirty, 
+                        gender = revalue(gender, 
+                                         c("01" = "Male", "02" = "Female")
+                                         )
+                        )
 ```
 
 - This code is telling R:
