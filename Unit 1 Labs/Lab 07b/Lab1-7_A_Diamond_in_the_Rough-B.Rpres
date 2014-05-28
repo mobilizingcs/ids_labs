@@ -10,6 +10,7 @@ Directions: Follow along with the slides and answer the questions in **red** fon
 
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 require(mosaic)
+require(plyr)
 load("~/IDS/Data/atus_dirty.RData")
 ```
 
@@ -112,26 +113,34 @@ with(atus_dirty, levels(gender))
 What's with() phys_challenge?
 =============================
 
-- **Using the method from the last slide, write down the **`levels`** of the **phys_challenge**.
+- **Using the method from the last slide, write down the `levels` of the `phys_challenge` variable**.
 
 
 A level by any other name...
 ===========================
 
-- If we know that `01` means `Male` and `02` means `female` then we can use the following code to revalue the **`levels`** of _gender_.
+- If we know that '`01`' means '`Male`' and '`02`' means '`female`' then we can use the following code to revalue the **`levels`** of _gender_.
 - Type the following command into your console:
 ```{r, results='hide'}
-atus_dirty <- transform(atus_dirty, 
-                        gender = revalue(gender, 
-                                         c("01" = "Male", "02" = "Female")
-                                         )
-                        )
+atus_dirty <- transform(atus_dirty, gender = revalue(gender, c("01" = "Male", "02" = "Female")))
 ```
 
-- This code is telling R:
-    - "Take my old levels of **gender**..."
-    - "... and assign the values of ..."
-    - "... **Male** to `01` and **Female** to `02`."
+- This code is definitely a bit of a mouthful. Let's break it down.
+
+Allow me to explain
+===================
+
+```{r, results='hide'}
+atus_dirty <- transform(atus_dirty, gender = revalue(gender, c("01" = "Male", "02" = "Female")))
+```
+
+- This code is saying:
+    - "Replace my current version of `atus_dirty`..."
+    - "... with a transformed one where ..."
+    - "... the `gender` variables levels ..."
+    - "... have been revalued..."
+    - "... where '01' will now be 'Male'..."
+    - "... and '02' will now be 'Female'."
 
 Factors and Levels
 ==================
