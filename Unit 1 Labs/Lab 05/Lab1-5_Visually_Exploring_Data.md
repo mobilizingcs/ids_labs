@@ -1,4 +1,4 @@
-Visually Exploring Relationships in Data
+What's the Relationship?
 ========================================
 transition: rotate
 transition-speed: slow
