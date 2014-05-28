@@ -11,11 +11,11 @@ Directions: Follow along with the slides and answer the questions in **red** fon
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 require(mosaic)
 require(plyr)
-load("~/IDS/Data/atus_dirty.RData")
+load("~/IDS/Data/atus_dirty.RData") 
 ```
 
 
-Last time...
+Last time ...
 =============
 
 - We loaded our **American Time Use Survey** data and found that it had lots of problems.

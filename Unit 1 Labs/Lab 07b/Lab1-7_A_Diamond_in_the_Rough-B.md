@@ -12,7 +12,7 @@ Directions: Follow along with the slides and answer the questions in **red** fon
 
 
 
-Last time...
+Last time ...
 =============
 
 - We loaded our **American Time Use Survey** data and found that it had lots of problems.
