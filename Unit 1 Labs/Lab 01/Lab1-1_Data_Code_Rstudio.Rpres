@@ -10,7 +10,8 @@ Directions: Follow along with the slides and answer the questions in **red** fon
  
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 require(mosaic)
-load("~/IDS/Data/cdc.rda")
+require(MobilizeSimple)
+data(cdc)
 ```
 
 Data Science & R
@@ -28,7 +29,7 @@ So let's get started!
 - Type these two commands into the your console:
 
 ```{r, echo=TRUE, eval=FALSE}
-load("~/Dropbox/IDS Curriculum Design/Labs/Unit 1 Labs/Data/cdc.rda")
+data(cdc)
 ```
 ```{r, echo=TRUE, eval=FALSE}
 View(cdc)

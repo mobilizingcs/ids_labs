@@ -10,7 +10,8 @@ Directions: Follow along with the slides and answer the questions in **red** fon
 
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 require(mosaic)
-load("~/IDS/Data/cdc.rda")
+require(MobilizeSimple)
+data(cdc)
 ```
 
 I have data, now what?

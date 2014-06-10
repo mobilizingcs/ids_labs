@@ -10,7 +10,8 @@ Directions: Follow along with the slides and answer the questions in **red** fon
 
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 require(mosaic)
-load("~/IDS/Data/atus_dirty.RData")
+require(MobilizeSimple)
+data(atus_dirty)
 ```
 
 
@@ -65,7 +66,7 @@ The American Time Use Survey
     - Data scientists call the act of cleaning data **munging**
 - Type the following commands into your console:
 ```{r, eval=FALSE}
-load("~/IDS/Data/atus_dirty.RData")
+data(atus_dirty)
 ```
 ```{r, eval=FALSE}
 View(atus_dirty)

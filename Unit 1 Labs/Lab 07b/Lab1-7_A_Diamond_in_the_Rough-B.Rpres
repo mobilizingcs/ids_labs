@@ -11,7 +11,7 @@ Directions: Follow along with the slides and answer the questions in **red** fon
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 require(mosaic)
 require(plyr)
-load("~/IDS/Data/atus_dirty.RData") 
+data(atus_dirty)
 ```
 
 
@@ -29,7 +29,7 @@ How did we fix these problems?
 
 - We Loaded our data:
 ```{r, eval=FALSE}
-load("~/IDS/Data/atus_dirty.RData")
+load(atus_dirty)
 ```
 - **Run this line of code**
 
