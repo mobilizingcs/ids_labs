@@ -10,27 +10,56 @@ library(knitr)
 opts_chunk$set(eval=FALSE)
 ```
 
+Basic things about data frames
 ```{r}
 data() #data(cdc)
 View() #View(cdc)
+load() #load(atus_dirty)
 dim() #dim(cdc)
 nrow() #nrow(cdc)
 ncol() #ncol(cdc)
 names() #names(cdc)
-histogram() #histogram(~height, data = cdc) histogram(~height, data = cdc, nint = 3) histogram(~height | gender, data = cdc) histogram(~height | gender, data = cdc, layout = c(1,2)) histogram(~height, data = cdc, subset = (gender == "Male"))
-bargraph() #bargraph(~sunscreen, data = cdc) bargraph(~helmet, data = cdc, horizontal = TRUE) bargraph(~helmet, data = cdc, groups = gender, horizontal = TRUE)
-xyplot() #xyplot(weight~height, data = cdc)
 ```
 
+Plots
+```{r}
+histogram() #histogram(~height, data = cdc) histogram(~height, data = cdc, nint = 3) histogram(~height | gender, data = cdc) histogram(~height | gender, data = cdc, layout = c(1,2)) histogram(~height, data = cdc, subset = (gender == "Male"))
+bargraph() #bargraph(~sunscreen, data = cdc) bargraph(~helmet, data = cdc, horizontal = TRUE) bargraph(~helmet, data = cdc, groups = gender, horizontal = TRUE)
+xyplot() #xyplot(weight~height, data = cdc) xyplot(weight ~ height | gender, data = cdc) xyplot(weight ~ height, data = cdc, groups = gender)
+mosaicplot() #mosaicplot(depressed~hours_sleep, data=cdc, las=1)
+```
+
+Simple operators
 ```{r}
 +
 -
 :
 *
 ==
+^
+```
+Variable creation and subsetting
+```{r}
 c() #c(5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
 seq() #seq(from = 5, to = 14, by = 1) seq(from = 5, to = 14, by = 3) seq(5, 14, 1)
 sum() #sum(numbers)
 cumsum() #cumsum(your_object)
 subset() #subset(cdc, asthma == "Yes")
+
+```
+
+Data cleaning
+```{r}
+rename() #I think we should use this instead of doing names(atus_dirty) <- c(new_name1, new_name2, ...)
+transform() #transform(atus_dirty, age = as.numeric(age)) transform(atus_dirty,age = as.numeric(age), sleep = as.numeric(sleep))
+as.numeric() #transform(atus_dirty,age = as.numeric(age), sleep = as.numeric(sleep))
+revalue() #transform(atus_dirty, gender = revalue(gender, c("01" = "Male", "02" = "Female")))
+with() #with(atus_dirty, levels(gender))
+levels() #with(atus_dirty, levels(gender))
+atus_format() #atus_format(my_atus)
+```
+
+Summaries
+```{r}
+tally() #tally(~gender, data = atus_clean) tally(phys_challenge~gender, data = atus_clean) tally(phys_challenge~gender, data = atus_clean, format = 'count') tally(phys_challenge~gender, data = atus_clean, format = 'count', margins = TRUE)
 ```
