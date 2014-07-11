@@ -1,0 +1,23 @@
+---
+title: "List of functions for IDS"
+output: html_document
+---
+
+This might turn into the R cheatsheet eventually, but for now it's just a list of functions we use in the IDS labs. 
+
+```{r} 
+library(knitr)
+opts_chunk$set(eval=FALSE)
+```
+
+```{r}
+data() #data(cdc)
+View() #View(cdc)
+dim() #dim(cdc)
+nrow() #nrow(cdc)
+ncol() #ncol(cdc)
+names() #names(cdc)
+histogram() #histogram(~height, data = cdc)
+bargraph() #bargraph(~sunscreen, data = cdc)
+xyplot() #xyplot(weight~height, data = cdc)
+```
