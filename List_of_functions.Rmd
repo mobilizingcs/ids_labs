@@ -27,6 +27,7 @@ histogram() #histogram(~height, data = cdc) histogram(~height, data = cdc, nint 
 bargraph() #bargraph(~sunscreen, data = cdc) bargraph(~helmet, data = cdc, horizontal = TRUE) bargraph(~helmet, data = cdc, groups = gender, horizontal = TRUE)
 xyplot() #xyplot(weight~height, data = cdc) xyplot(weight ~ height | gender, data = cdc) xyplot(weight ~ height, data = cdc, groups = gender)
 mosaicplot() #mosaicplot(depressed~hours_sleep, data=cdc, las=1)
+bwplot() #bwplot(~COLOR, data=color_data)
 ```
 
 Simple operators
@@ -62,4 +63,13 @@ atus_format() #atus_format(my_atus)
 Summaries
 ```{r}
 tally() #tally(~gender, data = atus_clean) tally(phys_challenge~gender, data = atus_clean) tally(phys_challenge~gender, data = atus_clean, format = 'count') tally(phys_challenge~gender, data = atus_clean, format = 'count', margins = TRUE)
+mean() #mean(~COLOR, data = color_data) mean(~COLOR | Gender.label,  data = color_data)
+median() #median(~COLOR, data = color_data)
+MAD() #MAD(~COLOR, data = color_data)
+min() #min(~COLOR, data=color_data)
+max() #max(~COLOR, data=color_data)
+range() #range(~COLOR, data = color_data)
+IQR() #IQR(~COLOR, data = color_data)
+qdata() #qdata(~COLOR, data = color_data, p = 0.35)
+favstats() #favstats(~COLOR, data=color_data)
 ```
