@@ -1,0 +1,13 @@
+user:id,context:timestamp,Blue,Gender:key,Gender:label,Gold,Green,Orange,PColor:key,PColor:label,SColor:key,SColor:label,Sport:key,Sport:label,Zodiac:key,Zodiac:label,context:location:latitude,context:location:longitude
+"mobilize-amelia","2014-01-22 11:35:25","11","[0]","[Female]","17","18","6","1","Green","0","Gold","1","No","2","Aries","34.0693624","-118.443054"
+"mobilize-gould","2014-01-22 09:46:08","14","[1]","[Male]","10","20","7","1","Green","3","Blue","1","No","1","Pisces","34.0699294173891","-118.44307292171557"
+"mobilize-james","2014-01-22 11:36:15","8","[1]","[Male]","7","17","18","2","Orange","1","Green","0","Yes","11","Capricorn","34.069373578302944","-118.44304204045578"
+"mobilize-james","2014-06-05 14:59:29","5","[1]","[Male]","5","10","16","2","Orange","1","Green","0","Yes","11","Capricorn","34.0694017","-118.44302479999999"
+"mobilize-leeann","2014-01-22 12:33:22","20","[0]","[Female]","11","11","8","3","Blue","1","Green","0","Yes","0","Aquarius","34.06949507306571","-118.44226751746113"
+"mobilize-odette","2014-01-22 12:39:00","16","[0]","[Female]","11","13","10","3","Blue","1","Green","0","Yes","9","Scorpio",,
+"mobilize-safaa","2014-01-22 14:36:49","16","[0]","[Female]","11","17","6","1","Green","3","Blue","1","No","11","Capricorn","34.069356088410935","-118.44304113374014"
+"mobilize-sal","2014-01-22 11:17:26","16","[1]","[Male]","5","17","11","1","Green","3","Blue","0","Yes","2","Aries","34.069809","-118.4396999"
+"mobilize-suyen","2014-01-21 11:18:04","5","[0]","[Female]","13","20","12","1","Green","0","Gold","1","No","10","Sagittarius","33.9219874672531","-118.14252001878118"
+"mobilize-suyen","2014-01-22 13:21:20","5","[0]","[Female]","13","20","12","1","Green","0","Gold","1","No","10","Sagittarius","34.06934787887673","-118.44304259606791"
+"mobilize-terri","2014-01-22 14:30:12","15","[0]","[Female]","13","10","12","3","Blue","0","Gold","1","No","3","Taurus","34.069389019084504","-118.4430425138099"
+"mobilize-todd","2014-01-22 12:27:24","15","[1]","[Male]","10","14","11","3","Blue","3","Blue","0","Yes","8","Libra","34.067951776156946","-118.44333482929014"

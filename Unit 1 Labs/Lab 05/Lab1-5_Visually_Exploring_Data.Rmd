@@ -1,15 +1,12 @@
 ---
 title: "What’s the Relationship?"
 output:
-  word_document:
-    fig_caption: no
-    fig_height: 2.25
-    fig_width: 3
+  pdf_document: default
 ---
 
 Unit 1 - Lab 5
 
-Directions: Follow along with the slides and answer the questions in **red** font in your journal.
+Directions: Follow along with the slides and answer the questions in **BOLDED** font in your journal.
 
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 require(mosaic)
@@ -55,12 +52,6 @@ What do you observe now?
 histogram(~height | gender, data = cdc, layout = c(2,1))
 ```
 
-What do you observe now?
-=========================
-
-```{r,eval=TRUE, echo=FALSE}
-histogram(~height | gender, data = cdc, layout = c(2,1))
-```
 
 - **How many variables did you need to make your plot?**
 - **In your plot, what do you notice about the heights of _males_ and _females_?**
@@ -89,8 +80,6 @@ xyplot(y~x,
        ylab=list(label="Variable 2"))
 ```
 
-Scatter plots
-=============
 
 - Useful for viewing how one _numerical_ variable relates to another _numerical_ variable.
 - Before we begin:
@@ -100,8 +89,9 @@ Creating scatter plots
 ======================
 
 - To create scatter plots, use the following function:
-**<p align='center'> xyplot (y ~ x, data = ____ ) </p>**
-- Use the _height_ and _weight_ variables to create this plot:
+<p align='center'> xyplot (y ~ x, data = ____ ) </p>
+- Use the _height_ and _weight_ variables to create this plot:  
+
 ```{r,echo=FALSE}
 xyplot(weight ~ height, data = cdc)
 ```
@@ -145,8 +135,6 @@ Mosaic Plots
 mosaicplot(depressed~hours_sleep, data=cdc, las=1)
 ```
 
-Mosaic Plots
-============
 
 - Scatter plots are helpful for finding relationships between two _numeric_ variables.
 - Mosaic plots are helpful for finding relationships between two _categorical_ variables.
@@ -159,6 +147,7 @@ Create the following:
 =====================
 
 - Use the variables _depressed_ and *hours_sleep* to create this mosaic plot:
+
 ```{r,echo=FALSE, fig.width=4, fig.height=4}
 mosaicplot(depressed~hours_sleep, data=cdc, las=1)
 ```
@@ -180,18 +169,13 @@ Interpreting mosaic plots
   - The width of the boxes is the **percentage** of students who said they have or have not felt depressed.
   - The height of the boxes is the **percentage** of students who said they sleep however many hours.
 - The width/height of the _entire_ plot represents 100 percent of the students.
-  
-Interpreting mosaic plots
-=========================  
-  
+
 - Compare the width of the _Yes_ and _No_ stack for the _depressed_ variable:
   - **Have more high schoolers reported feeling depressed or not depressed?**
 - Now look at the heights of the boxes in the _yes_ stack:
   - **For high schoolers who have reported feeling depressed, which are the two most common amounts of sleep?**
 
-  
-Interpreting mosaic plots
-=========================
+
 
 - Look at the heights of the boxes in the _no_ stack:
   - **For high schoolers who not have reported feeling depressed, which are the two most common amounts of sleep?**

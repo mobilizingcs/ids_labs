@@ -1,15 +1,12 @@
 ---
 title: "Zooming Through Data"
 output:
-  word_document:
-    fig_caption: no
-    fig_height: 2.25
-    fig_width: 3
+  pdf_document: default
 ---
 
 Unit 1 - Lab 4
 
-Directions: Follow along with the slides and answer the questions in **red** font in your journal.
+Directions: Follow along with the slides and answer the questions in **BOLDED** font in your journal.
 
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 require(mosaic)
@@ -63,8 +60,6 @@ histogram(~height | gender, data = cdc)
  
 - **Run each line of code. How does the plot change after you _separated_ the variables?**
 
-Subsetting numerical variables
-==============================
 
 - It would be much easier to compare the heights of males and females if the histograms were stacked on top of one another.
 - We can change the **layout** of our separated plots by including the `layout` argument. 
@@ -105,8 +100,6 @@ histogram(~height, data = cdc,
 - **~weight**: using the variable _weight_ ...
 - **data = cdc**: from the _cdc_ data set ...
 
-So what's really going on?
-==========================
 
 Here's a breakdown of what your code is telling `R`.
 

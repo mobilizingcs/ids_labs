@@ -1,19 +1,16 @@
 ---
 title: "Data Code & RStudio"
 output:
-  word_document:
-    fig_caption: no
-    fig_height: 2.25
-    fig_width: 3
+  pdf_document: default
 ---
 
 Unit 1 - Lab 1  
 
-Directions: Follow along with the slides and answer the questions in **red** font in your journal.
+Directions: Follow along with the slides and answer the questions in **BOLDED** font in your journal.
  
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
-require(mosaic)
-load("~/Dropbox/IDS Curriculum Design/Labs/Unit 1 Labs/Data/cdc.rda")
+require(MobilizeSimple)
+data(cdc)
 ```
 
 Data Science & R
@@ -31,7 +28,7 @@ So let's get started!
 - Type these two commands into the your console:
 
 ```{r, echo=TRUE, eval=FALSE}
-load("~/Dropbox/IDS Curriculum Design/Labs/Unit 1 Labs/Data/cdc.rda")
+data(cdc)
 ```
 ```{r, echo=TRUE, eval=FALSE}
 View(cdc)
@@ -71,7 +68,7 @@ Uncovering our Data's Structure
 ===============================
 
 - RStudio's main window is composed of four _panes_
-- Find the pane that has a _tab_ titled *Environment* and click on it.
+- Find the pane that has a _tab_ titled _Environment_ and click on it.
     - **Can you find the number of people surveyed?**
     - **How many variables are there for each person?**
     - **What happens when you click on `cdc`?**
@@ -79,7 +76,7 @@ Uncovering our Data's Structure
 Uncovering our Data's Structure
 ===============================
 
-- From the *Environment* tab, click on the blue arrow to the left of `cdc`
+- From the _Environment_ tab, click on the blue arrow to the left of `cdc`
 - Don't be overwhelmed! This is just some of the _structure_ of our data:
     - We'll learn much more about this _structure_ in the future.
     - Do you notice the names of the variables are listed?
@@ -101,7 +98,7 @@ names(cdc)
 ```
 
 - **Write each _output_ and what it tells us about the people in our CDC data**
-    - The _output_ is what gets printed after you hit _enter_
+    - The **output** is what gets printed after you hit _enter_
 
 Baby Steps to Programming
 =========================
@@ -114,9 +111,9 @@ Baby Steps to Programming
 R's most important syntax
 =========================
 
-<font size="7">
-**<p align='center'> _function_ (y~x, data = ____ ) </p>**
-</font>
+\begin{center}
+{ \Large function (y $\sim$ x, data = \_\_\_\_ )  }
+\end{center}
 
 - Look through the different panes for the _Plots_ tab and click it.
 - Then type the following commands into the console:
@@ -143,12 +140,12 @@ histogram(~height, data = cdc)
 ```
 
 ```{r, echo=FALSE}
-bargraph(~sunscreen, data = cdc, scales = list(rot = 30))
+bargraph(~sunscreen, data = cdc)
 ```
 
 Let's discuss
 =============
 
 - In your teams:
-    - Discuss the answers to the **red** questions you wrote down in your journals.
+    - Discuss the answers to the **BOLD** questions you wrote down in your journals.
     - Agree on a single answer for each question.

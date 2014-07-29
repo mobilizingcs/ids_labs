@@ -1,15 +1,12 @@
 ---
 title: "Discovering Objects"
 output:
-  word_document:
-    fig_caption: no
-    fig_height: 2.25
-    fig_width: 3
+  pdf_document: default
 ---
 
 Unit 1 - Lab 3
 
-Directions: Follow along with the slides and answer the questions in **red** font in your journal.
+Directions: Follow along with the slides and answer the questions in **BOLDED** font in your journal.
 
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 require(mosaic)
@@ -39,16 +36,11 @@ How about an example
 - Let's suppose we wanted to find the sum of all integers between 5 and 14
 - **Using RStudio, calculate the sum of all integers between 5 and 14**
 
-How about an example
-====================
-
 - One way to find this sum might be
 ```{r,eval=FALSE}
 5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14
 ```
 
-How about an example
-====================
 
 - Now suppose you wanted to calulate the difference of the sum you calculated and each integer between 5 and 14. 
     - Meaning,  
@@ -57,8 +49,6 @@ How about an example
     `95 minus 7` and so on ...
 - **Go ahead and calculate these differences**
 
-How about an example
-====================
 
 - You should notice by now that doing these calculations is tedious.
 - Let's use objects to make our lives easier!
@@ -99,9 +89,7 @@ numbers <- c(5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
   2. **Combine** the numbers 5 through 14 into a _single object_ using the `c()` function
   3. **Assign** the values we combined, using the `<-` symbol, to the object we created.
 - The `numbers` object you created is an example of a _vector_
-  
-Let's review what we just did
-=============================
+
 
 ```{r,eval=FALSE}
 numbers <- c(5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
@@ -123,8 +111,6 @@ numbers <- c(5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
 
 - **What type of object is this again? Why?**
 
-Try the example again using objects
-===================================
 
 - R contains many convenient functions.
 - One such function is the `sum()` function.
@@ -136,8 +122,6 @@ sum(numbers)
 
 - **Do you think using objects is any easier than just adding the numbers together in the console? Why or why not? Be honest!**
 
-Try the example again using objects
-===================================
 
 - Let's save the sum of all numbers between 5 and 15 as another new object.
 - Run these lines of code:
@@ -151,8 +135,6 @@ total
 
 - **What is the _name_ of the object? What is its value? How did you tell R to _assign_ the value to the object?**
 
-Try the example again using objects
-===================================
 
 - Finally, let's calculate the differences of the sum and the numbers
     - Meaning, `95 minus 5`, `95 minus 6`, and so on

@@ -1,4 +1,4 @@
-Time Match Dot Come
+Time Match Dot Com
 ========================================================
 transition: rotate
 transition-speed: slow
@@ -10,19 +10,21 @@ Directions: Follow along with the slides and answer the questions in **red** fon
 
 
 
-
 How do we compare?
 ==================
 
 - For this lab, we'll be comparing how your class spends their time versus how other Americans spend their time.
-- **Load the full American Time Use Survey `atus.Rdata`**
-- **load your classes data and call it `my_atus`**.
+- **Load the full American Time Use Survey**
+
+```r
+data(atus)
+```
+- **load your own class' data and call it `my_atus`**.
 - Run the following command again to format our data
 
 ```r
 my_atus <- atus_format(my_atus)
 ```
-
 
 What does atus_format do again?
 ===============================
@@ -53,4 +55,13 @@ Watch out!
 And away you go:
 ================
 
-- *assignment?*
+- Using what you've learned so far, make comparisons between your classes data and the full ATUS data by using:
+    - **Single variable plots**
+    - **Multiple variable plots**
+    - **2-way frequency tables**
+- Answer the following:
+    - **How is your classes time use similar to other Americans?**
+    - **How is your classes time use different from other Americans?**
+- Share your findings with a partner
+    - **Did your partner make appropriate plots?**
+    - **Did your partner make appropriate conclusions?**

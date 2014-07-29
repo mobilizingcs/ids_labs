@@ -10,7 +10,6 @@ Directions: Follow along with the slides and answer the questions in **red** fon
  
 
 
-
 Data Science & R
 ================
 
@@ -30,11 +29,9 @@ So let's get started!
 data(cdc)
 ```
 
-
 ```r
 View(cdc)
 ```
-
   
 **What happened in RStudio after you ran these two commands?**
 
@@ -70,7 +67,7 @@ Uncovering our Data's Structure
 ===============================
 
 - RStudio's main window is composed of four _panes_
-- Find the pane that has a _tab_ titled *Environment* and click on it.
+- Find the pane that has a _tab_ titled _Environment_ and click on it.
     - **Can you find the number of people surveyed?**
     - **How many variables are there for each person?**
     - **What happens when you click on `cdc`?**
@@ -78,7 +75,7 @@ Uncovering our Data's Structure
 Uncovering our Data's Structure
 ===============================
 
-- From the *Environment* tab, click on the blue arrow to the left of `cdc`
+- From the _Environment_ tab, click on the blue arrow to the left of `cdc`
 - Don't be overwhelmed! This is just some of the _structure_ of our data:
     - We'll learn much more about this _structure_ in the future.
     - Do you notice the names of the variables are listed?
@@ -91,24 +88,20 @@ Type the following commands into the console
 dim(cdc)
 ```
 
-
 ```r
 nrow(cdc)
 ```
-
 
 ```r
 ncol(cdc)
 ```
 
-
 ```r
 names(cdc)
 ```
 
-
 - **Write each _output_ and what it tells us about the people in our CDC data**
-    - The _output_ is what gets printed after you hit _enter_
+    - The **output** is what gets printed after you hit _enter_
 
 Baby Steps to Programming
 =========================
@@ -133,16 +126,13 @@ R's most important syntax
 histogram(~height, data = cdc)
 ```
 
-
 ```r
 bargraph(~sunscreen, data = cdc)
 ```
 
-
 ```r
 xyplot(weight~height, data = cdc)
 ```
-
 
 
 Your First Plots
@@ -152,13 +142,11 @@ Your First Plots
 
 <img src="Lab1-1_Data_Code_Rstudio-figure/unnamed-chunk-11.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" style="display: block; margin: auto;" />
 
-
 ***
 
 - **How are these two plots different?**
 
 <img src="Lab1-1_Data_Code_Rstudio-figure/unnamed-chunk-12.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" style="display: block; margin: auto;" />
-
 
 Let's discuss
 =============

@@ -9,7 +9,6 @@ Unit 1 - Lab 3
 Directions: Follow along with the slides and answer the questions in **red** font in your journal.
 
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
-require(mosaic)
 require(MobilizeSimple)
 data(cdc)
 ```
@@ -17,59 +16,93 @@ data(cdc)
 What are objects?
 ====================
 
-- When data is loaded into R, it's stored as an _object_:
-    - Don't have to type out all of the data's values each time you want to use it.
-    - Just use the name of the object (our data in this case)
-    - For example, `View(cdc)` is telling R to show you the object called _cdc_.
-- Data is just **one** object that R can use. 
+- When we're coding: the numbers, variables, functions and data stored on the computer are all different types of **objects**.
+    - **Objects** assign a _name_ and _type_ to a set of _values_.
+    - _Functions_, like `histogram`, are also objects with names and coded _steps_ instead of sets _values_
+    
+    
+Take this line of code, for example:
+====================================
+```{r,eval=FALSE}
+bargraph(~helmet, data = cdc)
+```
+- `bargraph` is a **function** object.
+    - Put other objects between the parenthesis and it produces a bargraph.
+- `helmet` is a **vector** object.
+    - It stores all of the values of our variable and keeps them in order.
+- `cdc` is a **data frame** object.
+    - It stores all of the different variables in our data set.
 
-Why are objects awesome?
+Why are objects important?
+==========================
+
+- By using _objects_, we simplify the code writing process:
+    - We can reference the _variables_ in our _data sets_ by name instead of having to write out the values by hand.
+    - We can call upon _functions_ instead of having to continually write the same lines of code over and over and over ...
+
+
+A simple use of objects
+=======================
+
+- Load the `cdc` data into RStudio.
+- We can use the following to look at the first 25 of the `weight` variable
+```{r,eval=FALSE}
+head(weight, data = cdc, n = 25)
+```
+- **How would you add these 25 values together**
+- **What would you do if someone asked you to compute the total combined height of _everyone_ in the data?**
+
+
+A simple use of objects
+=======================
+
+- Here's how we can answer these questions using objects.
+- First we save our values as an object named `first_25` (but really, we can name it whatever we'd like).
+```{r,eval=FALSE}
+first_25 <- head(~weight, data = cdc, 
+                 n = 25)
+```
+- And then we use the `sum` function on this object:
+```{r, eval=FALSE}
+sum(first_25)
+```
+- And if we wanted the total height of everyone?
+```{r, eval=FALSE}
+sum(~weight, data = cdc)
+```
+
+
+But why are objects awesome?
 ========================
 
 - Using objects makes it easy to:
-    - Store information
-    - Manipulate information
-    - And use information!
+    - Store information and values.
+    - Manipulate them
+    - And use them!
 
-How about an example
+
+
+
+
+What just happened?
+==================
+- We created a **vector** of the first 25 `heights` in our data and **assigned** it the name `first_25`.
+    - The arrow, `<-`, is how we assigned the _values_ from `head(~weight, data = cdc, n = 25)` to the _name_ `first_25`.
+    - A **vector** is a type of object that stores one or more values and keeps them in order.
+- When then put this object into the `sum()` function.
+    - The function 
+
+
+More about objects
 ====================
 
-- Let's suppose we wanted to find the sum of all integers between 5 and 14
-- **Using RStudio, calculate the sum of all integers between 5 and 14**
-
-How about an example
-====================
-
-- One way to find this sum might be
-```{r,eval=FALSE}
-5 + 6 + 7 + 8 + 9 + 10 + 11 + 12 + 13 + 14
-```
-
-How about an example
-====================
-
-- Now suppose you wanted to calulate the difference of the sum you calculated and each integer between 5 and 14. 
-    - Meaning,  
-    `95 minus 5`   
-    `95 minus 6`  
-    `95 minus 7` and so on ...
-- **Go ahead and calculate these differences**
-
-How about an example
-====================
-
-- You should notice by now that doing these calculations is tedious.
-- Let's use objects to make our lives easier!
-
-Creating objects
-====================
-
-- Every _object_ needs 3 things:
-    1. A _name_
-    2. The _assignment_ symbol
-    3. A _value_
-- We'll start by creating a **vector** of values for integers between 5 and 14
-    - A **vector** is a single _object_ that can contain many _values_
+- Every _object_ has 3 things:
+    1. The _name_ we can call to use the object.
+    2. The _values_ contained in the object. 
+    3. The _type_ of object.
+- Some common _types_ of objects are:
+    - **Vectors**, which stores values in a particular order.
+    - **Data frame**, which stores 
 
 Making vectors (tra-la-la!)
 ====================

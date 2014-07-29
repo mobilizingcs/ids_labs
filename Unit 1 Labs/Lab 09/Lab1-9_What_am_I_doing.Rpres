@@ -11,6 +11,7 @@ Directions: Follow along with the slides and answer the questions in **red** fon
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 require(mosaic)
 require(dplyr)
+require(MobilizeSimple)
 ```
 
 What am I doing?
@@ -50,9 +51,8 @@ And away you go...
 ==================
 
 - Using the techniques you've learned thus far:
-    - **Pick 3 variables to investigate**
-    - **Compute a _typical_ value for each of the the variables.**
-    - **Compute a value that describes each variable's spread. Why do you think some vary more than the others?**
+    - **Pick a 3-4 variables to investigate**
     - **Create approriate single variable plots and interpret them.**
     - **Create appropriate multiple variable plots and interpret them.**
+    - **Tally some frequency tables and make some conclusions about your classes data**.
 - **Write down a fact from your analysis you found most interesting and why.**

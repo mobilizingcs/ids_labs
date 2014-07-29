@@ -1,15 +1,12 @@
 ---
 title: "Download, Upload, Load"
 output:
-  word_document:
-    fig_caption: no
-    fig_height: 2.25
-    fig_width: 3
+  pdf_document: default
 ---
 
 Unit 1 - Lab 6
 
-Directions: Follow along with the slides and answer the questions in **red** font in your journal.
+Directions: Follow along with the slides and answer the questions in **BOLDED** font in your journal.
 
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 require(mosaic)
@@ -68,8 +65,6 @@ Uploading
     - Click it!
 
 
-Uploading
-========================================================
 <center> ![Upload Button](images/FilesPane.png) </center>
 
 - Click the button on the Files pane that says "Upload"
@@ -97,9 +92,6 @@ Loading
 - To actually use the data we need to **Load** it into your computer's memory.
 - R can't remember all the datasets we have at once, which is why there's a seperate step between **Uploading** and **Loading**.
 
-
-Loading
-========================================================
 
 ![import data](images/Environment.png)
 

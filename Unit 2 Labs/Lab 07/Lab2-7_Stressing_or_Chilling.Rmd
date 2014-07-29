@@ -1,0 +1,74 @@
+---
+title: "Stressing? Or Chilling?"
+output: pdf_document
+---
+
+
+Unit 2 - Lab 7  
+
+Directions: Follow along with the slides and answer the questions in **BOLDED** font in your journal.
+ 
+```{r, message=FALSE, warning=FALSE, results='hide', echo=FALSE}
+require(MobilizeSimple)
+```
+
+
+
+What causes us stress?
+========================
+
+- **Under what circumstances do you feel the most stressed out?**
+- **When do you feel the most relaxed?**
+- **Do you think the people you're with or where you are affects your stress level?**
+- In this lab, we'll investigate under what conditions we feel more stressed, or more chilled.
+- Download, upload and load your _Stress/Chill_ data and name it: `stress`.
+
+
+Getting familiar with our data
+=============================
+
+- **`View` your `stress` data and write down which variables are _numeric_ and which are _categorical_.**
+- **Does our data contain any missing values? What command can you run to be certain?**
+- **Does a negative value for `stresschill` mean the person is stressing or chilling?**
+
+    
+Who do we stress/chill the most with.
+====================
+
+- **Create plots or compute numerical summaries to answer the following questions. Write down both your answers to the question and the code used to help you answer it.:**
+    - **Which group of people are we with when we're feeling the most _chilled_?**
+    - **Which group of people are we with when we're feeling the most _stressed_?**
+- **In your opinion, do you think there's a reason why we might feel more or less stressed when we're around different people? Why do you think that is?**
+
+
+What role does our environment play?
+====================================
+
+- **Do you predict that being _indoors_ as opposed to _outdoors_ will change our `stresschill` levels?**
+    - **Are people who are indoors more or less stressed than those who are outdoors?**
+    - **Create barplots of people's `stresschill` levels when they're _indoors_ and _outdoors_. Are their stress levels different? Make call and justify your answer.**
+
+
+Do people stress us out?
+========================
+
+- **Do you think being around more people makes us feel more stressed out? Why?**
+    - **Come up with a plot to answer this question and write down the code you use**.
+    - **Are you able to find an answer? Or is the answer ambiguous?**
+    - **Does your answer change depending on if people are _indoors_ or _outdoors_?**
+    
+Coming up next..
+=======================
+
+- **Do you think people are just natrually more stressed out? Could you answer this question using just the variables in our `stress` data?**
+- In the next lab, we'll learn how to combine data sets together.
+    - This will let us combine our information about `stress` levels with information about people's personalities!
+- Stay tuned, more to come!
+
+
+
+
+
+
+
+

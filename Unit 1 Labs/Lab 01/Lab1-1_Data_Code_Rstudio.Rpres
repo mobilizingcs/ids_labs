@@ -9,7 +9,6 @@ Unit 1 - Lab 1
 Directions: Follow along with the slides and answer the questions in **red** font in your journal.
  
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
-require(mosaic)
 require(MobilizeSimple)
 data(cdc)
 ```
@@ -69,7 +68,7 @@ Uncovering our Data's Structure
 ===============================
 
 - RStudio's main window is composed of four _panes_
-- Find the pane that has a _tab_ titled *Environment* and click on it.
+- Find the pane that has a _tab_ titled _Environment_ and click on it.
     - **Can you find the number of people surveyed?**
     - **How many variables are there for each person?**
     - **What happens when you click on `cdc`?**
@@ -77,7 +76,7 @@ Uncovering our Data's Structure
 Uncovering our Data's Structure
 ===============================
 
-- From the *Environment* tab, click on the blue arrow to the left of `cdc`
+- From the _Environment_ tab, click on the blue arrow to the left of `cdc`
 - Don't be overwhelmed! This is just some of the _structure_ of our data:
     - We'll learn much more about this _structure_ in the future.
     - Do you notice the names of the variables are listed?
@@ -99,7 +98,7 @@ names(cdc)
 ```
 
 - **Write each _output_ and what it tells us about the people in our CDC data**
-    - The _output_ is what gets printed after you hit _enter_
+    - The **output** is what gets printed after you hit _enter_
 
 Baby Steps to Programming
 =========================
@@ -136,7 +135,10 @@ Your First Plots
 - **How are these two plots similar?**
 
 ```{r, echo=FALSE, fig.align='center'}
-histogram(~height, data = cdc)
+histogram(~height, data = cdc, 
+          scales=list(cex=2.5),
+          xlab = list("height", cex=2.5),
+          ylab = list("height", cex=2.5))
 ```
 
 ***
@@ -144,7 +146,10 @@ histogram(~height, data = cdc)
 - **How are these two plots different?**
 
 ```{r, echo=FALSE, fig.align='center'}
-bargraph(~sunscreen, data = cdc)
+bargraph(~sunscreen, data = cdc, 
+          scales=list(cex=2.5, x = list(rot = 30)),
+          xlab = list("height", cex=2.5),
+          ylab = list("height", cex=2.5))
 ```
 
 Let's discuss
