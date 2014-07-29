@@ -1,0 +1,30 @@
+Back to subsetting ...
+======================
+
+- Subsetting is sort of like zooming in on your data.
+
+Zooming in for Clarity (Categorical)
+====================================
+  
+```{r,eval=FALSE}
+bargraph(~ gender, data = cdc)
+bargraph(~ gender | depressed, data = cdc)
+bargraph(~ depressed | grade + gender, data = cdc)
+bargraph(~ depressed | grade, data = cdc, subset = (gender == "Female"))
+bargraph(~ depressed | grade, data = cdc, subset = gender == "Female", layout = c(5,1))
+```
+
+Subsetting Data I 
+===============
+  
+```{r,eval=FALSE}
+subset(cdc, gender == "Male")
+cdc.females <- subset(cdc, gender == "Female")
+# View(cdc.females)
+histogram(~height, data = cdc.females)
+cdc.females <- subset(cdc.females, height >= 1.5 & height <= 1.7)
+# View(cdc.females)
+histogram(~height, data = cdc.females)
+```
+
+
