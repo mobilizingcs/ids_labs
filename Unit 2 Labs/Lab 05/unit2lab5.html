@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Boxplots and Chance</title>
+  <title>All I Do is Win Win Win!</title>
     
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -808,10 +808,10 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="default" data-transition-speed="slow">
-<h1>Boxplots and Chance</h1><p></p>
+<h1>All I Do is Win Win Win!</h1><p></p>
 
 <div class="slideContent" >
-<p>Unit 2 - Lab 5 </p>
+<p>Unit 2 - Lab 5  </p>
 
 <p>Directions: Follow along with the slides and answer the questions in <strong>red</strong> font in your journal.</p>
 
@@ -819,124 +819,159 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Some background...</h3>
+<h3>From Categories to Numbers</h3>
 <div class="slideContent" >
 <ul>
-<li><p>For this lab, we will be using the <code>movie</code> data set to &ldquo;make the call&rdquo; for differences between boxplots.</p></li>
-<li><p>The <code>movie</code> data set was compiled using the Rotten Tomatoes website, which is an online movie and TV review database, and Box Office Mojo, which is an online database of movie revenues.</p></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Let&#x27;s investigate</h3>
-<div class="slideContent" >
-<ul>
-<li><p>Perhaps we want to know if there is a difference in the runtime between rated G and rated R movies.</p></li>
-<li><p><strong>Without looking at any data, do you have an opinion about this? Do you think rated R movies run longer than G rated movies? Why?</strong></p></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Creating one boxplot</h3>
-<div class="slideContent" >
-<ul>
-<li>We can create a boxplot of just the runtimes of the movies first.</li>
-</ul>
-
-<pre><code class="r">bwplot(~runtime, data = movie)
-</code></pre>
+<li>In the last lab, we looked at how we can use simulations to estimate probabilities of compound events.
 
 <ul>
-<li><strong>Record the values for Q1, Q3, and the median.</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Expanding further</h3>
-<div class="slideContent" >
-<ul>
-<li>We can separate this boxplot into multiple boxplots simply by sorting runtime by the MPAA rating.</li>
-</ul>
-
-<pre><code class="r">bwplot(~runtime | mpaa_rating,
-       data = movie)
-</code></pre>
-
-<ul>
-<li>But this is not very easy to read or compare between the ratings. We could change the layout by using the <code>layout</code> option in the <code>bwplot()</code> function to correct this.</li>
-</ul>
-
-<pre><code class="r">bwplot(~runtime | mpaa_rating,
-       data = movie, layout = c(1,6))
-</code></pre>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>It&#x27;s still pretty confusing</h3>
-<div class="slideContent" >
-<ul>
-<li>Right now, there are 6 different MPAA ratings to compare between. We&#39;re really interested in only 2 though: rated R and rated G.</li>
-<li>Let&#39;s further simplify our boxplot function by using the <code>subset</code> argument.</li>
-</ul>
-
-<pre><code class="r">bwplot(~runtime | mpaa_rating, 
-       data = movie, 
-       subset = mpaa_rating == &quot;G&quot; | 
-          mpaa_rating == &quot;R&quot;, 
-       layout = c(1,2))
-</code></pre>
-
-<ul>
-<li><strong>Write down how to use the <code>subset</code> argument.</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>The boxplot</h3>
-<div class="slideContent" >
-<ul>
-<li><strong>Include sketches of the boxplots in your DS Journal.</strong></li>
-<li><strong>What are the Q1, Q3, and median values for rated R movies?</strong></li>
-<li><strong>What are the Q1, Q3, and median values for rated G movies?</strong></li>
-<li><strong>Do the data overlap? Do the boxes overlap?</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Make the call!</h3>
-<div class="slideContent" >
-<ul>
-<li><p><strong>How do the median values compare for each of the 2 ratings?</strong></p></li>
-<li><p><strong>How do the box sizes compare?</strong></p></li>
-<li><p><strong>Make the call about whether or not rated R movies and rated G movies have differing runtimes. Explain your reasoning.</strong></p></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>On your own:</h3>
-<div class="slideContent" >
-<ul>
-<li>Make boxplots of the <code>critics_rating</code> variable for movies rated <em>PG-13</em> and _R+. Then do the following:
-
-<ul>
-<li><strong>Write down the code you used to make these boxplots.</strong></li>
-<li><strong>Compute the exact <em>median</em>, <em>Q1</em>, <em>Q3</em> and <em>IQR</em> for each boxplot. Look back at lab 2.2 if you need help computing these values.</strong></li>
-<li><strong>Make the call: Are movies that are rated <em>R</em> rated more or less favorably than films rated <em>PG-13</em>. Justify your answer by referencing your numerical summaries from above.</strong></li>
+<li>We did this for a bag of different colored marbles.</li>
 </ul></li>
+<li>Many situations come up where we need to simulate probabilities of numbers instead.
+
+<ul>
+<li>This lab will explore some of those situations and look at a few techniques to compute estimates.</li>
+</ul></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>The California Lottery</h3>
+<div class="slideContent" >
+<ul>
+<li>The California lottery has a game called the <em>Daily 3</em>:
+
+<ul>
+<li>3 numbers between 0-9 are drawn daily.</li>
+<li>Numbers are drawn <em>with replacement</em>.</li>
+</ul></li>
+<li>Winners are usually awarded a couple hundred dollars.
+
+<ul>
+<li>To win the maximum amount of money, players must correctly choose the numbers that are drawn, in order.</li>
+</ul></li>
+<li><strong>If you were going to play the <em>Daily 3</em> game, which numbers would you pick? Write these numbers down.</strong></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Playing with the lotto</h3>
+<div class="slideContent" >
+<ul>
+<li>Using the rules of the <em>Daily 3</em>, use the <code>sample</code> function and a <code>do</code>-loop to create 300 sample games.
+
+<ul>
+<li>Assign the name <code>games</code> to your 300 simulations.</li>
+<li><strong>Write down the code you used to create your 300 sample games.</strong></li>
+</ul></li>
+<li>We can use these simulations to compute estimates for different events.</li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Simulations with Numbers</h3>
+<div class="slideContent" >
+<ul>
+<li>We treat numbers a little differently than categories.
+
+<ul>
+<li>Because of this, we use the <code>subset</code> command instead of <code>tally</code>.</li>
+</ul></li>
+<li>Type the following:</li>
+</ul>
+
+<pre><code class="r">draws &lt;- subset(games, V1 &lt; 3 &amp; V2 == 7)
+</code></pre>
+
+<ul>
+<li>This code will look in our 300 simulated lotto <code>games</code>. Then, 
+
+<ul>
+<li>Find the <code>games</code> whose first draw was less than 3 AND whose second draw was exactly equal to 7.</li>
+<li>Assign only these simulated games to the <code>draws</code> data frame.</li>
+</ul></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Counting (Ah-Ah-Ah..)</h3>
+<div class="slideContent" >
+<ul>
+<li>After we&#39;ve <code>subset</code> the <code>draws</code> we&#39;re interested in, we can use the <code>nrow()</code> function to count how many of our simulations had a first draw that was less than 3 and a second draw that was exactly 7:</li>
+</ul>
+
+<pre><code class="r">nrow(draws)
+</code></pre>
+
+<ul>
+<li>We use <code>nrow</code> to count the <font color = "green"> <code>n</code></font>umber of <font color = "green"> <code>row</code></font>s in our <code>draws</code> data frame.
+
+<ul>
+<li>Then, we can divide this number by our total number of simulations (300) to give us an estimate for the probability that the first number drawn is less than 3 and the second number drawn is 7.</li>
+</ul></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Give it a shot</h3>
+<div class="slideContent" >
+<ul>
+<li>Go back to the 3 numbers you would use if you were playing the <em>Daily 3</em> lotto game.
+
+<ul>
+<li>Use the <code>subset</code> function to find which of the simulated <code>games</code> you would have won.</li>
+<li>Use the <code>nrow</code> function to count how many games are in your subset.</li>
+<li>Divide by the number of simulations to compute your estimate of the probability of winning the <em>Daily 3</em>.</li>
+</ul></li>
+<li><strong>What was the estimated probability you came up with?</strong></li>
+<li><strong>Will you always end up with the exact same estimated probability for winning the lotto? Why or why not?</strong></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Why isn&#x27;t there a function to compute my estimate?</h3>
+<div class="slideContent" >
+<ul>
+<li>As you&#39;ve probably noticed in this lab, not everything you want to compute in programming comes with a function.
+
+<ul>
+<li>Sometimes you have to be creative to calculate solutions.</li>
+<li>That&#39;s just how it goes for data scientists.</li>
+</ul></li>
+<li><strong>Write down the 3 steps involved in estimating the probability of winning the <em>Daily 3</em>.</strong>
+
+<ul>
+<li><strong>What role does each step play in the process and why is it important?</strong></li>
+</ul></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>On your own</h3>
+<div class="slideContent" >
+<ul>
+<li><p><strong>Use the <code>games</code> you simulated to compute and write down estimates for the following probabilities:</strong></p>
+
+<ul>
+<li>The probability of correctly guessing the 1st and 3rd draws.</li>
+<li>The probability of correctly guessing the 1st and 2nd draws.</li>
+<li><strong>Should the actual probabilities of the above situations be the same? Why might their estimates be different?</strong></li>
+</ul></li>
+<li><p><strong>Does correctly guessing the 1st draw change the probability of correctly guessing the 2nd? Compute the actual probability of correctly guessing the 2nd draw and compare it to an appropriate estimate to find out.</strong></p></li>
 </ul>
 
 </div>

@@ -824,7 +824,7 @@ hljs.initHighlightingOnLoad();
 <ul>
 <li>In the previous lab, we cleaned our American Time Use Survey (ATUS) data to make it usable.</li>
 <li>Now we can actually start to analyze it to learn how people spend their time in the US.</li>
-<li>The process of cleaning and then analyzing data is very common in Data Science.</li>
+<li>The process of cleaning and then analyzing data is <em>very</em> common in Data Science.</li>
 </ul>
 
 </div>
@@ -834,12 +834,7 @@ hljs.initHighlightingOnLoad();
 <h3>Summarizing data</h3>
 <div class="slideContent" >
 <ul>
-<li>Plots are extremely useful.
-
-<ul>
-<li>Help find interesting patterns.</li>
-<li>Easy to make comparisons.</li>
-</ul></li>
+<li>Plots are extremely useful to help find interesting patterns and make comparisons.</li>
 <li>Plots also rely on our interpretations.</li>
 <li>Load your cleaned ATUS data set:</li>
 </ul>
@@ -851,8 +846,7 @@ hljs.initHighlightingOnLoad();
 <li><strong>Create a plot that compares people&#39;s genders and the amount of time they spent on homework</strong>
 
 <ul>
-<li><strong>Using this plot, do you think males or females spend more time doing homework?</strong></li>
-<li><strong>Find someone in your class who came to the opposite conclusion as you did about which gender, typically, does more homework</strong>.</li>
+<li><strong>Using this plot, do you think males or females spend more time doing homework? Find someone in your class who came to the opposite conclusion as you did about which gender, typically, does more homework</strong>.</li>
 </ul></li>
 </ul>
 
@@ -878,7 +872,7 @@ hljs.initHighlightingOnLoad();
 <ul>
 <li>(Honestly, what&#39;s the average of categories <em>orange</em>, <em>apple</em> and <em>banana</em>, for instance?)</li>
 </ul></li>
-<li>When trying to describe categorical variables with numberws, we calculate <strong>frequency tables</strong></li>
+<li>When trying to describe categorical variables with numbers, we calculate <strong>frequency tables</strong></li>
 </ul>
 
 </div>
@@ -893,7 +887,8 @@ hljs.initHighlightingOnLoad();
 <li>Type the following into the console:</li>
 </ul>
 
-<pre><code class="r">tally(~gender, data = atus_clean)
+<pre><code class="r">tally(~gender, 
+      data = atus_clean)
 </code></pre>
 
 <ul>
@@ -915,12 +910,94 @@ hljs.initHighlightingOnLoad();
 <li>To makes these types of comparisons, we can make a <strong>2-way frequency table</strong>:</li>
 </ul>
 
-<pre><code class="r">tally(phys_challenge~gender, data = atus_clean)
+<pre><code class="r">tally(phys_challenge~gender, 
+      data = atus_clean)
 </code></pre>
 
-<pre><code>Error in tally(~gender, data = atus_clean) : 
-  unused argument (data = atus_clean)
+<ul>
+<li><strong>Run this command and write down what you notice about the numbers in the table?. Are we still counting?</strong></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Interpreting 2-way frequency tables</h3>
+<div class="slideContent" >
+<ul>
+<li>Recall that  there were 1371 more women than men in our data set.
+
+<ul>
+<li>Comparing <strong>counts</strong> then doesn&#39;t make sense.</li>
+<li>If there are more women, then we might  expect women to have more physical challenges (compared to men).</li>
+</ul></li>
+<li>Instead of using <strong>counts</strong>, we use <strong>percentages</strong>
+
+<ul>
+<li>So for instance, roughly 89.198% of men do not have a physical difficulty.</li>
+</ul></li>
+<li>Percentages let us make comparisons between groups, even if one group is much larger than another.</li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Changing our format</h3>
+<div class="slideContent" >
+<ul>
+<li>If we did want to make a table with <em>counts</em> instead of <em>percentages</em>, we can change the <code>format</code> of our frequency table.</li>
+<li>Run the following line:</li>
+</ul>
+
+<pre><code class="r">tally(phys_challenge~gender, 
+      data = atus_clean, 
+      format = &#39;count&#39;)
 </code></pre>
+
+<ul>
+<li><strong>Which gender had more people report NOT having a physical challenge, in terms of counts?</strong></li>
+<li><strong>Which gender had more people report NOT having a physical challenge, in terms of percents?</strong></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Adding margins</h3>
+<div class="slideContent" >
+<ul>
+<li>Making frequency tables with counts can be misleading.</li>
+<li>To make them less so, we can add in the <strong>margins</strong> or totals for each gender.</li>
+<li>Run this line of code:</li>
+</ul>
+
+<pre><code class="r">tally(phys_challenge~gender, 
+      data = atus_clean, 
+      format = &#39;count&#39;, 
+      margins = TRUE)
+</code></pre>
+
+<ul>
+<li><strong>Explain what happened to the output by including <code>margins = TRUE</code> in the function. What happens when <code>margins = FALSE</code>?</strong></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>On your own</h3>
+<div class="slideContent" >
+<ul>
+<li><strong>Which gender has a higher rate of <em>part time employment</em>?</strong></li>
+<li><strong>Explore the amount of time each gender socializes</strong>
+
+<ul>
+<li><strong>Create a subset of data of people who socialized at least 1 minute or more</strong></li>
+<li><strong>Compare the average amount of socializing done by each gender</strong></li>
+<li><strong>Does one gender&#39;s amount of socializing vary more than the other?</strong></li>
+</ul></li>
+</ul>
 
 </div>
 

@@ -819,23 +819,34 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
+<h3>In the beginning ...</h3>
+<div class="slideContent" >
+<ul>
+<li>Most of the labs thus far have been about learning how to visualize, summarize, and manipulate data.</li>
+<li>Now we&#39;ll start to learn some more formal and advanced techniques.</li>
+<li>We&#39;ll start this lab by learning some commands for <em>numerical summaries</em>.</li>
+<li>We&#39;ll also cover how we talk about the <em>distribution</em> of data.</li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
 <h3>How to talk about data</h3>
 <div class="slideContent" >
 <ul>
-<li><p>When we make plots of our data, often times want to know:</p>
+<li>When we make plots of our data, we usually want to know:
 
 <ul>
 <li>Where is the <em>bulk</em> of the data?</li>
-<li>Where is the data more <em>sparse</em> or <em>thin</em>?</li>
+<li>Where is the data more <em>sparse</em>, or <em>thin</em>?</li>
 <li>What values are <em>typical</em>?</li>
 <li>How much does the data <em>vary</em>?</li>
 </ul></li>
-<li><p>To answer these questions, we want to look at the <em>distribution</em> of our data.</p>
+<li>To answer these questions, we want to look at the <em>distribution</em> of our data.
 
 <ul>
-<li>Where&#39;s the <strong>center</strong> of our data?</li>
-<li>How is it <strong>spread</strong>?</li>
-<li>What sort of <strong>shape</strong> does it have?</li>
+<li>We describe <em>distributions</em> by talking about where the <strong>center</strong> of the data is, how <strong>spread</strong> out it is, and what sort of <strong>shape</strong> it has.</li>
 </ul></li>
 </ul>
 
@@ -846,17 +857,16 @@ hljs.initHighlightingOnLoad();
 <h3>Let&#x27;s begin!</h3>
 <div class="slideContent" >
 <ul>
-<li><p>Start by answering the following questions in your journal:</p>
+<li>Start by answering the following questions about the <em>Personality Color</em> survey you took:
 
 <ul>
-<li><strong>What was your <em>predominant color</em>? And what was your score for that color?</strong></li>
-<li><strong>Do you think your score for your predominant color was <em>typical</em> in your class?</strong></li>
-<li><strong>Which color&#39;s score do you predict had the most variation?</strong></li>
+<li><strong>What was your <em>predominant Personality Color</em>? What was your point-total for that color?</strong></li>
+<li><strong>Do you think the point-total for your predominant color was <em>typical</em> for your class?</strong></li>
 </ul></li>
-<li><p>Now: Download, upload and load your class&#39; personality color data.</p>
+<li>Now: Download, upload, and load your class&#39; <em>Personality Color</em> data.
 
 <ul>
-<li>Name your data: <code>colors</code></li>
+<li>Name your data <code>colors</code> when you load it.</li>
 </ul></li>
 </ul>
 
@@ -871,9 +881,9 @@ hljs.initHighlightingOnLoad();
 <li>Answer the following in your journal:
 
 <ul>
-<li><strong>Write down the <code>names</code> of the 4 different <em>color score</em> variables.</strong></li>
-<li><strong>How many variables are there in the data?</strong></li>
-<li><strong>How many observations are there?</strong></li>
+<li><strong>Write down the <code>names</code> of the 4 variables that contain the point-totals for each color.</strong></li>
+<li><strong>How many variables are in the data set?</strong></li>
+<li><strong>How many observations are in the data set?</strong></li>
 </ul></li>
 </ul>
 
@@ -884,19 +894,23 @@ hljs.initHighlightingOnLoad();
 <h3>Centers</h3>
 <div class="slideContent" >
 <ul>
-<li>Use the following code to make a <code>dotPlot</code> of the scores for your <em>predominant color</em> 
+<li>Use the following code to make a <code>dotPlot</code> of the scores for your <em>predominant color</em>.
 
 <ul>
-<li>Replace <code>x</code> with your predominant color&#39;s variable name.</li>
+<li>Replace the <code>x</code> with your predominant color&#39;s variable name.</li>
 </ul></li>
 </ul>
 
-<pre><code class="r">dotPlot(~x, data = colors)
+<pre><code class="r">dotPlot(~x, data = colors, cex = 1.0)
 </code></pre>
 
 <ul>
-<li><strong>Based on the plot, what would you say was the <em>typical</em> score for your class for this color?</strong> </li>
-<li><strong>Why did you choose this value as the <em>typical</em> value for your class?</strong></li>
+<li>Pro-tip: You can make the dots in your plot smaller/larger by changing the value of <code>cex</code>.</li>
+<li><strong>Based on the plot, what would you say was the <em>typical</em> score for your class for this color?</strong> 
+
+<ul>
+<li><strong>Explain why you chose this value as the <em>typical</em> value for your class.</strong></li>
+</ul></li>
 </ul>
 
 </div>
@@ -907,7 +921,7 @@ hljs.initHighlightingOnLoad();
 <div class="slideContent" >
 <ul>
 <li><strong>Means</strong> and <strong>medians</strong> are usually good ways to <em>estimate</em> the <em>typical</em> value of our data.</li>
-<li>Type the following commands into the console (But replace <code>x</code> by your predominant color variable): </li>
+<li>Type the following commands into the console (remember to replace the <code>x</code> with the variable name of your predominant color): </li>
 </ul>
 
 <pre><code class="r">mean(~x, data = colors)
@@ -917,7 +931,11 @@ hljs.initHighlightingOnLoad();
 </code></pre>
 
 <ul>
-<li><strong>Do the <em>mean</em> and <em>median</em> give roughly the same answer?</strong></li>
+<li><strong>Do the <em>mean</em> and <em>median</em> give roughly the same answer?</strong>
+
+<ul>
+<li><strong>Explain why you think they do or do not.</strong></li>
+</ul></li>
 </ul>
 
 </div>
@@ -927,10 +945,10 @@ hljs.initHighlightingOnLoad();
 <h3>Comparing birth_genders</h3>
 <div class="slideContent" >
 <ul>
-<li>Make a dotPlot of your <em>predominant color</em> again but this time split (facet) the plot based on gender.
+<li>Make a <code>dotPlot</code> of your <em>predominant color</em> again; but this time, split (facet) the plot based on gender.
 
 <ul>
-<li><strong>Do males and females differ in their typical scores? Answer by giving the values of the centers for each distribution.</strong></li>
+<li><strong>Do males and females differ in their typical scores for this color? Answer by giving the values of the centers for each distribution.</strong></li>
 <li>Use the following code to check your estimates:</li>
 </ul></li>
 </ul>
@@ -940,7 +958,7 @@ hljs.initHighlightingOnLoad();
 </code></pre>
 
 <ul>
-<li><strong>Is the bulk of one gender&#39;s data closer/further-away from the center? What about the plot makes you think that?</strong></li>
+<li><strong>Is the bulk of one gender&#39;s data closer or further away from the center? What about the plot makes you think that?</strong></li>
 </ul>
 
 </div>
@@ -951,11 +969,11 @@ hljs.initHighlightingOnLoad();
 <div class="slideContent" >
 <ul>
 <li>We already saw how to calculate an estimate for the data&#39;s <em>typical</em> value by finding its <em>mean</em>.</li>
-<li>We might also like to know how closely the rest of the date is to this <em>typical</em> value. 
+<li>We might also like to describe how closely the rest of the data are to this <em>typical</em> value. 
 
 <ul>
 <li>We often refer to this as the <strong>variability</strong> of the data. </li>
-<li>Variability is seen in a histogram as the horizontal <em>spread</em></li>
+<li>Variability is seen in a histogram or dotplot as the horizontal <em>spread</em>.</li>
 </ul></li>
 </ul>
 
@@ -969,9 +987,9 @@ hljs.initHighlightingOnLoad();
 <li>The <strong>mean absolute deviation</strong> finds how far away, on average, the data are from the mean.
 
 <ul>
-<li>We often write <em>mean absolute deviation</em> as <em>MAD</em></li>
+<li>We often write <em>mean absolute deviation</em> as <em>MAD</em>.</li>
 </ul></li>
-<li>Calculate the MAD by using the following code:</li>
+<li>Calculate the MAD of your <em>predominant color</em> by using the following code and <strong>record the value</strong>:</li>
 </ul>
 
 <pre><code class="r">MAD(~x, data = colors)
@@ -987,11 +1005,38 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
+<h3>Standard Deviation</h3>
+<div class="slideContent" >
+<ul>
+<li>A similar method for quantifying the <em>variability</em> of our data is the <strong>standard deviation</strong>.
+
+<ul>
+<li>We abbreviate the <em>standard deviation</em> as <em>SD</em>.</li>
+<li>Want to know why <em>SD</em> was invented? &hellip; Take calculus!</li>
+</ul></li>
+<li>Calculate the SD by using the following code:</li>
+</ul>
+
+<pre><code class="r">stdev(~x, data = colors)
+</code></pre>
+
+<ul>
+<li><strong>Is the gender with the larger SD the same as the gender with the larger MAD?</strong>
+
+<ul>
+<li><strong>Is this surprising? Why or why not?</strong></li>
+</ul></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
 <h3>Shapes</h3>
 <div class="slideContent" >
 <ul>
-<li>Now we know how to estimate a distribution&#39;s <em>typical</em> value and it&#39;s <em>variability</em>.</li>
-<li>The last way we usually describe what data looks like is by describing its <em>shape</em>.</li>
+<li>Now we know how to estimate a distribution&#39;s <em>typical</em> value and its <em>variability</em>.</li>
+<li>The last way we usually describe what data look like is by describing the distribution&#39;s <em>shape</em>.</li>
 </ul>
 
 </div>
@@ -1010,8 +1055,10 @@ hljs.initHighlightingOnLoad();
 <li>When describing the shape of a distribution we want to know:
 
 <ul>
-<li>Between what values is the bulk of our data.</li>
-<li>Between what values is the data relatively scarce.</li>
+<li>Between what values do the bulk of our data fall?</li>
+<li>Between what values do the data appear relatively scarce (or thin)?</li>
+<li>Is the data equally distributed on both sides of the center?</li>
+<li>Is more data on one side of the center than the other?</li>
 </ul></li>
 </ul>
 
@@ -1022,13 +1069,13 @@ hljs.initHighlightingOnLoad();
 <h3>Shape is different than center and spread</h3>
 <div class="slideContent" >
 <ul>
-<li>Create a <code>dotPlot</code> for your predominant color but split it into two graphs based on whether your classmate played a sport or not.
+<li>Create a <code>dotPlot</code> for your <em>predominant color</em>, but split it into two graphs based on whether your classmates are active in sports or not.
 
 <ul>
-<li><strong>Most of our data is contained between which values?</strong></li>
+<li><strong>Most of the data are contained between which values?</strong></li>
 <li><strong>Describe which values don&#39;t have very much data.</strong></li>
-<li><strong>Are the shapes of the distributions drastically different?</strong></li>
-<li><strong>Would you say that either distribution is <em>skewed</em>? Or <em>symmetric</em>?</strong></li>
+<li><strong>Are the shapes of the distributions drastically different for classmates who participate in sports versus those who don&#39;t?</strong></li>
+<li><strong>Would you say that either distribution is <em>skewed</em>? Or <em>symmetric</em>? Explain and provide your graph.</strong></li>
 </ul></li>
 </ul>
 
@@ -1039,12 +1086,12 @@ hljs.initHighlightingOnLoad();
 <h3>On your own</h3>
 <div class="slideContent" >
 <ul>
-<li>Using your the scores of your <em>secondary</em> color, answer the following questions in your journals:
+<li>Using the scores of your <em>secondary</em> personality color, answer the following questions in your journals:
 
 <ul>
-<li><strong>What scores are the most/least common? Write down any code you used to find your answers.</strong></li>
+<li><strong>What scores are the most/least common for this color? Write down any code you used to find your answers.</strong></li>
 <li><strong>What was the typical score for your secondary color? Did males/females have different typical scores?</strong></li>
-<li><strong>Do the values of your secondary color have more or less variablility than those of your predominant color? How do you know? Use a graph and a numerical summary to support your answer.</strong> </li>
+<li><strong>Do the values of your secondary color have more or less variability than those of your predominant color? How do you know? Use a graph and a numerical summary to support your answer.</strong> </li>
 </ul></li>
 </ul>
 

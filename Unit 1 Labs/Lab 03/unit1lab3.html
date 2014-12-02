@@ -828,6 +828,7 @@ hljs.initHighlightingOnLoad();
 <li><strong>Objects</strong> assign a <em>name</em> and <em>type</em> to a set of <em>values</em>.</li>
 <li><em>Functions</em>, like <code>histogram</code>, are also objects with names and coded <em>steps</em> instead of sets <em>values</em></li>
 </ul></li>
+<li><strong>Objects</strong> then are the groups of values, variables or steps needed by a function, that we can use to easily analyze data.</li>
 </ul>
 
 </div>
@@ -843,17 +844,17 @@ hljs.initHighlightingOnLoad();
 <li><code>bargraph</code> is a <strong>function</strong> object.
 
 <ul>
-<li>Put other objects between the parenthesis and it produces a bargraph.</li>
+<li>This function takes other objects, <code>helmet</code> &amp; <code>cdc</code> in this case, and performs all the necessary steps needed to produces a bargraph.</li>
 </ul></li>
 <li><code>helmet</code> is a <strong>vector</strong> object.
 
 <ul>
-<li>It stores all of the values of our variable and keeps them in order.</li>
+<li>The different values of the <code>helmet</code> variable are stored, in order, for us to use.</li>
 </ul></li>
 <li><code>cdc</code> is a <strong>data frame</strong> object.
 
 <ul>
-<li>It stores all of the different variables in our data set.</li>
+<li>It stores all of the different values of <em>all</em> of the variables variables in our data set and keeps them all ordered.</li>
 </ul></li>
 </ul>
 
@@ -867,8 +868,8 @@ hljs.initHighlightingOnLoad();
 <li>By using <em>objects</em>, we simplify the code writing process:
 
 <ul>
-<li>We can reference the <em>variables</em> in our <em>data sets</em> by name instead of having to write out the values by hand.</li>
-<li>We can call upon <em>functions</em> instead of having to continually write the same lines of code over and over and over &hellip;</li>
+<li>We can use the <em>values</em> of our data sets by calling their <em>variable names</em>.</li>
+<li>We can call  <em>functions</em> instead of having to continually write the same steps over and over and over &hellip;</li>
 </ul></li>
 </ul>
 
@@ -880,15 +881,15 @@ hljs.initHighlightingOnLoad();
 <div class="slideContent" >
 <ul>
 <li>Load the <code>cdc</code> data into RStudio.</li>
-<li>We can use the following to look at the first 25 of the <code>weight</code> variable</li>
+<li>We can use the following to look at the first 25 values of the <code>weight</code> variable</li>
 </ul>
 
-<pre><code class="r">head(weight, data = cdc, n = 25)
+<pre><code class="r">head(~weight, data = cdc, n = 25)
 </code></pre>
 
 <ul>
-<li><strong>How would you add these 25 values together</strong></li>
-<li><strong>What would you do if someone asked you to compute the total combined height of <em>everyone</em> in the data?</strong></li>
+<li><strong>Write down how you would add these 25 values together.</strong></li>
+<li><strong>What would you do if someone asked you to compute the total combined weight of <em>everyone</em> in the data?</strong></li>
 </ul>
 
 </div>
@@ -899,7 +900,7 @@ hljs.initHighlightingOnLoad();
 <div class="slideContent" >
 <ul>
 <li>Here&#39;s how we can answer these questions using objects.</li>
-<li>First we save our values as an object named <code>first_25</code> (but really, we can name it whatever we&#39;d like).</li>
+<li>First we save our values as new object named <code>first_25</code>.</li>
 </ul>
 
 <pre><code class="r">first_25 &lt;- head(~weight, data = cdc, 
@@ -914,7 +915,7 @@ hljs.initHighlightingOnLoad();
 </code></pre>
 
 <ul>
-<li>And if we wanted the total height of everyone?</li>
+<li>And if we wanted the total weight of everyone?</li>
 </ul>
 
 <pre><code class="r">sum(~weight, data = cdc)
@@ -924,15 +925,48 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>But why are objects awesome?</h3>
+<h3>A couple things to notice (1&#x2F;2):</h3>
 <div class="slideContent" >
 <ul>
-<li>Using objects makes it easy to:
+<li>When we save objects and give them a name, we want to choose names that are:
 
 <ul>
-<li>Store information and values.</li>
-<li>Manipulate them</li>
-<li>And use them!</li>
+<li><em>Short</em>. So we don&#39;t have to waste time writing our code.</li>
+<li><em>Descriptive</em>. So we can remember what the object contains.</li>
+</ul></li>
+<li><strong>In your opinion, was <code>first_25</code> a good name for the first 25 values of our <code>weight</code> variable? Why or why not?</strong> 
+
+<ul>
+<li><strong>What would be a good name for the value of <code>sum(first_25</code>?</strong></li>
+</ul></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>A couple things to notice (2&#x2F;2):</h3>
+<div class="slideContent" >
+<ul>
+<li>When we ran:</li>
+</ul>
+
+<pre><code class="r">sum(~weight, data = cdc)
+</code></pre>
+
+<ul>
+<li>You may have noticed a warning message popped up:</li>
+</ul>
+
+<pre><code class="r">Warning message:
+In sum(~weight, data = cdc) : The data contains 979 missing values
+</code></pre>
+
+<ul>
+<li>This message is telling us that 979 people in our data didn&#39;t report their weight.
+
+<ul>
+<li>We denote <strong>missing values</strong> in our data as <code>NA</code>, which stands for <em>not available</em>.</li>
 </ul></li>
 </ul>
 
@@ -943,7 +977,7 @@ hljs.initHighlightingOnLoad();
 <h3>What just happened?</h3>
 <div class="slideContent" >
 <ul>
-<li>We created a <strong>vector</strong> of the first 25 <code>heights</code> in our data and <strong>assigned</strong> it the name <code>first_25</code>.
+<li>We created a <strong>vector</strong> of the first 25 <code>weights</code> in our data and <strong>assigned</strong> it the name <code>first_25</code>.
 
 <ul>
 <li>The arrow, <code>&lt;-</code>, is how we assigned the <em>values</em> from <code>head(~weight, data = cdc, n = 25)</code> to the <em>name</em> <code>first_25</code>.</li>
@@ -963,239 +997,55 @@ hljs.initHighlightingOnLoad();
 <h3>More about objects</h3>
 <div class="slideContent" >
 <ul>
-<li>Every <em>object</em> has 3 things:
+<li>Every <em>object</em> needs 3 things:
 
 <ol>
 <li>The <em>name</em> we can call to use the object.</li>
 <li>The <em>values</em> contained in the object. </li>
 <li>The <em>type</em> of object.</li>
 </ol></li>
-<li>Some common <em>types</em> of objects are:
-
-<ul>
-<li><strong>Vectors</strong>, which stores values in a particular order.</li>
-<li><strong>Data frame</strong>, which stores </li>
-</ul></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Making vectors (tra-la-la!)</h3>
+<h3>Our example explained:</h3>
 <div class="slideContent" >
-<ul>
-<li>Let&#39;s create our <strong>vector</strong> of integers between 5 and 14:
-
-<ul>
-<li>We&#39;ll <em>name</em> it <code>numbers</code></li>
-<li>We&#39;ll <em>assign</em> it values using <code>&lt;-</code></li>
-<li>Our <em>values</em> will be the numbers 5 through 14</li>
-</ul></li>
-<li>Write the following code into your console.</li>
-</ul>
-
-<pre><code class="r">numbers &lt;- c(5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
+<pre><code class="r">first_25 &lt;- head(~weight, data = cdc, 
+                 n = 25)
 </code></pre>
 
 <ul>
-<li>Click on the <em>environment</em> pane. 
-
-<ul>
-<li>Objects you create will show up there!</li>
-</ul></li>
+<li><code>first_25</code> is the <em>name</em> of our object.</li>
+<li>We <strong>assign</strong> the <em>values</em> of our object, <code>head(~weight, data = cdc, n = 25)</code>, using the <code>&lt;-</code> symbol.</li>
+<li>And since we&#39;re storing values from a single variable, and keeping them in order, we&#39;re creating a <em>vector</em> type object.</li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Let&#x27;s review what we just did</h3>
-<div class="slideContent" >
-<pre><code class="r">numbers &lt;- c(5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
-</code></pre>
-
-<ul>
-<li>This line of code tells R:
-
-<ol>
-<li>Create a single <em>object</em> called <code>numbers</code></li>
-<li><strong>Combine</strong> the numbers 5 through 14 into a <em>single object</em> using the <code>c()</code> function</li>
-<li><strong>Assign</strong> the values we combined, using the <code>&lt;-</code> symbol, to the object we created.</li>
-</ol></li>
-<li>The <code>numbers</code> object you created is an example of a <em>vector</em></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Let&#x27;s review what we just did</h3>
-<div class="slideContent" >
-<pre><code class="r">numbers &lt;- c(5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
-</code></pre>
-
-<ul>
-<li>After running the code:
-
-<ul>
-<li>The <em>object</em> pops up in the <em>environment</em> tab.</li>
-<li>Nothing is printed in the console.</li>
-</ul></li>
-<li><strong>What happens if you type <code>numbers</code> into the console and hit <em>enter</em>?</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Try the example again using objects</h3>
+<h3>Objects and their info</h3>
 <div class="slideContent" >
 <ul>
-<li>Let&#39;s go back now and redo our previous example:</li>
-<li>Create the object</li>
+<li><strong>Run the following commands and give a brief description about what each function does:</strong></li>
 </ul>
 
-<pre><code class="r">numbers &lt;- c(5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
+<pre><code class="r">names(cdc)
+</code></pre>
+
+<pre><code class="r">print(~age, data = cdc)
+</code></pre>
+
+<pre><code class="r">View(first_25)
+</code></pre>
+
+<pre><code class="r">str(cdc)
 </code></pre>
 
 <ul>
-<li><strong>What type of object is this again? Why?</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Try the example again using objects</h3>
-<div class="slideContent" >
-<ul>
-<li>R contains many convenient functions.</li>
-<li>One such function is the <code>sum()</code> function.
-
-<ul>
-<li>It takes vectors of numbers and adds all the values in them together.</li>
-</ul></li>
-</ul>
-
-<pre><code class="r">sum(numbers)
-</code></pre>
-
-<ul>
-<li><strong>Do you think using objects is any easier than just adding the numbers together in the console? Why or why not? Be honest!</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Try the example again using objects</h3>
-<div class="slideContent" >
-<ul>
-<li>Let&#39;s save the sum of all numbers between 5 and 15 as another new object.</li>
-<li>Run these lines of code:</li>
-</ul>
-
-<pre><code class="r">total &lt;- sum(numbers)
-</code></pre>
-
-<pre><code class="r">total
-</code></pre>
-
-<ul>
-<li><strong>What is the <em>name</em> of the object? What is its value? How did you tell R to <em>assign</em> the value to the object?</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Try the example again using objects</h3>
-<div class="slideContent" >
-<ul>
-<li>Finally, let&#39;s calculate the differences of the sum and the numbers
-
-<ul>
-<li>Meaning, <code>95 minus 5</code>, <code>95 minus 6</code>, and so on</li>
-</ul></li>
-<li>We already have the sum (<code>total</code>) and all of the values (<code>numbers</code>)</li>
-<li>To calculate the differences of these two objects:</li>
-</ul>
-
-<pre><code class="r">total - numbers
-</code></pre>
-
-<ul>
-<li><strong>In your opinion, was using objects for this task easier than before? Why or why not?</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Other ways to save time!</h3>
-<div class="slideContent" >
-<ul>
-<li>The <code>sum()</code> function was just one function that saves you time.</li>
-<li>Compare the outputs of the following:</li>
-</ul>
-
-<pre><code class="r">c(5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
-</code></pre>
-
-<pre><code class="r">5:14
-</code></pre>
-
-<pre><code class="r">seq(from = 5, to = 14, by = 1)
-</code></pre>
-
-<ul>
-<li><strong>How are these 3 methods different?</strong></li>
-<li><strong>Explain how you think R interprets each line.</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>... a twist</h3>
-<div class="slideContent" >
-<ul>
-<li>Compare the following outputs:</li>
-</ul>
-
-<pre><code class="r">5:14
-</code></pre>
-
-<pre><code class="r">14:5
-</code></pre>
-
-<ul>
-<li><strong>What do you notice about the outputs?</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>... a final twist</h3>
-<div class="slideContent" >
-<ul>
-<li>Compare the following outputs:</li>
-</ul>
-
-<pre><code class="r">seq(from = 5, to = 14, by = 1)
-</code></pre>
-
-<pre><code class="r">seq(from = 5, to = 14, by = 3)
-</code></pre>
-
-<pre><code class="r">seq(5, 14, 1)
-</code></pre>
-
-<ul>
-<li><strong>What do you notice about the outputs?</strong></li>
-<li><strong>For each line, explain how each part effects the output</strong></li>
+<li><strong>What information gets printed for the last command?</strong></li>
 </ul>
 
 </div>
@@ -1205,21 +1055,18 @@ hljs.initHighlightingOnLoad();
 <h3>On your own:</h3>
 <div class="slideContent" >
 <ul>
-<li><strong>Create a <em>vector</em> of numbers and save it as an <em>object</em></strong></li>
-<li>Run the commands with <em>your_object</em> (whatever you decide to name it):</li>
-</ul>
-
-<pre><code class="r">your_object + your_object
-</code></pre>
-
-<pre><code class="r">your_object * 2
-</code></pre>
-
-<pre><code class="r">cumsum(your_object)
-</code></pre>
+<li><strong>Choose a variable besides <code>weight</code>:</strong>
 
 <ul>
-<li><strong>Describe the computations that take place for each output</strong></li>
+<li><strong>Create a <em>vector</em> of the last 50 values using the <code>tail</code> function (Look at how you used the <code>head</code> function for a hint at how to use the <code>tail</code> function).</strong></li>
+<li><strong>Give your <em>vector</em> object a name and write it down. Is the name short &amp; descriptive?</strong></li>
+</ul></li>
+<li><strong>For these 50 values, create either a <code>histogram</code> or a <code>bargraph</code>.</strong>
+
+<ul>
+<li><strong>How did you know which plot is appropriate for your values?</strong></li>
+<li><strong>Which particular values seemed to occur the most often?</strong></li>
+</ul></li>
 </ul>
 
 </div>

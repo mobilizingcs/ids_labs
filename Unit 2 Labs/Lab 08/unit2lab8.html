@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Getting it together</title>
+  <title>The Horror Movie Shuffle</title>
     
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -795,6 +795,16 @@ hljs.initHighlightingOnLoad();
 </script>
 
    
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    showProcessingMessages: false,
+    messageStyle: "none"
+  });
+</script>
+
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
   
 
 
@@ -808,10 +818,10 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="default" data-transition-speed="slow">
-<h1>Getting it together</h1><p></p>
+<h1>The Horror Movie Shuffle</h1><p></p>
 
 <div class="slideContent" >
-<p>Unit 2 - Lab 8  </p>
+<p>Unit 2 - Lab 8 </p>
 
 <p>Directions: Follow along with the slides and answer the questions in <strong>red</strong> font in your journal.</p>
 
@@ -819,33 +829,15 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Putting data together</h3>
+<h3>Some background...</h3>
 <div class="slideContent" >
 <ul>
-<li>In this lab, we’ll continue our investigation into whether the personality color traits are meaningful. 
+<li><p>For this lab, we will be working with the <code>slasher</code> data file, which contains information about 485 characters from a random sample of 50 slasher horror films.</p></li>
+<li><p><code>gender</code> and <code>survival</code> are the two variables in the dataset, each with only two possible values:</p>
 
 <ul>
-<li>We&#39;ll investigate whether your personality color says anything about how stressed or chill you are during the day.<br/></li>
-<li>To do this, we’ll need to merge two datasets together.</li>
-</ul></li>
-<li>Load your personality color data and name it <code>colors</code>.</li>
-<li>Then <em>Download, upload, load</em> your stress/chill data set and call it <code>stress</code>.</li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Looking at stress&#x2F;chill</h3>
-<div class="slideContent" >
-<ul>
-<li>Go ahead and <code>View</code> the stress/chill data.</li>
-<li>Based on the variables in the stress/chill data:
-
-<ul>
-<li><strong>Which of the provided variables do you think might tend to raise or lower people&#39;s stress/chill level?</strong></li>
-<li><strong>Do you think people&#39;s personalities might effect their general level of stress?</strong> </li>
-<li><strong>Using just the stress/chill data, could you answer the question above?</strong></li>
+<li><code>gender</code>: Female, Male</li>
+<li><code>survival</code>: Survives, Dies</li>
 </ul></li>
 </ul>
 
@@ -853,108 +845,354 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Deciding how to merge</h3>
+<h3>Initial thoughts...</h3>
 <div class="slideContent" >
 <ul>
-<li>Before we merge data, we need to decide <em>how</em> we plan on merging it.
-
-<ul>
-<li>We can <em>stack</em> our data sets, that is take one data set&#39;s rows and add them to the bottom of the other.</li>
-<li>We can also <em>join</em> data sets horizontally. Where we take take one data set&#39;s columns and take them on at the end of the other data set&#39;s columns.</li>
-</ul></li>
-<li>We have data about people&#39;s stress levels in our <code>stress</code> data and data about people&#39;s personalities in our <code>colors</code> data.
-
-<ul>
-<li><strong>Write down the steps you would take if you had to merge these data sets together manually</strong></li>
-</ul></li>
+<li><p>We would like to know if a character&#39;s gender can give us information about whether or not he/she will survive through the end of the horror film.</p></li>
+<li><p><strong>Write down a hypothesis about the statement above. Do you think males and females are equally likely to die in a horror film? Is one gender more likely to die than the other? Why do you think this?</strong></p></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Finding variables in common:</h3>
+<h3>Take a look at the data</h3>
 <div class="slideContent" >
 <ul>
-<li>Look at the <code>names</code> of the variables in each data set.</li>
-<li>To merge different data sets together, we need to find variables they have in common.
-
-<ul>
-<li><strong>Which variables do the data sets have in common?</strong></li>
-<li><strong>Which variable would make sense to merge the data sets together with? Why not one of the others?</strong></li>
-</ul></li>
+<li>After you&#39;ve loaded the <code>slasher</code> data file, create a two-way frequency table of the two variables.</li>
 </ul>
 
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Putting them together</h3>
-<div class="slideContent" >
-<ul>
-<li>Before merging the variables together:
-
-<ul>
-<li><strong>Write down the dimensions of each data set</strong></li>
-<li><strong>Wride down the number of rows and columns you think the <em>merged</em> data should have.</strong></li>
-</ul></li>
-<li>To merge the data sets together, run the following command:</li>
-</ul>
-
-<pre><code class="r">merge(stress, colors, by = &quot;user.id&quot;)
+<pre><code class="r">tally(survival~gender, data = slasher, 
+      format = &#39;count&#39;)
 </code></pre>
 
 <ul>
-<li>Save this <code>merged</code> data set as <code>stress_colors</code>.</li>
+<li><p><strong>Is it fair to compare the counts of survivors from males and females?  Or does it matter that there are more males than females? Explain.</strong></p></li>
+<li><p><strong>Record the total number of males and females.  How many people survived overall? Use RStudio to calculate the <em>proportion</em> of each gender who survived.</strong></p></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Looking at our data</h3>
+<h3>First, look at proportions</h3>
 <div class="slideContent" >
 <ul>
-<li><code>View</code> your merged data. Does it look <em>right</em>?</li>
-<li><strong>What are the dimensions of this new <code>stress_colors</code> data set?</strong>
+<li><p>Instead of tallying just the counts, let&#39;s use proportions.</p>
 
 <ul>
-<li><strong>Why did it make sense to combine the data by joining the columns?</strong> </li>
-<li><strong>Why didn&#39;t we stack the rows of data instead?</strong></li>
+<li>What is a proportion? \( \frac{\text{# observed}}{\text{total}} \)</li>
 </ul></li>
-<li><strong>What happens if you swap the order of the data sets in the code above? Do the dimensions change?</strong></li>
 </ul>
 
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Saving our file to use later</h3>
-<div class="slideContent" >
-<ul>
-<li>Now that we&#39;ve created the data set we want, it makes sense for us to save it for later use.</li>
-<li>Run the following code to save your  <code>stress_colors</code> data:</li>
-</ul>
-
-<pre><code class="r">save(stress_colors, file = &quot;~/stress_colors.rda&quot;)
+<pre><code class="r">tally(survival~gender, data = slasher, 
+      format = &#39;proportion&#39;)
 </code></pre>
 
 <ul>
-<li>Look in your home folder in the <em>Files</em> tab to make sure your data was saved.</li>
+<li><p><strong>Record the proportion of females who survived and the proportion of males who survived. Is there a difference? Is this difference larger or smaller than what you expected?</strong></p></li>
+<li><p><strong>How can you tell you&#39;re calculating the proportion of females/males from the syntax above?</strong></p></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>A preview...</h3>
+<h3>But we still don&#x27;t know how to answer...</h3>
 <div class="slideContent" >
 <ul>
-<li>In the next lab, we&#39;ll analyze our newly merged data. But for now, try creating a plot to answer the following question:
+<li><p>Again, how can we know if there&#39;s actually a difference between the groups? How far apart do the values need to be?</p></li>
+<li><p>A horror movie fanatic says that there’s really not a difference: that men and women are equally likely to survive. The only reason you see a difference is just due to chance. </p>
 
 <ul>
-<li><strong>Did some (predominant) personality colors spent more time outside than others? If so, which? Write down why you think that might be the case.</strong></li>
+<li>Survival is like drawing a blue marble from a bag with 18 blue marbles and 82 red marbles.</li>
+<li>In our case, men and women draw from the same bag; but, because of chance, the proportions of characters who survive are not exactly the same for each gender.</li>
 </ul></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Take a chance</h3>
+<div class="slideContent" >
+<ul>
+<li>Let’s take a trip to Chance World, where everything happens for no reason at all &ndash; they occur just by chance. </li>
+<li>To see what Horror Movie survival is like in Chance World, we could answer by randomly shuffling the <code>survives</code> and <code>dies</code> values in the data set.
+
+<ul>
+<li>Imagine that the 485 characters are in a line, just in the order they appear in our data set.</li>
+<li>Next, make up cards, writing “Survives” on 85 cards (because 85 people in the data set survived) and “Dies” on the rest.</li>
+<li>Then, shuffle the cards and deal them to each person in the line. This way, they “survive” or “die” according to chance.</li>
+</ul></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Do the shuffle!</h3>
+<div class="slideContent" >
+<ul>
+<li><p>When we shuffle data, we still use our original data set as a starting point.</p></li>
+<li><p>But, when we want to create the new samples, we have to rearrange (or shuffle) one column of our data.</p></li>
+<li><p>We can do that by leaving the <code>gender</code> variable as is, but shuffling the <code>survival</code> variable.</p></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>A little more explaining please...</h3>
+<div class="column column1 slideContent" >
+<ul>
+<li>If four rows of our <code>slasher</code> data looked like:</li>
+</ul>
+
+<table><thead>
+<tr>
+<th align="center">gender</th>
+<th align="center">survival</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center">Female</td>
+<td align="center">Dies</td>
+</tr>
+<tr>
+<td align="center">Male</td>
+<td align="center">Dies</td>
+</tr>
+<tr>
+<td align="center">Female</td>
+<td align="center">Survives</td>
+</tr>
+<tr>
+<td align="center">Male</td>
+<td align="center">Dies</td>
+</tr>
+</tbody></table>
+
+<ul>
+<li><strong>Which rows differ from the original?</strong></li>
+</ul>
+
+
+</div>
+
+<div class="column column2 slideContent" >
+
+
+<ul>
+<li>We can shuffle <code>survival</code> and possibly get this:</li>
+</ul>
+
+<table><thead>
+<tr>
+<th align="center">gender</th>
+<th align="center">survival</th>
+</tr>
+</thead><tbody>
+<tr>
+<td align="center">Female</td>
+<td align="center">Dies</td>
+</tr>
+<tr>
+<td align="center">Male</td>
+<td align="center">Survives</td>
+</tr>
+<tr>
+<td align="center">Female</td>
+<td align="center">Dies</td>
+</tr>
+<tr>
+<td align="center">Male</td>
+<td align="center">Dies</td>
+</tr>
+</tbody></table>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>How do I create a whole shuffled data set?!</h3>
+<div class="slideContent" >
+<ul>
+<li>Use the <code>resample()</code> function!</li>
+</ul>
+
+<pre><code class="r">shuffle1 &lt;- 
+  resample(slasher, shuffled = &quot;survival&quot;)
+</code></pre>
+
+<ul>
+<li><p><strong>How does this shuffled sample compare to the original <code>slasher</code> data set?</strong> (Hint: Use the <code>tally()</code> function)</p></li>
+<li><p><strong>Record the proportion of females who survived and the proportion of males who survived. Is there a difference? Is your value the same as your neighbor&#39;s? Why might they be different?</strong></p></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Let&#x27;s compare...</h3>
+<div class="slideContent" >
+<ul>
+<li>Recall that the original <code>slasher</code> data returns the following results when using the <code>tally</code> function:</li>
+</ul>
+
+<p><center></p>
+
+<TABLE border=1>
+<TR> <TH>  </TH> <TH> Female </TH> <TH> Male </TH>  </TR>
+  <TR> <TD align="right"> Dies </TD> <TD align="right"> 0.77 </TD> <TD align="right"> 0.87 </TD> </TR>
+  <TR> <TD align="right"> Survives </TD> <TD align="right"> 0.23 </TD> <TD align="right"> 0.13 </TD> </TR>
+   </TABLE>
+
+<p></center></p>
+
+<ul>
+<li><strong>Is the difference in proportions from your shuffled data larger or smaller than the difference from the original data? What might this mean?</strong></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Detecting differences</h3>
+<div class="slideContent" >
+<ul>
+<li><p>In order to know if there is a difference in proportions in our actual data, we have to create many shuffled data sets (not just one).</p></li>
+<li><p>We can use the <code>do()</code> function to help us with this! </p></li>
+</ul>
+
+<pre><code class="r">shuffles &lt;- 
+  do(300)*resample(slasher, 
+            shuffled=&quot;survival&quot;)
+</code></pre>
+
+<ul>
+<li><p><strong>How many samples did we create? What part of the code tells you this?</strong></p></li>
+<li><p><strong>Look at the data file. Can you tell which observations belong to which shuffle?</strong></p></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>We need to correct this!</h3>
+<div class="slideContent" >
+<ul>
+<li>In order to sort our shuffled data sets, we can simply tell RStudio to tally the proportions for each shuffle.</li>
+</ul>
+
+<pre><code class="r">tally300 &lt;- do(300) * 
+            tally(survival~gender, 
+            data = resample(slasher, 
+            shuffled = &quot;survival&quot;), 
+            format = &#39;proportion&#39;)
+</code></pre>
+
+<ul>
+<li><p>Note that our <code>data</code> in this function is a new shuffle since we&#39;re using the <code>resample()</code> function.</p></li>
+<li><p>Look at the top of the data file (using <code>head(tally300)</code>) to see what this new tallied data looks like.</p></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Now we have all the proportions!</h3>
+<div class="slideContent" >
+<ul>
+<li><p>Each of the 300 shuffled data sets are contained in this table by giving us the proportions of:</p>
+
+<ul>
+<li>Females who Died</li>
+<li>Females who Survived</li>
+<li>Total percent of females</li>
+<li>Males who Died</li>
+<li>Males who Survived</li>
+<li>Total percent of males</li>
+</ul></li>
+<li><p><strong>What are the variable names associated with this new data frame?</strong></p></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Now what?</h3>
+<div class="slideContent" >
+<ul>
+<li><p>Our original <code>slasher</code> data showed the difference in proportions of gender survival to be about 0.10 (females - males = 0.23 - 0.13 = 0.10).</p></li>
+<li><p><strong>Looking at your first row of simulated data in the <code>tally300</code> data frame, what is the difference between females who survived and males who survived?</strong></p></li>
+<li><p><strong>How does this value compare to the true difference in proportions?</strong></p></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>But don&#x27;t we have 300 rows?!</h3>
+<div class="slideContent" >
+<ul>
+<li><p>Instead of having to calculate each of the 300 differences by hand, we can use RStudio!</p></li>
+<li><p>We can simply calculate the differences between the females who survive and the males who survive by using the <code>transform()</code> function introduced in Lab 1.7b.</p></li>
+</ul>
+
+<pre><code class="r">tally300 &lt;- transform(tally300, 
+            difference = Survives.Female - 
+                         Survives.Male)
+</code></pre>
+
+<ul>
+<li><strong>What new variable was added to our <code>tally300</code> data set?</strong></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>I need a picture...</h3>
+<div class="slideContent" >
+<ul>
+<li>Just seeing all these values for the differences isn&#39;t helpful. Let&#39;s look at a histogram!</li>
+</ul>
+
+<pre><code class="r">histogram(~difference, data = tally300)
+</code></pre>
+
+<ul>
+<li><p><strong>What is the range of your differences?</strong></p></li>
+<li><p><strong>What is the typical difference?</strong></p></li>
+<li><p><strong>Recall that the difference in the actual data was 0.10. How does that value fit into your histogram? (Is it near the center of the distribution? Is it in the tails? Is it included at all?)</strong></p></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>What does all this mean?</h3>
+<div class="slideContent" >
+<ul>
+<li><p>We created 300 random shuffles of our data to see if gender can actually tell us something about whether a character survives through the end of a horror film. </p></li>
+<li><p>In these shuffles, we assumed that there was NO difference between genders and each gender had an equal likelihood of surviving.</p>
+
+<ul>
+<li>If the actual value falls in the center of the distribution, then the difference between genders just happened by chance.</li>
+<li>If the actual value falls in the tails, or is not in the distribution at all, then there is an actual difference between the genders, meaning that one gender has a higher likelihood of surviving a horror film.</li>
+</ul></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>So what do you think?</h3>
+<div class="slideContent" >
+<ul>
+<li><p><strong>Does gender play a role in whether or not a character will survive in a horror film? Explain your reasoning and include a plot.</strong></p></li>
+<li><p><strong>If you wanted to survive in a horror film, would you want to play a female character or a male character?</strong></p></li>
 </ul>
 
 </div>

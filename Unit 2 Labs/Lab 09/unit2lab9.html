@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>What Stresses Us?</title>
+  <title>Stressing? Or Chilling?</title>
     
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -808,7 +808,7 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="default" data-transition-speed="slow">
-<h1>What Stresses Us?</h1><p></p>
+<h1>Stressing? Or Chilling?</h1><p></p>
 
 <div class="slideContent" >
 <p>Unit 2 - Lab 9  </p>
@@ -819,69 +819,70 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>In the previous lab...</h3>
+<h3>A change in the winds</h3>
 <div class="slideContent" >
 <ul>
-<li>We made a data set that combined our <em>stress/chill</em> data with our <em>personality color</em> data.
+<li>You have come quite a long ways in your data science studies!
 
 <ul>
-<li>Load your data by clicking on it in the <em>Files</em> pane.</li>
+<li>Now, we can begin to practice <em>applying</em> what we have learned to new data sets.</li>
 </ul></li>
-<li>In case you missed the last lab (Or didn&#39;t save your merged data): 
-
-<ul>
-<li>Load your <em>personality color</em> data and name it <code>colors</code>.</li>
-<li>Load your <em>stress/chill</em> data and name it <code>stress</code>.</li>
-<li>Then run the following to merge them together:</li>
-</ul></li>
-</ul>
-
-<pre><code class="r">stress_colors &lt;- merge(stress, colors, 
-                       by = &quot;user.id&quot;)
-</code></pre>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>For this lab ...</h3>
-<div class="slideContent" >
-<ul>
-<li>We&#39;ll use the techniques we learned in the previous labs to explore and analyze our <code>stress_colors</code> data.</li>
+<li>We will start by exploring and familiarizing ourselves with data about you and your classmates&#39; <em>Stress/Chill</em> levels.</li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Stress&#x2F;Chill</h3>
+<h3>What causes us stress?</h3>
 <div class="slideContent" >
 <ul>
-<li>Make a plot that shows the distribution of the <code>stresschill</code> values.</li>
-<li>Using only your plot:
-
-<ul>
-<li><strong>Describe the <em>shape</em> of the distribution.</strong></li>
-<li><strong>Typically, what <code>stresschill</code> level did your class support.</strong></li>
-<li><strong>Estimate the <em>variability</em> of <code>streechill</code> values.</strong></li>
-</ul></li>
-<li><strong>Write a sentence explaining how and why you chose your particular values to describe the <em>variablity</em> and <em>center</em> of the data.</strong></li>
+<li><strong>Under what circumstances do you feel the most stressed out?</strong></li>
+<li><strong>When do you feel the most relaxed?</strong></li>
+<li><strong>Do you think the people you&#39;re with or where you are affects your stress level?</strong></li>
+<li>In this lab, we will investigate under what conditions we feel more stressed, or more chilled.</li>
+<li>Download, upload, and load your <em>Stress/Chill</em> data and name it: <code>stress</code>.</li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Stress&#x2F;Chill &amp; Sports</h3>
+<h3>Getting familiar with our data</h3>
 <div class="slideContent" >
 <ul>
-<li>Create two boxplots of your <code>stresschill</code> values based on whether the person played sports or not.</li>
-<li>Based on your plot:
+<li><strong><code>View</code> your <code>stress</code> data and write down which variables are <em>numeric</em> and which are <em>categorical</em>.</strong></li>
+<li><strong>Does a negative value for <code>stresschill</code> mean the person is stressing or chilling?</strong></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Who do we stress&#x2F;chill the most with?</h3>
+<div class="slideContent" >
+<ul>
+<li><strong>Create plots or compute numerical summaries to answer the following questions. Write down both your answers to the question and the code you used to answer it.</strong>
 
 <ul>
-<li><strong>Does it appear that one group has higher levels of stress than the other? Justify your answer.</strong></li>
-<li><strong>Compute (Don&#39;t estimate the answers using the plot) the <em>min</em>, <em>max</em>, <em>Q1</em>, <em>median</em>, <em>mean</em> and <em>Q3</em> for each group.</strong> </li>
-<li>(HINT: You can compute these numbers with a single line of code. Check lab 2.2 if you forgot how.)</li>
+<li><strong>Which group of people are we with when we&#39;re feeling the most <em>chilled</em>?</strong></li>
+<li><strong>Which group of people are we with when we&#39;re feeling the most <em>stressed</em>?</strong></li>
+</ul></li>
+<li><strong>In your opinion, do you think there is a reason why we might feel more or less stressed when we&#39;re around different people? Why do you think that is?</strong></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>What role does our environment play?</h3>
+<div class="slideContent" >
+<ul>
+<li><strong>Do you predict that being <em>indoors</em>, as opposed to <em>outdoors</em>, will change our <code>stresschill</code> levels?</strong>
+
+<ul>
+<li><strong>Are people who are indoors more or less stressed than those who are outdoors?</strong></li>
+<li><strong>Create barplots of people&#39;s <code>stresschill</code> levels when they are <em>indoors</em> and <em>outdoors</em>. Are their stress levels different? Justify your answer.</strong></li>
 </ul></li>
 </ul>
 
@@ -889,20 +890,32 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Colors &amp; Sports</h3>
+<h3>Do people stress us out?</h3>
 <div class="slideContent" >
 <ul>
-<li>The color test predicts that <em>ORANGE</em> people like physical activity, and so we should see more sports players in the orange than the other colors. </li>
-<li><strong>Does the data support this claim?</strong>
+<li><strong>Do you think being around more people makes us feel more stressed out? Why?</strong>
 
 <ul>
-<li><strong>Write out the code you used to determine this answer.</strong></li>
+<li><strong>Come up with a plot to answer this question and write down the code you used.</strong></li>
+<li><strong>Are you able to find an answer? Or is the answer ambiguous?</strong></li>
+<li><strong>Does your answer change depending on if people are <em>indoors</em> or <em>outdoors</em>?</strong></li>
 </ul></li>
-<li><strong>Could it be that the proportion of sports players who are <em>ORANGE</em> is just by chance? Answer this question by comparing the actual proportion of sports players who are <em>ORANGE</em> to 300 randomized trials, answer the following question:</strong>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Coming up next...</h3>
+<div class="slideContent" >
+<ul>
+<li><strong>Do you think people are just naturally more stressed out? Could you answer this question using just the variables in our <code>stress</code> data?</strong></li>
+<li>In the next lab, we will learn how to combine multiple data sets.
 
 <ul>
-<li><strong>Justify your answer by comparing the <em>actual</em> data to the 300 randomized trials.</strong></li>
+<li>This will let us combine our information about <code>stress</code> levels with information about people&#39;s personalities!</li>
 </ul></li>
+<li>Stay tuned, more to come!</li>
 </ul>
 
 </div>

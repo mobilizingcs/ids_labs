@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>More Linear Models Using Movie Data</title>
+  <title>Eyeballing Normal</title>
     
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -808,10 +808,10 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="default" data-transition-speed="slow">
-<h1>More Linear Models Using Movie Data</h1><p></p>
+<h1>Eyeballing Normal</h1><p></p>
 
 <div class="slideContent" >
-<p>Unit 2 - Lab 12 </p>
+<p>Unit 2 - Lab 12  </p>
 
 <p>Directions: Follow along with the slides and answer the questions in <strong>red</strong> font in your journal.</p>
 
@@ -819,16 +819,20 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>A lab for exploring!</h3>
+<h3>We love the Normal curve, we do!</h3>
 <div class="slideContent" >
 <ul>
-<li><p>In this lab, you will use techniques from the last two labs to 
-explore other possible linear relationships between variables in the <code>movie</code> data set.</p></li>
-<li><p>Recall:</p>
+<li>Data scientists love the Normal curve.
 
 <ul>
-<li>Lab 2.10 focused on correlation coefficients and their interpretations.</li>
-<li>Lab 2.11 focused on finding the line of best fit and using the equation to make predictions. </li>
+<li>Lots of real distributions of data appear to follow the shape of the Normal curve.</li>
+<li>This opens the door to a lot of sweet applications for using the <em>Normal model</em>.</li>
+</ul></li>
+<li>When data appears to be <em>Normally distributed</em>, we can use the <em>Normal model</em> to:
+
+<ul>
+<li>Simulate <em>Normally distributed</em> data.</li>
+<li>Easily compute probabilities.</li>
 </ul></li>
 </ul>
 
@@ -836,62 +840,171 @@ explore other possible linear relationships between variables in the <code>movie
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Let&#x27;s set it up</h3>
+<h3>Oh Normal curve we love you!</h3>
 <div class="slideContent" >
 <ul>
-<li><p>The y-variable we will be examining is <code>domest_gross</code>, which is the amount of money the movie earned domestically (in the United States).</p></li>
-<li><p>Your goal is to determine which variable in the <code>movie</code> data set is the best predictor of domestic gross. In other words, find the best x-variable that&#39;s linearly related to domestic gross.</p></li>
+<li>So in this lab, we will look at some previous data sets to see if we can find data that is roughly Normally distributed.</li>
+<li>We will find out what is needed to be able to simulate Normally distributed data.</li>
+<li>We will use the Normal model to compute probabilites.</li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>How can we do this?</h3>
+<h3>The ol&#x27; CDC data</h3>
 <div class="slideContent" >
 <ul>
-<li><p><strong>What are the numerical variables that can be used as potential predictors?</strong></p></li>
-<li><p>First, calculate correlation coefficients between <code>domest_gross</code> and the numerical variables you listed above.</p></li>
-<li><p><strong>Record each pair&#39;s correlation coefficient and describe what it means. Is the trend positive/negative? Is the relationship weak, moderate, or strong?</strong></p></li>
-<li><p><strong>Which variable has the strongest correlation? What does this mean?</strong></p></li>
+<li>Type <code>load(cdc)</code> to load up our CDC data.</li>
+<li>Create a histogram for the <code>height</code> of the people in our <code>cdc</code> data.
+
+<ul>
+<li><strong>Write down, based on what you know about the Normal distribution, whether or not you think the data is Normally distributed. Explain.</strong></li>
+<li><strong>Calculate the mean and standard deviation of <code>height</code>.</strong></li>
+<li><strong>Find the value of the mean on the histogram. Does the distribution seem roughly symmetric?</strong></li>
+</ul></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Next steps</h3>
+<h3>Over-laying Normal curves</h3>
 <div class="slideContent" >
 <ul>
-<li><p>Now, we should create scatter plots of the relationships between domestic gross and the variables you chose on the previous slide.</p></li>
-<li><p><strong>Which plot looks the most linear?</strong></p></li>
-<li><p><strong>What does this plot tell us about the ability to predict domestic gross profits based on your x-variable?</strong></p></li>
-<li><p><strong>How does this plot relate to the correlation coefficient you found for it? Does it make sense?</strong></p></li>
+<li>When trying to determine if data may be Normally distributed, it&#39;s often helpful to overlay an actual Normal curve onto the data.</li>
+<li>To do this for our CDC <code>height</code> variable, type:</li>
+</ul>
+
+<pre><code class="r">histogram(~height, data=cdc,
+          fit=&#39;normal&#39;)
+</code></pre>
+
+<ul>
+<li>When we include the argument <code>fit=&#39;normal&#39;</code> to the <code>histogram</code> function, we are telling R to fit a Normal curve to our data&#39;s distribution.</li>
+<li><strong>Based on the histrogram with the Normal curve over-layed, do you think that people&#39;s heights are Normally distributed? Why?</strong></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Finally</h3>
+<h3>Eyeballing Normal distributions</h3>
 <div class="slideContent" >
 <ul>
-<li><p>Find the line of best fit for the plot that you said was most linear on the previous slide. </p></li>
-<li><p><strong>Record the equation using the variable names.</strong></p></li>
-<li><p><strong>Using your equation, calculate a prediction for domestic gross based on your x-variable.</strong></p>
+<li>Often times, the best and simplest way to decide if something is Normally distributed is to just eyeball it.</li>
+<li>The distribution of people&#39;s heights really doesn&#39;t look very Normally distributed.
 
-<p>-For example, if <code>year</code> and <code>domest_gross</code> showed the best linear relationship, then we can predict what the domestic gross profit is expected to be for a movie created in 2015.</p></li>
-<li><p><strong>Does your prediction make sense? Give a statement describing what the result means.</strong></p></li>
+<ul>
+<li>The <em>peak</em> of the distribution seems too flat.</li>
+<li>The distribution also appears to spread out too much.</li>
+</ul></li>
+<li>Create another histogram of people&#39;s heights; but this time, <em>split</em> the plots by &#39;gender&#39;.</li>
+<li><strong>Do the histograms for each gender look more Normal than the plot where they were together? Explain your reasoning.</strong></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Wrapping up</h3>
+<h3>Before we go on:</h3>
 <div class="slideContent" >
 <ul>
-<li><strong>How were you able to find the best predictor of domestic gross? What three things did you need to explore?</strong></li>
+<li>Data scientists often try to fit models to data so that they can carry out simulations.</li>
+<li>Based on your plots, answer the following:
+
+<ul>
+<li><strong>Would you recommend a data scientist use the <em>Normal</em> model to simulate people&#39;s heights? If <em>yes</em>, explain why. If <em>no</em>, explain which values would occur too often.</strong></li>
+<li><strong>Would you recommend a data scientist use the <em>Normal</em> model to simulate each gender&#39;s heights? Why or why not?</strong> </li>
+</ul></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Practice, practice, practice</h3>
+<div class="slideContent" >
+<ul>
+<li>Run the following to load the <code>movie</code> data:</li>
+</ul>
+
+<pre><code class="r">data(movie)
+</code></pre>
+
+<ul>
+<li>This data set contains a variety of information about movies from Rotten Tomatoes.
+
+<ul>
+<li>One of the variables is <code>reviews_num</code>, which is the number of reviews Rotten Tomatoes used to create its movie rating.</li>
+</ul></li>
+<li>Let&#39;s practice and decide if the number of reviews is Normally distributed.</li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>The Eye giveth ... and also tricketh</h3>
+<div class="slideContent" >
+<ul>
+<li>Start by creating the following histogram</li>
+</ul>
+
+<pre><code class="r">histogram(~reviews_num, data=movie, 
+          nint = 10, fit = &#39;normal&#39;)
+</code></pre>
+
+<ul>
+<li><strong>Does the distribution look <em>Normal</em>? Why or why not?</strong></li>
+<li>Now type this:</li>
+</ul>
+
+<pre><code class="r">histogram(~reviews_num, data=movie, 
+          nint = 11, fit = &#39;normal&#39;)
+</code></pre>
+
+<ul>
+<li><strong>Does this plot look more or less Normally distributed than the previous one? Explain.</strong></li>
+<li><strong>Would you recommend using a <em>Normal</em> model? Why?</strong></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Using Normal Models</h3>
+<div class="slideContent" >
+<ul>
+<li>Data scientists like using Normal models because it often resembles real data.
+
+<ul>
+<li>But not EVERYTHING is Normally distributed.</li>
+</ul></li>
+<li>As a data scientist in training, you must decide when a Normal model seems appropriate.
+
+<ul>
+<li>No model is ever perfect 100% of the time.</li>
+<li>If you choose a model, you should be able to justify why you chose it.</li>
+</ul></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>On your own</h3>
+<div class="slideContent" >
+<ul>
+<li>Load the <code>titanic</code> data set.</li>
+<li><strong>Which variables do you think might fit a Normal curve?</strong></li>
+<li><strong>Which variables would you say <em>definitely</em> would NOT fit a Normal curve?</strong>
+
+<ul>
+<li>Be sure to try altering the number of bins to see if it helps your data look more or less normal.</li>
+<li>Also try splitting the data based on <code>gender</code>, or whether the person <code>survived</code>.</li>
+</ul></li>
+<li><strong>Write down the variables you think look roughly Normal. Include the code and any relevant plots you used to make your decision.</strong></li>
 </ul>
 
 </div>

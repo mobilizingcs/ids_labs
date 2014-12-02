@@ -822,14 +822,14 @@ hljs.initHighlightingOnLoad();
 <h3>Just the beginning</h3>
 <div class="slideContent" >
 <ul>
-<li>Means, medians, MAD are just a few examples of <strong>numerical summaries</strong></li>
+<li>Means, medians, MAD &amp; SD are just a few examples of <strong>numerical summaries</strong>.</li>
 <li><strong>Numerical summaries</strong> are numbers that describe characteristics of the data.
 
 <ul>
-<li>Means and medians described the <em>center</em> of the data.</li>
-<li>MAD describes the <em>spread</em> of the data.</li>
+<li>Means &amp; medians describe the <em>center</em> of the data.</li>
+<li>MAD &amp; SD describe the <em>spread</em> of the data.</li>
 </ul></li>
-<li><strong>What other numbers might describe your data?</strong></li>
+<li>In this lab, we will look at what other numbers are useful for describing data.</li>
 </ul>
 
 </div>
@@ -839,11 +839,11 @@ hljs.initHighlightingOnLoad();
 <h3>To start</h3>
 <div class="slideContent" >
 <ul>
-<li>Load your personality color data again and name it: <code>colors</code>.</li>
+<li>Load your <em>Personality Color</em> data again and name it: <code>colors</code>.</li>
 <li>In the lines of code that appear on the following slides:
 
 <ul>
-<li>Replace any of the <code>~x</code>  that appear in the code with the name of the variable for your <em>predominant</em> color&#39;s score.</li>
+<li>Replace any <code>~x</code> with the name of the variable for your <em>predominant</em> color score.</li>
 </ul></li>
 </ul>
 
@@ -854,7 +854,7 @@ hljs.initHighlightingOnLoad();
 <h3>Extreme values</h3>
 <div class="slideContent" >
 <ul>
-<li>Besides looking at <em>typical</em> values, sometimes we want to see <em>extreme</em> values. Like the smallest and largest values.</li>
+<li>Besides looking at <em>typical</em> values, sometimes we want to see <em>extreme</em> values, like the smallest and largest values.</li>
 <li>To find these values, we can calculate the <code>min</code> and <code>max</code>.</li>
 </ul>
 
@@ -864,6 +864,13 @@ hljs.initHighlightingOnLoad();
 <pre><code class="r">max(~x, data=colors)
 </code></pre>
 
+<ul>
+<li>Or use the <code>range</code> function to compute both</li>
+</ul>
+
+<pre><code class="r">range(~x, data=colors)
+</code></pre>
+
 </div>
 
 </section>
@@ -871,33 +878,13 @@ hljs.initHighlightingOnLoad();
 <h3>Range</h3>
 <div class="slideContent" >
 <ul>
-<li>Using the <code>min</code> and <code>max</code> values, we can calculate the <code>range</code>.</li>
-<li>The range is another, but often less informative, measure of <em>spread</em>.
+<li>While the <code>range</code> function will compute the smallest and largest values, the <strong>range</strong> is also a term we use to describe the spread of our data.
 
 <ul>
 <li>Calculate it by taking: <code>max - min</code>.</li>
+<li>The range is often much less informative than other measures of <em>spread</em>.</li>
 </ul></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Calculating the range</h3>
-<div class="slideContent" >
-<ul>
-<li>Try the following<br/></li>
-</ul>
-
-<pre><code class="r">max(~x, data = colors) - min(~x, data = colors)
-</code></pre>
-
-<pre><code class="r">range(~x, data = colors)
-</code></pre>
-
-<ul>
-<li>Notice how we can treat <code>max(~x, data = colors)</code> and <code>min(~x, data = colors)</code> just like we would a number.</li>
-<li><strong>Why did we say that the <code>range</code> is less informative than the <code>MAD</code>?</strong> 
+<li><strong>What makes the <code>range</code> less informative than the <code>MAD</code>?</strong> 
 
 <ul>
 <li><strong>Can you think of examples where the <code>MAD</code> will give you a better idea of the <em>variability</em> than the <code>range</code>?</strong></li>
@@ -924,13 +911,13 @@ hljs.initHighlightingOnLoad();
 <h3>The Inter-Quartile-Range (IQR)</h3>
 <div class="slideContent" >
 <ul>
-<li>Just like we used the <code>min</code> and <code>max</code> to comupute the <code>range</code>, we can also use the <em>1st</em> and <em>3rd</em> quartiles to compute the <code>IQR</code>.</li>
+<li>Just like we used the <code>min</code> and <code>max</code> to compute the <code>range</code>, we can also use the <em>1st</em> and <em>3rd</em> quartiles to compute the <code>IQR</code>.</li>
 <li>The <code>IQR</code> is another way to describe <em>spread</em>.
 
 <ul>
 <li>It describes how <em>wide</em> or <em>narrow</em> the middle 50% of our data are.</li>
 <li>If the <code>IQR</code> is a small number, then the middle 50% of our data is close to the <code>median</code>.</li>
-<li>Otherwise, the middle 50% of our data is further away from our median.</li>
+<li>Otherwise, the middle 50% of our data is further away from the median.</li>
 </ul></li>
 </ul>
 
@@ -941,8 +928,8 @@ hljs.initHighlightingOnLoad();
 <h3>Finding the IQR</h3>
 <div class="slideContent" >
 <ul>
-<li>Make a histogram of your predominant color&#39;s scores.</li>
-<li>Visually: 
+<li>Make a histogram of your <em>predominant</em> color&#39;s scores.</li>
+<li>Visually (Don&#39;t worry about being super-precise): 
 
 <ul>
 <li>Cut the distribution into quarters so the <em>number</em> of <em>data points</em> is equal for each piece. (Each piece should contain 25% of the data.)</li>
@@ -969,7 +956,7 @@ hljs.initHighlightingOnLoad();
 </code></pre>
 
 <ul>
-<li><strong>How close was your visual estimate to the actual IQR?</strong></li>
+<li><strong>Compare your visual estimate of the IQR to the actual IQR.</strong></li>
 </ul>
 
 </div>
@@ -982,7 +969,7 @@ hljs.initHighlightingOnLoad();
 <li>The median, 1st and 3rd <em>quartiles</em> can also be called the the 50th, 25th and 75th <em>quantiles</em>. 
 
 <ul>
-<li>They&#39;re called <em>quantiles</em> becuase they&#39;re the <em>quantity</em> of data that is smaller than that value.</li>
+<li>They are called <em>quantiles</em> because they describe the <em>quantity</em> of data that is smaller than that value.</li>
 <li>The 25th quantile is the value that is larger than 25% of the data.</li>
 </ul></li>
 <li>We can compute quantiles too!</li>
@@ -1002,7 +989,7 @@ hljs.initHighlightingOnLoad();
 <h3>Boxplots</h3>
 <div class="slideContent" >
 <ul>
-<li>By using the medians, quartiles and min/max, we can construct a new single variable plot called the <strong>box and whisker</strong> plot, often shortened to just a <strong>boxplot</strong>.</li>
+<li>By using the medians, quartiles, and min/max, we can construct a new single variable plot called the <strong>box and whisker</strong> plot, often shortened to just a <strong>boxplot</strong>.</li>
 <li>Try making one of your predominant color.</li>
 </ul>
 
@@ -1010,7 +997,7 @@ hljs.initHighlightingOnLoad();
 </code></pre>
 
 <ul>
-<li><strong>Sketch your boxplot in your journal. Label the <code>min</code> <code>max</code>, <code>Q1</code>, <code>Q3</code> and <code>median</code>.</strong></li>
+<li><strong>Sketch your boxplot in your journal. Label the <code>min</code>, <code>max</code>, <code>Q1</code>, <code>Q3</code>, and the <code>median</code>.</strong></li>
 <li><strong>How would you interpret your boxplot? Where is the bulk of your data? Where is it centered? Can you say anything about its shape?</strong></li>
 </ul>
 
@@ -1022,8 +1009,8 @@ hljs.initHighlightingOnLoad();
 <div class="slideContent" >
 <ul>
 <li>Numerical summaries are brief ways to describe our data, using numbers.</li>
-<li>Computing lots of different summaries though can be tedious.</li>
-<li>Use the following command to compute some of our <em>favorite</em> summaries</li>
+<li>However, computing lots of different summaries can be tedious.</li>
+<li>Use the following command to compute some of our <em>favorite</em> summaries.</li>
 </ul>
 
 <pre><code class="r">favstats(~x, data=colors)

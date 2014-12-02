@@ -1,0 +1,2466 @@
+<?xml version="1.0"?>
+<mountainpeaks>
+<metadata>
+  <definitions>
+    <definition>
+      <variable>peak</variable>
+      <description>The name of the peak itself.</description>
+    </definition>
+    <definition>
+      <variable>range</variable>
+      <description>The mountain range containing the peak.</description>
+    </definition>
+    <definition>
+      <variable>state</variable>
+      <description>the state that the peak is in.</description>
+    </definition>
+    <definition>
+      <variable>long</variable>
+      <description>The location of the peak in terms of longitude.</description>
+      <note>Negative values of longitude denote locations in the western hemisphere.</note>
+    </definition>
+    <definition>
+      <variable>lat</variable>
+      <description>The location of the peak in terms of latitude.</description>
+      <note>Positive values of latitude denote locations in the northern hemisphere.</note>
+    </definition>
+    <definition>
+      <variable>elev_ft</variable>
+      <description>The height of the peak from sea-level in feet.</description>
+    </definition>
+    <definition>
+      <variable>elev_m</variable>
+      <description>The height of the peak from sea-level in meters.</description>
+    </definition>
+    <definition>
+      <variable>prominence_ft</variable>
+      <description>The height of just the peak above the mountain in feet.</description>
+      <note>For more information, see the wikipedia page for topographic prominence.</note>
+      <url>http://en.wikipedia.org/wiki/Topographic_prominence</url>
+    </definition>
+    <definition>
+      <variable>prominence_m</variable>
+      <description>The height of just the peak above the mountain in meters.</description>
+      <note>For more information, see the wikipedia page for topographic prominence.</note>
+      <url>http://en.wikipedia.org/wiki/Topographic_prominence</url>
+    </definition>
+    <definition>
+      <variable>rank</variable>
+      <description>The rank of mountains in terms of height.</description>
+      <note>1 denoteds the tallest mountain in the table.</note>
+      <note>200 denotes the smallest mountain in the table.</note>
+    </definition>
+  </definitions>
+  <footnote>
+    <source>
+      <name>Wikipedia: List of the highest major summits of the United States</name>
+      <url>http://en.wikipedia.org/w/index.php?title=List_of_the_highest_major_summits_of_the_United_States&amp;oldid=627362855</url>
+      <date>10/28/2014</date>
+    </source>
+  </footnote>
+</metadata>
+<data>
+  <mountains>
+    <mountain>
+      <peak>Mount McKinley (Denali)</peak>
+      <range>Alaska Range</range>
+      <state>Alaska</state>
+      <long>-151.0063</long>
+      <lat>63.069</lat>
+      <elev_ft>20236</elev_ft>
+      <elev_m>6168</elev_m>
+      <prominence_ft>20174</prominence_ft>
+      <prominence_m>6149</prominence_m>
+      <rank>1</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Saint Elias</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-140.9264</long>
+      <lat>60.2931</lat>
+      <elev_ft>18009</elev_ft>
+      <elev_m>5489</elev_m>
+      <prominence_ft>11250</prominence_ft>
+      <prominence_m>3429</prominence_m>
+      <rank>2</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Foraker</peak>
+      <range>Alaska Range</range>
+      <state>Alaska</state>
+      <long>-151.3998</long>
+      <lat>62.9604</lat>
+      <elev_ft>17400</elev_ft>
+      <elev_m>5304</elev_m>
+      <prominence_ft>7250</prominence_ft>
+      <prominence_m>2210</prominence_m>
+      <rank>3</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Bona</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-141.7495</long>
+      <lat>61.3856</lat>
+      <elev_ft>16550</elev_ft>
+      <elev_m>5044</elev_m>
+      <prominence_ft>6900</prominence_ft>
+      <prominence_m>2103</prominence_m>
+      <rank>4</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Blackburn</peak>
+      <range>Wrangell Mountains</range>
+      <state>Alaska</state>
+      <long>-143.4031</long>
+      <lat>61.7305</lat>
+      <elev_ft>16390</elev_ft>
+      <elev_m>4996</elev_m>
+      <prominence_ft>11640</prominence_ft>
+      <prominence_m>3548</prominence_m>
+      <rank>5</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Sanford</peak>
+      <range>Wrangell Mountains</range>
+      <state>Alaska</state>
+      <long>-144.1292</long>
+      <lat>62.2132</lat>
+      <elev_ft>16237</elev_ft>
+      <elev_m>4949</elev_m>
+      <prominence_ft>7687</prominence_ft>
+      <prominence_m>2343</prominence_m>
+      <rank>6</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Fairweather (Fairweather Mountain)</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-137.5267</long>
+      <lat>58.9064</lat>
+      <elev_ft>15299</elev_ft>
+      <elev_m>4663</elev_m>
+      <prominence_ft>12995</prominence_ft>
+      <prominence_m>3961</prominence_m>
+      <rank>7</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Hubbard</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-139.0714</long>
+      <lat>60.3192</lat>
+      <elev_ft>15016</elev_ft>
+      <elev_m>4577</elev_m>
+      <prominence_ft>8061</prominence_ft>
+      <prominence_m>2457</prominence_m>
+      <rank>8</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Bear</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-141.1433</long>
+      <lat>61.2834</lat>
+      <elev_ft>14831</elev_ft>
+      <elev_m>4520</elev_m>
+      <prominence_ft>5052</prominence_ft>
+      <prominence_m>1540</prominence_m>
+      <rank>9</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Hunter</peak>
+      <range>Alaska Range</range>
+      <state>Alaska</state>
+      <long>-151.0915</long>
+      <lat>62.9504</lat>
+      <elev_ft>14573</elev_ft>
+      <elev_m>4442</elev_m>
+      <prominence_ft>4648</prominence_ft>
+      <prominence_m>1417</prominence_m>
+      <rank>10</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Alverstone</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-139.0749</long>
+      <lat>60.3518</lat>
+      <elev_ft>14564</elev_ft>
+      <elev_m>4439</elev_m>
+      <prominence_ft>1950</prominence_ft>
+      <prominence_m>594</prominence_m>
+      <rank>11</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Whitney</peak>
+      <range>Sierra Nevada</range>
+      <state>California</state>
+      <long>-118.292</long>
+      <lat>36.5786</lat>
+      <elev_ft>14505</elev_ft>
+      <elev_m>4421</elev_m>
+      <prominence_ft>10080</prominence_ft>
+      <prominence_m>3072</prominence_m>
+      <rank>12</rank>
+    </mountain>
+    <mountain>
+      <peak>University Peak</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-141.7867</long>
+      <lat>61.3272</lat>
+      <elev_ft>14470</elev_ft>
+      <elev_m>4410</elev_m>
+      <prominence_ft>3210</prominence_ft>
+      <prominence_m>978</prominence_m>
+      <rank>13</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Elbert</peak>
+      <range>Sawatch Range</range>
+      <state>Colorado</state>
+      <long>-106.4454</long>
+      <lat>39.1178</lat>
+      <elev_ft>14440</elev_ft>
+      <elev_m>4401</elev_m>
+      <prominence_ft>9093</prominence_ft>
+      <prominence_m>2772</prominence_m>
+      <rank>14</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Massive</peak>
+      <range>Sawatch Range</range>
+      <state>Colorado</state>
+      <long>-106.4757</long>
+      <lat>39.1875</lat>
+      <elev_ft>14428</elev_ft>
+      <elev_m>4398</elev_m>
+      <prominence_ft>1961</prominence_ft>
+      <prominence_m>598</prominence_m>
+      <rank>15</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Harvard</peak>
+      <range>Sawatch Range</range>
+      <state>Colorado</state>
+      <long>-106.3207</long>
+      <lat>38.9244</lat>
+      <elev_ft>14421</elev_ft>
+      <elev_m>4396</elev_m>
+      <prominence_ft>2327</prominence_ft>
+      <prominence_m>709</prominence_m>
+      <rank>16</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Rainier</peak>
+      <range>Cascade Range</range>
+      <state>Washington</state>
+      <long>-121.7604</long>
+      <lat>46.8529</lat>
+      <elev_ft>14417</elev_ft>
+      <elev_m>4394</elev_m>
+      <prominence_ft>13210</prominence_ft>
+      <prominence_m>4026</prominence_m>
+      <rank>17</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Williamson</peak>
+      <range>Sierra Nevada</range>
+      <state>California</state>
+      <long>-118.3111</long>
+      <lat>36.6559</lat>
+      <elev_ft>14379</elev_ft>
+      <elev_m>4383</elev_m>
+      <prominence_ft>1677</prominence_ft>
+      <prominence_m>511</prominence_m>
+      <rank>18</rank>
+    </mountain>
+    <mountain>
+      <peak>La Plata Peak</peak>
+      <range>Sawatch Range</range>
+      <state>Colorado</state>
+      <long>-106.4729</long>
+      <lat>39.0294</lat>
+      <elev_ft>14368</elev_ft>
+      <elev_m>4379</elev_m>
+      <prominence_ft>1861</prominence_ft>
+      <prominence_m>567</prominence_m>
+      <rank>19</rank>
+    </mountain>
+    <mountain>
+      <peak>Blanca Peak</peak>
+      <range>Sangre de Cristo Mountains</range>
+      <state>Colorado</state>
+      <long>-105.4856</long>
+      <lat>37.5775</lat>
+      <elev_ft>14357</elev_ft>
+      <elev_m>4376</elev_m>
+      <prominence_ft>5326</prominence_ft>
+      <prominence_m>1623</prominence_m>
+      <rank>20</rank>
+    </mountain>
+    <mountain>
+      <peak>Uncompahgre Peak</peak>
+      <range>San Juan Mountains</range>
+      <state>Colorado</state>
+      <long>-107.4621</long>
+      <lat>38.0717</lat>
+      <elev_ft>14321</elev_ft>
+      <elev_m>4365</elev_m>
+      <prominence_ft>4277</prominence_ft>
+      <prominence_m>1304</prominence_m>
+      <rank>21</rank>
+    </mountain>
+    <mountain>
+      <peak>Crestone Peak</peak>
+      <range>Sangre de Cristo Mountains</range>
+      <state>Colorado</state>
+      <long>-105.5855</long>
+      <lat>37.9668</lat>
+      <elev_ft>14300</elev_ft>
+      <elev_m>4359</elev_m>
+      <prominence_ft>4554</prominence_ft>
+      <prominence_m>1388</prominence_m>
+      <rank>22</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Lincoln</peak>
+      <range>Mosquito Range</range>
+      <state>Colorado</state>
+      <long>-106.1116</long>
+      <lat>39.3515</lat>
+      <elev_ft>14293</elev_ft>
+      <elev_m>4357</elev_m>
+      <prominence_ft>3862</prominence_ft>
+      <prominence_m>1177</prominence_m>
+      <rank>23</rank>
+    </mountain>
+    <mountain>
+      <peak>Castle Peak</peak>
+      <range>Elk Mountains</range>
+      <state>Colorado</state>
+      <long>-106.8614</long>
+      <lat>39.0097</lat>
+      <elev_ft>14279</elev_ft>
+      <elev_m>4352</elev_m>
+      <prominence_ft>2365</prominence_ft>
+      <prominence_m>721</prominence_m>
+      <rank>24</rank>
+    </mountain>
+    <mountain>
+      <peak>Grays Peak</peak>
+      <range>Front Range</range>
+      <state>Colorado</state>
+      <long>-105.8176</long>
+      <lat>39.6339</lat>
+      <elev_ft>14278</elev_ft>
+      <elev_m>4352</elev_m>
+      <prominence_ft>2770</prominence_ft>
+      <prominence_m>844</prominence_m>
+      <rank>25</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Antero</peak>
+      <range>Sawatch Range</range>
+      <state>Colorado</state>
+      <long>-106.2462</long>
+      <lat>38.6741</lat>
+      <elev_ft>14276</elev_ft>
+      <elev_m>4351</elev_m>
+      <prominence_ft>2503</prominence_ft>
+      <prominence_m>763</prominence_m>
+      <rank>26</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Evans</peak>
+      <range>Front Range</range>
+      <state>Colorado</state>
+      <long>-105.6438</long>
+      <lat>39.5883</lat>
+      <elev_ft>14271</elev_ft>
+      <elev_m>4350</elev_m>
+      <prominence_ft>2769</prominence_ft>
+      <prominence_m>844</prominence_m>
+      <rank>27</rank>
+    </mountain>
+    <mountain>
+      <peak>Longs Peak</peak>
+      <range>Front Range</range>
+      <state>Colorado</state>
+      <long>-105.6151</long>
+      <lat>40.255</lat>
+      <elev_ft>14259</elev_ft>
+      <elev_m>4346</elev_m>
+      <prominence_ft>2940</prominence_ft>
+      <prominence_m>896</prominence_m>
+      <rank>28</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Wilson</peak>
+      <range>San Miguel Mountains</range>
+      <state>Colorado</state>
+      <long>-107.9916</long>
+      <lat>37.8391</lat>
+      <elev_ft>14252</elev_ft>
+      <elev_m>4344</elev_m>
+      <prominence_ft>4024</prominence_ft>
+      <prominence_m>1227</prominence_m>
+      <rank>29</rank>
+    </mountain>
+    <mountain>
+      <peak>White Mountain Peak</peak>
+      <range>White Mountains</range>
+      <state>California</state>
+      <long>-118.2557</long>
+      <lat>37.6341</lat>
+      <elev_ft>14252</elev_ft>
+      <elev_m>4344</elev_m>
+      <prominence_ft>7196</prominence_ft>
+      <prominence_m>2193</prominence_m>
+      <rank>30</rank>
+    </mountain>
+    <mountain>
+      <peak>North Palisade</peak>
+      <range>Sierra Nevada</range>
+      <state>California</state>
+      <long>-118.5145</long>
+      <lat>37.0943</lat>
+      <elev_ft>14248</elev_ft>
+      <elev_m>4343</elev_m>
+      <prominence_ft>2894</prominence_ft>
+      <prominence_m>882</prominence_m>
+      <rank>31</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Princeton</peak>
+      <range>Sawatch Range</range>
+      <state>Colorado</state>
+      <long>-106.2424</long>
+      <lat>38.7492</lat>
+      <elev_ft>14204</elev_ft>
+      <elev_m>4329</elev_m>
+      <prominence_ft>2177</prominence_ft>
+      <prominence_m>664</prominence_m>
+      <rank>32</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Yale</peak>
+      <range>Sawatch Range</range>
+      <state>Colorado</state>
+      <long>-106.3138</long>
+      <lat>38.8442</lat>
+      <elev_ft>14200</elev_ft>
+      <elev_m>4328</elev_m>
+      <prominence_ft>1896</prominence_ft>
+      <prominence_m>578</prominence_m>
+      <rank>33</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Shasta</peak>
+      <range>Cascade Range</range>
+      <state>California</state>
+      <long>-122.1949</long>
+      <lat>41.4092</lat>
+      <elev_ft>14179</elev_ft>
+      <elev_m>4322</elev_m>
+      <prominence_ft>9832</prominence_ft>
+      <prominence_m>2997</prominence_m>
+      <rank>34</rank>
+    </mountain>
+    <mountain>
+      <peak>Maroon Peak</peak>
+      <range>Elk Mountains</range>
+      <state>Colorado</state>
+      <long>-106.989</long>
+      <lat>39.0708</lat>
+      <elev_ft>14163</elev_ft>
+      <elev_m>4317</elev_m>
+      <prominence_ft>2336</prominence_ft>
+      <prominence_m>712</prominence_m>
+      <rank>35</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Wrangell</peak>
+      <range>Wrangell Mountains</range>
+      <state>Alaska</state>
+      <long>-144.0187</long>
+      <lat>62.0059</lat>
+      <elev_ft>14163</elev_ft>
+      <elev_m>4317</elev_m>
+      <prominence_ft>5613</prominence_ft>
+      <prominence_m>1711</prominence_m>
+      <rank>36</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Sneffels</peak>
+      <range>Sneffels Range</range>
+      <state>Colorado</state>
+      <long>-107.7923</long>
+      <lat>38.0038</lat>
+      <elev_ft>14158</elev_ft>
+      <elev_m>4315</elev_m>
+      <prominence_ft>3050</prominence_ft>
+      <prominence_m>930</prominence_m>
+      <rank>37</rank>
+    </mountain>
+    <mountain>
+      <peak>Capitol Peak</peak>
+      <range>Elk Mountains</range>
+      <state>Colorado</state>
+      <long>-107.0829</long>
+      <lat>39.1503</lat>
+      <elev_ft>14137</elev_ft>
+      <elev_m>4309</elev_m>
+      <prominence_ft>1750</prominence_ft>
+      <prominence_m>533</prominence_m>
+      <rank>38</rank>
+    </mountain>
+    <mountain>
+      <peak>Pikes Peak</peak>
+      <range>Front Range</range>
+      <state>Colorado</state>
+      <long>-105.0442</long>
+      <lat>38.8405</lat>
+      <elev_ft>14115</elev_ft>
+      <elev_m>4302</elev_m>
+      <prominence_ft>5530</prominence_ft>
+      <prominence_m>1686</prominence_m>
+      <rank>39</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Eolus</peak>
+      <range>Needle Mountains</range>
+      <state>Colorado</state>
+      <long>-107.6227</long>
+      <lat>37.6218</lat>
+      <elev_ft>14090</elev_ft>
+      <elev_m>4295</elev_m>
+      <prominence_ft>2188</prominence_ft>
+      <prominence_m>667</prominence_m>
+      <rank>40</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Augusta</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-140.4586</long>
+      <lat>60.3078</lat>
+      <elev_ft>14072</elev_ft>
+      <elev_m>4289</elev_m>
+      <prominence_ft>5082</prominence_ft>
+      <prominence_m>1549</prominence_m>
+      <rank>41</rank>
+    </mountain>
+    <mountain>
+      <peak>Handies Peak</peak>
+      <range>San Juan Mountains</range>
+      <state>Colorado</state>
+      <long>-107.5044</long>
+      <lat>37.913</lat>
+      <elev_ft>14058</elev_ft>
+      <elev_m>4285</elev_m>
+      <prominence_ft>1908</prominence_ft>
+      <prominence_m>582</prominence_m>
+      <rank>42</rank>
+    </mountain>
+    <mountain>
+      <peak>Culebra Peak</peak>
+      <range>Culebra Range</range>
+      <state>Colorado</state>
+      <long>-105.1858</long>
+      <lat>37.1224</lat>
+      <elev_ft>14053</elev_ft>
+      <elev_m>4283</elev_m>
+      <prominence_ft>4827</prominence_ft>
+      <prominence_m>1471</prominence_m>
+      <rank>43</rank>
+    </mountain>
+    <mountain>
+      <peak>San Luis Peak</peak>
+      <range>La Garita Mountains</range>
+      <state>Colorado</state>
+      <long>-106.9313</long>
+      <lat>37.9868</lat>
+      <elev_ft>14022</elev_ft>
+      <elev_m>4274</elev_m>
+      <prominence_ft>3113</prominence_ft>
+      <prominence_m>949</prominence_m>
+      <rank>44</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount of the Holy Cross</peak>
+      <range>Sawatch Range</range>
+      <state>Colorado</state>
+      <long>-106.4817</long>
+      <lat>39.4668</lat>
+      <elev_ft>14009</elev_ft>
+      <elev_m>4270</elev_m>
+      <prominence_ft>2111</prominence_ft>
+      <prominence_m>643</prominence_m>
+      <rank>45</rank>
+    </mountain>
+    <mountain>
+      <peak>Grizzly Peak</peak>
+      <range>Sawatch Range</range>
+      <state>Colorado</state>
+      <long>-106.5976</long>
+      <lat>39.0425</lat>
+      <elev_ft>13995</elev_ft>
+      <elev_m>4266</elev_m>
+      <prominence_ft>1928</prominence_ft>
+      <prominence_m>588</prominence_m>
+      <rank>46</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Humphreys</peak>
+      <range>Sierra Nevada</range>
+      <state>California</state>
+      <long>-118.673</long>
+      <lat>37.2705</lat>
+      <elev_ft>13992</elev_ft>
+      <elev_m>4265</elev_m>
+      <prominence_ft>2563</prominence_ft>
+      <prominence_m>781</prominence_m>
+      <rank>47</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Keith</peak>
+      <range>Sierra Nevada</range>
+      <state>California</state>
+      <long>-118.3436</long>
+      <lat>36.7001</lat>
+      <elev_ft>13982</elev_ft>
+      <elev_m>4262</elev_m>
+      <prominence_ft>1936</prominence_ft>
+      <prominence_m>590</prominence_m>
+      <rank>48</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Ouray</peak>
+      <range>Sawatch Range</range>
+      <state>Colorado</state>
+      <long>-106.2247</long>
+      <lat>38.4227</lat>
+      <elev_ft>13961</elev_ft>
+      <elev_m>4255</elev_m>
+      <prominence_ft>2659</prominence_ft>
+      <prominence_m>810</prominence_m>
+      <rank>49</rank>
+    </mountain>
+    <mountain>
+      <peak>Vermilion Peak</peak>
+      <range>San Juan Mountains</range>
+      <state>Colorado</state>
+      <long>-107.8285</long>
+      <lat>37.7993</lat>
+      <elev_ft>13900</elev_ft>
+      <elev_m>4237</elev_m>
+      <prominence_ft>2105</prominence_ft>
+      <prominence_m>642</prominence_m>
+      <rank>50</rank>
+    </mountain>
+    <mountain>
+      <peak>Atna Peaks</peak>
+      <range>Wrangell Mountains</range>
+      <state>Alaska</state>
+      <long>-143.2414</long>
+      <lat>61.7495</lat>
+      <elev_ft>13860</elev_ft>
+      <elev_m>4225</elev_m>
+      <prominence_ft>2210</prominence_ft>
+      <prominence_m>674</prominence_m>
+      <rank>51</rank>
+    </mountain>
+    <mountain>
+      <peak>Regal Mountain</peak>
+      <range>Wrangell Mountains</range>
+      <state>Alaska</state>
+      <long>-142.8675</long>
+      <lat>61.7438</lat>
+      <elev_ft>13845</elev_ft>
+      <elev_m>4220</elev_m>
+      <prominence_ft>4395</prominence_ft>
+      <prominence_m>1340</prominence_m>
+      <rank>52</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Darwin</peak>
+      <range>Sierra Nevada</range>
+      <state>California</state>
+      <long>-118.6721</long>
+      <lat>37.1669</lat>
+      <elev_ft>13837</elev_ft>
+      <elev_m>4218</elev_m>
+      <prominence_ft>1891</prominence_ft>
+      <prominence_m>576</prominence_m>
+      <rank>53</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Hayes</peak>
+      <range>Alaska Range</range>
+      <state>Alaska</state>
+      <long>-146.7178</long>
+      <lat>63.6203</lat>
+      <elev_ft>13832</elev_ft>
+      <elev_m>4216</elev_m>
+      <prominence_ft>11507</prominence_ft>
+      <prominence_m>3507</prominence_m>
+      <rank>54</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Silverheels</peak>
+      <range>Front Range</range>
+      <state>Colorado</state>
+      <long>-106.0054</long>
+      <lat>39.3394</lat>
+      <elev_ft>13829</elev_ft>
+      <elev_m>4215</elev_m>
+      <prominence_ft>2283</prominence_ft>
+      <prominence_m>696</prominence_m>
+      <rank>55</rank>
+    </mountain>
+    <mountain>
+      <peak>Rio Grande Pyramid</peak>
+      <range>San Juan Mountains</range>
+      <state>Colorado</state>
+      <long>-107.3924</long>
+      <lat>37.6797</lat>
+      <elev_ft>13827</elev_ft>
+      <elev_m>4214</elev_m>
+      <prominence_ft>1881</prominence_ft>
+      <prominence_m>573</prominence_m>
+      <rank>56</rank>
+    </mountain>
+    <mountain>
+      <peak>Gannett Peak</peak>
+      <range>Wind River Range</range>
+      <state>Wyoming</state>
+      <long>-109.6542</long>
+      <lat>43.1842</lat>
+      <elev_ft>13809</elev_ft>
+      <elev_m>4209</elev_m>
+      <prominence_ft>7076</prominence_ft>
+      <prominence_m>2157</prominence_m>
+      <rank>57</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Kaweah</peak>
+      <range>Sierra Nevada</range>
+      <state>California</state>
+      <long>-118.4785</long>
+      <lat>36.5261</lat>
+      <elev_ft>13807</elev_ft>
+      <elev_m>4209</elev_m>
+      <prominence_ft>2027</prominence_ft>
+      <prominence_m>618</prominence_m>
+      <rank>58</rank>
+    </mountain>
+    <mountain>
+      <peak>Mauna Kea</peak>
+      <range>Island of Hawaii</range>
+      <state>Hawaii</state>
+      <long>-155.468</long>
+      <lat>19.8207</lat>
+      <elev_ft>13796</elev_ft>
+      <elev_m>4205</elev_m>
+      <prominence_ft>13796</prominence_ft>
+      <prominence_m>4205</prominence_m>
+      <rank>59</rank>
+    </mountain>
+    <mountain>
+      <peak>Grand Teton</peak>
+      <range>Teton Range</range>
+      <state>Wyoming</state>
+      <long>-110.8024</long>
+      <lat>43.7412</lat>
+      <elev_ft>13775</elev_ft>
+      <elev_m>4199</elev_m>
+      <prominence_ft>6545</prominence_ft>
+      <prominence_m>1995</prominence_m>
+      <rank>60</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Cook</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-139.9808</long>
+      <lat>60.1819</lat>
+      <elev_ft>13760</elev_ft>
+      <elev_m>4194</elev_m>
+      <prominence_ft>7710</prominence_ft>
+      <prominence_m>2350</prominence_m>
+      <rank>61</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Morgan</peak>
+      <range>Sierra Nevada</range>
+      <state>California</state>
+      <long>-118.7329</long>
+      <lat>37.4053</lat>
+      <elev_ft>13758</elev_ft>
+      <elev_m>4193</elev_m>
+      <prominence_ft>2648</prominence_ft>
+      <prominence_m>807</prominence_m>
+      <rank>62</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Gabb</peak>
+      <range>Sierra Nevada</range>
+      <state>California</state>
+      <long>-118.8025</long>
+      <lat>37.3769</lat>
+      <elev_ft>13747</elev_ft>
+      <elev_m>4190</elev_m>
+      <prominence_ft>2601</prominence_ft>
+      <prominence_m>793</prominence_m>
+      <rank>63</rank>
+    </mountain>
+    <mountain>
+      <peak>Bald Mountain</peak>
+      <range>Front Range</range>
+      <state>Colorado</state>
+      <long>-105.9705</long>
+      <lat>39.4448</lat>
+      <elev_ft>13690</elev_ft>
+      <elev_m>4173</elev_m>
+      <prominence_ft>2099</prominence_ft>
+      <prominence_m>640</prominence_m>
+      <rank>64</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Oso</peak>
+      <range>San Juan Mountains</range>
+      <state>Colorado</state>
+      <long>-107.4936</long>
+      <lat>37.607</lat>
+      <elev_ft>13690</elev_ft>
+      <elev_m>4173</elev_m>
+      <prominence_ft>1664</prominence_ft>
+      <prominence_m>507</prominence_m>
+      <rank>65</rank>
+    </mountain>
+    <mountain>
+      <peak>Mauna Loa</peak>
+      <range>Island of Hawaii</range>
+      <state>Hawaii</state>
+      <long>-155.6054</long>
+      <lat>19.4756</lat>
+      <elev_ft>13679</elev_ft>
+      <elev_m>4169</elev_m>
+      <prominence_ft>7099</prominence_ft>
+      <prominence_m>2164</prominence_m>
+      <rank>66</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Jackson</peak>
+      <range>Sawatch Range</range>
+      <state>Colorado</state>
+      <long>-106.5367</long>
+      <lat>39.4853</lat>
+      <elev_ft>13676</elev_ft>
+      <elev_m>4169</elev_m>
+      <prominence_ft>1810</prominence_ft>
+      <prominence_m>552</prominence_m>
+      <rank>67</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Tom</peak>
+      <range>Sierra Nevada</range>
+      <state>California</state>
+      <long>-119.1789</long>
+      <lat>37.3762</lat>
+      <elev_ft>13657</elev_ft>
+      <elev_m>4163</elev_m>
+      <prominence_ft>1992</prominence_ft>
+      <prominence_m>607</prominence_m>
+      <rank>68</rank>
+    </mountain>
+    <mountain>
+      <peak>Bard Peak</peak>
+      <range>Front Range</range>
+      <state>Colorado</state>
+      <long>-105.8044</long>
+      <lat>39.7204</lat>
+      <elev_ft>13647</elev_ft>
+      <elev_m>4159</elev_m>
+      <prominence_ft>1701</prominence_ft>
+      <prominence_m>518</prominence_m>
+      <rank>69</rank>
+    </mountain>
+    <mountain>
+      <peak>West Spanish Peak</peak>
+      <range>Spanish Peaks</range>
+      <state>Colorado</state>
+      <long>-104.9934</long>
+      <lat>37.3756</lat>
+      <elev_ft>13631</elev_ft>
+      <elev_m>4155</elev_m>
+      <prominence_ft>3686</prominence_ft>
+      <prominence_m>1123</prominence_m>
+      <rank>70</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Powell</peak>
+      <range>Gore Range</range>
+      <state>Colorado</state>
+      <long>-106.3407</long>
+      <lat>39.7601</lat>
+      <elev_ft>13586</elev_ft>
+      <elev_m>4141</elev_m>
+      <prominence_ft>3000</prominence_ft>
+      <prominence_m>914</prominence_m>
+      <rank>71</rank>
+    </mountain>
+    <mountain>
+      <peak>Hagues Peak</peak>
+      <range>Mummy Range</range>
+      <state>Colorado</state>
+      <long>-105.6464</long>
+      <lat>40.4845</lat>
+      <elev_ft>13573</elev_ft>
+      <elev_m>4137</elev_m>
+      <prominence_ft>2420</prominence_ft>
+      <prominence_m>738</prominence_m>
+      <rank>72</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Dubois</peak>
+      <range>White Mountains</range>
+      <state>California</state>
+      <long>-118.3432</long>
+      <lat>37.7834</lat>
+      <elev_ft>13565</elev_ft>
+      <elev_m>4135</elev_m>
+      <prominence_ft>2339</prominence_ft>
+      <prominence_m>713</prominence_m>
+      <rank>73</rank>
+    </mountain>
+    <mountain>
+      <peak>Tower Mountain</peak>
+      <range>San Juan Mountains</range>
+      <state>Colorado</state>
+      <long>-107.623</long>
+      <lat>37.8573</lat>
+      <elev_ft>13558</elev_ft>
+      <elev_m>4132</elev_m>
+      <prominence_ft>1652</prominence_ft>
+      <prominence_m>504</prominence_m>
+      <rank>74</rank>
+    </mountain>
+    <mountain>
+      <peak>Treasure Mountain</peak>
+      <range>Elk Mountains</range>
+      <state>Colorado</state>
+      <long>-107.1228</long>
+      <lat>39.0244</lat>
+      <elev_ft>13535</elev_ft>
+      <elev_m>4125</elev_m>
+      <prominence_ft>2828</prominence_ft>
+      <prominence_m>862</prominence_m>
+      <rank>75</rank>
+    </mountain>
+    <mountain>
+      <peak>Kings Peak (Utah)</peak>
+      <range>Uinta Mountains</range>
+      <state>Utah</state>
+      <long>-110.3729</long>
+      <lat>40.7763</lat>
+      <elev_ft>13534</elev_ft>
+      <elev_m>4125</elev_m>
+      <prominence_ft>6358</prominence_ft>
+      <prominence_m>1938</prominence_m>
+      <rank>76</rank>
+    </mountain>
+    <mountain>
+      <peak>North Arapaho Peak</peak>
+      <range>Front Range</range>
+      <state>Colorado</state>
+      <long>-105.6504</long>
+      <lat>40.0265</lat>
+      <elev_ft>13508</elev_ft>
+      <elev_m>4117</elev_m>
+      <prominence_ft>1665</prominence_ft>
+      <prominence_m>507</prominence_m>
+      <rank>77</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Pinchot</peak>
+      <range>Sierra Nevada</range>
+      <state>California</state>
+      <long>-118.4054</long>
+      <lat>36.9473</lat>
+      <elev_ft>13500</elev_ft>
+      <elev_m>4115</elev_m>
+      <prominence_ft>2110</prominence_ft>
+      <prominence_m>643</prominence_m>
+      <rank>78</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Natazhat</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-141.103</long>
+      <lat>61.5217</lat>
+      <elev_ft>13435</elev_ft>
+      <elev_m>4095</elev_m>
+      <prominence_ft>5985</prominence_ft>
+      <prominence_m>1824</prominence_m>
+      <rank>79</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Jarvis</peak>
+      <range>Wrangell Mountains</range>
+      <state>Alaska</state>
+      <long>-143.6198</long>
+      <lat>62.0234</lat>
+      <elev_ft>13421</elev_ft>
+      <elev_m>4091</elev_m>
+      <prominence_ft>4771</prominence_ft>
+      <prominence_m>1454</prominence_m>
+      <rank>80</rank>
+    </mountain>
+    <mountain>
+      <peak>Parry Peak</peak>
+      <range>Front Range</range>
+      <state>Colorado</state>
+      <long>-105.7132</long>
+      <lat>39.8381</lat>
+      <elev_ft>13397</elev_ft>
+      <elev_m>4083</elev_m>
+      <prominence_ft>1720</prominence_ft>
+      <prominence_m>524</prominence_m>
+      <rank>81</rank>
+    </mountain>
+    <mountain>
+      <peak>Bill Williams Peak</peak>
+      <range>Williams Mountains</range>
+      <state>Colorado</state>
+      <long>-106.6102</long>
+      <lat>39.1806</lat>
+      <elev_ft>13389</elev_ft>
+      <elev_m>4081</elev_m>
+      <prominence_ft>1682</prominence_ft>
+      <prominence_m>513</prominence_m>
+      <rank>82</rank>
+    </mountain>
+    <mountain>
+      <peak>Sultan Mountain</peak>
+      <range>San Juan Mountains</range>
+      <state>Colorado</state>
+      <long>-107.7039</long>
+      <lat>37.7859</lat>
+      <elev_ft>13373</elev_ft>
+      <elev_m>4076</elev_m>
+      <prominence_ft>1868</prominence_ft>
+      <prominence_m>569</prominence_m>
+      <rank>83</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Herard</peak>
+      <range>Sangre de Cristo Mountains</range>
+      <state>Colorado</state>
+      <long>-105.4949</long>
+      <lat>37.8492</lat>
+      <elev_ft>13345</elev_ft>
+      <elev_m>4068</elev_m>
+      <prominence_ft>2040</prominence_ft>
+      <prominence_m>622</prominence_m>
+      <rank>84</rank>
+    </mountain>
+    <mountain>
+      <peak>West Buffalo Peak</peak>
+      <range>Mosquito Range</range>
+      <state>Colorado</state>
+      <long>-106.1249</long>
+      <lat>38.9917</lat>
+      <elev_ft>13332</elev_ft>
+      <elev_m>4064</elev_m>
+      <prominence_ft>1986</prominence_ft>
+      <prominence_m>605</prominence_m>
+      <rank>85</rank>
+    </mountain>
+    <mountain>
+      <peak>Tressider Peak</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-141.6664</long>
+      <lat>61.359</lat>
+      <elev_ft>13315</elev_ft>
+      <elev_m>4058</elev_m>
+      <prominence_ft>1665</prominence_ft>
+      <prominence_m>507</prominence_m>
+      <rank>86</rank>
+    </mountain>
+    <mountain>
+      <peak>Summit Peak</peak>
+      <range>San Juan Mountains</range>
+      <state>Colorado</state>
+      <long>-106.6968</long>
+      <lat>37.3506</lat>
+      <elev_ft>13308</elev_ft>
+      <elev_m>4056</elev_m>
+      <prominence_ft>2760</prominence_ft>
+      <prominence_m>841</prominence_m>
+      <rank>87</rank>
+    </mountain>
+    <mountain>
+      <peak>Middle Peak</peak>
+      <range>San Miguel Mountains</range>
+      <state>Colorado</state>
+      <long>-108.1082</long>
+      <lat>37.8536</lat>
+      <elev_ft>13306</elev_ft>
+      <elev_m>4056</elev_m>
+      <prominence_ft>1960</prominence_ft>
+      <prominence_m>597</prominence_m>
+      <rank>88</rank>
+    </mountain>
+    <mountain>
+      <peak>Antora Peak</peak>
+      <range>Sawatch Range</range>
+      <state>Colorado</state>
+      <long>-106.218</long>
+      <lat>38.325</lat>
+      <elev_ft>13275</elev_ft>
+      <elev_m>4046</elev_m>
+      <prominence_ft>2409</prominence_ft>
+      <prominence_m>734</prominence_m>
+      <rank>89</rank>
+    </mountain>
+    <mountain>
+      <peak>Henry Mountain</peak>
+      <range>Sawatch Range</range>
+      <state>Colorado</state>
+      <long>-106.6211</long>
+      <lat>38.6856</lat>
+      <elev_ft>13261</elev_ft>
+      <elev_m>4042</elev_m>
+      <prominence_ft>1674</prominence_ft>
+      <prominence_m>510</prominence_m>
+      <rank>90</rank>
+    </mountain>
+    <mountain>
+      <peak>Hesperus Mountain</peak>
+      <range>La Plata Mountains</range>
+      <state>Colorado</state>
+      <long>-108.089</long>
+      <lat>37.4451</lat>
+      <elev_ft>13237</elev_ft>
+      <elev_m>4035</elev_m>
+      <prominence_ft>2852</prominence_ft>
+      <prominence_m>869</prominence_m>
+      <rank>91</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Silverthrone</peak>
+      <range>Alaska Range</range>
+      <state>Alaska</state>
+      <long>-150.6755</long>
+      <lat>63.1157</lat>
+      <elev_ft>13220</elev_ft>
+      <elev_m>4029</elev_m>
+      <prominence_ft>3240</prominence_ft>
+      <prominence_m>988</prominence_m>
+      <rank>92</rank>
+    </mountain>
+    <mountain>
+      <peak>Jacque Peak</peak>
+      <range>Gore Range</range>
+      <state>Colorado</state>
+      <long>-106.197</long>
+      <lat>39.4549</lat>
+      <elev_ft>13211</elev_ft>
+      <elev_m>4027</elev_m>
+      <prominence_ft>2065</prominence_ft>
+      <prominence_m>629</prominence_m>
+      <rank>93</rank>
+    </mountain>
+    <mountain>
+      <peak>Bennett Peak</peak>
+      <range>San Juan Mountains</range>
+      <state>Colorado</state>
+      <long>-106.4343</long>
+      <lat>37.4833</lat>
+      <elev_ft>13209</elev_ft>
+      <elev_m>4026</elev_m>
+      <prominence_ft>1743</prominence_ft>
+      <prominence_m>531</prominence_m>
+      <rank>94</rank>
+    </mountain>
+    <mountain>
+      <peak>Wind River Peak</peak>
+      <range>Wind River Range</range>
+      <state>Wyoming</state>
+      <long>-109.1284</long>
+      <lat>42.7085</lat>
+      <elev_ft>13197</elev_ft>
+      <elev_m>4022</elev_m>
+      <prominence_ft>2572</prominence_ft>
+      <prominence_m>784</prominence_m>
+      <rank>95</rank>
+    </mountain>
+    <mountain>
+      <peak>Conejos Peak</peak>
+      <range>San Juan Mountains</range>
+      <state>Colorado</state>
+      <long>-106.5709</long>
+      <lat>37.2887</lat>
+      <elev_ft>13179</elev_ft>
+      <elev_m>4017</elev_m>
+      <prominence_ft>1912</prominence_ft>
+      <prominence_m>583</prominence_m>
+      <rank>96</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Marcus Baker</peak>
+      <range>Chugach Mountains</range>
+      <state>Alaska</state>
+      <long>-147.7525</long>
+      <lat>61.4374</lat>
+      <elev_ft>13176</elev_ft>
+      <elev_m>4016</elev_m>
+      <prominence_ft>10751</prominence_ft>
+      <prominence_m>3277</prominence_m>
+      <rank>97</rank>
+    </mountain>
+    <mountain>
+      <peak>Cloud Peak</peak>
+      <range>Bighorn Mountains</range>
+      <state>Wyoming</state>
+      <long>-107.1739</long>
+      <lat>44.3821</lat>
+      <elev_ft>13167</elev_ft>
+      <elev_m>4013</elev_m>
+      <prominence_ft>7077</prominence_ft>
+      <prominence_m>2157</prominence_m>
+      <rank>98</rank>
+    </mountain>
+    <mountain>
+      <peak>Wheeler Peak</peak>
+      <range>Taos Mountains</range>
+      <state>New Mexico</state>
+      <long>-105.4169</long>
+      <lat>36.5569</lat>
+      <elev_ft>13167</elev_ft>
+      <elev_m>4013</elev_m>
+      <prominence_ft>3409</prominence_ft>
+      <prominence_m>1039</prominence_m>
+      <rank>99</rank>
+    </mountain>
+    <mountain>
+      <peak>Francs Peak</peak>
+      <range>Absaroka Range</range>
+      <state>Wyoming</state>
+      <long>-109.3392</long>
+      <lat>43.9613</lat>
+      <elev_ft>13164</elev_ft>
+      <elev_m>4012</elev_m>
+      <prominence_ft>4056</prominence_ft>
+      <prominence_m>1236</prominence_m>
+      <rank>100</rank>
+    </mountain>
+    <mountain>
+      <peak>Twilight Peak</peak>
+      <range>Needle Mountains</range>
+      <state>Colorado</state>
+      <long>-107.727</long>
+      <lat>37.663</lat>
+      <elev_ft>13163</elev_ft>
+      <elev_m>4012</elev_m>
+      <prominence_ft>2338</prominence_ft>
+      <prominence_m>713</prominence_m>
+      <rank>101</rank>
+    </mountain>
+    <mountain>
+      <peak>Red Slate Mountain</peak>
+      <range>Sierra Nevada</range>
+      <state>California</state>
+      <long>-118.8693</long>
+      <lat>37.5075</lat>
+      <elev_ft>13162</elev_ft>
+      <elev_m>4012</elev_m>
+      <prominence_ft>1736</prominence_ft>
+      <prominence_m>529</prominence_m>
+      <rank>102</rank>
+    </mountain>
+    <mountain>
+      <peak>South River Peak</peak>
+      <range>San Juan Mountains</range>
+      <state>Colorado</state>
+      <long>-106.9815</long>
+      <lat>37.5741</lat>
+      <elev_ft>13154</elev_ft>
+      <elev_m>4009</elev_m>
+      <prominence_ft>2448</prominence_ft>
+      <prominence_m>746</prominence_m>
+      <rank>103</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Ritter</peak>
+      <range>Sierra Nevada</range>
+      <state>California</state>
+      <long>-119.1996</long>
+      <lat>37.6891</lat>
+      <elev_ft>13149</elev_ft>
+      <elev_m>4008</elev_m>
+      <prominence_ft>3990</prominence_ft>
+      <prominence_m>1216</prominence_m>
+      <rank>104</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Lyell</peak>
+      <range>Sierra Nevada</range>
+      <state>California</state>
+      <long>-119.2716</long>
+      <lat>37.7394</lat>
+      <elev_ft>13120</elev_ft>
+      <elev_m>3999</elev_m>
+      <prominence_ft>1927</prominence_ft>
+      <prominence_m>587</prominence_m>
+      <rank>105</rank>
+    </mountain>
+    <mountain>
+      <peak>Bushnell Peak</peak>
+      <range>Sangre de Cristo Mountains</range>
+      <state>Colorado</state>
+      <long>-105.8892</long>
+      <lat>38.3412</lat>
+      <elev_ft>13110</elev_ft>
+      <elev_m>3996</elev_m>
+      <prominence_ft>2405</prominence_ft>
+      <prominence_m>733</prominence_m>
+      <rank>106</rank>
+    </mountain>
+    <mountain>
+      <peak>Truchas Peak</peak>
+      <range>Santa Fe Mountains</range>
+      <state>New Mexico</state>
+      <long>-105.645</long>
+      <lat>35.9625</lat>
+      <elev_ft>13108</elev_ft>
+      <elev_m>3995</elev_m>
+      <prominence_ft>4001</prominence_ft>
+      <prominence_m>1220</prominence_m>
+      <rank>107</rank>
+    </mountain>
+    <mountain>
+      <peak>Wheeler Peak</peak>
+      <range>Snake Range</range>
+      <state>Nevada</state>
+      <long>-114.3139</long>
+      <lat>38.9858</lat>
+      <elev_ft>13065</elev_ft>
+      <elev_m>3982</elev_m>
+      <prominence_ft>7568</prominence_ft>
+      <prominence_m>2307</prominence_m>
+      <rank>108</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Dana</peak>
+      <range>Sierra Nevada</range>
+      <state>California</state>
+      <long>-119.2211</long>
+      <lat>37.8999</lat>
+      <elev_ft>13061</elev_ft>
+      <elev_m>3981</elev_m>
+      <prominence_ft>2437</prominence_ft>
+      <prominence_m>743</prominence_m>
+      <rank>109</rank>
+    </mountain>
+    <mountain>
+      <peak>West Elk Peak</peak>
+      <range>West Elk Mountains</range>
+      <state>Colorado</state>
+      <long>-107.1994</long>
+      <lat>38.7179</lat>
+      <elev_ft>13042</elev_ft>
+      <elev_m>3975</elev_m>
+      <prominence_ft>3095</prominence_ft>
+      <prominence_m>943</prominence_m>
+      <rank>110</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Moffit</peak>
+      <range>Alaska Range</range>
+      <state>Alaska</state>
+      <long>-146.3982</long>
+      <lat>63.5683</lat>
+      <elev_ft>13020</elev_ft>
+      <elev_m>3969</elev_m>
+      <prominence_ft>3970</prominence_ft>
+      <prominence_m>1210</prominence_m>
+      <rank>111</rank>
+    </mountain>
+    <mountain>
+      <peak>Peak 13,010</peak>
+      <range>San Juan Mountains</range>
+      <state>Colorado</state>
+      <long>-107.2446</long>
+      <lat>37.6062</lat>
+      <elev_ft>13016</elev_ft>
+      <elev_m>3967</elev_m>
+      <prominence_ft>1790</prominence_ft>
+      <prominence_m>546</prominence_m>
+      <rank>112</rank>
+    </mountain>
+    <mountain>
+      <peak>Clark Peak</peak>
+      <range>Medicine Bow Mountains</range>
+      <state>Colorado</state>
+      <long>-105.93</long>
+      <lat>40.6068</lat>
+      <elev_ft>12954</elev_ft>
+      <elev_m>3948</elev_m>
+      <prominence_ft>2771</prominence_ft>
+      <prominence_m>845</prominence_m>
+      <rank>113</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Richthofen</peak>
+      <range>Never Summer Mountains</range>
+      <state>Colorado</state>
+      <long>-105.8945</long>
+      <lat>40.4695</lat>
+      <elev_ft>12945</elev_ft>
+      <elev_m>3946</elev_m>
+      <prominence_ft>2680</prominence_ft>
+      <prominence_m>817</prominence_m>
+      <rank>114</rank>
+    </mountain>
+    <mountain>
+      <peak>Lizard Head Peak</peak>
+      <range>Wind River Range</range>
+      <state>Wyoming</state>
+      <long>-109.1978</long>
+      <lat>42.7901</lat>
+      <elev_ft>12847</elev_ft>
+      <elev_m>3916</elev_m>
+      <prominence_ft>1902</prominence_ft>
+      <prominence_m>580</prominence_m>
+      <rank>115</rank>
+    </mountain>
+    <mountain>
+      <peak>Granite Peak</peak>
+      <range>Absaroka Range</range>
+      <state>Montana</state>
+      <long>-109.8075</long>
+      <lat>45.1634</lat>
+      <elev_ft>12807</elev_ft>
+      <elev_m>3904</elev_m>
+      <prominence_ft>4779</prominence_ft>
+      <prominence_m>1457</prominence_m>
+      <rank>116</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Crosson</peak>
+      <range>Alaska Range</range>
+      <state>Alaska</state>
+      <long>-151.2763</long>
+      <lat>63.0081</lat>
+      <elev_ft>12800</elev_ft>
+      <elev_m>3901</elev_m>
+      <prominence_ft>1650</prominence_ft>
+      <prominence_m>503</prominence_m>
+      <rank>117</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Root</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-137.5003</long>
+      <lat>58.9856</lat>
+      <elev_ft>12799</elev_ft>
+      <elev_m>3901</elev_m>
+      <prominence_ft>2979</prominence_ft>
+      <prominence_m>908</prominence_m>
+      <rank>118</rank>
+    </mountain>
+    <mountain>
+      <peak>Venado Peak</peak>
+      <range>Taos Mountains</range>
+      <state>New Mexico</state>
+      <long>-105.4933</long>
+      <lat>36.7917</lat>
+      <elev_ft>12739</elev_ft>
+      <elev_m>3883</elev_m>
+      <prominence_ft>2954</prominence_ft>
+      <prominence_m>900</prominence_m>
+      <rank>119</rank>
+    </mountain>
+    <mountain>
+      <peak>Chair Mountain</peak>
+      <range>Elk Mountains</range>
+      <state>Colorado</state>
+      <long>-107.2822</long>
+      <lat>39.0581</lat>
+      <elev_ft>12727</elev_ft>
+      <elev_m>3879</elev_m>
+      <prominence_ft>2461</prominence_ft>
+      <prominence_m>750</prominence_m>
+      <rank>120</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Peale</peak>
+      <range>La Sal Mountains</range>
+      <state>Utah</state>
+      <long>-109.2292</long>
+      <lat>38.4385</lat>
+      <elev_ft>12726</elev_ft>
+      <elev_m>3879</elev_m>
+      <prominence_ft>6181</prominence_ft>
+      <prominence_m>1884</prominence_m>
+      <rank>121</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Crillon</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-137.1712</long>
+      <lat>58.6625</lat>
+      <elev_ft>12726</elev_ft>
+      <elev_m>3879</elev_m>
+      <prominence_ft>7176</prominence_ft>
+      <prominence_m>2187</prominence_m>
+      <rank>122</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Gunnison</peak>
+      <range>West Elk Mountains</range>
+      <state>Colorado</state>
+      <long>-107.3826</long>
+      <lat>38.8121</lat>
+      <elev_ft>12725</elev_ft>
+      <elev_m>3879</elev_m>
+      <prominence_ft>3539</prominence_ft>
+      <prominence_m>1079</prominence_m>
+      <rank>123</rank>
+    </mountain>
+    <mountain>
+      <peak>East Spanish Peak</peak>
+      <range>Spanish Peaks</range>
+      <state>Colorado</state>
+      <long>-104.9201</long>
+      <lat>37.3934</lat>
+      <elev_ft>12688</elev_ft>
+      <elev_m>3867</elev_m>
+      <prominence_ft>2383</prominence_ft>
+      <prominence_m>726</prominence_m>
+      <rank>124</rank>
+    </mountain>
+    <mountain>
+      <peak>Borah Peak</peak>
+      <range>Lost River Range</range>
+      <state>Idaho</state>
+      <long>-113.7811</long>
+      <lat>44.1374</lat>
+      <elev_ft>12668</elev_ft>
+      <elev_m>3861</elev_m>
+      <prominence_ft>6002</prominence_ft>
+      <prominence_m>1829</prominence_m>
+      <rank>125</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Wood</peak>
+      <range>Absaroka Range</range>
+      <state>Montana</state>
+      <long>-109.8075</long>
+      <lat>45.2749</lat>
+      <elev_ft>12665</elev_ft>
+      <elev_m>3860</elev_m>
+      <prominence_ft>2880</prominence_ft>
+      <prominence_m>878</prominence_m>
+      <rank>126</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Gunnar Naslund</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-141.314</long>
+      <lat>61.2282</lat>
+      <elev_ft>12658</elev_ft>
+      <elev_m>3858</elev_m>
+      <prominence_ft>2108</prominence_ft>
+      <prominence_m>643</prominence_m>
+      <rank>127</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Conness</peak>
+      <range>Sierra Nevada</range>
+      <state>California</state>
+      <long>-119.3213</long>
+      <lat>37.967</lat>
+      <elev_ft>12649</elev_ft>
+      <elev_m>3856</elev_m>
+      <prominence_ft>2650</prominence_ft>
+      <prominence_m>808</prominence_m>
+      <rank>128</rank>
+    </mountain>
+    <mountain>
+      <peak>Humphreys Peak</peak>
+      <range>San Francisco Peaks</range>
+      <state>Arizona</state>
+      <long>-111.678</long>
+      <lat>35.3464</lat>
+      <elev_ft>12637</elev_ft>
+      <elev_m>3852</elev_m>
+      <prominence_ft>6039</prominence_ft>
+      <prominence_m>1841</prominence_m>
+      <rank>129</rank>
+    </mountain>
+    <mountain>
+      <peak>Santa Fe Baldy</peak>
+      <range>Santa Fe Mountains</range>
+      <state>New Mexico</state>
+      <long>-105.7581</long>
+      <lat>35.8322</lat>
+      <elev_ft>12632</elev_ft>
+      <elev_m>3850</elev_m>
+      <prominence_ft>2002</prominence_ft>
+      <prominence_m>610</prominence_m>
+      <rank>130</rank>
+    </mountain>
+    <mountain>
+      <peak>Gothic Mountain</peak>
+      <range>Elk Mountains</range>
+      <state>Colorado</state>
+      <long>-107.0107</long>
+      <lat>38.9562</lat>
+      <elev_ft>12631</elev_ft>
+      <elev_m>3850</elev_m>
+      <prominence_ft>1645</prominence_ft>
+      <prominence_m>501</prominence_m>
+      <rank>131</rank>
+    </mountain>
+    <mountain>
+      <peak>Castle Mountain</peak>
+      <range>Absaroka Range</range>
+      <state>Montana</state>
+      <long>-109.6305</long>
+      <lat>45.0989</lat>
+      <elev_ft>12618</elev_ft>
+      <elev_m>3846</elev_m>
+      <prominence_ft>2672</prominence_ft>
+      <prominence_m>814</prominence_m>
+      <rank>132</rank>
+    </mountain>
+    <mountain>
+      <peak>Lone Cone</peak>
+      <range>San Miguel Mountains</range>
+      <state>Colorado</state>
+      <long>-108.2556</long>
+      <lat>37.888</lat>
+      <elev_ft>12618</elev_ft>
+      <elev_m>3846</elev_m>
+      <prominence_ft>2273</prominence_ft>
+      <prominence_m>693</prominence_m>
+      <rank>133</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Moran</peak>
+      <range>Teton Range</range>
+      <state>Wyoming</state>
+      <long>-110.7765</long>
+      <lat>43.835</lat>
+      <elev_ft>12610</elev_ft>
+      <elev_m>3844</elev_m>
+      <prominence_ft>2645</prominence_ft>
+      <prominence_m>806</prominence_m>
+      <rank>134</rank>
+    </mountain>
+    <mountain>
+      <peak>Tlingit Peak</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-137.3938</long>
+      <lat>58.8931</lat>
+      <elev_ft>12606</elev_ft>
+      <elev_m>3842</elev_m>
+      <prominence_ft>2006</prominence_ft>
+      <prominence_m>611</prominence_m>
+      <rank>135</rank>
+    </mountain>
+    <mountain>
+      <peak>Little Costilla Peak</peak>
+      <range>Culebra Range</range>
+      <state>New Mexico</state>
+      <long>-105.2229</long>
+      <lat>36.8335</lat>
+      <elev_ft>12588</elev_ft>
+      <elev_m>3837</elev_m>
+      <prominence_ft>2444</prominence_ft>
+      <prominence_m>745</prominence_m>
+      <rank>136</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Carpe (Alaska)</peak>
+      <range>Alaska Range</range>
+      <state>Alaska</state>
+      <long>-150.8616</long>
+      <lat>63.1521</lat>
+      <elev_ft>12550</elev_ft>
+      <elev_m>3825</elev_m>
+      <prominence_ft>1800</prominence_ft>
+      <prominence_m>549</prominence_m>
+      <rank>137</rank>
+    </mountain>
+    <mountain>
+      <peak>Needham Mountain</peak>
+      <range>Sierra Nevada</range>
+      <state>California</state>
+      <long>-118.5373</long>
+      <lat>36.4545</lat>
+      <elev_ft>12545</elev_ft>
+      <elev_m>3824</elev_m>
+      <prominence_ft>1840</prominence_ft>
+      <prominence_m>561</prominence_m>
+      <rank>138</rank>
+    </mountain>
+    <mountain>
+      <peak>Graham Peak (Colorado)</peak>
+      <range>San Juan Mountains</range>
+      <state>Colorado</state>
+      <long>-107.3761</long>
+      <lat>37.4972</lat>
+      <elev_ft>12536</elev_ft>
+      <elev_m>3821</elev_m>
+      <prominence_ft>2551</prominence_ft>
+      <prominence_m>778</prominence_m>
+      <rank>139</rank>
+    </mountain>
+    <mountain>
+      <peak>Whetstone Mountain</peak>
+      <range>West Elk Mountains</range>
+      <state>Colorado</state>
+      <long>-106.9799</long>
+      <lat>38.8223</lat>
+      <elev_ft>12527</elev_ft>
+      <elev_m>3818</elev_m>
+      <prominence_ft>2456</prominence_ft>
+      <prominence_m>749</prominence_m>
+      <rank>140</rank>
+    </mountain>
+    <mountain>
+      <peak>Kahiltna Dome</peak>
+      <range>Alaska Range</range>
+      <state>Alaska</state>
+      <long>-151.2394</long>
+      <lat>63.055</lat>
+      <elev_ft>12525</elev_ft>
+      <elev_m>3818</elev_m>
+      <prominence_ft>2175</prominence_ft>
+      <prominence_m>663</prominence_m>
+      <rank>141</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Thor</peak>
+      <range>Chugach Mountains</range>
+      <state>Alaska</state>
+      <long>-147.146</long>
+      <lat>61.4854</lat>
+      <elev_ft>12521</elev_ft>
+      <elev_m>3816</elev_m>
+      <prominence_ft>3271</prominence_ft>
+      <prominence_m>997</prominence_m>
+      <rank>142</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Watson</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-137.5541</long>
+      <lat>59.0088</lat>
+      <elev_ft>12497</elev_ft>
+      <elev_m>3809</elev_m>
+      <prominence_ft>1932</prominence_ft>
+      <prominence_m>589</prominence_m>
+      <rank>143</rank>
+    </mountain>
+    <mountain>
+      <peak>Atlantic Peak</peak>
+      <range>Wind River Range</range>
+      <state>Wyoming</state>
+      <long>-109.0013</long>
+      <lat>42.6165</lat>
+      <elev_ft>12495</elev_ft>
+      <elev_m>3808</elev_m>
+      <prominence_ft>2150</prominence_ft>
+      <prominence_m>655</prominence_m>
+      <rank>144</rank>
+    </mountain>
+    <mountain>
+      <peak>Specimen Mountain</peak>
+      <range>Front Range</range>
+      <state>Colorado</state>
+      <long>-105.8081</long>
+      <lat>40.4449</lat>
+      <elev_ft>12494</elev_ft>
+      <elev_m>3808</elev_m>
+      <prominence_ft>1731</prominence_ft>
+      <prominence_m>528</prominence_m>
+      <rank>145</rank>
+    </mountain>
+    <mountain>
+      <peak>Baldy Mountain</peak>
+      <range>Cimarron Range</range>
+      <state>New Mexico</state>
+      <long>-105.2134</long>
+      <lat>36.6299</lat>
+      <elev_ft>12445</elev_ft>
+      <elev_m>3793</elev_m>
+      <prominence_ft>2701</prominence_ft>
+      <prominence_m>823</prominence_m>
+      <rank>146</rank>
+    </mountain>
+    <mountain>
+      <peak>East Beckwith Mountain</peak>
+      <range>West Elk Mountains</range>
+      <state>Colorado</state>
+      <long>-107.2233</long>
+      <lat>38.8464</lat>
+      <elev_ft>12441</elev_ft>
+      <elev_m>3792</elev_m>
+      <prominence_ft>2492</prominence_ft>
+      <prominence_m>760</prominence_m>
+      <rank>147</rank>
+    </mountain>
+    <mountain>
+      <peak>Knobby Crest</peak>
+      <range>Kenosha Mountains</range>
+      <state>Colorado</state>
+      <long>-105.605</long>
+      <lat>39.3681</lat>
+      <elev_ft>12434</elev_ft>
+      <elev_m>3790</elev_m>
+      <prominence_ft>1759</prominence_ft>
+      <prominence_m>536</prominence_m>
+      <rank>148</rank>
+    </mountain>
+    <mountain>
+      <peak>Bison Peak</peak>
+      <range>Tarryall Mountains</range>
+      <state>Colorado</state>
+      <long>-105.4978</long>
+      <lat>39.2384</lat>
+      <elev_ft>12432</elev_ft>
+      <elev_m>3789</elev_m>
+      <prominence_ft>2451</prominence_ft>
+      <prominence_m>747</prominence_m>
+      <rank>149</rank>
+    </mountain>
+    <mountain>
+      <peak>Anthracite Peak</peak>
+      <range>West Elk Mountains</range>
+      <state>Colorado</state>
+      <long>-107.1445</long>
+      <lat>38.8145</lat>
+      <elev_ft>12394</elev_ft>
+      <elev_m>3778</elev_m>
+      <prominence_ft>2125</prominence_ft>
+      <prominence_m>648</prominence_m>
+      <rank>150</rank>
+    </mountain>
+    <mountain>
+      <peak>Matchless Mountain</peak>
+      <range>Elk Mountains</range>
+      <state>Colorado</state>
+      <long>-106.6451</long>
+      <lat>38.834</lat>
+      <elev_ft>12389</elev_ft>
+      <elev_m>3776</elev_m>
+      <prominence_ft>1763</prominence_ft>
+      <prominence_m>537</prominence_m>
+      <rank>151</rank>
+    </mountain>
+    <mountain>
+      <peak>Flat Top Mountain</peak>
+      <range>Flat Tops</range>
+      <state>Colorado</state>
+      <long>-107.0833</long>
+      <lat>40.0147</lat>
+      <elev_ft>12361</elev_ft>
+      <elev_m>3768</elev_m>
+      <prominence_ft>4054</prominence_ft>
+      <prominence_m>1236</prominence_m>
+      <rank>152</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Nystrom</peak>
+      <range>Wind River Range</range>
+      <state>Wyoming</state>
+      <long>-109.0939</long>
+      <lat>42.6418</lat>
+      <elev_ft>12361</elev_ft>
+      <elev_m>3768</elev_m>
+      <prominence_ft>1816</prominence_ft>
+      <prominence_m>554</prominence_m>
+      <rank>153</rank>
+    </mountain>
+    <mountain>
+      <peak>Moby Dick</peak>
+      <range>Alaska Range</range>
+      <state>Alaska</state>
+      <long>-146.6026</long>
+      <lat>63.5561</lat>
+      <elev_ft>12360</elev_ft>
+      <elev_m>3767</elev_m>
+      <prominence_ft>2910</prominence_ft>
+      <prominence_m>887</prominence_m>
+      <rank>154</rank>
+    </mountain>
+    <mountain>
+      <peak>Greenhorn Mountain</peak>
+      <range>Wet Mountains</range>
+      <state>Colorado</state>
+      <long>-105.0133</long>
+      <lat>37.8815</lat>
+      <elev_ft>12352</elev_ft>
+      <elev_m>3765</elev_m>
+      <prominence_ft>3777</prominence_ft>
+      <prominence_m>1151</prominence_m>
+      <rank>155</rank>
+    </mountain>
+    <mountain>
+      <peak>Elliott Mountain</peak>
+      <range>San Miguel Mountains</range>
+      <state>Colorado</state>
+      <long>-108.058</long>
+      <lat>37.7344</lat>
+      <elev_ft>12346</elev_ft>
+      <elev_m>3763</elev_m>
+      <prominence_ft>2240</prominence_ft>
+      <prominence_m>683</prominence_m>
+      <rank>156</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Deborah</peak>
+      <range>Alaska Range</range>
+      <state>Alaska</state>
+      <long>-147.2384</long>
+      <lat>63.6377</lat>
+      <elev_ft>12339</elev_ft>
+      <elev_m>3761</elev_m>
+      <prominence_ft>5189</prominence_ft>
+      <prominence_m>1582</prominence_m>
+      <rank>157</rank>
+    </mountain>
+    <mountain>
+      <peak>Twin Peaks</peak>
+      <range>Sierra Nevada</range>
+      <state>California</state>
+      <long>-119.3588</long>
+      <lat>38.0836</lat>
+      <elev_ft>12329</elev_ft>
+      <elev_m>3758</elev_m>
+      <prominence_ft>2143</prominence_ft>
+      <prominence_m>653</prominence_m>
+      <rank>158</rank>
+    </mountain>
+    <mountain>
+      <peak>Carter Mountain</peak>
+      <range>Absaroka Range</range>
+      <state>Wyoming</state>
+      <long>-109.4112</long>
+      <lat>44.1972</lat>
+      <elev_ft>12324</elev_ft>
+      <elev_m>3756</elev_m>
+      <prominence_ft>1699</prominence_ft>
+      <prominence_m>518</prominence_m>
+      <rank>159</rank>
+    </mountain>
+    <mountain>
+      <peak>Parkview Mountain</peak>
+      <range>Rabbit Ears Range</range>
+      <state>Colorado</state>
+      <long>-106.1363</long>
+      <lat>40.3303</lat>
+      <elev_ft>12301</elev_ft>
+      <elev_m>3749</elev_m>
+      <prominence_ft>2676</prominence_ft>
+      <prominence_m>816</prominence_m>
+      <rank>160</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Adams</peak>
+      <range>Cascade Range</range>
+      <state>Washington</state>
+      <long>-121.4909</long>
+      <lat>46.2024</lat>
+      <elev_ft>12281</elev_ft>
+      <elev_m>3743</elev_m>
+      <prominence_ft>8136</prominence_ft>
+      <prominence_m>2480</prominence_m>
+      <rank>161</rank>
+    </mountain>
+    <mountain>
+      <peak>Trout Peak</peak>
+      <range>Absaroka Range</range>
+      <state>Wyoming</state>
+      <long>-109.5253</long>
+      <lat>44.6012</lat>
+      <elev_ft>12250</elev_ft>
+      <elev_m>3734</elev_m>
+      <prominence_ft>3704</prominence_ft>
+      <prominence_m>1129</prominence_m>
+      <rank>162</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Huntington</peak>
+      <range>Alaska Range</range>
+      <state>Alaska</state>
+      <long>-150.8996</long>
+      <lat>62.9677</lat>
+      <elev_ft>12240</elev_ft>
+      <elev_m>3731</elev_m>
+      <prominence_ft>2890</prominence_ft>
+      <prominence_m>881</prominence_m>
+      <rank>163</rank>
+    </mountain>
+    <mountain>
+      <peak>Leatherman Peak</peak>
+      <range>Lost River Range</range>
+      <state>Idaho</state>
+      <long>-113.733</long>
+      <lat>44.082</lat>
+      <elev_ft>12233</elev_ft>
+      <elev_m>3729</elev_m>
+      <prominence_ft>1688</prominence_ft>
+      <prominence_m>515</prominence_m>
+      <rank>164</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Huxley (Alaska)</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-141.1554</long>
+      <lat>60.3279</lat>
+      <elev_ft>12216</elev_ft>
+      <elev_m>3723</elev_m>
+      <prominence_ft>2066</prominence_ft>
+      <prominence_m>630</prominence_m>
+      <rank>165</rank>
+    </mountain>
+    <mountain>
+      <peak>Diamond Peak</peak>
+      <range>Lemhi Range</range>
+      <state>Idaho</state>
+      <long>-113.0827</long>
+      <lat>44.1414</lat>
+      <elev_ft>12202</elev_ft>
+      <elev_m>3719</elev_m>
+      <prominence_ft>5387</prominence_ft>
+      <prominence_m>1642</prominence_m>
+      <rank>166</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Jordan</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-141.47</long>
+      <lat>61.3987</lat>
+      <elev_ft>12190</elev_ft>
+      <elev_m>3716</elev_m>
+      <prominence_ft>2340</prominence_ft>
+      <prominence_m>713</prominence_m>
+      <rank>167</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Zirkel</peak>
+      <range>Park Range</range>
+      <state>Colorado</state>
+      <long>-106.6631</long>
+      <lat>40.8313</lat>
+      <elev_ft>12185</elev_ft>
+      <elev_m>3714</elev_m>
+      <prominence_ft>3470</prominence_ft>
+      <prominence_m>1058</prominence_m>
+      <rank>168</rank>
+    </mountain>
+    <mountain>
+      <peak>Delano Peak</peak>
+      <range>Tushar Mountains</range>
+      <state>Utah</state>
+      <long>-112.3714</long>
+      <lat>38.3692</lat>
+      <elev_ft>12174</elev_ft>
+      <elev_m>3711</elev_m>
+      <prominence_ft>4709</prominence_ft>
+      <prominence_m>1435</prominence_m>
+      <rank>169</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Salisbury</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-137.3719</long>
+      <lat>58.8505</lat>
+      <elev_ft>12170</elev_ft>
+      <elev_m>3709</elev_m>
+      <prominence_ft>4020</prominence_ft>
+      <prominence_m>1225</prominence_m>
+      <rank>170</rank>
+    </mountain>
+    <mountain>
+      <peak>Crested Butte</peak>
+      <range>Elk Mountains</range>
+      <state>Colorado</state>
+      <long>-106.9436</long>
+      <lat>38.8835</lat>
+      <elev_ft>12168</elev_ft>
+      <elev_m>3709</elev_m>
+      <prominence_ft>2582</prominence_ft>
+      <prominence_m>787</prominence_m>
+      <rank>171</rank>
+    </mountain>
+    <mountain>
+      <peak>Younts Peak</peak>
+      <range>Absaroka Range</range>
+      <state>Wyoming</state>
+      <long>-109.8665</long>
+      <lat>43.982</lat>
+      <elev_ft>12166</elev_ft>
+      <elev_m>3708</elev_m>
+      <prominence_ft>2241</prominence_ft>
+      <prominence_m>683</prominence_m>
+      <rank>172</rank>
+    </mountain>
+    <mountain>
+      <peak>Sawtooth Mountain</peak>
+      <range>La Garita Mountains</range>
+      <state>Colorado</state>
+      <long>-106.867</long>
+      <lat>38.274</lat>
+      <elev_ft>12153</elev_ft>
+      <elev_m>3704</elev_m>
+      <prominence_ft>1927</prominence_ft>
+      <prominence_m>587</prominence_m>
+      <rank>173</rank>
+    </mountain>
+    <mountain>
+      <peak>Olancha Peak</peak>
+      <range>Sierra Nevada</range>
+      <state>California</state>
+      <long>-118.1182</long>
+      <lat>36.2652</lat>
+      <elev_ft>12132</elev_ft>
+      <elev_m>3698</elev_m>
+      <prominence_ft>3103</prominence_ft>
+      <prominence_m>946</prominence_m>
+      <rank>174</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Mather (Alaska)</peak>
+      <range>Alaska Range</range>
+      <state>Alaska</state>
+      <long>-150.4362</long>
+      <lat>63.1946</lat>
+      <elev_ft>12123</elev_ft>
+      <elev_m>3695</elev_m>
+      <prominence_ft>2873</prominence_ft>
+      <prominence_m>876</prominence_m>
+      <rank>175</rank>
+    </mountain>
+    <mountain>
+      <peak>Park Cone</peak>
+      <range>Sawatch Range</range>
+      <state>Colorado</state>
+      <long>-106.6028</long>
+      <lat>38.7967</lat>
+      <elev_ft>12106</elev_ft>
+      <elev_m>3690</elev_m>
+      <prominence_ft>2040</prominence_ft>
+      <prominence_m>622</prominence_m>
+      <rank>176</rank>
+    </mountain>
+    <mountain>
+      <peak>Ibapah Peak</peak>
+      <range>Deep Creek Range</range>
+      <state>Utah</state>
+      <long>-113.92</long>
+      <lat>39.8282</lat>
+      <elev_ft>12092</elev_ft>
+      <elev_m>3686</elev_m>
+      <prominence_ft>5267</prominence_ft>
+      <prominence_m>1605</prominence_m>
+      <rank>177</rank>
+    </mountain>
+    <mountain>
+      <peak>Carbon Peak</peak>
+      <range>West Elk Mountains</range>
+      <state>Colorado</state>
+      <long>-107.0431</long>
+      <lat>38.7943</lat>
+      <elev_ft>12088</elev_ft>
+      <elev_m>3684</elev_m>
+      <prominence_ft>2179</prominence_ft>
+      <prominence_m>664</prominence_m>
+      <rank>178</rank>
+    </mountain>
+    <mountain>
+      <peak>Glover Peak</peak>
+      <range>Wind River Range</range>
+      <state>Wyoming</state>
+      <long>-109.7656</long>
+      <lat>43.1589</lat>
+      <elev_ft>12072</elev_ft>
+      <elev_m>3680</elev_m>
+      <prominence_ft>1706</prominence_ft>
+      <prominence_m>520</prominence_m>
+      <rank>179</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Moriah</peak>
+      <range>Snake Range</range>
+      <state>Nevada</state>
+      <long>-114.1988</long>
+      <lat>39.2732</lat>
+      <elev_ft>12072</elev_ft>
+      <elev_m>3680</elev_m>
+      <prominence_ft>4910</prominence_ft>
+      <prominence_m>1497</prominence_m>
+      <rank>180</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Guero</peak>
+      <range>West Elk Mountains</range>
+      <state>Colorado</state>
+      <long>-107.3861</long>
+      <lat>38.7196</lat>
+      <elev_ft>12058</elev_ft>
+      <elev_m>3675</elev_m>
+      <prominence_ft>2432</prominence_ft>
+      <prominence_m>741</prominence_m>
+      <rank>181</rank>
+    </mountain>
+    <mountain>
+      <peak>Siris Peak</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-141.0138</long>
+      <lat>60.734</lat>
+      <elev_ft>12050</elev_ft>
+      <elev_m>3673</elev_m>
+      <prominence_ft>2600</prominence_ft>
+      <prominence_m>792</prominence_m>
+      <rank>182</rank>
+    </mountain>
+    <mountain>
+      <peak>Red Table Mountain</peak>
+      <range>Sawatch Range</range>
+      <state>Colorado</state>
+      <long>-106.7712</long>
+      <lat>39.4181</lat>
+      <elev_ft>12043</elev_ft>
+      <elev_m>3671</elev_m>
+      <prominence_ft>2017</prominence_ft>
+      <prominence_m>615</prominence_m>
+      <rank>183</rank>
+    </mountain>
+    <mountain>
+      <peak>Chalk Benchmark</peak>
+      <range>San Juan Mountains</range>
+      <state>Colorado</state>
+      <long>-106.75</long>
+      <lat>37.1418</lat>
+      <elev_ft>12038</elev_ft>
+      <elev_m>3669</elev_m>
+      <prominence_ft>1971</prominence_ft>
+      <prominence_m>601</prominence_m>
+      <rank>184</rank>
+    </mountain>
+    <mountain>
+      <peak>Medicine Bow Peak</peak>
+      <range>Medicine Bow Mountains</range>
+      <state>Wyoming</state>
+      <long>-106.3176</long>
+      <lat>41.3603</lat>
+      <elev_ft>12016</elev_ft>
+      <elev_m>3662</elev_m>
+      <prominence_ft>3243</prominence_ft>
+      <prominence_m>988</prominence_m>
+      <rank>185</rank>
+    </mountain>
+    <mountain>
+      <peak>Hyndman Peak</peak>
+      <range>Pioneer Mountains</range>
+      <state>Idaho</state>
+      <long>-114.1312</long>
+      <lat>43.7494</lat>
+      <elev_ft>12012</elev_ft>
+      <elev_m>3661</elev_m>
+      <prominence_ft>4829</prominence_ft>
+      <prominence_m>1472</prominence_m>
+      <rank>186</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Witherspoon</peak>
+      <range>Chugach Mountains</range>
+      <state>Alaska</state>
+      <long>-147.201</long>
+      <lat>61.3954</lat>
+      <elev_ft>12012</elev_ft>
+      <elev_m>3661</elev_m>
+      <prominence_ft>2162</prominence_ft>
+      <prominence_m>659</prominence_m>
+      <rank>187</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Zwischen</peak>
+      <range>Sangre de Cristo Mountains</range>
+      <state>Colorado</state>
+      <long>-105.4554</long>
+      <lat>37.7913</lat>
+      <elev_ft>12011</elev_ft>
+      <elev_m>3661</elev_m>
+      <prominence_ft>2266</prominence_ft>
+      <prominence_m>691</prominence_m>
+      <rank>188</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Drum</peak>
+      <range>Wrangell Mountains</range>
+      <state>Alaska</state>
+      <long>-144.6394</long>
+      <lat>62.1159</lat>
+      <elev_ft>12010</elev_ft>
+      <elev_m>3661</elev_m>
+      <prominence_ft>6760</prominence_ft>
+      <prominence_m>2060</prominence_m>
+      <rank>189</rank>
+    </mountain>
+    <mountain>
+      <peak>Little Cone</peak>
+      <range>San Miguel Mountains</range>
+      <state>Colorado</state>
+      <long>-108.0908</long>
+      <lat>37.9275</lat>
+      <elev_ft>11988</elev_ft>
+      <elev_m>3654</elev_m>
+      <prominence_ft>1840</prominence_ft>
+      <prominence_m>561</prominence_m>
+      <rank>190</rank>
+    </mountain>
+    <mountain>
+      <peak>Sierra Blanca Peak</peak>
+      <range>Sacramento Mountains</range>
+      <state>New Mexico</state>
+      <long>-105.8087</long>
+      <lat>33.3743</lat>
+      <elev_ft>11981</elev_ft>
+      <elev_m>3652</elev_m>
+      <prominence_ft>5553</prominence_ft>
+      <prominence_m>1693</prominence_m>
+      <rank>191</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Hope (Alaska)</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-141.0614</long>
+      <lat>60.7039</lat>
+      <elev_ft>11950</elev_ft>
+      <elev_m>3642</elev_m>
+      <prominence_ft>2000</prominence_ft>
+      <prominence_m>610</prominence_m>
+      <rank>192</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Jefferson</peak>
+      <range>Toquima Range</range>
+      <state>Nevada</state>
+      <long>-116.9267</long>
+      <lat>38.7519</lat>
+      <elev_ft>11946</elev_ft>
+      <elev_m>3641</elev_m>
+      <prominence_ft>5871</prominence_ft>
+      <prominence_m>1789</prominence_m>
+      <rank>193</rank>
+    </mountain>
+    <mountain>
+      <peak>Hess Mountain</peak>
+      <range>Alaska Range</range>
+      <state>Alaska</state>
+      <long>-147.1482</long>
+      <lat>63.6382</lat>
+      <elev_ft>11940</elev_ft>
+      <elev_m>3639</elev_m>
+      <prominence_ft>2490</prominence_ft>
+      <prominence_m>759</prominence_m>
+      <rank>194</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Brooks</peak>
+      <range>Alaska Range</range>
+      <state>Alaska</state>
+      <long>-150.6479</long>
+      <lat>63.1875</lat>
+      <elev_ft>11940</elev_ft>
+      <elev_m>3639</elev_m>
+      <prominence_ft>1790</prominence_ft>
+      <prominence_m>546</prominence_m>
+      <rank>195</rank>
+    </mountain>
+    <mountain>
+      <peak>Cerro Vista</peak>
+      <range>Sangre de Cristo Mountains</range>
+      <state>New Mexico</state>
+      <long>-105.4108</long>
+      <lat>36.2353</lat>
+      <elev_ft>11937</elev_ft>
+      <elev_m>3638</elev_m>
+      <prominence_ft>2519</prominence_ft>
+      <prominence_m>768</prominence_m>
+      <rank>196</rank>
+    </mountain>
+    <mountain>
+      <peak>Mount Nebo</peak>
+      <range>Wasatch Range</range>
+      <state>Utah</state>
+      <long>-111.7603</long>
+      <lat>39.8219</lat>
+      <elev_ft>11933</elev_ft>
+      <elev_m>3637</elev_m>
+      <prominence_ft>5508</prominence_ft>
+      <prominence_m>1679</prominence_m>
+      <rank>197</rank>
+    </mountain>
+    <mountain>
+      <peak>The Grand Parapet</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-142.0266</long>
+      <lat>61.4103</lat>
+      <elev_ft>11930</elev_ft>
+      <elev_m>3636</elev_m>
+      <prominence_ft>2180</prominence_ft>
+      <prominence_m>664</prominence_m>
+      <rank>198</rank>
+    </mountain>
+    <mountain>
+      <peak>Lituya Mountain</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-137.4367</long>
+      <lat>58.8054</lat>
+      <elev_ft>11924</elev_ft>
+      <elev_m>3634</elev_m>
+      <prominence_ft>3674</prominence_ft>
+      <prominence_m>1120</prominence_m>
+      <rank>199</rank>
+    </mountain>
+    <mountain>
+      <peak>Haydon Peak</peak>
+      <range>Saint Elias Mountains</range>
+      <state>Alaska</state>
+      <long>-140.9881</long>
+      <lat>60.2606</lat>
+      <elev_ft>11924</elev_ft>
+      <elev_m>3634</elev_m>
+      <prominence_ft>1674</prominence_ft>
+      <prominence_m>510</prominence_m>
+      <rank>200</rank>
+    </mountain>
+  </mountains>
+</data>
+</mountainpeaks>

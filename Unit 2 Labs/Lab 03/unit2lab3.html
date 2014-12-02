@@ -802,7 +802,7 @@ hljs.initHighlightingOnLoad();
   });
 </script>
 
-<script type="text/javascript" src="Lab2-3_Have_I_Lost_My_Marbles_files/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 </script>
 
   
@@ -849,7 +849,7 @@ hljs.initHighlightingOnLoad();
 <div class="slideContent" >
 <ul>
 <li>No problem! You can <strong>simulate</strong> one in RStudio!</li>
-<li>Let&#39;s first create a vector for just the blue marbles</li>
+<li>Let&#39;s first create a vector for just the blue marbles.</li>
 </ul>
 
 <pre><code class="r">blue &lt;- rep(&quot;blue&quot;, times = 23)
@@ -866,12 +866,12 @@ hljs.initHighlightingOnLoad();
 <h3>Finishing up the bag</h3>
 <div class="slideContent" >
 <ul>
-<li><p>Create a vector for the green marbles on your own. </p>
+<li><p>Create a vector for the green marbles on your own and name it <code>green</code>. </p>
 
 <ul>
 <li><strong>Write down your command in your DS Journal.</strong></li>
 </ul></li>
-<li><p>Next, combine the <code>blue</code> and <code>green</code> vectors into one new vector and name it <code>marbles</code>.</p>
+<li><p>Next, <em>combine</em> the <code>blue</code> and <code>green</code> vectors into one new vector and name it <code>marbles</code>.</p>
 
 <ul>
 <li><strong>Write down your command in your DS Journal.</strong></li>
@@ -904,7 +904,7 @@ hljs.initHighlightingOnLoad();
 <h3>But wait!</h3>
 <div class="slideContent" >
 <ul>
-<li><p>We can select marbles one after the other, or put the marble back into the bag each time we draw.</p></li>
+<li><p>We can select marbles one after the other, or put the marble back into the bag each time we draw (like we did in the previous class).</p></li>
 <li><p>Within the <code>sample()</code> function, there is an option called <code>replace</code>, which we can set to either <code>TRUE</code> or <code>FALSE</code>.</p></li>
 </ul>
 
@@ -912,19 +912,20 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>To replace or not</h3>
+<h3>To replace or not to replace</h3>
 <div class="slideContent" >
 <ul>
-<li>Let&#39;s take a sample of 150 marbles. Use the <code>replace</code> option - first set it equal to <code>FALSE</code>, and then try it with <code>TRUE</code>.</li>
+<li>Let&#39;s take a sample of 101 marbles. That is, we&#39;ll draw a marble from our bag of 100, note its color, and then draw another. We will do this 101 times.</li>
+<li>Use the <code>replace</code> option - first set it equal to <code>FALSE</code>, and then try it with <code>TRUE</code>.</li>
 </ul>
 
-<pre><code class="r">sample(x = marbles, size = 150, 
+<pre><code class="r">sample(x = marbles, size = 101, 
        replace = FALSE)
 </code></pre>
 
 <ul>
-<li><p><strong>What happens when <code>replace = FALSE</code>? Why do you think this happened?</strong></p></li>
-<li><p><strong>What happens when <code>replace = TRUE</code>? Which is better for this scenario?</strong></p></li>
+<li><strong>What happens when <code>replace = FALSE</code>? Why do you think this happened?</strong></li>
+<li><strong>What happens when <code>replace = TRUE</code>? Which is better for this scenario?</strong></li>
 </ul>
 
 </div>
@@ -934,11 +935,11 @@ hljs.initHighlightingOnLoad();
 <h3>Back to those 10 marbles...</h3>
 <div class="slideContent" >
 <ul>
-<li><p>Rerun your code for the sample size of 10 (don&#39;t forget to create a new name for this sample - maybe <code>sample2</code>?) and include the <code>replace</code> argument and <strong>write down the sample in your DS Journal.</strong></p></li>
+<li><p>Rerun your code for the sample size of 10 (don&#39;t forget to create a new name for this sample - maybe <code>sample2</code>?) and include the <code>replace</code> argument. <strong>Write down the new sample in your DS Journal.</strong></p></li>
 <li><p><strong>What percent of the 10 marbles were blue?</strong></p></li>
 </ul>
 
-<p>\[ Estimated Probability = \frac{\# of BlueMarbles}{\# of TotalDraws} \]</p>
+<p>\[ \text{Estimated Probability} = \frac{\text{# of Blue Marbles}}{\text{# of Total Draws}} \]</p>
 
 <ul>
 <li><strong>How does your answer compare to your neighbor&#39;s?</strong></li>
@@ -951,9 +952,9 @@ hljs.initHighlightingOnLoad();
 <h3>Sample probability vs. theoretical probability</h3>
 <div class="slideContent" >
 <ul>
-<li><p><strong>How does your answer from the previous slide compare to the theoretical probability of selecting a blue marble?</strong></p></li>
-<li><p>Let&#39;s run our code a few more times, but instead of just drawing 10 marbles from our bag, let&#39;s draw out 1000.</p></li>
-<li><p>Obviously, we don&#39;t want to write out all 1000 marble colors, so we can simply tally up the number of blue marbles that our sample produced by using the <code>tally()</code> function.</p></li>
+<li><p><strong>How does your answer from the previous slide compare to the theoretical probability of selecting a blue marble?</strong> (Refer back to your answer from Slide 2 if you forgot the true probability.)</p></li>
+<li><p>Let&#39;s run our code a few more times, but instead of just drawing 10 marbles from our bag, let&#39;s draw out 300.</p></li>
+<li><p>Obviously, we don&#39;t want to write out all 300 marble colors, so we can simply tally up the number of blue marbles that our sample produced by using the <code>tally()</code> function.</p></li>
 </ul>
 
 </div>
@@ -963,12 +964,12 @@ hljs.initHighlightingOnLoad();
 <h3>Sample probability vs. theoretical probability</h3>
 <div class="slideContent" >
 <ul>
-<li><p><strong>In your sample of 1000, how many marbles were blue? What is your estimated probability?</strong></p></li>
+<li><p><strong>In your sample of 300, how many marbles were blue? What is your estimated probability of selecting a blue marble?</strong></p></li>
 <li><p><strong>As a class, report your estimated probabilities. Examine them and make a guess about which value was the <em>typical</em> estimated probability.</strong></p>
 
 <ul>
 <li>Note: The estimated probabilities are all close to the theoretical probability.</li>
-<li>The larger the sample size, n, the closer the estimated probability will be to the theoretical.</li>
+<li>The larger the sample size, <code>n</code>, the better our estimated probability will be.</li>
 </ul></li>
 </ul>
 

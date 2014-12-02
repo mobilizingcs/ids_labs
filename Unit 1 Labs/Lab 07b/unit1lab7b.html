@@ -811,7 +811,7 @@ hljs.initHighlightingOnLoad();
 <h1>A Diamond in the Rough (Part b)</h1><p></p>
 
 <div class="slideContent" >
-<p>Unit 1 - Lab 7</p>
+<p>Unit 1 - Lab 7b</p>
 
 <p>Directions: Follow along with the slides and answer the questions in <strong>red</strong> font in your journal.</p>
 
@@ -841,7 +841,7 @@ hljs.initHighlightingOnLoad();
 <li>We Loaded our data:</li>
 </ul>
 
-<pre><code class="r">load(atus_dirty)
+<pre><code class="r">data(atus_dirty)
 </code></pre>
 
 <ul>
@@ -858,8 +858,215 @@ hljs.initHighlightingOnLoad();
 <li>We renamed our variables</li>
 </ul>
 
-<pre><code>Error in names(atus_dirty) &lt;- c(&quot;caseid&quot;, &quot;age&quot;, &quot;gender&quot;, &quot;fulltime_emp&quot;,  : 
-  object &#39;atus_dirty&#39; not found
+<pre><code class="r">names(atus_dirty) &lt;- c(&quot;caseid&quot;,
+                       &quot;age&quot;,
+                       &quot;gender&quot;,
+                       &quot;fulltime_emp&quot;,
+                       &quot;phys_challenge&quot;,
+                       &quot;sleep&quot;,
+                       &quot;homework&quot;,
+                       &quot;socializing&quot;)
+</code></pre>
+
+<ul>
+<li><strong>Run this line of code</strong></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>How did we fix these problems?</h3>
+<div class="slideContent" >
+<ul>
+<li>We changed our <strong>string</strong> numbers back into <strong>numerical</strong> numbers:</li>
+</ul>
+
+<pre><code class="r">atus_dirty &lt;- 
+  transform(atus_dirty,
+            age = as.numeric(age),
+            sleep = as.numeric(sleep),
+            homework = as.numeric(homework),
+            socializing = 
+              as.numeric(socializing))
+</code></pre>
+
+<ul>
+<li><strong>Run this line of code</strong></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>So what&#x27;s next?</h3>
+<div class="slideContent" >
+<ul>
+<li>Let&#39;s take a look at our data to find our next problem</li>
+</ul>
+
+<pre><code class="r">View(atus_dirty)
+</code></pre>
+
+<ul>
+<li><strong>What do you notice about the <code>gender</code> and <code>phys_challenge</code> variables?</strong></li>
+<li>Recall that the variables tell us:
+
+<ul>
+<li><code>gender</code>: The gender of the respondent.</li>
+<li><code>phys_challenge</code>: Whether the person has a physical difficulty.</li>
+</ul></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Deciphering Categorical Variables</h3>
+<div class="slideContent" >
+<ul>
+<li>Clearly, <strong>gender</strong> is a categorical variable but it&#39;s categories are represented by numbers.
+
+<ul>
+<li>This isn&#39;t necessarily a huge problem, but our data would be much clearer if we could replace the numbers <code>&quot;01&quot;</code> and <code>&quot;02&quot;</code> with <code>&quot;Male&quot;</code> and <code>&quot;Female&quot;</code>.</li>
+</ul></li>
+<li>The sames is true of the <strong>phys_challenge</strong> variables.</li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Factors and Levels</h3>
+<div class="slideContent" >
+<ul>
+<li>R has a special name for <em>categorical</em> variables, called <strong>Factors</strong>.</li>
+<li>R also has a special name for the different <em>categories</em> of a <em>categorical</em> variable.
+
+<ul>
+<li>The individual categories are called <strong><code>&quot;levels&quot;</code></strong>.</li>
+</ul></li>
+<li>To see the levels of <strong>gender</strong> type:</li>
+</ul>
+
+<pre><code class="r">with(atus_dirty, levels(gender))
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>What&#x27;s with with()?</h3>
+<div class="slideContent" >
+<pre><code class="r">with(atus_dirty, levels(gender))
+</code></pre>
+
+<ul>
+<li>This line of code says:
+
+<ul>
+<li>&ldquo;With our atus_dirty data&hellip;&rdquo;</li>
+<li>&ldquo;&hellip; print out the levels of&hellip;&rdquo;</li>
+<li>&ldquo;&hellip; the variable <code>gender</code>.&rdquo;</li>
+</ul></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>What&#x27;s with() phys_challenge?</h3>
+<div class="slideContent" >
+<ul>
+<li><strong>Using the method from the last slide, write down the <code>levels</code> of the <code>phys_challenge</code> variable</strong>.</li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>A level by any other name...</h3>
+<div class="slideContent" >
+<ul>
+<li>If we know that &#39;<code>01</code>&#39; means &#39;<code>Male</code>&#39; and &#39;<code>02</code>&#39; means &#39;<code>female</code>&#39; then we can use the following code to revalue the <strong><code>levels</code></strong> of <em>gender</em>.</li>
+<li>Type the following command into your console:</li>
+</ul>
+
+<pre><code class="r">require(plyr)
+atus_dirty &lt;- 
+  transform(atus_dirty, 
+            gender = 
+              revalue(gender, 
+                      c(&quot;01&quot; = &quot;Male&quot;, 
+                        &quot;02&quot; = &quot;Female&quot;)))
+</code></pre>
+
+<ul>
+<li>This code is definitely a bit of a mouthful. Let&#39;s break it down.</li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Allow me to explain</h3>
+<div class="slideContent" >
+<pre><code class="r">atus_dirty &lt;- 
+  transform(atus_dirty, 
+            gender = 
+              revalue(gender, 
+                      c(&quot;01&quot; = &quot;Male&quot;, 
+                        &quot;02&quot; = &quot;Female&quot;)))
+</code></pre>
+
+<ul>
+<li>This code is saying:
+
+<ul>
+<li>&ldquo;Replace my current version of <code>atus_dirty</code>&hellip;&rdquo;</li>
+<li>&ldquo;&hellip; with a transformed one where &hellip;&rdquo;</li>
+<li>&ldquo;&hellip; the <code>gender</code> variables levels &hellip;&rdquo;</li>
+<li>&ldquo;&hellip; have been revalued&hellip;&rdquo;</li>
+<li>&ldquo;&hellip; where &#39;01&#39; will now be &#39;Male&#39;&hellip;&rdquo;</li>
+<li>&ldquo;&hellip; and &#39;02&#39; will now be &#39;Female&#39;.&rdquo;</li>
+</ul></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Factors and Levels</h3>
+<div class="slideContent" >
+<ul>
+<li><code>View</code> your data again and look at the values for <strong>gender</strong></li>
+<li><strong>Rename the values of the variable <code>phys_challenge</code> where</strong>
+
+<ul>
+<li><strong>01:</strong> No difficulty </li>
+<li><strong>02:</strong> Has difficulty</li>
+</ul></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Ta-da!</h3>
+<div class="slideContent" >
+<ul>
+<li>It took some work, but you should have a data set you can be proud of.</li>
+<li>Let&#39;s rename our data now that it&#39;s clean:</li>
+</ul>
+
+<pre><code class="r">atus_clean &lt;- atus_dirty
+</code></pre>
+
+<ul>
+<li>And let&#39;s also take a moment to admire it:</li>
+</ul>
+
+<pre><code class="r">View(atus_clean)
 </code></pre>
 
 </div>
