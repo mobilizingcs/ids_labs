@@ -10,3 +10,5 @@ install_github('mobilizingcs/MobilizeSimple')
 ```
 
 To view the labs in the *Viewer* pane in Rstudio, run the `load_labs()` function and then select the lab you'd like to look at.
+
+Of course, you could always just look in the folders at the `.html` files as well. That'd work.
