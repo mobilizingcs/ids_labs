@@ -1,0 +1,101 @@
+---
+title: "List of functions for IDS"
+output: html_document
+---
+
+This is the first draft of the cheatsheet of R commenda for the Introduction to Data Science course. All functions from the first two units are here. 
+
+```{r, echo=FALSE} 
+library(knitr)
+opts_chunk$set(eval=FALSE)
+```
+
+Basic things about data frames
+```{r}
+data() #data(cdc)
+View() #View(cdc)
+load() #load(atus_dirty)
+dim() #dim(cdc)
+nrow() #nrow(cdc)
+ncol() #ncol(cdc)
+names() #names(cdc)
+head() #head(cdc)
+```
+
+Plots
+```{r}
+histogram() #histogram(~height, data = cdc) histogram(~height, data = cdc, nint = 3) histogram(~height | gender, data = cdc) histogram(~height | gender, data = cdc, layout = c(1,2)) histogram(~height, data = cdc, subset = (gender == "Male"))
+bargraph() #bargraph(~sunscreen, data = cdc) bargraph(~helmet, data = cdc, horizontal = TRUE) bargraph(~helmet, data = cdc, groups = gender, horizontal = TRUE)
+xyplot() #xyplot(weight~height, data = cdc) xyplot(weight ~ height | gender, data = cdc) xyplot(weight ~ height, data = cdc, groups = gender)
+mosaicplot() #mosaicplot(depressed~hours_sleep, data=cdc, las=1)
+bwplot() #bwplot(~x, data=colors)
+dotPlot() #dotPlot(~x, data = colors) bwplot(~runtime | mpaa_rating, data = movie) bwplot(~runtime | mpaa_rating,data = movie, layout = c(1,6))
+add_line() #Click on the plot
+```
+
+Simple operators
+```{r}
++ #1+2 Plus
+- #1-2 Minus
+* #2*3 Multiplication
+/ #6/2 Division
+^ #2^3 Powers
+: #1:10 Read as, the numbers 1 to 10
+<- #a <- 2 Assigment operator
+== #2 == 2 Check if equal
+!= #2 != 2 Check if not equal
+```
+
+Variable creation and subsetting
+```{r}
+c() #c(5, 6, 7, 8, 9, 10, 11, 12, 13, 14)
+seq() #seq(from = 5, to = 14, by = 1) seq(from = 5, to = 14, by = 3) seq(5, 14, 1)
+sum() #sum(numbers)
+cumsum() #cumsum(your_object)
+subset() #subset(cdc, asthma == "Yes")
+rep() #rep("blue", times = 23)
+sample() #sample(c(1,0), size = 10, replace=TRUE)e)
+```
+
+Data cleaning
+```{r}
+rename() #I think we should use this instead of doing names(atus_dirty) <- c(new_name1, new_name2, ...)
+transform() #transform(atus_dirty, age = as.numeric(age)) transform(atus_dirty,age = as.numeric(age), sleep = as.numeric(sleep))
+as.numeric() #transform(atus_dirty,age = as.numeric(age), sleep = as.numeric(sleep))
+revalue() #transform(atus_dirty, gender = revalue(gender, c("01" = "Male", "02" = "Female")))
+with() #with(atus_dirty, levels(gender))
+levels() #with(atus_dirty, levels(gender))
+atus_format() #atus_format(my_atus)
+```
+
+Summaries
+```{r}
+tally() #tally(~gender, data = atus_clean) tally(phys_challenge~gender, data = atus_clean) tally(phys_challenge~gender, data = atus_clean, format = 'count') tally(phys_challenge~gender, data = atus_clean, format = 'count', margins = TRUE) tally(survival~gender, data = slasher, format = 'proportion')
+mean() #mean(~COLOR, data = color_data) mean(~x | birth_gender.label, data = colors)
+median() #median(~COLOR, data = color_data)
+MAD() #MAD(~x, data = colors)
+min() #min(~x, data=colors)
+max() #max(~x, data=colors)
+range() #range(~x, data = colors)
+IQR() #IQR(~x, data = colors)
+qdata() #qdata(x, data = colors, p = 0.35)
+favstats() #favstats(~x, data=colors)
+```
+
+Resampling
+```{r}
+resample() #resample(slasher, shuffled = "survival")
+do() #do(100) * resample(slasher,  shuffled = "survival")
+```
+
+More complex data operations
+```{r}
+merge() #merge(stress, colors, by = "user.id")
+save() #save(stress_colors, file = "~/stress_colors.rda")
+```
+
+Linear models
+```{r}
+cor() #cor(audience_rating~critics_rating, data = movie)
+lm() #lm(audience_rating~critics_rating,data = movie)
+```
