@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Confound it all!</title>
+  <title>Scraping Web Data</title>
     
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -795,16 +795,6 @@ hljs.initHighlightingOnLoad();
 </script>
 
    
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    showProcessingMessages: false,
-    messageStyle: "none"
-  });
-</script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
   
 
 
@@ -818,10 +808,10 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="default" data-transition-speed="slow">
-<h1>Confound it all!</h1><p></p>
+<h1>Scraping Web Data</h1><p></p>
 
 <div class="slideContent" >
-<p>Unit 3 - Lab 2  </p>
+<p>Unit 3 - Lab 5  </p>
 
 <p>Directions: Follow along with the slides and answer the questions in <strong>red</strong> font in your journal.</p>
 
@@ -829,20 +819,24 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Good-bye button, hello code!</h3>
+<h3>The web as a data source</h3>
 <div class="slideContent" >
 <ul>
-<li>Since your first forays into doing data science, you&#39;ve <em>download</em>, <em>upload</em> and <em>load</em>-ed your data.
+<li>The internet contains huge amounts of information.
 
 <ul>
-<li>And you&#39;ve done so marvelously &hellip; using a button.</li>
+<li>Gathering this information in an automated fashion is referred to as <em>scraping data</em>.</li>
 </ul></li>
-<li>In this lab, we&#39;ll look at using <code>code</code> as an alternative to the <em>Import Dataset</em> button in the <em>Environment</em> tab.
+<li>The difficulty of scraping data from the web varies quite a bit.
 
 <ul>
-<li>We&#39;ll import some data from an <em>observational study</em>.</li>
-<li>Clean up our new data.</li>
-<li>And then use it to explore <em>associations</em> and discover how <em>confounding factors</em> can hinder analyses.</li>
+<li>So let&#39;s start with something fairly easy.</li>
+</ul></li>
+<li>Scraping data is usually done in two parts:
+
+<ul>
+<li>Step 1: Gather the information from the web.</li>
+<li>Step 2: Clean it up and make it something useful.</li>
 </ul></li>
 </ul>
 
@@ -850,19 +844,22 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Our new data</h3>
+<h3>Our first web scraper</h3>
 <div class="slideContent" >
 <ul>
-<li>In the late 1970&#39;s, a researcher in Boston began measuring the lung capacity of children to study the effects that childhood smoking had on lung health.
+<li>Our first task will be to scrape the data contained <a href="http://web.ohmage.org/mobilize/resources/ids/data/mountains.html">on this website</a>.
 
 <ul>
-<li>You can find the data online, as it turns out, here: <a href="http://www.amstat.org/publications/jse/datasets/fev.dat.txt">http://www.amstat.org/publications/jse/datasets/fev.dat.txt</a></li>
+<li>Click on the link.</li>
+<li>Notice that the data doesn&#39;t look so different from what data already looks like in RStudio.</li>
 </ul></li>
-<li>Rather than <em>download</em>-ing the data and then <em>upload</em>-ing and <em>load</em>-ing it, we&#39;ll pull the data straight from the webpage into R.
+<li><strong>Briefly describe what the data on the website is about.</strong></li>
+<li>Since data on the web can change all the time, we typically write <em>web scrapers</em> as scripts.
 
 <ul>
-<li>The benefit of loading data with code is that it helps makes your code <strong>reproducible</strong>, meaning your analysis could be reproduced, from start to finish, by anyone else.</li>
-<li>Sharing code is one way scientists collaborate and verify each other&#39;s results!</li>
+<li>Which lets us just re-run all the code in the script to access the latest data.</li>
+<li>Open a new script by clicking: File -&gt; New File -&gt; R Script.</li>
+<li>Write each new line of code into the script.</li>
 </ul></li>
 </ul>
 
@@ -870,173 +867,138 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Loading our data</h3>
+<h3>Getting started.</h3>
 <div class="slideContent" >
 <ul>
-<li>Copy/paste or type the <code>url</code> of the website containing the data into the following (Remember to wrap the url in quotes):</li>
+<li>To get started, we first notice that:
+
+<ul>
+<li>We have a webpage.</li>
+<li>It contains a table of data.</li>
+</ul></li>
+<li>To access this data, we&#39;re going to need some functions that RStudio doesn&#39;t come with when it&#39;s first installed.
+
+<ul>
+<li>Specifically, we need the <code>XML</code> package, which includes functions on reading HTML tables.</li>
+</ul></li>
+<li>To get started, <em>TYPE</em> the <a href="http://web.ohmage.org/mobilize/resources/ids/data/mountains.html">url of the website we want to scrape</a> as an object in R (Don&#39;t copy &amp; paste):</li>
 </ul>
 
-<pre><code class="r">lungs &lt;- read.table(&quot;type webpage 
-                     address here&quot;,
-                    header=FALSE)
+<pre><code class="r">data_url &lt;- &quot;http://web.ohmage.org/mobilize/
+          resources/ids/data/mountains.html&quot;
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Loading packages</h3>
+<div class="slideContent" >
+<ul>
+<li>Try running the following code (It probably won&#39;t work but that&#39;s ok):</li>
+</ul>
+
+<pre><code class="r">readHTMLTable(data_url)
 </code></pre>
 
 <ul>
-<li>The <code>read.table</code> function reads raw data and turns it into a data table that we can use in R.
+<li>R is popular among data scientists because it&#39;s easy to create and share new functions.
 
 <ul>
-<li>We write <code>header=FALSE</code> to let R know that our data is missing variable names.</li>
-<li>The <code>lungs</code> portion of the code is just the name we&#39;re giving the data.</li>
+<li>We want to have RStudio scrape an HTML table, which as you might have found by running the code above, isn&#39;t something RStudio can do by itself.</li>
 </ul></li>
+<li>To load the <em>package</em> that will let us easily scrape HTML tables, run:</li>
 </ul>
+
+<pre><code class="r">library(XML)
+</code></pre>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Viewing your data</h3>
+<h3>The library() function</h3>
 <div class="slideContent" >
 <ul>
-<li>After loading data, it&#39;s helpful to look at it to get a feel for what it <em>looks</em> like and to make sure nothing funny happened when we loaded it.</li>
-<li>Type the following to <code>View</code> your data:</li>
+<li>The <code>library()</code> function is how we can add new functions for R to use.
+
+<ul>
+<li>We loaded the files in the <code>XML</code> package.</li>
+</ul></li>
+<li>Run the following line of code now:</li>
 </ul>
 
-<pre><code class="r">View(lungs)
+<pre><code class="r">readHTMLTable(data_url)
 </code></pre>
 
 <ul>
-<li><strong>What do you notice is missing from the data?</strong>
-
-<ul>
-<li>Need a hint? Type <code>names(lungs)</code> to print the names of the variables.</li>
-</ul></li>
-<li><strong>Which variable do you think is the child&#39;s height? Which is lung capacity (measured in <em>Forced Expiratory Volume</em>)? Can you be sure?</strong></li>
+<li><strong>How is running the code <code>readHTMLTable(data_url)</code> different after loading the <code>XML</code> package than before?</strong></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Fixing data and Viewing it again</h3>
+<h3>Saving tables</h3>
 <div class="slideContent" >
 <ul>
-<li>To add names to your data, run the following:</li>
+<li>The <code>readHTMLTable()</code> function will scrape <em>EVERY</em> table that is on a website.
+
+<ul>
+<li>This means we&#39;ll, typically, need to sift through the different tables to find the one we&#39;re interested in.</li>
+</ul></li>
+<li>Run the following to save all of the scraped tables as an object called <code>tables</code>:</li>
 </ul>
 
-<pre><code class="r">names(lungs) &lt;- c(&quot;age&quot;,&quot;lung_cap&quot;,&quot;height&quot;, 
-                  &quot;gender&quot;,&quot;smoke&quot;)
+<pre><code class="r">tables &lt;- readHTMLTable(data_url)
 </code></pre>
 
 <ul>
-<li><strong>Type <code>View(lungs)</code> again and then describe in words what the above line of code did to your data.</strong></li>
+<li>Since our site contains only a single table, we&#39;ll run the following to save the table as a data object called <code>mountains</code>:</li>
 </ul>
 
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Analyzing our data</h3>
-<div class="slideContent" >
-<ul>
-<li>Our <code>lungs</code> data is from an observational study.
-
-<ul>
-<li><strong>Write down a reason the reseachers couldn&#39;t use an experiment to test the effects of smoking on children&#39;s lungs.</strong></li>
-</ul></li>
-<li>Observational studies are often helpful for analyzing how variables are related: 
-
-<ul>
-<li>Let&#39;s explore whether or not a person&#39;s height is related to their lung capacity!</li>
-<li>Create an <code>xyplot</code> that compares people&#39;s <code>height</code> on the \( x \)-axis and their <code>lung_cap</code> (lung capacity) on the \( y \)-axis.</li>
-<li><strong>Write down the code you used to create your plot</strong></li>
-</ul></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Forming conclusions</h3>
-<div class="slideContent" >
-<ul>
-<li><strong>Based on your plot, finish the following research claim:</strong>
-
-<ul>
-<li><em>Based on the information from our observational survey, it appears that taller people tend to have _________________ lung capacities than people who are shorter.</em> </li>
-</ul></li>
-<li><strong>Does it seem reasonable that taller people would have larger lung capacity?</strong>
-
-<ul>
-<li><strong>Do you think the plot you made seems to back this claim up?</strong></li>
-</ul></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Beware confounding variables</h3>
-<div class="slideContent" >
-<ul>
-<li>Even though plotting <code>height</code> and <code>lung_cap</code> seemed to show evidence that taller people have larger lung capacities, we should remain skeptical.
-
-<ul>
-<li>Our data is from an observational study which means the relationship we found might actually be caused by a <em>confounding variable</em> </li>
-<li>A <strong>confounding variable</strong>, in our case, would be one that impacts  children&#39;s <code>height</code> and also their <code>lung_cap</code> in such a way as to make these two variables <em>seem</em> related even though they might not be.</li>
-</ul></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Confounded and confused</h3>
-<div class="slideContent" >
-<ul>
-<li>Create the following plots:</li>
-</ul>
-
-<pre><code class="r">xyplot(lung_cap~age, data=lungs)
+<pre><code class="r">mountains &lt;- tables[[1]]
 </code></pre>
 
-<pre><code class="r">xyplot(height~age, data=lungs)
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Multiple tables</h3>
+<div class="slideContent" >
+<ul>
+<li>When a website contains multiple tables, we&#39;ll replace the <code>1</code> in <code>tables[[1]]</code> with a <code>2</code>, <code>3</code>, and so on until we find the table we&#39;re interested in.</li>
+<li><strong>What happens when you run <code>tables[[2]]</code>?</strong>
+
+<ul>
+<li><strong>Since our data only has a single table why does <code>tables[[2]]</code> return the output that it does?</strong></li>
+</ul></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Looking at our new data</h3>
+<div class="slideContent" >
+<ul>
+<li>Now that we&#39;ve scraped our data from the web, our next job is to clean it up.</li>
+<li>Type the following to view the data:</li>
+</ul>
+
+<pre><code class="r">View(mountains) 
+</code></pre>
+
+<pre><code class="r">names(mountains)
 </code></pre>
 
 <ul>
-<li><strong>Describe what happen&#39;s to people&#39;s <code>height</code> and <code>lung_cap</code> as they get older. Describe why <code>age</code> might be a possible <em>confounding factor</em>?</strong> </li>
-<li><strong>Could it be the case that <code>age</code> is related to the volume of people&#39;s <code>lung_cap</code> and that their <code>height</code> is not? Why?</strong></li>
-<li><strong>Using the data, could you disprove the claim: &#39;People with larger lung capacites absorb more oxygen which causes them to grow taller?&#39;</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Don&#x27;t despair</h3>
-<div class="slideContent" >
-<ul>
-<li>By now, we might be feeling a little distressed about our data. 
+<li>Then answer the following questions:
 
 <ul>
-<li>It isn&#39;t at all helpful to help us decide if our hypothesis that people&#39;s heights and lung capacities are related.<br/></li>
-<li>Really, all it&#39;s done so far is confuse us!</li>
-</ul></li>
-<li><strong>Write down your opinion about the usefulness of observational studies.</strong> </li>
-<li><strong>How sad would you be to find out that many of the <em>&ldquo;studies&rdquo;</em> found on the news are based on <em>observational studies</em>?</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Observational studies are (often) useful!</h3>
-<div class="slideContent" >
-<ul>
-<li>Even with all the weaknesses we&#39;ve found with observational studies, a good argument can still be made to say people&#39;s height are related to their lung capacity.
-
-<ul>
-<li>In the following slides, we&#39;ll argue that this is indeed the case by showing that <code>age</code> is not a confounding variable.</li>
-<li>This would then imply that our initial conclusion that height and lung capacity seem to be related is correct.</li>
+<li><strong>Is something wrong with the variable names?</strong></li>
+<li><strong>Do the values for each variable seem reasonable?</strong></li>
+<li><strong>What do the variables <code>long</code> and <code>lat</code> tell us about our data?</strong></li>
 </ul></li>
 </ul>
 
@@ -1044,114 +1006,136 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Age and gender</h3>
+<h3>Cleaning our data (variable names)</h3>
 <div class="slideContent" >
 <ul>
-<li>Run the following:</li>
+<li>One of the most common problems with scraped data is poorly formatted variable names. 
+
+<ul>
+<li>Which are at least easy to fix.</li>
+</ul></li>
+<li>If you think you have better names for the data&#39;s variables, use the following example code to change them:</li>
 </ul>
 
-<pre><code class="r">histogram(~age|gender, data=lungs)
+<pre><code class="r">names(mountains) &lt;- c(&quot;new_name1&quot;, 
+                      &quot;new_name2&quot;,
+                      ..., 
+                      &quot;new_name10&quot;)
 </code></pre>
 
 <ul>
-<li>Notice that the distribution of children&#39;s ages, for each gender are roughly similar.
-
-<ul>
-<li>Because of this, we expect there to be roughly similar numbers of boys and girls for each age.</li>
-</ul></li>
-<li>Note: In our data, Males are coded as <code>1</code>s in the data. Females as <code>0</code>s.</li>
+<li>Note: Don&#39;t use <code>new_name1</code> &hellip; try fixing the names that printed when you ran <code>names(mountains)</code></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Height and gender</h3>
+<h3>Cleaning our data (variable classes)</h3>
 <div class="slideContent" >
 <ul>
-<li>Next run the following:</li>
+<li>After inspecting our variable names, we want to make sure that <em>categorical variables</em> (or <em>factors</em>) are composed of categories and that <em>numerical variables</em> are composed of numbers.</li>
+<li>Type the following to determine if R thinks that our numbers for mountain elevation (in feet) are actually numbers:</li>
 </ul>
 
-<pre><code class="r">histogram(~height|gender, data=lungs)
+<pre><code class="r">mean(~elev_ft, data=mountains)
 </code></pre>
 
 <ul>
-<li>In this plot, notice that males (the right-hand side of the plot), have quite a few people who are taller than 67.5 inches whereas the females (the left-hand side of the plot) only have a few.</li>
+<li>If you get an error, then R doesn&#39;t understand that <code>elev_ft</code> is a numerical variable.</li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Age, gender and lung capacity</h3>
+<h3>Data structure</h3>
 <div class="slideContent" >
 <ul>
-<li>So we know that our genders have similar distibutions for age, but that there are a group of males that are taller than the females.
+<li>R will tell you what type of variable it considers each variable. 
 
 <ul>
-<li>If <code>age</code> is a reason for people having larger lung capacties then, we should see males and females evenly scattered throughout this plot:</li>
+<li>Use the <em>structure</em> function to find out what types of variables R thinks your data contains:</li>
 </ul></li>
 </ul>
 
-<pre><code class="r">xyplot(lung_cap~age, data=lungs, 
-       groups=gender)
+<pre><code class="r">str(mountains)
 </code></pre>
 
 <ul>
-<li><strong>Are males and females evenly scattered through the plot? Or is there an area where they appear to be seperated? (Where one set of points is above or below the other?)</strong></li>
+<li>Here we see the problem. 
+
+<ul>
+<li>R thinks that our numerical variables (elev_ft, prominence_ft, rank, etc.) are actually <code>Factors</code> or <em>categorical variables</em>.</li>
+</ul></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Confused no more!</h3>
+<h3>Changing the script</h3>
 <div class="slideContent" >
 <ul>
-<li>We started this lab by noting that it seemed people&#39;s heights were related to their lung capacity.
+<li>Why is it better to sometimes use a script? Because it&#39;s easier to make changes to your code by using it.</li>
+<li><code>View</code> your data and determine which variables are <em>categorical</em> (i.e. <em>factors</em>) and which should be numerical.
 
 <ul>
-<li>We became suspicious of this relationship when we noticed that people&#39;s heights and lung capacities both increased as they aged.</li>
-<li>This led us to believe that age could be what&#39;s actually related to lung capacity instead of heights.</li>
-<li>In the argument, we then showed that we had evidence to disprove the relationship between age and lung capacity.</li>
+<li>Next, write down the variable types and save them as a vector called <code>var_types</code>.</li>
+<li>To get you started, the first 3 varibles are <em>factors</em> (categorical) and the 4th is <em>numeric</em>. So we write:</li>
 </ul></li>
-<li>So for us, based on our data, we find that there is evidence of a relationship between people&#39;s <code>height</code> and <code>lung_cap</code></li>
+</ul>
+
+<pre><code class="r">var_types &lt;- c(&quot;character&quot;, &quot;character&quot;, &quot;character&quot;, &quot;numeric&quot;, ...)
+</code></pre>
+
+<ul>
+<li>Finish the above code with the remaining variables types &amp; run it.</li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Remarks about our argument</h3>
+<h3>Making some changes</h3>
 <div class="slideContent" >
 <ul>
-<li>Even if the argument we&#39;ve just laid out seems convincing:
+<li>If you have been writing your code in a script you can just scroll back now and update it with the following:</li>
+</ul>
+
+<pre><code class="r">tables &lt;- readHTMLTable(data_url, 
+                        colClasses=var_types)
+</code></pre>
 
 <ul>
-<li>Is it necessarily absolutely certain? Not at all.</li>
-<li>Could there still be some confounding variable that we don&#39;t see which is causing the increase in people&#39;s lung capacities? Absolutely.</li>
-<li>But does it still lend evidence to a seemingly reasonable hypothesis? Yes!</li>
+<li>The rest of your code in the script can remain the same which saves you from having to write the same code over again:</li>
+<li><strong>Use your previous code to create your <code>mountains</code> data.</strong>
+
+<ul>
+<li><strong>When you&#39;re finished, find and report the mean elevation (in feet) of the mountains</strong></li>
 </ul></li>
-<li><strong>What do you think of the argument made? Do you personally think it supports the hypothesis that taller people&#39;s bigger bodies might explain their larger lung capacity? Explain.</strong></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Concluding remarks</h3>
+<h3>Saving your data</h3>
 <div class="slideContent" >
 <ul>
-<li>When analyzing data from an observational study, we should:
+<li>Now that you&#39;ve scraped and cleaned your data, you&#39;ll want to save it by running:</li>
+</ul>
+
+<pre><code class="r">save(mountains, file=&quot;mountains.rda&quot;)
+</code></pre>
 
 <ul>
-<li>Beware of confounding variables that cause us to find spurious (<em>fake</em> or <em>false</em>) relationships.</li>
-<li>Do our best to really test the validity of our conclusions.</li>
-<li>Be mindful that our conclusions might be correct, but we can&#39;t be absolutely certain.</li>
-</ul></li>
-<li>Many times, observational studies help us find relationships that we then try to confirm or deny by using experiments. </li>
-<li><font color=#660099><b>Science done using an observational study isn&#39;t automatically incorrect or useless, but we should remember to take the conclusions with a grain of salt.</b></font></li>
+<li><strong>Check the <em>Files</em> pane in Rstudio to make sure your saved data shows up. In which directory can you find it?</strong></li>
+<li>Finally, run the following code to put your <code>mountains</code> data to good use:</li>
 </ul>
+
+<pre><code class="r">make_map(lat, long, data=mountains)
+</code></pre>
 
 </div>
 

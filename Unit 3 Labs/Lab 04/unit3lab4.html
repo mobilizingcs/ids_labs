@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Confound it all!</title>
+  <title>Are you sure about that?</title>
     
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -795,16 +795,6 @@ hljs.initHighlightingOnLoad();
 </script>
 
    
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    showProcessingMessages: false,
-    messageStyle: "none"
-  });
-</script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
   
 
 
@@ -818,10 +808,10 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="default" data-transition-speed="slow">
-<h1>Confound it all!</h1><p></p>
+<h1>Are you sure about that?</h1><p></p>
 
 <div class="slideContent" >
-<p>Unit 3 - Lab 2  </p>
+<p>Unit 3 - Lab 4</p>
 
 <p>Directions: Follow along with the slides and answer the questions in <strong>red</strong> font in your journal.</p>
 
@@ -829,126 +819,107 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Good-bye button, hello code!</h3>
+<h3>Starting out</h3>
 <div class="slideContent" >
 <ul>
-<li>Since your first forays into doing data science, you&#39;ve <em>download</em>, <em>upload</em> and <em>load</em>-ed your data.
-
-<ul>
-<li>And you&#39;ve done so marvelously &hellip; using a button.</li>
-</ul></li>
-<li>In this lab, we&#39;ll look at using <code>code</code> as an alternative to the <em>Import Dataset</em> button in the <em>Environment</em> tab.
-
-<ul>
-<li>We&#39;ll import some data from an <em>observational study</em>.</li>
-<li>Clean up our new data.</li>
-<li>And then use it to explore <em>associations</em> and discover how <em>confounding factors</em> can hinder analyses.</li>
-</ul></li>
+<li>During our previous lesson, we learned about creating informal confidence intervals based on sample medians. </li>
+<li>Today, we will be creating many intervals in an attempt to identify the <em>best</em> one.</li>
+<li>For this lab, you will need to load the <code>atus</code> data set. We will be working with the <code>age</code> variable again.</li>
+<li><strong>What is the median age in this data set?</strong></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Our new data</h3>
+<h3>Getting one sample</h3>
 <div class="slideContent" >
 <ul>
-<li>In the late 1970&#39;s, a researcher in Boston began measuring the lung capacity of children to study the effects that childhood smoking had on lung health.
-
-<ul>
-<li>You can find the data online, as it turns out, here: <a href="http://www.amstat.org/publications/jse/datasets/fev.dat.txt">http://www.amstat.org/publications/jse/datasets/fev.dat.txt</a></li>
-</ul></li>
-<li>Rather than <em>download</em>-ing the data and then <em>upload</em>-ing and <em>load</em>-ing it, we&#39;ll pull the data straight from the webpage into R.
-
-<ul>
-<li>The benefit of loading data with code is that it helps makes your code <strong>reproducible</strong>, meaning your analysis could be reproduced, from start to finish, by anyone else.</li>
-<li>Sharing code is one way scientists collaborate and verify each other&#39;s results!</li>
-</ul></li>
+<li>We first need to subset the data so we are only using the <code>age</code> variable. As in lesson 12, we can create a new data set called <code>justAge</code> to store this data.</li>
 </ul>
 
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Loading our data</h3>
-<div class="slideContent" >
-<ul>
-<li>Copy/paste or type the <code>url</code> of the website containing the data into the following (Remember to wrap the url in quotes):</li>
-</ul>
-
-<pre><code class="r">lungs &lt;- read.table(&quot;type webpage 
-                     address here&quot;,
-                    header=FALSE)
+<pre><code class="r">justAge &lt;- print(~age, data=atus)
 </code></pre>
 
 <ul>
-<li>The <code>read.table</code> function reads raw data and turns it into a data table that we can use in R.
+<li><p><strong>What does the code <code>print(~age, data=atus)</code> tell RStudio to do?</strong></p></li>
+<li><p>Now we can create a sample of size 100 from the data set of just ages. Recall:</p></li>
+</ul>
 
+<pre><code class="r">sample1 &lt;- sample(justAge, size = 100, 
+                  replace = FALSE)
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>What&#x27;s your sample median?</h3>
+<div class="slideContent" >
 <ul>
-<li>We write <code>header=FALSE</code> to let R know that our data is missing variable names.</li>
-<li>The <code>lungs</code> portion of the code is just the name we&#39;re giving the data.</li>
-</ul></li>
+<li><p>Calculate the median age of your 100 sampled ages. <strong>What was your sample&#39;s median age?</strong></p></li>
+<li><p><strong>How far off from the true median age is your estimate?</strong></p></li>
+<li><p><strong>Was your estimate too high or too low?</strong></p></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Viewing your data</h3>
+<h3>Let&#x27;s create one interval</h3>
 <div class="slideContent" >
 <ul>
-<li>After loading data, it&#39;s helpful to look at it to get a feel for what it <em>looks</em> like and to make sure nothing funny happened when we loaded it.</li>
-<li>Type the following to <code>View</code> your data:</li>
+<li><strong>Based on your answers from the previous slide, if you were to create an interval that includes the true median, how far away would you need to go in one direction?</strong>
+
+<ul>
+<li>For example, if my sample median was 50, I would need to go at least 3 numbers below 50 to include the true median of 47.</li>
+</ul></li>
+<li>But, I can&#39;t just go down 3. I also need to go up 3 to create my interval in both directions. Therefore, my actual interval would be from 47 to 53.</li>
+<li><strong>What values make up your interval?</strong></li>
 </ul>
 
-<pre><code class="r">View(lungs)
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Calculating the range of your interval</h3>
+<div class="slideContent" >
+<ul>
+<li>In order to see how wide the interval is, we can simply find the range of the upper and lower values. (e.g. if the interval was 47 to 53, the range = 53 - 47 = 6).</li>
+<li><strong>What is the range of your confidence interval?</strong></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>A quick calculation</h3>
+<div class="slideContent" >
+<ul>
+<li>Note that another way to calculate the range is to find the difference between your sample&#39;s median and the true median, then multiply that value by 2.</li>
+<li>In RStudio, we could use the following code:</li>
+</ul>
+
+<pre><code class="r">range1 &lt;- abs(samp1Median - 47) * 2
 </code></pre>
 
 <ul>
-<li><strong>What do you notice is missing from the data?</strong>
-
-<ul>
-<li>Need a hint? Type <code>names(lungs)</code> to print the names of the variables.</li>
-</ul></li>
-<li><strong>Which variable do you think is the child&#39;s height? Which is lung capacity (measured in <em>Forced Expiratory Volume</em>)? Can you be sure?</strong></li>
+<li><strong>Why is it necessary to include the syntax <code>abs()</code> here?</strong></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Fixing data and Viewing it again</h3>
+<h3>Remember: Our goal is to come up with ONE confidence interval</h3>
 <div class="slideContent" >
 <ul>
-<li>To add names to your data, run the following:</li>
-</ul>
-
-<pre><code class="r">names(lungs) &lt;- c(&quot;age&quot;,&quot;lung_cap&quot;,&quot;height&quot;, 
-                  &quot;gender&quot;,&quot;smoke&quot;)
-</code></pre>
+<li>How do we know if the range we calculated from our first sample is the best?</li>
+<li><p>Obviously, we would like each range to be as small as possible and still include the true median.</p></li>
+<li><p>It&#39;s impossible to decide what the best interval would be with just one sample estimate, so we can create multiple samples and find the average ranges of all of them.</p>
 
 <ul>
-<li><strong>Type <code>View(lungs)</code> again and then describe in words what the above line of code did to your data.</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Analyzing our data</h3>
-<div class="slideContent" >
-<ul>
-<li>Our <code>lungs</code> data is from an observational study.
-
-<ul>
-<li><strong>Write down a reason the reseachers couldn&#39;t use an experiment to test the effects of smoking on children&#39;s lungs.</strong></li>
-</ul></li>
-<li>Observational studies are often helpful for analyzing how variables are related: 
-
-<ul>
-<li>Let&#39;s explore whether or not a person&#39;s height is related to their lung capacity!</li>
-<li>Create an <code>xyplot</code> that compares people&#39;s <code>height</code> on the \( x \)-axis and their <code>lung_cap</code> (lung capacity) on the \( y \)-axis.</li>
-<li><strong>Write down the code you used to create your plot</strong></li>
+<li><strong>Record the code you would use to create 50 samples of size 100.</strong> (Note: be sure to include how you would store the median value of each sample.)</li>
 </ul></li>
 </ul>
 
@@ -956,201 +927,39 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Forming conclusions</h3>
+<h3>Lots of ranges</h3>
 <div class="slideContent" >
 <ul>
-<li><strong>Based on your plot, finish the following research claim:</strong>
-
-<ul>
-<li><em>Based on the information from our observational survey, it appears that taller people tend to have _________________ lung capacities than people who are shorter.</em> </li>
-</ul></li>
-<li><strong>Does it seem reasonable that taller people would have larger lung capacity?</strong>
-
-<ul>
-<li><strong>Do you think the plot you made seems to back this claim up?</strong></li>
-</ul></li>
+<li>Now that you have 50 samples and their median ages, you can calculate the range for each sample&#39;s confidence interval.</li>
+<li><strong>Record the code you used to create a new column, called <code>range</code> in your data set.</strong></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Beware confounding variables</h3>
+<h3>Now what do we do?</h3>
 <div class="slideContent" >
 <ul>
-<li>Even though plotting <code>height</code> and <code>lung_cap</code> seemed to show evidence that taller people have larger lung capacities, we should remain skeptical.
+<li>We now have 50 different ranges for our confidence interval.</li>
+<li><strong>What is the average range of your 50 samples?</strong></li>
+<li><strong>Is this value bigger or smaller than you expected?</strong></li>
+<li>Compare your average range to your neighbor&#39;s. <strong>Whose interval is better? Explain.</strong></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Does it work?</h3>
+<div class="slideContent" >
+<ul>
+<li>Basically, we just created a general rule for how far away an interval needs to go (in either direction) from a sample median in order to include the true median.</li>
+<li><strong>Based on your rule (or range), if a sample produced a median age of 51, would your confidence interval include the true median age of 47?</strong>
 
 <ul>
-<li>Our data is from an observational study which means the relationship we found might actually be caused by a <em>confounding variable</em> </li>
-<li>A <strong>confounding variable</strong>, in our case, would be one that impacts  children&#39;s <code>height</code> and also their <code>lung_cap</code> in such a way as to make these two variables <em>seem</em> related even though they might not be.</li>
+<li><strong>Do you think your confidence interval is good? Explain.</strong></li>
 </ul></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Confounded and confused</h3>
-<div class="slideContent" >
-<ul>
-<li>Create the following plots:</li>
-</ul>
-
-<pre><code class="r">xyplot(lung_cap~age, data=lungs)
-</code></pre>
-
-<pre><code class="r">xyplot(height~age, data=lungs)
-</code></pre>
-
-<ul>
-<li><strong>Describe what happen&#39;s to people&#39;s <code>height</code> and <code>lung_cap</code> as they get older. Describe why <code>age</code> might be a possible <em>confounding factor</em>?</strong> </li>
-<li><strong>Could it be the case that <code>age</code> is related to the volume of people&#39;s <code>lung_cap</code> and that their <code>height</code> is not? Why?</strong></li>
-<li><strong>Using the data, could you disprove the claim: &#39;People with larger lung capacites absorb more oxygen which causes them to grow taller?&#39;</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Don&#x27;t despair</h3>
-<div class="slideContent" >
-<ul>
-<li>By now, we might be feeling a little distressed about our data. 
-
-<ul>
-<li>It isn&#39;t at all helpful to help us decide if our hypothesis that people&#39;s heights and lung capacities are related.<br/></li>
-<li>Really, all it&#39;s done so far is confuse us!</li>
-</ul></li>
-<li><strong>Write down your opinion about the usefulness of observational studies.</strong> </li>
-<li><strong>How sad would you be to find out that many of the <em>&ldquo;studies&rdquo;</em> found on the news are based on <em>observational studies</em>?</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Observational studies are (often) useful!</h3>
-<div class="slideContent" >
-<ul>
-<li>Even with all the weaknesses we&#39;ve found with observational studies, a good argument can still be made to say people&#39;s height are related to their lung capacity.
-
-<ul>
-<li>In the following slides, we&#39;ll argue that this is indeed the case by showing that <code>age</code> is not a confounding variable.</li>
-<li>This would then imply that our initial conclusion that height and lung capacity seem to be related is correct.</li>
-</ul></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Age and gender</h3>
-<div class="slideContent" >
-<ul>
-<li>Run the following:</li>
-</ul>
-
-<pre><code class="r">histogram(~age|gender, data=lungs)
-</code></pre>
-
-<ul>
-<li>Notice that the distribution of children&#39;s ages, for each gender are roughly similar.
-
-<ul>
-<li>Because of this, we expect there to be roughly similar numbers of boys and girls for each age.</li>
-</ul></li>
-<li>Note: In our data, Males are coded as <code>1</code>s in the data. Females as <code>0</code>s.</li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Height and gender</h3>
-<div class="slideContent" >
-<ul>
-<li>Next run the following:</li>
-</ul>
-
-<pre><code class="r">histogram(~height|gender, data=lungs)
-</code></pre>
-
-<ul>
-<li>In this plot, notice that males (the right-hand side of the plot), have quite a few people who are taller than 67.5 inches whereas the females (the left-hand side of the plot) only have a few.</li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Age, gender and lung capacity</h3>
-<div class="slideContent" >
-<ul>
-<li>So we know that our genders have similar distibutions for age, but that there are a group of males that are taller than the females.
-
-<ul>
-<li>If <code>age</code> is a reason for people having larger lung capacties then, we should see males and females evenly scattered throughout this plot:</li>
-</ul></li>
-</ul>
-
-<pre><code class="r">xyplot(lung_cap~age, data=lungs, 
-       groups=gender)
-</code></pre>
-
-<ul>
-<li><strong>Are males and females evenly scattered through the plot? Or is there an area where they appear to be seperated? (Where one set of points is above or below the other?)</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Confused no more!</h3>
-<div class="slideContent" >
-<ul>
-<li>We started this lab by noting that it seemed people&#39;s heights were related to their lung capacity.
-
-<ul>
-<li>We became suspicious of this relationship when we noticed that people&#39;s heights and lung capacities both increased as they aged.</li>
-<li>This led us to believe that age could be what&#39;s actually related to lung capacity instead of heights.</li>
-<li>In the argument, we then showed that we had evidence to disprove the relationship between age and lung capacity.</li>
-</ul></li>
-<li>So for us, based on our data, we find that there is evidence of a relationship between people&#39;s <code>height</code> and <code>lung_cap</code></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Remarks about our argument</h3>
-<div class="slideContent" >
-<ul>
-<li>Even if the argument we&#39;ve just laid out seems convincing:
-
-<ul>
-<li>Is it necessarily absolutely certain? Not at all.</li>
-<li>Could there still be some confounding variable that we don&#39;t see which is causing the increase in people&#39;s lung capacities? Absolutely.</li>
-<li>But does it still lend evidence to a seemingly reasonable hypothesis? Yes!</li>
-</ul></li>
-<li><strong>What do you think of the argument made? Do you personally think it supports the hypothesis that taller people&#39;s bigger bodies might explain their larger lung capacity? Explain.</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Concluding remarks</h3>
-<div class="slideContent" >
-<ul>
-<li>When analyzing data from an observational study, we should:
-
-<ul>
-<li>Beware of confounding variables that cause us to find spurious (<em>fake</em> or <em>false</em>) relationships.</li>
-<li>Do our best to really test the validity of our conclusions.</li>
-<li>Be mindful that our conclusions might be correct, but we can&#39;t be absolutely certain.</li>
-</ul></li>
-<li>Many times, observational studies help us find relationships that we then try to confirm or deny by using experiments. </li>
-<li><font color=#660099><b>Science done using an observational study isn&#39;t automatically incorrect or useless, but we should remember to take the conclusions with a grain of salt.</b></font></li>
 </ul>
 
 </div>

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Confound it all!</title>
+  <title>Four Score and Seven Years Ago</title>
     
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -795,16 +795,6 @@ hljs.initHighlightingOnLoad();
 </script>
 
    
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    showProcessingMessages: false,
-    messageStyle: "none"
-  });
-</script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
   
 
 
@@ -818,10 +808,10 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="default" data-transition-speed="slow">
-<h1>Confound it all!</h1><p></p>
+<h1>Four Score and Seven Years Ago</h1><p></p>
 
 <div class="slideContent" >
-<p>Unit 3 - Lab 2  </p>
+<p>Unit 3 - Lab 3  </p>
 
 <p>Directions: Follow along with the slides and answer the questions in <strong>red</strong> font in your journal.</p>
 
@@ -829,214 +819,184 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Good-bye button, hello code!</h3>
+<h3>Text as Data</h3>
 <div class="slideContent" >
 <ul>
-<li>Since your first forays into doing data science, you&#39;ve <em>download</em>, <em>upload</em> and <em>load</em>-ed your data.
+<li>If you think about it, there&#39;s lots of information hidden in text.
 
 <ul>
-<li>And you&#39;ve done so marvelously &hellip; using a button.</li>
+<li>Writing is one of the principle ways people communicate with each other.</li>
 </ul></li>
-<li>In this lab, we&#39;ll look at using <code>code</code> as an alternative to the <em>Import Dataset</em> button in the <em>Environment</em> tab.
+<li>Data scientists try to develop methods to let them tap into the info contained in text.
 
 <ul>
-<li>We&#39;ll import some data from an <em>observational study</em>.</li>
-<li>Clean up our new data.</li>
-<li>And then use it to explore <em>associations</em> and discover how <em>confounding factors</em> can hinder analyses.</li>
+<li>They analyze tweets from Twitter to gauge whether people tweeting are feeling happy, sad, etc.</li>
 </ul></li>
+<li>In this lab, we&#39;ll look at a few simple methods to process and visualize text data.</li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Our new data</h3>
+<h3>Grabbing text from the web</h3>
 <div class="slideContent" >
 <ul>
-<li>In the late 1970&#39;s, a researcher in Boston began measuring the lung capacity of children to study the effects that childhood smoking had on lung health.
+<li>Similar to the previous lab, we can actually use <em>functions</em> in RStudio to grab text documents from off the web (No button required!)
 
 <ul>
-<li>You can find the data online, as it turns out, here: <a href="http://www.amstat.org/publications/jse/datasets/fev.dat.txt">http://www.amstat.org/publications/jse/datasets/fev.dat.txt</a></li>
+<li>Take a look at the text found <a href="http://web.ohmage.org/mobilize/resources/ids/data/gettysburg_address.txt">Here</a></li>
+<li><strong>What is this text? Why is it famous?</strong></li>
 </ul></li>
-<li>Rather than <em>download</em>-ing the data and then <em>upload</em>-ing and <em>load</em>-ing it, we&#39;ll pull the data straight from the webpage into R.
+<li>To grab this text and read it into R, we use the <code>readLines</code> function.
 
 <ul>
-<li>The benefit of loading data with code is that it helps makes your code <strong>reproducible</strong>, meaning your analysis could be reproduced, from start to finish, by anyone else.</li>
-<li>Sharing code is one way scientists collaborate and verify each other&#39;s results!</li>
+<li>Replace the <em>&ldquo;Write text URL here&rdquo;</em> with the actual URL of the text.</li>
 </ul></li>
 </ul>
+
+<pre><code class="r">text &lt;- readLines(&quot;Write text URL here&quot;)
+</code></pre>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Loading our data</h3>
+<h3>Initializing text</h3>
 <div class="slideContent" >
 <ul>
-<li>Copy/paste or type the <code>url</code> of the website containing the data into the following (Remember to wrap the url in quotes):</li>
+<li>Text is very complicated for computers to understand.
+
+<ul>
+<li>Computers don&#39;t necessarily understand sentence structures, punctuation, etc.</li>
+</ul></li>
+<li>Before we can analyze our text, we must first turn it into something that the computer can understand.
+
+<ul>
+<li>That is, we must first <em>initialize</em> our text.</li>
+<li>This changes our text from a long list of symbols into a <em>corpus</em>.</li>
+<li>A <em>corpus</em> is just data science lingo for text that computers can easily deal with.</li>
+</ul></li>
+<li>To change our raw <code>text</code> into a <em>corpus</em>, run the following:</li>
 </ul>
 
-<pre><code class="r">lungs &lt;- read.table(&quot;type webpage 
-                     address here&quot;,
-                    header=FALSE)
+<pre><code class="r">corpus &lt;- InitializeText(text)
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Text vs. Corpus</h3>
+<div class="slideContent" >
+<ul>
+<li>Now that we&#39;ve got our text turned into a corpus, we can see how the data are actually different by running the following two lines of code:</li>
+</ul>
+
+<pre><code class="r">text
+</code></pre>
+
+<pre><code class="r">corpus
 </code></pre>
 
 <ul>
-<li>The <code>read.table</code> function reads raw data and turns it into a data table that we can use in R.
-
-<ul>
-<li>We write <code>header=FALSE</code> to let R know that our data is missing variable names.</li>
-<li>The <code>lungs</code> portion of the code is just the name we&#39;re giving the data.</li>
-</ul></li>
+<li><strong>How are the outputs different for each line of code?</strong></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Viewing your data</h3>
+<h3>Analyzing the Gettysburg Address</h3>
 <div class="slideContent" >
 <ul>
-<li>After loading data, it&#39;s helpful to look at it to get a feel for what it <em>looks</em> like and to make sure nothing funny happened when we loaded it.</li>
-<li>Type the following to <code>View</code> your data:</li>
+<li>There are many ways to analyze text data.
+
+<ul>
+<li>We&#39;ll focus on two graphical methods.</li>
+<li>Specifically, <em>wordclouds</em> and <em>bargraphs</em>.</li>
+</ul></li>
+<li>To make a wordcloud of our corpus</li>
 </ul>
 
-<pre><code class="r">View(lungs)
+<pre><code class="r">MakeWordCloud(corpus)
 </code></pre>
 
 <ul>
-<li><strong>What do you notice is missing from the data?</strong>
+<li>Wordclouds size the words based on how often they occur in the text.
 
 <ul>
-<li>Need a hint? Type <code>names(lungs)</code> to print the names of the variables.</li>
+<li><strong>Which word occurs most often in the Gettysburg address?</strong></li>
+<li><strong>Which word occurs the 3rd most often? Can you tell? Why or why not?</strong></li>
 </ul></li>
-<li><strong>Which variable do you think is the child&#39;s height? Which is lung capacity (measured in <em>Forced Expiratory Volume</em>)? Can you be sure?</strong></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Fixing data and Viewing it again</h3>
+<h3>Wordclouds vs. Bargraphs</h3>
 <div class="slideContent" >
 <ul>
-<li>To add names to your data, run the following:</li>
+<li>We&#39;ll use a special function to create bargraphs for our text data:</li>
 </ul>
 
-<pre><code class="r">names(lungs) &lt;- c(&quot;age&quot;,&quot;lung_cap&quot;,&quot;height&quot;, 
-                  &quot;gender&quot;,&quot;smoke&quot;)
+<pre><code class="r">MakeWordBar(corpus)
 </code></pre>
 
 <ul>
-<li><strong>Type <code>View(lungs)</code> again and then describe in words what the above line of code did to your data.</strong></li>
+<li>The height of the bars indicate how many times each word at the bottom occurred in the text.</li>
+<li><strong>What word occured the most often? How many more times did it occur than the next most frequent word?</strong></li>
+<li><strong>Which word occurs the 3rd most often?</strong></li>
+<li><strong>Between wordclouds and bargraphs, which plot do you think is easier to interpret and why?</strong></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Analyzing our data</h3>
+<h3>Drilling into our text</h3>
 <div class="slideContent" >
 <ul>
-<li>Our <code>lungs</code> data is from an observational study.
+<li>The Gettysburg Address is one of the most important texts in US history &hellip;
 
 <ul>
-<li><strong>Write down a reason the reseachers couldn&#39;t use an experiment to test the effects of smoking on children&#39;s lungs.</strong></li>
+<li>And all we&#39;ve shown so far is that the word <em>the</em> occurs the most often.</li>
+<li>&hellip; Who cares!</li>
 </ul></li>
-<li>Observational studies are often helpful for analyzing how variables are related: 
+<li>We&#39;re much more interested in finding the <em>important</em> words that President Lincoln used in his speech.</li>
+<li>Common words that are mostly uninteresting are called <em>stopwords</em> by data scientists.
 
 <ul>
-<li>Let&#39;s explore whether or not a person&#39;s height is related to their lung capacity!</li>
-<li>Create an <code>xyplot</code> that compares people&#39;s <code>height</code> on the \( x \)-axis and their <code>lung_cap</code> (lung capacity) on the \( y \)-axis.</li>
-<li><strong>Write down the code you used to create your plot</strong></li>
+<li>To remove these words, run the following code:</li>
 </ul></li>
 </ul>
 
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Forming conclusions</h3>
-<div class="slideContent" >
-<ul>
-<li><strong>Based on your plot, finish the following research claim:</strong>
-
-<ul>
-<li><em>Based on the information from our observational survey, it appears that taller people tend to have _________________ lung capacities than people who are shorter.</em> </li>
-</ul></li>
-<li><strong>Does it seem reasonable that taller people would have larger lung capacity?</strong>
-
-<ul>
-<li><strong>Do you think the plot you made seems to back this claim up?</strong></li>
-</ul></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Beware confounding variables</h3>
-<div class="slideContent" >
-<ul>
-<li>Even though plotting <code>height</code> and <code>lung_cap</code> seemed to show evidence that taller people have larger lung capacities, we should remain skeptical.
-
-<ul>
-<li>Our data is from an observational study which means the relationship we found might actually be caused by a <em>confounding variable</em> </li>
-<li>A <strong>confounding variable</strong>, in our case, would be one that impacts  children&#39;s <code>height</code> and also their <code>lung_cap</code> in such a way as to make these two variables <em>seem</em> related even though they might not be.</li>
-</ul></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Confounded and confused</h3>
-<div class="slideContent" >
-<ul>
-<li>Create the following plots:</li>
-</ul>
-
-<pre><code class="r">xyplot(lung_cap~age, data=lungs)
+<pre><code class="r">p_corpus &lt;- ProcessText(corpus, 
+                        removestopwords=TRUE)
 </code></pre>
 
-<pre><code class="r">xyplot(height~age, data=lungs)
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>So what did we do?</h3>
+<div class="slideContent" >
+<pre><code class="r">p_corpus &lt;- ProcessText(corpus, 
+                        removestopwords=TRUE)
 </code></pre>
 
 <ul>
-<li><strong>Describe what happen&#39;s to people&#39;s <code>height</code> and <code>lung_cap</code> as they get older. Describe why <code>age</code> might be a possible <em>confounding factor</em>?</strong> </li>
-<li><strong>Could it be the case that <code>age</code> is related to the volume of people&#39;s <code>lung_cap</code> and that their <code>height</code> is not? Why?</strong></li>
-<li><strong>Using the data, could you disprove the claim: &#39;People with larger lung capacites absorb more oxygen which causes them to grow taller?&#39;</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Don&#x27;t despair</h3>
-<div class="slideContent" >
-<ul>
-<li>By now, we might be feeling a little distressed about our data. 
+<li>What we&#39;ve done is created a new corpus called <code>p_corpus</code> (short for <em>processed corpus</em>).
 
 <ul>
-<li>It isn&#39;t at all helpful to help us decide if our hypothesis that people&#39;s heights and lung capacities are related.<br/></li>
-<li>Really, all it&#39;s done so far is confuse us!</li>
+<li>We took the words in our current corpus &hellip;</li>
+<li>&hellip; and then removed the stopwords (the ones that are mostly boring but occur really often, like &#39;the&#39;, &#39;and&#39;, &#39;but&#39;, etc.).</li>
 </ul></li>
-<li><strong>Write down your opinion about the usefulness of observational studies.</strong> </li>
-<li><strong>How sad would you be to find out that many of the <em>&ldquo;studies&rdquo;</em> found on the news are based on <em>observational studies</em>?</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Observational studies are (often) useful!</h3>
-<div class="slideContent" >
-<ul>
-<li>Even with all the weaknesses we&#39;ve found with observational studies, a good argument can still be made to say people&#39;s height are related to their lung capacity.
+<li><strong>Create a wordcloud and word bargraph for your processed corpus.</strong>
 
 <ul>
-<li>In the following slides, we&#39;ll argue that this is indeed the case by showing that <code>age</code> is not a confounding variable.</li>
-<li>This would then imply that our initial conclusion that height and lung capacity seem to be related is correct.</li>
+<li><strong>Write down the 5 words that occurred most often in the address.</strong></li>
 </ul></li>
 </ul>
 
@@ -1044,113 +1004,45 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Age and gender</h3>
+<h3>Tinkering with our plots</h3>
 <div class="slideContent" >
 <ul>
-<li>Run the following:</li>
+<li>The <code>MakeWordBar</code> and <code>MakeWordCloud</code> functions come with a few options we might be interested in.
+
+<ul>
+<li>For example, by default, the functions only show words that occur at least 2 or more times. We can change this.</li>
+<li>We can also limit the number of words to show.</li>
+</ul></li>
+<li><strong>Run the following commands and describe how the plots have changed from those you made on the previous slide.</strong></li>
 </ul>
 
-<pre><code class="r">histogram(~age|gender, data=lungs)
+<pre><code class="r">MakeWordCloud(p_corpus, min.freq=1)
+</code></pre>
+
+<pre><code class="r">MakeWordBar(p_corpus, top=5)
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>On your own</h3>
+<div class="slideContent" >
+<ul>
+<li>Use the following code to load a <em>mystery</em> text. (Don&#39;t <em>copy</em> &amp; <em>paste</em> this code. Type it out by hand.)</li>
+</ul>
+
+<pre><code class="r">text &lt;- 
+  readLines(&quot;http://web.ohmage.org/mobilize/
+            resources/ids/data/mystery.txt&quot;)
 </code></pre>
 
 <ul>
-<li>Notice that the distribution of children&#39;s ages, for each gender are roughly similar.
+<li><strong>Using the code you learned in this lab, can you figure out what famous story the text is from?</strong>
 
 <ul>
-<li>Because of this, we expect there to be roughly similar numbers of boys and girls for each age.</li>
+<li><strong>Write down the code for any plots you made which helped you figure it out.</strong></li>
 </ul></li>
-<li>Note: In our data, Males are coded as <code>1</code>s in the data. Females as <code>0</code>s.</li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Height and gender</h3>
-<div class="slideContent" >
-<ul>
-<li>Next run the following:</li>
-</ul>
-
-<pre><code class="r">histogram(~height|gender, data=lungs)
-</code></pre>
-
-<ul>
-<li>In this plot, notice that males (the right-hand side of the plot), have quite a few people who are taller than 67.5 inches whereas the females (the left-hand side of the plot) only have a few.</li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Age, gender and lung capacity</h3>
-<div class="slideContent" >
-<ul>
-<li>So we know that our genders have similar distibutions for age, but that there are a group of males that are taller than the females.
-
-<ul>
-<li>If <code>age</code> is a reason for people having larger lung capacties then, we should see males and females evenly scattered throughout this plot:</li>
-</ul></li>
-</ul>
-
-<pre><code class="r">xyplot(lung_cap~age, data=lungs, 
-       groups=gender)
-</code></pre>
-
-<ul>
-<li><strong>Are males and females evenly scattered through the plot? Or is there an area where they appear to be seperated? (Where one set of points is above or below the other?)</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Confused no more!</h3>
-<div class="slideContent" >
-<ul>
-<li>We started this lab by noting that it seemed people&#39;s heights were related to their lung capacity.
-
-<ul>
-<li>We became suspicious of this relationship when we noticed that people&#39;s heights and lung capacities both increased as they aged.</li>
-<li>This led us to believe that age could be what&#39;s actually related to lung capacity instead of heights.</li>
-<li>In the argument, we then showed that we had evidence to disprove the relationship between age and lung capacity.</li>
-</ul></li>
-<li>So for us, based on our data, we find that there is evidence of a relationship between people&#39;s <code>height</code> and <code>lung_cap</code></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Remarks about our argument</h3>
-<div class="slideContent" >
-<ul>
-<li>Even if the argument we&#39;ve just laid out seems convincing:
-
-<ul>
-<li>Is it necessarily absolutely certain? Not at all.</li>
-<li>Could there still be some confounding variable that we don&#39;t see which is causing the increase in people&#39;s lung capacities? Absolutely.</li>
-<li>But does it still lend evidence to a seemingly reasonable hypothesis? Yes!</li>
-</ul></li>
-<li><strong>What do you think of the argument made? Do you personally think it supports the hypothesis that taller people&#39;s bigger bodies might explain their larger lung capacity? Explain.</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Concluding remarks</h3>
-<div class="slideContent" >
-<ul>
-<li>When analyzing data from an observational study, we should:
-
-<ul>
-<li>Beware of confounding variables that cause us to find spurious (<em>fake</em> or <em>false</em>) relationships.</li>
-<li>Do our best to really test the validity of our conclusions.</li>
-<li>Be mindful that our conclusions might be correct, but we can&#39;t be absolutely certain.</li>
-</ul></li>
-<li>Many times, observational studies help us find relationships that we then try to confirm or deny by using experiments. </li>
-<li><font color=#660099><b>Science done using an observational study isn&#39;t automatically incorrect or useless, but we should remember to take the conclusions with a grain of salt.</b></font></li>
 </ul>
 
 </div>

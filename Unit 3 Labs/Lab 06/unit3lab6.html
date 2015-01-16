@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Confound it all!</title>
+  <title>Parsing XML data</title>
     
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -795,16 +795,6 @@ hljs.initHighlightingOnLoad();
 </script>
 
    
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    showProcessingMessages: false,
-    messageStyle: "none"
-  });
-</script>
-
-<script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
   
 
 
@@ -818,10 +808,10 @@ hljs.initHighlightingOnLoad();
   <div class="slides">
 
 <section data-state="section" data-transition="default" data-transition-speed="slow">
-<h1>Confound it all!</h1><p></p>
+<h1>Parsing XML data</h1><p></p>
 
 <div class="slideContent" >
-<p>Unit 3 - Lab 2  </p>
+<p>Unit 3 - Lab 6 </p>
 
 <p>Directions: Follow along with the slides and answer the questions in <strong>red</strong> font in your journal.</p>
 
@@ -829,329 +819,228 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Good-bye button, hello code!</h3>
+<h3>Working with XML</h3>
 <div class="slideContent" >
 <ul>
-<li>Since your first forays into doing data science, you&#39;ve <em>download</em>, <em>upload</em> and <em>load</em>-ed your data.
+<li>In the previous lab, you used the <code>XML</code> package to scrape some data from a web table.
 
 <ul>
-<li>And you&#39;ve done so marvelously &hellip; using a button.</li>
+<li>Now we&#39;ll use the <code>XML</code> package to <em>parse</em> some actual XML data.</li>
 </ul></li>
-<li>In this lab, we&#39;ll look at using <code>code</code> as an alternative to the <em>Import Dataset</em> button in the <em>Environment</em> tab.
+<li>XML has a very different structure than data we&#39;re used to.
 
 <ul>
-<li>We&#39;ll import some data from an <em>observational study</em>.</li>
-<li>Clean up our new data.</li>
-<li>And then use it to explore <em>associations</em> and discover how <em>confounding factors</em> can hinder analyses.</li>
+<li>This is helpful so that websites can have greater control over where different pieces of data are placed on the page.</li>
+<li>It also requires us to scrape the data slightly differently than before.</li>
 </ul></li>
+<li>So load up the <code>XML</code> package again and let&#39;s get scrapin&#39;!</li>
+</ul>
+
+<pre><code class="r">library(XML)
+</code></pre>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>XML Lingo</h3>
+<div class="slideContent" >
+<ul>
+<li>Scraping XML involves a slightly different lingo.
+
+<ul>
+<li><em>metadata</em> is information about our actual data.</li>
+<li><em>tags</em> are how place values into our data&#39;s hierarchy.</li>
+<li><em>nodes</em> are tags that contain other tags.</li>
+<li><em>parse</em> just means navigate through the tags in the data.</li>
+<li><em>children</em> are sets of nodes that are contained within tags.</li>
+</ul></li>
+<li>Try not to let the syntax scare you.</li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Our new data</h3>
+<h3>Just like before:</h3>
 <div class="slideContent" >
-<ul>
-<li>In the late 1970&#39;s, a researcher in Boston began measuring the lung capacity of children to study the effects that childhood smoking had on lung health.
+<p>-Type (Don&#39;t copy/paste) the following <a href="http://web.ohmage.org/mobilize/resources/ids/data/mountains.xml">url to our data</a></p>
 
-<ul>
-<li>You can find the data online, as it turns out, here: <a href="http://www.amstat.org/publications/jse/datasets/fev.dat.txt">http://www.amstat.org/publications/jse/datasets/fev.dat.txt</a></li>
-</ul></li>
-<li>Rather than <em>download</em>-ing the data and then <em>upload</em>-ing and <em>load</em>-ing it, we&#39;ll pull the data straight from the webpage into R.
-
-<ul>
-<li>The benefit of loading data with code is that it helps makes your code <strong>reproducible</strong>, meaning your analysis could be reproduced, from start to finish, by anyone else.</li>
-<li>Sharing code is one way scientists collaborate and verify each other&#39;s results!</li>
-</ul></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Loading our data</h3>
-<div class="slideContent" >
-<ul>
-<li>Copy/paste or type the <code>url</code> of the website containing the data into the following (Remember to wrap the url in quotes):</li>
-</ul>
-
-<pre><code class="r">lungs &lt;- read.table(&quot;type webpage 
-                     address here&quot;,
-                    header=FALSE)
+<pre><code class="r">data_url &lt;- &quot;http://web.ohmage.org/mobilize/
+          resources/ids/data/mountains.xml&quot;
 </code></pre>
 
 <ul>
-<li>The <code>read.table</code> function reads raw data and turns it into a data table that we can use in R.
-
-<ul>
-<li>We write <code>header=FALSE</code> to let R know that our data is missing variable names.</li>
-<li>The <code>lungs</code> portion of the code is just the name we&#39;re giving the data.</li>
-</ul></li>
+<li>But notice this time, our <code>readHTMLTable()</code> function doesn&#39;t work</li>
 </ul>
 
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Viewing your data</h3>
-<div class="slideContent" >
-<ul>
-<li>After loading data, it&#39;s helpful to look at it to get a feel for what it <em>looks</em> like and to make sure nothing funny happened when we loaded it.</li>
-<li>Type the following to <code>View</code> your data:</li>
-</ul>
-
-<pre><code class="r">View(lungs)
+<pre><code class="r">readHTMLTable(data_url)
 </code></pre>
 
 <ul>
-<li><strong>What do you notice is missing from the data?</strong>
-
-<ul>
-<li>Need a hint? Type <code>names(lungs)</code> to print the names of the variables.</li>
-</ul></li>
-<li><strong>Which variable do you think is the child&#39;s height? Which is lung capacity (measured in <em>Forced Expiratory Volume</em>)? Can you be sure?</strong></li>
+<li>That&#39;s because we need to <em>parse</em> or navigate through the data first.</li>
 </ul>
+
+<pre><code class="r">xmlParse(data_url)
+</code></pre>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Fixing data and Viewing it again</h3>
+<h3>Save the Children!</h3>
 <div class="slideContent" >
 <ul>
-<li>To add names to your data, run the following:</li>
+<li>Save the parsed XML as <code>xml_file</code></li>
 </ul>
 
-<pre><code class="r">names(lungs) &lt;- c(&quot;age&quot;,&quot;lung_cap&quot;,&quot;height&quot;, 
-                  &quot;gender&quot;,&quot;smoke&quot;)
+<pre><code class="r">xml_file &lt;- xmlParse(data_url)
 </code></pre>
 
 <ul>
-<li><strong>Type <code>View(lungs)</code> again and then describe in words what the above line of code did to your data.</strong></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Analyzing our data</h3>
-<div class="slideContent" >
-<ul>
-<li>Our <code>lungs</code> data is from an observational study.
+<li>Notice that the first (and last) tags are <code>mountainpeaks</code>.
 
 <ul>
-<li><strong>Write down a reason the reseachers couldn&#39;t use an experiment to test the effects of smoking on children&#39;s lungs.</strong></li>
-</ul></li>
-<li>Observational studies are often helpful for analyzing how variables are related: 
-
-<ul>
-<li>Let&#39;s explore whether or not a person&#39;s height is related to their lung capacity!</li>
-<li>Create an <code>xyplot</code> that compares people&#39;s <code>height</code> on the \( x \)-axis and their <code>lung_cap</code> (lung capacity) on the \( y \)-axis.</li>
-<li><strong>Write down the code you used to create your plot</strong></li>
+<li>Imagine that these tags are a bag that hold all of the rest of the <em>nodes</em>. We call this set of <em>nodes</em> &#39;&#39;<em>children</em>&#39;&#39;. </li>
+<li>We want to save these <em>children</em> so we can use their information.</li>
 </ul></li>
 </ul>
 
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Forming conclusions</h3>
-<div class="slideContent" >
-<ul>
-<li><strong>Based on your plot, finish the following research claim:</strong>
-
-<ul>
-<li><em>Based on the information from our observational survey, it appears that taller people tend to have _________________ lung capacities than people who are shorter.</em> </li>
-</ul></li>
-<li><strong>Does it seem reasonable that taller people would have larger lung capacity?</strong>
-
-<ul>
-<li><strong>Do you think the plot you made seems to back this claim up?</strong></li>
-</ul></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Beware confounding variables</h3>
-<div class="slideContent" >
-<ul>
-<li>Even though plotting <code>height</code> and <code>lung_cap</code> seemed to show evidence that taller people have larger lung capacities, we should remain skeptical.
-
-<ul>
-<li>Our data is from an observational study which means the relationship we found might actually be caused by a <em>confounding variable</em> </li>
-<li>A <strong>confounding variable</strong>, in our case, would be one that impacts  children&#39;s <code>height</code> and also their <code>lung_cap</code> in such a way as to make these two variables <em>seem</em> related even though they might not be.</li>
-</ul></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Confounded and confused</h3>
-<div class="slideContent" >
-<ul>
-<li>Create the following plots:</li>
-</ul>
-
-<pre><code class="r">xyplot(lung_cap~age, data=lungs)
+<pre><code class="r">xml_children &lt;- xmlChildren(xml_file)
 </code></pre>
 
-<pre><code class="r">xyplot(height~age, data=lungs)
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Finding our data</h3>
+<div class="slideContent" >
+<ul>
+<li>You might remember that XML can contain <em>metadata</em>, which is information about the data. Since we want to eventually analyze this data with R, we need to find a way to leave the <em>metadata</em> and take only the actual data.</li>
+<li>Start by looking at the last end tag in the <code>xml_children</code>:</li>
+</ul>
+
+<pre><code class="r">xml_children
 </code></pre>
 
 <ul>
-<li><strong>Describe what happen&#39;s to people&#39;s <code>height</code> and <code>lung_cap</code> as they get older. Describe why <code>age</code> might be a possible <em>confounding factor</em>?</strong> </li>
-<li><strong>Could it be the case that <code>age</code> is related to the volume of people&#39;s <code>lung_cap</code> and that their <code>height</code> is not? Why?</strong></li>
-<li><strong>Using the data, could you disprove the claim: &#39;People with larger lung capacites absorb more oxygen which causes them to grow taller?&#39;</strong></li>
+<li>Notice that the last tag is for <code>mountainpeaks</code> and the next to last is our <code>data</code>.</li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Don&#x27;t despair</h3>
+<h3>Getting our data</h3>
 <div class="slideContent" >
 <ul>
-<li>By now, we might be feeling a little distressed about our data. 
-
-<ul>
-<li>It isn&#39;t at all helpful to help us decide if our hypothesis that people&#39;s heights and lung capacities are related.<br/></li>
-<li>Really, all it&#39;s done so far is confuse us!</li>
-</ul></li>
-<li><strong>Write down your opinion about the usefulness of observational studies.</strong> </li>
-<li><strong>How sad would you be to find out that many of the <em>&ldquo;studies&rdquo;</em> found on the news are based on <em>observational studies</em>?</strong></li>
+<li>We can take everything within the <code>mountainpeaks</code> tag by running:</li>
 </ul>
 
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Observational studies are (often) useful!</h3>
-<div class="slideContent" >
-<ul>
-<li>Even with all the weaknesses we&#39;ve found with observational studies, a good argument can still be made to say people&#39;s height are related to their lung capacity.
-
-<ul>
-<li>In the following slides, we&#39;ll argue that this is indeed the case by showing that <code>age</code> is not a confounding variable.</li>
-<li>This would then imply that our initial conclusion that height and lung capacity seem to be related is correct.</li>
-</ul></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Age and gender</h3>
-<div class="slideContent" >
-<ul>
-<li>Run the following:</li>
-</ul>
-
-<pre><code class="r">histogram(~age|gender, data=lungs)
+<pre><code class="r">xml_children[[&quot;mountainpeaks&quot;]]
 </code></pre>
 
 <ul>
-<li>Notice that the distribution of children&#39;s ages, for each gender are roughly similar.
-
-<ul>
-<li>Because of this, we expect there to be roughly similar numbers of boys and girls for each age.</li>
-</ul></li>
-<li>Note: In our data, Males are coded as <code>1</code>s in the data. Females as <code>0</code>s.</li>
+<li>To get into the <code>data</code> tag, we can run something simliar:</li>
 </ul>
 
-</div>
-
-</section>
-<section data-transition="default" data-transition-speed="slow">
-<h3>Height and gender</h3>
-<div class="slideContent" >
-<ul>
-<li>Next run the following:</li>
-</ul>
-
-<pre><code class="r">histogram(~height|gender, data=lungs)
+<pre><code class="r">xml_children[[&quot;mountainpeaks&quot;]][[&quot;data&quot;]]
 </code></pre>
 
 <ul>
-<li>In this plot, notice that males (the right-hand side of the plot), have quite a few people who are taller than 67.5 inches whereas the females (the left-hand side of the plot) only have a few.</li>
+<li>We&#39;re getting close! We really just want to go one more step to the <code>mountains</code> node.
+
+<ul>
+<li><strong>Write the code you would use, that is similar to the above code, to look at the info contained in the <code>mountains</code> node.</strong></li>
+</ul></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Age, gender and lung capacity</h3>
+<h3>We&#x27;ve arrived at data.</h3>
 <div class="slideContent" >
 <ul>
-<li>So we know that our genders have similar distibutions for age, but that there are a group of males that are taller than the females.
-
-<ul>
-<li>If <code>age</code> is a reason for people having larger lung capacties then, we should see males and females evenly scattered throughout this plot:</li>
-</ul></li>
+<li>We&#39;ve finally arrived at our actual data</li>
 </ul>
 
-<pre><code class="r">xyplot(lung_cap~age, data=lungs, 
-       groups=gender)
+<pre><code class="r">xml_children[[&quot;mountainpeaks&quot;]][[&quot;data&quot;]][[&quot;mountains&quot;]] 
 </code></pre>
 
 <ul>
-<li><strong>Are males and females evenly scattered through the plot? Or is there an area where they appear to be seperated? (Where one set of points is above or below the other?)</strong></li>
+<li>To convert and save our data as our familiar R data frame, run:</li>
+</ul>
+
+<pre><code class="r">mountains_xml &lt;- xml_children[[&quot;mountainpeaks&quot;]][[&quot;data&quot;]][[&quot;mountains&quot;]]
+</code></pre>
+
+<pre><code class="r">xmlToDataFrame(mountains_xml)
+</code></pre>
+
+<ul>
+<li>Assign this data the name <code>mountains</code>.</li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Confused no more!</h3>
+<h3>A deeper look</h3>
 <div class="slideContent" >
 <ul>
-<li>We started this lab by noting that it seemed people&#39;s heights were related to their lung capacity.
+<li>Just for kicks run the following code.</li>
+</ul>
+
+<pre><code class="r">xml_children[[&quot;mountainpeaks&quot;]][[&quot;data&quot;]][[&quot;mountains&quot;]][[&quot;mountain&quot;]]
+</code></pre>
 
 <ul>
-<li>We became suspicious of this relationship when we noticed that people&#39;s heights and lung capacities both increased as they aged.</li>
-<li>This led us to believe that age could be what&#39;s actually related to lung capacity instead of heights.</li>
-<li>In the argument, we then showed that we had evidence to disprove the relationship between age and lung capacity.</li>
-</ul></li>
-<li>So for us, based on our data, we find that there is evidence of a relationship between people&#39;s <code>height</code> and <code>lung_cap</code></li>
+<li><strong>What information is displayed when you run this code?</strong></li>
+<li><strong>Now <code>View</code> your <code>mountains</code> data and write down which row matches the above code&#39;s information.</strong></li>
 </ul>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Remarks about our argument</h3>
+<h3>Clean it up!</h3>
 <div class="slideContent" >
 <ul>
-<li>Even if the argument we&#39;ve just laid out seems convincing:
-
-<ul>
-<li>Is it necessarily absolutely certain? Not at all.</li>
-<li>Could there still be some confounding variable that we don&#39;t see which is causing the increase in people&#39;s lung capacities? Absolutely.</li>
-<li>But does it still lend evidence to a seemingly reasonable hypothesis? Yes!</li>
-</ul></li>
-<li><strong>What do you think of the argument made? Do you personally think it supports the hypothesis that taller people&#39;s bigger bodies might explain their larger lung capacity? Explain.</strong></li>
+<li>Just like when we scraped the HTML table, we need to clean up our data before we can use it.</li>
+<li><strong>Check the names of the <code>mountains</code> data to make sure they look correct.</strong></li>
+<li><strong>Check the structure (<code>str()</code>) of the data. If it&#39;s incorrect, run:</strong></li>
 </ul>
+
+<pre><code class="r">var_types &lt;- c(&quot;character&quot;,&quot;character&quot;,
+               &quot;character&quot;, &quot;numeric&quot;, 
+               &quot;numeric&quot;, &quot;numeric&quot;, &quot;numeric&quot;, 
+               &quot;numeric&quot;, &quot;numeric&quot;, &quot;numeric&quot;)
+</code></pre>
+
+<pre><code class="r">mountains &lt;- xmlToDataFrame(mountains_xml,
+                          colClasses=var_types)
+</code></pre>
 
 </div>
 
 </section>
 <section data-transition="default" data-transition-speed="slow">
-<h3>Concluding remarks</h3>
+<h3>When you&#x27;re done.</h3>
 <div class="slideContent" >
 <ul>
-<li>When analyzing data from an observational study, we should:
+<li><strong>After cleaning your data, run the following command and write down the output:</strong></li>
+</ul>
+
+<pre><code class="r">favstats(~elev_ft, data=mountains)
+</code></pre>
 
 <ul>
-<li>Beware of confounding variables that cause us to find spurious (<em>fake</em> or <em>false</em>) relationships.</li>
-<li>Do our best to really test the validity of our conclusions.</li>
-<li>Be mindful that our conclusions might be correct, but we can&#39;t be absolutely certain.</li>
-</ul></li>
-<li>Many times, observational studies help us find relationships that we then try to confirm or deny by using experiments. </li>
-<li><font color=#660099><b>Science done using an observational study isn&#39;t automatically incorrect or useless, but we should remember to take the conclusions with a grain of salt.</b></font></li>
+<li>If you&#39;d like, you can save your data by running:</li>
 </ul>
+
+<pre><code class="r">save(mountains, file=&#39;mountains.rda&#39;)
+</code></pre>
 
 </div>
 

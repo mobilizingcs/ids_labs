@@ -27,7 +27,7 @@ The benefit of computers
 Let's begin
 ==========
 - Start by loading the `cdc` data. 
-- Create a histogram of `heights` 
+- Create a histogram of `height` 
   - Split the plot into two, one for each `gender`. 
   - Finally, `fit` a `normal` curve to the histograms.
 - Since each gender's height looks normally distributed, we'll use a _normal model_ to compute the probability of people being different heights.
