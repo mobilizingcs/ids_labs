@@ -25,7 +25,7 @@ Grabbing text from the web
 ==========================
 
 - Similar to the previous lab, we can actually use _functions_ in RStudio to grab text documents from off the web (No button required!)
-  - Take a look at the text found [Here](http://web.ohmage.org/mobilize/resources/ids/data/gettysburg_address.txt)
+  - Take a look at the text found <a href="http://web.ohmage.org/mobilize/resources/ids/data/gettysburg_address.txt" target="_blank">Here</a>
   - **What is this text? Why is it famous?**
 - To grab this text and read it into R, we use the `readLines` function.
   - Replace the _"Write text URL here"_ with the actual URL of the text.

@@ -8,9 +8,7 @@ Unit 2 - Lab 2
 
 Directions: Follow along with the slides and answer the questions in **red** font in your journal.
  
-```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
-require(MobilizeSimple)
-```
+
 
 
 Just the beginning
@@ -34,14 +32,17 @@ Extreme values
 
 - Besides looking at _typical_ values, sometimes we want to see _extreme_ values, like the smallest and largest values.
 - To find these values, we can calculate the `min` and `max`.
-```{r,eval=FALSE}
+
+```r
 min(~x, data=colors)
 ```
-```{r,eval=FALSE}
+
+```r
 max(~x, data=colors)
 ```
 - Or use the `range` function to compute both
-```{r,eval=FALSE}
+
+```r
 range(~x, data=colors)
 ```
 
@@ -63,12 +64,8 @@ Quartiles (Q1 & Q3)
 - We often use the `median` to describe the _center_ of our data because half of the data is smaller than the median and the other half is larger.
 - If instead we found a value that was larger than just 25% of our data, we would have computed the _1st quartile_.
 - If we found the value that was larger than 75% of our data, we call that the _3rd quartile_.
-```{r,eval=FALSE}
 
-```
-```{r,eval=FALSE}
 
-```
 - **Why do you think we use the names _`1st_ and _3rd quartiles_?**
 
 The Inter-Quartile-Range (IQR)
@@ -94,10 +91,12 @@ Calculating the IQR
 ===================
 
 - Calculate the IQR by using either of the following
-```{r,eval=FALSE}
+
+```r
 IQR(~x, data = colors)
 ```
-```{r,eval=FALSE}
+
+```r
 iqr(~x, data = colors)
 ```
 
@@ -110,7 +109,8 @@ Other quantiles
     - They are called _quantiles_ because they describe the _quantity_ of data that is smaller than that value.
     - The 25th quantile is the value that is larger than 25% of the data.
 - We can compute quantiles too! (Don't include "~")
-```{r,eval=FALSE}
+
+```r
 qdata(x, data = colors, p = 0.35)
 ```
 
@@ -122,7 +122,8 @@ Boxplots
 - By using the medians, quartiles, and min/max, we can construct a new single variable plot called the **box and whisker** plot, often shortened to just a **boxplot**.
 - Try making one of your predominant color.
 
-```{r, eval=FALSE}
+
+```r
 bwplot(~x, data=colors)
 ```
 
@@ -135,7 +136,8 @@ Our favorite summaries
 - Numerical summaries are brief ways to describe our data, using numbers.
 - However, computing lots of different summaries can be tedious.
 - Use the following command to compute some of our _favorite_ summaries.
-```{r, eval=FALSE}
+
+```r
 favstats(~x, data=colors)
 ```
 - **Which summaries are displayed?**

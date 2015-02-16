@@ -972,10 +972,10 @@ hljs.initHighlightingOnLoad();
 <li>They are called <em>quantiles</em> because they describe the <em>quantity</em> of data that is smaller than that value.</li>
 <li>The 25th quantile is the value that is larger than 25% of the data.</li>
 </ul></li>
-<li>We can compute quantiles too!</li>
+<li>We can compute quantiles too! (Don&#39;t include &ldquo;~&rdquo;)</li>
 </ul>
 
-<pre><code class="r">qdata(~x, data = colors, p = 0.35)
+<pre><code class="r">qdata(x, data = colors, p = 0.35)
 </code></pre>
 
 <ul>

@@ -900,7 +900,10 @@ hljs.initHighlightingOnLoad();
 <li>In RStudio, we could use the following code:</li>
 </ul>
 
-<pre><code class="r">range1 &lt;- abs(samp1Median - 47) * 2
+<pre><code class="r">samp1Median &lt;- median(sample1)
+</code></pre>
+
+<pre><code class="r">samp1Range &lt;- abs(samp1Median - 47) * 2
 </code></pre>
 
 <ul>
@@ -916,10 +919,35 @@ hljs.initHighlightingOnLoad();
 <ul>
 <li>How do we know if the range we calculated from our first sample is the best?</li>
 <li><p>Obviously, we would like each range to be as small as possible and still include the true median.</p></li>
-<li><p>It&#39;s impossible to decide what the best interval would be with just one sample estimate, so we can create multiple samples and find the average ranges of all of them.</p>
+<li><p>It&#39;s impossible to decide what the best interval would be with just one sample estimate, so we can create multiple samples and find the average ranges of all of them.</p></li>
+</ul>
+
+</div>
+
+</section>
+<section data-transition="default" data-transition-speed="slow">
+<h3>Making samples</h3>
+<div class="slideContent" >
+<ul>
+<li>We can use R to easily:
 
 <ul>
-<li><strong>Record the code you would use to create 50 samples of size 100.</strong> (Note: be sure to include how you would store the median value of each sample.)</li>
+<li>(1) Make 50 samples of size 100.</li>
+<li>(2) Find the medians of these values</li>
+<li>(3) Save them</li>
+</ul></li>
+</ul>
+
+<pre><code class="r">sample50 &lt;- do(50)*median(sample(justAge, 
+                   size=100, replace=FALSE))
+</code></pre>
+
+<ul>
+<li>Next, <code>View</code> your 50 samples.
+
+<ul>
+<li><strong>What is the name of the column in <code>sample50</code>? Why might we want to choose a different name for the column?</strong></li>
+<li><strong>Change the <code>names()</code> of the column to <code>&quot;medians&quot;</code></strong></li>
 </ul></li>
 </ul>
 
@@ -930,8 +958,12 @@ hljs.initHighlightingOnLoad();
 <h3>Lots of ranges</h3>
 <div class="slideContent" >
 <ul>
-<li>Now that you have 50 samples and their median ages, you can calculate the range for each sample&#39;s confidence interval.</li>
-<li><strong>Record the code you used to create a new column, called <code>range</code> in your data set.</strong></li>
+<li>Now that you have 50 samples and their median ages, you can calculate the range for each sample&#39;s confidence interval.
+
+<ul>
+<li>To do this, use the <code>transform</code> function to create a new variable called <code>ranges</code> where each samples range is equal to <code>abs(medians - 47) * 2</code></li>
+</ul></li>
+<li><strong>Write down the code you used to create a new column, called <code>ranges</code> in your data set.</strong></li>
 </ul>
 
 </div>

@@ -71,7 +71,11 @@ A quick calculation
 
 
 ```r
-range1 <- abs(samp1Median - 47) * 2
+samp1Median <- median(sample1)
+```
+
+```r
+samp1Range <- abs(samp1Median - 47) * 2
 ```
 
 - **Why is it necessary to include the syntax `abs()` here?**
@@ -84,14 +88,31 @@ Remember: Our goal is to come up with ONE confidence interval
 - Obviously, we would like each range to be as small as possible and still include the true median.
 
 - It's impossible to decide what the best interval would be with just one sample estimate, so we can create multiple samples and find the average ranges of all of them.
-  - **Record the code you would use to create 50 samples of size 100.** (Note: be sure to include how you would store the median value of each sample.)
+
+
+Making samples
+==============
+
+- We can use R to easily:
+    - (1) Make 50 samples of size 100.
+    - (2) Find the medians of these values
+    - (3) Save them
+
+```r
+sample50 <- do(50)*median(sample(justAge, 
+                   size=100, replace=FALSE))
+```
   
+- Next, `View` your 50 samples.
+    - **What is the name of the column in `sample50`? Why might we want to choose a different name for the column?**
+    - **Change the `names()` of the column to `"medians"`**
   
 Lots of ranges
 =========================
 
 - Now that you have 50 samples and their median ages, you can calculate the range for each sample's confidence interval.
-- **Record the code you used to create a new column, called `range` in your data set.**
+    - To do this, use the `transform` function to create a new variable called `ranges` where each samples range is equal to `abs(medians - 47) * 2`
+- **Write down the code you used to create a new column, called `ranges` in your data set.**
 
 
 Now what do we do?
