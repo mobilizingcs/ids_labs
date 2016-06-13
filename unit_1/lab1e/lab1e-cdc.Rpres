@@ -1,0 +1,118 @@
+What's the Relationship?
+========================================
+transition: none
+css: ../../IDSLabCSS.css
+
+Lab 1E
+
+Directions: Follow along with the slides and answer the questions in **red** font in your journal.
+
+```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+library(mobilizr)
+data(cdc)
+```
+
+
+Finding patterns in data.
+=========================================
+
+- To discover (_really_) interesting observations or relationships in data, we need to find them!
+    - Which is difficult if we only look at the raw data, i.e. `View(cdc)`.
+- The best tool for finding patterns is often ... your own eyes.
+    - Plots are an excellent way to help your eye search for patterns.
+- In this lab, we'll learn how to include more variables in our plots to make them more informative.
+
+
+Where's the variables?
+========================
+
+```{r,eval=TRUE, echo=FALSE, fig.align='center', fig.width=14, fig.height= 6}
+histogram(~height | gender, data = cdc, layout = c(2,1),
+          scales=list(cex=2.5),
+          xlab = list("Height", cex=2.5),
+          ylab = list("Count", cex=2.5),
+          par.strip.text=list(cex=2))
+```
+
+- **How many variables were used to create this plot? Which variables were used and how were they used?**
+
+Multiple variable plots
+=======================
+
+- The previous graph is an example of a _multiple variable plot_, which means that more than a single variable was used. In this case:
+  - Variable 1: _height_
+  - Variable 2: _gender_
+- Multiple variable plots are tools for finding _relationships_ between data.
+- Let's load up our `cdc` data and make some new multiple variable plots you haven't created before!
+
+scatterplots
+=============
+
+```{r,echo=FALSE, fig.align='center'}
+n = 50
+x <- runif(n, 0, 20)
+y <- x^3 + rnorm(n, mean = 0, sd = 10^3)
+df <- data.frame(x=x, y=y)
+xyplot(y~x, data = df,
+       cex = 2,
+       scales=list(cex=2.5),
+          xlab = list("Variable 1", cex=2.5),
+          ylab = list("Variable 2", cex=2.5))
+```
+
+
+Creating scatterplots
+======================
+
+- Scatterplots are useful for viewing how one _numerical_ variable relates to another _numerical_ variable.
+- Fill in the blanks to create the scatterplot below:
+```{r, eval = FALSE}
+xyplot(____ ~ ____, data = cdc)
+```
+
+```{r,echo=FALSE,fig.align='center', fig.height=5, fig.width=10}
+xyplot(weight ~ height, data = cdc,
+       cex = 2,
+       scales=list(cex=2.5),
+          xlab = list("height", cex=2.5),
+          ylab = list("weight", cex=2.5))
+```
+
+scatterplots in action
+======================================
+
+- Use a scatterplot to answer the following questions:
+    - **Do taller people tend to weigh more or less than shorter people? Why?**
+    - **What happens if you swap the _height_ and _weight_ variables in your code? Does the relationship between the variables change?**
+    - **Do the heights and weights of males tend to look similar to the heights and weights of females? Write down the code you used to answer this question.**
+
+4-variable scatterplots
+======================
+
+- When we make scatterplots, we can include:
+    - 1 numerical variable on the x-axis
+    - 1 numerical variable on the y-axis
+    - Use 1 categorical variable to facet our scatterplot
+    - Change the color of the points based on another categorical variable
+- To change the color of our points, we can include the `groups` argument  much like we did for bargraphs (use the _search_ feature in the _History_ pane if you need help).
+- **Create a scatterplot that uses the 4 variables: `height`, `weight`, `gender`, `depressed`.**
+
+
+Multiple facets
+===============
+
+- It can sometimes be helpful to facet on more than 1 variable.
+    - Splitting the the data using 2 facets can give us additional insights that might otherwise be hidden.
+- Create a `bargraph` of the `drink_soda` variable, but facet the data using:
+```{r, eval = FALSE}
+general_health + gender
+```
+- _Hint_: Having trouble reading labels? Try including `horizontal = TRUE` as an option in the function.
+- **Compare the soda consumption of males and females who are better than _Good_ in terms of health. How are they similar/different?**
+
+
+On your own
+===========
+
+- How are general health-levels and depression related to student's weights?
+    - **Answer the question by creating a graph that would help you see if depressed people tend to weigh more than those who reported not feeling depressed for all levels of general health.**

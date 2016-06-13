@@ -1,0 +1,146 @@
+Queue it up!
+========================================================
+transition: none
+css: ../../IDSLabCSS.css
+
+Lab 2D
+
+Directions: Follow along with the slides and answer the questions in **red** font in your journal.
+ 
+
+
+
+Where we left off
+=================
+
+- In the last lab, we looked at how we can use computer simulations to compute estimates of simple probabilities.
+  - Like the probability of drawing a song genre from a playlist.
+- We also saw that performing _more_ simulations:
+    - Took _longer_ to finish.
+    - Had estimates that _varied less_.
+- In this lab, we'll extend our simulation methods to cover situations that are more complex.
+    - We'll learn how to estimate their probabilities.
+    - We also look at the roll of sampling _with_ or _without_ _replacement_.
+    
+
+
+Back to songs
+===
+
+- In `R`, simulate a _playlist of songs_ containing 30 `"rap"` songs, 23 `"country"` songs and 47 `"rock"` songs.
+    - _Assign_ the `c`ombined playlist the name `songs`.
+- Simulate choosing a single song 50 times. Then use your simulated draws to estimate the probability of choosing a _rap_ song.
+    - The actual (theoretical) probability of choosing a _rap song_ in this case is `0.30`.
+    - **Write a sentence comparing your estimated probability to the actual probability?.**
+
+
+With or Without?
+===
+
+- So far, you've selected songs _with replacement_. 
+    - We called it that, because each time you made a selection, you started with the same playlist. That is, you chose a song, wrote down its data, and then placed  it back on the list.
+- It's also possible to select _without replacement_ by setting the `replace` option in the `sample` function to `FALSE`.
+- Take a sample of `size` 100 from our playlist of songs _without replacement_. Assign this sample the name `without`. 
+    - **What do you notice if you run `tally(~without)`? Does something similar happen if you sample _with replacement_?**
+    - **What happens if `size = 101` and `replace = FALSE`?**
+
+
+Sample with? Or without?
+===
+
+- Imagine the following two scenarios.
+    1. You have a coin with two sides: _Heads_ and _Tails_. You're not sure if the coin is fair and so you want to estimate the probability of getting a _Head_.
+    2. A child reaches into a candy jar with 10 _strawberry_, 50 _chocolate_ and 25 _watermelon_ candies. The child is able to grab three candies with their hand and you're interested in probability that all three candies will be chocolate.
+- **Which of these scenarios would you sample _with replacement_ and which would you sample _without replacement_? Why?**
+    - **Write down the line of code you would run to `sample` from the candy jar. Assume the simulated jar is named `candies`.**
+
+
+Simulations at work
+===
+
+- In reality, songs from a playlist are chosen without replacement.
+    - This way, you won't hear the same song several times in a row.
+- Let's write a more realistic simulation and estimate the probability that if we select two songs at random, without replacement, that both are rap songs.
+    - Use the `do` function to perform 10 simulated `sample`s of `size` 2, with replacement and _assign_ the simulations the name `draws`.
+    
+
+Simulations and probability
+===
+
+- To estimate the probability from our simulations, we need to find the proportion of times that the event we're interested in occurs in the simulations.
+- In other words, we need to count the number of times the desired events occurred, divided by the number of attempts we made (the number of simulations).
+- The next slides will show you two ways to do this.
+
+
+Counting similar outcomes
+===
+
+- One way we can estimate the probability of drawing two songs of the _same_ genre is to use the following trick to count the number of _rap_ songs in each of the 10 simulations:
+
+
+```r
+mutate(draws, nrap = rowSums(draws=="rap"))
+```
+
+- **For each of the lines of code below, describe how the output of the code changes as we move from line to line.**
+
+```r
+draws == "rap"
+```
+
+```r
+rowSums(draws == "rap")
+```
+
+```r
+mutate(draws, nrap = rowSums(draws=="rap"))
+```
+
+
+Counting other outcomes
+===
+
+- Another method we can use to estimate the probability of complex events is to use the following 2-step procedure:
+    1. Subset the rows of the simulations that match our desired outcomes.
+    2. Count the number of rows in the subset and divide by the number of simulations.
+- The result that you obtain is an estimate of the probability that a specific combination of events occured.
+- We'll see an example of this method on the next slide.
+
+Step 1: Creating a subset
+===
+
+- In order to find outcomes where both draws are rap, we use the  _and_ symbol (`&`).
+- Fill in the blanks below to: 
+    1. Create a subset of our simulations when both draws were `"rap"` songs.
+    2. Count the number of rows in this subset
+    3. And divide by the total number of repeated simulations.
+    
+
+```r
+draws_sub <- subset(draws, ___ == "rap" & ___ == "rap")
+```
+
+```r
+nrow(___) / ___
+```
+
+
+Estimating probabilities
+===
+
+- **Calculate estimated probabilities for the following situations:**
+    1. You draw two `"rap"` songs.
+    2. You draw a `"rap"` song in the first draw and a `"country"` song in the 2nd.
+- **Create a histogram that displays the number of times a `"rap"` song occurred in each simulation. That is, how often were zero rap songs drawn? A single rap song? Two rap songs?**
+
+On your own
+===
+
+- Using what you've learned in the previous two labs, answer the following question by performing two computer simulations with 500 repetitions a piece:
+
+**_If we draw 5 songs from a playlist of 30 rap, 23 country and 47 rock songs, how does the estimated probability of all 5 songs being rap songs change if we draw the songs with or without replacement?_**
+
+- For each simulation:
+    - **Create a histogram for the number of _rap_ songs that occured for each of the 500 repetitions.**
+- **Describe how the distribution of the number of _rap_ songs changes depending on if we use replacement or not.**
+

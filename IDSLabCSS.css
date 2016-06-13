@@ -1,0 +1,30 @@
+.reveal code {
+  font-family:monospace;
+  color: #10437F;
+}
+
+.reveal strong {
+  color: #B21212;
+}
+
+.reveal footer {
+  display:block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 20pt;
+  color: #25679E;
+  text-align: center; 
+}
+
+.section .reveal h1 {
+	color: #25679E;
+}
+
+.section .reveal p {
+	color: #25679E;
+}
+
+.section .reveal .state-background {
+	background: white
+}

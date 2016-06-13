@@ -1,0 +1,128 @@
+Zooming Through Data
+========================
+transition: none
+css: ../../IDSLabCSS.css
+
+Lab 1D
+
+Directions: Follow along with the slides and answer the questions in **red** font in your journal.
+
+```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+library(mobilizr)
+data(cdc)
+```
+
+Data with Clarity
+=================
+
+- Previously, we've looked at graphs of entire variables (By looking at all of their values).
+    - Doing this is helpful to get a _big picture_ idea of our data.
+- In this lab, we'll learn how to _zoom in_ on our data by learning how to subset.
+    - We'll also learn a few ways to manipulate the plots we've been making to make them easier to use for analyses.
+
+
+Splitting data sets
+==============================
+
+- In lab 1B, we learned that we can _facet_ (or split) our data based on a categorical variable.
+    - **Create a histogram of people's heights in our `cdc` data. Then split the histogram in two by faceting on our observations' `gender`.**
+    - **Describe how R assigns our observations to either the left or right plot.**
+
+
+Altering the layout
+==============================
+
+- It would be much easier to compare the heights of males and females if the histograms were stacked on top of one another.
+- We can change the **layout** of our separated plots by including the `layout` option in our `histogram` function. 
+    - Add the following option to the code you used create the `histogram` split by `gender` 
+```{r, eval = FALSE}
+layout = c(1,2)
+```
+- _Hint_: Use your history pane to see how we handled options with the `bargraph` function. Use a similar syntax to add the `layout` option to the `histogram` function.
+
+
+Subsetting
+=====================
+
+- Subsetting is a term we use to describe the process of looking at only the data that conforms to some set of rules:
+    - Geologists may subset earthquake data by looking at only large earthquakes.
+    - Stock market traders may subset their trading data by looking only at the previous day's trades.
+- There's _many_ ways to subset data using RStudio, we'll focus on learning the most common methods.  
+  
+The subset function
+=========================
+
+- Creating two plots, one for males and one for females is useful for comparing males and females. But what if we want to examine only one group by itself?
+- Start by creating a subset of the data:
+    - Fill in the blanks below with the data and variable names needed to subset our `cdc` data based on people who reported being `Female`:
+```{r, eval = FALSE}
+cdc_fem <- subset(____ , ____ == "Female")
+```
+- **`View` `cdc_fem` and write down the number of observations in it. Then use the subset data to make a histogram of the `height` of females.**
+
+
+So what's really going on?
+==========================
+
+- Coding in R is really just about supplying directions in a way that R understands. 
+    - We'll start by focusing on everything to the right of the "<-" symbol
+```{r, eval = FALSE}
+cdc_fem <- subset(____ , ____ == "Female")
+```
+- `subset()` tells R that we're going to look at only the values in our data that follow a _rule_.
+- The first blank should be the data we're going to filter down into a smaller set (Based on our rule).
+- `gender == "Female"` is the rule to follow.
+
+3 parts of defining rules
+============================
+
+- We can decompose our rule, `gender == "Female"`, into 3 parts:
+    - (1) `gender`, is the particular _variable_ we want to use to select our subset.
+    - (2) `"Female"`, is the _value_ of the variable that we want to select. We only want to see data with the value `Female` for the variable `gender`.
+    - (3) `==`  describes how we want to relate our variable (`gender`) to our value (`"Female"`). In this case, we want values of `gender` that are _exactly equal_ to `"Female"`.
+- <font color="green">Notice:</font> _Values_ (that are also words) have quotation marks around them. _Variables_ do not.
+
+
+More on ==
+======================
+
+- We can use the `head()` function to help us see what's happening when we write `gender == "Female"`.
+    - `head()` returns the values of the first 6 observations.
+    - The `tail()` function returns the last 6 observations.
+- Run the following code and answer the question below:
+```{r, eval=FALSE}
+head(gender == "Female", data = cdc)
+```
+- **What do the values `TRUE` and `FALSE` tell us about how our _rule_ applies to the first six people in our data? Which of the first six observations were `Female`?**
+
+Saving values
+==================
+
+- To use our subset data we need to save it first.
+    - When we _save_ something in R what we are really doing is giving a value, or set of values, a specific name for us to use later.
+- The arrow <- is called the "assignment" operator. It assigns names (on the left) to values (on the right)
+    - We now focus on everything to the left of, and including, the "<-" symbol
+```{r, eval = FALSE}
+cdc_fem <- subset(____ , ____ == "Female")
+```
+
+Saving our subset
+================
+
+```{r, eval = FALSE}
+cdc_fem <- subset(cdc, gender == "Female")
+```
+
+- This code then: 
+    - takes our subset data, (everything to the right of "<-") ...
+    - and assigns the subset data, by using the arrow "<-" ...
+    - the name `cdc_fem`.
+- We can now use `cdc_fem` to do anything we could do with the regular `cdc` data ...
+    - but only including those people who reported being `Female`.
+
+Put it all together
+===================
+
+- **Use an appropriate histogram to answer each of the following questions:**
+    - **How tall is the typical 10th-grader?**
+    - **How do the heights of 9th, 10th, 11th and 12th graders compare? Which grade appears to be the most different from the others?**
