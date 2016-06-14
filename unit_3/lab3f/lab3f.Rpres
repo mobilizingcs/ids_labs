@@ -33,7 +33,7 @@ Getting ready to map
 
 - The map we'll be creating will end up in RStudio's _Viewer_ pane.
     - Which means you'll need to alternate between building the map and loading the lab.
-- You'll find it very helpful, for this lab, to write all of the commands, including the `load_lab(24)` command, as an `R` script.
+- You'll find it very helpful, for this lab, to write all of the commands, including the `load_lab(23)` command, as an `R` script.
     - This way you can edit the code that builds the map and quickly reload the lab.
 
 Load your data!
