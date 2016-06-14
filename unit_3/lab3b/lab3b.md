@@ -25,7 +25,7 @@ Our new data
 ===
 
 - You can find the data online here:
-    - (Right-click and select _Open in New Window_) [http://www.amstat.org/publications/jse/datasets/fev.dat.txt](http://www.amstat.org/publications/jse/datasets/fev.dat.txt)
+    - (Right-click and select _Open in New Window_) [http://gh.mobilizingcs.org/ids_labs/extras/webdata/fev.dat.txt](http://gh.mobilizingcs.org/ids_labs/extras/webdata/fev.dat.txt)
 - Variables that were measured include:
     - Age in years.
     - Lung capacity, measured in liters.
