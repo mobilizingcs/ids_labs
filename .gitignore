@@ -3,6 +3,7 @@
 .Rhistory
 .RData
 .Rproj.user
+**/**/*.md
 *.md
 extras/old_versions/
 extras/responses

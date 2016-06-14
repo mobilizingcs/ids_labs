@@ -26,9 +26,7 @@ Our first web scraper
 
 - Copy and paste the link below into a web browser to view the website of data we'd like to _scrape_ and analyze.
 
-```r
-https://tinyurl.com/usamtns
-```
+[http://gh.mobilizingcs.org/ids_labs/extras/webdata/mountains.html](http://gh.mobilizingcs.org/ids_labs/extras/webdata/mountains.html)
 
 - **Briefly describe what the data on the website is about.**
     - **Then write down 3 questions you'd be interested in answering by analyzing this data.**
