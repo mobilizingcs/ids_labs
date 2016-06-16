@@ -18,26 +18,26 @@ Data with Clarity
     - Doing this is helpful to get a _big picture_ idea of our data.
 - In this lab, we'll learn how to _zoom in_ on our data by learning how to subset.
     - We'll also learn a few ways to manipulate the plots we've been making to make them easier to use for analyses.
-- Import the data from your class' _Food Habits_ campaign and name it `food`.
+- Import the data from your class' _Trash_ campaign and name it `trash`.
 
 
 Splitting data sets
 ==============================
 
 - In lab 1B, we learned that we can _facet_ (or split) our data based on a categorical variable.
-- **Use the `dotPlot()` function to create a `dotPlot` of the amount of `sugar` in our `food` data.**
+- **Use the `dotPlot()` function to create a `dotPlot` of the `numberTrashBins` in our `trash` data.**
     - The code to create a `dotPlot` is exactly like you'd use to make a `histogram`.
     - Make sure to use a capital _P_ in `dotPlot`.
-- **Split the `dotPlot` in two by faceting on our observations' salty/sweet variable.**
+- **Split the `dotPlot` in two by faceting on our observations' `receptacle` variable.**
     - **Describe how R decides which observations go into the left or right plot.**
     - **What does each _dot_ in the plot represent?**
 
 Altering the layout
 ==============================
 
-- It would be much easier to compare the sugar levels of salty and sweet snacks if the dotPlots were stacked on top of one another.
+- It might be easier to compare the number of trash bins for each receptacle if the dotPlots were stacked on top of one another.
 - We can change the **layout** of our separated plots by including the `layout` option in our `dotPlot` function. 
-    - Add the following option to the code you used create the `dotPlot` split by `salty_sweet` 
+    - Add the following option to the code you used create the `dotPlot` split by `receptacle` 
 ```{r, eval = FALSE}
 layout = c(1,2)
 ```
@@ -55,13 +55,13 @@ Subsetting
 The subset function
 =========================
 
-- Creating two plots, one for salty and one for sweet is useful for comparing salty and sweet But what if we want to examine only one group by itself?
+- Creating two plots, one for trash bins and one for recycling bins, is useful for comparing the two receptacles. But what if we want to examine only one group by itself?
 - Start by creating a subset of the data:
-    - Fill in the blanks below with the data and variable names needed to subset our `food` data based on people who ate `Salty` snacks:
+    - Fill in the blanks below with the data and variable names needed to subset our `trash` data based on people putting their trash in a recycle bin:
 ```{r, eval = FALSE}
-food_salty <- subset(____ , ____ == "Salty")
+recyclables <- subset(____ , ____ == "recyclable")
 ```
-- **View `food_salty` and write down the number of observations in it. Then use the subset data to make a dotPlot of the `sodium` in our `Salty` snacks.**
+- **View `recyclables` and write down the number of observations in it. Then use the subset data to make a `bargraph` of the `activity` that ended up in recycle bins.**
 
 
 So what's really going on?
@@ -70,33 +70,33 @@ So what's really going on?
 - Coding in R is really just about supplying directions in a way that R understands. 
     - We'll start by focusing on everything to the right of the "<-" symbol
 ```{r, eval = FALSE}
-food_salty <- subset(____ , ____ == "Salty")
+recyclables <- subset(____ , ____ == "recyclable")
 ```
 - `subset()` tells R that we're going to look at only the values in our data that follow a _rule_.
 - The first blank should be the data we're going to filter down into a smaller set (Based on our rule).
-- `salty_sweet == "Salty"` is the rule to follow.
+- `receptacle == "recyclable"` is the rule to follow.
 
 3 parts of defining rules
 ============================
 
-- We can decompose our rule, `salty_sweet == "Salty"`, into 3 parts:
-    - (1) `salty_sweet`, is the particular _variable_ we want to use to select our subset.
-    - (2) `"Salty"`, is the _value_ of the variable that we want to select. We only want to see data with the value `Salty` for the variable `salty_sweet`.
-    - (3) `==`  describes how we want to relate our variable (`salty_sweet`) to our value (`"Salty"`). In this case, we want values of `salty_sweet` that are _exactly equal_ to `"Salty"`.
+- We can decompose our rule, `receptacle == "recyclable"`, into 3 parts:
+    - (1) `receptacle`, is the particular _variable_ we want to use to select our subset.
+    - (2) `"recyclable"`, is the _value_ of the variable that we want to select. We only want to see data with the value `"recyclable"` for the variable `receptacle`.
+    - (3) `==`  describes how we want to relate our variable (`receptacle`) to our value (`"recyclable"`). In this case, we want values of `receptacle` that are _exactly equal_ to `"recyclable"`.
 - <font color="green">Notice:</font> _Values_ (that are also words) have quotation marks around them. _Variables_ do not.
 
 
 More on ==
 ======================
 
-- We can use the `head()` function to help us see what's happening when we write `salty_sweet == "Salty"`.
+- We can use the `head()` function to help us see what's happening when we write `receptacle == "recyclable"`.
     - `head()` returns the values of the first 6 observations.
     - The `tail()` function returns the last 6 observations.
 - Run the following code and answer the question below:
 ```{r, eval=FALSE}
-head(salty_sweet == "Salty", data = food)
+head(receptacle == "recyclable", data = trash)
 ```
-- **What do the values `TRUE` and `FALSE` tell us about how our _rule_ applies to the first six snacks in our data? Which of the first six observations were `Salty`?**
+- **What do the values `TRUE` and `FALSE` tell us about how our _rule_ applies to the first six observations in our data? Which of the first six observations were `recyclable`?**
 
 Saving values
 ==================
@@ -106,28 +106,20 @@ Saving values
 - The arrow <- is called the "assignment" operator. It assigns names (on the left) to values (on the right)
     - We now focus on everything to the left of, and including, the "<-" symbol
 ```{r, eval = FALSE}
-food_salty <- subset(____ , ____ == "Salty")
+recyclables <- subset(____ , ____ == "recyclable")
 ```
 
 Saving our subset
 ================
 
 ```{r, eval = FALSE}
-food_salty <- subset(____ , ____ == "Salty")
+recyclables <- subset(____ , ____ == "recyclable")
 ```
 
 - This code then: 
     - takes our subset data, (everything to the right of "<-") ...
     - and assigns the subset data, by using the arrow "<-" ...
-    - the name `food_salty`.
-- We can now use `food_salty` to do anything we could do with the regular `food` data ...
-    - but only including those snacks who reported being `Salty`.
+    - the name `recyclables`.
+- We can now use `recyclables` to do anything we could do with the regular `trash` data ...
+    - but only including those items who reported being `recyclable`.
 
-Put it all together
-===================
-
-- **Use an appropriate `dotPlot` to answer each of the following questions:**
-    - **About how much fat does the typical sweet snack have?**
-    - **How does the typical amount of fat compare when `healthy_level < 3` and when `healthy_level > 3`?**
-- It can sometime be helpful to change the number of _intervals_, or _bins_, used in `dotPlots` and `histograms`.
-    - To change the number of _intervals_ in your plots, include the `nint` option. For instance, to have a plot with 3 bins, use `nint = 3`. To have a plot with 30 bins, use `nint = 30`.
