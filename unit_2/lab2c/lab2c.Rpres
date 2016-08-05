@@ -70,7 +70,7 @@ Put the songs in the playlist
 
 - Now that we've got some different songs, we need to combine them together.
     - To do this, we can use the combine function in `R`, `c()`.
-- Fill in the blanks to put your combine your different songs:
+- Fill in the blanks to combine your different songs:
 ```{r, eval = FALSE}
 songs <- __(rap, ____)
 ```
