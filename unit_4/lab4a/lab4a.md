@@ -44,8 +44,7 @@ Predicting heights knowing arm spans
 <!-- Predicting with means -->
 <!-- === -->
 
-<!-- - As you might have noticed, calculating the mean for smaller clusters of data helps us make more accurate predictions.  -->
-<!-- - We can generalize this concept of using local clusters of means to make predictions by using a "line of means". -->
+
 
 
 
