@@ -97,16 +97,22 @@ Importing
 
 <center>![import data](images/Environment.png)</center>
 
-- At the top of the Environment pane, click the "Import Data set" button. Then, choose "From Text File."
-- Find your _SurveyResponse_ data and then click _Open_.
+- At the top of the Environment pane, click the "Import Data set" button. Then, choose "From CSV..."
+    - CSV is a standard data format used by many software programs.
 
 
 Data Preview
 ========================================================
 <center><img src="images/DataPreview.png" alt="Data Preview" height="360" width="480"></center>
 
-- Give your data a <font color="green">Name</font>. This is the name you'll use in your code.
-    - Good names are short and descriptive. Maybe a good name for this data is "foodhabits".
+- Click the <font color="green">Browse...</font> button in the upper right hand corner. Find your data file and click <font color="green">Open</font>.
+- Give your data a name using the <font color="green">Name: </font> field in the lower left corner.
+
+What's in a name?
+===
+- The name you give your data is what you will use when you write code to analyze your data.
+    - Good names are short and descriptive. 
+    - For your food habits campaign, some good names to use would be  "foodhabits" or even just "food".
 - When you're ready, click the _Import_ button.
 
 
@@ -115,13 +121,13 @@ read.csv()
 
 - After you click import you might notice something appeared in your console.
 ```{r,eval=FALSE}
-data.file <- read.csv("~/SurveyResponse.csv")
+data.file <- read_csv("~/SurveyResponse.csv")
 View(data.file)
 ```
 
-- We can actually <font color="green">Import</font> the data without clicking the button!
-  - This would allow you to load data by writing code! 
-  - This might come in handy later in the course.
+- This is the actual code `RStudio` uses to read your data when you clicked the import button. 
+  - So instead of using the `RStudio` buttons, we can actually <font color="green">Import</font> by writing code similar to what was output into the console!
+  - This will come in handy later in the course.
 
 A word on staying organized...
 ==============================
