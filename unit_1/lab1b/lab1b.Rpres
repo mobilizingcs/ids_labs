@@ -63,10 +63,10 @@ Visualizing data
 - Choose one numeric and one categorical variable from the data and create both a `bargraph` and a `histogram` for each variable.
     - **Which function, either `bargraph` or `histogram` is better at visualizing categorical variables? Which is better at visualizing numerical variables?**
     
-How often do people use sunscreen?
+How often do people text & drive?
 ==================================
 
-- Make a graph that shows how often people in our data use texted while driving.
+- Make a graph that shows how often people in our data texted while driving.
     - **What does the y-axis represent?**
     - **What does the x-axis tell us?**
     - **Would you say that _most_ people _never_ texted while driving? What does the word _most_ mean?**
@@ -88,11 +88,11 @@ Does texting and driving differ by gender?
 Do males/females have similar heights?
 =====================================
 
-- To answer this, what we'd like to do is visualize the distributions of sunscreen use, separately, for males and females.
+- To answer this, what we'd like to do is visualize the distributions of heights, separately, for males and females.
     - This way, we can easily compare them.
 - Use the `groups` argument to create a `histogram` for the `height` of males and females.
     - **Can you use this graphic to answer the question at the top of the slide? Why or why not?**
-    - **Is grouping numeric values, such as heights, as helpful as grouping categorical variables, such as sunscreen use?**
+    - **Is grouping numeric values, such as heights, as helpful as grouping categorical variables, such as texting & driving?**
     
 Do males/females have similar heights?
 =====================================
@@ -110,6 +110,6 @@ Do males/females have similar heights?
 On your own:
 ============
 
-- In this lab, we learned that boys and girls have different attitudes about using sunscreen. 
+- In this lab, we looked at boy's and girl's attitudes about using texting & driving: 
 - **What other factors do you think might affect how often people text and drive?**
     - **Choose one variable from the `cdc` data, make a graph, and use the graph to describe how `drive_text` use differs with this variable.**
