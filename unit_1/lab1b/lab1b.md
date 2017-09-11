@@ -68,7 +68,7 @@ How often do people use sunscreen?
     - **What does the y-axis represent?**
     - **What does the x-axis tell us?**
     - **Would you say that _most_ people _never_ use sunscreen? What does the work _most_ mean?**
-    - **Approximately what percent of the people use sunscreen "always" or "most of the time"? (Hint: There's 14041 students in our data.**
+    - **Approximately what percent of the people use sunscreen "always" or "most of the time"? (Hint: There's 15624 students in our data.**
 
 
 Does sunscreen use differ based on gender?
@@ -86,7 +86,7 @@ Does sunscreen use differ based on gender?
 Do males/females have similar heights?
 =====================================
 
-- To answer this, what we'd like to do is visualize the distributions of sunscreen use, separately, for males and females.
+- To answer this, what we'd like to do is visualize the distributions of heights, separately, for males and females.
     - This way, we can easily compare them.
 - Use the `groups` argument to create a `histogram` for the `height` of males and females.
     - **Can you use this graphic to answer the question at the top of the slide? Why or why not?**

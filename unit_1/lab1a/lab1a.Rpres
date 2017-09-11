@@ -7,8 +7,8 @@ Lab 1A
 
 Directions: Follow along with the slides and answer the questions in **red** font in your journal.
  
-```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
-library(mobilizr)
+```{r, eval=TRUE, echo=FALSE, results='hide', messages=FALSE, warnings=FALSE}
+suppressMessages(library(mobilizr))
 data(cdc)
 ```
 
