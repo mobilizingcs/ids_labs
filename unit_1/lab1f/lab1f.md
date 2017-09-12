@@ -165,10 +165,10 @@ Factors and Levels
 - R has a special name for _categorical_ variables, called _factors_.
 - R also has a special name for the different _categories_ of a _categorical_ variable.
     - The individual categories are called _levels_.
-- To see the levels of `gender` type:
+- To see the levels of `gender` and their counts type:
 
 ```r
-summarize(atu_cleaner, levels(gender))
+tally(~gender, data = atu_cleaner)
 ```
 - **Use similar code as we used above to write down the levels for the three factors in our data.**
 
@@ -176,14 +176,14 @@ summarize(atu_cleaner, levels(gender))
 A level by any other name...
 ===========================
 
-- If we know that '`01`' means '`Male`' and '`02`' means '`Female`' then we can use the following code to revalue the _levels_ of _gender_.
+- If we know that '`01`' means '`Male`' and '`02`' means '`Female`' then we can use the following code to recode the _levels_ of _gender_.
 - Type the following command into your console:
 
 ```r
 atu_cleaner <- mutate(atu_cleaner, gender = 
-                 revalue(gender, 
-                         c("01"="Male", 
-                           "02" = "Female")))
+                 recode(gender, 
+                         "01"="Male", 
+                         "02" = "Female"))
 ```
 
 - This code is definitely a bit of a mouthful. Let's break it down.
@@ -194,15 +194,15 @@ Allow me to explain
 
 ```r
 atu_cleaner <- mutate(atu_cleaner, gender = 
-                  revalue(gender, c("01"="Male", 
-                    "02" = "Female")))
+                  recode(gender, "01"="Male", 
+                    "02" = "Female"))
 ```
 
 - This code is saying:
     - Replace my current version of `atu_cleaner`...
     - with a mutated one where ...
     - the `gender` variable's levels ...
-    - have been revalued..."
+    - have been recoded..."
     - where `"01"` will now be `"Male"`...
     - and `"02"` will now be `"Female"`.
 
@@ -210,7 +210,7 @@ atu_cleaner <- mutate(atu_cleaner, gender =
 Finish it off!
 ==================
 
-- **Revalue the categorical variable about whether the person surveyed had a physical challenge or not. The coding is currently:**
+- **Recode the categorical variable about whether the person surveyed had a physical challenge or not. The coding is currently:**
     - `"01"`: Person surveyed _did not_ have a physical challenge.
     - `"02"`: Person surveyed _did_ have a physical challenge.
 - **Write a script that:**

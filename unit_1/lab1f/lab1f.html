@@ -1078,10 +1078,10 @@ hljs.initHighlightingOnLoad();
 <ul>
 <li>The individual categories are called <em>levels</em>.</li>
 </ul></li>
-<li>To see the levels of <code>gender</code> type:</li>
+<li>To see the levels of <code>gender</code> and their counts type:</li>
 </ul>
 
-<pre><code class="r">summarize(atu_cleaner, levels(gender))
+<pre><code class="r">tally(~gender, data = atu_cleaner)
 </code></pre>
 
 <ul>
@@ -1095,14 +1095,14 @@ hljs.initHighlightingOnLoad();
 <h3>A level by any other name...</h3>
 <div class="slideContent" >
 <ul>
-<li>If we know that &#39;<code>01</code>&#39; means &#39;<code>Male</code>&#39; and &#39;<code>02</code>&#39; means &#39;<code>Female</code>&#39; then we can use the following code to revalue the <em>levels</em> of <em>gender</em>.</li>
+<li>If we know that &#39;<code>01</code>&#39; means &#39;<code>Male</code>&#39; and &#39;<code>02</code>&#39; means &#39;<code>Female</code>&#39; then we can use the following code to recode the <em>levels</em> of <em>gender</em>.</li>
 <li>Type the following command into your console:</li>
 </ul>
 
 <pre><code class="r">atu_cleaner &lt;- mutate(atu_cleaner, gender = 
-                 revalue(gender, 
-                         c(&quot;01&quot;=&quot;Male&quot;, 
-                           &quot;02&quot; = &quot;Female&quot;)))
+                 recode(gender, 
+                         &quot;01&quot;=&quot;Male&quot;, 
+                         &quot;02&quot; = &quot;Female&quot;))
 </code></pre>
 
 <ul>
@@ -1116,8 +1116,8 @@ hljs.initHighlightingOnLoad();
 <h3>Allow me to explain</h3>
 <div class="slideContent" >
 <pre><code class="r">atu_cleaner &lt;- mutate(atu_cleaner, gender = 
-                  revalue(gender, c(&quot;01&quot;=&quot;Male&quot;, 
-                    &quot;02&quot; = &quot;Female&quot;)))
+                  recode(gender, &quot;01&quot;=&quot;Male&quot;, 
+                    &quot;02&quot; = &quot;Female&quot;))
 </code></pre>
 
 <ul>
@@ -1127,7 +1127,7 @@ hljs.initHighlightingOnLoad();
 <li>Replace my current version of <code>atu_cleaner</code>&hellip;</li>
 <li>with a mutated one where &hellip;</li>
 <li>the <code>gender</code> variable&#39;s levels &hellip;</li>
-<li>have been revalued&hellip;&ldquo;</li>
+<li>have been recoded&hellip;&ldquo;</li>
 <li>where <code>&quot;01&quot;</code> will now be <code>&quot;Male&quot;</code>&hellip;</li>
 <li>and <code>&quot;02&quot;</code> will now be <code>&quot;Female&quot;</code>.</li>
 </ul></li>
@@ -1140,7 +1140,7 @@ hljs.initHighlightingOnLoad();
 <h3>Finish it off!</h3>
 <div class="slideContent" >
 <ul>
-<li><strong>Revalue the categorical variable about whether the person surveyed had a physical challenge or not. The coding is currently:</strong>
+<li><strong>Recode the categorical variable about whether the person surveyed had a physical challenge or not. The coding is currently:</strong>
 
 <ul>
 <li><code>&quot;01&quot;</code>: Person surveyed <em>did not</em> have a physical challenge.</li>
