@@ -96,7 +96,7 @@ More on ==
 - Run the following code and answer the question below:
 
 ```r
-head(salty_sweet == "Salty", data = food)
+head(~salty_sweet == "Salty", data = food)
 ```
 - **What do the values `TRUE` and `FALSE` tell us about how our _rule_ applies to the first six snacks in our data? Which of the first six observations were `Salty`?**
 
