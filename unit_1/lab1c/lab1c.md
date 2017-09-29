@@ -143,5 +143,3 @@ Export, upload, import
 - After you _export_, _upload_, _import_ your data you're ready to analyse. 
 - **`View` your data, select a variable and try to make an appropriate plot for that variable.**
     - If you're having issues, make sure you're spelling the name of your data correctly.
-- Re-import your data, but this time, turn the _Heading_ option to _No_
-    - **`View` the data now and describe how selecting the _No_ option for the the _heading_ changed your data. What is a heading?**
