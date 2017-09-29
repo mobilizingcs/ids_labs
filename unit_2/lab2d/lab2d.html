@@ -862,7 +862,7 @@ hljs.initHighlightingOnLoad();
 
 <ul>
 <li>The actual (theoretical) probability of choosing a <em>rap song</em> in this case is <code>0.30</code>.</li>
-<li><strong>Write a sentence comparing your estimated probability to the actual probability?.</strong></li>
+<li><strong>Write a sentence comparing your estimated probability to the actual probability?</strong></li>
 </ul></li>
 </ul>
 
@@ -988,7 +988,6 @@ hljs.initHighlightingOnLoad();
 <h3>Step 1: Creating a subset</h3>
 <div class="slideContent" >
 <ul>
-<li>In order to find outcomes where both draws are rap, we use the  <em>and</em> symbol (<code>&amp;</code>).</li>
 <li>Fill in the blanks below to: 
 
 <ol>
@@ -998,7 +997,7 @@ hljs.initHighlightingOnLoad();
 </ol></li>
 </ul>
 
-<pre><code class="r">draws_sub &lt;- subset(draws, ___ == &quot;rap&quot; &amp; ___ == &quot;rap&quot;)
+<pre><code class="r">draws_sub &lt;- filter(draws, ___ == &quot;rap&quot;,  ___ == &quot;rap&quot;)
 </code></pre>
 
 <pre><code class="r">nrow(___) / ___

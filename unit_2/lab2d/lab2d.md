@@ -31,7 +31,7 @@ Back to songs
     - _Assign_ the `c`ombined playlist the name `songs`.
 - Simulate choosing a single song 50 times. Then use your simulated draws to estimate the probability of choosing a _rap_ song.
     - The actual (theoretical) probability of choosing a _rap song_ in this case is `0.30`.
-    - **Write a sentence comparing your estimated probability to the actual probability?.**
+    - **Write a sentence comparing your estimated probability to the actual probability?**
 
 
 With or Without?
@@ -109,7 +109,6 @@ Counting other outcomes
 Step 1: Creating a subset
 ===
 
-- In order to find outcomes where both draws are rap, we use the  _and_ symbol (`&`).
 - Fill in the blanks below to: 
     1. Create a subset of our simulations when both draws were `"rap"` songs.
     2. Count the number of rows in this subset
@@ -117,7 +116,7 @@ Step 1: Creating a subset
     
 
 ```r
-draws_sub <- subset(draws, ___ == "rap" & ___ == "rap")
+draws_sub <- filter(draws, ___ == "rap",  ___ == "rap")
 ```
 
 ```r
