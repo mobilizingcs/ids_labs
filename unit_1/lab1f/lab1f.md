@@ -168,7 +168,7 @@ Factors and Levels
 - To see the levels of `gender` type:
 
 ```r
-summarize(atu_cleaner, levels(gender))
+tally(~gender, data = atu_cleaner)
 ```
 - **Use similar code as we used above to write down the levels for the three factors in our data.**
 

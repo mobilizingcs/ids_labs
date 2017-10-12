@@ -1081,7 +1081,7 @@ hljs.initHighlightingOnLoad();
 <li>To see the levels of <code>gender</code> type:</li>
 </ul>
 
-<pre><code class="r">summarize(atu_cleaner, levels(gender))
+<pre><code class="r">tally(~gender, data = atu_cleaner)
 </code></pre>
 
 <ul>

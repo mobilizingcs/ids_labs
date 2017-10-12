@@ -157,7 +157,7 @@ Factors and Levels
     - The individual categories are called _levels_.
 - To see the levels of `gender` type:
 ```{r, eval=FALSE}
-summarize(atu_cleaner, levels(gender))
+tally(~gender, data = atu_cleaner)
 ```
 - **Use similar code as we used above to write down the levels for the three factors in our data.**
 
