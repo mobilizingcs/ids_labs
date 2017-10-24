@@ -875,11 +875,16 @@ hljs.initHighlightingOnLoad();
 <li>Click on the <em>Import Dataset</em> button under the <em>Environment</em> tab.
 
 <ul>
-<li>Then click on the <em>From Web URL</em> option.</li>
-<li>Type or copy/paste the URL into the box and then hit ok.</li>
+<li>Then click on the <em>From CSV</em> option.</li>
+<li>Type or copy/paste the URL into the box and then hit <em>Update</em>.</li>
 </ul></li>
-<li>When importing your data, be sure to name the data <code>lungs</code>.</li>
-<li><strong>For this dataset, should you include a <em>Heading</em> or no? Why?</strong></li>
+<li>Before importing, change the following <em>Import Options</em>:
+
+<ul>
+<li>Name: <code>lungs</code></li>
+<li><em>Uncheck</em> the <em>First Row as Data</em> box</li>
+<li>Change <em>Delimiter</em> to <em>Whitespace</em></li>
+</ul></li>
 </ul>
 
 </div>
@@ -915,8 +920,8 @@ hljs.initHighlightingOnLoad();
 <li>After changing the variable types for <code>gender</code> and <code>smoker</code>:
 
 <ul>
-<li>For <code>gender</code>, use <code>revalue</code> to change <code>&quot;1&quot;</code> to <code>&quot;Male&quot;</code> and <code>&quot;0&quot;</code> to <code>&quot;Female&quot;</code>.</li>
-<li>For <code>smoker</code>, use <code>revalue</code> to change <code>&quot;1&quot;</code> to <code>&quot;Yes&quot;</code> and <code>&quot;0&quot;</code> to <code>&quot;No&quot;</code>.</li>
+<li>For <code>gender</code>, use <code>recode</code> to change <code>&quot;1&quot;</code> to <code>&quot;Male&quot;</code> and <code>&quot;0&quot;</code> to <code>&quot;Female&quot;</code>.</li>
+<li>For <code>smoker</code>, use <code>recode</code> to change <code>&quot;1&quot;</code> to <code>&quot;Yes&quot;</code> and <code>&quot;0&quot;</code> to <code>&quot;No&quot;</code>.</li>
 </ul></li>
 </ul>
 

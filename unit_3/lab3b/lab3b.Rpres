@@ -40,11 +40,13 @@ Importing our data
 
 - Rather than _export_-ing the data and then _upload_-ing and _importing_-ing it, we'll pull the data straight from the webpage into R.
 - Click on the _Import Dataset_ button under the _Environment_ tab.
-    - Then click on the _From Web URL_ option.
-    - Type or copy/paste the URL into the box and then hit ok.
-- When importing your data, be sure to name the data `lungs`.
-- **For this dataset, should you include a _Heading_ or no? Why?**
-  
+    - Then click on the _From CSV_ option.
+    - Type or copy/paste the URL into the box and then hit _Update_.
+- Before importing, change the following _Import Options_:
+    - Name: `lungs`
+    - _Uncheck_ the _First Row as Data_ box
+    - Change _Delimiter_ to _Whitespace_
+
 
 About the data
 ===
@@ -63,8 +65,8 @@ Cleaning your data
     - We want to name the variables: `"age"`, `"lung_cap"`, `"height"`, `"gender"`,`"smoker"`, in that order.
     - Change the type of variable for `gender` and `smoker` from _numeric_ to _character_.
 - After changing the variable types for `gender` and `smoker`:
-    - For `gender`, use `revalue` to change `"1"` to `"Male"` and `"0"` to `"Female"`.
-    - For `smoker`, use `revalue` to change `"1"` to `"Yes"` and `"0"` to `"No"`.
+    - For `gender`, use `recode` to change `"1"` to `"Male"` and `"0"` to `"Female"`.
+    - For `smoker`, use `recode` to change `"1"` to `"Yes"` and `"0"` to `"No"`.
     
 
 Analyzing our data
