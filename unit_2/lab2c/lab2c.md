@@ -145,7 +145,7 @@ Playing with seeds
     - The blank in `set.seed(___)` should be the same number for both partners.
     - Verify that both partners compute the same proportion of `"rap"` songs.
 - Redo the 50 simulations one last time but have each partner choose a different number for `set.seed(___)`. 
-    - Are the proportions still the same? If so, can you find two different values for `set.seed` that give different answers?
+    - **Are the proportions still the same? If so, can you find two different values for `set.seed` that give different answers?**
 
 On your own
 ===
