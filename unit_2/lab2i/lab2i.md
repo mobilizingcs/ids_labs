@@ -100,5 +100,5 @@ On your own
     - **Were women on the Titanic typically younger than men?**
     - **Use a histogram, 500 random shuffles and a normal model to justify your answer.**
 - Using the `cdc` data, answer the following:
-    - **Using 500 random shuffles and a normal model, how much taller would the typical male have to be than the typical female inorder for the difference to be in the upper 1% by chance alone.**
+    - **Using 500 random shuffles and a normal model, how much taller would the typical male have to be than the typical female in order for the difference to be in the upper 1% by chance alone.**
     - **How can we use this value to justify the claim that the average `Male` in our data is taller than the average `Female`?**
