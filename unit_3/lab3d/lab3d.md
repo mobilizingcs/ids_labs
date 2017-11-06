@@ -69,7 +69,7 @@ Take a look
 ===
 
 - Look at the values of `bs_rows` and `bs_atus`.
-    - **Write a paragraph that explains to someone that's not familiar with `R` how you created `bs_rows` and `bs_atus`. Be sure to include an explanation of what the _values_ of `bs_atus` mean and how those values are used to create `bs_atus`. Also, be sure to explain what each argument of each function does.**
+    - **Write a paragraph that explains to someone that's not familiar with `R` how you created `bs_rows` and `bs_atus`. Be sure to include an explanation of what the _values_ of `bs_rows` mean and how those values are used to create `bs_atus`. Also, be sure to explain what each argument of each function does.**
 
 
 One strap, two strap
@@ -120,20 +120,25 @@ bs_means <- do(____) * bs_func()
 - **Create a histogram for your bootstrapped samples and describe the _center_, _shape_ and _spread_ of its distribution.**
     - These bootstrapped estimates no longer estimate the average age of people in the U.S.
     - Instead, they estimate how much the estimate of the average age of people in the U.S. varies.
-- In the next slide, we'll look at how we can use these bootstrapped means to create _95% confidence intervals_.
+- In the next slide, we'll look at how we can use these bootstrapped means to create _90% confidence intervals_.
 
 
 Bootstrapped confidence intervals
 ===
+    
+- To create a 90% confidence interval, we need to decide between which two _ages_ the middle 90% of our bootstrapped estimates are contained.
+- **Using your histogram, fill in the statement below:**
 
-- To create a 95% confidence interval we need to decide between which two _percentages_ the middle 95% of our _bootstrapped_ estimates are contained.
-    - Consult with a classmate and decide between which two _percentages_ the middle 95% of our estimates are contained.
-    - Then use each of these two values and two `quantile()` functions to decide, between which two ages are we 95% confident the actual mean age of people living in the U.S. is contained.
+The lowest 5% of our estimates are below _______ years and the highest 5% of our estimates are above_______ years.
+
+- Use the quantile() function to check your estimates.
+- **Based on your bootstrapped estimates, between which two ages are we 90% confident the actual mean age of people living in the U.S. is contained?**
+
     
 
 On your own
 ===
 
-- Using your _bootstrapped_ sample means, create a 90% confidence interval for the mean age of people living in the U.S.
-    - **Why is the 90% confidence interval narrower than the 95% interval?**
-    - **Write down how you would explain what a 90% confidence interval means to someone not taking _Introduction to Data Science_.**
+- Using your _bootstrapped_ sample means, create a 95% confidence interval for the mean age of people living in the U.S.
+    - **Why is the 95% confidence interval wider than the 90% interval?**
+    - **Write down how you would explain what a 95% confidence interval means to someone not taking _Introduction to Data Science_.**
