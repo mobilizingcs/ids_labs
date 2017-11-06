@@ -53,7 +53,7 @@ Extreme probabilities
 ===
 
 - The probability you calculated in the previous slide is an estimate for how often we expect to see a difference smaller than the actual one we observed, by chance alone.
-    - **Draw a sketch of a normal curve. Label the mean and actual age of suvivors minus non-survivors. Then, shade in the areas, under normal the curve, that are _smaller_ than the actual difference.**
+    - **Draw a sketch of a normal curve. Label the mean age difference, based on your shuffles, and the actual age difference of suvivors minus non-survivors from the actual data. Then, shade in the areas, under normal the curve, that are _smaller_ than the actual difference.**
 - If you wanted to instead calculate the probability that the difference would be larger than the one observed, we could run (fill in the blanks):
 
 ```r
