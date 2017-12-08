@@ -43,7 +43,7 @@ tally(~ ____, data = ____)
 ======================
 
 - Counting the categories of a single variable is nice, but often times we want to make comparisons.
-- Use a line of code, that's similar to how we facet plots, to tally the number of people with physical challanges and their genders.
+- Use a line of code, that's similar to how we facet plots, to tally the number of people with physical challenges and their genders.
     - **Does one `gender` seem to have a higher occurence of physical challenges than the other? If so, which one and explain your reasoning?**
 
 Interpreting 2-way frequency tables
