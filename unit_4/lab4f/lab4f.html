@@ -849,11 +849,11 @@ hljs.initHighlightingOnLoad();
 <h3>Problems with lines</h3>
 <div class="slideContent" >
 <ul>
-<li>Calculate the <em>slope</em> and <em>intercept</em> of a linear model that predicts <code>domest_gross</code> based on <code>reviews_num</code> for the <code>training</code> data.
+<li>Calculate the <em>slope</em> and <em>intercept</em> of a linear model that predicts <code>gross</code> based on <code>n_critics</code> for the <code>training</code> data.
 
 <ul>
 <li>Then create a scatterplot of the two variables using the <code>testing</code> data and use <code>add_line()</code> to include the <em>line of best fit</em> based on the <code>training</code> data..</li>
-<li><strong>Describe, in words, how the line fits the data? Are there any values for <code>reviews_num</code> that would make obviously poor predictions?</strong></li>
+<li><strong>Describe, in words, how the line fits the data? Are there any values for <code>n_critics</code> that would make obviously poor predictions?</strong></li>
 </ul></li>
 <li><strong>Compute the MSE of the model for the <code>testing</code> data and write it down for later.</strong></li>
 </ul>
@@ -887,7 +887,7 @@ hljs.initHighlightingOnLoad();
 <li>To fit a quadratic model in <code>R</code>, we can use the <code>poly()</code> function.
 
 <ul>
-<li>Fill in the blanks below to predict <code>domest_gross</code> using a quadratic polynomial for <code>runtime</code>.</li>
+<li>Fill in the blanks below to predict <code>gross</code> using a quadratic polynomial for <code>n_critics</code>.</li>
 </ul></li>
 </ul>
 
@@ -908,7 +908,7 @@ hljs.initHighlightingOnLoad();
 <h3>Comparing lines and curves</h3>
 <div class="slideContent" >
 <ul>
-<li>Create a scatterplot with <code>domest_gross</code> on the y-axis and <code>reviews_num</code> on the x-axis using your <code>testing</code> data.
+<li>Create a scatterplot with <code>gross</code> on the y-axis and <code>n_critics</code> on the x-axis using your <code>testing</code> data.
 
 <ul>
 <li>Add the <em>line of best fit</em> for the <code>training</code> data to the plot.</li>
@@ -929,7 +929,7 @@ hljs.initHighlightingOnLoad();
 <section data-transition="none" data-transition-speed="default">
 <h3>On your own</h3>
 <div class="slideContent" >
-<pre><code class="r">lm(audience_rating ~ domest_gross + critics_rating + reviews_num, data = training)
+<pre><code class="r">lm(gross ~ n_critics + n_audience + critics_rating + audience_rating, data = training)
 </code></pre>
 
 <ul>
