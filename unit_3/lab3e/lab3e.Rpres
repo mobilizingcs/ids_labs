@@ -141,7 +141,7 @@ Fixing variable names
 - View the `mtns` data and notice the order of the variables.
     - Then use the order of the variables and the following code template to change the names of the `mtns` data.
     - Replace each `"new_name"` with the actual name of the variable. 
-    - Make sure include all of the variable names and order them correctly.
+    - Make sure to include all of the variable names and order them correctly.
 ```{r,eval=FALSE}
 names(mtns) <- c("new_name", "new_name",
                  ..., "new_name")

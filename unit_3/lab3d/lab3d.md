@@ -25,7 +25,7 @@ In this lab
 ===
 
 - Load the built-in `atus` (_American Time Use Survey_) data set, which is a survey of how a sample of Americans spent their day.
-    - **The United States has an estimated population of 322,369,000. How many people were surveyed for this particular data set?**
+    - **The United States has an estimated population of 327,350,075. How many people were surveyed for this particular data set?**
 - The statistical question we wish to investigate is:
 
 _What is the mean age of people older than 15 living in the United States?_

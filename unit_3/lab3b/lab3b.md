@@ -17,7 +17,7 @@ Finding data in new places
     - Built-in datasets from RStudio.
     - Campaign data from Mobilize Campaign Manager.
 - Data can be found in many other places though, especially online.
-- In this lab, we'll read in an _observational study_ dataset from a website.
+- In this lab, we'll read an _observational study_ dataset from a website.
     - We'll use this data to then explore what factors are associated with a person's lung capacity.
 
 
@@ -71,7 +71,7 @@ Analyzing our data
 ===
 
 - Our `lungs` data is from an observational study.
-- **Write down a reason the reseachers couldn't use an experiment to test the effects of smoking on children's lungs.**
+- **Write down a reason the researchers couldn't use an experiment to test the effects of smoking on children's lungs.**
 - Observational studies are often helpful for analyzing how variables are related: 
   - **Do you think that a person's age affects their lung capacity? Make a sketch of what you think a scatterplot of the two variables would look like and explain.**
 - Use the `lungs` data to create an `xyplot` of `age` and `lung_cap`.

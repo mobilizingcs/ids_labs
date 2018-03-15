@@ -82,8 +82,8 @@ Colorize
 ```r
 mtns <- mutate(____, state_colors = colorize(____))
 ```
-- Now that we've added a new variable, we need to re-build `map_leaf` and `mtns_map` to use it.
-    - Create `map_leaf` and `mtns_map` as you did before.
+- Now that we've added a new variable, we need to re-build `mtns_leaf` and `mtns_map` to use it.
+    - Create `mtns_leaf` and `mtns_map` as you did before.
     - Then change `addMarkers` to `addCircleMarkers` and keep all of the arguments the same.
 
 Showing off our colors
@@ -91,7 +91,7 @@ Showing off our colors
 
 - To add the colors to our plot, use the `addCircleMarkers` like before but this time include `color = ~state_colors` as an argument.
 - It's hard to know just what the different colors mean so let's add a legend.
-  - First, assign the map with the circle markers as `mtn_map`.
+  - First, assign the map with the circle markers as `mtns_map`.
   - Then, fill in the blanks below to place a legend in the top-right hand corner.
 
 ```r
