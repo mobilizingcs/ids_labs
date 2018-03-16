@@ -39,7 +39,7 @@ HTML
 
 - `HTML` is the code that's used to render every website you've ever visited.
 - The following slide shows the `HTML` code used to create the first two rows of the web data.
-    - **How is the data table in `HTML` different than the data tables we're used to seeing in `R`, for example, when we use the View() function.**
+    - **How is the data table in `HTML` different than the data tables we're used to seeing in `R`, for example, when we use the View() function?**
     - **What do you think the _tags_ `<TABLE>`, `<TR>`, `<TH>`, `<TD>` mean? How does `HTML` use these _tags_ to display the table?**
     
 
