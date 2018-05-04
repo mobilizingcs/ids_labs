@@ -48,16 +48,18 @@ The movie data
 === 
 
 - Load the `movie` data using the `data` command.
-- The data comes from a movie rating website called _Rotten Tomatoes_. 
-    - The `critics_rating` and `audience_rating` are values that range between 0 and 100, 100 being the best.
-    - The `critics_score` and `audience_score` are summaries of which films _Rotten Tomatoes_ feels are worth, or not worth, watching.
-    - `domest_gross` descibes the domestic gross income of a film, i.e. the amount of money it made in the U.S.
+- The data comes from a variety of sources like _IMDB_ and _Rotten Tomatoes_. 
+    - The `critics_rating` contains values between 0 and 100, 100 being the best.
+    - The `audience_rating` contains values that range between 0 and 10, 10 being the best.
+    - `n_critics` and `n_audience` describe the number of reviews used for the ratings.
+    - `gross` and `budget` descibes the amount of money the film made and took to make.
 
 
 Calculating Correlation Coefficients!
 ===
 
 - We can use the `cor()` function to find the particular correlation coefficient of the variables from the previous plot, which happen to be `audience_rating` and `critics_rating`.
+    - But note, the `cor()` function removes any observations which contains an `NA` value in either variable.
     - **Calculate the correlation coefficient for these variables using the `cor` function. The inputs to the functions work just like the inputs of the `xyplot` function.**
 
 
