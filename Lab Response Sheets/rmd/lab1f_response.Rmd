@@ -1,0 +1,67 @@
+---
+title: "Lab 1F - A Diamond in the Rough"
+output: word_document
+---
+
+
+**Directions: Record your responses to the lab questions in the spaces provided.**
+
+\newline
+
+Just by viewing the data, what parts of our ATU data do you think need cleaning?
+
+\newline
+
+\newline
+
+\newline
+
+Use the example code and the variable information on the previous slide to rename the rest of the variables in `atu_dirty`.
+
+\newline
+
+\newline
+
+\newline
+
+The following are example of strings. Notice that each string has quotes before and after.
+
+\newline
+
+\newline
+
+\newline
+
+Write down the variables that should be _numeric_ but are improperly coded as _strings_ or _characters_.
+
+\newline
+
+\newline
+
+\newline
+
+Once you have this code working, use a similar line of code to correctly code the other _numeric_ variables as numbers.
+
+\newline
+
+\newline
+
+\newline
+
+Use similar code as we used above to write down the levels for the three factors in our data.
+
+\newline
+
+\newline
+
+\newline
+
+Recode the categorical variable about whether the person surveyed had a physical challenge or not. The coding is currently:
+
+\newline
+
+\newline
+
+\newline
+
+Write a script that:

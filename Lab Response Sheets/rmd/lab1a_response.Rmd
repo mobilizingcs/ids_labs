@@ -1,0 +1,147 @@
+---
+title: "Lab 1A - Data, Code & RStudio"
+output: word_document
+---
+
+
+**Directions: Record your responses to the lab questions in the spaces provided.**
+
+\newline
+
+Describe the data that appeared after running `View(cdc)`: 
+
+\newline
+
+\newline
+
+\newline
+
+_Who_ is the information about?
+
+\newline
+
+\newline
+
+\newline
+
+What sorts of information about them was collected?
+
+\newline
+
+\newline
+
+\newline
+
+How are our _observations_ represented in our data?
+
+\newline
+
+\newline
+
+\newline
+
+What does the first column tell us about our observations?
+
+\newline
+
+\newline
+
+\newline
+
+How often did our first observation wear a seatbelt while riding in a car?
+
+\newline
+
+\newline
+
+\newline
+
+How many students are in our `cdc` data set?
+
+\newline
+
+\newline
+
+\newline
+
+How many variables were measured for each student?
+
+\newline
+
+\newline
+
+\newline
+
+Which of these functions tell us the number of observations in our data?
+
+\newline
+
+\newline
+
+\newline
+
+Which of these functions tell us the number of variables?
+
+\newline
+
+\newline
+
+\newline
+
+Run the following commands and write down what happens after each. Which does R understand?
+
+\newline
+
+\newline
+
+\newline
+
+Which one of these plots would be useful for answering the question: _Is it unusual for students in the CDC dataset to be taller than 1.8 meters?_
+
+\newline
+
+\newline
+
+\newline
+
+Do you think it's unusual for students in the data to be taller than 1.8 meters? Why or why not?
+
+\newline
+
+\newline
+
+\newline
+
+What is _public health_ and do we collect data about it?
+
+\newline
+
+\newline
+
+\newline
+
+How do you think our data was collected? Does it include every high school aged student in the US?
+
+\newline
+
+\newline
+
+\newline
+
+How might the CDC use this data? Who else could benefit from using this data?
+
+\newline
+
+\newline
+
+\newline
+
+Write the code to visualize the distribution of weights of the students in the CDC data with a histogram. What is the _typical_ weight?
+
+\newline
+
+\newline
+
+\newline
+
+Write the code to create a barplot to visualize the distribution of how often students wore a helmet while bike riding. About how many students never wore a helmet?

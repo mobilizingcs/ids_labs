@@ -1,0 +1,67 @@
+---
+title: "Lab 3B - Confound it all!"
+output: word_document
+---
+
+
+**Directions: Record your responses to the lab questions in the spaces provided.**
+
+\newline
+
+Write down a reason the researchers couldn't use an experiment to test the effects of smoking on children's lungs.
+
+\newline
+
+\newline
+
+\newline
+
+Do you think that a person's age affects their lung capacity? Make a sketch of what you think a scatterplot of the two variables would look like and explain.
+
+\newline
+
+\newline
+
+\newline
+
+Interpret the plot and describe why the relationship between the two variables makes sense.
+
+\newline
+
+\newline
+
+\newline
+
+Use your plot to answer the question.
+
+\newline
+
+\newline
+
+\newline
+
+Were you surprised by the answer? Why?
+
+\newline
+
+\newline
+
+\newline
+
+Can you suggest a possible confounding factor that might be affecting the result?
+
+\newline
+
+\newline
+
+\newline
+
+How does the relationship between smoking and lung capacity change as we increase the age from 13 to 15 to 17?
+
+\newline
+
+\newline
+
+\newline
+
+Does smoking affect lung capacity? If so, how?

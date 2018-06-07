@@ -1,0 +1,83 @@
+---
+title: "Lab 2G - Getting It Together"
+output: word_document
+---
+
+
+**Directions: Record your responses to the lab questions in the spaces provided.**
+
+\newline
+
+To answer the statistical question of interest, would it make more sense to _stack_ or _join_ our `colors` and `stress` data?
+
+\newline
+
+\newline
+
+\newline
+
+Which variables do the data sets have in common?
+
+\newline
+
+\newline
+
+\newline
+
+Which variable would make sense to merge the data sets together with? Why not the others?
+
+\newline
+
+\newline
+
+\newline
+
+After we add the data from _colors_ to _stress_, how many rows should our merged data have? Write this number down.
+
+\newline
+
+\newline
+
+\newline
+
+Fill in the blanks below to join the information from the `colors` data onto the `stress`.
+
+\newline
+
+\newline
+
+\newline
+
+Why didn't we stack the rows of data instead?
+
+\newline
+
+\newline
+
+\newline
+
+What happens if you swap the order of the data sets in the `merge` function?
+
+\newline
+
+\newline
+
+\newline
+
+Make a few plots using variables from the `stress` data and _facet_ or _group_ the plots based on variables from the `colors` data.
+
+\newline
+
+\newline
+
+\newline
+
+Write down the most interesting discovery you make by just exploring your data. Write out how you found your discovery and interpret what it means for the people in your class.
+
+\newline
+
+\newline
+
+\newline
+
+With our _colors_ data, we could answer questions about the _typical_ color scores in your class. Why can we no longer answer this question in our `stress_color` data?

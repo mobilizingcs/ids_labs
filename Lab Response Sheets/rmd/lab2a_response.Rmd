@@ -1,0 +1,147 @@
+---
+title: "Lab 2A - All About Distributions"
+output: word_document
+---
+
+
+**Directions: Record your responses to the lab questions in the spaces provided.**
+
+\newline
+
+Write down the `names` of the 4 variables that contain the point-totals, or _scores_, for each personality color.
+
+\newline
+
+\newline
+
+\newline
+
+Write down the `names` of the variables that tell us an observation's _birth gender_ and whether they participated in playing _sports_.
+
+\newline
+
+\newline
+
+\newline
+
+How many variables are in the data set?
+
+\newline
+
+\newline
+
+\newline
+
+How many observations are in the data set?
+
+\newline
+
+\newline
+
+\newline
+
+Which values came up the most frequently? About how many people in your class had a score similar to yours?
+
+\newline
+
+\newline
+
+\newline
+
+What, would you say, was a _typical_ score for a person in your class for your predominant color? How does your own score for this color compare?
+
+\newline
+
+\newline
+
+\newline
+
+Use a similar line of code to calculate the `median` value of _your_ predominant color.
+
+\newline
+
+\newline
+
+\newline
+
+Are the `mean` and `median` roughly the same? If not, use the `dotPlot` you made in the last slide to describe why.
+
+\newline
+
+\newline
+
+\newline
+
+Do males and females differ in their typical scores for your predominant color? Answer this statistical question using your `dotPlot`.
+
+\newline
+
+\newline
+
+\newline
+
+`Assign` the mean values a name. Then place the name into the `diff()` function to calculate the difference. How much more/less did one birth gender score over the other for your predominant color?
+
+\newline
+
+\newline
+
+\newline
+
+We often refer to this as the variability of the data. 
+
+\newline
+
+\newline
+
+\newline
+
+Look at the spread of the `dotPlot` you made for your predominant color then fill in the blank:
+
+\newline
+
+\newline
+
+\newline
+
+Which birth gender, if either, seem to have values that are more spread out from the center?
+
+\newline
+
+\newline
+
+\newline
+
+The mean absolute deviation finds how far away, on average, the data are from the mean.
+
+\newline
+
+\newline
+
+\newline
+
+Based on the MAD, which birth gender has more variability for your predominant color's scores?
+
+\newline
+
+\newline
+
+\newline
+
+Does this match the answer you gave for the last question in the previous slide? 
+
+\newline
+
+\newline
+
+\newline
+
+Perform an analysis that produces _numerical summaries_ and _graphs_.
+
+\newline
+
+\newline
+
+\newline
+
+Then, write a few sentence interpretations that addresses this statistical question and considers the _shape_, _center_ and _spread_ of the distributions of the graphs you create.

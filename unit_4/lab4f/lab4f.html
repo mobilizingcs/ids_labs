@@ -868,7 +868,7 @@ hljs.initHighlightingOnLoad();
 <li>You don&#39;t need to be a full-fledged Data Scientist to realize that trying to fit a line to curved data is a poor modeling choice.
 
 <ul>
-<li>If our data is curved, we should try model it with a curve.</li>
+<li>If our data is curved, we should try to model it with a curve.</li>
 </ul></li>
 <li>So instead of using an <code>lm()</code> like<br/>
 <center><code>y = a + bx</code></center></li>
@@ -898,7 +898,7 @@ hljs.initHighlightingOnLoad();
 <li><strong>What is the role of the number <code>2</code> in the <code>poly()</code> function?</strong></li>
 <li><strong>Write down the model equation in the form:</strong>
 <center><code>y = a + bx + cx</code><sup><code>2</code></sup></center></li>
-<li>Assign this model a name and calculate the MSE for the <code>testing_data</code>.</li>
+<li>Assign this model a name and calculate the MSE for the <code>testing</code> data.</li>
 </ul>
 
 </div>
@@ -930,12 +930,12 @@ hljs.initHighlightingOnLoad();
 <h3>On your own</h3>
 <div class="slideContent" >
 <ul>
-<li>Create a model that predicts <code>audience_rating</code> using a <code>3</code> degree polynomial (called a <em>cubic</em> model) for the <code>critics_rating</code> using the training data.
+<li><strong>Create a model that predicts <code>audience_rating</code> using a <code>3</code> degree polynomial (called a <em>cubic</em> model) for the <code>critics_rating</code> using the training data.</strong>
 
 <ul>
-<li>By using a plot, describe why you think a <code>2</code> or <code>3</code> degree polynomial will make better predictions for the testing data.</li>
-<li>Compute the MSE for the model with a <code>3</code> degree polynomial and use the MSE to justify whether the <code>2</code> or <code>3</code> degree polynomial fits the <code>testing</code> data better.</li>
-<li>Using the linear model from above which has the smallest MSE, include a different numerical variable to the model and recompute the MSE. Does modeling the variable you chose as a quadratic polynomial improve the MSE further?</li>
+<li><strong>By using a plot, describe why you think a <code>2</code> or <code>3</code> degree polynomial will make better predictions for the testing data.</strong></li>
+<li><strong>Compute the MSE for the model with a <code>3</code> degree polynomial and use the MSE to justify whether the <code>2</code> or <code>3</code> degree polynomial fits the <code>testing</code> data better.</strong></li>
+<li><strong>Using the linear model from above which has the smallest MSE, include an additional numerical variable to the model and recompute the MSE. Does modeling the variable you chose as a quadratic polynomial improve the MSE further?</strong></li>
 </ul></li>
 </ul>
 

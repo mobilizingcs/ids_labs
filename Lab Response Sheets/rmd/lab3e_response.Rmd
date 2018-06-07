@@ -1,0 +1,75 @@
+---
+title: "Lab 3E - Scraping web data"
+output: word_document
+---
+
+
+**Directions: Record your responses to the lab questions in the spaces provided.**
+
+\newline
+
+Briefly describe what the data on the website is about.
+
+\newline
+
+\newline
+
+\newline
+
+Then write down 3 questions you'd be interested in answering by analyzing this data.
+
+\newline
+
+\newline
+
+\newline
+
+How is the data table in `HTML` different than the data tables we're used to seeing in `R`, for example, when we use the View() function?
+
+\newline
+
+\newline
+
+\newline
+
+What do you think the _tags_ `<TABLE>`, `<TR>`, `<TH>`, `<TD>` mean? How does `HTML` use these _tags_ to display the table?
+
+\newline
+
+\newline
+
+\newline
+
+Run the following commands and compare the names of the variables. Do you notice any differences?
+
+\newline
+
+\newline
+
+\newline
+
+Which variables in your data are numerical variables and which are factors (i.e. categorical variables)?
+
+\newline
+
+\newline
+
+\newline
+
+Which variables are wrong?  
+
+\newline
+
+\newline
+
+\newline
+
+What is the mean and standard deviation of `elev_ft`?
+
+\newline
+
+\newline
+
+\newline
+
+Which `state` has the most mountains in our data?

@@ -1,0 +1,43 @@
+---
+title: "Lab 2I - R's Normal Distribution Alphabet"
+output: word_document
+---
+
+
+**Directions: Record your responses to the lab questions in the spaces provided.**
+
+\newline
+
+Is the distribution close to normal? Explain how you determined this. Describe the center and spread of the distribution.
+
+\newline
+
+\newline
+
+\newline
+
+Compute the mean difference in the age of the _actual_ survivors and the actual non-survivors.
+
+\newline
+
+\newline
+
+\newline
+
+Draw a sketch of a normal curve. Label the mean age difference, based on your shuffles, and the actual age difference of suvivors minus non-survivors from the actual data. Then, shade in the areas, under normal the curve, that are _smaller_ than the actual difference.
+
+\newline
+
+\newline
+
+\newline
+
+Were women on the Titanic typically younger than men?
+
+\newline
+
+\newline
+
+\newline
+
+Use a histogram, 500 random shuffles and a normal model to answer the question in the bullet above.

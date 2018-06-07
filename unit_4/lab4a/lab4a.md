@@ -26,7 +26,7 @@ Predicting heights
     - A person's `armspan` is the maximum distance between their fingertips when they spread their arms out wide.
 - Make a plot of the `height` variable.
     - **If you had to predict the height of someone in the LA area, what single height would you choose and why?**
-    - **Would you describe this as a _good_ guess? What might you try and improve your predictions?**
+    - **Would you describe this as a _good_ guess? What might you try to improve your predictions?**
 
 
 Predicting heights knowing arm spans
@@ -38,7 +38,7 @@ Predicting heights knowing arm spans
 - Create a histogram for the `height` of people in each subset. Answer the following based on the data:
     - **What `height` would you predict if you knew a person had an `armspan` around 62 inches?**
     - **What `height` would you predict if you knew a person had an `armspan` around 65 inches?**
-    - **Does knowing someone's `armspan` helps you predict their height. Why or why not?**
+    - **Does knowing someone's `armspan` help you predict their height? Why or why not?**
 
 
 
@@ -86,7 +86,7 @@ Regression lines
 - If you were to go around your class, each student would have created a different line that they feel _fit_ the data best.
     - Which is a problem because everyone's line will make slightly different predictions.
 - To avoid this variation in predictions, data scientists will use _regression lines_.
-    - These line connects the mean `height` of people with similar `arm_spans`.
+    - This line connects the mean `height` of people with similar `arm_spans`.
     - Fill in the blanks below to create the a _regression line_ using an `lm`, or _linear model_:
 
 

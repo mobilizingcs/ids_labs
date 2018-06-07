@@ -37,7 +37,7 @@ Adding flexibility
 ===
 
 - You don't need to be a full-fledged Data Scientist to realize that trying to fit a line to curved data is a poor modeling choice.
-    - If our data is curved, we should try model it with a curve.
+    - If our data is curved, we should try to model it with a curve.
 - So instead of using an `lm()` like  
 <center>`y = a + bx`</center>
 - We could use an `lm()` like  
@@ -58,7 +58,7 @@ lm(____ ~ poly(____, 2), data = training)
 - **What is the role of the number `2` in the `poly()` function?**
 - **Write down the model equation in the form:**
 <center>`y = a + bx + cx`<sup>`2`</sup></center>
-- Assign this model a name and calculate the MSE for the `testing_data`.
+- Assign this model a name and calculate the MSE for the `testing` data.
 
 Comparing lines and curves
 ===
@@ -75,7 +75,7 @@ add_curve(____)
 On your own
 ===
 
-- Create a model that predicts `audience_rating` using a `3` degree polynomial (called a _cubic_ model) for the `critics_rating` using the training data.
-    - By using a plot, describe why you think a `2` or `3` degree polynomial will make better predictions for the testing data.
-    - Compute the MSE for the model with a `3` degree polynomial and use the MSE to justify whether the `2` or `3` degree polynomial fits the `testing` data better.
-    - Using the linear model from above which has the smallest MSE, include a different numerical variable to the model and recompute the MSE. Does modeling the variable you chose as a quadratic polynomial improve the MSE further?
+- **Create a model that predicts `audience_rating` using a `3` degree polynomial (called a _cubic_ model) for the `critics_rating` using the training data.**
+    - **By using a plot, describe why you think a `2` or `3` degree polynomial will make better predictions for the testing data.**
+    - **Compute the MSE for the model with a `3` degree polynomial and use the MSE to justify whether the `2` or `3` degree polynomial fits the `testing` data better.**
+    - **Using the linear model from above which has the smallest MSE, include an additional numerical variable to the model and recompute the MSE. Does modeling the variable you chose as a quadratic polynomial improve the MSE further?**

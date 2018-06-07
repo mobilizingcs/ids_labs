@@ -1,0 +1,83 @@
+---
+title: "Lab 1D - Zooming Through Data"
+output: word_document
+---
+
+
+**Directions: Record your responses to the lab questions in the spaces provided.**
+
+\newline
+
+Use the `dotPlot()` function to create a `dotPlot` of the amount of `sugar` in our `food` data.
+
+\newline
+
+\newline
+
+\newline
+
+Split the `dotPlot` in two by faceting on our observations' salty/sweet variable.
+
+\newline
+
+\newline
+
+\newline
+
+Describe how R decides which observations go into the left or right plot.
+
+\newline
+
+\newline
+
+\newline
+
+What does each _dot_ in the plot represent?
+
+\newline
+
+\newline
+
+\newline
+
+We can change the layout of our separated plots by including the `layout` option in our `dotPlot` function. 
+
+\newline
+
+\newline
+
+\newline
+
+View `food_salty` and write down the number of observations in it. Then use the subset data to make a dotPlot of the `sodium` in our `Salty` snacks.
+
+\newline
+
+\newline
+
+\newline
+
+What do the values `TRUE` and `FALSE` tell us about how our _rule_ applies to the first six snacks in our data? Which of the first six observations were `Salty`?
+
+\newline
+
+\newline
+
+\newline
+
+Use an appropriate `dotPlot` to answer each of the following questions:
+
+\newline
+
+\newline
+
+\newline
+
+About how much fat does the typical sweet snack have?
+
+\newline
+
+\newline
+
+\newline
+
+How does the typical amount of fat compare when `healthy_level < 3` and when `healthy_level > 3`?

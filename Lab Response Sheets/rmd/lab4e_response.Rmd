@@ -1,0 +1,67 @@
+---
+title: "Lab 4E - This model is big enough for all of us!"
+output: word_document
+---
+
+
+**Directions: Record your responses to the lab questions in the spaces provided.**
+
+\newline
+
+Do you think that a movie's `runtime` is the only factor that goes into how much a movie will make? What else might affect a movie's `gross`?
+
+\newline
+
+\newline
+
+\newline
+
+Does this new model make more or less accurate predictions? Describe the process you used to arrive at your conclusion.
+
+\newline
+
+\newline
+
+\newline
+
+Write down the code you would use to include a 3rd variable, of your choosing, in your `lm()`.
+
+\newline
+
+\newline
+
+\newline
+
+Write down which other variables in the `movie` data you think would help you make better predictions. 
+
+\newline
+
+\newline
+
+\newline
+
+Are there any variables that you think would not improve our predictions?
+
+\newline
+
+\newline
+
+\newline
+
+Create a model for all of the variables you think are relevant.
+
+\newline
+
+\newline
+
+\newline
+
+Assess whether your model makes more accurate predictions for the `testing` data than the model that included only `runtime` and `reviews_num`
+
+\newline
+
+\newline
+
+\newline
+
+With your neighbors, determine which combination of variables leads to the best predictions for the `testing` data.

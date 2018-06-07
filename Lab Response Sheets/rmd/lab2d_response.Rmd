@@ -1,0 +1,91 @@
+---
+title: "Lab 2D - Queue it up!"
+output: word_document
+---
+
+
+**Directions: Record your responses to the lab questions in the spaces provided.**
+
+\newline
+
+Write a sentence comparing your estimated probability to the actual probability.
+
+\newline
+
+\newline
+
+\newline
+
+What do you notice if you run `tally(~without)`? Does something similar happen if you sample _with replacement_?
+
+\newline
+
+\newline
+
+\newline
+
+What happens if `size = 101` and `replace = FALSE`?
+
+\newline
+
+\newline
+
+\newline
+
+Which of these scenarios would you sample _with replacement_ and which would you sample _without replacement_? Why?
+
+\newline
+
+\newline
+
+\newline
+
+Write down the line of code you would run to `sample` from the candy jar. Assume the simulated jar is named `candies`.
+
+\newline
+
+\newline
+
+\newline
+
+For each of the lines of code below, describe how the output of the code changes as we move from line to line.
+
+\newline
+
+\newline
+
+\newline
+
+Calculate estimated probabilities for the following situations:
+
+\newline
+
+\newline
+
+\newline
+
+Create a histogram that displays the number of times a `"rap"` song occurred in each simulation. That is, how often were zero rap songs drawn? A single rap song? Two rap songs?
+
+\newline
+
+\newline
+
+\newline
+
+_If we draw 5 songs from a playlist of 30 rap, 23 country and 47 rock songs, how does the estimated probability of all 5 songs being rap songs change if we draw the songs with or without replacement?_
+
+\newline
+
+\newline
+
+\newline
+
+Create a histogram for the number of _rap_ songs that occurred for each of the 500 repetitions.
+
+\newline
+
+\newline
+
+\newline
+
+Describe how the distribution of the number of _rap_ songs changes depending on if we use replacement or not.
