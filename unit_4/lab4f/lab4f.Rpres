@@ -29,7 +29,7 @@ Problems with lines
 
 - Calculate the _slope_ and _intercept_ of a linear model that predicts `audience_rating` based on `critics_rating` for the `training` data.
     - Then create a scatterplot of the two variables using the `testing` data and use `add_line()` to include the _line of best fit_ based on the `training` data..
-    - **Describe, in words, how the line fits the data? Are there any values for `critics_rating` that would make obviously poor predictions?**
+    - **Describe, in words, how the line fits the data. Are there any values for `critics_rating` that would make obviously poor predictions?**
 - **Compute the MSE of the model for the `testing` data and write it down for later.**
 
 
