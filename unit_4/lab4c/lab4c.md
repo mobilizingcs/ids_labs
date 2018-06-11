@@ -89,7 +89,6 @@ Avoiding being too specific
 - When we build models without cross-validating, we run the risk of building models that are _too_ specific to the data we already have.
     - Meaning, the model predicts values we know about really well BUT predicts new values very poorly.
 - The plot on the following slide shows a single, randomly chosen `height` for each value of `armspan`.
-    - **With a neighbor, write down a prediction rule that would predict a person's `height` based on their `armspan` really well for people already shown in our plot but would predict people not in our plot very poorly.**
 
 
 ===

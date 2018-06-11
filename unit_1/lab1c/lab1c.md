@@ -22,7 +22,7 @@ Export, upload, import
 ========================================================
 - Before we can perform any analysis, we have to load data into R. 
 - When we want to get our participatory sensing data into RStudio, we:
-  - <font color="green">Export</font> the data from the _Mobilize_ page.
+  - <font color="green">Export</font> the data from your class' campaign page.
   - <font color="green">Upload</font> data to _RStudio_ server
   - <font color="green">Import</font> the data into R's working memory
   
@@ -30,7 +30,7 @@ Export, upload, import
 Exporting
 ========================================================
 
-- To begin, go to your class _Mobilize_ page.
+- To begin, go to your class' landing page.
   - Click on the <font color="green">Campaign Manager</font>
   - Fill in your username and password and click "Sign in."
 <center>![Campaign manager](images/campaign_manager.png)</center>
@@ -39,7 +39,7 @@ If you forget your username or password, ask your teacher to remind you.
 Campaign Manager
 ========================================================
 
-<center>![Mobilize Campaign Manager](images/campaign_manager1.png)</center>
+<center>![Campaign Manager](images/campaign_manager1.png)</center>
 
 - After logging in, your screen should look similar to this.
 - Click on the dropdown arrow for the campaign you are interested in downloading.

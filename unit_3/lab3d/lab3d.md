@@ -39,7 +39,7 @@ One bootstrap
 
 - A _bootstrapped_ sample is when we take a random `sample()` of our original data (`atus`) _WITH_ replacement.
     - The `size` of the sample should be the same size as the original data.
-- We can create a single _bootstrapped_ sample for the `mean` in 3 steps:
+- We can create a single _bootstrapped_ sample for the `mean` in three steps:
     1. Sample the number of the rows to use in our _bootstrap_.
     2. `slice` those rows from our original data into our _bootstrap_ data.
     3. Calculate the mean our our _bootstrapped_ data.

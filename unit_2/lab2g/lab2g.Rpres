@@ -67,7 +67,7 @@ Getting ready
 
 - Our goal is to add the variables from the `colors` data onto the `stress` data.
 - Start by ensuring that every `user.id` in the `colors` data is unique.
-    - If there's a duplicate, have your teacher remove the duplicate from the Mobilize Web Response Manager and then re-_export_, _upload_, _import_ your `colors` data.
+    - If there's a duplicate, have your teacher remove the duplicate from your class' Web Response Manager and then re-_export_, _upload_, _import_ your `colors` data.
 - **After we add the data from _colors_ to _stress_, how many rows should our merged data have? Write this number down.**
 
 Putting them together
