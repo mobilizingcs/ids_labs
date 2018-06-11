@@ -27,7 +27,7 @@ Predicting heights
     - The measurements of `height` and `armspan` are in inches.
     - A person's `armspan` is the maximum distance between their fingertips when they spread their arms out wide.
 - Make a plot of the `height` variable.
-    - **If you had to predict the height of someone in the LA area, what single height would you choose and why?**
+    - **If you had to predict the height of someone in the Los Angeles area, what single height would you choose and why?**
     - **Would you describe this as a _good_ guess? What might you try to improve your predictions?**
 
 
