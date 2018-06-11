@@ -73,7 +73,7 @@ Predicting with lines
 ===
 
 - Draw a line that you think is a good _fit_ and write down its equation. Using this equation:
-    - **Predict how tall a person with a 62 and a person with a 65 inch `armspan` would be.**
+    - **Predict how tall a person with a 62 inch armspan and a person with a 65 inch `armspan` would be.**
     
 <!-- - **How much taller is the person with a 70 inch `armspan` than the 69 inch `armspan`? Does this difference seem more reasonable than the difference we calculated using the means?**   -->
 - Using a line to make predictions also lets us make predictions for `armspan`s that aren't in our data.
