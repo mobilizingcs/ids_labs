@@ -62,7 +62,7 @@ Fitting lines
     - One way of describing this sort of trend is with a line.
 - Data scientists often _fit_ lines to their data to make predictions.    
     - What we mean by _fit_ is to come up with a line that's close to as many of the data points as possible.
-- Create an scatterplot for `height` and `armspan`. Then run the following code. Draw a line by clicking twice on the _Plot_ pane.
+- Create a scatterplot for `height` and `armspan`. Then run the following code. Draw a line by clicking twice on the _Plot_ pane.
 
 ```r
 add_line()
