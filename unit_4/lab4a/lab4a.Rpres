@@ -79,7 +79,7 @@ Predicting with lines
 <!-- - **How much taller is the person with a 70 inch `armspan` than the 69 inch `armspan`? Does this difference seem more reasonable than the difference we calculated using the means?**   -->
 - Using a line to make predictions also lets us make predictions for `armspan`s that aren't in our data.
     - **How tall would you predict a person with a 63.5 inch `armspan` to be?**
-- **Compare your answers with a neighbor's. Did both of you come up with the same equation for a line? If not, can you tell which line fits the data best?**
+- **Compare your answers with a neighbor. Did both of you come up with the same equation for a line? If not, can you tell which line fits the data best?**
 
 Regression lines
 ===
@@ -88,7 +88,7 @@ Regression lines
     - Which is a problem because everyone's line will make slightly different predictions.
 - To avoid this variation in predictions, data scientists will use _regression lines_.
     - This line connects the mean `height` of people with similar `arm_spans`.
-    - Fill in the blanks below to create the a _regression line_ using an `lm`, or _linear model_:
+    - Fill in the blanks below to create a _regression line_ using an `lm`, or _linear model_:
 
 ```{r, eval = FALSE}
 lm(____ ~ ____, data = arm_span)
