@@ -851,7 +851,7 @@ hljs.initHighlightingOnLoad();
 <li>Load the built-in <code>atus</code> (<em>American Time Use Survey</em>) data set, which is a survey of how a sample of Americans spent their day.
 
 <ul>
-<li><strong>The United States has an estimated population of 322,369,000. How many people were surveyed for this particular data set?</strong></li>
+<li><strong>The United States has an estimated population of 327,350,075. How many people were surveyed for this particular data set?</strong></li>
 </ul></li>
 <li>The statistical question we wish to investigate is:</li>
 </ul>
@@ -875,7 +875,7 @@ hljs.initHighlightingOnLoad();
 <ul>
 <li>The <code>size</code> of the sample should be the same size as the original data.</li>
 </ul></li>
-<li>We can create a single <em>bootstrapped</em> sample for the <code>mean</code> in 3 steps:
+<li>We can create a single <em>bootstrapped</em> sample for the <code>mean</code> in three steps:
 
 <ol>
 <li>Sample the number of the rows to use in our <em>bootstrap</em>.</li>
@@ -919,7 +919,7 @@ hljs.initHighlightingOnLoad();
 <li>Look at the values of <code>bs_rows</code> and <code>bs_atus</code>.
 
 <ul>
-<li><strong>Write a paragraph that explains to someone that&#39;s not familiar with <code>R</code> how you created <code>bs_rows</code> and <code>bs_atus</code>. Be sure to include an explanation of what the <em>values</em> of <code>bs_atus</code> mean and how those values are used to create <code>bs_atus</code>. Also, be sure to explain what each argument of each function does.</strong></li>
+<li><strong>Write a paragraph that explains to someone that&#39;s not familiar with <code>R</code> how you created <code>bs_rows</code> and <code>bs_atus</code>. Be sure to include an explanation of what the <em>values</em> of <code>bs_rows</code> mean and how those values are used to create <code>bs_atus</code>. Also, be sure to explain what each argument of each function does.</strong></li>
 </ul></li>
 </ul>
 
@@ -1002,7 +1002,7 @@ hljs.initHighlightingOnLoad();
 <li>These bootstrapped estimates no longer estimate the average age of people in the U.S.</li>
 <li>Instead, they estimate how much the estimate of the average age of people in the U.S. varies.</li>
 </ul></li>
-<li>In the next slide, we&#39;ll look at how we can use these bootstrapped means to create <em>95% confidence intervals</em>.</li>
+<li>In the next slide, we&#39;ll look at how we can use these bootstrapped means to create <em>90% confidence intervals</em>.</li>
 </ul>
 
 </div>
@@ -1012,12 +1012,15 @@ hljs.initHighlightingOnLoad();
 <h3>Bootstrapped confidence intervals</h3>
 <div class="slideContent" >
 <ul>
-<li>To create a 95% confidence interval we need to decide between which two <em>percentages</em> the middle 95% of our <em>bootstrapped</em> estimates are contained.
+<li>To create a 90% confidence interval, we need to decide between which two <em>ages</em> the middle 90% of our bootstrapped estimates are contained.</li>
+<li><strong>Using your histogram, fill in the statement below:</strong></li>
+</ul>
+
+<p>The lowest 5% of our estimates are below _______ years and the highest 5% of our estimates are above_______ years.</p>
 
 <ul>
-<li>Consult with a classmate and decide between which two <em>percentages</em> the middle 95% of our estimates are contained.</li>
-<li>Then use each of these two values and two <code>quantile()</code> functions to decide, between which two ages are we 95% confident the actual mean age of people living in the U.S. is contained.</li>
-</ul></li>
+<li>Use the quantile() function to check your estimates.</li>
+<li><strong>Based on your bootstrapped estimates, between which two ages are we 90% confident the actual mean age of people living in the U.S. is contained?</strong></li>
 </ul>
 
 </div>
@@ -1027,11 +1030,11 @@ hljs.initHighlightingOnLoad();
 <h3>On your own</h3>
 <div class="slideContent" >
 <ul>
-<li>Using your <em>bootstrapped</em> sample means, create a 90% confidence interval for the mean age of people living in the U.S.
+<li>Using your <em>bootstrapped</em> sample means, create a 95% confidence interval for the mean age of people living in the U.S.
 
 <ul>
-<li><strong>Why is the 90% confidence interval narrower than the 95% interval?</strong></li>
-<li><strong>Write down how you would explain what a 90% confidence interval means to someone not taking <em>Introduction to Data Science</em>.</strong></li>
+<li><strong>Why is the 95% confidence interval wider than the 90% interval?</strong></li>
+<li><strong>Write down how you would explain what a 95% confidence interval means to someone not taking <em>Introduction to Data Science</em>.</strong></li>
 </ul></li>
 </ul>
 

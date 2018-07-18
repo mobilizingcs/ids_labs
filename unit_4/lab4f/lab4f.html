@@ -849,11 +849,11 @@ hljs.initHighlightingOnLoad();
 <h3>Problems with lines</h3>
 <div class="slideContent" >
 <ul>
-<li>Calculate the <em>slope</em> and <em>intercept</em> of a linear model that predicts <code>domest_gross</code> based on <code>reviews_num</code> for the <code>training</code> data.
+<li>Calculate the <em>slope</em> and <em>intercept</em> of a linear model that predicts <code>audience_rating</code> based on <code>critics_rating</code> for the <code>training</code> data.
 
 <ul>
 <li>Then create a scatterplot of the two variables using the <code>testing</code> data and use <code>add_line()</code> to include the <em>line of best fit</em> based on the <code>training</code> data..</li>
-<li><strong>Describe, in words, how the line fits the data? Are there any values for <code>reviews_num</code> that would make obviously poor predictions?</strong></li>
+<li><strong>Describe, in words, how the line fits the data. Are there any values for <code>critics_rating</code> that would make obviously poor predictions?</strong></li>
 </ul></li>
 <li><strong>Compute the MSE of the model for the <code>testing</code> data and write it down for later.</strong></li>
 </ul>
@@ -868,7 +868,7 @@ hljs.initHighlightingOnLoad();
 <li>You don&#39;t need to be a full-fledged Data Scientist to realize that trying to fit a line to curved data is a poor modeling choice.
 
 <ul>
-<li>If our data is curved, we should try model it with a curve.</li>
+<li>If our data is curved, we should try to model it with a curve.</li>
 </ul></li>
 <li>So instead of using an <code>lm()</code> like<br/>
 <center><code>y = a + bx</code></center></li>
@@ -887,7 +887,7 @@ hljs.initHighlightingOnLoad();
 <li>To fit a quadratic model in <code>R</code>, we can use the <code>poly()</code> function.
 
 <ul>
-<li>Fill in the blanks below to predict <code>domest_gross</code> using a quadratic polynomial for <code>runtime</code>.</li>
+<li>Fill in the blanks below to predict <code>audience_rating</code> using a quadratic polynomial for <code>critics_rating</code>.</li>
 </ul></li>
 </ul>
 
@@ -898,7 +898,7 @@ hljs.initHighlightingOnLoad();
 <li><strong>What is the role of the number <code>2</code> in the <code>poly()</code> function?</strong></li>
 <li><strong>Write down the model equation in the form:</strong>
 <center><code>y = a + bx + cx</code><sup><code>2</code></sup></center></li>
-<li>Assign this model a name and calculate the MSE for the <code>testing_data</code>.</li>
+<li>Assign this model a name and calculate the MSE for the <code>testing</code> data.</li>
 </ul>
 
 </div>
@@ -908,7 +908,7 @@ hljs.initHighlightingOnLoad();
 <h3>Comparing lines and curves</h3>
 <div class="slideContent" >
 <ul>
-<li>Create a scatterplot with <code>domest_gross</code> on the y-axis and <code>reviews_num</code> on the x-axis using your <code>testing</code> data.
+<li>Create a scatterplot with <code>audience_rating</code> on the y-axis and <code>critics_rating</code> on the x-axis using your <code>testing</code> data.
 
 <ul>
 <li>Add the <em>line of best fit</em> for the <code>training</code> data to the plot.</li>
@@ -929,16 +929,13 @@ hljs.initHighlightingOnLoad();
 <section data-transition="none" data-transition-speed="default">
 <h3>On your own</h3>
 <div class="slideContent" >
-<pre><code class="r">lm(audience_rating ~ domest_gross + critics_rating + reviews_num, data = training)
-</code></pre>
+<ul>
+<li><strong>Create a model that predicts <code>audience_rating</code> using a <code>3</code> degree polynomial (called a <em>cubic</em> model) for the <code>critics_rating</code> using the training data.</strong>
 
 <ul>
-<li>Calculate the MSE of the <code>testing</code> data for the above model.</li>
-<li>Decide which individual predictors would be better modeled by using a quadratic polynomial. Replace the name of the variable in the code above with an appropriate <code>poly()</code> function.</li>
-<li>Calculate the MSE of the <code>testing</code> data for the model with the quadratic polynomials.
-
-<ul>
-<li><strong>Did including quadratic polynomials improve the predictions for the <code>testing</code> data?</strong></li>
+<li><strong>By using a plot, describe why you think a <code>2</code> or <code>3</code> degree polynomial will make better predictions for the testing data.</strong></li>
+<li><strong>Compute the MSE for the model with a <code>3</code> degree polynomial and use the MSE to justify whether the <code>2</code> or <code>3</code> degree polynomial fits the <code>testing</code> data better.</strong></li>
+<li><strong>Using the linear model from above which has the smallest MSE, include an additional numerical variable to the model and recompute the MSE. Does modeling the variable you chose as a quadratic polynomial improve the MSE further?</strong></li>
 </ul></li>
 </ul>
 

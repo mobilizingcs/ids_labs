@@ -7,7 +7,7 @@ header-includes:
 - \renewcommand{\headrulewidth}{0pt} 
 - \fancyfoot{}
 - \fancyfoot[LE,RO]{\thepage}
-- \fancyfoot[RE,LO]{Introduction to Data Science v 3.0}
+- \fancyfoot[RE,LO]{Introduction to Data Science v 4.1}
 - \fancypagestyle{plain}{\pagestyle{fancy}}
 output: 
   pdf_document: 
@@ -102,7 +102,7 @@ ncol(cdc)
 
 ******
 
-`length`: Prints the number of elements in a vector.
+`length()`: Prints the number of elements in a vector.
 
 _Example_:
 ```{r}
@@ -138,7 +138,7 @@ str(cdc)
 _Example_:
 ```{r, eval = FALSE}
 # Subset the cdc data to include only males and then save
-cdc_males <- subset(cdc, gender == "Male")
+cdc_males <- filter(cdc, gender == "Male")
 save(cdc_males, file = "cdc_male.Rda")
 ```
 
@@ -211,18 +211,29 @@ rep(c("A", "B", each = 5))
 
 ******
 
-`subset()`: Used to create a smaller dataset where each observation abides but a specific rule.
+`filter()`: Used to create a smaller dataset where each observation abides but a specific rule. Observations that abide by multiple rules can be separated with commas (see example for details)
 
 - Rules can be created using the relationship operators. See the **Symbols** section for more info on them.
 
 _Examples_:
 ```{r, eval = FALSE}
 # Subsetting based on a categorical variable
-subset(cdc, gender == "Male")
+filter(cdc, gender == "Male")
 ```
 ```{r, eval = FALSE}
 # Subsetting based on a numerical variable
-subset(cdc, height > 1.6)
+filter(cdc, height > 1.6)
+```
+```{r, eval = FALSE}
+# Example showing how to include observatoins who are "Male" AND
+# Taller than 1.6m. Notice how each rule is separated with a comma.
+filter(cdc, gender == "Male", height > 1.6)
+```
+```{r, eval = FALSE}
+# Similar to the above example but instead filters observations based
+# on reported gender being "Male" OR observations who are taller than
+# 1.6m..
+filter(cdc, gender == "Male" | height > 1.6)
 ```
 
 ******
@@ -231,7 +242,7 @@ subset(cdc, height > 1.6)
 
 - `as.numeric()`: Used to change a categorical variable to a numerical variable.
 - `as.character()`: Used to change a numerical variable to a categorical variable.
-- `revalue()`: Used to change the names of categories for a categorical variable.
+- `recode()`: Used to change the names of categories for a categorical variable.
 
 _Examples_: 
 ```{r, eval = FALSE}
@@ -252,7 +263,7 @@ cdc <- mutate(cdc, height = as.numeric(height))
 ```
 ```{r, eval = FALSE}
 # Change the categories of the asthma variable from Yes/No to 1/0
-mutate(cdc, asthma = revalue(asthma, c("Yes"="1", "No" = "0")))
+mutate(cdc, asthma = recode(asthma, "Yes"="1", "No" = "0"))
 ```
 
 ******
@@ -285,16 +296,16 @@ rename(cdc, HEIGHT = height)
 
 ******
 
-`summarize()`: Can be used to display information about specific variables in a data file. The following functions can be used with `summarize()`:
+<!-- `summarize()`: Can be used to display information about specific variables in a data file. The following functions can be used with `summarize()`: -->
 
-- `levels()`: Used to print out the categories of a categorical variable.
+<!-- - `levels()`: Used to print out the categories of a categorical variable. -->
 
-_Example_:
-```{r, eval = FALSE}
-summarize(cdc, levels(age))
-```
+<!-- _Example_: -->
+<!-- ```{r, eval = FALSE} -->
+<!-- summarize(cdc, levels(age)) -->
+<!-- ``` -->
 
-******
+<!-- ****** -->
 
 `timeuse_format()`: Takes the downloaded _Time Use_ data and formats it for use in the labs. 
 

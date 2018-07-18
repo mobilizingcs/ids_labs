@@ -61,25 +61,27 @@ Visualizing data
 - Choose one numeric and one categorical variable from the data and create both a `bargraph` and a `histogram` for each variable.
     - **Which function, either `bargraph` or `histogram` is better at visualizing categorical variables? Which is better at visualizing numerical variables?**
     
-How often do people use sunscreen?
+How often do people text & drive?
 ==================================
 
-- Make a graph that shows how often people in our data use `sunscreen`.
+- Make a graph that shows how often people in our data texted while driving.
     - **What does the y-axis represent?**
     - **What does the x-axis tell us?**
     - **Would you say that _most_ people _never_ use sunscreen? What does the work _most_ mean?**
     - **Approximately what percent of the people use sunscreen "always" or "most of the time"? (Hint: There's 15624 students in our data.**
+    - **Would you say that _most_ people _never_ texted while driving? What does the word _most_ mean?**
+    - **Approximately what percent of the people texted while driving for 20 or more days? (Hint: There's 15624 students in our data.**
 
 
-Does sunscreen use differ based on gender?
+Does texting and driving differ by gender?
 ==========================================
 
 - Fill in the blanks with the correct variables to create a side-by-side bargraph:
 <font size="7" color="green">
 *<p align='center'> _bargraph_ (~ ____ , data = ____ , groups = ____ ) </p>*
 </font>
-- **Write a sentence explaining how boys and girls differ in their use of sunscreen.**
-- **Would you say that most girls "Never" use sunscreen?  Would you say that most boys "never" use sunscreen?**
+- **Write a sentence explaining how boys and girls differ in their use texting while driving.**
+- **Would you say that most girls never text and drive?  Would you say that most boys never text and drive?**
 - **How did including the `groups` argument in your code change the graph?**
 
 
@@ -90,7 +92,7 @@ Do males/females have similar heights?
     - This way, we can easily compare them.
 - Use the `groups` argument to create a `histogram` for the `height` of males and females.
     - **Can you use this graphic to answer the question at the top of the slide? Why or why not?**
-    - **Is grouping numeric values, such as heights, as helpful as grouping categorical variables, such as sunscreen use?**
+    - **Is grouping numeric values, such as heights, as helpful as grouping categorical variables, such as texting & driving?**
     
 Do males/females have similar heights?
 =====================================
@@ -102,12 +104,12 @@ Do males/females have similar heights?
 *<p align='center'> _histogram_ (~ ____ | ____ , data = ____ ) </p>*
 </font>
 - **Do you think males & females have similar heights? Use the plot you create to justify your answer.**
-- **Just like we did for the histogram, is it possible to create a _split_ bargraph? Try to create a bargraph of `sunscreen` that's split by `gender` to find out.**
+- **Just like we did for the histogram, is it possible to create a _split_ bargraph? Try to create a bargraph of `drive_text` that's split by `gender` to find out.**
 
 
 On your own:
 ============
 
-- In this lab, we learned that boys and girls have different attitudes about using sunscreen. 
-- **What other factors do you think might affect how often people use sunscreen?**
-    - **Choose one variable from the `cdc` data, make a graph, and use the graph to describe how `sunscreen` use differs with this variable.**
+- In this lab, we looked at boy's and girl's attitudes about using texting & driving: 
+- **What other factors do you think might affect how often people text and drive?**
+    - **Choose one variable from the `cdc` data, make a graph, and use the graph to describe how `drive_text` use differs with this variable.**

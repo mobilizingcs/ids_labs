@@ -82,7 +82,7 @@ Multiple facets
 - Create a `dotPlot` or `histogram` of the `calories` variable, but facet the data using:
 
 ```r
-healthy_level + salty_sweet
+healthy_level + salty_sweet 
 ```
 - **How does the `healthy_level` of a `Salty` or `Sweet` snack impact the number of `calories` in the snack?.**
 

@@ -68,7 +68,7 @@ Checking our work
 ===
 
 - **Describe and interpret, in words, what the output of your accuracy summary means.**
-    - **Compare your accuracy summary with a neighbors. Whose line was more accurate and why?**
+    - **Compare your accuracy summary with a neighbor. Whose line was more accurate and why?**
 - **Write down why adding positive and negative errors together is problematic for accessing prediction accuracy.**
     - **Why does calculating the squared values for the differences solve this problem?**
 - Alter your accuracy  function to first calculate the differences, then square them and finally take the `mean` of the squared differences. This is called the _mean squared error_ (MSE).

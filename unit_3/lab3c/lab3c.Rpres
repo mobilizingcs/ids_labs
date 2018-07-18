@@ -64,9 +64,9 @@ Increasing sample size
 
 - Create `bargraph`s for `grade` based on each of the following sample sizes: 10, 100, 1,000, 10,000.
      - Compare each distribution to that of the population.
-- **How do the distributions change as the size of the sample increases. Why do you think this occurs?**
+- **How do the distributions change as the size of the sample increases? Why do you think this occurs?**
 - `tally()` the proportion of `grade`s for your _convenience_ sample and all your _random_ samples. 
-    - **Which set of proportions looks most similar to the proportions of the population.**
+    - **Which set of proportions looks most similar to the proportions of the population?**
     
 
 Lessons learned

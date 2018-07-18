@@ -83,7 +83,7 @@ calc_mcr <- function(actual, predicted) {
 Predictions and Cross-validation
 ===
 
-- Just like how with _linear models_, we can use cross-validation to measure our _classification trees_ prediction accuracy.
+- Just like with _linear models_, we can use cross-validation to measure our _classification trees_ prediction accuracy.
     - Use the `data` function to load the `titanic_test` data.
     - Fill in the blanks below to predict whether people in the `titanic_test` data survived or not using `tree1`.
 

@@ -25,9 +25,9 @@ Making models do yoga
 Problems with lines
 ===
 
-- Calculate the _slope_ and _intercept_ of a linear model that predicts `domest_gross` based on `reviews_num` for the `training` data.
+- Calculate the _slope_ and _intercept_ of a linear model that predicts `audience_rating` based on `critics_rating` for the `training` data.
     - Then create a scatterplot of the two variables using the `testing` data and use `add_line()` to include the _line of best fit_ based on the `training` data..
-    - **Describe, in words, how the line fits the data? Are there any values for `reviews_num` that would make obviously poor predictions?**
+    - **Describe, in words, how the line fits the data. Are there any values for `critics_rating` that would make obviously poor predictions?**
 - **Compute the MSE of the model for the `testing` data and write it down for later.**
 
 
@@ -35,7 +35,7 @@ Adding flexibility
 ===
 
 - You don't need to be a full-fledged Data Scientist to realize that trying to fit a line to curved data is a poor modeling choice.
-    - If our data is curved, we should try model it with a curve.
+    - If our data is curved, we should try to model it with a curve.
 - So instead of using an `lm()` like  
 <center>`y = a + bx`</center>
 - We could use an `lm()` like  
@@ -47,7 +47,7 @@ Making bend-y models
 ===
 
 - To fit a quadratic model in `R`, we can use the `poly()` function.
-    - Fill in the blanks below to predict `domest_gross` using a quadratic polynomial for `runtime`.
+    - Fill in the blanks below to predict `audience_rating` using a quadratic polynomial for `critics_rating`.
 
 
 ```r
@@ -57,12 +57,12 @@ lm(____ ~ poly(____, 2), data = training)
 - **What is the role of the number `2` in the `poly()` function?**
 - **Write down the model equation in the form:**
 <center>`y = a + bx + cx`<sup>`2`</sup></center>
-- Assign this model a name and calculate the MSE for the `testing_data`.
+- Assign this model a name and calculate the MSE for the `testing` data.
 
 Comparing lines and curves
 ===
 
-- Create a scatterplot with `domest_gross` on the y-axis and `reviews_num` on the x-axis using your `testing` data.
+- Create a scatterplot with `audience_rating` on the y-axis and `critics_rating` on the x-axis using your `testing` data.
     - Add the _line of best fit_ for the `training` data to the plot.
     - Then use the name of the model in the code below to add your _quadratic_ model:
 
@@ -75,12 +75,7 @@ add_curve(____)
 On your own
 ===
 
-
-```r
-lm(audience_rating ~ domest_gross + critics_rating + reviews_num, data = training)
-```
-- Calculate the MSE of the `testing` data for the above model.
-- Decide which individual predictors would be better modeled by using a quadratic polynomial. Replace the name of the variable in the code above with an appropriate `poly()` function.
-- Calculate the MSE of the `testing` data for the model with the quadratic polynomials.
-    - **Did including quadratic polynomials improve the predictions for the `testing` data?**
-
+- **Create a model that predicts `audience_rating` using a `3` degree polynomial (called a _cubic_ model) for the `critics_rating` using the training data.**
+    - **By using a plot, describe why you think a `2` or `3` degree polynomial will make better predictions for the testing data.**
+    - **Compute the MSE for the model with a `3` degree polynomial and use the MSE to justify whether the `2` or `3` degree polynomial fits the `testing` data better.**
+    - **Using the linear model from above which has the smallest MSE, include an additional numerical variable to the model and recompute the MSE. Does modeling the variable you chose as a quadratic polynomial improve the MSE further?**

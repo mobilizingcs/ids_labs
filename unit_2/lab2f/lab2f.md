@@ -18,7 +18,7 @@ Previously ...
 - For this lab, will extend these ideas to _numerical_ variables by using random shuffling and numerical summaries.
 - The question we will investigate in this lab is:
 
-_Is there any evidence to suggest that wealthier passengers on the Titanic were more likely to survive than poorer passengers._
+_Is there any evidence to suggest that wealthier passengers on the Titanic were more likely to survive than poorer passengers?_
 
 - We will consider wealthier passengers to be those that paid a higher `fare` for their ticket.
 
@@ -39,7 +39,7 @@ The search begins!
 
 - Start your analysis by calculating how much more the _typical_ survivor paid than the _typical_ non-survivor in our data.
     - Based on the distributions of fares paid, which numerical summary that describes the _typical_ value might be preferred?
-- **What was the _typical_ fare paid by survivors? Non-survivers? How much more did the typical survivor pay?**
+- **What was the _typical_ fare paid by survivors? Non-survivors? How much more did the typical survivor pay?**
 
 Do the shuffle!
 ==============
@@ -56,7 +56,7 @@ Put your simulations to use
 
 - **By using your shuffled data, answer the research question we posed at the beginning of the lab.**
 
-_Is there any evidence to suggest that wealthier passengers on the Titanic were more likely to survive than poorer passengers._
+_Is there any evidence to suggest that wealthier passengers on the Titanic were more likely to survive than poorer passengers?_
 
 - **Write up your answer as a statistical analysis. Create a plot and explain how the plot supports your conclusion. Be sure to also explain why shuffling your data is important.**
 

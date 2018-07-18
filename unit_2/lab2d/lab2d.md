@@ -31,7 +31,7 @@ Back to songs
     - _Assign_ the `c`ombined playlist the name `songs`.
 - Simulate choosing a single song 50 times. Then use your simulated draws to estimate the probability of choosing a _rap_ song.
     - The actual (theoretical) probability of choosing a _rap song_ in this case is `0.30`.
-    - **Write a sentence comparing your estimated probability to the actual probability?.**
+    - **Write a sentence comparing your estimated probability to the actual probability.**
 
 
 With or Without?
@@ -109,7 +109,6 @@ Counting other outcomes
 Step 1: Creating a subset
 ===
 
-- In order to find outcomes where both draws are rap, we use the  _and_ symbol (`&`).
 - Fill in the blanks below to: 
     1. Create a subset of our simulations when both draws were `"rap"` songs.
     2. Count the number of rows in this subset
@@ -117,7 +116,7 @@ Step 1: Creating a subset
     
 
 ```r
-draws_sub <- subset(draws, ___ == "rap" & ___ == "rap")
+draws_sub <- filter(draws, ___ == "rap",  ___ == "rap")
 ```
 
 ```r
@@ -141,6 +140,6 @@ On your own
 **_If we draw 5 songs from a playlist of 30 rap, 23 country and 47 rock songs, how does the estimated probability of all 5 songs being rap songs change if we draw the songs with or without replacement?_**
 
 - For each simulation:
-    - **Create a histogram for the number of _rap_ songs that occured for each of the 500 repetitions.**
+    - **Create a histogram for the number of _rap_ songs that occurred for each of the 500 repetitions.**
 - **Describe how the distribution of the number of _rap_ songs changes depending on if we use replacement or not.**
 

@@ -834,7 +834,7 @@ hljs.initHighlightingOnLoad();
 <li>Campaign data from Mobilize Campaign Manager.</li>
 </ul></li>
 <li>Data can be found in many other places though, especially online.</li>
-<li>In this lab, we&#39;ll read in an <em>observational study</em> dataset from a website.
+<li>In this lab, we&#39;ll read an <em>observational study</em> dataset from a website.
 
 <ul>
 <li>We&#39;ll use this data to then explore what factors are associated with a person&#39;s lung capacity.</li>
@@ -851,7 +851,7 @@ hljs.initHighlightingOnLoad();
 <li>You can find the data online here:
 
 <ul>
-<li>(Right-click and select <em>Open in New Window</em>) <a href="http://gh.mobilizingcs.org/ids_labs/extras/webdata/fev.dat.txt">http://gh.mobilizingcs.org/ids_labs/extras/webdata/fev.dat.txt</a></li>
+<li>(Right-click and select <em>Open in New Window</em>) <a href="http://gh.idsucla.org/ids_labs/extras/webdata/fev.dat.txt">http://gh.idsucla.org/ids_labs/extras/webdata/fev.dat.txt</a></li>
 </ul></li>
 <li>Variables that were measured include:
 
@@ -875,11 +875,16 @@ hljs.initHighlightingOnLoad();
 <li>Click on the <em>Import Dataset</em> button under the <em>Environment</em> tab.
 
 <ul>
-<li>Then click on the <em>From Web URL</em> option.</li>
-<li>Type or copy/paste the URL into the box and then hit ok.</li>
+<li>Then click on the <em>From CSV</em> option.</li>
+<li>Type or copy/paste the URL into the box and then hit <em>Update</em>.</li>
 </ul></li>
-<li>When importing your data, be sure to name the data <code>lungs</code>.</li>
-<li><strong>For this dataset, should you include a <em>Heading</em> or no? Why?</strong></li>
+<li>Before importing, change the following <em>Import Options</em>:
+
+<ul>
+<li>Name: <code>lungs</code></li>
+<li><em>Uncheck</em> the <em>First Row as Data</em> box</li>
+<li>Change <em>Delimiter</em> to <em>Whitespace</em></li>
+</ul></li>
 </ul>
 
 </div>
@@ -897,7 +902,7 @@ hljs.initHighlightingOnLoad();
 </ul></li>
 </ul>
 
-<p><em>What is the effect of childhood smoking on lung health.</em></p>
+<p><em>What is the effect of childhood smoking on lung health?</em></p>
 
 </div>
 
@@ -915,8 +920,8 @@ hljs.initHighlightingOnLoad();
 <li>After changing the variable types for <code>gender</code> and <code>smoker</code>:
 
 <ul>
-<li>For <code>gender</code>, use <code>revalue</code> to change <code>&quot;1&quot;</code> to <code>&quot;Male&quot;</code> and <code>&quot;0&quot;</code> to <code>&quot;Female&quot;</code>.</li>
-<li>For <code>smoker</code>, use <code>revalue</code> to change <code>&quot;1&quot;</code> to <code>&quot;Yes&quot;</code> and <code>&quot;0&quot;</code> to <code>&quot;No&quot;</code>.</li>
+<li>For <code>gender</code>, use <code>recode</code> to change <code>&quot;1&quot;</code> to <code>&quot;Male&quot;</code> and <code>&quot;0&quot;</code> to <code>&quot;Female&quot;</code>.</li>
+<li>For <code>smoker</code>, use <code>recode</code> to change <code>&quot;1&quot;</code> to <code>&quot;Yes&quot;</code> and <code>&quot;0&quot;</code> to <code>&quot;No&quot;</code>.</li>
 </ul></li>
 </ul>
 
@@ -928,7 +933,7 @@ hljs.initHighlightingOnLoad();
 <div class="slideContent" >
 <ul>
 <li>Our <code>lungs</code> data is from an observational study.</li>
-<li><strong>Write down a reason the reseachers couldn&#39;t use an experiment to test the effects of smoking on children&#39;s lungs.</strong></li>
+<li><strong>Write down a reason the researchers couldn&#39;t use an experiment to test the effects of smoking on children&#39;s lungs.</strong></li>
 <li>Observational studies are often helpful for analyzing how variables are related: 
 
 <ul>

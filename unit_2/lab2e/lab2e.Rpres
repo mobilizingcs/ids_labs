@@ -28,7 +28,7 @@ Initial thoughts...
 - To familiarize yourself with the data, answer the following:
     - **How many variables and observations are contained in the data and what are the possible values of the variables?**
     - **Which gender had more survivors? Write down a few sentences as to how you came to your conclusion. Be sure to look at both the _counts_ and _proportion_ of survivors before deciding.**
-    - **Calculate the difference between the proportion of females who survived and the proportion of males who survived. Is the difference large enough to conclude that women tend survive more often than men?**
+    - **Calculate the difference between the proportion of females who survived and the proportion of males who survived. Is the difference large enough to conclude that women tend to survive more often than men?**
 
 
 Tally whoa ... !
@@ -72,7 +72,7 @@ Let's compare ...
 
 - **How many people survived, in total, the slasher film before shuffling? How many people survived after shuffling?**
 - **How has shuffling our data changed the proportion of women who survived compared to men who survived?**
-    - **Is the difference in proportions from your shuffled data larger or smaller than the difference from the original data? Interpret what this means?**
+    - **Is the difference in proportions from your shuffled data larger or smaller than the difference from the original data? Interpret what this means.**
 - **Explain why shuffling our data one time is not enough to decide if the difference seen in our _actual_ data occurs by chance or not.**
 
 
@@ -121,5 +121,5 @@ On your own
 
 - Carry out another 500 simulations but this time shuffle the `gender` variable instead of the `survival` variable. 
     - Include the code `set.seed(1)` before your 500 simulations to make your answer reproducible.
-- **Does shuffling the `gender` variable instead of the `survival` variable change you answer to the question _Does `gender` play a role in whether or not a character will survive in a horror film?_?**
+- **Does shuffling the `gender` variable instead of the `survival` variable change your answer to the question _Does `gender` play a role in whether or not a character will survive in a horror film?_**
     - **Why or why not?**

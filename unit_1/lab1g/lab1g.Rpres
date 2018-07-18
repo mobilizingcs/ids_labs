@@ -43,7 +43,7 @@ tally(~ ____, data = ____)
 ======================
 
 - Counting the categories of a single variable is nice, but often times we want to make comparisons.
-- Use a line of code, that's similar to how we facet plots, to tally the number of people with physical challanges and their genders.
+- Use a line of code, that's similar to how we facet plots, to tally the number of people with physical challenges and their genders.
     - **Does one `gender` seem to have a higher occurence of physical challenges than the other? If so, which one and explain your reasoning?**
 
 Interpreting 2-way frequency tables
@@ -54,7 +54,7 @@ Interpreting 2-way frequency tables
 - Instead of using _counts_ we use _percentages_.
 - Include: `format = "percent"` as option to the code you used to make your 2-way frequency table. Then answer this question again: 
     - **Does one `gender` seem to have a higher occurence of physical challenges than the other? If so, which one and explain your reasoning?**
-    - **Did you answer change from before? Why?**
+    - **Did your answer change from before? Why?**
 
 One final option
 ==============
@@ -66,7 +66,7 @@ On your own
 ===========
 
 - **Describe what happens if you create a 2-way frequency table with a numerical variable and a categorical variable.**
-- **How are they types of statistical questions that 2-way frequency tables can answer different than 1-way frequency tables?**
+- **How are the types of statistical questions that 2-way frequency tables can answer different than 1-way frequency tables?**
 - **Which gender has a higher rate of _part time employment_?**
 - **Does one gender socialize more than the other? To answer this question first:**
     - **Create a subset of the ATU data that includes only people who socialized more than 0 minutes.**

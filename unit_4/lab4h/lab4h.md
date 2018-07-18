@@ -62,4 +62,4 @@ On your own
 - Create a scatterplot of `homework` and `videogames` variables.
     - Based on this graph, identify and remove any outliers by using the `subset` function.
 - Use `kclusters` with `k=2` for `homework` and `videogames`. 
-    - **Describe how the groups differ from eachother in terms of how long each group spends playing `videogames` and doing `homework`**
+    - **Describe how the groups differ from each other in terms of how long each group spends playing `videogames` and doing `homework`.**

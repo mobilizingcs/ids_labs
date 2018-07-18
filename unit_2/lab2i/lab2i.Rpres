@@ -54,7 +54,7 @@ Extreme probabilities
 ===
 
 - The probability you calculated in the previous slide is an estimate for how often we expect to see a difference smaller than the actual one we observed, by chance alone.
-    - **Draw a sketch of a normal curve. Label the mean and actual age of suvivors minus non-survivors. Then, shade in the area, under normal the curve, that are _smaller_ than the actual difference.**
+    - **Draw a sketch of a normal curve. Label the mean age difference, based on your shuffles, and the actual age difference of suvivors minus non-survivors from the actual data. Then shade in the areas, under normal the curve, that are _smaller_ than the actual difference.**
 - If you wanted to instead calculate the probability that the difference would be larger than the one observed, we could run (fill in the blanks):
 ```{r, eval = FALSE}
 1 - pnorm(____, mean = diff_mean, sd = ____)
@@ -95,7 +95,4 @@ On your own
 
 - Using the `titanic` data, answer the following statistical question:
     - **Were women on the Titanic typically younger than men?**
-    - **Use a histogram, 500 random shuffles and a normal model to justify your answer.**
-- Using the `cdc` data, answer the following:
-    - **Using 500 random shuffles and a normal model, how much taller would the typical male have to be than the typical female inorder for the difference to be in the upper 1% by chance alone.**
-    - **How can we use this value to justify the claim that the average `Male` in our data is taller than the average `Female`?**
+    - **Use a histogram, 500 random shuffles and a normal model to answer the question in the bullet above.**

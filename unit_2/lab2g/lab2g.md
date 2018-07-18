@@ -24,7 +24,7 @@ Looking at Stress/Chill
 
 - We would like to analyze the research question:
 
-_How do people's personality colors and/or sports participation effect their stress levels?_
+_How do people's personality colors and/or sports participation affect their stress levels?_
 
 - We already have data about _personality color_ and a seperate data set about _stress_.
     - What we don't have is a single data set with information from both ... yet.
@@ -65,7 +65,7 @@ Getting ready
 
 - Our goal is to add the variables from the `colors` data onto the `stress` data.
 - Start by ensuring that every `user.id` in the `colors` data is unique.
-    - If there's a duplicate, have your teacher remove the duplicate from the Mobilize Web Response Manager and then re-_export_, _upload_, _import_ your `colors` data.
+    - If there's a duplicate, have your teacher remove the duplicate from your class' Web Response Manager and then re-_export_, _upload_, _import_ your `colors` data.
 - **After we add the data from _colors_ to _stress_, how many rows should our merged data have? Write this number down.**
 
 Putting them together
@@ -100,5 +100,5 @@ Moving on
 
 - In the next lab, we'll begin analyzing our merged data. In the meantime: 
 - **Make a few plots using variables from the `stress` data and _facet_ or _group_ the plots based on variables from the `colors` data.**
-    - **Write down the most interesting discovery you make by just exploring your data. Write out how you found your discovery and interpret what it means for your the people in your class.**
+    - **Write down the most interesting discovery you make by just exploring your data. Write out how you found your discovery and interpret what it means for the people in your class.**
 - **With our _colors_ data, we could answer questions about the _typical_ color scores in your class. Why can we no longer answer this question in our `stress_color` data?**

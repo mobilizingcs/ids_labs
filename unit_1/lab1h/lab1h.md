@@ -22,7 +22,7 @@ We've come a long way
 First steps first.
 ==================
 
-- _Export_, _Upload_, _Import_ the class' `timeuse` data from the [Mobilize Home Page](https://lausd.mobilizingcs.org) as `timeuse_raw`.
+- _Export_, _Upload_, _Import_ the class' `timeuse` data from your class' Home Page as `timeuse_raw`.
 - The data, as-is, is very messy and hard to interpret/analyze.
     - Fill in the blank with the name of your imported data to format it:
 

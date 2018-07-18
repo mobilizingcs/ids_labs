@@ -28,7 +28,7 @@ Our first web scraper
 
 - Copy and paste the link below into a web browser to view the website of data we'd like to _scrape_ and analyze.
 
-[http://gh.mobilizingcs.org/ids_labs/extras/webdata/mountains.html](http://gh.mobilizingcs.org/ids_labs/extras/webdata/mountains.html)
+[http://gh.idsucla.org/ids_labs/extras/webdata/mountains.html](http://gh.idsucla.org/ids_labs/extras/webdata/mountains.html)
 
 - **Briefly describe what the data on the website is about.**
     - **Then write down 3 questions you'd be interested in answering by analyzing this data.**
@@ -39,7 +39,7 @@ HTML
 
 - `HTML` is the code that's used to render every website you've ever visited.
 - The following slide shows the `HTML` code used to create the first two rows of the web data.
-    - **How is the data table in `HTML` different than the data tables we're used to seeing in `R`, for example, when we use the View() function.**
+    - **How is the data table in `HTML` different than the data tables we're used to seeing in `R`, for example, when we use the View() function?**
     - **What do you think the _tags_ `<TABLE>`, `<TR>`, `<TH>`, `<TD>` mean? How does `HTML` use these _tags_ to display the table?**
     
 
@@ -141,7 +141,7 @@ Fixing variable names
 - View the `mtns` data and notice the order of the variables.
     - Then use the order of the variables and the following code template to change the names of the `mtns` data.
     - Replace each `"new_name"` with the actual name of the variable. 
-    - Make sure include all of the variable names and order them correctly.
+    - Make sure to include all of the variable names and order them correctly.
 ```{r,eval=FALSE}
 names(mtns) <- c("new_name", "new_name",
                  ..., "new_name")

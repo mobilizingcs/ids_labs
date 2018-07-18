@@ -51,15 +51,15 @@ Subsetting
     - Stock market traders may subset their trading data by looking only at the previous day's trades.
 - There's _many_ ways to subset data using RStudio, we'll focus on learning the most common methods.  
   
-The subset function
+The filter function
 =========================
 
 - Creating two plots, one for salty and one for sweet is useful for comparing salty and sweet But what if we want to examine only one group by itself?
 - Start by creating a subset of the data:
-    - Fill in the blanks below with the data and variable names needed to subset our `food` data based on people who ate `Salty` snacks:
+    - Fill in the blanks below with the data and variable names needed to filter our `food` data based on people who ate `Salty` snacks:
 
 ```r
-food_salty <- subset(____ , ____ == "Salty")
+food_salty <- filter(____ , ____ == "Salty")
 ```
 - **View `food_salty` and write down the number of observations in it. Then use the subset data to make a dotPlot of the `sodium` in our `Salty` snacks.**
 
@@ -71,9 +71,9 @@ So what's really going on?
     - We'll start by focusing on everything to the right of the "<-" symbol
 
 ```r
-food_salty <- subset(____ , ____ == "Salty")
+food_salty <- filter(____ , ____ == "Salty")
 ```
-- `subset()` tells R that we're going to look at only the values in our data that follow a _rule_.
+- `filter()` tells R that we're going to look at only the values in our data that follow a _rule_.
 - The first blank should be the data we're going to filter down into a smaller set (Based on our rule).
 - `salty_sweet == "Salty"` is the rule to follow.
 
@@ -96,7 +96,7 @@ More on ==
 - Run the following code and answer the question below:
 
 ```r
-head(salty_sweet == "Salty", data = food)
+head(~salty_sweet == "Salty", data = food)
 ```
 - **What do the values `TRUE` and `FALSE` tell us about how our _rule_ applies to the first six snacks in our data? Which of the first six observations were `Salty`?**
 
@@ -109,7 +109,7 @@ Saving values
     - We now focus on everything to the left of, and including, the "<-" symbol
 
 ```r
-food_salty <- subset(____ , ____ == "Salty")
+food_salty <- filter(____ , ____ == "Salty")
 ```
 
 Saving our subset
@@ -117,7 +117,7 @@ Saving our subset
 
 
 ```r
-food_salty <- subset(____ , ____ == "Salty")
+food_salty <- filter(____ , ____ == "Salty")
 ```
 
 - This code then: 
@@ -126,6 +126,20 @@ food_salty <- subset(____ , ____ == "Salty")
     - the name `food_salty`.
 - We can now use `food_salty` to do anything we could do with the regular `food` data ...
     - but only including those snacks who reported being `Salty`.
+    
+Including more filters
+===
+
+- We often want to filter our data based on multiple rules.
+    - For instance, we might want to filter our `food` data based on the food being salty AND costing less than 2 dollars.
+- We can include multiple filters to our subsets by separating each rule with a comma like so:
+
+
+```r
+my_sub <- filter(food , salty_sweet == "Salty", cost <= 2)
+```
+
+- `View`  the  `my_sub` data we filtered in the above line of code and verify that it only includes salty snacks that cost less than 2 dollars.
 
 Put it all together
 ===================

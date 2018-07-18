@@ -17,7 +17,7 @@ Finding data in new places
     - Built-in datasets from RStudio.
     - Campaign data from Mobilize Campaign Manager.
 - Data can be found in many other places though, especially online.
-- In this lab, we'll read in an _observational study_ dataset from a website.
+- In this lab, we'll read an _observational study_ dataset from a website.
     - We'll use this data to then explore what factors are associated with a person's lung capacity.
 
 
@@ -25,7 +25,7 @@ Our new data
 ===
 
 - You can find the data online here:
-    - (Right-click and select _Open in New Window_) [http://gh.mobilizingcs.org/ids_labs/extras/webdata/fev.dat.txt](http://gh.mobilizingcs.org/ids_labs/extras/webdata/fev.dat.txt)
+    - (Right-click and select _Open in New Window_) [http://gh.idsucla.org/ids_labs/extras/webdata/fev.dat.txt](http://gh.idsucla.org/ids_labs/extras/webdata/fev.dat.txt)
 - Variables that were measured include:
     - Age in years.
     - Lung capacity, measured in liters.
@@ -38,11 +38,13 @@ Importing our data
 
 - Rather than _export_-ing the data and then _upload_-ing and _importing_-ing it, we'll pull the data straight from the webpage into R.
 - Click on the _Import Dataset_ button under the _Environment_ tab.
-    - Then click on the _From Web URL_ option.
-    - Type or copy/paste the URL into the box and then hit ok.
-- When importing your data, be sure to name the data `lungs`.
-- **For this dataset, should you include a _Heading_ or no? Why?**
-  
+    - Then click on the _From CSV_ option.
+    - Type or copy/paste the URL into the box and then hit _Update_.
+- Before importing, change the following _Import Options_:
+    - Name: `lungs`
+    - _Uncheck_ the _First Row as Data_ box
+    - Change _Delimiter_ to _Whitespace_
+
 
 About the data
 ===
@@ -51,7 +53,7 @@ About the data
     - The observations come from a sample of 654 youths, aged 3 to 19, in/around East Boston.
     - Researchers were interested in answering the _research question_: 
 
-_What is the effect of childhood smoking on lung health._
+_What is the effect of childhood smoking on lung health?_
 
 
 Cleaning your data
@@ -61,15 +63,15 @@ Cleaning your data
     - We want to name the variables: `"age"`, `"lung_cap"`, `"height"`, `"gender"`,`"smoker"`, in that order.
     - Change the type of variable for `gender` and `smoker` from _numeric_ to _character_.
 - After changing the variable types for `gender` and `smoker`:
-    - For `gender`, use `revalue` to change `"1"` to `"Male"` and `"0"` to `"Female"`.
-    - For `smoker`, use `revalue` to change `"1"` to `"Yes"` and `"0"` to `"No"`.
+    - For `gender`, use `recode` to change `"1"` to `"Male"` and `"0"` to `"Female"`.
+    - For `smoker`, use `recode` to change `"1"` to `"Yes"` and `"0"` to `"No"`.
     
 
 Analyzing our data
 ===
 
 - Our `lungs` data is from an observational study.
-- **Write down a reason the reseachers couldn't use an experiment to test the effects of smoking on children's lungs.**
+- **Write down a reason the researchers couldn't use an experiment to test the effects of smoking on children's lungs.**
 - Observational studies are often helpful for analyzing how variables are related: 
   - **Do you think that a person's age affects their lung capacity? Make a sketch of what you think a scatterplot of the two variables would look like and explain.**
 - Use the `lungs` data to create an `xyplot` of `age` and `lung_cap`.

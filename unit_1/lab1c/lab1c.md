@@ -22,7 +22,7 @@ Export, upload, import
 ========================================================
 - Before we can perform any analysis, we have to load data into R. 
 - When we want to get our participatory sensing data into RStudio, we:
-  - <font color="green">Export</font> the data from the _Mobilize_ page.
+  - <font color="green">Export</font> the data from your class' campaign page.
   - <font color="green">Upload</font> data to _RStudio_ server
   - <font color="green">Import</font> the data into R's working memory
   
@@ -30,7 +30,7 @@ Export, upload, import
 Exporting
 ========================================================
 
-- To begin, go to your class _Mobilize_ page.
+- To begin, go to your class' landing page.
   - Click on the <font color="green">Campaign Manager</font>
   - Fill in your username and password and click "Sign in."
 <center>![Campaign manager](images/campaign_manager.png)</center>
@@ -39,7 +39,7 @@ If you forget your username or password, ask your teacher to remind you.
 Campaign Manager
 ========================================================
 
-<center>![Mobilize Campaign Manager](images/campaign_manager1.png)</center>
+<center>![Campaign Manager](images/campaign_manager1.png)</center>
 
 - After logging in, your screen should look similar to this.
 - Click on the dropdown arrow for the campaign you are interested in downloading.
@@ -94,16 +94,22 @@ Importing
 
 <center>![import data](images/Environment.png)</center>
 
-- At the top of the Environment pane, click the "Import Data set" button. Then, choose "From Text File."
-- Find your _SurveyResponse_ data and then click _Open_.
+- At the top of the Environment pane, click the "Import Data set" button. Then, choose "From CSV..."
+    - CSV is a standard data format used by many software programs.
 
 
 Data Preview
 ========================================================
 <center><img src="images/DataPreview.png" alt="Data Preview" height="360" width="480"></center>
 
-- Give your data a <font color="green">Name</font>. This is the name you'll use in your code.
-    - Good names are short and descriptive. Maybe a good name for this data is "foodhabits".
+- Click the <font color="green">Browse...</font> button in the upper right hand corner. Find your data file and click <font color="green">Open</font>.
+- Give your data a name using the <font color="green">Name: </font> field in the lower left corner.
+
+What's in a name?
+===
+- The name you give your data is what you will use when you write code to analyze your data.
+    - Good names are short and descriptive. 
+    - For your food habits campaign, some good names to use would be  "foodhabits" or even just "food".
 - When you're ready, click the _Import_ button.
 
 
@@ -113,13 +119,13 @@ read.csv()
 - After you click import you might notice something appeared in your console.
 
 ```r
-data.file <- read.csv("~/SurveyResponse.csv")
+data.file <- read_csv("~/SurveyResponse.csv")
 View(data.file)
 ```
 
-- We can actually <font color="green">Import</font> the data without clicking the button!
-  - This would allow you to load data by writing code! 
-  - This might come in handy later in the course.
+- This is the actual code `RStudio` uses to read your data when you clicked the import button. 
+  - So instead of using the `RStudio` buttons, we can actually <font color="green">Import</font> by writing code similar to what was output into the console!
+  - This will come in handy later in the course.
 
 A word on staying organized...
 ==============================
@@ -137,5 +143,3 @@ Export, upload, import
 - After you _export_, _upload_, _import_ your data you're ready to analyse. 
 - **`View` your data, select a variable and try to make an appropriate plot for that variable.**
     - If you're having issues, make sure you're spelling the name of your data correctly.
-- Re-import your data, but this time, turn the _Heading_ option to _No_
-    - **`View` the data now and describe how selecting the _No_ option for the the _heading_ changed your data. What is a heading?**

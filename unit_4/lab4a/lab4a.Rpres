@@ -27,8 +27,8 @@ Predicting heights
     - The measurements of `height` and `armspan` are in inches.
     - A person's `armspan` is the maximum distance between their fingertips when they spread their arms out wide.
 - Make a plot of the `height` variable.
-    - **If you had to predict the height of someone in the LA area, what single height would you choose and why?**
-    - **Would you describe this as a _good_ guess? What might you try and improve your predictions?**
+    - **If you had to predict the height of someone in the Los Angeles area, what single height would you choose and why?**
+    - **Would you describe this as a _good_ guess? What might you try to improve your predictions?**
 
 
 Predicting heights knowing arm spans
@@ -40,7 +40,7 @@ Predicting heights knowing arm spans
 - Create a histogram for the `height` of people in each subset. Answer the following based on the data:
     - **What `height` would you predict if you knew a person had an `armspan` around 62 inches?**
     - **What `height` would you predict if you knew a person had an `armspan` around 65 inches?**
-    - **Does knowing someone's `armspan` helps you predict their height. Why or why not?**
+    - **Does knowing someone's `armspan` help you predict their height? Why or why not?**
 
 
 
@@ -64,7 +64,7 @@ Fitting lines
     - One way of describing this sort of trend is with a line.
 - Data scientists often _fit_ lines to their data to make predictions.    
     - What we mean by _fit_ is to come up with a line that's close to as many of the data points as possible.
-- Create an scatterplot for `height` and `armspan`. Then run the following code. Draw a line by clicking twice on the _Plot_ pane.
+- Create a scatterplot for `height` and `armspan`. Then run the following code. Draw a line by clicking twice on the _Plot_ pane.
 ```{r, eval = FALSE}
 add_line()
 ```
@@ -74,12 +74,12 @@ Predicting with lines
 ===
 
 - Draw a line that you think is a good _fit_ and write down its equation. Using this equation:
-    - **Predict how tall a person with a 62 and a person with a 65 inch `armspan` would be.**
+    - **Predict how tall a person with a 62 inch armspan and a person with a 65 inch `armspan` would be.**
     
 <!-- - **How much taller is the person with a 70 inch `armspan` than the 69 inch `armspan`? Does this difference seem more reasonable than the difference we calculated using the means?**   -->
 - Using a line to make predictions also lets us make predictions for `armspan`s that aren't in our data.
     - **How tall would you predict a person with a 63.5 inch `armspan` to be?**
-- **Compare your answers with a neighbor's. Did both of you come up with the same equation for a line? If not, can you tell which line fits the data best?**
+- **Compare your answers with a neighbor. Did both of you come up with the same equation for a line? If not, can you tell which line fits the data best?**
 
 Regression lines
 ===
@@ -87,8 +87,8 @@ Regression lines
 - If you were to go around your class, each student would have created a different line that they feel _fit_ the data best.
     - Which is a problem because everyone's line will make slightly different predictions.
 - To avoid this variation in predictions, data scientists will use _regression lines_.
-    - These line connects the mean `height` of people with similar `arm_spans`.
-    - Fill in the blanks below to create the a _regression line_ using an `lm`, or _linear model_:
+    - This line connects the mean `height` of people with similar `arm_spans`.
+    - Fill in the blanks below to create a _regression line_ using an `lm`, or _linear model_:
 
 ```{r, eval = FALSE}
 lm(____ ~ ____, data = arm_span)

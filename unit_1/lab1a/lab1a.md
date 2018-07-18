@@ -143,7 +143,7 @@ histogram(~height, data = cdc)
 ```
 
 ```r
-bargraph(~sunscreen, data = cdc)
+bargraph(~drive_text, data = cdc)
 ```
 
 ```r
