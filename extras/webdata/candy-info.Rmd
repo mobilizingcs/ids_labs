@@ -1,0 +1,38 @@
+---
+title: "Candy Data Cleaning"
+date: "11/8/2017"
+output: pdf_document
+---
+
+### Background
+
+This data comes from the _538 Ultimate Halloween Candy Power Rankings_ (http://fivethirtyeight.com/features/the-ultimate-halloween-candy-power-ranking/); however, we need to clean this data before we can use it.
+
+#### Variable definitions:
+
+The variables (V1 - V13) included in the data (in order) are as follows (Note: 1 indicates "Yes" and 0 indicates "No"):
+
+1. What's the name of the candy?
+1. Does it contain chocolate?
+1. Is it fruit flavored?
+1. Is there caramel in the candy?
+1. Does it contain peanuts, peanut butter or almonds?
+1. Does it contain nougat?
+1. Does it contain crisped rice, wafers, or a cookie component?
+1. Is it a hard candy?
+1. Is it a candy bar?
+1. Is it one of many candies in a bag or box?
+1. The percentile of sugar it falls under within the data set.
+1. The unit price percentile compared to the rest of the set.
+1. The overall win percentage according to 269,000 matchups.
+
+### Cleaning task
+
+_Upload_ the `candy.csv` file into your **RStudio** session and _Import_ the data just like you would for your class' campaign data. Then:
+
+1. Give each variable a short, descriptive name.
+2. Change the names of the candy to a `character` class variable.
+3. Change at least one of the variables with 1/0 to "Yes"/"No".
+4. For the variable(s) you chose in step 3, how many of the candies in the data were "Yes"?
+4. Create a plot, using the variable(s) you chose in step 3, and one of the last three variables (Variables 11 - 13).
+5. Interpret your plot.
