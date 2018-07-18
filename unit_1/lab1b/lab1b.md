@@ -3,7 +3,7 @@ Get the picture?
 transition: none
 css: ../../IDSLabCSS.css
 
-Lab 1B 
+Lab 1B
 
 Directions: Follow along with the slides and answer the questions in **red** font in your journal.
 
@@ -13,7 +13,7 @@ Where'd we leave off ...
 ==================
 
 - In the previous lab, we started to get acquainted with the layout of RStudio and some of the commands.
-- In this lab, we'll learn about different _types_ of variables. 
+- In this lab, we'll learn about different _types_ of variables.
     - Such as those that are measured by numbers and others that have values that are categories.
 - We'll also look at ways to visualize these different types of data using _plots_ (A word data scientists use interchangeably with the word _graph_).
 - Find the _History_ tab in RStudio and click on it. Figure out how to use the information to reload the `cdc` `data`.
@@ -29,7 +29,7 @@ Variable Types
     - **Is `gender` a numerical or categorical variable? Why?**
     - **List either the different categories or what you think the measured units are for `height` and `gender`.**
 
-    
+
 Which is which?
 =====================
 - Run the code you used in the previous lab to display the `names` of your `cdc` data's variables (Use the code displayed in the _History_ pane to resubmit previously typed commands). Use the code's output to help you complete the following:
@@ -50,7 +50,7 @@ str(cdc)
 - Look at the `str`ucture of your `cdc` data and answer:
 - **List all the types of info the `str()` function outputs**
 - **Were you able to correctly guess which variables were categorical and numeric? Which ones did you mis-label?**
-    
+
 
 Visualizing data
 =================
@@ -60,7 +60,7 @@ Visualizing data
     - Remember: A distribution gives us the values of the variable and tells us how many of these values we have in our data set.
 - Choose one numeric and one categorical variable from the data and create both a `bargraph` and a `histogram` for each variable.
     - **Which function, either `bargraph` or `histogram` is better at visualizing categorical variables? Which is better at visualizing numerical variables?**
-    
+
 How often do people text & drive?
 ==================================
 
@@ -93,7 +93,7 @@ Do males/females have similar heights?
 - Use the `groups` argument to create a `histogram` for the `height` of males and females.
     - **Can you use this graphic to answer the question at the top of the slide? Why or why not?**
     - **Is grouping numeric values, such as heights, as helpful as grouping categorical variables, such as texting & driving?**
-    
+
 Do males/females have similar heights?
 =====================================
 
@@ -110,6 +110,6 @@ Do males/females have similar heights?
 On your own:
 ============
 
-- In this lab, we looked at boy's and girl's attitudes about using texting & driving: 
+- In this lab, we looked at boy's and girl's attitudes about using texting & driving:
 - **What other factors do you think might affect how often people text and drive?**
     - **Choose one variable from the `cdc` data, make a graph, and use the graph to describe how `drive_text` use differs with this variable.**
