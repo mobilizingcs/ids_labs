@@ -121,7 +121,7 @@ Numbers are words? (Sometimes)
 Changing strings into numbers
 =============================
 
-- To fix this problem, we need to tell R to think of our _numeric_ variables as numeric variables.
+- To fix this problem, we need to tell R to think of our _"numeric"_ variables as numeric variables.
 - We can do this with the `as.numeric` function. 
     - An example using this function is below:
 ```{r}
