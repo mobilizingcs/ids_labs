@@ -537,9 +537,12 @@ Lab 2C
 <ul>
 <li>Fill in the blanks below to <code>do</code> the <code>sample</code> code from the previous slide <em>50</em> times run:</li>
 </ul></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">do</span>(___) <span class="op">*</span><span class="st"> </span><span class="kw">sample</span>(___, <span class="dt">___ =</span> ___, <span class="dt">___ =</span> ___)</a></code></pre></div>
+<ul>
 <li><em>Assign</em> the 50 selected songs the name <code>draws</code>. Then fill in the blank below to tally how often each genre was selected:</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">tally</span>(<span class="op">~</span>___, <span class="dt">data =</span> draws)</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">tally</span>(<span class="op">~</span>___, <span class="dt">data =</span> draws)</a></code></pre></div>
 <ul>
 <li><strong>Compute the proportion of <code>&quot;rap&quot;</code> songs for your 50 draws and find out if the <em>range</em> for your class’ proportions is bigger or smaller than when we drew 10 songs.</strong></li>
 </ul>
@@ -573,8 +576,8 @@ Lab 2C
 </ul></li>
 <li>For example, the output of this code will always be the same:</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">123</span>)</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2"><span class="kw">sample</span>(songs, <span class="dt">size =</span> <span class="dv">1</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">set.seed</span>(<span class="dv">123</span>)</a>
+<a class="sourceLine" id="cb6-2" data-line-number="2"><span class="kw">sample</span>(songs, <span class="dt">size =</span> <span class="dv">1</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</a></code></pre></div>
 <pre><code>## [1] &quot;rap&quot;</code></pre>
 </div>
 <div id="playing-with-seeds" class="slide section level2">

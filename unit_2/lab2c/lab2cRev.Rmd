@@ -92,7 +92,7 @@ sample(songs, size = 1, replace = TRUE)
 
 - Instead of running the same line of code multiple times ourselves we can use `R` to `do()` multiple repetitions for us.
     - Fill in the blanks below to `do` the `sample` code from the previous slide _50_ times run:
-```{r, eval = FALSE}
+```{r, eval = FALSE, echo = TRUE}
 do(___) * sample(___, ___ = ___, ___ = ___)
 ```
 - _Assign_ the 50 selected songs the name `draws`. Then fill in the blank below to tally how often each genre was selected:
