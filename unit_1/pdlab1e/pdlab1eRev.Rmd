@@ -1,0 +1,102 @@
+---
+title: "What's the Relationship?"
+author: "Lab 1E"
+date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
+output: 
+  slidy_presentation: 
+    css: ../../IDSLabCSSRev.css
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+library(mobilizr)
+```
+
+## Finding patterns in data.
+
+- To discover (_really_) interesting observations or relationships in data, we need to find them!
+    - Which is difficult if we only look at the raw data.
+- The best tool for finding patterns is often ... your own eyes.
+    - Plots are an excellent way to help your eye search for patterns.
+- In this lab, we'll learn how to include more variables in our plots to make them more informative.
+- To begin, load the `cdc` data.
+
+
+## Where's the variables?
+
+```{r,eval=TRUE, echo=FALSE, fig.align='center', fig.width=14, fig.height= 6, out.width = '90%'}
+histogram(~height | gender, data = cdc, layout = c(2,1),
+          scales=list(cex=2.5),
+          xlab = list("Height", cex=2.5),
+          ylab = list("Count", cex=2.5),
+          par.strip.text=list(cex=2))
+```
+
+- **How many variables were used to create this plot? Which variables were used and how were they used?**
+
+
+## Multiple variable plots
+
+- The previous graph is an example of a _multiple variable plot_, which means that more than a single variable was used. In this case:
+  - Variable 1: _height_
+  - Variable 2: _gender_
+- Multiple variable plots are tools for finding _relationships_ between data.
+- Let's take our `cdc` data and make some new multiple variable plots you haven't created before!
+
+
+## scatterplots
+
+```{r,echo=FALSE, fig.align='center', fig.width=8, fig.height=6, out.width = '60%'}
+n = 50
+x <- runif(n, 0, 20)
+y <- x^3 + rnorm(n, mean = 0, sd = 10^3)
+df <- data.frame(x=x, y=y)
+xyplot(y~x, data = df,
+       cex = 2,
+       scales=list(cex=2.5),
+          xlab = list("Variable 1", cex=2.5),
+          ylab = list("Variable 2", cex=2.5))
+```
+
+
+## Creating scatterplots
+
+- Scatterplots are useful for viewing how one _numerical_ variable relates to another _numerical_ variable.
+- Fill in the blanks to create a scatterplot with `weight` on the y-axis and `height` on the x-axis.
+```{r, eval = FALSE, echo = TRUE}
+xyplot(____ ~ ____, data = cdc)
+```
+
+
+## Scatterplots in action
+
+- Use a scatterplot to answer the following questions:
+    - **As we look at people who are taller, what happens to their weights?**
+    - **What happens if you swap the `weigth` and `height` variables in your code? Does the relationship between the variables change?**
+    - **Does the relationship between `height` and `weight` change when we facet by gender? Write down the code you used to answer this question.**
+
+
+## 4-variable scatterplots
+
+- When we make scatterplots, we can include:
+    - 1 numerical variable on the x-axis
+    - 1 numerical variable on the y-axis
+    - Use 1 categorical variable to facet our scatterplot
+    - Change the color of the points based on another categorical variable
+- To change the color of our points, we can include the `groups` argument  much like we did for bargraphs (use the _search_ feature in the _History_ pane if you need help).
+- **Create a scatterplot that uses these 4 variables: `height`, `weight`, `gender`, `depressed`.**
+
+
+## Multiple facets
+
+- It can sometimes be helpful to facet on more than 1 variable.
+    - Splitting the the data using 2 facets can give us additional insights that might otherwise be hidden.
+- Create a `dotPlot` or `histogram` of the `weight` variable, but facet the data using:
+```{r, eval = FALSE, echo = TRUE}
+gender + depressed
+```
+- **How does the `gender` and feeling depressed impact a person's weight?**
+

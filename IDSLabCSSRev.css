@@ -1,0 +1,75 @@
+code {
+  font-family: monospace;
+  color: #10437F;
+}
+
+strong {
+  color: #B21212;
+}
+
+footer {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  font-size: 20pt;
+  color: #25679E;
+  text-align: center; 
+}
+
+.slide .title {
+  font-size: 250%;
+  text-align: left;
+	color: #25679E;
+	font-style: normal;
+}
+
+.title{
+  text-align: left;
+	color: #25679E;
+}
+
+.author {
+  text-align: left;
+	color: #25679E;
+}
+
+.date {
+  text-align: left;
+	color: #25679E;
+}
+
+.greenequation {
+  font-size: 150%;
+  color: green;
+  text-align: center;
+  line-height: normal;
+}
+
+li li {
+  font-style: normal; 
+}
+
+li ul li {
+  font-style: normal; 
+}
+
+body {
+  font-family: sans-serif;
+}
+
+pre.sourceCode {
+  margin-left: 2em;
+}
+
+code.sourceCode {
+  font-size: 95%;
+}
+
+pre {
+  margin-left: 2em;
+}
+
+.sourceCode {
+    overflow: auto;
+}
