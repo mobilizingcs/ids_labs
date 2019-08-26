@@ -120,7 +120,7 @@ atu_cleaner <- rename(atu_dirty, age = V1,
 
 ## Changing strings into numbers
 
-- To fix this problem, we need to tell R to think of our _numeric_ variables as numeric variables.
+- To fix this problem, we need to tell R to think of our _"numeric"_ variables as numeric variables.
 - We can do this with the `as.numeric` function. 
     - An example using this function is below:
 ```{r, eval = TRUE, echo = TRUE}
