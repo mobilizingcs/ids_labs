@@ -451,17 +451,19 @@ Lab 4B
 <li>Create an <code>xyplot</code> with <code>height</code> on the y-axis and <code>armspan</code> on the x-axis.</li>
 <li>Type <code>add_line()</code> to run the <code>add_line</code> function; you’ll be prompted to click twice in the plot window to create a line that you think fits the data well.</li>
 </ul></li>
-<li><p>Fill in the blanks below to create a function that will make predictions of people’s <code>height</code>s based on their <code>armspan</code>:</p>
+<li>Fill in the blanks below to create a function that will make predictions of people’s <code>height</code>s based on their <code>armspan</code>:</li>
+</ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">make_predictions &lt;-<span class="st"> </span><span class="cf">function</span>(armspans) {</a>
 <a class="sourceLine" id="cb1-2" data-line-number="2">  ____ <span class="op">*</span><span class="st"> </span>armspans <span class="op">+</span><span class="st"> </span>____</a>
-<a class="sourceLine" id="cb1-3" data-line-number="3">}</a></code></pre></div></li>
-</ul>
+<a class="sourceLine" id="cb1-3" data-line-number="3">}</a></code></pre></div>
 </div>
 <div id="make-your-predictions" class="slide section level2">
 <h1>Make your predictions</h1>
 <ul>
-<li><p>Fill in the blanks to include your predictions in the <code>arm_span</code> data.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">____ &lt;-<span class="st"> </span><span class="kw">mutate</span>(____, <span class="dt">predictions =</span> <span class="kw">____</span>(____))</a></code></pre></div></li>
+<li>Fill in the blanks to include your predictions in the <code>arm_span</code> data.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">____ &lt;-<span class="st"> </span><span class="kw">mutate</span>(____, <span class="dt">predictions =</span> <span class="kw">____</span>(____))</a></code></pre></div>
+<ul>
 <li>Now that we’ve made our predictions, we’ll need to figure out a way to decide how accurate our predictions are.
 <ul>
 <li>We’ll want to compare our <em>predicted heights</em> to the <em>actual heights</em>.</li>
@@ -476,13 +478,15 @@ Lab 4B
 <ul>
 <li><strong>What do these differences measure?</strong></li>
 <li>Fill in the blanks below to create a function which calculates the sum of differences:</li>
+</ul></li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">accuracy &lt;-<span class="st"> </span><span class="cf">function</span>(actual, predicted) {</a>
 <a class="sourceLine" id="cb3-2" data-line-number="2">  <span class="kw">sum</span>(____ <span class="op">-</span><span class="st"> </span>____)</a>
-<a class="sourceLine" id="cb3-3" data-line-number="3">}</a></code></pre></div></li>
-<li><p>Then fill in the blanks to calculate our accuracy summary.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">summarize</span>(____, <span class="kw">____</span>(____, ____))</a></code></pre></div></li>
+<a class="sourceLine" id="cb3-3" data-line-number="3">}</a></code></pre></div>
+<ul>
+<li>Then fill in the blanks to calculate our accuracy summary.</li>
 </ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">summarize</span>(____, <span class="kw">____</span>(____, ____))</a></code></pre></div>
 </div>
 <div id="checking-our-work" class="slide section level2">
 <h1>Checking our work</h1>
@@ -512,8 +516,10 @@ Lab 4B
 <li>Making predictions with models <code>R</code> is familiar with is simpler than with lines, or models, we come up with ourselves.
 <ul>
 <li>Fill in the blanks to make predictions using <code>best_fit</code>:</li>
+</ul></li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">____ &lt;-<span class="st"> </span><span class="kw">mutate</span>(____, <span class="dt">predictions =</span> <span class="kw">predict</span>(____))</a></code></pre></div></li>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">____ &lt;-<span class="st"> </span><span class="kw">mutate</span>(____, <span class="dt">predictions =</span> <span class="kw">predict</span>(____))</a></code></pre></div>
+<ul>
 <li>Calculate the MSE for these new predicted values.</li>
 </ul>
 </div>

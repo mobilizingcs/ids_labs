@@ -509,9 +509,9 @@ Lab 3E
 <li>Find the URL address for the site and assign it the name <code>data_url</code> in <code>R</code>.
 <ul>
 <li>Then fill in the blanks below to have <code>R</code> scrape <em>every</em> web table available on the site:</li>
+</ul></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">tables &lt;-<span class="st"> </span><span class="kw">readHTMLTable</span>(____)</a></code></pre></div></li>
-</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">tables &lt;-<span class="st"> </span><span class="kw">readHTMLTable</span>(____)</a></code></pre></div>
 </div>
 <div id="find-our-data" class="slide section level2">
 <h1>Find our data</h1>
@@ -539,9 +539,11 @@ Lab 3E
 <h1>From scraping to cleaning</h1>
 <ul>
 <li>Data scraped from the web usually needs to be cleaned.</li>
-<li><p><strong>Run the following commands and compare the names of the variables. Do you notice any differences?</strong></p>
+<li><strong>Run the following commands and compare the names of the variables. Do you notice any differences?</strong></li>
+</ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">View</span>(mtns)</a>
-<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">names</span>(mtns)</a></code></pre></div></li>
+<a class="sourceLine" id="cb3-2" data-line-number="2"><span class="kw">names</span>(mtns)</a></code></pre></div>
+<ul>
 <li><strong>Which variables in your data are numerical variables and which are factors (i.e. categorical variables)?</strong></li>
 <li>Put your data in the <code>str()</code> function to see how <code>R</code> classified each variable.
 <ul>
@@ -555,9 +557,11 @@ Lab 3E
 <li>View the <code>mtns</code> data and notice the order of the variables.
 <ul>
 <li>Use the order of the variables to fill in the blanks below with either the word <code>&quot;factor&quot;</code>, if the variable is <em>categorical</em>, or <code>&quot;numeric&quot;</code>, if the varible is <em>numerical</em>.</li>
+</ul></li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">var_types &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;___&quot;</span>,<span class="st">&quot;___&quot;</span>,<span class="st">&quot;___&quot;</span>,<span class="st">&quot;___&quot;</span>,<span class="st">&quot;___&quot;</span>,</a>
-<a class="sourceLine" id="cb4-2" data-line-number="2">               <span class="st">&quot;___&quot;</span>,<span class="st">&quot;___&quot;</span>,<span class="st">&quot;___&quot;</span>,<span class="st">&quot;___&quot;</span>,<span class="st">&quot;___&quot;</span>)</a></code></pre></div></li>
+<a class="sourceLine" id="cb4-2" data-line-number="2">               <span class="st">&quot;___&quot;</span>,<span class="st">&quot;___&quot;</span>,<span class="st">&quot;___&quot;</span>,<span class="st">&quot;___&quot;</span>,<span class="st">&quot;___&quot;</span>)</a></code></pre></div>
+<ul>
 <li>Finally, re-scrape the data and include <code>colClasses = var_types</code> as an argument.
 <ul>
 <li>Don’t forget to save the data as <code>mtns</code> and specify <code>which</code> table to scrape.</li>
@@ -572,10 +576,10 @@ Lab 3E
 <li>Then use the order of the variables and the following code template to change the names of the <code>mtns</code> data.</li>
 <li>Replace each <code>&quot;new_name&quot;</code> with the actual name of the variable.</li>
 <li>Make sure to include all of the variable names and order them correctly.</li>
+</ul></li>
 </ul>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">names</span>(mtns) &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;new_name&quot;</span>, <span class="st">&quot;new_name&quot;</span>,</a>
-<a class="sourceLine" id="cb5-2" data-line-number="2">                 ..., <span class="st">&quot;new_name&quot;</span>)</a></code></pre></div></li>
-</ul>
+<a class="sourceLine" id="cb5-2" data-line-number="2">                 ..., <span class="st">&quot;new_name&quot;</span>)</a></code></pre></div>
 </div>
 <div id="check-save-and-use" class="slide section level2">
 <h1>Check, save and use!</h1>

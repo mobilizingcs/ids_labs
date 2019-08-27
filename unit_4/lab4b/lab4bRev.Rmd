@@ -29,19 +29,19 @@ library(mobilizr)
     - Create an `xyplot` with `height` on the y-axis and `armspan` on the x-axis.
     - Type `add_line()` to run the `add_line` function; you'll be prompted to click twice in the plot window to create a line that you think fits the data well.
 - Fill in the blanks below to create a function that will make predictions of people's `height`s based on their `armspan`:
-  ```{r, eval = FALSE, echo = TRUE}
-  make_predictions <- function(armspans) {
-    ____ * armspans + ____
-  }
-  ```
+```{r, eval = FALSE, echo = TRUE}
+make_predictions <- function(armspans) {
+  ____ * armspans + ____
+}
+```
 
 
 ## Make your predictions
 
 - Fill in the blanks to include your predictions in the `arm_span` data.
-  ```{r, eval = FALSE, echo = TRUE}
-  ____ <- mutate(____, predictions = ____(____))
-  ```
+```{r, eval = FALSE, echo = TRUE}
+____ <- mutate(____, predictions = ____(____))
+```
 - Now that we've made our predictions, we'll need to figure out a way to decide how accurate our predictions are.
     - We'll want to compare our _predicted heights_ to the _actual heights_.
     - At the end, we'll want to come up with a single number summary that describes our model's accuracy.
@@ -53,17 +53,17 @@ library(mobilizr)
     - **What do these differences measure?**
     - Fill in the blanks below to create a function which calculates the sum of differences:
 
-  ```{r, eval = FALSE, echo = TRUE}
-  accuracy <- function(actual, predicted) {
-    sum(____ - ____)
-  }
-  ```
+```{r, eval = FALSE, echo = TRUE}
+accuracy <- function(actual, predicted) {
+  sum(____ - ____)
+}
+```
 
 - Then fill in the blanks to calculate our accuracy summary.
 
-  ```{r, eval = FALSE, echo = TRUE}
-  summarize(____, ____(____, ____))
-  ```
+```{r, eval = FALSE, echo = TRUE}
+summarize(____, ____(____, ____))
+```
 
 
 ## Checking our work
@@ -83,9 +83,9 @@ library(mobilizr)
     - Assign this model the name `best_fit`. 
 - Making predictions with models `R` is familiar with is simpler than with lines, or models, we come up with ourselves.
     - Fill in the blanks to make predictions using `best_fit`:
-  ```{r, eval = FALSE, echo = TRUE}
-  ____ <- mutate(____, predictions = predict(____))
-  ```
+```{r, eval = FALSE, echo = TRUE}
+____ <- mutate(____, predictions = predict(____))
+```
 
 - Calculate the MSE for these new predicted values.
 
