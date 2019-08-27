@@ -45,7 +45,7 @@ library(mobilizr)
 
 ## 
 
-<font size = "6">
+<font size = "3">
 ```
 <TABLE>
   <TR>
