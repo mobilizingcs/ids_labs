@@ -47,7 +47,7 @@ load("___.Rda")
 - Let's start by building a basic map!
 - Use the `leaflet()` function and the `mtns` data to create the `leaf` that we can use for mapping.
 
-```{r, eval = FALSE}
+```{r, eval = FALSE, echo = TRUE}
 mtns_leaf <- leaflet(____)
 ```
 

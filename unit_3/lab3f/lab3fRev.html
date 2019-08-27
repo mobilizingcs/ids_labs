@@ -475,7 +475,10 @@ Lab 3F
 <h1>Build a Basic Map</h1>
 <ul>
 <li>Let’s start by building a basic map!</li>
-<li><p>Use the <code>leaflet()</code> function and the <code>mtns</code> data to create the <code>leaf</code> that we can use for mapping.</p></li>
+<li>Use the <code>leaflet()</code> function and the <code>mtns</code> data to create the <code>leaf</code> that we can use for mapping.</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">mtns_leaf &lt;-<span class="st"> </span><span class="kw">leaflet</span>(____)</a></code></pre></div>
+<ul>
 <li>Then, insert <code>mtns_leaf</code> into the <code>addTiles()</code> function and assign the output the name <code>mtns_map</code></li>
 <li>Run <code>mtns_map</code> in the console to look at your basic map with no data displayed.
 <ul>
@@ -491,7 +494,7 @@ Lab 3F
 <li>Fill in the blanks below with the basic map we’ve created and the values for latitude and longitude.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">addMarkers</span>(<span class="dt">map =</span> ____, <span class="dt">lng =</span> <span class="op">~</span>____, <span class="dt">lat =</span> <span class="op">~</span>____)</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">addMarkers</span>(<span class="dt">map =</span> ____, <span class="dt">lng =</span> <span class="op">~</span>____, <span class="dt">lat =</span> <span class="op">~</span>____)</a></code></pre></div>
 <ul>
 <li>Supply the <code>peak</code> variable, in a similar way as we supplied the <code>lat</code> and <code>long</code> variables, to the <code>popup</code> argument and include it in the code above.
 <ul>
@@ -505,7 +508,7 @@ Lab 3F
 <li>Our current map looks pretty good, but what if we wanted to add some colors to our plot?</li>
 <li>Fill in the blanks below to create a new variable that assigns a color to each mountain based on the <code>state</code> its located.</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">mtns &lt;-<span class="st"> </span><span class="kw">mutate</span>(____, <span class="dt">state_colors =</span> <span class="kw">colorize</span>(____))</a></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">mtns &lt;-<span class="st"> </span><span class="kw">mutate</span>(____, <span class="dt">state_colors =</span> <span class="kw">colorize</span>(____))</a></code></pre></div>
 <ul>
 <li>Now that we’ve added a new variable, we need to re-build <code>mtns_leaf</code> and <code>mtns_map</code> to use it.
 <ul>
@@ -524,7 +527,7 @@ Lab 3F
 <li>Then, fill in the blanks below to place a legend in the top-right hand corner.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">addLegend</span>(____, <span class="dt">colors =</span> <span class="op">~</span><span class="kw">unique</span>(____), <span class="dt">labels =</span> <span class="op">~</span><span class="kw">unique</span>(____))</a></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">addLegend</span>(____, <span class="dt">colors =</span> <span class="op">~</span><span class="kw">unique</span>(____), <span class="dt">labels =</span> <span class="op">~</span><span class="kw">unique</span>(____))</a></code></pre></div>
 </div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->

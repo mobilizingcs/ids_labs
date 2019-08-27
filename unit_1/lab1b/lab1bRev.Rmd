@@ -43,7 +43,7 @@ data(cdc)
 - One way to get a good summary of your data is to look at the data's _structure_.
     - One way to view this info would be to click on the little blue arrow next to `cdc` in the _Environment_ pane.
     - Another way would be to run the following in the console:
-```{r, eval = FALSE}
+```{r, eval = FALSE, echo = TRUE}
 str(cdc)
 ```
 
