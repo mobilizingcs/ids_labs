@@ -24,7 +24,7 @@ data(cdc)
 - Your code will be written in RStudio which is an easy to use interface for coding using `R`.
 
 
-## So let's get started!
+So let's get started!
 
 - The data for our first few labs comes from the Centers for Disease Control (CDC)
     - The CDC is a federal institution that studies public health.
