@@ -41,9 +41,9 @@ library(mobilizr)
 - **Use these two steps to calculate the _range_ of your predominant color.**
 
 
-## Introducing custom functions
+## Introducing custom functions 
 
-- Calculating the _range_ of many variables can be tedious if we have to keep performing the same two steps over and over.
+- Calculating the _range_ of many variables can be tedious if we have to keep performing the same two steps over and over..
     - We can combine these two steps into one by writing our own custom `function`.
 - Custom functions can be used to combine a task that would normally take many steps to compute and simplify them into one.
 - The next slide shows an example of how we can create a custom function called `mm_diff` to calculate the absolute difference between the `mean` and `median` value of a `variable` in our `data`.
