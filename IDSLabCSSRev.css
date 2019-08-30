@@ -73,3 +73,7 @@ pre {
 .sourceCode {
     overflow: auto;
 }
+
+.slidy_toc {
+    max-height: 80vh;
+}
