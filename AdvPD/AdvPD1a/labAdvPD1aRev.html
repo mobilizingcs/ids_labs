@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Lab Advanced PD 1A" />
-  <title>Title of Advanced PD 1A</title>
+  <title>New Arguments and Functions</title>
   <style type="text/css">code{white-space: pre;}</style>
   <style type="text/css">
 a.sourceLine { display: inline-block; line-height: 1.25; }
@@ -426,33 +426,120 @@ list-style-type: none;
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title">Title of Advanced PD 1A</h1>
+  <h1 class="title">New Arguments and Functions</h1>
   <p class="author">
 Lab Advanced PD 1A
   </p>
-  <p class="date">Directions: Follow along with the slides and answer the questions in <strong>red</strong> font in your journal.</p>
+  <p class="date">The following slides contain <strong>new</strong> commands that are not included in the RStudio codes and functions handout.</p>
 </div>
-<div id="welcome-to-advanced-pd" class="slide section level2">
-<h1>Welcome to Advanced PD!</h1>
+<div id="enhancing-visualizations" class="slide section level2">
+<h1>ENHANCING VISUALIZATIONS</h1>
+<p>The following arguments can be used to enhance a visualization.</p>
 <ul>
-<li>Throughout the year, you’ll be putting your data science skills to work by completing the labs.</li>
-<li>You’ll learn how to program in the <code>R</code> programming language.
+<li>Option: <code>main = &quot; &quot;</code> . Adds a title to your visual<br />
+</li>
+<li>Option: <code>col= &quot; &quot;</code> . Changes the color of your visual</li>
+<li>Option: <code>xlab = &quot; &quot;</code> . Changes the label on the x-axis<br />
+</li>
+<li>Option: <code>ylab = &quot; &quot;</code> . Changes the label on the y-axis<br />
+</li>
+<li>Option: <code>horizontal = TRUE</code> . Makes bars horizontal</li>
+</ul>
+<p><strong>Examples:</strong></p>
+<p>Basic usage</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">bargraph</span> (<span class="op">~</span>gender, <span class="dt">data=</span>cdc)</a></code></pre></div>
+<p>Including the options <code>col</code> and <code>main</code> will change the color of the bars to green and include the title “Distribution of Gender”.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">bargraph</span>(<span class="op">~</span>gender, <span class="dt">data=</span>cdc, <span class="dt">col=</span><span class="st">&quot;green&quot;</span>, <span class="dt">main=</span><span class="st">&quot;Distribution of Gender&quot;</span>)</a></code></pre></div>
+</div>
+<div id="histograms" class="slide section level2">
+<h1>HISTOGRAMS</h1>
+<p>When creating a histogram, it can be frustrating trying to estimate the values on the x-axis. A solution is the argument <code>breaks = seq( )</code>. The option <code>breaks = seq( )</code> allows one to control the bin widths as well as the beginning and ending values of the bins.</p>
+<p><strong>Examples:</strong></p>
+<p>Basic usage</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">histogram</span>(<span class="op">~</span>weight, <span class="dt">data=</span>cdc)</a></code></pre></div>
+<p>A histogram with bin widths of 10 beginning at a weight of 33 kg and ending at 183 kg. The minimum and maximum weight need to be considered beforehand so that no data is excluded.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">histogram</span> (<span class="op">~</span>weight, <span class="dt">data=</span>cdc, <span class="dt">breaks=</span><span class="kw">seq</span>(<span class="dv">33</span>, <span class="dv">183</span>, <span class="dt">by=</span><span class="dv">10</span>))</a></code></pre></div>
+<p>Using the concept of balancing point, guess the mean weight of the teens in the cdc data and then confirm with the code below.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">mean</span> (<span class="op">~</span>weight, <span class="dt">data=</span>cdc)</a></code></pre></div>
+<p>In order to estimate the mean absolute deviation (MAD) of the distribution of weight, it would be helpful to draw a vertical line to represent the mean weight. Use the code below to draw a vertical line through the histogram displaying the distribution of weight. Fill in the missing value with the actual mean.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">add_line</span> (<span class="dt">vline =</span> _______)</a></code></pre></div>
+</div>
+<div id="dotplots" class="slide section level2">
+<h1>DOTPLOTS</h1>
+<p>When creating a dotplot, the visualization can be inaccurate and tends to group values together. A solution is the argument <code>nint</code> . By including <code>nint</code>, you set the number of intervals for the dots in your plot.</p>
+<p><strong>Examples:</strong></p>
+<p>Basic Usage</p>
+<p><code>dotPlot(~green, data=colors)</code></p>
+<p>A dotPlot that can display 16 individual values (5 to 20).The value for <code>nint</code> can be calculated by finding the range of the variable and adding 1.</p>
+<p><code>dotPlot(~green, data=colors, nint=16)</code></p>
+</div>
+<div id="filtering" class="slide section level2">
+<h1>FILTERING</h1>
+<p>You can filter multiple numerical values by using inequalities but you can also filter multiple values of categorical variables (or exclude a value but include all other values in the variable).</p>
+<p><strong>Examples:</strong></p>
 <ul>
-<li>The programming language used by actual data scientists.</li>
-</ul></li>
-<li>Your code will be written in RStudio which is an easy to use interface for coding using <code>R</code>.</li>
+<li>The minors data frame excludes observations that reported an age of 18 years old or older.</li>
+</ul>
+<p><code>minors&lt;-filter(cdc, age!=&quot;18 years old or older&quot;)</code></p>
+<ul>
+<li>The age_16_17 data frame includes observations that reported an age of 16 years old or 17 years old.</li>
+</ul>
+<p><code>age_16_17&lt;-filter(cdc, age==&quot;16 years old&quot;|age==&quot;17 years old&quot;)</code></p>
+<ul>
+<li>This will exclude all the observations that did not provide an answer for their weight description or depression status.</li>
+</ul>
+<p><code>cdc_not_na&lt;-filter(cdc, !is.na(describe_weight), !is.na(depressed))</code></p>
+</div>
+<div id="cleaning" class="slide section level2">
+<h1>CLEANING</h1>
+<p><strong>Statistical investigation:</strong></p>
+<ul>
+<li>Ask Question:</li>
+</ul>
+<p>How do 16 year olds differ from 17 year-olds in the number of hours they spend watching television?</p>
+<ul>
+<li>Consider Data:</li>
+</ul>
+<p>I will use the age_16_17 cdc subset and conduct an analysis on the categorical variable hours_tv.</p>
+<ul>
+<li>Analyze Data:</li>
+</ul>
+<p><code>bargraph(~hours_tv, groups=age, data=age_16_17)</code></p>
+<p><code>tally(~hours_tv|age,format=&quot;percent&quot;,margins=TRUE,data=age_16_17)</code></p>
+<p>Notice that the other age categories still appear in our bargraph and tally. When we filter out categories from a variable that R interprets as a factor, R keeps ALL the categories and just reports that the data has 0 observations within those categories. So in order to exclude the other categories, we need to “trick” R by changing age from a factor variable to a character variable.</p>
+<p><code>age_16_17&lt;-mutate(age_16_17, age=as.character(age))</code></p>
+<p><code>bargraph(~hours_tv, groups=age, data=age_16_17)</code></p>
+<p><code>tally(~hours_tv|age,format=&quot;percent&quot;,margins=TRUE,data=age_16_17)</code></p>
+<ul>
+<li>Interpret Data:</li>
 </ul>
 </div>
-<div id="contact" class="slide section level2">
-<h1>Contact</h1>
+<div id="barplots" class="slide section level2">
+<h1>BARPLOTS</h1>
+<p>When comparing two groups on a numerical variable, we typically stack the graphs to be able to compare the center, shape and spread of the distributions. Using stacked bar graphs will provide the same easy analysis when comparing groups on a categorical variable.</p>
+<p><strong>Statistical investigation:</strong></p>
 <ul>
-<li>Visit</li>
+<li>Ask Question:</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="co"># idsucla.org</span></a></code></pre></div>
+<p>Is the incidence of depression similar across the weight descriptions?</p>
 <ul>
-<li>Email</li>
+<li>Consider Data:</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="co"># support@idsucla.org</span></a></code></pre></div>
+<p>I will use the cdc_not_na to only include those observations that provided both their weight description and depression status.</p>
+<ul>
+<li>Analyze Data:</li>
+</ul>
+<p><code>bargraph (~depressed, data=cdc_not_na, groups=describe_weight)</code> (side by side)</p>
+<p><code>bargraph (~depressed, data=cdc_not_na, group=describe_weight, stack=TRUE)</code> (stacked)</p>
+<p><code>tally(~depressed|describe_weight, data=cdc_not_na, margin=TRUE)</code></p>
+<p>Notice that the groups we wish to compare vary in the number of observations, so in order to compare the incidence of depression over the weight description, we need to calculate the conditional relative frequencies of depression by weight description.</p>
+<p><code>tally(~depressed|describe_weight, data=cdc_not_na, format=&quot;percent&quot;)</code></p>
+<p><code>table1&lt;-tally(~depressed|describe_weight, data=cdc_not_na, format=&quot;percent&quot;)</code></p>
+<p>Creates a proportional bargraph showing the conditional relative frequencies of depression by weight description.</p>
+<p><code>barplot(table1, legend=TRUE)</code></p>
+<ul>
+<li>Interpret Data</li>
+</ul>
 </div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->

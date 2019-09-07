@@ -1,6 +1,7 @@
 ---
-title: "New Arguments and Functions"
-date: "The following slides contain new commands that are not included in the RStudio codes and functions handout."
+title: "Zooming Through Data"
+author: "Lab 1D"
+date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
 output: 
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
@@ -15,139 +16,109 @@ knitr::opts_chunk$set(echo = FALSE)
 library(mobilizr)
 ```
 
-### ENHANCING VISUALIZATIONS
+## Data with Clarity
 
-The following arguments can be used to enhance a visualization.
+- Previously, we've looked at graphs of entire variables (By looking at all of their values).
+    - Doing this is helpful to get a _big picture_ idea of our data.
+- In this lab, we'll learn how to _zoom in_ on our data by learning how to subset.
+    - We'll also learn a few ways to manipulate the plots we've been making to make them easier to use for analyses.
+- Import the data from your class' _Trash_ campaign and name it `trash`.
 
-* Option:  `main = “ ”` .  Adds a title to your visual  
-* Option:  `col= “ ”` . Changes the color of your visual
-* Option:  `xlab = “ ”`.  Changes the label on the x-axis  
-* Option:  `ylab =  “ ”` . Changes the label on the y-axis  
-* Option:  `horizontal = TRUE` . Makes bars horizontal 
 
-**Examples:**  
+## Splitting data sets
 
-Basic usage  
+- In lab 1B, we learned that we can _facet_ (or split) our data based on a categorical variable.
+- **Use the `dotPlot()` function to create a `dotPlot` of the `numberTrashBins` in our `trash` data.**
+    - The code to create a `dotPlot` is exactly like you'd use to make a `histogram`.
+    - Make sure to use a capital _P_ in `dotPlot`.
+- **Split the `dotPlot` in two by faceting on our observations' `receptacle` variable.**
+    - **Describe how R decides which observations go into the left or right plot.**
+    - **What does each _dot_ in the plot represent?**
 
-`bargraph (~gender, data=cdc)`  
 
-Including the options `col` and `main` will change the color of the bars to green and include the title "Distribution of Gender".
+## Altering the layout
 
-`bargraph(~gender, data=cdc, col="green", main="Distribution of Gender")`
+- It might be easier to compare the number of trash bins for each receptacle if the dotPlots were stacked on top of one another.
+- We can change the **layout** of our separated plots by including the `layout` option in our `dotPlot` function. 
+    - Add the following option to the code you used create the `dotPlot` split by `receptacle` 
+```{r, eval = FALSE, echo = TRUE}
+layout = c(1,2)
+```
+- _Hint_: Use your history pane to see how we handled options with the `bargraph` function. Use a similar syntax to add the `layout` option to the `dotPlot` function.
 
 
-### HISTOGRAMS
+## Subsetting
 
-When creating a histogram, it can be frustrating trying to estimate the values on the x-axis. A solution is the argument `breaks = seq( )`.  The option  `breaks = seq( )`  allows one to control the bin widths as well as the beginning and ending values of the bins.  
+- Subsetting is a term we use to describe the process of looking at only the data that conforms to some set of rules:
+    - Geologists may subset earthquake data by looking at only large earthquakes.
+    - Stock market traders may subset their trading data by looking only at the previous day's trades.
+- There's _many_ ways to subset data using RStudio, we'll focus on learning the most common methods.  
 
-**Examples:**  
 
-Basic usage 
+## The subset function
 
-`histogram(~weight, data=cdc)`  
+- Creating two plots, one for trash bins and one for recycling bins, is useful for comparing the two receptacles. But what if we want to examine only one group by itself?
+- Start by creating a subset of the data:
+    - Fill in the blanks below with the data and variable names needed to subset our `trash` data based on people putting their trash in a recycle bin:
+```{r, eval = FALSE, echo = TRUE}
+recyclables <- subset(____ , ____ == "recyclable")
+```
+- **View `recyclables` and write down the number of observations in it. Then use the subset data to make a `bargraph` of the `activity` that ended up in recycle bins.**
 
-A histogram with bin widths of 10 beginning at a weight of 33 kg and ending at 183 kg. The minimum and maximum weight need to be considered beforehand so that no data is excluded.  
 
-`histogram (~weight, data=cdc, breaks=seq(33, 183, by=10))`  
+## So what's really going on?
 
-Using the concept of balancing point, guess the mean weight of the teens in the cdc data and then confirm with the code below.  
+- Coding in R is really just about supplying directions in a way that R understands. 
+    - We'll start by focusing on everything to the right of the "<-" symbol
+```{r, eval = FALSE, echo = TRUE}
+recyclables <- subset(____ , ____ == "recyclable")
+```
+- `subset()` tells R that we're going to look at only the values in our data that follow a _rule_.
+- The first blank should be the data we're going to filter down into a smaller set (Based on our rule).
+- `receptacle == "recyclable"` is the rule to follow.
 
-`mean (~weight, data=cdc)`  
-    
-In order to estimate the mean absolute deviation (MAD) of the distribution of weight, it would be helpful to draw a vertical line to represent the mean weight. Use the code below to draw a vertical line through the histogram displaying the distribution of weight. Fill in the missing value with the actual mean.  
 
-`add_line (vline = _______)`  
+## 3 parts of defining rules
 
-### DOTPLOTS  
+- We can decompose our rule, `receptacle == "recyclable"`, into 3 parts:
+    1. `receptacle`, is the particular _variable_ we want to use to select our subset.
+    2. `"recyclable"`, is the _value_ of the variable that we want to select. We only want to see data with the value `"recyclable"` for the variable `receptacle`.
+    3. `==`  describes how we want to relate our variable (`receptacle`) to our value (`"recyclable"`). In this case, we want values of `receptacle` that are _exactly equal_ to `"recyclable"`.
+- <font color="green">Notice:</font> _Values_ (that are also words) have quotation marks around them. _Variables_ do not.
 
-When creating a dotplot, the visualization can be inaccurate and tends to group values together. A solution is the argument `nint` . By including `nint`, you set the number of intervals for the dots in your plot.  
 
-**Examples:** 
+## More on ==
 
-Basic Usage  
+- We can use the `head()` function to help us see what's happening when we write `receptacle == "recyclable"`.
+    - `head()` returns the values of the first 6 observations.
+    - The `tail()` function returns the last 6 observations.
+- Run the following code and answer the question below:
+```{r, eval = FALSE, echo = TRUE}
+head(receptacle == "recyclable", data = trash)
+```
+- **What do the values `TRUE` and `FALSE` tell us about how our _rule_ applies to the first six observations in our data? Which of the first six observations were `recyclable`?**
 
-`dotPlot(~green, data=colors)`  
 
-A dotPlot that can display 16 individual values (5 to 20).The value for `nint` can be calculated by finding the range of the variable and adding 1.  
+## Saving values
 
-`dotPlot(~green, data=colors, nint=16)` 
+- To use our subset data we need to save it first.
+    - When we _save_ something in R what we are really doing is giving a value, or set of values, a specific name for us to use later.
+- The arrow <- is called the "assignment" operator. It assigns names (on the left) to values (on the right)
+    - We now focus on everything to the left of, and including, the "<-" symbol
+```{r, eval = FALSE, echo = TRUE}
+recyclables <- subset(____ , ____ == "recyclable")
+```
 
-### FILTERING 
 
-You can filter multiple numerical values by using inequalities but you can also filter multiple values of categorical variables (or exclude a value but include all other values in the variable).  
+## Saving our subset
 
-**Examples:**  
+```{r, eval = FALSE, echo = TRUE}
+recyclables <- subset(____ , ____ == "recyclable")
+```
 
-* The minors data frame excludes observations that reported an age of 18 years old or older.  
-
-`minors<-filter(cdc, age!="18 years old or older")`  
-
-* The age_16_17 data frame includes observations that reported an age of 16 years old or 17 years old.    
-
-`age_16_17<-filter(cdc, age=="16 years old"|age=="17 years old")`  
-
-* This will exclude all the observations that did not provide an answer for their weight description or depression status.  
-
-`cdc_not_na<-filter(cdc, !is.na(describe_weight), !is.na(depressed))`  
-
-### CLEANING  
-
-**Statistical investigation:**
-
-* Ask Question:  
-
-How do 16 year olds differ from 17 year-olds in the number of hours they spend watching television?   
-
-* Consider Data:  
-
-I will use the age_16_17 cdc subset and conduct an analysis on the categorical variable hours_tv.
-
-* Analyze Data:  
-
-`bargraph(~hours_tv, groups=age, data=age_16_17)`  
-
-`tally(~hours_tv|age,format="percent",margins=TRUE,data=age_16_17)`  
-
-Notice that the other age categories still appear in our bargraph and tally. When we filter out categories from a variable that R interprets as a factor, R keeps ALL the categories and just reports that the data has 0 observations within those categories. So in order to exclude the other categories, we need to “trick” R by changing age from a factor variable to a character variable.  
-
-`age_16_17<-mutate(age_16_17, age=as.character(age))`  
-
-`bargraph(~hours_tv, groups=age, data=age_16_17)`  
-
-`tally(~hours_tv|age,format="percent",margins=TRUE,data=age_16_17)`  
-
-* Interpret Data:
-
-### BARPLOTS  
-
-When comparing two groups on a numerical variable, we typically stack the graphs to be able to compare the center, shape and spread of the distributions. Using stacked bar graphs will provide the same easy analysis when comparing groups on a categorical variable.  
-
-**Statistical investigation:**  
-
-* Ask Question:  
-
-Is the incidence of depression similar across the weight descriptions?  
-
-* Consider Data:  
-
-I will use the cdc_not_na to only include those observations that provided both their weight description and depression status.  
-
-* Analyze Data:  
-
-`bargraph (~depressed, data=cdc_not_na, groups=describe_weight)` (side by side)  
-
-`bargraph (~depressed, data=cdc_not_na, group=describe_weight, stack=TRUE)` (stacked)  
-
-`tally(~depressed|describe_weight, data=cdc_not_na, margin=TRUE)`  
-
-Notice that the groups we wish to compare vary in the number of observations, so in order to compare the incidence of depression over the weight description, we need to calculate the conditional relative frequencies of depression by weight description.  
-
-`tally(~depressed|describe_weight, data=cdc_not_na, format="percent")`  
-
-`table1<-tally(~depressed|describe_weight, data=cdc_not_na, format="percent")`   
-
-Creates a proportional bargraph showing  the conditional relative frequencies of depression by weight description.  
-
-`barplot(table1, legend=TRUE)`  
-
-* Interpret Data 
+- This code then: 
+    - takes our subset data, (everything to the right of "<-") ...
+    - and assigns the subset data, by using the arrow "<-" ...
+    - the name `recyclables`.
+- We can now use `recyclables` to do anything we could do with the regular `trash` data ...
+    - but only including those items who reported being `recyclable`.

@@ -5,8 +5,72 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <title>New Arguments and Functions</title>
+  <meta name="author" content="Lab 1D" />
+  <title>Zooming Through Data</title>
   <style type="text/css">code{white-space: pre;}</style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+  </style>
   <style type="text/css">
 body
 {
@@ -362,119 +426,151 @@ list-style-type: none;
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title">New Arguments and Functions</h1>
+  <h1 class="title">Zooming Through Data</h1>
   <p class="author">
-
+Lab 1D
   </p>
-  <p class="date">The following slides contain new commands that are not included in the RStudio codes and functions handout.</p>
+  <p class="date">Directions: Follow along with the slides and answer the questions in <strong>red</strong> font in your journal.</p>
 </div>
-<div id="enhancing-visualizations" class="slide section level3">
-<h1>ENHANCING VISUALIZATIONS</h1>
-<p>The following arguments can be used to enhance a visualization.</p>
+<div id="data-with-clarity" class="slide section level2">
+<h1>Data with Clarity</h1>
 <ul>
-<li>Option: <code>main = “ ”</code> . Adds a title to your visual<br />
-</li>
-<li>Option: <code>col= “ ”</code> . Changes the color of your visual</li>
-<li>Option: <code>xlab = “ ”</code>. Changes the label on the x-axis<br />
-</li>
-<li>Option: <code>ylab =  “ ”</code> . Changes the label on the y-axis<br />
-</li>
-<li>Option: <code>horizontal = TRUE</code> . Makes bars horizontal</li>
-</ul>
-<p><strong>Examples:</strong></p>
-<p>Basic usage</p>
-<p><code>bargraph (~gender, data=cdc)</code></p>
-<p>Including the options <code>col</code> and <code>main</code> will change the color of the bars to green and include the title “Distribution of Gender”.</p>
-<p><code>bargraph(~gender, data=cdc, col=&quot;green&quot;, main=&quot;Distribution of Gender&quot;)</code></p>
-</div>
-<div id="histograms" class="slide section level3">
-<h1>HISTOGRAMS</h1>
-<p>When creating a histogram, it can be frustrating trying to estimate the values on the x-axis. A solution is the argument <code>breaks = seq( )</code>. The option <code>breaks = seq( )</code> allows one to control the bin widths as well as the beginning and ending values of the bins.</p>
-<p><strong>Examples:</strong></p>
-<p>Basic usage</p>
-<p><code>histogram(~weight, data=cdc)</code></p>
-<p>A histogram with bin widths of 10 beginning at a weight of 33 kg and ending at 183 kg. The minimum and maximum weight need to be considered beforehand so that no data is excluded.</p>
-<p><code>histogram (~weight, data=cdc, breaks=seq(33, 183, by=10))</code></p>
-<p>Using the concept of balancing point, guess the mean weight of the teens in the cdc data and then confirm with the code below.</p>
-<p><code>mean (~weight, data=cdc)</code></p>
-<p>In order to estimate the mean absolute deviation (MAD) of the distribution of weight, it would be helpful to draw a vertical line to represent the mean weight. Use the code below to draw a vertical line through the histogram displaying the distribution of weight. Fill in the missing value with the actual mean.</p>
-<p><code>add_line (vline = _______)</code></p>
-</div>
-<div id="dotplots" class="slide section level3">
-<h1>DOTPLOTS</h1>
-<p>When creating a dotplot, the visualization can be inaccurate and tends to group values together. A solution is the argument <code>nint</code> . By including <code>nint</code>, you set the number of intervals for the dots in your plot.</p>
-<p><strong>Examples:</strong></p>
-<p>Basic Usage</p>
-<p><code>dotPlot(~green, data=colors)</code></p>
-<p>A dotPlot that can display 16 individual values (5 to 20).The value for <code>nint</code> can be calculated by finding the range of the variable and adding 1.</p>
-<p><code>dotPlot(~green, data=colors, nint=16)</code></p>
-</div>
-<div id="filtering" class="slide section level3">
-<h1>FILTERING</h1>
-<p>You can filter multiple numerical values by using inequalities but you can also filter multiple values of categorical variables (or exclude a value but include all other values in the variable).</p>
-<p><strong>Examples:</strong></p>
+<li>Previously, we’ve looked at graphs of entire variables (By looking at all of their values).
 <ul>
-<li>The minors data frame excludes observations that reported an age of 18 years old or older.</li>
-</ul>
-<p><code>minors&lt;-filter(cdc, age!=&quot;18 years old or older&quot;)</code></p>
+<li>Doing this is helpful to get a <em>big picture</em> idea of our data.</li>
+</ul></li>
+<li>In this lab, we’ll learn how to <em>zoom in</em> on our data by learning how to subset.
 <ul>
-<li>The age_16_17 data frame includes observations that reported an age of 16 years old or 17 years old.</li>
-</ul>
-<p><code>age_16_17&lt;-filter(cdc, age==&quot;16 years old&quot;|age==&quot;17 years old&quot;)</code></p>
-<ul>
-<li>This will exclude all the observations that did not provide an answer for their weight description or depression status.</li>
-</ul>
-<p><code>cdc_not_na&lt;-filter(cdc, !is.na(describe_weight), !is.na(depressed))</code></p>
-</div>
-<div id="cleaning" class="slide section level3">
-<h1>CLEANING</h1>
-<p><strong>Statistical investigation:</strong></p>
-<ul>
-<li>Ask Question:</li>
-</ul>
-<p>How do 16 year olds differ from 17 year-olds in the number of hours they spend watching television?</p>
-<ul>
-<li>Consider Data:</li>
-</ul>
-<p>I will use the age_16_17 cdc subset and conduct an analysis on the categorical variable hours_tv.</p>
-<ul>
-<li>Analyze Data:</li>
-</ul>
-<p><code>bargraph(~hours_tv, groups=age, data=age_16_17)</code></p>
-<p><code>tally(~hours_tv|age,format=&quot;percent&quot;,margins=TRUE,data=age_16_17)</code></p>
-<p>Notice that the other age categories still appear in our bargraph and tally. When we filter out categories from a variable that R interprets as a factor, R keeps ALL the categories and just reports that the data has 0 observations within those categories. So in order to exclude the other categories, we need to “trick” R by changing age from a factor variable to a character variable.</p>
-<p><code>age_16_17&lt;-mutate(age_16_17, age=as.character(age))</code></p>
-<p><code>bargraph(~hours_tv, groups=age, data=age_16_17)</code></p>
-<p><code>tally(~hours_tv|age,format=&quot;percent&quot;,margins=TRUE,data=age_16_17)</code></p>
-<ul>
-<li>Interpret Data:</li>
+<li>We’ll also learn a few ways to manipulate the plots we’ve been making to make them easier to use for analyses.</li>
+</ul></li>
+<li>Import the data from your class’ <em>Trash</em> campaign and name it <code>trash</code>.</li>
 </ul>
 </div>
-<div id="barplots" class="slide section level3">
-<h1>BARPLOTS</h1>
-<p>When comparing two groups on a numerical variable, we typically stack the graphs to be able to compare the center, shape and spread of the distributions. Using stacked bar graphs will provide the same easy analysis when comparing groups on a categorical variable.</p>
-<p><strong>Statistical investigation:</strong></p>
+<div id="splitting-data-sets" class="slide section level2">
+<h1>Splitting data sets</h1>
 <ul>
-<li>Ask Question:</li>
+<li>In lab 1B, we learned that we can <em>facet</em> (or split) our data based on a categorical variable.</li>
+<li><strong>Use the <code>dotPlot()</code> function to create a <code>dotPlot</code> of the <code>numberTrashBins</code> in our <code>trash</code> data.</strong>
+<ul>
+<li>The code to create a <code>dotPlot</code> is exactly like you’d use to make a <code>histogram</code>.</li>
+<li>Make sure to use a capital <em>P</em> in <code>dotPlot</code>.</li>
+</ul></li>
+<li><strong>Split the <code>dotPlot</code> in two by faceting on our observations’ <code>receptacle</code> variable.</strong>
+<ul>
+<li><strong>Describe how R decides which observations go into the left or right plot.</strong></li>
+<li><strong>What does each <em>dot</em> in the plot represent?</strong></li>
+</ul></li>
 </ul>
-<p>Is the incidence of depression similar across the weight descriptions?</p>
+</div>
+<div id="altering-the-layout" class="slide section level2">
+<h1>Altering the layout</h1>
 <ul>
-<li>Consider Data:</li>
+<li>It might be easier to compare the number of trash bins for each receptacle if the dotPlots were stacked on top of one another.</li>
+<li>We can change the <strong>layout</strong> of our separated plots by including the <code>layout</code> option in our <code>dotPlot</code> function.
+<ul>
+<li>Add the following option to the code you used create the <code>dotPlot</code> split by <code>receptacle</code></li>
+</ul></li>
 </ul>
-<p>I will use the cdc_not_na to only include those observations that provided both their weight description and depression status.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1">layout =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)</a></code></pre></div>
 <ul>
-<li>Analyze Data:</li>
+<li><em>Hint</em>: Use your history pane to see how we handled options with the <code>bargraph</code> function. Use a similar syntax to add the <code>layout</code> option to the <code>dotPlot</code> function.</li>
 </ul>
-<p><code>bargraph (~depressed, data=cdc_not_na, groups=describe_weight)</code> (side by side)</p>
-<p><code>bargraph (~depressed, data=cdc_not_na, group=describe_weight, stack=TRUE)</code> (stacked)</p>
-<p><code>tally(~depressed|describe_weight, data=cdc_not_na, margin=TRUE)</code></p>
-<p>Notice that the groups we wish to compare vary in the number of observations, so in order to compare the incidence of depression over the weight description, we need to calculate the conditional relative frequencies of depression by weight description.</p>
-<p><code>tally(~depressed|describe_weight, data=cdc_not_na, format=&quot;percent&quot;)</code></p>
-<p><code>table1&lt;-tally(~depressed|describe_weight, data=cdc_not_na, format=&quot;percent&quot;)</code></p>
-<p>Creates a proportional bargraph showing the conditional relative frequencies of depression by weight description.</p>
-<p><code>barplot(table1, legend=TRUE)</code></p>
+</div>
+<div id="subsetting" class="slide section level2">
+<h1>Subsetting</h1>
 <ul>
-<li>Interpret Data</li>
+<li>Subsetting is a term we use to describe the process of looking at only the data that conforms to some set of rules:
+<ul>
+<li>Geologists may subset earthquake data by looking at only large earthquakes.</li>
+<li>Stock market traders may subset their trading data by looking only at the previous day’s trades.</li>
+</ul></li>
+<li>There’s <em>many</em> ways to subset data using RStudio, we’ll focus on learning the most common methods.</li>
+</ul>
+</div>
+<div id="the-subset-function" class="slide section level2">
+<h1>The subset function</h1>
+<ul>
+<li>Creating two plots, one for trash bins and one for recycling bins, is useful for comparing the two receptacles. But what if we want to examine only one group by itself?</li>
+<li>Start by creating a subset of the data:
+<ul>
+<li>Fill in the blanks below with the data and variable names needed to subset our <code>trash</code> data based on people putting their trash in a recycle bin:</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">recyclables &lt;-<span class="st"> </span><span class="kw">subset</span>(____ , ____ <span class="op">==</span><span class="st"> &quot;recyclable&quot;</span>)</a></code></pre></div>
+<ul>
+<li><strong>View <code>recyclables</code> and write down the number of observations in it. Then use the subset data to make a <code>bargraph</code> of the <code>activity</code> that ended up in recycle bins.</strong></li>
+</ul>
+</div>
+<div id="so-whats-really-going-on" class="slide section level2">
+<h1>So what’s really going on?</h1>
+<ul>
+<li>Coding in R is really just about supplying directions in a way that R understands.
+<ul>
+<li>We’ll start by focusing on everything to the right of the “&lt;-” symbol</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">recyclables &lt;-<span class="st"> </span><span class="kw">subset</span>(____ , ____ <span class="op">==</span><span class="st"> &quot;recyclable&quot;</span>)</a></code></pre></div>
+<ul>
+<li><code>subset()</code> tells R that we’re going to look at only the values in our data that follow a <em>rule</em>.</li>
+<li>The first blank should be the data we’re going to filter down into a smaller set (Based on our rule).</li>
+<li><code>receptacle == &quot;recyclable&quot;</code> is the rule to follow.</li>
+</ul>
+</div>
+<div id="parts-of-defining-rules" class="slide section level2">
+<h1>3 parts of defining rules</h1>
+<ul>
+<li>We can decompose our rule, <code>receptacle == &quot;recyclable&quot;</code>, into 3 parts:
+<ol style="list-style-type: decimal">
+<li><code>receptacle</code>, is the particular <em>variable</em> we want to use to select our subset.</li>
+<li><code>&quot;recyclable&quot;</code>, is the <em>value</em> of the variable that we want to select. We only want to see data with the value <code>&quot;recyclable&quot;</code> for the variable <code>receptacle</code>.</li>
+<li><code>==</code> describes how we want to relate our variable (<code>receptacle</code>) to our value (<code>&quot;recyclable&quot;</code>). In this case, we want values of <code>receptacle</code> that are <em>exactly equal</em> to <code>&quot;recyclable&quot;</code>.</li>
+</ol></li>
+<li><font color="green">Notice:</font> <em>Values</em> (that are also words) have quotation marks around them. <em>Variables</em> do not.</li>
+</ul>
+</div>
+<div id="more-on" class="slide section level2">
+<h1>More on ==</h1>
+<ul>
+<li>We can use the <code>head()</code> function to help us see what’s happening when we write <code>receptacle == &quot;recyclable&quot;</code>.
+<ul>
+<li><code>head()</code> returns the values of the first 6 observations.</li>
+<li>The <code>tail()</code> function returns the last 6 observations.</li>
+</ul></li>
+<li>Run the following code and answer the question below:</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">head</span>(receptacle <span class="op">==</span><span class="st"> &quot;recyclable&quot;</span>, <span class="dt">data =</span> trash)</a></code></pre></div>
+<ul>
+<li><strong>What do the values <code>TRUE</code> and <code>FALSE</code> tell us about how our <em>rule</em> applies to the first six observations in our data? Which of the first six observations were <code>recyclable</code>?</strong></li>
+</ul>
+</div>
+<div id="saving-values" class="slide section level2">
+<h1>Saving values</h1>
+<ul>
+<li>To use our subset data we need to save it first.
+<ul>
+<li>When we <em>save</em> something in R what we are really doing is giving a value, or set of values, a specific name for us to use later.</li>
+</ul></li>
+<li>The arrow &lt;- is called the “assignment” operator. It assigns names (on the left) to values (on the right)
+<ul>
+<li>We now focus on everything to the left of, and including, the “&lt;-” symbol</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1">recyclables &lt;-<span class="st"> </span><span class="kw">subset</span>(____ , ____ <span class="op">==</span><span class="st"> &quot;recyclable&quot;</span>)</a></code></pre></div>
+</div>
+<div id="saving-our-subset" class="slide section level2">
+<h1>Saving our subset</h1>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1">recyclables &lt;-<span class="st"> </span><span class="kw">subset</span>(____ , ____ <span class="op">==</span><span class="st"> &quot;recyclable&quot;</span>)</a></code></pre></div>
+<ul>
+<li>This code then:
+<ul>
+<li>takes our subset data, (everything to the right of “&lt;-”) …</li>
+<li>and assigns the subset data, by using the arrow “&lt;-” …</li>
+<li>the name <code>recyclables</code>.</li>
+</ul></li>
+<li>We can now use <code>recyclables</code> to do anything we could do with the regular <code>trash</code> data …
+<ul>
+<li>but only including those items who reported being <code>recyclable</code>.</li>
+</ul></li>
 </ul>
 </div>
 
