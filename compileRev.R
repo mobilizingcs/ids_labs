@@ -1,3 +1,8 @@
+rmarkdown::render('./AdvPD/AdvPD1a/labAdvPD1aRev.Rmd')
+rmarkdown::render('./AdvPD/AdvPD1b/labAdvPD1bRev.Rmd')
+rmarkdown::render('./AdvPD/AdvPD2a/labAdvPD2aRev.Rmd')
+rmarkdown::render('./AdvPD/AdvPD2b/labAdvPD2bRev.Rmd')
+
 rmarkdown::render('./unit_1/lab1a/lab1aRev.Rmd')
 rmarkdown::render('./unit_1/lab1b/lab1bRev.Rmd')
 rmarkdown::render('./unit_1/lab1c/lab1cRev.Rmd')

@@ -5,6 +5,7 @@ date: "Directions: Follow along with the slides and answer the questions in **re
 output: 
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
+    mathjax: ../../mathjax.js
 ---
 
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
