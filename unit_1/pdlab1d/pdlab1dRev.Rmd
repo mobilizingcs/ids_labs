@@ -4,7 +4,7 @@ date: "The following slides contain new commands that are not included in the RS
 output: 
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
-    mathjax: ../../mathjax.js
+    mathjax: ../../extras/mathjax-local/MathJax.js
 ---
 
 ```{r setup, include=FALSE}
