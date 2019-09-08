@@ -79,7 +79,9 @@ When creating a dotplot, the visualization can be inaccurate and tends to group 
 
 Basic Usage  
 
-`dotPlot(~green, data=colors)`  
+```{r, eval = FALSE, echo = TRUE}
+dotPlot(~green, data=colors)
+```
 
 A dotPlot that can display 16 individual values (5 to 20).The value for `nint` can be calculated by finding the range of the variable and adding 1.  
 
