@@ -1,6 +1,6 @@
 ---
 title: "New Arguments and Functions"
-author: "Lab Advanced PD 1A"
+author: "Advanced PD Lab 1A"
 date: "The following slides contain **new** commands that are not included in the RStudio codes and functions handout."
 output: 
   slidy_presentation: 
@@ -21,7 +21,7 @@ library(mobilizr)
 The following arguments can be used to enhance a visualization.
 
 * Option:  `main = " "` .  Adds a title to your visual  
-* Option:  `col= " "` . Changes the color of your visual
+* Option:  `col= " "` . Changes the color of your visual [(See Colors)](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf)
 * Option:  `xlab = " "` .  Changes the label on the x-axis  
 * Option:  `ylab = " "` . Changes the label on the y-axis  
 * Option:  `horizontal = TRUE` . Makes bars horizontal 
@@ -37,13 +37,22 @@ bargraph (~gender, data=cdc)
 Including the options `col` and `main` will change the color of the bars to green and include the title "Distribution of Gender".
 
 ```{r, eval = FALSE, echo = TRUE}
-bargraph(~gender, data=cdc, col="green", main="Distribution of Gender")
+bargraph(~gender, data=cdc, 
+         col="green", 
+         main="Distribution of Gender")
 ```
 
+To assign each bar its own color, use the `groups` argument along with the `col` argument.  
+
+```{r, eval = FALSE, echo = TRUE}
+bargraph(~gender, groups=gender, col=c("pink","lightblue"), data=cdc)
+```
 
 ## HISTOGRAMS
 
-When creating a histogram, it can be frustrating trying to estimate the values on the x-axis. A solution is the argument `breaks = seq( )`.  The option  `breaks = seq( )`  allows one to control the bin widths as well as the beginning and ending values of the bins.  
+When creating a histogram, it can be frustrating trying to estimate the values on the x-axis. A solution is the argument `breaks = seq( )`.  
+
+The option  `breaks = seq( )`  allows one to control the bin widths as well as the beginning and ending values of the bins.  
 
 **Examples:**  
 
@@ -53,7 +62,7 @@ Basic usage
 histogram(~weight, data=cdc)
 ```
 
-A histogram with bin widths of 10 beginning at a weight of 33 kg and ending at 183 kg. The minimum and maximum weight need to be considered beforehand so that no data is excluded.  
+A histogram with bin widths of 10 beginning at a weight of 33 kgs and ending at 183 kgs. The minimum and maximum weight need to be considered beforehand so that no data is excluded.  
 
 ```{r, eval = FALSE, echo = TRUE}
 histogram (~weight, data=cdc, breaks=seq(33, 183, by=10))
@@ -65,7 +74,9 @@ Using the concept of balancing point, guess the mean weight of the teens in the 
 mean (~weight, data=cdc)
 ``` 
     
-In order to estimate the mean absolute deviation (MAD) of the distribution of weight, it would be helpful to draw a vertical line to represent the mean weight. Use the code below to draw a vertical line through the histogram displaying the distribution of weight. Fill in the missing value with the actual mean.  
+In order to estimate the mean absolute deviation (MAD) of the distribution of weight, it would be helpful to draw a vertical line to represent the mean weight.  
+
+Use the code below to draw a vertical line through the histogram displaying the distribution of weight. Fill in the missing value with the actual mean.  
 
 ```{r, eval = FALSE, echo = TRUE}
 add_line (vline = _______)
@@ -83,9 +94,11 @@ Basic Usage
 dotPlot(~green, data=colors)
 ```
 
-A dotPlot that can display 16 individual values (5 to 20).The value for `nint` can be calculated by finding the range of the variable and adding 1.  
+A dotPlot that can display 16 individual values (5 to 20). For numerical variables that are integers, the value for `nint` can be calculated by finding the range of the variable and adding 1.  
 
-`dotPlot(~green, data=colors, nint=16)` 
+```{r, eval = FALSE, echo = TRUE}
+dotPlot(~green, col="green", data=colors, nint=16) 
+```
 
 ## FILTERING 
 
@@ -93,76 +106,113 @@ You can filter multiple numerical values by using inequalities but you can also 
 
 **Examples:**  
 
-* The minors data frame excludes observations that reported an age of 18 years old or older.  
+* The <b>minors</b> data frame excludes observations that reported an age of 18 years old or older.  
 
-`minors<-filter(cdc, age!="18 years old or older")`  
+```{r, eval = FALSE, echo = TRUE}
+minors<-filter(cdc, age!="18 years old or older")
+```
 
-* The age_16_17 data frame includes observations that reported an age of 16 years old or 17 years old.    
+* The <b>age_16_17</b> data frame includes observations that reported an age of 16 years old or 17 years old.    
 
-`age_16_17<-filter(cdc, age=="16 years old"|age=="17 years old")`  
+```{r, eval = FALSE, echo = TRUE}
+age_16_17<-filter(cdc, age=="16 years old"|age=="17 years old")
+```
 
-* This will exclude all the observations that did not provide an answer for their weight description or depression status.  
+* The <b>cdc_not_na</b> excludes all the observations that did not provide an answer for their weight description or depression status.  
 
-`cdc_not_na<-filter(cdc, !is.na(describe_weight), !is.na(depressed))`  
+```{r, eval = FALSE, echo = TRUE}
+cdc_not_na<-filter(cdc, !is.na(describe_weight), !is.na(depressed))
+```
 
 ## CLEANING  
 
 **Statistical investigation:**
 
-* Ask Question:  
+<b><i> Ask Question:</b></i>  
 
 How do 16 year olds differ from 17 year-olds in the number of hours they spend watching television?   
 
-* Consider Data:  
+<b><i> Consider Data:</b></i>  
 
-I will use the age_16_17 cdc subset and conduct an analysis on the categorical variable hours_tv.
+We will use the `age_16_17` cdc subset and conduct an analysis on the categorical variable `hours_tv`.
 
-* Analyze Data:  
+<b><i> Analyze Data:</b></i>  
 
-`bargraph(~hours_tv, groups=age, data=age_16_17)`  
 
-`tally(~hours_tv|age,format="percent",margins=TRUE,data=age_16_17)`  
+```{r, eval = FALSE, echo = TRUE}
+bargraph(~hours_tv, groups=age, data=age_16_17)
+```
 
-Notice that the other age categories still appear in our bargraph and tally. When we filter out categories from a variable that R interprets as a factor, R keeps ALL the categories and just reports that the data has 0 observations within those categories. So in order to exclude the other categories, we need to “trick” R by changing age from a factor variable to a character variable.  
+```{r, eval = FALSE, echo = TRUE}
+tally(~hours_tv|age,format="percent",margins=TRUE,data=age_16_17)
+```
 
-`age_16_17<-mutate(age_16_17, age=as.character(age))`  
+Notice that the other age categories still appear in our bargraph and tally.  
 
-`bargraph(~hours_tv, groups=age, data=age_16_17)`  
+When we filter out categories from a variable that R interprets as a factor, R keeps ALL the categories and just reports that the data has 0 observations within those categories.  
 
-`tally(~hours_tv|age,format="percent",margins=TRUE,data=age_16_17)`  
+So in order to exclude the other categories, we need to “trick” R by changing age from a factor variable to a character variable.  
 
-* Interpret Data:
+```{r, eval = FALSE, echo = TRUE}
+age_16_17<-mutate(age_16_17, age=as.character(age))
+```
+
+```{r, eval = FALSE, echo = TRUE}
+bargraph(~hours_tv, groups=age, data=age_16_17)
+```
+
+```{r, eval = FALSE, echo = TRUE}
+tally(~hours_tv|age,format="percent",margins=TRUE,data=age_16_17)
+```
+
+<b><i> Interpret Data:</b></i>
 
 ## BARPLOTS  
 
-When comparing two groups on a numerical variable, we typically stack the graphs to be able to compare the center, shape and spread of the distributions. Using stacked bar graphs will provide the same easy analysis when comparing groups on a categorical variable.  
+When comparing two groups on a numerical variable, we typically stack the graphs to be able to compare the center, shape and spread of the distributions.  
+
+Using stacked bar graphs will provide the same easy analysis when comparing groups on a categorical variable.  
 
 **Statistical investigation:**  
 
-* Ask Question:  
+<b><i> Ask Question:</b></i>  
 
 Is the incidence of depression similar across the weight descriptions?  
 
-* Consider Data:  
+<b><i> Consider Data:</b></i>  
 
-I will use the cdc_not_na to only include those observations that provided both their weight description and depression status.  
+We will use the `cdc_not_na` to include only those observations that provided both their weight description and depression status.  
 
-* Analyze Data:  
+<b><i> Analyze Data:</b></i>  
 
-`bargraph (~depressed, data=cdc_not_na, groups=describe_weight)` (side by side)  
+```{r, eval = FALSE, echo = TRUE}
+bargraph (~depressed, data=cdc_not_na, groups=describe_weight)
+```
 
-`bargraph (~depressed, data=cdc_not_na, group=describe_weight, stack=TRUE)` (stacked)  
+```{r, eval = FALSE, echo = TRUE}
+bargraph (~depressed, data=cdc_not_na, group=describe_weight, stack=TRUE)
+```
 
-`tally(~depressed|describe_weight, data=cdc_not_na, margin=TRUE)`  
+```{r, eval = FALSE, echo = TRUE}
+tally(~depressed|describe_weight, data=cdc_not_na, margin=TRUE)
+```
 
 Notice that the groups we wish to compare vary in the number of observations, so in order to compare the incidence of depression over the weight description, we need to calculate the conditional relative frequencies of depression by weight description.  
 
-`tally(~depressed|describe_weight, data=cdc_not_na, format="percent")`  
+```{r, eval = FALSE, echo = TRUE}
+tally(~depressed|describe_weight, data=cdc_not_na, format="percent")
+```
 
-`table1<-tally(~depressed|describe_weight, data=cdc_not_na, format="percent")`   
+To create a barplot, the conditional relative frequencies need to be stored as a vector.  
 
-Creates a proportional bargraph showing  the conditional relative frequencies of depression by weight description.  
+```{r, eval = FALSE, echo = TRUE}
+table1<-tally(~depressed|describe_weight, data=cdc_not_na, format="percent")
+```
 
-`barplot(table1, legend=TRUE)`  
+Creates a proportional bargraph showing the conditional relative frequencies of depression by weight description.  
 
-* Interpret Data 
+```{r, eval = FALSE, echo = TRUE}
+barplot(table1, legend=TRUE)
+```
+
+<b><i> Interpret Data:</b></i> 
