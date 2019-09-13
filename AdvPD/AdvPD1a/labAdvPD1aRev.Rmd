@@ -25,7 +25,7 @@ The following arguments can be used to enhance a visualization.
 
 * Option:  `xlab = " "` .  Changes the label on the x-axis  
 * Option:  `ylab = " "` . Changes the label on the y-axis  
-* Option:  `horizontal = TRUE` . Makes bars horizontal <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf" target="_top">See Colors</a>
+* Option:  `horizontal = TRUE` . Makes bars horizontal <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf"  target="_blank">See Colors</a>
 
 
 
