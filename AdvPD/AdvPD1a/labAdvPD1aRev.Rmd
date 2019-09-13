@@ -21,11 +21,11 @@ library(mobilizr)
 The following arguments can be used to enhance a visualization.
 
 * Option:  `main = " "` .  Adds a title to your visual  
-* Option:  `col= " "` . Changes the color of your visual [(See Colors)](http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf)
+* Option:  `col= " "` . Changes the color of your visual <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf"  target="_blank">See Colors</a>
 
 * Option:  `xlab = " "` .  Changes the label on the x-axis  
 * Option:  `ylab = " "` . Changes the label on the y-axis  
-* Option:  `horizontal = TRUE` . Makes bars horizontal <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf"  target="_blank">See Colors</a>
+* Option:  `horizontal = TRUE` . Makes bars horizontal
 
 
 
