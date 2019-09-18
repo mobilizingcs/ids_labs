@@ -60,7 +60,7 @@ When creating a histogram, it can be frustrating trying to estimate the values o
 
 The option  `breaks = seq( )`  allows one to control the bin widths as well as the beginning and ending values of the bins.  
 
-**Examples:**  
+**Try these examples:**  
 
 Basic usage 
 
