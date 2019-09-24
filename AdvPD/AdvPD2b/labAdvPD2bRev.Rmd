@@ -1,7 +1,7 @@
 ---
-title: "Title of Advanced PD 2B"
-author: "Lab Advanced PD 2B"
-date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
+title: "RStudio Data Exploration"
+author: "Every two years, the CDC releases a dataset called the _Youth Risk Behavior Survey_ which monitors the activities that young people engage in and records demographic information about the students. Now that we've learned how to make and interpret boxplots using the median, inter-quartile range (IQR), maximum and minimum, let's use this new data skill, and the data cycle, to analyze the `cdc` data."
+date: "The following slides will walk you through a series of statistical investigations using the 'cdc' data. Answer the questions in **red** in your IDS Journals."
 output: 
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
@@ -13,27 +13,144 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
-# library(mobilizr)
-# data(cdc)
+library(mobilizr)
 ```
 
-## Welcome to Advanced PD!
+## Statistical Investigation #1  
 
-- Throughout the year, you'll be putting your data science skills to work by completing the labs.
-- You'll learn how to program in the `R` programming language.
-    - The programming language used by actual data scientists.
-- Your code will be written in RStudio which is an easy to use interface for coding using `R`.
+<b>Ask Questions:</b>  
 
+What is the typical height of young people? How much does the typical height vary? What height values are plausible?
 
-## Contact
+<b>Consider Data:</b> 
 
-- Visit
+Use the following command to load the `cdc` data into <b>RStudio</b>:  
+
 ```{r, eval = FALSE, echo = TRUE}
-# idsucla.org
+data(cdc)
 ```
 
-- Email
+Use the following command to open the spreadsheet containing the data:  
+
 ```{r, eval = FALSE, echo = TRUE}
-# support@idsucla.org
+View(cdc)
 ```
-  
+
+Look at the _Environment_ tab.  
+
+**How many young people are in the `cdc` data?**
+
+<b>Analyze Data:</b>  
+
+Create a boxplot of the heights of these students by running the following:  
+
+```{r, eval = FALSE, echo = TRUE}
+bwplot(~height, data = cdc)
+```
+
+Use the following command to obtain summary statistics (Note: The `height` variable is in meters):
+
+```{r, eval=FALSE, echo=TRUE}
+favstats(~height, data = cdc)
+```
+
+<b>Interpret Data:</b>   
+
+**Use the boxplot and summary statistics and answer the statistical questions.**
+
+## Statistical Investigation #2
+
+<b>Ask Questions:</b>  
+
+How do the typical heights of young people vary with age?  
+
+<b>Consider Data:</b>  
+
+Continue to use the `cdc` data that's already loaded into <b>RStudio</b>.  
+
+<b>Analyze Data:</b>  
+
+Use the following line of code to create a new boxplot:  
+
+```{r, eval = FALSE, echo = TRUE}
+bwplot(~height | age, data = cdc)
+```
+
+Look at the plot and the code used to create the plot.  
+Transcribe the code into a sentence. That is, imagine the computer was sentinent and could understand verbal directions.  
+
+**Based on the code, what are you asking the computer to do?**  
+
+The layout of the plot you've created makes interpreting the graphic difficult. Run the following line of code to stack each boxplot on top of one another (Click the _Zoom_ button in the _Plot_ tab to make the graphic larger):  
+
+```{r, eval = FALSE, echo = TRUE}
+bwplot(~height | age, data = cdc, layout = c(1, 7))
+```
+
+How does including `layout = c(1, 7)` change the plot?  
+
+**Write a sentence that describes what `layout = c(1, 7)` is telling <b>R</b> to do.**   
+
+<b>Interpret Data:</b>  
+
+Look at the zoomed in image of the stack boxplots and answer the question asked.  
+
+**Are you surprised at all by the answer? Do you trust the data?**
+
+## Statistical Investigation #3
+
+<b>Ask Questions:</b>   
+
+Why do the youngest people in the data seem to have a taller typical height than older people?
+
+<b>Consider Data:</b>   
+
+Continue to use the `cdc` data that's been loaded into <b>RStudio</b>.
+
+<b>Analyze Data:</b>   
+
+Run the following code to find out how many people from each age group are in the data:
+```{r, eval = FALSE, echo = TRUE}
+tally(~age, data = cdc)
+```
+
+<b>Interpret Data:</b>   
+
+By looking at the number of people from each age group, write down an answer to the question asked.  
+
+**Are people 13 and younger actually taller than their older peers or is there another explanation?**  
+**What do you think `<NA>` means in the tallied data?**
+
+## Statistical Investigation #4
+
+<b>Ask Questions:</b>   
+
+How does the typical height of females compare to the typical height of males as each gender ages?  
+
+<b>Consider Data:</b>  
+
+Since we have reason to suspect that the typical heights of people 13 and younger are not as accurate as the typical heights of those who are older, let's subset our data to only include people who are 14 and older.  
+
+We'll do this by creating a new dataset called `cdc_old` where people who are 13 years old or younger are removed.  
+
+Run the following line of code to accomplish this task:  
+
+```{r, eval = FALSE, echo = TRUE}
+cdc_old <- filter(cdc, age != "12 years old or younger", age != "13 years old")
+```
+
+After running this code, look in the _Environment_ tab and notice that there's now two datasets. One is the original `cdc` data and the second is the new `cdc_old` data.  
+
+**How many fewer observations are there in the `cdc_old` data compared to the `cdc` data?**
+
+<b>Analyze Data:</b>  
+
+Run the following code to split the `height` variable by `gender` and `age` for our `cdc_old` data (Be sure to click the _Zoom_ button in the _Plot_ pane to make the graphic larger):  
+
+```{r, eval = FALSE, echo = TRUE}
+bwplot(~height | gender + age, data = cdc_old)
+```
+
+<b>Interpret Data:</b>  
+
+**Answer the question.**
