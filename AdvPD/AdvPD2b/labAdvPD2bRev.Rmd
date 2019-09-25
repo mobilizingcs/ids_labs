@@ -24,13 +24,13 @@ What is the typical height of young people? How much does the typical height var
 
 <b>Consider Data:</b> 
 
-Use the following command to load the `cdc` data into <b>RStudio</b>:  
+Type the following command on your console to load the `cdc` data into <b>RStudio</b>:  
 
 ```{r, eval = FALSE, echo = TRUE}
 data(cdc)
 ```
 
-Use the following command to open the spreadsheet containing the data:  
+Type the following command on your console to open the spreadsheet containing the data:  
 
 ```{r, eval = FALSE, echo = TRUE}
 View(cdc)
@@ -56,7 +56,9 @@ favstats(~height, data = cdc)
 
 <b>Interpret Data:</b>   
 
-**Use the boxplot and summary statistics and answer the statistical questions.**
+Use the boxplot and summary statistics and answer the statistical questions in your IDS journal.  
+
+**What is the typical height of young people? How much does the typical height vary? What height values are plausible?**
 
 ## Statistical Investigation #2
 
@@ -77,7 +79,7 @@ bwplot(~height | age, data = cdc)
 ```
 
 Look at the plot and the code used to create the plot.  
-Transcribe the code into a sentence. That is, imagine the computer was sentinent and could understand verbal directions.  
+Transcribe the code into a sentence. That is, imagine the computer was sentient and could understand verbal directions.  
 
 **Based on the code, what are you asking the computer to do?**  
 
@@ -94,6 +96,8 @@ How does including `layout = c(1, 7)` change the plot?
 <b>Interpret Data:</b>  
 
 Look at the zoomed in image of the stack boxplots and answer the question asked.  
+
+**How do the typical heights of young people vary with age?**  
 
 **Are you surprised at all by the answer? Do you trust the data?**
 
@@ -119,6 +123,7 @@ tally(~age, data = cdc)
 By looking at the number of people from each age group, write down an answer to the question asked.  
 
 **Are people 13 and younger actually taller than their older peers or is there another explanation?**  
+
 **What do you think `<NA>` means in the tallied data?**
 
 ## Statistical Investigation #4
@@ -136,7 +141,9 @@ We'll do this by creating a new dataset called `cdc_old` where people who are 13
 Run the following line of code to accomplish this task:  
 
 ```{r, eval = FALSE, echo = TRUE}
-cdc_old <- filter(cdc, age != "12 years old or younger", age != "13 years old")
+cdc_old <- filter(cdc, 
+                  age != "12 years old or younger", 
+                  age != "13 years old")
 ```
 
 After running this code, look in the _Environment_ tab and notice that there's now two datasets. One is the original `cdc` data and the second is the new `cdc_old` data.  
@@ -153,4 +160,6 @@ bwplot(~height | gender + age, data = cdc_old)
 
 <b>Interpret Data:</b>  
 
-**Answer the question.**
+Answer the question:
+
+**How does the typical height of females compare to the typical height of males as each gender ages?**

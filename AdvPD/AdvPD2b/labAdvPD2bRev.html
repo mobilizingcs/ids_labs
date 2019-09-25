@@ -437,9 +437,9 @@ Every two years, the CDC releases a dataset called the <em>Youth Risk Behavior S
 <p><b>Ask Questions:</b></p>
 <p>What is the typical height of young people? How much does the typical height vary? What height values are plausible?</p>
 <p><b>Consider Data:</b></p>
-<p>Use the following command to load the <code>cdc</code> data into <b>RStudio</b>:</p>
+<p>Type the following command on your console to load the <code>cdc</code> data into <b>RStudio</b>:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">data</span>(cdc)</a></code></pre></div>
-<p>Use the following command to open the spreadsheet containing the data:</p>
+<p>Type the following command on your console to open the spreadsheet containing the data:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">View</span>(cdc)</a></code></pre></div>
 <p>Look at the <em>Environment</em> tab.</p>
 <p><strong>How many young people are in the <code>cdc</code> data?</strong></p>
@@ -449,7 +449,8 @@ Every two years, the CDC releases a dataset called the <em>Youth Risk Behavior S
 <p>Use the following command to obtain summary statistics (Note: The <code>height</code> variable is in meters):</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1"><span class="kw">favstats</span>(<span class="op">~</span>height, <span class="dt">data =</span> cdc)</a></code></pre></div>
 <p><b>Interpret Data:</b></p>
-<p><strong>Use the boxplot and summary statistics and answer the statistical questions.</strong></p>
+<p>Use the boxplot and summary statistics and answer the statistical questions in your IDS journal.</p>
+<p><strong>What is the typical height of young people? How much does the typical height vary? What height values are plausible?</strong></p>
 </div>
 <div id="statistical-investigation-2" class="slide section level2">
 <h1>Statistical Investigation #2</h1>
@@ -461,7 +462,7 @@ Every two years, the CDC releases a dataset called the <em>Youth Risk Behavior S
 <p>Use the following line of code to create a new boxplot:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb5-1" data-line-number="1"><span class="kw">bwplot</span>(<span class="op">~</span>height <span class="op">|</span><span class="st"> </span>age, <span class="dt">data =</span> cdc)</a></code></pre></div>
 <p>Look at the plot and the code used to create the plot.<br />
-Transcribe the code into a sentence. That is, imagine the computer was sentinent and could understand verbal directions.</p>
+Transcribe the code into a sentence. That is, imagine the computer was sentient and could understand verbal directions.</p>
 <p><strong>Based on the code, what are you asking the computer to do?</strong></p>
 <p>The layout of the plot you’ve created makes interpreting the graphic difficult. Run the following line of code to stack each boxplot on top of one another (Click the <em>Zoom</em> button in the <em>Plot</em> tab to make the graphic larger):</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb6-1" data-line-number="1"><span class="kw">bwplot</span>(<span class="op">~</span>height <span class="op">|</span><span class="st"> </span>age, <span class="dt">data =</span> cdc, <span class="dt">layout =</span> <span class="kw">c</span>(<span class="dv">1</span>, <span class="dv">7</span>))</a></code></pre></div>
@@ -469,6 +470,7 @@ Transcribe the code into a sentence. That is, imagine the computer was sentinent
 <p><strong>Write a sentence that describes what <code>layout = c(1, 7)</code> is telling <b>R</b> to do.</strong></p>
 <p><b>Interpret Data:</b></p>
 <p>Look at the zoomed in image of the stack boxplots and answer the question asked.</p>
+<p><strong>How do the typical heights of young people vary with age?</strong></p>
 <p><strong>Are you surprised at all by the answer? Do you trust the data?</strong></p>
 </div>
 <div id="statistical-investigation-3" class="slide section level2">
@@ -482,8 +484,8 @@ Transcribe the code into a sentence. That is, imagine the computer was sentinent
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb7-1" data-line-number="1"><span class="kw">tally</span>(<span class="op">~</span>age, <span class="dt">data =</span> cdc)</a></code></pre></div>
 <p><b>Interpret Data:</b></p>
 <p>By looking at the number of people from each age group, write down an answer to the question asked.</p>
-<p><strong>Are people 13 and younger actually taller than their older peers or is there another explanation?</strong><br />
-<strong>What do you think <code>&lt;NA&gt;</code> means in the tallied data?</strong></p>
+<p><strong>Are people 13 and younger actually taller than their older peers or is there another explanation?</strong></p>
+<p><strong>What do you think <code>&lt;NA&gt;</code> means in the tallied data?</strong></p>
 </div>
 <div id="statistical-investigation-4" class="slide section level2">
 <h1>Statistical Investigation #4</h1>
@@ -493,14 +495,16 @@ Transcribe the code into a sentence. That is, imagine the computer was sentinent
 <p>Since we have reason to suspect that the typical heights of people 13 and younger are not as accurate as the typical heights of those who are older, let’s subset our data to only include people who are 14 and older.</p>
 <p>We’ll do this by creating a new dataset called <code>cdc_old</code> where people who are 13 years old or younger are removed.</p>
 <p>Run the following line of code to accomplish this task:</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">cdc_old &lt;-<span class="st"> </span><span class="kw">filter</span>(cdc, age <span class="op">!=</span><span class="st"> &quot;12 years old or younger&quot;</span>, age <span class="op">!=</span><span class="st"> &quot;13 years old&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">cdc_old &lt;-<span class="st"> </span><span class="kw">filter</span>(cdc, age <span class="op">!=</span><span class="st"> &quot;12 years old or younger&quot;</span>, </a>
+<a class="sourceLine" id="cb8-2" data-line-number="2">                  age <span class="op">!=</span><span class="st"> &quot;13 years old&quot;</span>)</a></code></pre></div>
 <p>After running this code, look in the <em>Environment</em> tab and notice that there’s now two datasets. One is the original <code>cdc</code> data and the second is the new <code>cdc_old</code> data.</p>
 <p><strong>How many fewer observations are there in the <code>cdc_old</code> data compared to the <code>cdc</code> data?</strong></p>
 <p><b>Analyze Data:</b></p>
 <p>Run the following code to split the <code>height</code> variable by <code>gender</code> and <code>age</code> for our <code>cdc_old</code> data (Be sure to click the <em>Zoom</em> button in the <em>Plot</em> pane to make the graphic larger):</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">bwplot</span>(<span class="op">~</span>height <span class="op">|</span><span class="st"> </span>gender <span class="op">+</span><span class="st"> </span>age, <span class="dt">data =</span> cdc_old)</a></code></pre></div>
 <p><b>Interpret Data:</b></p>
-<p><strong>Answer the question.</strong></p>
+<p>Answer the question:</p>
+<p><strong>How does the typical height of females compare to the typical height of males as each gender ages?</strong></p>
 </div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->
