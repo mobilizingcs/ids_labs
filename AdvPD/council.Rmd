@@ -1,0 +1,39 @@
+---
+title: "Title of Advanced PD 15"
+author: "Lab Advanced PD 15"
+date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
+output: 
+  slidy_presentation: 
+    css: ../IDSLabCSSRev.css
+    mathjax: ../extras/mathjax-local/MathJax.js
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+# library(mobilizr)
+# data(cdc)
+```
+
+## Welcome to Advanced PD!
+
+- Throughout the year, you'll be putting your data science skills to work by completing the labs.
+- You'll learn how to program in the `R` programming language.
+    - The programming language used by actual data scientists.
+- Your code will be written in RStudio which is an easy to use interface for coding using `R`.
+
+
+## Contact
+
+- Visit
+```{r, eval = FALSE, echo = TRUE}
+# idsucla.org
+```
+
+- Email
+```{r, eval = FALSE, echo = TRUE}
+# support@idsucla.org
+```
+  
