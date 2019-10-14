@@ -14,7 +14,7 @@ The web as a data source
 ===
 
 - The internet contains huge amounts of information.
-  - Using computers to gathering this information in an automated fashion is referred to as _scraping web data_.
+  - Using computers to gather this information in an automated fashion is referred to as _scraping web data_.
   - Scraping data from the web can be difficult because each website displays & stores data differently.
 - In this lab, we'll learn how to scrape data in two steps:
   - Step 1: Gather information from the web.
