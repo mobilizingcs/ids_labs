@@ -1,6 +1,6 @@
 ---
-title: "Title of Advanced PD 15"
-author: "Lab Advanced PD 15"
+title: "Title of Advanced PD Council"
+author: "Lab Advanced PD Council"
 date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
 output: 
   slidy_presentation: 
