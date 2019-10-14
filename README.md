@@ -2,11 +2,11 @@
 
 These labs were written for use with the new LAUSD Introduction to Data Science (IDS) math course. Edits, changes and additions will be made throughout the year.
 
-To use these labs, you'll need a copy of [Rstudio](www.rstudio.com) and install the `mobilizr` package. To install the package, run:
+To use these labs, you'll need a copy of [Rstudio](https://www.rstudio.com) and install the `mobilizr` package. To install the package, run:
 
 ```
 library(devtools)
-install_github('jimmylovestea/mobilizr')
+install_github('mobilizingcs/mobilizr')
 ```
 
 To view the labs in the *Viewer* pane in Rstudio, run the `load_labs()` function and then select the lab you'd like to look at.
