@@ -47,7 +47,7 @@ library(mobilizr)
     - Type or copy/paste the URL into the box and then hit _Update_.
 - Before importing, change the following _Import Options_:
     - Name: `lungs`
-    - _Uncheck_ the _First Row as Data_ box
+    - _Uncheck_ the _First Row as Names_  
     - Change _Delimiter_ to _Whitespace_
 
 
