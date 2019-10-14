@@ -102,7 +102,7 @@ Of course, you could always just look in the folders at the `.html` files as wel
 
 ## beta version
 
-Internal Resources. 
+Internal Resources ONLY. 
 
 ### Unit 1 (beta)
 
@@ -122,7 +122,7 @@ Internal Resources.
 
 [Lab 1H - Our Time](/unit_1/lab1h/lab1hRev.html)
 
-### Unit 2
+### Unit 2 (beta)
 
 [Lab 2A - All About Distributions](/unit_2/lab2a/lab2aRev.html)
 
@@ -142,7 +142,7 @@ Internal Resources.
 
 [Lab 2I - R's Normal Distribution Alphabet](/unit_2/lab2i/lab2iRev.html)
 
-### Unit 3
+### Unit 3 (beta)
 
 [Lab 3A - The Results Are In!](/unit_3/lab3a/lab3aRev.html)
 
@@ -156,7 +156,7 @@ Internal Resources.
 
 [Lab 3F - Maps](/unit_3/lab3f/lab3fRev.html)
 
-### Unit 4
+### Unit 4 (beta)
 
 [Lab 4A - If the Line Fits ...](/unit_4/lab4a/lab4aRev.html)
 
