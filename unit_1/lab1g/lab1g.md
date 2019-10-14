@@ -47,7 +47,7 @@ tally(~ ____, data = ____)
 Interpreting 2-way frequency tables
 ===================================
 
-- Recall that  there were 1371 more women than men in our data set.
+- Recall that  there were 1153 more women than men in our data set.
     - If there are more women, then we might  expect women to have more physical challenges (compared to men).
 - Instead of using _counts_ we use _percentages_.
 - Include: `format = "percent"` as option to the code you used to make your 2-way frequency table. Then answer this question again: 
