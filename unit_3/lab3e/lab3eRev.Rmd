@@ -105,47 +105,9 @@ tables <- readHTMLTable(____)
     - Assign the scraped data the name `mtns`
 
 
-## From scraping to cleaning
-
-- Data scraped from the web usually needs to be cleaned.
-- **Run the following commands and compare the names of the variables. Do you notice any differences?**
-```{r, eval = FALSE, echo = TRUE}
-View(mtns)
-names(mtns)
-```
-- **Which variables in your data are numerical variables and which are factors (i.e. categorical variables)?**
-- Put your data in the `str()` function to see how `R` classified each variable.
-    - **Which variables are wrong?**  
-
-
-## Fixing variable types
-
-- View the `mtns` data and notice the order of the variables. 
-    - Use the order of the variables to fill in the blanks below with either the word `"factor"`, if the variable is _categorical_, or `"numeric"`, if the varible is _numerical_.
-```{r, eval = FALSE, echo = TRUE}
-var_types <- c("___","___","___","___","___",
-               "___","___","___","___","___")
-```
-
-- Finally, re-scrape the data and include `colClasses = var_types` as an argument.
-    - Don't forget to save the data as `mtns` and specify `which` table to scrape.
-
-
-## Fixing variable names
-
-- View the `mtns` data and notice the order of the variables.
-    - Then use the order of the variables and the following code template to change the names of the `mtns` data.
-    - Replace each `"new_name"` with the actual name of the variable. 
-    - Make sure to include all of the variable names and order them correctly.
-```{r, eval = FALSE, echo = TRUE}
-names(mtns) <- c("new_name", "new_name",
-                 ..., "new_name")
-```
-
-
 ## Check, save and use!
 
-- After scraping and cleaning the data, the only thing left to do is to save it and use it.
+- After scraping the data, the only thing left to do is to save it and use it.
     - Before saving, use the `names()` and `str()` functions on last time to make sure the variable names and types are correct.
 - Fill in the blanks to save the data and give it a file name
 ```{r, eval = FALSE, echo = TRUE}
