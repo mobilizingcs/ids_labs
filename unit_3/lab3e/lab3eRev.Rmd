@@ -108,7 +108,7 @@ tables <- readHTMLTable(____)
 ## Check, save and use!
 
 - After scraping the data, the only thing left to do is to save it and use it.
-    - Before saving, use the `names()` and `str()` functions on last time to make sure the variable names and types are correct.
+
 - Fill in the blanks to save the data and give it a file name
 ```{r, eval = FALSE, echo = TRUE}
 save(____, file = "____.Rda")
