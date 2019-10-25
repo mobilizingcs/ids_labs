@@ -442,7 +442,7 @@ Advanced PD Lab 1A
 <li><p>Option: <code>ylab = &quot; &quot;</code> . Changes the label on the y-axis</p></li>
 <li><p>Option: <code>horizontal = TRUE</code> . Makes bars horizontal</p></li>
 </ul>
-<p><strong>Examples:</strong></p>
+<p><strong>Try these examples:</strong></p>
 <p>Basic usage</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">bargraph</span> (<span class="op">~</span>gender, <span class="dt">data=</span>cdc)</a></code></pre></div>
 <p>Including the options <code>col</code> and <code>main</code> will change the color of the bars to green and include the title “Distribution of Gender”.</p>
@@ -470,7 +470,7 @@ Advanced PD Lab 1A
 <div id="dotplots" class="slide section level2">
 <h1>DOTPLOTS</h1>
 <p>When creating a dotplot, the visualization can be inaccurate and tends to group values together. A solution is the argument <code>nint</code> . By including <code>nint</code>, you set the number of intervals for the dots in your plot.</p>
-<p><strong>Examples:</strong></p>
+<p><strong>Try these examples:</strong></p>
 <p>Basic Usage</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1"><span class="kw">dotPlot</span>(<span class="op">~</span>green, <span class="dt">data=</span>colors)</a></code></pre></div>
 <p>A dotPlot that can display 16 individual values (5 to 20). For numerical variables that are integers, the value for <code>nint</code> can be calculated by finding the range of the variable and adding 1.</p>
@@ -479,7 +479,7 @@ Advanced PD Lab 1A
 <div id="filtering" class="slide section level2">
 <h1>FILTERING</h1>
 <p>You can filter multiple numerical values by using inequalities but you can also filter multiple values of categorical variables (or exclude a value but include all other values in the variable).</p>
-<p><strong>Examples:</strong></p>
+<p><strong>Try these examples:</strong></p>
 <ul>
 <li>The <b>minors</b> data frame excludes observations that reported an age of 18 years old or older.</li>
 </ul>

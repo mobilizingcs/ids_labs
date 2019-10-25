@@ -32,7 +32,7 @@ The following arguments can be used to enhance a visualization.
 
 
 
-**Examples:**  
+**Try these examples:** 
 
 Basic usage  
 
@@ -92,7 +92,7 @@ add_line (vline = _______)
 
 When creating a dotplot, the visualization can be inaccurate and tends to group values together. A solution is the argument `nint` . By including `nint`, you set the number of intervals for the dots in your plot.  
 
-**Examples:** 
+**Try these examples:** 
 
 Basic Usage  
 
@@ -110,7 +110,7 @@ dotPlot(~green, col="green", data=colors, nint=16)
 
 You can filter multiple numerical values by using inequalities but you can also filter multiple values of categorical variables (or exclude a value but include all other values in the variable).  
 
-**Examples:**  
+**Try these examples:**  
 
 * The <b>minors</b> data frame excludes observations that reported an age of 18 years old or older.  
 
