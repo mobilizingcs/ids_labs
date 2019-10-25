@@ -42,7 +42,7 @@ p_data <- p_data %>% mutate(labels = paste0(
   "<b>Census block: </b>", census, "<br/>",
   "<b>Population: </b>", population, "<br/>",
   "<b>Total water used: </b>", total, "<br/>",
-  "<img src='http://gh.mobilizingcs.org/ids_labs/extras/animations/watermap/images/", census, ".png' height = 150 width = 250>"))
+  "<img src='https://labs.idsucla.org/extras/animations/watermap/images/", census, ".png' height = 150 width = 250>"))
 
 
 pal_total <- colorQuantile(palette = "RdBu",

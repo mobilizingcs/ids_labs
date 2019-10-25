@@ -969,85 +969,11 @@ hljs.initHighlightingOnLoad();
 
 </section>
 <section data-transition="none" data-transition-speed="default">
-<h3>From scraping to cleaning</h3>
-<div class="slideContent" >
-<ul>
-<li>Data scraped from the web usually needs to be cleaned.</li>
-<li><strong>Run the following commands and compare the names of the variables. Do you notice any differences?</strong></li>
-</ul>
-
-<pre><code class="r">View(mtns)
-names(mtns)
-</code></pre>
-
-<ul>
-<li><strong>Which variables in your data are numerical variables and which are factors (i.e. categorical variables)?</strong></li>
-<li>Put your data in the <code>str()</code> function to see how <code>R</code> classified each variable.
-
-<ul>
-<li><strong>Which variables are wrong?</strong><br/></li>
-</ul></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="none" data-transition-speed="default">
-<h3>Fixing variable types</h3>
-<div class="slideContent" >
-<ul>
-<li>View the <code>mtns</code> data and notice the order of the variables. 
-
-<ul>
-<li>Use the order of the variables to fill in the blanks below with either the word <code>&quot;factor&quot;</code>, if the variable is <em>categorical</em>, or <code>&quot;numeric&quot;</code>, if the varible is <em>numerical</em>.</li>
-</ul></li>
-</ul>
-
-<pre><code class="r">var_types &lt;- c(&quot;___&quot;,&quot;___&quot;,&quot;___&quot;,&quot;___&quot;,&quot;___&quot;,
-               &quot;___&quot;,&quot;___&quot;,&quot;___&quot;,&quot;___&quot;,&quot;___&quot;)
-</code></pre>
-
-<ul>
-<li>Finally, re-scrape the data and include <code>colClasses = var_types</code> as an argument.
-
-<ul>
-<li>Don&#39;t forget to save the data as <code>mtns</code> and specify <code>which</code> table to scrape.</li>
-</ul></li>
-</ul>
-
-</div>
-
-</section>
-<section data-transition="none" data-transition-speed="default">
-<h3>Fixing variable names</h3>
-<div class="slideContent" >
-<ul>
-<li>View the <code>mtns</code> data and notice the order of the variables.
-
-<ul>
-<li>Then use the order of the variables and the following code template to change the names of the <code>mtns</code> data.</li>
-<li>Replace each <code>&quot;new_name&quot;</code> with the actual name of the variable. </li>
-<li>Make sure to include all of the variable names and order them correctly.</li>
-</ul></li>
-</ul>
-
-<pre><code class="r">names(mtns) &lt;- c(&quot;new_name&quot;, &quot;new_name&quot;,
-                 ..., &quot;new_name&quot;)
-</code></pre>
-
-</div>
-
-</section>
-<section data-transition="none" data-transition-speed="default">
 <h3>Check, save and use!</h3>
 <div class="slideContent" >
 <ul>
-<li>After scraping and cleaning the data, the only thing left to do is to save it and use it.
-
-<ul>
-<li>Before saving, use the <code>names()</code> and <code>str()</code> functions on last time to make sure the variable names and types are correct.</li>
-</ul></li>
-<li>Fill in the blanks to save the data and give it a file name</li>
+<li><p>After scraping the data, the only thing left to do is to save it and use it.</p></li>
+<li><p>Fill in the blanks to save the data and give it a file name</p></li>
 </ul>
 
 <pre><code class="r">save(____, file = &quot;____.Rda&quot;)
