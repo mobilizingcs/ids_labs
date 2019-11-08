@@ -1,7 +1,7 @@
 ---
-title: "Title of Advanced PD 1B"
-author: "Lab Advanced PD 1B"
-date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
+title: "Visulizations with ggplot2"
+author: "Advanced PD Lab 2B"
+date: "The following slides contain information and examples about how to create visualizations using ggplot2."
 output: 
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
@@ -13,27 +13,148 @@ knitr::opts_chunk$set(echo = FALSE)
 ```
 
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
-# library(mobilizr)
-# data(cdc)
+library(mobilizr)
 ```
 
-## Welcome to Advanced PD!
+## What is ggplot2
 
-- Throughout the year, you'll be putting your data science skills to work by completing the labs.
-- You'll learn how to program in the `R` programming language.
-    - The programming language used by actual data scientists.
-- Your code will be written in RStudio which is an easy to use interface for coding using `R`.
+The ggplot2 package, created by <a href="http://hadley.nz/">Hadley Wickham</a>, Chief Scientist at RStudio, offers a powerful graphics language for creating elegant and complex plots.  
+
+ggplot2 allows you to create graphs that represent both univariate and multivariate numerical and categorical data in a straightforward manner.  
+
+**Let's get started:** 
+
+Begin by installing and loading the `ggplot2` package.  
+
+`install.packages(" ")`  
+
+`library(" ")`
+
+### Consider Data:  
+
+Load and preview the `mpg` data. 
+
+ 
+## Categorical Variable  
+
+The template to create a visual in ggplot looks like:  
 
 
-## Contact
 
-- Visit
-```{r, eval = FALSE, echo = TRUE}
-# idsucla.org
+
+    ggplot(data = < DATA >) +  
+
+    < GEOM_FUNCTION >(mapping = aes(< MAPPINGS >))  
+    
+    
+
+
+**Try these codes in an RScript or RMarkdown:**  
+
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data = mpg) +
+  geom_bar(mapping = aes(x = class))
 ```
 
-- Email
-```{r, eval = FALSE, echo = TRUE}
-# support@idsucla.org
+
+
+The following arguments can be applied to change the color of a visual: `color, fill`  
+
+
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(data = mpg) +
+  geom_bar(mapping = aes(x = class), fill="steelblue")
 ```
-  
+
+**Replace the `fill` argument with `color` and explain how it affects the visual.**  
+
+
+**Match the graph**
+
+
+```{r, eval=TRUE, echo=FALSE}
+ggplot(data = mpg) +
+  geom_bar(mapping = aes(x = class), fill="steelblue",color="black")
+```
+
+The `fill` argument can also be used to assign colors to each category of a categorical variable (similar to what the groups argument does in lattice).  Notice that the argument needs to be contained within the aesthetics.  
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(data = mpg) +
+  geom_bar(mapping = aes(x = class, fill=class))
+```
+
+
+Let's add more layers to this visual. 
+
+Functions from <b>Labels</b>, <b>Coordinate Systems</b> and <b>Themes</b> have been applied.  
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(data = mpg) +
+  geom_bar(mapping = aes(x = class, fill = class)) +
+  labs(title ="Distribution of Class") +
+  coord_flip ()+
+  theme_classic ()
+```
+
+**Flex Your Skills:** 
+
+Modify the visual above by including additional labels and changing the theme.
+
+
+## Comparing Groups on a Categorical Variable
+
+<b> Is there a difference in the number of cylinders used between the class of cars?</b>
+
+In order to create a visual to compare groups using lattice, we utilized the vertical bar (`|`) to split or facet each groups' data into a separate graph. The `groups` argument color coded the groups.
+
+ggplot2 offers similar options with their `Faceting` and `Position Adjustment` options.
+
+<b>Faceting</b>
+
+**Try these codes in an RScript or RMarkdown:** 
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(data = mpg) +
+  geom_bar(mapping = aes(x = cyl,fill=class))+
+  facet_grid(.~class)
+```
+
+**Match the graphs below**  
+
+
+```{r, eval=TRUE, echo=FALSE}
+ggplot(data = mpg) +
+  geom_bar(mapping = aes(x = cyl,fill=class))+
+  facet_grid(class~.)
+```
+
+
+```{r, eval=TRUE, echo=FALSE}
+ggplot(data = mpg) +
+  geom_bar(mapping = aes(x = cyl,fill=class))+
+  facet_wrap(~class)
+```
+
+<b>Position Adjustments</b>  
+
+**Try these codes in an RScript or RMarkdown:** 
+
+
+```{r, eval=TRUE, echo=TRUE}
+ggplot(data = mpg) +
+  geom_bar(mapping = aes(x = class,fill=cyl),position="dodge")
+```
+
+**Match the graphs below**  
+
+```{r, eval=TRUE, echo=FALSE}
+ggplot(data = mpg) +
+  geom_bar(mapping = aes(x = class,fill=cyl),position="stack")
+```
+```{r, eval=TRUE, echo=FALSE}
+ggplot(data = mpg) +
+  geom_bar(mapping = aes(x = class,fill=cyl),position="fill")
+```
