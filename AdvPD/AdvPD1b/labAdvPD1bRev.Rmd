@@ -144,6 +144,7 @@ ggplot(data = mpg) +
 
 
 ```{r, eval=TRUE, echo=TRUE}
+mpg<- mutate(mpg,cyl=as.factor(cyl))
 ggplot(data = mpg) +
   geom_bar(mapping = aes(x = class,fill=cyl),position="dodge")
 ```
