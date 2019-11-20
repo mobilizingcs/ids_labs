@@ -273,3 +273,31 @@ ggplot(data=mpg)+
 ggplot(data=mpg)+
   geom_point(mapping=aes(x=displ,y=hwy,color=class))
 ```
+
+## On Your Own  
+
+Chose a different visualization from the ggplot2 cheat sheet to create.  
+
+**Example**
+
+```{r, eval=TRUE, echo=FALSE}
+ggplot(diamonds,aes(carat,price))+
+  geom_density2d()
+  
+```
+
+In order to create this graph notice on the cheat sheet it has `h + geom_density2d()`  
+
+Notice that `h` refers to `ggplot(diamonds,aes(carat,price))`.
+
+So the graph above was created using the following code:  
+
+```{r, eval=FALSE, echo=TRUE}
+ggplot(diamonds,aes(carat,price))+
+  geom_density2d()
+  
+```
+
+
+
+
