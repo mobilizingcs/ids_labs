@@ -1,7 +1,7 @@
 ---
-title: "Title of Advanced PD 2A"
-author: "Lab Advanced PD 2A"
-date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
+title: "Text Analysis"
+author: "The field of _Natural Language Processing_ has become EXTREMELY popular in recent years. Companies want to gain insights about people/topics based on written words. Writing software which analyzes the meanings of words (in context) is VERY difficult but can also be VERY valuable to companies, researchers, and data scientists."
+date: "Outcome: You will perform a text analysis of the novel _Pride & Prejudice_ by Jane Austen"
 output: 
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
@@ -14,26 +14,196 @@ knitr::opts_chunk$set(echo = FALSE)
 
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 # library(mobilizr)
-# data(cdc)
 ```
 
-## Welcome to Advanced PD!
 
-- Throughout the year, you'll be putting your data science skills to work by completing the labs.
-- You'll learn how to program in the `R` programming language.
-    - The programming language used by actual data scientists.
-- Your code will be written in RStudio which is an easy to use interface for coding using `R`.
+## Expanding **R**  
 
+One reason **R** is popular amongst data scientists is because they are able to expand the functionality of **R** by installing _packages_.
 
-## Contact
+_Packages_ are new sets of functions that **R** can use to perform tasks.
 
-- Visit
-```{r, eval = FALSE, echo = TRUE}
-# idsucla.org
+Cutting edge data science methods can be developed and shared with other **R** users.
+
+New functions which makes difficult programming tasks, such as creating plots, easier can also be developed and shared via packages.  
+
+### <b>Installing and loading packages</b>  
+
+To install a new packages (Normally only performed once) use the command below:
+
+```{r, eval = FALSE,echo=TRUE}
+install.packages("package_name")
 ```
 
-- Email
-```{r, eval = FALSE, echo = TRUE}
-# support@idsucla.org
+After installing a package, the new functions can be loaded into **R** for use by using the `library()` function
+
+```{r, eval = FALSE, echo=TRUE}
+library(package_name)
 ```
+
+You should only ever install a new package exactly once. Even if you close **R**, the packages will remain _installed_.
+Packages should be loaded with `library()` each time you restart **R**.  
+
+## Packages Needed for Text Analysis
+
+To help us begin to analyze words/text, install the `tidytext` package.  
+
+```{r, eval = FALSE}
+# This might take a minute
+install.packages("tidytext")
+```
+
+Once your installation is complete, click on the _Packages_ pane in RStudio.  
+
+**How many packages were added to your _User Library_?**  
+
+Now that `tidytext` has (hopefully) been installed successfully, load the functions contained in the package.
+
+```{r, warning = FALSE}
+library(tidytext)
+```
+
+In this lab, we'll analyze the book _Pride and Prejudice_ by Jane Austen.  
+
+Load the `janeaustenr` package (Which was installed when you installed `tidytext`) and then run
+```{r, echo = FALSE}
+library(janeaustenr)
+```
+
+```{r,echo=TRUE}
+data(prideprejudice)
+```
+
+What happens when you run?
+
+```{r, eval = FALSE,echo=TRUE}
+prideprejudice
+```
+
+
+### When installing packages goes bad
+
+Install the `wordcloud` package.
+
+```{r, eval = FALSE}
+install.packages("wordcloud")
+```
+
+**What happens when you load the `wordcloud` package?**
+
+```{r, eval = FALSE}
+library(wordcloud)
+```
+
+
+### Installing older versions
+
+You'll sometimes find that you need older versions of packages. Often times this is because packages rely on other packages that only run on the newest versions of **R**.
+
+To install an older package version, first run
+
+```{r, eval = FALSE,echo=TRUE}
+library(devtools)
+```
+
+Now we can install `wordcloud` version 1.4
+
+```{r, eval = FALSE,echo=TRUE}
+install_version("wordcloud", version = 1.4)
+```
+
+Once you're done installing `wordcloud`, load the functions into **R**.
+
+## Cleaning your text data
+
+- Now that our packages are installed and loaded, it's time to get to work.
+- Our first task is to turn the `prideprejudice` text into a `data.frame`.
+- To do this, run:
+
+```{r, eval = FALSE,echo=TRUE}
+pride <- data.frame(line = 1:length(prideprejudice),
+                    text = prideprejudice)
+```
+
+- Now, use the `mutate()` and `as.character()` functions to change the `text` variable from a `factor` to a `character`
+
+### More cleaning
+
+Our next goal is to break up each line of text into individual words. 
+
+```{r, eval = FALSE, echo=TRUE}
+pride <- unnest_tokens(pride, word, text)
+```
+
+`View` this `pride` data and note the new format.
+
+### Counting words
+
+We're interested in seeing which words were used most often by Jane Austen, so we want to count the number of times each word appears in the book. Use `tally()` to accomplish this and assign the output the name `pride_words`.
+
+- NOTE: Include the argument `format = "data.frame"` so the word counts become a new data frame.
+
+### Plotting words
+
+One very popular method of displaying text data is with word clouds. Create a wordcloud for the most 100 used words by running.
+
+```{r, eval = FALSE, echo=TRUE}
+with(pride_words, wordcloud(word, Freq, max.words = 100))
+```
+
+- **Notice any problems?**
+
+### Stop words
+
+When analyzing text, we're not often interested in common words like "I", "a", "the". We call these sort of _boring_ words _stop words_ (because we should _stop_ using them in our analysis).
+
+`tidytext` helpfully comes equipped with a set of stop words we can use. To do so, run
+
+```{r, eval = FALSE, echo=TRUE}
+pride_words <- anti_join(pride_words, stop_words)
+```
+
+An `anti_join` is an efficient way to filter out words in `pride_words` that are also in `stop_words`.
+
+- Recreate your wordcloud.  
+Does it look more useful?  
+Which words were the most frequent?  
+What happens if you include the argument `color = "steelblue"` within the `wordcloud` function?
+
+## Using sentiments
+
+Words carry meaning. And we might be interested in altering our plot to show these different meanings. 
+
+Run the following code to:  
+
+(1) get a set of words with _positive_ and _negative sentiments (according to Bing) and  
+
+(2) keep only the words from _Pride & Prejudice_ that contain sentiments
+
+```{r, eval = FALSE, echo=TRUE}
+sentiments <- get_sentiments(lexicon = "bing")
+pride_sentiments <- inner_join(pride_words, sentiments)
+```
+
+- An `inner_join` keeps just the words in `pride_words` that also appear in `sentiments`
+
+### Color & Sentiment
+
+Now that we have sentiments assigned to our words, our next goal is to assign colors to each word based on its sentiment.  
+
+To do this, we `mutate` our `pride_sentiments` and assign colors with the `ifelse()` function.
+
+```{r, eval = FALSE, echo=TRUE}
+pride_sentiments <- mutate(pride_sentiments,
+                           colors = ifelse(sentiment == "positive", 
+                                          yes = "steelblue", 
+                                          no = "darkred"))
+```
+
+Re-create your word cloud one more time. This time though include the argument `color = colors` in your wordcloud function.
+
+**1. Which positive sentiment words appeared most often?  
+2. Which negative sentiment words appeared most often?  
+3. Are there any words you feel were miscategorized?**
+
   
