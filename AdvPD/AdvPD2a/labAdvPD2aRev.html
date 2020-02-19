@@ -437,28 +437,32 @@ The field of <em>Natural Language Processing</em> has become EXTREMELY popular i
 <p>One reason <strong>R</strong> is popular amongst data scientists is because they are able to expand the functionality of <strong>R</strong> by installing <em>packages</em>.</p>
 <p><em>Packages</em> are new sets of functions that <strong>R</strong> can use to perform tasks.</p>
 <p>Cutting edge data science methods can be developed and shared with other <strong>R</strong> users.</p>
-<p>New functions which makes difficult programming tasks, such as creating plots, easier can also be developed and shared via packages.</p>
+<p>New functions which make difficult programming tasks easier can be developed and shared via packages.</p>
 <h3 id="installing-and-loading-packages"><b>Installing and loading packages</b></h3>
-<p>To install a new packages (Normally only performed once) use the command below:</p>
+<p>To install a new package (normally only performed once) use the command below:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" data-line-number="1"><span class="kw">install.packages</span>(<span class="st">&quot;package_name&quot;</span>)</a></code></pre></div>
-<p>After installing a package, the new functions can be loaded into <strong>R</strong> for use by using the <code>library()</code> function</p>
+<p>After installing a package, the new functions can be <b>loaded</b> into <strong>R</strong> for use by using the <code>library()</code> function</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">library</span>(package_name)</a></code></pre></div>
-<p>You should only ever install a new package exactly once. Even if you close <strong>R</strong>, the packages will remain <em>installed</em>. Packages should be loaded with <code>library()</code> each time you restart <strong>R</strong>.</p>
+<p>You should only ever install a new package exactly once. Even if you close <strong>R</strong>, the packages will remain <em>installed</em>. Packages should be <b>loaded</b> with <code>library()</code> each time you restart <strong>R</strong>.</p>
 </div>
 <div id="packages-needed-for-text-analysis" class="slide section level2">
 <h1>Packages Needed for Text Analysis</h1>
-<p>To help us begin to analyze words/text, install the <code>tidytext</code> package.</p>
-<p>Once your installation is complete, click on the <em>Packages</em> pane in RStudio.</p>
-<p><strong>How many packages were added to your <em>User Library</em>?</strong></p>
-<p>Now that <code>tidytext</code> has (hopefully) been installed successfully, load the functions contained in the package.</p>
+<p>To help us begin to analyze words/text, the <code>tidytext</code> package needs to be installed.</p>
+<p>Before installing <code>tidytext</code>, click on the <em>Packages</em> tab in RStudio (next to the Plots tab).</p>
+<p>Notice that the packages that are installed appear in alphabetical order. Scroll down to verify if <code>tidytext</code> is already installed.</p>
+<p>If <code>tidytext</code> has been installed, load the functions contained in the package by:</p>
+<ol style="list-style-type: decimal">
+<li><p>Checking off the <code>tidytext</code> box in the <em>Packages</em> tab.</p></li>
+<li><p>Using the <code>library()</code> command.</p></li>
+</ol>
 <p>In this lab, we’ll analyze the book <em>Pride and Prejudice</em> by Jane Austen.</p>
 <p>Load the <code>janeaustenr</code> package (Which was installed when you installed <code>tidytext</code>) and then run</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1"><span class="kw">data</span>(prideprejudice)</a></code></pre></div>
-<p>What happens when you run?</p>
+<p><strong>What happens when you type the code below?</strong></p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">prideprejudice</a></code></pre></div>
 <h3 id="when-installing-packages-goes-bad">When installing packages goes bad</h3>
-<p>Install the <code>wordcloud</code> package.</p>
-<p><strong>What happens when you load the <code>wordcloud</code> package?</strong></p>
+<p>Install the <code>wordcloud</code> package if it does not appear in the <em>Packages</em> tab.</p>
+<p>Load the functions contained in the package.</p>
 <h3 id="installing-older-versions">Installing older versions</h3>
 <p>You’ll sometimes find that you need older versions of packages. Often times this is because packages rely on other packages that only run on the newest versions of <strong>R</strong>.</p>
 <p>To install an older package version, first run</p>
@@ -483,6 +487,14 @@ The field of <em>Natural Language Processing</em> has become EXTREMELY popular i
 <p>Our next goal is to break up each line of text into individual words.</p>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb8-1" data-line-number="1">pride &lt;-<span class="st"> </span><span class="kw">unnest_tokens</span>(pride, word, text)</a></code></pre></div>
 <p><code>View</code> this <code>pride</code> data and note the new format.</p>
+<ul>
+<li>NOTE: If you are analyzing text that is a variable in a data frame, use the command</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">select</span>(data,variable)</a></code></pre></div>
+<p>to create a subset of the data frame that contains the single text variable.</p>
+</div>
+<div id="basic-wordcloud" class="slide section level2">
+<h1>Basic Wordcloud</h1>
 <h3 id="counting-words">Counting words</h3>
 <p>We’re interested in seeing which words were used most often by Jane Austen, so we want to count the number of times each word appears in the book. Use <code>tally()</code> to accomplish this and assign the output the name <code>pride_words</code>.</p>
 <ul>
@@ -490,20 +502,20 @@ The field of <em>Natural Language Processing</em> has become EXTREMELY popular i
 </ul>
 <h3 id="plotting-words">Plotting words</h3>
 <p>One very popular method of displaying text data is with word clouds. Create a wordcloud for the most 100 used words by running.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb9-1" data-line-number="1"><span class="kw">with</span>(pride_words, <span class="kw">wordcloud</span>(word, Freq, <span class="dt">max.words =</span> <span class="dv">100</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1"><span class="kw">with</span>(pride_words, <span class="kw">wordcloud</span>(word, Freq, <span class="dt">max.words =</span> <span class="dv">100</span>))</a></code></pre></div>
 <ul>
 <li><strong>Notice any problems?</strong></li>
 </ul>
 <h3 id="stop-words">Stop words</h3>
 <p>When analyzing text, we’re not often interested in common words like “I”, “a”, “the”. We call these sort of <em>boring</em> words <em>stop words</em> (because we should <em>stop</em> using them in our analysis).</p>
 <p><code>tidytext</code> helpfully comes equipped with a set of stop words we can use. To do so, run</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb10-1" data-line-number="1">pride_words &lt;-<span class="st"> </span><span class="kw">anti_join</span>(pride_words, stop_words)</a></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">pride_words &lt;-<span class="st"> </span><span class="kw">anti_join</span>(pride_words, stop_words)</a></code></pre></div>
 <p>An <code>anti_join</code> is an efficient way to filter out words in <code>pride_words</code> that are also in <code>stop_words</code>.</p>
 <ul>
 <li>Recreate your wordcloud.<br />
-Does it look more useful?<br />
+<strong>Does it look more useful?<br />
 Which words were the most frequent?<br />
-What happens if you include the argument <code>color = &quot;steelblue&quot;</code> within the <code>wordcloud</code> function?</li>
+What happens if you include the argument <code>color = &quot;steelblue&quot;</code> within the <code>wordcloud</code> function?</strong></li>
 </ul>
 </div>
 <div id="using-sentiments" class="slide section level2">
@@ -514,18 +526,18 @@ What happens if you include the argument <code>color = &quot;steelblue&quot;</co
 <li><p>get a set of words with <em>positive</em> and _negative sentiments (according to Bing) and</p></li>
 <li><p>keep only the words from <em>Pride &amp; Prejudice</em> that contain sentiments</p></li>
 </ol>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb11-1" data-line-number="1">sentiments &lt;-<span class="st"> </span><span class="kw">get_sentiments</span>(<span class="dt">lexicon =</span> <span class="st">&quot;bing&quot;</span>)</a>
-<a class="sourceLine" id="cb11-2" data-line-number="2">pride_sentiments &lt;-<span class="st"> </span><span class="kw">inner_join</span>(pride_words, sentiments)</a></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">sentiments &lt;-<span class="st"> </span><span class="kw">get_sentiments</span>(<span class="dt">lexicon =</span> <span class="st">&quot;bing&quot;</span>)</a>
+<a class="sourceLine" id="cb12-2" data-line-number="2">pride_sentiments &lt;-<span class="st"> </span><span class="kw">inner_join</span>(pride_words, sentiments)</a></code></pre></div>
 <ul>
 <li>An <code>inner_join</code> keeps just the words in <code>pride_words</code> that also appear in <code>sentiments</code></li>
 </ul>
 <h3 id="color-sentiment">Color &amp; Sentiment</h3>
 <p>Now that we have sentiments assigned to our words, our next goal is to assign colors to each word based on its sentiment.</p>
 <p>To do this, we <code>mutate</code> our <code>pride_sentiments</code> and assign colors with the <code>ifelse()</code> function.</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb12-1" data-line-number="1">pride_sentiments &lt;-<span class="st"> </span><span class="kw">mutate</span>(pride_sentiments,</a>
-<a class="sourceLine" id="cb12-2" data-line-number="2">                           <span class="dt">colors =</span> <span class="kw">ifelse</span>(sentiment <span class="op">==</span><span class="st"> &quot;positive&quot;</span>, </a>
-<a class="sourceLine" id="cb12-3" data-line-number="3">                                          <span class="dt">yes =</span> <span class="st">&quot;steelblue&quot;</span>, </a>
-<a class="sourceLine" id="cb12-4" data-line-number="4">                                          <span class="dt">no =</span> <span class="st">&quot;darkred&quot;</span>))</a></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb13-1" data-line-number="1">pride_sentiments &lt;-<span class="st"> </span><span class="kw">mutate</span>(pride_sentiments,</a>
+<a class="sourceLine" id="cb13-2" data-line-number="2">                           <span class="dt">colors =</span> <span class="kw">ifelse</span>(sentiment <span class="op">==</span><span class="st"> &quot;positive&quot;</span>, </a>
+<a class="sourceLine" id="cb13-3" data-line-number="3">                                          <span class="dt">yes =</span> <span class="st">&quot;steelblue&quot;</span>, </a>
+<a class="sourceLine" id="cb13-4" data-line-number="4">                                          <span class="dt">no =</span> <span class="st">&quot;darkred&quot;</span>))</a></code></pre></div>
 <p>Re-create your word cloud one more time. This time though include the argument <code>color = colors</code> in your wordcloud function.</p>
 <p><strong>1. Which positive sentiment words appeared most often?<br />
 2. Which negative sentiment words appeared most often?<br />

@@ -25,39 +25,43 @@ _Packages_ are new sets of functions that **R** can use to perform tasks.
 
 Cutting edge data science methods can be developed and shared with other **R** users.
 
-New functions which makes difficult programming tasks, such as creating plots, easier can also be developed and shared via packages.  
+New functions which make difficult programming tasks easier can be developed and shared via packages.  
 
 ### <b>Installing and loading packages</b>  
 
-To install a new packages (Normally only performed once) use the command below:
+To install a new package (normally only performed once) use the command below:
 
 ```{r, eval = FALSE,echo=TRUE}
 install.packages("package_name")
 ```
 
-After installing a package, the new functions can be loaded into **R** for use by using the `library()` function
+After installing a package, the new functions can be <b>loaded</b> into **R** for use by using the `library()` function
 
 ```{r, eval = FALSE, echo=TRUE}
 library(package_name)
 ```
 
 You should only ever install a new package exactly once. Even if you close **R**, the packages will remain _installed_.
-Packages should be loaded with `library()` each time you restart **R**.  
+Packages should be <b>loaded</b> with `library()` each time you restart **R**.  
 
 ## Packages Needed for Text Analysis
 
-To help us begin to analyze words/text, install the `tidytext` package.  
+To help us begin to analyze words/text, the `tidytext` package needs to be installed.  
+
+Before installing `tidytext`, click on the _Packages_ tab in RStudio (next to the Plots tab).  
+
+Notice that the packages that are installed appear in alphabetical order.  Scroll down to verify if `tidytext` is already installed.  
 
 ```{r, eval = FALSE}
 # This might take a minute
 install.packages("tidytext")
 ```
 
-Once your installation is complete, click on the _Packages_ pane in RStudio.  
+If `tidytext` has been installed, load the functions contained in the package by:  
 
-**How many packages were added to your _User Library_?**  
+1. Checking off the `tidytext` box in the _Packages_ tab.
 
-Now that `tidytext` has (hopefully) been installed successfully, load the functions contained in the package.
+2. Using the `library()` command.  
 
 ```{r, warning = FALSE}
 library(tidytext)
@@ -74,7 +78,7 @@ library(janeaustenr)
 data(prideprejudice)
 ```
 
-What happens when you run?
+**What happens when you type the code below?**
 
 ```{r, eval = FALSE,echo=TRUE}
 prideprejudice
@@ -83,13 +87,15 @@ prideprejudice
 
 ### When installing packages goes bad
 
-Install the `wordcloud` package.
+Install the `wordcloud` package if it does not appear in the _Packages_ tab.  
+
+Load the functions contained in the package.
+
 
 ```{r, eval = FALSE}
 install.packages("wordcloud")
 ```
 
-**What happens when you load the `wordcloud` package?**
 
 ```{r, eval = FALSE}
 library(wordcloud)
@@ -135,7 +141,16 @@ Our next goal is to break up each line of text into individual words.
 pride <- unnest_tokens(pride, word, text)
 ```
 
-`View` this `pride` data and note the new format.
+`View` this `pride` data and note the new format.  
+
+- NOTE: If you are analyzing text that is a variable in a data frame, use the command 
+```{r,eval=FALSE,echo=TRUE}
+select(data,variable)
+```
+to create a subset of the data frame that contains the single text variable.
+
+
+## Basic Wordcloud
 
 ### Counting words
 
@@ -166,9 +181,9 @@ pride_words <- anti_join(pride_words, stop_words)
 An `anti_join` is an efficient way to filter out words in `pride_words` that are also in `stop_words`.
 
 - Recreate your wordcloud.  
-Does it look more useful?  
+**Does it look more useful?  
 Which words were the most frequent?  
-What happens if you include the argument `color = "steelblue"` within the `wordcloud` function?
+What happens if you include the argument `color = "steelblue"` within the `wordcloud` function?**
 
 ## Using sentiments
 
