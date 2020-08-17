@@ -1,0 +1,152 @@
+---
+title: "Oh the Summaries ..."
+author: "Lab 2B"
+date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
+output: 
+  slidy_presentation: 
+    css: ../../IDSLabCSSRev.css
+    mathjax: ../../extras/mathjax-local/MathJax.js
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+library(mobilizr)
+```
+
+## Just the beginning
+
+- Means, medians,and MAD are just a few examples of _numerical summaries_.
+- In this lab, we will learn earn how to calculate and interpret additional summaries of  distributions such as: minimums, maximums, ranges, quartiles and IQRs. 
+    - We'll also learn how to write our first custom function!
+- Start by loading your _Personality Color_ data again and name it `colors`.
+
+
+## Extreme values
+
+- Besides looking at _typical_ values, sometimes we want to see _extreme_ values, like the smallest and largest values.
+    - To find these values, we can use the `min`, `max` or `range` functions.
+- **Which of the color scores had the smallest `min` value? Which had the largest `max` value?**
+- **Use the `range` function to calculate the `max` and `min` values of your predominant color**
+    - The difference between a variable's smallest and largest value is often refered to as the _range_ of the variable.
+
+
+## Calculating a range value
+
+- We saw in the previous slide that the `range` function calculates the maximum and minimum values for a variable, but not the difference between them.
+- We could calulate this difference in two steps:
+    - Step 1: Use the `range` function to `assign` the max and min values of a variable the name `values`.
+    - Step 2: Use the `diff` function to calculate the difference of `values`.
+- **Use these two steps to calculate the _range_ of your predominant color.**
+
+
+## Introducing custom functions 
+
+- Calculating the _range_ of many variables can be tedious if we have to keep performing the same two steps over and over.
+    - We can combine these two steps into one by writing our own custom `function`.
+- Custom functions can be used to combine a task that would normally take many steps to compute and simplify them into one.
+- The next slide shows an example of how we can create a custom function called `mm_diff` to calculate the absolute difference between the `mean` and `median` value of a `variable` in our `data`.
+
+
+## Example function
+
+```{r, eval = FALSE, echo = TRUE}
+mm_diff <- function(variable, data) {
+  mean_val <- mean(variable, data = data)
+  med_val <- median(variable, data = data)
+  abs(mean_val - med_val)
+}
+```
+
+- The function takes two _generic_ arguments: `variable` and `data`
+- It then follows the steps between the curly braces `{}`
+    - Each of the _generic_ arguments is used inside the `mean` and `median` functions.
+- Copy and paste the code above into a _R script_ and _run_ it. 
+
+
+## Using mm_diff()
+
+- After running the code used to create the function, we can use it just like we would any other numerical summary.
+    - In the _console_, fill in the blanks below to calculate the absolute difference between the `mean` and `median` values of your predominant color:
+```{r, eval = FALSE, echo = TRUE}
+____(~____, data = ____)
+```
+
+- **Which of the four colors has the largest absolute difference between the `mean` and `median` values?**
+    - **By examining a `dotPlot` for this personality color, make an argument why either the `mean` or `median` would be the better description of the _center_ of the data.**
+
+
+## Our first function
+
+- Using the previous example as a guide, create a function called `Range` (_Note the capial 'R'_) that calculates the _range_ of a variable by filling in the blanks below:
+
+```{r, eval = FALSE, echo = TRUE}
+____ <- function (____, ____) {
+  values <- range(____, data = ____)
+  diff(___)
+}
+```
+
+- **Use a `dotPlot` or `histogram` to find the personality color with the largest difference between the `max` and `min` values. Then use the `Range` function you created to calculate its _range_.**
+
+
+## Quartiles (Q1 & Q3)
+
+- The _median_ of our data is the value that splits our data in half.
+    - Half of our data is smaller than the _median_, half is larger.
+- _Q1_ and _Q3_ are similar.
+    - 25% of our data is smaller than _Q1_, 75% are larger.
+- Fill in the blanks to compute the value of _Q1_ for your predominant color.
+```{r, eval = FALSE, echo = TRUE}
+quantile(~____, data = ____, p = 0.25)
+```
+
+- **Use a similar line of code to calculate _Q3_, which is the value that's larger than 75% of our data.**
+
+
+## The Inter-Quartile-Range (IQR)
+
+- Make a `dotPlot` of your _predominant_ color's scores.
+- Visually (Don't worry about being super-precise): 
+    - Cut the distribution into quarters so the _number_ of _data points_ is equal for each piece. (Each piece should contain 25% of the data.)
+    - **Write down the numbers that split the data up into these 4 pieces.**
+    - **How long is the interval of the middle two pieces?**
+    - This length is the _IQR_.
+
+
+## Calculating the IQR
+
+- The `IQR` is another way to describe _spread_.
+    - It describes how _wide_ or _narrow_ the middle 50% of our data are.
+- Just like we used the `min` and `max` to compute the `range`, we can also use the _1st_ and _3rd_ quartiles to compute the _IQR_.
+- **Use the values of _Q1_ and _Q3_ you calculated previously and find the _IQR_ by hand**.
+    - **Then use the `iqr()` function to calculate it for you.**
+- **Which personality color score has the widest spread according to the _IQR_? Which is narrowest?**
+
+
+## Boxplots
+
+- By using the medians, quartiles, and min/max, we can construct a new single variable plot called the _box and whisker_ plot, often shortened to just _boxplot_.
+- **By showing someone a `dotPlot`, how would you teach them to make a _boxplot_? Write out your explanation in a series of steps for the person to use.**
+    - **Use the steps you write to create a sketch of a _boxplot_ for your predominant color's scores in your journal.**
+    - **Then use the `bwplot` function to create a _boxplot_ using `R`.**
+    
+## Our favorite summaries
+
+- In the past two labs, we've learned how to calculate numerous _numerical summaries_.
+    - Computing lots of different summaries can be tedious.
+- Fill in the blanks below to compute some of our _favorite_ summaries for your predominant color all at once.
+```{r, eval = FALSE, echo = TRUE}
+favstats(~____, data=colors)
+```
+
+
+## On your own
+
+- **Create a function called `myIQR` that uses the _only_ `quantile` function to compute the middle 30% of the data.**
+
+
+
+
