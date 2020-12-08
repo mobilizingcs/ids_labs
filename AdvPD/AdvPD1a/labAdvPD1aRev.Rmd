@@ -15,10 +15,27 @@ knitr::opts_chunk$set(echo = FALSE)
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 library(mobilizr)
 ```
+## CONSIDERING DATA
+
+The first two labs in the IDS curriculum contain commands that are important when considering or examining data.  
+
+`names()`  
+`ncol()`  
+`nrow()`  
+`dim()`  
+`str()`  
+
+<b>Type the following command on your console:</b>
+
+```{r, eval=FALSE, echo=TRUE}
+inspect(cdc)
+```
+
+**1.  What information does this function display and how does it display it?**
 
 ## ENHANCING VISUALIZATIONS
 
-The following arguments can be used to enhance a visualization.
+The following <b>arguments</b> can be used to enhance a visualization.
 
 * Option:  `main = " "` .  Adds a title to your visual  
 
@@ -28,197 +45,331 @@ The following arguments can be used to enhance a visualization.
 
 * Option:  `ylab = " "` . Changes the label on the y-axis  
 
-* Option:  `horizontal = TRUE` . Makes bars horizontal
+* Option:  `horizontal = TRUE` . Makes bars horizontal 
 
 
 
-**Try these examples:** 
+<b>Examples:</b> 
 
-Basic usage  
-
-```{r, eval = FALSE, echo = TRUE}
-bargraph (~gender, data=cdc)
+```{r, eval = TRUE, echo = TRUE}
+histogram(~weight, data=cdc, 
+         col="steelblue", 
+         xlab="weight in kilograms")
 ```
 
-Including the options `col` and `main` will change the color of the bars to green and include the title "Distribution of Gender".
 
-```{r, eval = FALSE, echo = TRUE}
-bargraph(~gender, data=cdc, 
-         col="green", 
+
+```{r, eval = TRUE, echo = TRUE}
+bargraph(~gender, data=cdc,
+         groups=gender, 
+         col=c("red2","navy"),
          main="Distribution of Gender")
 ```
 
-To assign each bar its own color, use the `groups` argument along with the `col` argument.  
+<b>FLEX YOUR SKILLS</b>
 
-```{r, eval = FALSE, echo = TRUE}
-bargraph(~gender, groups=gender, col=c("pink","lightblue"), data=cdc)
+**2.  What code will create the visual below?**    
+
+Try out different codes in RStudio until you are able to match the visual below.
+
+```{r, echo=FALSE}
+bargraph(~days_vaping,data=cdc,
+         col="green",
+         main="Distribution of Vaping Habits",
+         horizontal=TRUE,
+         type="percent")
 ```
 
 ## HISTOGRAMS
 
-When creating a histogram, it can be frustrating trying to estimate the values on the x-axis. A solution is the argument `breaks = seq( )`.  
+When creating a histogram, it can be frustrating trying to estimate the values on the x-axis. A solution is the argument `breaks` in conjunction with the function `seq( )`.  
 
-The option  `breaks = seq( )`  allows one to control the bin widths as well as the beginning and ending values of the bins.  
+<b>Example:</b>  
 
-**Try these examples:**  
+The option  `breaks = seq( )`  allows one to control the bin widths as well as the beginning and ending values of the bins.
+The minimum and maximum values need to be considered beforehand so that no data is excluded.
 
-Basic usage 
+```{r, eval = TRUE, echo = TRUE}
+range(~weight, data=cdc)
+```
+
+A histogram with bin widths of 10 beginning at a weight of 30 kgs and ending at 190 kgs. 
+
+```{r, eval = TRUE, echo = TRUE}
+histogram (~weight, data=cdc, breaks=seq(30, 190, by=10))
+```
+
+**3. Try different values in the sequence function. What did you notice?**  
+
+Using the concept of balancing point, guess the mean weight of the teens in the cdc data.  
+
+In order to estimate the mean absolute deviation (MAD) of the distribution of weight, it would be helpful to draw a vertical line on the histogram to represent the mean weight.  
+
+<b>Example:</b> 
 
 ```{r, eval = FALSE, echo = TRUE}
+histogram (~weight, data=cdc, breaks=seq(30, 190, by=10))
+```
+
+```{r, eval = TRUE, echo = TRUE}
+add_line (vline = mean(~weight, data = cdc))
+``` 
+
+**4. Where would the median of this distribution lie in comparison to the mean? Write the code to create a vertical line representing the median.**
+
+## DENSITY PLOTS
+
+A density plot is a representation of the distribution of a numerical variable. It is a smoothed version of a histogram and can be interpreted in the same way.
+
+```{r, eval=TRUE, echo=TRUE}
 histogram(~weight, data=cdc)
 ```
 
-A histogram with bin widths of 10 beginning at a weight of 33 kgs and ending at 183 kgs. The minimum and maximum weight need to be considered beforehand so that no data is excluded.  
+The peaks of a Density Plot help display where values are concentrated over the interval.  
+The values on the y-axis aren’t really useful. They exist solely to constrain the areas _under_ the curves to equal 1.0
 
-```{r, eval = FALSE, echo = TRUE}
-histogram (~weight, data=cdc, breaks=seq(33, 183, by=10))
+```{r, eval=TRUE, echo=TRUE}
+densityplot(~weight, data=cdc)
 ```
 
-Using the concept of balancing point, guess the mean weight of the teens in the cdc data and then confirm with the code below.  
 
-```{r, eval = FALSE, echo = TRUE}
-mean (~weight, data=cdc)
-``` 
-    
-In order to estimate the mean absolute deviation (MAD) of the distribution of weight, it would be helpful to draw a vertical line to represent the mean weight.  
+An advantage of Density Plots over Histograms is that they’re better at determining the distribution's shape because they’re not affected by the number of bins.  
 
-Use the code below to draw a vertical line through the histogram displaying the distribution of weight. Fill in the missing value with the actual mean.  
+<b>FLEX YOUR SKILLS</b>  
 
-```{r, eval = FALSE, echo = TRUE}
-add_line (vline = _______)
-``` 
+**5. What code will create the visual below?**  
+
+Hint: To create the legend use the argument `auto.key=TRUE`.
+
+```{r, eval=TRUE, echo=FALSE}
+densityplot(~weight, groups=gender,data=cdc, auto.key=TRUE)
+```
+
+
+
+## BOXPLOTS
+
+Boxplots are appropriate when analyzing distributions of numerical variables that are skewed or that contain outliers. Those outliers, however, do impact the readability of the boxplot. Notice how the box gets compressed because R needs to include all of the data.
+
+```{r eval = TRUE, echo = TRUE}
+bwplot(~weight,data=cdc)
+```
+
+The `xlim` argument along with the `c()` function will allow you to choose a range of values to plot.
+
+The 5-number summary should be considered when choosing the interval.  
+
+```{r eval = TRUE, echo = TRUE}
+favstats(~weight,data=cdc)
+```
+
+
+<b>Example:</b>  
+
+This boxplot displays the distribution of weight from 30 kg to 110 kg.
+
+```{r eval = TRUE, echo = TRUE}
+bwplot(~weight,data=cdc, xlim=c(30, 110))
+```
+
+There is also a `ylim` argument.  The `ylim` argument would be appropriate for vertical boxplots. R, however, generates horizontal boxplots by default.  
+
+Can we create vertical boxplots in R?  
+We can ONLY create vertical boxplots when comparing groups.
+
+<b>Example:</b>
+
+```{r eval = TRUE, echo = TRUE}
+bwplot(height~gender,data=cdc)
+```
+
+**6. Besides a vertical boxplot, for which other type of plot might it be appropriate to use the 'ylim' argument? Explain.**  
+
+<b>FLEX YOUR SKILLS</b>
+
+**7.  What code will create the visual below?**  
+
+```{r eval = TRUE, echo = FALSE}
+bwplot(height~grade, data=cdc, ylim=c(1.4,2))
+```
+
+
 
 ## DOTPLOTS  
 
-When creating a dotplot, the visualization can be inaccurate and tends to group values together. A solution is the argument `nint` . By including `nint`, you set the number of intervals for the dots in your plot.  
+Dotplots are more appropriate when working with small data sets. When creating a dotplot, the visualization can be inaccurate because the function tends to group values together, similar to a histogram. A solution is the `nint` argument. The `nint` argument allows you to create a bin for each value in the distribution.  
 
-**Try these examples:** 
+The CDC is by no means a small dataset so we will create a smaller subset containing less than one hundred observations.
 
-Basic Usage  
-
-```{r, eval = FALSE, echo = TRUE}
-dotPlot(~green, data=colors)
+```{r, eval=TRUE, echo=TRUE}
+height_short<-filter(cdc, height<=1.45)
 ```
 
-A dotPlot that can display 16 individual values (5 to 20). For numerical variables that are integers, the value for `nint` can be calculated by finding the range of the variable and adding 1.  
-
-```{r, eval = FALSE, echo = TRUE}
-dotPlot(~green, col="green", data=colors, nint=16) 
+```{r, eval=TRUE, echo=TRUE}
+tally(~height,data=height_short)
 ```
 
-## FILTERING 
+The output for the tally function displays eight different values for the heights of the 93 observations that were filtered yet the dotplot below only shows seven bins. If you look closely the dots do not correspond to the actual heights either.
 
-You can filter multiple numerical values by using inequalities but you can also filter multiple values of categorical variables (or exclude a value but include all other values in the variable).  
 
-**Try these examples:**  
+```{r, eval=TRUE, echo=TRUE}
+dotPlot(~height,data=height_short)
+```
 
-* The <b>minors</b> data frame excludes observations that reported an age of 18 years old or older.  
+To remedy this problem, we need to create a bin for each value between 1.27 and 1.45. To do this, find the range between the minumum and maximum values and add one. This is the value you need to set `nint` equal to get a better representation.
 
-```{r, eval = FALSE, echo = TRUE}
+```{r, eval = TRUE, echo = TRUE}
+dotPlot(~height, data=height_short, nint=19) 
+```
+
+<b>FLEX YOUR SKILLS</b>
+
+**8.  What codes will create the visual below?** 
+
+```{r, eval=TRUE, echo=FALSE}
+height_tall<-filter(cdc, height>=1.98)
+tally(~height,data=height_tall)
+```
+
+```{r, eval=TRUE, echo=FALSE}
+dotPlot(~height,data=height_tall,nint=14)
+```
+
+## NEW OPERATORS
+
+An operator is a symbol that tells the compiler (computer software) to perform specific mathematical or logical manipulations. In R programming we have the following types of operators: Arithmetic, Relational, Logical, Assignment and Miscellaneous.
+
+
+* <b>Arithmetic Operators</b>  
+
+You are probably familiar with the following arithmetic operators:
+`+`, `-`, `*`, `/` ,`^`.  
+
+An arithmetic operator that you are probably not familiar with is the `%%` operator.  
+
+**9.  Type 23%%5 in your console. Try other values if it is not clear what the operator does. What does the operator do?** 
+
+* <b>Relational Operators</b>  
+
+You've used many of the relational operators when filtering:
+`<`, `>`, `<=`, `>=` ,`==`. 
+
+Another relational operator is the <b>not-equal-to</b> operator (`!=`).
+
+<b>Example:</b>  
+
+The <b>minors</b> data frame excludes observations that reported an age of 18 years old or older.  
+
+```{r, eval = TRUE, echo = TRUE}
 minors<-filter(cdc, age!="18 years old or older")
+tally(~age,data=minors)
 ```
 
-* The <b>age_16_17</b> data frame includes observations that reported an age of 16 years old or 17 years old.    
+**10.  Write two different codes that create a data frame that include only females.**  
 
-```{r, eval = FALSE, echo = TRUE}
+* <b>Logical Operators</b>  
+
+When filtering you also used the logical operator AND (`&`) (equivalent to a comma) when filtering observations with multiple characteristics.  
+
+Sometimes, however, you want to filter observations that have one characteristic OR (|) another.
+
+<b>Example:</b> 
+
+The <b>age_16_17</b> data frame includes observations that reported an age of 16 years old OR 17 years old.    
+
+```{r, eval = TRUE, echo = TRUE}
 age_16_17<-filter(cdc, age=="16 years old"|age=="17 years old")
+tally(~age,data=age_16_17)
 ```
 
-* The <b>cdc_not_na</b> excludes all the observations that did not provide an answer for their weight description or depression status.  
+**11.  Write a code that creates a data frame that includes the observations that always wore a helmet OR never wore a helmet while riding their bicycle.** 
 
-```{r, eval = FALSE, echo = TRUE}
-cdc_not_na<-filter(cdc, !is.na(describe_weight), !is.na(depressed))
+
+<b>CLEANING</b>  
+
+Notice that even though we've filtered out the 16 and 17 year olds, the other age categories still appear in our tally (above) and bargraph.
+
+```{r, eval = TRUE, echo = TRUE}
+bargraph(~age,data=age_16_17)
 ```
 
-## CLEANING  
 
-**Statistical investigation:**
-
-<b><i> Ask Question:</b></i>  
-
-How do 16 year olds differ from 17 year-olds in the number of hours they spend watching television?   
-
-<b><i> Consider Data:</b></i>  
-
-We will use the `age_16_17` cdc subset and conduct an analysis on the categorical variable `hours_tv`.
-
-<b><i> Analyze Data:</b></i>  
-
-
-```{r, eval = FALSE, echo = TRUE}
-bargraph(~hours_tv, groups=age, data=age_16_17)
-```
-
-```{r, eval = FALSE, echo = TRUE}
-tally(~hours_tv|age,format="percent",margins=TRUE,data=age_16_17)
-```
-
-Notice that the other age categories still appear in our bargraph and tally.  
 
 When we filter out categories from a variable that R interprets as a factor, R keeps ALL the categories and just reports that the data has 0 observations within those categories.  
+In order to exclude the other categories, we need to “trick” R by changing age from a factor variable to a character variable. 
 
-So in order to exclude the other categories, we need to “trick” R by changing age from a factor variable to a character variable.  
-
-```{r, eval = FALSE, echo = TRUE}
+```{r, eval = TRUE, echo = TRUE}
 age_16_17<-mutate(age_16_17, age=as.character(age))
 ```
 
-```{r, eval = FALSE, echo = TRUE}
-bargraph(~hours_tv, groups=age, data=age_16_17)
+```{r, eval = TRUE, echo = TRUE}
+tally(~age,data=age_16_17)
+bargraph(~age,data=age_16_17)
 ```
 
-```{r, eval = FALSE, echo = TRUE}
-tally(~hours_tv|age,format="percent",margins=TRUE,data=age_16_17)
+
+## MISSING VALUES
+
+Some of the teens in the CDC data did not answer some of the survey questions or their answers were ommitted because of discrepancies especially in height and weight. Although we can still conduct an analysis we sometimes obtain warning messages that data is missing or when analyzing a categorical variable we obtain a new category that includes NA (not available).
+
+You might find the functions `na.omit()` and `is.na()` useful.  
+
+The function `na.omit()` will exclude ALL observations that have NA as a value for any of the variables.  
+
+<b>Example:</b>  
+
+```{r, eval = TRUE, echo = TRUE}
+cdc2<-na.omit(cdc)
+dim(cdc2)
 ```
 
-<b><i> Interpret Data:</b></i>
+Notice that this function excluded 7301 observations!  
+This is not good practice so an alternative is to use the `is.na()` function with the <b>not-equal-to</b> logical operator (`!=`).
 
-## BARPLOTS  
+<b>Example:</b>  
 
-When comparing two groups on a numerical variable, we typically stack the graphs to be able to compare the center, shape and spread of the distributions.  
-
-Using stacked bar graphs will provide the same easy analysis when comparing groups on a categorical variable.  
-
-**Statistical investigation:**  
-
-<b><i> Ask Question:</b></i>  
-
-Is the incidence of depression similar across the weight descriptions?  
-
-<b><i> Consider Data:</b></i>  
-
-We will use the `cdc_not_na` to include only those observations that provided both their weight description and depression status.  
-
-<b><i> Analyze Data:</b></i>  
-
-```{r, eval = FALSE, echo = TRUE}
-bargraph (~depressed, data=cdc_not_na, groups=describe_weight)
+```{r, eval = TRUE, echo = TRUE}
+tally(~describe_weight, data=cdc)
 ```
 
-```{r, eval = FALSE, echo = TRUE}
-bargraph (~depressed, data=cdc_not_na, group=describe_weight, stack=TRUE)
+The <b>cdc3</b> data frame excludes the observations that did not provide an answer for their weight description.
+
+```{r, eval = TRUE, echo = TRUE}
+cdc3<-filter(cdc, !is.na(describe_weight))
+tally(~describe_weight, data=cdc3)
 ```
 
-```{r, eval = FALSE, echo = TRUE}
-tally(~depressed|describe_weight, data=cdc_not_na, margin=TRUE)
+<b>FLEX YOUR SKILLS</b>  
+
+**12.  Write a code that creates the plot below**  
+
+Hint: The argument `stack=TRUE` was utilized.
+
+```{r, eval=TRUE, echo=FALSE}
+file1<-filter(cdc, !is.na(depressed),!is.na(describe_weight))
+file1<-mutate(file1, depressed=as.character(depressed), 
+              describe_weight=as.character(describe_weight))
+bargraph(~describe_weight, data=file1, groups=depressed, stack=TRUE, 
+         main="Distribution of Depression by Weight Perception")
 ```
 
-Notice that the groups we wish to compare vary in the number of observations, so in order to compare the incidence of depression over the weight description, we need to calculate the conditional relative frequencies of depression by weight description.  
+<b>BARPLOTS</b>
 
-```{r, eval = FALSE, echo = TRUE}
-tally(~depressed|describe_weight, data=cdc_not_na, format="percent")
+To display conditional relative frequencies barplots need to be utilized.
+
+The conditional relative frequencies need to be stored as as vector and then used in the `barplot()` function.
+
+```{r, eval=TRUE, echo=TRUE}
+table1<-tally(~depressed|describe_weight, format="percent",data=file1)
+barplot(table1,legend=TRUE,col=c("steelblue","purple"))
 ```
 
-To create a barplot, the conditional relative frequencies need to be stored as a vector.  
 
-```{r, eval = FALSE, echo = TRUE}
-table1<-tally(~depressed|describe_weight, data=cdc_not_na, format="percent")
+## IF-ELSE FUNCTION
+
+The `ifelse()` function is very important in creating functions.  If you type in the name of a function in your console, you will see the anamtomy of the function.  
+
+```{r, eval=TRUE, echo=TRUE}
+data
 ```
 
-Creates a proportional bargraph showing the conditional relative frequencies of depression by weight description.  
-
-```{r, eval = FALSE, echo = TRUE}
-barplot(table1, legend=TRUE)
-```
-
-<b><i> Interpret Data:</b></i> 
