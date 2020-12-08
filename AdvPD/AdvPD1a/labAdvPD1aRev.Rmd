@@ -125,15 +125,15 @@ A density plot is a representation of the distribution of a numerical variable. 
 histogram(~weight, data=cdc)
 ```
 
-The peaks of a Density Plot help display where values are concentrated over the interval.  
-The values on the y-axis aren’t really useful. They exist solely to constrain the areas _under_ the curves to equal 1.0
+The peaks of a density plot help display where values are concentrated over the interval.  
+The values on the y-axis aren’t really useful. They exist solely to constrain the area _under_ the curve to equal 1.0
 
 ```{r, eval=TRUE, echo=TRUE}
 densityplot(~weight, data=cdc)
 ```
 
 
-An advantage of Density Plots over Histograms is that they’re better at determining the distribution's shape because they’re not affected by the number of bins.  
+An advantage of density plots over histograms is that they’re better at determining the distribution's shape because they’re not affected by the number of bins.  
 
 <b>FLEX YOUR SKILLS</b>  
 
@@ -247,7 +247,7 @@ You are probably familiar with the following arithmetic operators:
 
 An arithmetic operator that you are probably not familiar with is the `%%` operator.  
 
-**9.  Type 23%%5 in your console. Try other values if it is not clear what the operator does. What does the operator do?** 
+**9.  Type 23%%5 in your console. Try other values until it is clear what the operator does. What does the operator do?** 
 
 * <b>Relational Operators</b>  
 
@@ -258,7 +258,7 @@ Another relational operator is the <b>not-equal-to</b> operator (`!=`).
 
 <b>Example:</b>  
 
-The <b>minors</b> data frame excludes observations that reported an age of 18 years old or older.  
+To create the <b>minors</b> data frame we told R to filter the observations whose age was NOT EQUAL to 18 + years. 
 
 ```{r, eval = TRUE, echo = TRUE}
 minors<-filter(cdc, age!="18 years old or older")
@@ -341,7 +341,7 @@ tally(~describe_weight, data=cdc3)
 
 <b>FLEX YOUR SKILLS</b>  
 
-**12.  Write a code that creates the plot below**  
+**12.  Write a code that creates the plot below.**  
 
 Hint: The argument `stack=TRUE` was utilized.
 
@@ -370,6 +370,29 @@ barplot(table1,legend=TRUE,col=c("steelblue","purple"))
 The `ifelse()` function is very important in creating functions.  If you type in the name of a function in your console, you will see the anamtomy of the function.  
 
 ```{r, eval=TRUE, echo=TRUE}
-data
+rflip
 ```
 
+**13.  What purpose did the 'ifelse()' function serve?**  
+
+We will be using the `ifelse()` function to mutate data.  
+
+For example, we might want to recode 9th and 10th graders as underclassmen and 11th and 12 graders as upperclassmen.  
+
+```{r, eval=TRUE, echo=TRUE}
+cdc_grades<-filter(cdc,grade=="9th grade"|grade=="10th grade"|
+                     grade=="11th grade"|grade=="12th grade")
+cdc_grades<-mutate(cdc_grades, grade=as.character(grade))
+tally(~grade, data=cdc_grades)
+```
+
+```{r, eval=TRUE, echo=TRUE}
+cdc_grades2<-mutate(cdc_grades, grade=ifelse(grade=="9th grade"|grade=="10th grade",
+                                       "lowerclassmen","upperclassmen"))
+```
+
+```{r, eval=TRUE, echo=TRUE}
+tally(~grade, data=cdc_grades2)
+```
+
+**14.  Explain how the 'ifelse()' function works?**  
