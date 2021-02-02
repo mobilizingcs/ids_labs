@@ -1,7 +1,7 @@
 ---
-title: "Visualizations with ggplot2"
+title: "Visualizations with ggplot"
 author: "Advanced PD Lab 2B"
-date: "The following slides contain information and examples about how to create visualizations using ggplot2. You will need your ggplot2 CHEAT SHEET."
+date: "The following slides contain information and examples about how to create visualizations using ggplot. You will need your ggplot CHEAT SHEET."
 output: 
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
@@ -17,15 +17,15 @@ library(mobilizr)
 mpg<- mutate(mpg,cyl=as.factor(cyl))
 ```
 
-## What is ggplot2?
+## What is ggplot?
 
-The ggplot2 package, created by <a href="http://hadley.nz/">Hadley Wickham</a>, Chief Scientist at RStudio, offers a powerful graphics language for creating elegant and complex plots.  
+The ggplot package, created by <a href="http://hadley.nz/">Hadley Wickham</a>, Chief Scientist at RStudio, offers a powerful graphics language for creating elegant and complex plots.  
 
-ggplot2 allows you to create graphs that represent both univariate and multivariate numerical and categorical data in a straightforward manner.  
+ggplot allows you to create graphs that represent both univariate and multivariate numerical and categorical data in a straightforward manner.  
 
 **Let's get started:** 
 
-Begin by installing and loading the `ggplot2` package.  
+Begin by installing and loading the `ggplot` package.  
 
 `install.packages(" ")`  
 
@@ -49,8 +49,11 @@ The template to create a visual in ggplot looks like:
     
 
 
-**Try these codes in an RMarkdown:**  
+**Include all of the codes you come across in an RMarkdown:**  
 
+**Cheat Sheet**  
+
+<b>ONE VARIABLE discrete</b>
 
 ```{r, eval=TRUE, echo=TRUE}
 ggplot(data = mpg) +
@@ -89,9 +92,11 @@ ggplot(data = mpg) +
 
 Let's add more layers to this visual. 
 
-**CHEAT SHEET TIME**  
+**CHEAT SHEET**  
 
-Functions from <b>Scales</b>, <b>Labels</b>, <b>Coordinate Systems</b> and <b>Themes</b> have been applied to modify the visual.  
+<b>Scales, Labels, Coordinate Systems and Themes</b>
+
+Functions from Scales, Labels, Coordinate Systems and Themes have been applied to modify the visual.  
 
 ```{r, eval=TRUE, echo=TRUE}
 ggplot(data = mpg) +
@@ -113,7 +118,7 @@ ggplot(data = mpg) +
 
 In order to create a visual to compare groups using lattice, we utilized the vertical bar (`|`) to split or facet each groups' data into a separate graph. The `groups` argument color coded the groups.
 
-ggplot2 offers similar options with their `Faceting` and `Position Adjustment` options.  
+ggplot offers similar options with their `Faceting` and `Position Adjustment` options.  
 
 <B>NOTE:</b> If you look at the structure of the mpg data you will find that the variable `cyl`is being interpreted as an integer. We, however, are utilizing it more as a categorical variable so we need to mutate the data using the following code:
 
@@ -164,13 +169,8 @@ ggplot(data = mpg) +
 
 ## Numerical Variables 
 
-The template to create a visual in ggplot looks like:  
-
-    ggplot(data = < DATA >) +  
-
-    < GEOM_FUNCTION >(mapping = aes(< MAPPINGS >))  
-    
 **CHEAT SHEET**  
+
 ONE VARIABLE continuous</b>
 
 
@@ -194,7 +194,7 @@ ggplot(data=mpg)+
 ggplot(data=mpg)+
   geom_histogram(mapping=aes(x=cty),binwidth = 2,fill="orange")+
   labs(x="city miles per gallon")+
-  theme_classic ()
+  theme_linedraw()
 ```
 
 ggplot allows us to overlay plots!
@@ -215,24 +215,37 @@ ggplot(data=mpg)+
   
 ```
 
-**Match the graph**  
+**9. What code will create the visual below?**  
 
-## Comparing Groups on a Numerical Variable  
+```{r, eval=TRUE, echo=FALSE}
+ggplot(data=mpg)+
+  geom_dotplot(mapping=aes(x=cty), binwidth = 0.18)+
+  facet_grid(cyl~.)+
+  theme_gray()
+```
+
+
+## TWO VARIABLES  
+
+**CHEAT SHEET**  
+
+<b>discrete x, continuous y</b>
+
+Notice that we can only create boxplots when comparing two groups.
 
 
 ```{r, eval=TRUE, echo=FALSE}
 ggplot(data=mpg)+
-  geom_point(mapping=aes(x=class,y=hwy))+
   geom_boxplot(mapping=aes(x=class,y=hwy,color=class))+
   scale_y_continuous(breaks=seq(0,45,5))
 ```
 
+**CHEAT SHEET**  
 
+<b>continuous x, continuous y</b>  
 
-## Bivariate Data  
 
 <b>Is there a difference between city miles per gallon and highway miles per gallon?</b>  
-
 In order to help us answer this question we need to add the equation y = x to our scatterplot. The line y = x represents when hwy mileage = cty mileage (no difference).  
 
 ```{r, eval=TRUE, echo=TRUE }
@@ -241,7 +254,7 @@ ggplot(data=mpg)+
   geom_abline(intercept = 0, slope = 1, color="red")
 ```
 
-**What code will create a scatterplot of hwy vs cty with the line of best fit?**
+**10. What code will create a scatterplot of hwy vs cty with the line of best fit?**
 
 ```{r, eval=FALSE, echo=FALSE }
 ggplot(data=mpg)+
@@ -259,6 +272,8 @@ ggplot(data=mpg)+
 ```
 
 Notice that as engine displacement increases, highway miles per gallon decreases. There are a few observations, however, that don't quite fit the pattern.  
+
+For those of you that want to learn about engine displacement, watch this short video: <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="788.54" height="443" type="text/html" src="https://www.youtube.com/embed/bf1dOSPB2UA?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"><div><small><a href="https://youtubeembedcode.com/nl/">youtubeembedcode nl</a></small></div><div><small><a href="http://tr3ndygirl.com/">Ultimate web Traffic</a></small></div></iframe>
 
 Try the codes below: determine which variable explains these outliers.  
 
@@ -282,13 +297,17 @@ ggplot(data=mpg)+
   geom_point(mapping=aes(x=displ,y=hwy,color=class))
 ```
 
-**
+**11. What are the different aesthetics that can be applied to a geometric object (point)?**
 
 ## On Your Own  
 
-Chose a different visualization from the ggplot2 cheat sheet to create.  
+There are many more non-traditional plots that can be made using ggplot. 
 
-**Example**
+A 2d density chart displays the relationship between 2 numeric variables. One is represented on the X axis, the other on the Y axis, like for a scatterplot. Then, the number of observations within a particular area of the 2D space is counted and represented by a color gradient. Several types of 2d density charts exist.
+
+**CHEAT SHEET**  
+
+<b>continuous bivariate distribution</b> 
 
 ```{r, eval=TRUE, echo=FALSE}
 ggplot(diamonds,aes(carat,price))+
@@ -314,3 +333,5 @@ This is equivalent to:
 ggplot(data=diamonds)+
   geom_density2d(mapping=aes(x=carat,y=price))
 ```
+
+**12. Chose a different visualization from the ggplot cheat sheet to create.** 
