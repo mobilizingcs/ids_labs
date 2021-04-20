@@ -61,7 +61,7 @@ library(mobilizr)
 - In reality, songs from a playlist are chosen without replacement.
     - This way, you won't hear the same song several times in a row.
 - Let's write a more realistic simulation and estimate the probability that if we select two songs at random, without replacement, that both are rap songs.
-    - Use the `do` function to perform 10 simulated `sample`s of `size` 2, with replacement and _assign_ the simulations the name `draws`.
+    - Use the `do` function to perform 10 simulated `sample`s of `size` 2, without replacement and _assign_ the simulations the name `draws`.
     
 
 ## Simulations and probability
