@@ -37,7 +37,7 @@ knitr::opts_chunk$set(echo = FALSE)
     - Name your data `colors` when you load it.
 - Before analyzing a new data set, it's often helpful to get familiar with it. So:
     - **Write down the `names` of the 4 variables that contain the point-totals, or _scores_, for each personality color.**
-    - **Write down the `names` of the variables that tell us an observation's _birth gender_ and whether they participated in playing _sports_.**
+    - **Write down the `names` of the variables that tell us an observation's introverts/extroverts designation and whether they participated in playing _sports_.**
     - **How many variables are in the data set?**
     - **How many observations are in the data set?**
 
@@ -65,12 +65,12 @@ mean(~____, data = colors)
     - **Are the `mean` and `median` roughly the same? If not, use the `dotPlot` you made in the last slide to describe why.**
 
 
-## Comparing birth_genders
+## Comparing introverts/extroverts
 
-- Make a `dotPlot` of your _predominant color_ again; but this time, facet the plot based on gender.
-- Use a line of code, using similar syntax to how you facet plots, to _calculate_ a value that describes the _center_ of _each_ birth gender.
-    - **Do males and females differ in their typical scores for your predominant color? Answer this statistical question using your `dotPlot`.**
-- **`Assign` the mean values a name. Then place the name into the `diff()` function to calculate the difference. How much more/less did one birth gender score over the other for your predominant color?**
+- Make a `dotPlot` of your _predominant color_ again; but this time, facet the plot based on introvert/extrovert variable.
+- Use a line of code, using similar syntax to how you facet plots, to _calculate_ a value that describes the _center_ of your predominant color for introverts and extroverts.
+    - **Do introverts or extroverts differ in their typical scores for your predominant color? Answer this statistical question using your `dotPlot`.**
+- **`Assign` the mean values a name. Then place the name into the `diff()` function to calculate the difference. How much more/less did introverts/extroverts score over the other for your predominant color?**
 
 
 ## Estimating Spread
@@ -82,7 +82,7 @@ mean(~____, data = colors)
 
 _Data points in my plot will usually fall within_ ____ _units of the center._
 
-- **Which birth gender, if either, seem to have values that are more spread out from the center?**
+- **Which group (introverts or extroverts), if either, seem to have values that are more spread out from the center?**
 
     
 ## Mean Absolute Deviation
@@ -95,7 +95,7 @@ _Data points in my plot will usually fall within_ ____ _units of the center._
 MAD(~_____, data = colors)
 ```
 
-- **Based on the MAD, which birth gender has more variability for your predominant color's scores?**
+- **Based on the MAD, which group (introverts or extroverts) has more variability for your predominant color's scores?**
     - **Does this match the answer you gave for the last question in the previous slide?** 
 
 

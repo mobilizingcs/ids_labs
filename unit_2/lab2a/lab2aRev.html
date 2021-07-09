@@ -469,7 +469,7 @@ Lab 2A
 <li>Before analyzing a new data set, it’s often helpful to get familiar with it. So:
 <ul>
 <li><strong>Write down the <code>names</code> of the 4 variables that contain the point-totals, or <em>scores</em>, for each personality color.</strong></li>
-<li><strong>Write down the <code>names</code> of the variables that tell us an observation’s <em>birth gender</em> and whether they participated in playing <em>sports</em>.</strong></li>
+<li><strong>Write down the <code>names</code> of the variables that tell us an observation’s <em>introvert/extrovert</em> and whether they participated in playing <em>sports</em>.</strong></li>
 <li><strong>How many variables are in the data set?</strong></li>
 <li><strong>How many observations are in the data set?</strong></li>
 </ul></li>
@@ -505,12 +505,12 @@ Lab 2A
 </ul>
 </div>
 <div id="comparing-birth_genders" class="slide section level2">
-<h1>Comparing birth_genders</h1>
+<h1>Comparing introverts/extroverts</h1>
 <ul>
-<li>Make a <code>dotPlot</code> of your <em>predominant color</em> again; but this time, facet the plot based on gender.</li>
-<li>Use a line of code, using similar syntax to how you facet plots, to <em>calculate</em> a value that describes the <em>center</em> of <em>each</em> birth gender.
+<li>Make a <code>dotPlot</code> of your <em>predominant color</em> again; but this time, facet the plot based on the introvert/extrovert variable.</li>
+<li>Use a line of code, using similar syntax to how you facet plots, to <em>calculate</em> a value that describes the <em>center</em> of <em>your predominant color</em> for introverts and extroverts. 
 <ul>
-<li><strong>Do males and females differ in their typical scores for your predominant color? Answer this statistical question using your <code>dotPlot</code>.</strong></li>
+<li><strong>Do introverts or extroverts differ in their typical scores for your predominant color? Answer this statistical question using your <code>dotPlot</code>.</strong></li>
 </ul></li>
 <li><strong><code>Assign</code> the mean values a name. Then place the name into the <code>diff()</code> function to calculate the difference. How much more/less did one birth gender score over the other for your predominant color?</strong></li>
 </ul>
@@ -527,7 +527,7 @@ Lab 2A
 </ul>
 <p><em>Data points in my plot will usually fall within</em> ____ <em>units of the center.</em></p>
 <ul>
-<li><strong>Which birth gender, if either, seem to have values that are more spread out from the center?</strong></li>
+<li><strong>Which group (introverts or extroverts), if either, seem to have values that are more spread out from the center?</strong></li>
 </ul>
 </div>
 <div id="mean-absolute-deviation" class="slide section level2">
@@ -541,7 +541,7 @@ Lab 2A
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1"><span class="kw">MAD</span>(<span class="op">~</span>_____, <span class="dt">data =</span> colors)</a></code></pre></div>
 <ul>
-<li><strong>Based on the MAD, which birth gender has more variability for your predominant color’s scores?</strong>
+<li><strong>Based on the MAD, which group (introverts or extroverts) has more variability for your predominant color’s scores?</strong>
 <ul>
 <li><strong>Does this match the answer you gave for the last question in the previous slide?</strong></li>
 </ul></li>
