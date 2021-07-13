@@ -101,6 +101,6 @@ MAD(~_____, data = colors)
 
 ## On your own
 
-- Do boys and girls in your class differ in their color scores? 
+- Do introverts and extroverts in your class differ in their color scores? 
     - **Perform an analysis that produces _numerical summaries_ and _graphs_.**
     - **Then, write a few sentence interpretations that addresses this statistical question and considers the _shape_, _center_ and _spread_ of the distributions of the graphs you create.**
