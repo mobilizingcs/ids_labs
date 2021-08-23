@@ -60,3 +60,17 @@ _Is there any evidence to suggest that wealthier passengers on the Titanic were 
 
 - **Write up your answer as a statistical analysis. Create a plot and explain how the plot supports your conclusion. Be sure to also explain why shuffling your data is important.**
 
+# Comparing Mean Fares
+===========================
+
+- What about if instead of calculating the median fare price for each group after a shuffle, we calculated the mean fare price and took the difference (mean_survivor – mean_victim).
+
+- **If we did this 500 times, what do you predict the distribution of differences will look like?**
+
+- Use the do and the shuffle functions to shuffle the passenger's survival status 500 times. 
+    - For each shuffle, compute each group'smeanfare paid.
+    - After shuffling your data, use themutatefunction to create a variable calleddiffto the shuffled means you just calculated. 
+
+- **What does the shuffled data reveal? Does the answer to the research question below change when using the mean fares instead of the median fares?**
+
+_“Is there any evidence to suggest that those who survived paid a higher fare than those who died?”
