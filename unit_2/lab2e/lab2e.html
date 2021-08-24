@@ -943,9 +943,9 @@ hljs.initHighlightingOnLoad();
 <div class="slideContent" >
 <ul>
 <li>To help us decide if the difference in proportions in our <em>actual</em> data occurs by chance or not, we can use the <code>do()</code> function to shuffle our data many times and see how often our <em>actual</em> difference occurred by chance.</li>
-<li>Use <code>do</code>, <code>tally</code> and <code>shuffle</code> functions to <code>shuffle</code> the <code>survival</code> variable and <code>tally</code> the proportion of women who survived 500 times. <code>Assign</code> your 500 shuffles the name <code>shuffles</code></li>
+<li>Use <code>do</code>, <code>tally</code> and <code>shuffle</code> functions to <code>shuffle</code> the <code>survival</code> variable and <code>tally</code> the proportion of women who survived 500 times. <code>Assign</code> your 500 shuffles the name <code>shuffled_survivors</code></li>
 <li><strong><code>View</code> your shuffled data and explain what the rows and each column represents.</strong></li>
-<li><strong>For the first row of shuffled data in the <code>shuffles</code>, what is the difference between proportion of females who survived and the proportion of males who survived?</strong></li>
+<li><strong>For the first row of shuffled data in the <code>shuffled_survivors</code>, what is the difference between proportion of females who survived and the proportion of males who survived?</strong></li>
 </ul>
 
 </div>
@@ -963,7 +963,7 @@ hljs.initHighlightingOnLoad();
 </ul></li>
 </ul>
 
-<pre><code class="r">shuffles &lt;- mutate(shuffles, 
+<pre><code class="r">shuffled_survivors &lt;- mutate(shuffled_survivors, 
             diff = ____ - ____)
 </code></pre>
 
@@ -974,7 +974,7 @@ hljs.initHighlightingOnLoad();
 <h3>Time to decide</h3>
 <div class="slideContent" >
 <ul>
-<li>Create a <code>histogram</code> of the <code>difference</code>s in our <code>shuffles</code> data. Based on your plot, answer the following
+<li>Create a <code>histogram</code> of the <code>difference</code>s in our <code>shuffled_survivors</code> data. Based on your plot, answer the following
 
 <ul>
 <li><strong>What was the typical difference in proportions between men and women survivors?</strong></li>
