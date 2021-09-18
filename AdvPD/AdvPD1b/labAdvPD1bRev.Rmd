@@ -1,9 +1,11 @@
 ---
 title: "Visualizations with ggplot"
 author: "Advanced PD Lab 2B"
-date: "The following slides contain information and examples about how to create visualizations using ggplot. You will need your ggplot CHEAT SHEET."
-output: 
-  slidy_presentation: 
+date: The following slides contain information and examples about how to create visualizations
+  using ggplot. You will need your ggplot CHEAT SHEET.
+output:
+  beamer_presentation: default
+  slidy_presentation:
     css: ../../IDSLabCSSRev.css
     mathjax: ../../extras/mathjax-local/MathJax.js
 ---
