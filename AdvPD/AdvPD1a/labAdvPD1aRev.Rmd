@@ -117,36 +117,6 @@ add_line (vline = mean(~weight, data = cdc))
 
 **4. Where would the median of this distribution lie in comparison to the mean? Write the code to create a vertical line representing the median.**
 
-## DENSITY PLOTS
-
-A density plot is a representation of the distribution of a numerical variable. It is a smoothed version of a histogram and can be interpreted in the same way.
-
-```{r, eval=TRUE, echo=TRUE}
-histogram(~weight, data=cdc)
-```
-
-The peaks of a density plot help display where values are concentrated over the interval.  
-The values on the y-axis aren’t really useful. They exist solely to constrain the area _under_ the curve to equal 1.0
-
-```{r, eval=TRUE, echo=TRUE}
-densityplot(~weight, data=cdc)
-```
-
-
-An advantage of density plots over histograms is that they’re better at determining the distribution's shape because they’re not affected by the number of bins.  
-
-<b>FLEX YOUR SKILLS</b>  
-
-**5. What code will create the visual below?**  
-
-Hint: To create the legend use the argument `auto.key=TRUE`.
-
-```{r, eval=TRUE, echo=FALSE}
-densityplot(~weight, groups=gender,data=cdc, auto.key=TRUE)
-```
-
-
-
 ## BOXPLOTS
 
 Boxplots are appropriate when analyzing distributions of numerical variables that are skewed or that contain outliers. Those outliers, however, do impact the readability of the boxplot. Notice how the box gets compressed because R needs to include all of the data.
