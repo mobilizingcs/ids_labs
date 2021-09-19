@@ -119,15 +119,22 @@ add_line (vline = mean(~weight, data = cdc))
 
 
 Distributions that are skewed or that contain outliers, can also impact the readability of a plot.  
-The `xlim` argument along with the `c()` function allow you to choose a range of values to plot for a single variable distribution.
+The `xlim` argument along with the `c()` function allow you to choose the lower and upper limits of the x-axis for numerical distribution.
+
+```{r, eval = FALSE, echo = TRUE}
+histogram (~weight, data=cdc)
+```
+
 
 ```{r, eval = FALSE, echo = TRUE}
 histogram (~weight, data=cdc, xlim=c(30,160))
 ```
 
+
+
 There is also a `ylim` argument.
 
-**5. For which other type of plot might it be appropriate to use the 'ylim' argument? Explain.**  
+**5. For which type of plot might it be appropriate to use the 'ylim' argument? Explain.**  
 
 
 ## DOTPLOTS  
@@ -159,7 +166,7 @@ dotPlot(~height, data=height_short, nint=19)
 
 <b>FLEX YOUR SKILLS</b>
 
-**8.  What codes will create the visual below?** 
+**6.  What codes will create the visual below?** 
 
 ```{r, eval=TRUE, echo=FALSE}
 height_tall<-filter(cdc, height>=1.98)
@@ -170,6 +177,7 @@ tally(~height,data=height_tall)
 dotPlot(~height,data=height_tall,nint=14)
 ```
 
+
 ## NEW OPERATORS
 
 An operator is a symbol that tells the compiler (computer software) to perform specific mathematical or logical manipulations. In R programming we have the following types of operators: Arithmetic, Relational, Logical, Assignment and Miscellaneous.
@@ -178,11 +186,11 @@ An operator is a symbol that tells the compiler (computer software) to perform s
 * <b>Arithmetic Operators</b>  
 
 You are probably familiar with the following arithmetic operators:
-`+`, `-`, `*`, `/` ,`^`.  
+`+`, `-`, `*`, `/` ,`^`, `sqrt()`, `log()`, `factorial()` .  
 
 An arithmetic operator that you are probably not familiar with is the `%%` operator.  
 
-**9.  Type 23%%5 in your console. Try other values until it is clear what the operator does. What does the operator do?** 
+**7.  Type 23%%5 in your console. Try other values until it is clear what the operator does. What does the operator do?** 
 
 * <b>Relational Operators</b>  
 
@@ -200,7 +208,7 @@ minors<-filter(cdc, age!="18 years old or older")
 tally(~age,data=minors)
 ```
 
-**10.  Write two different codes that create a data frame that include only females.**  
+**8.  Write two different codes that create a data frame that include only females.**  
 
 * <b>Logical Operators</b>  
 
@@ -217,7 +225,7 @@ age_16_17<-filter(cdc, age=="16 years old"|age=="17 years old")
 tally(~age,data=age_16_17)
 ```
 
-**11.  Write a code that creates a data frame that includes the observations that always wore a helmet OR never wore a helmet while riding their bicycle.** 
+**9.  Write a code that creates a data frame that includes the observations that always wore a helmet OR never wore a helmet while riding their bicycle.** 
 
 
 <b>CLEANING</b>  
@@ -276,7 +284,7 @@ tally(~describe_weight, data=cdc3)
 
 <b>FLEX YOUR SKILLS</b>  
 
-**12.  Write a code that creates the plot below.**  
+**10.  Write a code that creates the plot below.**  
 
 Hint: The argument `stack=TRUE` was utilized.
 
@@ -298,36 +306,3 @@ The conditional relative frequencies need to be stored as as vector and then use
 table1<-tally(~depressed|describe_weight, format="percent",data=file1)
 barplot(table1,legend=TRUE,col=c("steelblue","purple"))
 ```
-
-
-## IF-ELSE FUNCTION
-
-The `ifelse()` function is very important in creating functions.  If you type in the name of a function in your console, you will see the anamtomy of the function.  
-
-```{r, eval=TRUE, echo=TRUE}
-rflip
-```
-
-**13.  What purpose did the 'ifelse()' function serve?**  
-
-We will be using the `ifelse()` function to mutate data.  
-
-For example, we might want to recode 9th and 10th graders as underclassmen and 11th and 12 graders as upperclassmen.  
-
-```{r, eval=TRUE, echo=TRUE}
-cdc_grades<-filter(cdc,grade=="9th grade"|grade=="10th grade"|
-                     grade=="11th grade"|grade=="12th grade")
-cdc_grades<-mutate(cdc_grades, grade=as.character(grade))
-tally(~grade, data=cdc_grades)
-```
-
-```{r, eval=TRUE, echo=TRUE}
-cdc_grades2<-mutate(cdc_grades, grade=ifelse(grade=="9th grade"|grade=="10th grade",
-                                       "lowerclassmen","upperclassmen"))
-```
-
-```{r, eval=TRUE, echo=TRUE}
-tally(~grade, data=cdc_grades2)
-```
-
-**14.  Explain how the 'ifelse()' function works?**  
