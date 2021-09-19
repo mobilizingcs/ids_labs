@@ -117,52 +117,17 @@ add_line (vline = mean(~weight, data = cdc))
 
 **4. Where would the median of this distribution lie in comparison to the mean? Write the code to create a vertical line representing the median.**
 
-## BOXPLOTS
 
-Boxplots are appropriate when analyzing distributions of numerical variables that are skewed or that contain outliers. Those outliers, however, do impact the readability of the boxplot. Notice how the box gets compressed because R needs to include all of the data.
+Distributions that are skewed or that contain outliers, can also impact the readability of a plot.  
+The `xlim` argument along with the `c()` function allow you to choose a range of values to plot for a single variable distribution.
 
-```{r eval = TRUE, echo = TRUE}
-bwplot(~weight,data=cdc)
+```{r, eval = FALSE, echo = TRUE}
+histogram (~weight, data=cdc, xlim=c(30,160))
 ```
 
-The `xlim` argument along with the `c()` function will allow you to choose a range of values to plot.
+There is also a `ylim` argument.
 
-The 5-number summary should be considered when choosing the interval.  
-
-```{r eval = TRUE, echo = TRUE}
-favstats(~weight,data=cdc)
-```
-
-
-<b>Example:</b>  
-
-This boxplot displays the distribution of weight from 30 kg to 110 kg.
-
-```{r eval = TRUE, echo = TRUE}
-bwplot(~weight,data=cdc, xlim=c(30, 110))
-```
-
-There is also a `ylim` argument.  The `ylim` argument would be appropriate for vertical boxplots. R, however, generates horizontal boxplots by default.  
-
-Can we create vertical boxplots in R?  
-We can ONLY create vertical boxplots when comparing groups.
-
-<b>Example:</b>
-
-```{r eval = TRUE, echo = TRUE}
-bwplot(height~gender,data=cdc)
-```
-
-**6. Besides a vertical boxplot, for which other type of plot might it be appropriate to use the 'ylim' argument? Explain.**  
-
-<b>FLEX YOUR SKILLS</b>
-
-**7.  What code will create the visual below?**  
-
-```{r eval = TRUE, echo = FALSE}
-bwplot(height~grade, data=cdc, ylim=c(1.4,2))
-```
-
+**5. For which other type of plot might it be appropriate to use the 'ylim' argument? Explain.**  
 
 
 ## DOTPLOTS  
