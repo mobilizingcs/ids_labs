@@ -25,7 +25,7 @@ Our new data
 ===
 
 - You can find the data online here:
-    - (Right-click and select _Open in New Window_) [https://labs.idsucla.org/extras/webdata/fev.xlsx](https://labs.idsucla.org/extras/webdata/fev.dat.csv)
+    - (Right-click and select _Open in New Window_) [https://raw.githubusercontent.com/IDSUCLA/dataset/main/fev.csv](https://raw.githubusercontent.com/IDSUCLA/dataset/main/fev.csv)
 - Variables that were measured include:
     - Age in years.
     - Lung capacity, measured in liters.
