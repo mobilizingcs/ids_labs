@@ -4,10 +4,10 @@ author: "Advanced PD Lab 2B"
 date: The following slides contain information and examples about how to create visualizations
   using ggplot. You will need your ggplot CHEAT SHEET.
 output:
-  ioslides_presentation: default
   slidy_presentation:
     css: ../../IDSLabCSSRev.css
     mathjax: ../../extras/mathjax-local/MathJax.js
+  ioslides_presentation: default
   beamer_presentation: default
 ---
 
