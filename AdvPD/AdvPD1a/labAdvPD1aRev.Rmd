@@ -131,7 +131,7 @@ mpg<-mutate(mpg, cyl=as.factor(cyl))
 
 Let's look at the most basic code in ggplot2 for creating a bargraph comparing groups...in this case the number of cylinders between type of car.
 
-```{r}
+```{r, eval=TRUE, echo=TRUE}
 ggplot(data = mpg) +
   geom_bar(mapping = aes(x = class,fill=cyl))
 ```
