@@ -129,7 +129,7 @@ ggplot offers similar options with their `Faceting` and `Position Adjustment` op
 mpg<-mutate(mpg, cyl=as.factor(cyl))
 ```
 
-Let's look at the most basic code in ggplot2 for creating a bargraph comparinggroups...in this case the number of cylinders between type of car.
+Let's look at the most basic code in ggplot2 for creating a bargraph comparing groups...in this case the number of cylinders between type of car.
 
 ```{r}
 ggplot(data = mpg) +
@@ -259,7 +259,7 @@ compare groups on a numerical variable.
 
 ```{r, eval=TRUE, echo=TRUE}
 ggplot(data=mpg)+
-  geom_boxplot(mapping=aes(x=class,y=hwy,color=class))
+  geom_boxplot(mapping=aes(x=class,y=hwy,color=class))+
   scale_y_continuous(breaks=seq(0,45,5))
 ```
 
