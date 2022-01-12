@@ -1,339 +1,305 @@
----
-title: "Visualizations with ggplot"
-author: "Advanced PD Lab 2B"
-date: The following slides contain information and examples about how to create visualizations
-  using ggplot. You will need your ggplot CHEAT SHEET.
-output:
-  beamer_presentation: default
-  slidy_presentation:
+title: "New Arguments and Functions"
+author: "Advanced PD Lab 1A"
+date: "The following slides contain **new** commands that are not included in the RStudio codes and functions handout."
+output: 
+  slidy_presentation: 
     css: ../../IDSLabCSSRev.css
     mathjax: ../../extras/mathjax-local/MathJax.js
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE)
-```
+	
 
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 library(mobilizr)
-mpg<- mutate(mpg,cyl=as.factor(cyl))
 ```
+## CONSIDERING DATA
 
-## What is ggplot?
+The first two labs in the IDS curriculum contain commands that are important when considering or examining data.  
 
-The ggplot package, created by <a href="http://hadley.nz/">Hadley Wickham</a>, Chief Scientist at RStudio, offers a powerful graphics language for creating elegant and complex plots.  
+`names()`  
+`ncol()`  
+`nrow()`  
+`dim()`  
+`str()`  
 
-ggplot allows you to create graphs that represent both univariate and multivariate numerical and categorical data in a straightforward manner.  
-
-**Let's get started:** 
-
-Begin by installing and loading the `ggplot` package.  
-
-`install.packages(" ")`  
-
-`library( )`
-
-### Consider Data:  
-
-Load and preview the `mpg` data. 
-
- 
-## Categorical Variables  
-
-The template to create a visual in ggplot looks like:  
-
-
-
-    ggplot(data = < DATA >) +  
-
-    < GEOM_FUNCTION >(mapping = aes(< MAPPINGS >))  
-    
-    
-
-
-**Include all of the codes you come across in an RMarkdown:**  
-
-**Cheat Sheet**  
-
-<b>ONE VARIABLE discrete</b>
-
-```{r, eval=TRUE, echo=TRUE}
-ggplot(data = mpg) +
-  geom_bar(mapping = aes(x = class))
-```
-
-
-
-The following arguments can be applied to change the color of a visual: `color, fill`  
-
-
-
-```{r, eval=TRUE, echo=TRUE}
-ggplot(data = mpg) +
-  geom_bar(mapping = aes(x = class), fill="steelblue")
-```
-
-**1. Replace the `fill` argument with `color` and explain how it affects the visual.**  
-
-
-**2. What code will create the visual below?** 
-
-
-```{r, eval=TRUE, echo=FALSE}
-ggplot(data = mpg) +
-  geom_bar(mapping = aes(x = class), fill="white",color="black")
-```
-
-The `fill` argument can also be used to assign colors to each category of a categorical variable (similar to what the groups argument does in lattice).  Notice that the argument needs to be contained within the aesthetics.  
-
-```{r, eval=TRUE, echo=TRUE}
-ggplot(data = mpg) +
-  geom_bar(mapping = aes(x = class, fill=class))
-```
-
-
-Let's add more layers to this visual. 
-
-**CHEAT SHEET**  
-
-<b>Scales, Labels, Coordinate Systems and Themes</b>
-
-Functions from Scales, Labels, Coordinate Systems and Themes have been applied to modify the visual.  
-
-```{r, eval=TRUE, echo=TRUE}
-ggplot(data = mpg) +
-  geom_bar(mapping = aes(x = class, fill = class)) +
-  scale_y_continuous(breaks = seq(0, 70, 5))+
-  labs(title ="Distribution of Class") +
-  coord_flip ()+
-  theme_classic ()
-```
-
-**Flex Your Skills:** 
-
-**3. Modify the visual above by changing the scale, including additional labels and changing the theme.**  
-
-
-## Comparing Groups on a Categorical Variable
-
-<b> Is there a difference in the number of cylinders between types of cars?</b>
-
-In order to create a visual to compare groups using lattice, we utilized the vertical bar (`|`) to split or facet each groups' data into a separate graph. The `groups` argument color coded the groups.
-
-ggplot offers similar options with their `Faceting` and `Position Adjustment` options.  
-
-<B>NOTE:</b> If you look at the structure of the mpg data you will find that the variable `cyl`is being interpreted as an integer. We, however, are utilizing it more as a categorical variable so we need to mutate the data using the following code:
-
-```{r, echo=TRUE}
-mpg<-mutate(mpg, cyl=as.factor(cyl))
-```
-
-**Cheat Sheet**  
-
-<b>Faceting</b> 
-
-```{r, eval=TRUE, echo=TRUE}
-ggplot(data = mpg) +
-  geom_bar(mapping = aes(x = cyl,fill=cyl))+
-  facet_grid(.~class)
-```
-
-**4. What code will create the visual below?** 
-
-```{r, eval=TRUE, echo=FALSE}
-ggplot(data = mpg) +
-  geom_bar(mapping = aes(x = cyl,fill=cyl))+
-  facet_wrap(~class)
-```
-
-**Cheat Sheet**  
-<b>Position Adjustments</b>  
-
-```{r, eval=TRUE, echo=TRUE}
-ggplot(data = mpg) +
-  geom_bar(mapping = aes(x = class,fill=cyl),position="dodge")
-```
-
-**5. What code will create the visual below?**   
-
-```{r, eval=TRUE, echo=FALSE}
-ggplot(data = mpg) +
-  geom_bar(mapping = aes(x = class,fill=cyl),position="stack")
-```
-
-
-**6. What code will create the visual below?** 
-
-```{r, eval=TRUE, echo=FALSE}
-ggplot(data = mpg) +
-  geom_bar(mapping = aes(x = class,fill=cyl),position="fill")
-```
-
-## Numerical Variables 
-
-**CHEAT SHEET**  
-
-ONE VARIABLE continuous</b>
-
-
-
-```{r, echo=TRUE,eval=TRUE}
-ggplot(data=mpg)+
-  geom_histogram(mapping=aes(x=cty))
-```
-
-Notice that a histogram was created but the computer was not happy about the number of bins (30). This histogram is behaving more like a dotplot because there is a bin for each value of city miles per gallon. The `binwidth` argument works similar to the `nint` argument in lattice. Currenlty there is one bin for each value (binwidth=1). 
-
-```{r, echo=TRUE,eval=TRUE}
-ggplot(data=mpg)+
-  geom_histogram(mapping=aes(x=cty),binwidth = 3)
-```
-
-**7. What code will create the visual below?** 
-
-
-```{r, echo=FALSE,eval=TRUE}
-ggplot(data=mpg)+
-  geom_histogram(mapping=aes(x=cty),binwidth = 2,fill="orange")+
-  labs(x="city miles per gallon")+
-  theme_linedraw()
-```
-
-ggplot allows us to overlay plots!
-
-
-```{r, eval=TRUE, echo=TRUE}
-ggplot(data=mpg)+
-  geom_histogram(mapping=aes(x=cty),binwidth = 2)+
-  geom_dotplot(mapping=aes(x=cty),fill="white",binwidth = 0.6)
-```
-
-**8. Change the order of the plots for the code above and explain what happens?** 
-
-```{r, eval=FALSE, echo=FALSE}
-ggplot(data=mpg)+
-  geom_dotplot(mapping=aes(x=cty),fill="white",binwidth = 0.6)+
-  geom_histogram(mapping=aes(x=cty),binwidth = 2)
-  
-```
-
-**9. What code will create the visual below?**  
-
-```{r, eval=TRUE, echo=FALSE}
-ggplot(data=mpg)+
-  geom_dotplot(mapping=aes(x=cty), binwidth = 0.18)+
-  facet_grid(cyl~.)+
-  theme_gray()
-```
-
-
-## TWO VARIABLES  
-
-**CHEAT SHEET**  
-
-<b>discrete x, continuous y</b>
-
-Notice that we can only create boxplots when comparing two groups.
-
-
-```{r, eval=TRUE, echo=FALSE}
-ggplot(data=mpg)+
-  geom_boxplot(mapping=aes(x=class,y=hwy,color=class))+
-  scale_y_continuous(breaks=seq(0,45,5))
-```
-
-**CHEAT SHEET**  
-
-<b>continuous x, continuous y</b>  
-
-
-<b>Is there a difference between city miles per gallon and highway miles per gallon?</b>  
-In order to help us answer this question we need to add the equation y = x to our scatterplot. The line y = x represents when hwy mileage = cty mileage (no difference).  
-
-```{r, eval=TRUE, echo=TRUE }
-ggplot(data=mpg)+
-  geom_point(mapping=aes(x=cty,y=hwy))+
-  geom_abline(intercept = 0, slope = 1, color="red")
-```
-
-**10. What code will create a scatterplot of hwy vs cty with the line of best fit?**
-
-```{r, eval=FALSE, echo=FALSE }
-ggplot(data=mpg)+
-  geom_point(mapping=aes(x=cty,y=hwy))+
-  geom_abline(intercept = 0.892, slope =1.337 , color="blue")
-```
-
-
-<b>What is the relationship between highway mileage and displacement?</b>  
-
-
-```{r, eval=TRUE, echo=FALSE}
-ggplot(data=mpg)+
-  geom_point(mapping=aes(x=displ,y=hwy))
-```
-
-Notice that as engine displacement increases, highway miles per gallon decreases. There are a few observations, however, that don't quite fit the pattern.  
-
-For those of you that want to learn about engine displacement, watch this short video: <iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0"width="788.54" height="443" type="text/html" src="https://www.youtube.com/embed/bf1dOSPB2UA?autoplay=0&fs=0&iv_load_policy=3&showinfo=0&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"><div><small><a href="https://youtubeembedcode.com/nl/">youtubeembedcode nl</a></small></div><div><small><a href="http://tr3ndygirl.com/">Ultimate web Traffic</a></small></div></iframe>
-
-Try the codes below: determine which variable explains these outliers.  
+<b>Type the following command on your console:</b>
 
 ```{r, eval=FALSE, echo=TRUE}
-ggplot(data=mpg)+
-  geom_point(mapping=aes(x=displ,y=hwy,shape=cyl))
+inspect(cdc)
 ```
 
-```{r, eval=FALSE, echo=TRUE}
-ggplot(data=mpg)+
-  geom_point(mapping=aes(x=displ,y=hwy,size=year))
+**1.  What information does this function display and how does it display it?**
+
+## ENHANCING VISUALIZATIONS
+
+The following <b>arguments</b> can be used to enhance a visualization.
+
+* Option:  `main = " "` .  Adds a title to your visual  
+
+* Option:  `col= " "` . Changes the color of your visual <a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf"  target="_blank">See Colors</a>
+
+* Option:  `xlab = " "` .  Changes the label on the x-axis  
+
+* Option:  `ylab = " "` . Changes the label on the y-axis  
+
+* Option:  `horizontal = TRUE` . Makes bars horizontal 
+
+
+
+<b>Examples:</b> 
+
+```{r, eval = TRUE, echo = TRUE}
+histogram(~weight, data=cdc, 
+         col="steelblue", 
+         xlab="weight in kilograms")
 ```
 
-```{r, eval=FALSE, echo=TRUE}
-ggplot(data=mpg)+
-  geom_point(mapping=aes(x=displ,y=hwy,color=fl))
+
+
+```{r, eval = TRUE, echo = TRUE}
+bargraph(~gender, data=cdc,
+         groups=gender, 
+         col=c("red2","navy"),
+         main="Distribution of Gender")
 ```
 
-```{r, eval=FALSE, echo=TRUE}
-ggplot(data=mpg)+
-  geom_point(mapping=aes(x=displ,y=hwy,color=class))
+<b>FLEX YOUR SKILLS</b>
+
+**2.  What code will create the visual below?**    
+
+Try out different codes in RStudio until you are able to match the visual below.
+
+```{r, echo=FALSE}
+bargraph(~days_vaping,data=cdc,
+         col="green",
+         main="Distribution of Vaping Habits",
+         horizontal=TRUE,
+         type="percent")
 ```
 
-**11. What are the different aesthetics that can be applied to a geometric object (point)?**
+## HISTOGRAMS
 
-## On Your Own  
+When creating a histogram, it can be frustrating trying to estimate the values on the x-axis. A solution is the argument `breaks` in conjunction with the function `seq( )`.  
 
-There are many more non-traditional plots that can be made using ggplot. 
+<b>Example:</b>  
 
-A 2d density chart displays the relationship between 2 numeric variables. One is represented on the X axis, the other on the Y axis, like for a scatterplot. Then, the number of observations within a particular area of the 2D space is counted and represented by a color gradient. Several types of 2d density charts exist.
+The option  `breaks = seq( )`  allows one to control the bin widths as well as the beginning and ending values of the bins.
+The minimum and maximum values need to be considered beforehand so that no data is excluded.
 
-**CHEAT SHEET**  
+```{r, eval = TRUE, echo = TRUE}
+range(~weight, data=cdc)
+```
 
-<b>continuous bivariate distribution</b> 
+A histogram with bin widths of 10 beginning at a weight of 30 kgs and ending at 190 kgs. 
+
+```{r, eval = TRUE, echo = TRUE}
+histogram (~weight, data=cdc, breaks=seq(30, 190, by=10))
+```
+
+**3. Try different values in the sequence function. What did you notice?**  
+
+Using the concept of balancing point, guess the mean weight of the teens in the cdc data.  
+
+In order to estimate the mean absolute deviation (MAD) of the distribution of weight, it would be helpful to draw a vertical line on the histogram to represent the mean weight.  
+
+<b>Example:</b> 
+
+```{r, eval = FALSE, echo = TRUE}
+histogram (~weight, data=cdc, breaks=seq(30, 190, by=10))
+```
+
+```{r, eval = TRUE, echo = TRUE}
+add_line (vline = mean(~weight, data = cdc))
+``` 
+
+**4. Where would the median of this distribution lie in comparison to the mean? Write the code to create a vertical line representing the median.**
+
+
+Distributions that are skewed or that contain outliers, can also impact the readability of a plot.  
+The `xlim` argument along with the `c()` function allow you to choose the lower and upper limits of the x-axis for numerical distribution.
+
+```{r, eval = FALSE, echo = TRUE}
+histogram (~weight, data=cdc)
+```
+
+
+```{r, eval = FALSE, echo = TRUE}
+histogram (~weight, data=cdc, xlim=c(30,160))
+```
+
+
+
+There is also a `ylim` argument.
+
+**5. For which type of plot might it be appropriate to use the 'ylim' argument? Explain.**  
+
+
+## DOTPLOTS  
+
+Dotplots are more appropriate when working with small data sets. When creating a dotplot, the visualization can be inaccurate because the function tends to group values together, similar to a histogram. A solution is the `nint` argument. The `nint` argument allows you to create a bin for each value in the distribution.  
+
+The CDC is by no means a small dataset so we will create a smaller subset containing less than one hundred observations.
+
+```{r, eval=TRUE, echo=TRUE}
+height_short<-filter(cdc, height<=1.45)
+```
+
+```{r, eval=TRUE, echo=TRUE}
+tally(~height,data=height_short)
+```
+
+The output for the tally function displays eight different values for the heights of the 93 observations that were filtered yet the dotplot below only shows seven bins. If you look closely the dots do not correspond to the actual heights either.
+
+
+```{r, eval=TRUE, echo=TRUE}
+dotPlot(~height,data=height_short)
+```
+
+To remedy this problem, we need to create a bin for each value between 1.27 and 1.45. To do this, find the range between the minumum and maximum values and add one. This is the value you need to set `nint` equal to get a better representation.
+
+```{r, eval = TRUE, echo = TRUE}
+dotPlot(~height, data=height_short, nint=19) 
+```
+
+<b>FLEX YOUR SKILLS</b>
+
+**6.  What codes will create the visual below?** 
 
 ```{r, eval=TRUE, echo=FALSE}
-ggplot(diamonds,aes(carat,price))+
-  geom_density2d()
-  
+height_tall<-filter(cdc, height>=1.98)
+tally(~height,data=height_tall)
 ```
 
-In order to create this graph notice on the cheat sheet it has `h + geom_density2d()`  
-
-Notice that `h` refers to `ggplot(diamonds,aes(carat,price))`
-
-So the graph above was created using the following code:  
-
-```{r, eval=FALSE, echo=TRUE}
-ggplot(diamonds,aes(carat,price))+
-  geom_density2d()
-  
+```{r, eval=TRUE, echo=FALSE}
+dotPlot(~height,data=height_tall,nint=14)
 ```
 
-This is equivalent to:
 
-```{r, eval=FALSE, echo=TRUE}
-ggplot(data=diamonds)+
-  geom_density2d(mapping=aes(x=carat,y=price))
+## NEW OPERATORS
+
+An operator is a symbol that tells the compiler (computer software) to perform specific mathematical or logical manipulations. In R programming we have the following types of operators: Arithmetic, Relational, Logical, Assignment and Miscellaneous.
+
+
+* <b>Arithmetic Operators</b>  
+
+You are probably familiar with the following arithmetic operators:
+`+`, `-`, `*`, `/` ,`^`, `sqrt()`, `log()`, `factorial()` .  
+
+An arithmetic operator that you are probably not familiar with is the `%%` operator.  
+
+**7.  Type 23%%5 in your console. Try other values until it is clear what the operator does. What does the operator do?** 
+
+* <b>Relational Operators</b>  
+
+You've used many of the relational operators when filtering:
+`<`, `>`, `<=`, `>=` ,`==`. 
+
+Another relational operator is the <b>not-equal-to</b> operator (`!=`).
+
+<b>Example:</b>  
+
+To create the <b>minors</b> data frame we told R to filter the observations whose age was NOT EQUAL to 18 + years. 
+
+```{r, eval = TRUE, echo = TRUE}
+minors<-filter(cdc, age!="18 years old or older")
+tally(~age,data=minors)
 ```
 
-**12. Chose a different visualization from the ggplot cheat sheet to create.** 
+**8.  Write two different codes that create a data frame that include only females.**  
+
+* <b>Logical Operators</b>  
+
+When filtering you also used the logical operator AND (`&`) (equivalent to a comma) when filtering observations with multiple characteristics.  
+
+Sometimes, however, you want to filter observations that have one characteristic OR (|) another.
+
+<b>Example:</b> 
+
+The <b>age_16_17</b> data frame includes observations that reported an age of 16 years old OR 17 years old.    
+
+```{r, eval = TRUE, echo = TRUE}
+age_16_17<-filter(cdc, age=="16 years old"|age=="17 years old")
+tally(~age,data=age_16_17)
+```
+
+**9.  Write a code that creates a data frame that includes the observations that always wore a helmet OR never wore a helmet while riding their bicycle.** 
+
+
+<b>CLEANING</b>  
+
+Notice that even though we've filtered out the 16 and 17 year olds, the other age categories still appear in our tally (above) and bargraph.
+
+```{r, eval = TRUE, echo = TRUE}
+bargraph(~age,data=age_16_17)
+```
+
+
+
+When we filter out categories from a variable that R interprets as a factor, R keeps ALL the categories and just reports that the data has 0 observations within those categories.  
+In order to exclude the other categories, we need to “trick” R by changing age from a factor variable to a character variable. 
+
+```{r, eval = TRUE, echo = TRUE}
+age_16_17<-mutate(age_16_17, age=as.character(age))
+```
+
+```{r, eval = TRUE, echo = TRUE}
+tally(~age,data=age_16_17)
+bargraph(~age,data=age_16_17)
+```
+
+
+## MISSING VALUES
+
+Some of the teens in the CDC data did not answer some of the survey questions or their answers were ommitted because of discrepancies especially in height and weight. Although we can still conduct an analysis we sometimes obtain warning messages that data is missing or when analyzing a categorical variable we obtain a new category that includes NA (not available).
+
+You might find the functions `na.omit()` and `is.na()` useful.  
+
+The function `na.omit()` will exclude ALL observations that have NA as a value for any of the variables.  
+
+<b>Example:</b>  
+
+```{r, eval = TRUE, echo = TRUE}
+cdc2<-na.omit(cdc)
+dim(cdc2)
+```
+
+Notice that this function excluded 7301 observations!  
+This is not good practice so an alternative is to use the `is.na()` function with the <b>not-equal-to</b> logical operator (`!=`).
+
+<b>Example:</b>  
+
+```{r, eval = TRUE, echo = TRUE}
+tally(~describe_weight, data=cdc)
+```
+
+The <b>cdc3</b> data frame excludes the observations that did not provide an answer for their weight description.
+
+```{r, eval = TRUE, echo = TRUE}
+cdc3<-filter(cdc, !is.na(describe_weight))
+tally(~describe_weight, data=cdc3)
+```
+
+<b>FLEX YOUR SKILLS</b>  
+
+**10.  Write a code that creates the plot below.**  
+
+Hint: The argument `stack=TRUE` was utilized.
+
+```{r, eval=TRUE, echo=FALSE}
+file1<-filter(cdc, !is.na(depressed),!is.na(describe_weight))
+file1<-mutate(file1, depressed=as.character(depressed), 
+              describe_weight=as.character(describe_weight))
+bargraph(~describe_weight, data=file1, groups=depressed, stack=TRUE, 
+         main="Distribution of Depression by Weight Perception")
+```
+
+<b>BARPLOTS</b>
+
+To display conditional relative frequencies barplots need to be utilized.
+
+The conditional relative frequencies need to be stored as as vector and then used in the `barplot()` function.
+
+```{r, eval=TRUE, echo=TRUE}
+table1<-tally(~depressed|describe_weight, format="percent",data=file1)
+barplot(table1,legend=TRUE,col=c("steelblue","purple"))
