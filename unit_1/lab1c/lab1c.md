@@ -30,7 +30,7 @@ Export, upload, import
 Exporting
 ========================================================
 
-- To begin, go to your class' landing page.
+- To begin, go to the IDS Tools Page.
   - Click on the <font color="green">Campaign Manager</font>
   - Fill in your username and password and click "Sign in."
 <center>![Campaign manager](images/campaign_manager.png)</center>
