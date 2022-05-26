@@ -38,7 +38,6 @@ View(cdc)
     - **_Who_ is the information about?**
     - **What sorts of information about them was collected?**
 
-- To find out more information about the `cdc` data, type `?cdc` in the console.
 Data: Variables & Observations
 ==============================
 
