@@ -38,7 +38,7 @@ View(cdc)
     - **_Who_ is the information about?**
     - **What sorts of information about them was collected?**
 
-
+- To find out more information about the `cdc` data, type `?cdc` in the console.
 Data: Variables & Observations
 ==============================
 
@@ -161,4 +161,4 @@ On your own:
     - **How do you think our data was collected? Does it include every high school aged student in the US?**
     - **How might the CDC use this data? Who else could benefit from using this data?**
     - **Write the code to visualize the distribution of weights of the students in the CDC data with a histogram. What is the _typical_ weight?**
-    - **Write the code to create a bargraph to visualize the distribution of how often students wore a helmet while bike riding. About how many students never wore a helmet?**
+    - **Write the code to create a bargraph to visualize the distribution of how often students ate fruit. About how many students did not eat fruit over the previous 7 days?**

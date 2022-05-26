@@ -15,7 +15,7 @@ Whose data? Our data.
 
 - Throughout the previous labs, we've been using data that was already loaded in RStudio.
     - But what if we want to analyze our own data?
-- This lab is all about learning how we to load our own participatory sensing data into RStudio
+- This lab is all about learning how to load our own participatory sensing data into RStudio
 
 
 Export, upload, import
@@ -72,8 +72,8 @@ Uploading
 <center> ![Upload Button](images/FilesPane.png) </center>
 
 - Click the button on the Files pane that says "Upload"
-  - Find the SurveyResponses.csv file you saved to your computer.
-  - Hit the _ok_ button a few times.
+  - Click on "Choose File" and find the SurveyResponses.csv file you saved to your computer.
+  - Hit the _OK_ button.
 - Voila!
   - If you look in the <font color="green">Files</font> pane, you should be able to find your data!
 
@@ -92,18 +92,17 @@ Upload vs. Import
 Importing
 ========================================================
 
-<center>![import data](images/Environment.png)</center>
+<center>![import data](images/RStudio Cloud Import.png)</center>
 
-- At the top of the Environment pane, click the "Import Data set" button. Then, choose "From CSV..."
-    - CSV is a standard data format used by many software programs.
+- On the Files pane, find the data that you want to import. 
+- Click on the name of the file and choose the option "Import Data set..."
 
 
 Data Preview
 ========================================================
 <center><img src="images/DataPreview.png" alt="Data Preview" height="360" width="480"></center>
 
-- Click the <font color="green">Browse...</font> button in the upper right hand corner. Find your data file and click <font color="green">Open</font>.
-- Give your data a name using the <font color="green">Name: </font> field in the lower left corner.
+- You can give your data a name using the <font color="green">Name: </font> field in the lower left corner.
 
 What's in a name?
 ===
@@ -140,6 +139,6 @@ A word on staying organized...
 Export, upload, import
 ========================================================
 
-- After you _export_, _upload_, _import_ your data you're ready to analyse. 
+- After you _export_, _upload_, _import_ your data you're ready to analyze. 
 - **`View` your data, select a variable and try to make an appropriate plot for that variable.**
     - If you're having issues, make sure you're spelling the name of your data correctly.

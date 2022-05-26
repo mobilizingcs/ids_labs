@@ -68,7 +68,7 @@ How often do people text & drive?
     - **What does the y-axis represent?**
     - **What does the x-axis tell us?**
     - **Would you say that _most_ people _never_ texted while driving? What does the word _most_ mean?**
-    - **Approximately what percent of the people texted while driving for 20 or more days? (Hint: There's 15624 students in our data.**
+    - **Approximately what percent of the people texted while driving for 20 or more days? (Hint: There's 13677 students in our data.**
 
 
 Does texting and driving differ by gender?
@@ -95,7 +95,7 @@ Do males/females have similar heights?
 Do males/females have similar heights?
 =====================================
 
-- `groups` uses color to differntiate between groups.
+- `groups` uses color to differentiate between groups.
     - **Why does this work for bargraphs but not for for histograms?**
 - Fill in the blanks with the correct variables to create a split histogram (The " | " symbol is usually between the delete and enter keys on a keyboard) to answer the questions below:
 <font size="7" color="green">
@@ -108,6 +108,6 @@ Do males/females have similar heights?
 On your own:
 ============
 
-- In this lab, we looked at boy's and girl's attitudes about using texting & driving: 
+- In this lab, we looked at boy's and girl's texting & driving habits: 
 - **What other factors do you think might affect how often people text and drive?**
     - **Choose one variable from the `cdc` data, make a graph, and use the graph to describe how `drive_text` use differs with this variable.**
