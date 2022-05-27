@@ -60,20 +60,7 @@ Visualizing data
     - Remember: A distribution gives us the values of the variable and tells us how many of these values we have in our data set.
 - Choose one numeric and one categorical variable from the data and create both a `bargraph` and a `histogram` for each variable.
     - **Which function, either `bargraph` or `histogram` is better at visualizing categorical variables? Which is better at visualizing numerical variables?**
-    
-Wait, let's examine weights.
-==================================
 
-- Make a graph that shows the distribution of people's weight.
-    - **Describe the distribution of weights? Make sure to describe the shape, center and spread of the distribution.**
-
-- Arguments can be added to plotting functions to change their appearance. The code below shows how to include the `nint` argument which controls the number of intervals in a plot.
-
-Type the command below into your console.
-```r
-histogram(~weight, data = cdc, nint = 3)
-```
--**How did including the argument nint = 3 change the histogram? Try other values for nint.**
 
 How often do people text & drive?
 ==================================
