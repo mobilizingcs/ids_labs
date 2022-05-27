@@ -92,7 +92,7 @@ Upload vs. Import
 Importing
 ========================================================
 
-<center>![import data](images/RStudioCloudImport.png)</center>
+<center><img src="images/RStudioCloudImport.png" alt="import data" height="360" width="480"></center>
 
 - On the Files pane, find the data that you want to import. 
 - Click on the name of the file and choose the option "Import Data set..."
