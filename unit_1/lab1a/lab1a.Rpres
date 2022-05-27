@@ -7,10 +7,7 @@ Lab 1A
 
 Directions: Follow along with the slides and answer the questions in **red** font in your journal.
  
-```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
-library(mobilizr)
-data(cdc)
-```
+
 
 Welcome to the labs!
 ===================
@@ -28,17 +25,18 @@ So let's get started!
     - The CDC is a federal institution that studies public health.
 - Type these two commands into the your console:
 
-```{r, echo=TRUE, eval=FALSE}
+
+```r
 data(cdc)
 ```
-```{r, echo=TRUE, eval=FALSE}
+
+```r
 View(cdc)
 ```
   
 - **Describe the data that appeared after running `View(cdc)`:** 
     - **_Who_ is the information about?**
     - **What sorts of information about them was collected?**
-
 
 Data: Variables & Observations
 ==============================
@@ -66,16 +64,20 @@ Uncovering our Data's Structure
 Type the following commands into the console
 ============================================
 
-```{r, echo=TRUE, results='hide'}
+
+```r
 dim(cdc)
 ```
-```{r, echo=TRUE, results='hide'}
+
+```r
 nrow(cdc)
 ```
-```{r, echo=TRUE, results='hide'}
+
+```r
 ncol(cdc)
 ```
-```{r, echo=TRUE, results='hide'}
+
+```r
 names(cdc)
 ```
 
@@ -95,16 +97,20 @@ Syntax matters
 
 - **Run the following commands and write down what happens after each. Which does R understand?**
 
-```{r,eval = FALSE}
+
+```r
 Names(cdc)
 ```
-```{r,eval = FALSE}
+
+```r
 NAMES(cdc)
 ```
-```{r,eval = FALSE}
+
+```r
 names(cdc)
 ```
-```{r,eval = FALSE}
+
+```r
 names(CDC)
 ```
 
@@ -130,13 +136,16 @@ Syntax in action
 
 - **Which one of these plots would be useful for answering the question: _Is it unusual for students in the CDC dataset to be taller than 1.8 meters?_**
 
-```{r, echo=TRUE, eval=FALSE}
+
+```r
 histogram(~height, data = cdc)
 ```
-```{r, echo=TRUE, eval=FALSE}
+
+```r
 bargraph(~drive_text, data = cdc)
 ```
-```{r, echo=TRUE, eval=FALSE}
+
+```r
 xyplot(weight~height, data = cdc)
 ```
 
@@ -151,4 +160,4 @@ On your own:
     - **How do you think our data was collected? Does it include every high school aged student in the US?**
     - **How might the CDC use this data? Who else could benefit from using this data?**
     - **Write the code to visualize the distribution of weights of the students in the CDC data with a histogram. What is the _typical_ weight?**
-    - **Write the code to create a bargraph to visualize the distribution of how often students wore a helmet while bike riding. About how many students never wore a helmet?**
+    - **Write the code to create a bargraph to visualize the distribution of how often students ate fruit. About how many students did not eat fruit over the previous 7 days?**

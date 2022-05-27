@@ -7,10 +7,7 @@ Lab 1B
 
 Directions: Follow along with the slides and answer the questions in **red** font in your journal.
 
-```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
-library(mobilizr)
-data(cdc)
-```
+
 
 Where'd we leave off ...
 ==================
@@ -45,7 +42,8 @@ Data Structures
 - One way to get a good summary of your data is to look at the data's _structure_.
     - One way to view this info would be to click on the little blue arrow next to `cdc` in the _Environment_ pane.
     - Another way would be to run the following in the console:
-```{r, eval = FALSE}
+
+```r
 str(cdc)
 ```
 
@@ -62,7 +60,24 @@ Visualizing data
     - Remember: A distribution gives us the values of the variable and tells us how many of these values we have in our data set.
 - Choose one numeric and one categorical variable from the data and create both a `bargraph` and a `histogram` for each variable.
     - **Which function, either `bargraph` or `histogram` is better at visualizing categorical variables? Which is better at visualizing numerical variables?**
-    
+
+
+Wait, let's examine weights.
+==================================
+
+- Make a graph that shows the distribution of people's weight.
+    - **Describe the distribution of weights? Make sure to describe the shape, center and spread of the distribution.**
+
+- Arguments can be added to plotting functions to change their appearance. The code below shows how to include the `nint` argument which controls the number of _intervals_ in a plot.
+
+Type the command below into your console.
+
+```r
+histogram(~weight, data = cdc, nint = 3)
+```
+
+-**How did including the argument nint = 3 change the histogram? Try other values for nint.**
+
 How often do people text & drive?
 ==================================
 
@@ -70,7 +85,7 @@ How often do people text & drive?
     - **What does the y-axis represent?**
     - **What does the x-axis tell us?**
     - **Would you say that _most_ people _never_ texted while driving? What does the word _most_ mean?**
-    - **Approximately what percent of the people texted while driving for 20 or more days? (Hint: There's `r nrow(cdc)` students in our data.**
+    - **Approximately what percent of the people texted while driving for 20 or more days? (Hint: There's 13677 students in our data.**
 
 
 Does texting and driving differ by gender?
@@ -97,7 +112,7 @@ Do males/females have similar heights?
 Do males/females have similar heights?
 =====================================
 
-- `groups` uses color to differntiate between groups.
+- `groups` uses color to differentiate between groups.
     - **Why does this work for bargraphs but not for for histograms?**
 - Fill in the blanks with the correct variables to create a split histogram (The " | " symbol is usually between the delete and enter keys on a keyboard) to answer the questions below:
 <font size="7" color="green">
@@ -110,6 +125,6 @@ Do males/females have similar heights?
 On your own:
 ============
 
-- In this lab, we looked at boy's and girl's attitudes about using texting & driving: 
+- In this lab, we looked at boy's and girl's texting & driving habits: 
 - **What other factors do you think might affect how often people text and drive?**
     - **Choose one variable from the `cdc` data, make a graph, and use the graph to describe how `drive_text` use differs with this variable.**
