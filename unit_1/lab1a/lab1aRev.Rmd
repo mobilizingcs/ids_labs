@@ -1,11 +1,14 @@
 ---
 title: "Data, Code & RStudio"
 author: "Lab 1A"
-date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
-output: 
-  slidy_presentation: 
+date: 'Directions: Follow along with the slides and answer the questions in **red**
+  font in your journal.'
+output:
+  word_document:
+  slidy_presentation:
     css: ../../IDSLabCSSRev.css
     mathjax: ../../extras/mathjax-local/MathJax.js
+  ioslides_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -29,7 +32,7 @@ data(cdc)
 
 - The data for our first few labs comes from the Centers for Disease Control (CDC)
     - The CDC is a federal institution that studies public health.
-- Type these two commands into the your console:
+- Type these two commands into your console:
 
 ```{r, eval = FALSE, echo = TRUE}
 data(cdc)
@@ -42,16 +45,26 @@ View(cdc)
     - **_Who_ is the information about?**
     - **What sorts of information about them was collected?**
 
+- To find out more information about the `cdc` data, type the command below into your console.
+
+```{r, eval = FALSE, echo = TRUE}
+?cdc
+```
 
 ## Data: Variables & Observations
 
 - Data can be broken up into two parts. 
-    1. Observations
-    2. Variables
+    1. _Observations_
+    2. _Variables_
+
+  - _Observations_ are the _who_ or _what_ we are collecting data from/about.
+  - _Variables_ are the measurements or characteristics about our _observations_.
 - If need be, re-type the command you used to `View` your data. Then answer the following:
-    - **How are our _observations_ represented in our data?**
-    - **What does the first column tell us about our observations?**
-    - **How often did our first observation wear a seatbelt while riding in a car?**
+    - **Based on the data, describe a few characteristics about the first observation.**
+    - **What does the first column tell us about our observations?**  
+    
+- In order to describe the first observation, notice that you had to look at the first row of the spreadsheet. Each row, in this case, describes a person.
+- The columns of the spreadsheet represent variables.
 
 ## Uncovering our Data's Structure
 
@@ -87,7 +100,8 @@ names(cdc)
 
 - Typing commands into the console is your first step into the larger world of _programming_ or _coding_ (terms which are often used interchangeably).
 - Coding is all about learning how to send instructions to your computer.
-    - We call the way we _speak_ to the coding language, _syntax_.
+    - The way we _speak_ to the computer, using a coding language, is _syntax_.
+- `R` is one of many coding languages. Each coding language is slightly different, and these differences are reflected in the syntax.
 - _Capitalization_, _spelling_ and _punctuation_ are REALLY important.
 
 
@@ -113,13 +127,31 @@ names(CDC)
 
 <div class='greenequation'> _function_ (y~x, data = ____ )  </div>
 
-- Search through the different panes. Find and then click on the _Plots_ tab.
-    - To get back to the slides, find and then click on the _Viewer_ tab.
+- Notice the command and its corresponding plot. 
+
+```{r, echo=TRUE, eval=TRUE, fig.width=6, fig.height=4}
+bargraph(~grade, data = cdc)
+```
+
+- Most of the commands you will be using follow the syntax below:
+
+<div class='greenequation'> _function_ (y~x, data = ____ )  </div>
+
+- To create graphs or plots you need to provide `R` with the following:
+  - The name of the R function, often the plot’s name, that tells the computer how to create your graph.
+  - The variable(s) containing the information we want the function to use.
+  - The data set containing the variables.
+
+- Later on, we’ll see we can use this syntax to do more than create graphs.
+
     
 
 ## Syntax in action
 
 <div class='greenequation'> _function_ (y~x, data = ____ )  </div>
+
+- Search through the different panes. Find and then click on the _Plots_ tab.
+    - To get back to the slides, find and then click on the _Viewer_ tab.
 
 - **Which one of these plots would be useful for answering the question: _Is it unusual for students in the CDC dataset to be taller than 1.8 meters?_**
 
@@ -143,4 +175,4 @@ xyplot(weight~height, data = cdc)
     - **How do you think our data was collected? Does it include every high school aged student in the US?**
     - **How might the CDC use this data? Who else could benefit from using this data?**
     - **Write the code to visualize the distribution of weights of the students in the CDC data with a histogram. What is the _typical_ weight?**
-    - **Write the code to create a bargraph to visualize the distribution of how often students wore a helmet while bike riding. About how many students never wore a helmet?**
+    - **Write the code to create a bargraph to visualize the distribution of how often students ate fruit. About how many students did not eat fruit over the previous 7 days?**

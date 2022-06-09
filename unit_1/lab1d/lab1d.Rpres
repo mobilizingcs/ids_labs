@@ -21,14 +21,22 @@ Data with Clarity
 - Import the data from your class' _Food Habits_ campaign and name it `food`.
 
 
-Splitting data sets
+Another plotting function
 ==============================
 
-- In lab 1B, we learned that we can _facet_ (or split) our data based on a categorical variable.
 - **Use the `dotPlot()` function to create a `dotPlot` of the amount of `sugar` in our `food` data.**
     - The code to create a `dotPlot` is exactly like you'd use to make a `histogram`.
     - Make sure to use a capital _P_ in `dotPlot`.
-- **Split the `dotPlot` in two by faceting on our observations' salty/sweet variable.**
+
+- While a `dotPlot` should conserve the exact value of each data point, sometimes it behaves like a histogram in that it lumps values together.
+
+- **Create a more accurate `dotPlot` by using the `nint` option and setting it equal to the range of the grams of sugar + 1.**
+- _Hint_: Use your history pane to see how we included the option `nint` with the `histogram` function.
+
+Splitting data sets
+==============================
+- In lab 1B, we learned that we can _facet_ (or split) our data based on a categorical variable.
+- **Split the `dotPlot` displaying the distribution of grams of sugar in two by faceting on our observations' `salty_sweet` variable.**
     - **Describe how R decides which observations go into the left or right plot.**
     - **What does each _dot_ in the plot represent?**
 
@@ -41,7 +49,7 @@ Altering the layout
 ```{r, eval = FALSE}
 layout = c(1,2)
 ```
-- _Hint_: Use your history pane to see how we handled options with the `bargraph` function. Use a similar syntax to add the `layout` option to the `dotPlot` function.
+- _Hint_: Use a similar syntax to add the `layout` option to the `dotPlot` function as was used to include the `nint` option to the `histogram` function.
 
 
 Subsetting
@@ -50,7 +58,7 @@ Subsetting
 - Subsetting is a term we use to describe the process of looking at only the data that conforms to some set of rules:
     - Geologists may subset earthquake data by looking at only large earthquakes.
     - Stock market traders may subset their trading data by looking only at the previous day's trades.
-- There's _many_ ways to subset data using RStudio, we'll focus on learning the most common methods.  
+- There are _many_ ways to subset data using RStudio. We will focus on learning the most common methods.  
   
 The filter function
 =========================
@@ -61,7 +69,7 @@ The filter function
 ```{r, eval = FALSE}
 food_salty <- filter(____ , ____ == "Salty")
 ```
-- **View `food_salty` and write down the number of observations in it. Then use the subset data to make a dotPlot of the `sodium` in our `Salty` snacks.**
+- **View `food_salty` and write down the number of observations in it. Then use the subset data to make a `dotPlot` of the `sodium` in our `Salty` snacks.**
 
 
 So what's really going on?
@@ -127,20 +135,19 @@ Including more filters
 ===
 
 - We often want to filter our data based on multiple rules.
-    - For instance, we might want to filter our `food` data based on the food being salty AND costing less than 2 dollars.
+    - For instance, we might want to filter our `food` data based on the food being salty AND having less than 100 calories.
 - We can include multiple filters to our subsets by separating each rule with a comma like so:
 
 ```{r, eval = FALSE}
-my_sub <- filter(food , salty_sweet == "Salty", cost <= 2)
+my_sub <- filter(food , salty_sweet == "Salty", calories < 100)
 ```
 
-- `View`  the  `my_sub` data we filtered in the above line of code and verify that it only includes salty snacks that cost less than 2 dollars.
+- `View`  the  `my_sub` data we filtered in the above line of code and verify that it only includes salty snacks that have less than 100 calories.
 
 Put it all together
 ===================
 
-- **Use an appropriate `dotPlot` to answer each of the following questions:**
-    - **About how much fat does the typical sweet snack have?**
-    - **How does the typical amount of fat compare when `healthy_level < 3` and when `healthy_level > 3`?**
-- It can sometime be helpful to change the number of _intervals_, or _bins_, used in `dotPlots` and `histograms`.
-    - To change the number of _intervals_ in your plots, include the `nint` option. For instance, to have a plot with 3 bins, use `nint = 3`. To have a plot with 30 bins, use `nint = 30`.
+- Use an appropriate `dotPlot` to answer each of the following questions:
+    - **About how much `sugar` does the typical sweet snack have?**
+    - **How does the typical amount of `sugar` compare when `healthy_level < 3` and when `healthy_level > 3`?**
+

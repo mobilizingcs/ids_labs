@@ -66,17 +66,15 @@ Wait, let's examine weights.
 ==================================
 
 - Make a graph that shows the distribution of people's weight.
-    - **Describe the distribution of weights? Make sure to describe the shape, center and spread of the distribution.**
+    - **Describe the distribution of `weights`. Make sure to describe the shape, center and spread of the distribution.**
 
-- Arguments can be added to plotting functions to change their appearance. The code below shows how to include the `nint` argument which controls the number of _intervals_ in a plot.
-
-Type the command below into your console.
+- Options can be added to plotting functions to change their appearance. The code below includes the `nint` option which controls the number of _intervals_ in a numerical plot.
 
 ```r
 histogram(~weight, data = cdc, nint = 3)
 ```
 
--**How did including the argument nint = 3 change the histogram? Try other values for nint.**
+  - **How did including the option `nint = 3` change the `histogram`? Try other values for `nint`.**
 
 How often do people text & drive?
 ==================================

@@ -3,6 +3,7 @@ title: "Zooming Through Data"
 author: "Lab 1D"
 date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
 output: 
+  word_document:
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
     mathjax: ../../extras/mathjax-local/MathJax.js
@@ -24,14 +25,26 @@ library(mobilizr)
     - We'll also learn a few ways to manipulate the plots we've been making to make them easier to use for analyses.
 - Import the data from your class' _Food Habits_ campaign and name it `food`.
 
+## Another plotting function
+
+- A `dotPlot` is another plot that can be used to analyze a numerical variable.
+  - Dotplots are better suited for smaller data sets. If data sets are too large, the dots become too small to see.
+  - Similarly, distributions with a large spread might impact the readability of the plot.
+- **Use the `dotPlot()` function to create a `dotPlot` of the amount of `sugar` in our `food` data.**
+    - The code to create a `dotPlot` is exactly like you'd use to make a `histogram`.
+    - Make sure to use a capital _P_ in `dotPlot`.
+
+- While a `dotPlot` should conserve the exact value of each data point, sometimes it behaves like a histogram in that it lumps values together.
+
+- **Create a more accurate `dotPlot` by using the `nint` option.**
+  - Set nint equal to max sugar - min sugar + 1
+  - Use your history pane to see how we included the option `nint` with the `histogram` function.
 
 ## Splitting data sets
 
 - In lab 1B, we learned that we can _facet_ (or split) our data based on a categorical variable.
-- **Use the `dotPlot()` function to create a `dotPlot` of the amount of `sugar` in our `food` data.**
-    - The code to create a `dotPlot` is exactly like you'd use to make a `histogram`.
-    - Make sure to use a capital _P_ in `dotPlot`.
-- **Split the `dotPlot` in two by faceting on our observations' salty/sweet variable.**
+
+- **Split the `dotPlot` displaying the distribution of grams of sugar in two, by faceting on our observations' `salty_sweet` variable.**
     - **Describe how R decides which observations go into the left or right plot.**
     - **What does each _dot_ in the plot represent?**
 
@@ -40,12 +53,11 @@ library(mobilizr)
 
 - It would be much easier to compare the sugar levels of salty and sweet snacks if the dotPlots were stacked on top of one another.
 - We can change the **layout** of our separated plots by including the `layout` option in our `dotPlot` function. 
-    - Add the following option to the code you used create the `dotPlot` split by `salty_sweet` 
+    - Add the following option to the code you used to create the `dotPlot` split by `salty_sweet` 
 ```{r, eval = FALSE, echo = TRUE }
 layout = c(1,2)
 ```
-- _Hint_: Use your history pane to see how we handled options with the `bargraph` function. Use a similar syntax to add the `layout` option to the `dotPlot` function.
-
+- _Hint_: Use a similar syntax used with the `nint` option to add the `layout` option to the `dotPlot` function.
 
 ## Subsetting
 
@@ -57,9 +69,9 @@ layout = c(1,2)
 
 ## The filter function
 
-- Creating two plots, one for salty and one for sweet is useful for comparing salty and sweet But what if we want to examine only one group by itself?
+- Creating two plots, one for salty and one for sweet is useful for comparing salty and sweet but what if we want to examine only one group by itself?
 - Start by creating a subset of the data:
-    - Fill in the blanks below with the data and variable names needed to filter our `food` data based on people who ate `Salty` snacks:
+    - Fill in the blanks below with the data and variable names needed to filter the `Salty` snacks from our `food` data:
 ```{r, eval = FALSE, echo = TRUE}
 food_salty <- filter(____ , ____ == "Salty")
 ```
@@ -127,20 +139,26 @@ food_salty <- filter(____ , ____ == "Salty")
 ## Including more filters
 
 - We often want to filter our data based on multiple rules.
-    - For instance, we might want to filter our `food` data based on the food being salty AND costing less than 2 dollars.
+    - For instance, we might want to filter our `food` data based on the food being salty AND having less than 100 calories.
 - We can include multiple filters to our subsets by separating each rule with a comma like so:
 
 ```{r, eval = FALSE, echo = TRUE}
-my_sub <- filter(food , salty_sweet == "Salty", cost <= 2)
+my_sub <- filter(food , salty_sweet == "Salty", calories < 100)
 ```
 
-- `View`  the  `my_sub` data we filtered in the above line of code and verify that it only includes salty snacks that cost less than 2 dollars.
+- `View` the  `my_sub` data we filtered in the above line of code and verify that it only includes salty snacks that have less than 100 calories.
 
 
 ## Put it all together
 
 - **Use an appropriate `dotPlot` to answer each of the following questions:**
-    - **About how much fat does the typical sweet snack have?**
-    - **How does the typical amount of fat compare when `healthy_level < 3` and when `healthy_level > 3`?**
-- It can sometime be helpful to change the number of _intervals_, or _bins_, used in `dotPlots` and `histograms`.
-    - To change the number of _intervals_ in your plots, include the `nint` option. For instance, to have a plot with 3 bins, use `nint = 3`. To have a plot with 30 bins, use `nint = 30`.
+    - **About how much `sugar` does the typical sweet snack have?**
+    - **How does the typical amount of `sugar` compare when `healthy_level < 3` and when `healthy_level > 3`?**
+    
+- Because you are now working with subsets of data, it is important to be able to label our plots and make this distinction.
+
+  - We can use the `main` option to add a title to our plots 
+    - Add the following option to the code you used to create the `dotPlot` of the sugar in `Sweet` snacks.
+```{r, eval = FALSE, echo = TRUE }
+main = "Distribution of sugar in sweet snacks"
+```

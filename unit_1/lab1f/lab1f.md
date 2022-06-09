@@ -40,7 +40,7 @@ The American Time Use Survey
 ============================
 
 - To show you what _dirty_ data looks like, we'll check out the _American Time Use Survey_, or _ATU_ survey.
-- What is ATU survey?
+- What is the ATU survey?
     - It's a survey conducted by the US government (Specifically the Bureau of Labor Statistics).
     - They survey thousands of people to find out exactly what activities they do throughout a single day.
     - These thousands of people combined together give an idea about how much time the typical person living in the US spends doing various activites.
@@ -125,7 +125,7 @@ Numbers are words? (Sometimes)
 Changing strings into numbers
 =============================
 
-- To fix this problem, we need to tell R to think of our _numeric_ variables as numeric variables.
+- To fix this problem, we need to tell R to think of our _"numeric"_ variables as numeric variables.
 - We can do this with the `as.numeric` function. 
     - An example using this function is below:
 

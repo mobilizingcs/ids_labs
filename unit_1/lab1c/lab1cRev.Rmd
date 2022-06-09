@@ -21,7 +21,7 @@ utils::data(cdc)
 
 - Throughout the previous labs, we've been using data that was already loaded in RStudio.
     - But what if we want to analyze our own data?
-- This lab is all about learning how we to load our own participatory sensing data into RStudio
+- This lab is all about learning how to load our own participatory sensing data into RStudio
 
 
 ## Export, upload, import
@@ -35,7 +35,7 @@ utils::data(cdc)
 
 ## Exporting
 
-- To begin, go to your class' landing page.
+- To begin, go to the IDS Tools page.
   - Click on the <font color="green">Campaign Manager</font>
   - Fill in your username and password and click "Sign in."
 <center>![Campaign manager](images/campaign_manager.png){ style="max-height: 40vh; max-width: 80%;" }</center>
@@ -70,14 +70,11 @@ If you forget your username or password, ask your teacher to remind you.
   - Find the _pane_ with a <font color="green">Files</font> tab.
   - Click it!
 
-
-## Uploading
-
 <center> ![Upload Button](images/FilesPane.png){ width=50% } </center>
 
 - Click the button on the Files pane that says "Upload"
-  - Find the SurveyResponses.csv file you saved to your computer.
-  - Hit the _ok_ button a few times.
+  - Click on "Choose File" and find the SurveyResponses.csv file you saved to your computer.
+  - Hit the _OK_ button.
 - Voila!
   - If you look in the <font color="green">Files</font> pane, you should be able to find your data!
 
@@ -93,18 +90,17 @@ If you forget your username or password, ask your teacher to remind you.
 
 ## Importing
 
-<center>![import data](images/Environment.png){ width=50% }</center>
+<center>![import data](images/RStudioCloudImport.png){ width=50% }</center>
 
-- At the top of the Environment pane, click the "Import Data set" button. Then, choose "From CSV..."
-    - CSV is a standard data format used by many software programs.
+- On the Files pane, find the data you want to import.
+- Click on the name of the file and choose the option "Import Data set..." 
 
 
 ## Data Preview
 
 <center>![Data Preview](images/DataPreview.png){ width=60% }</center>
 
-- Click the <font color="green">Browse...</font> button in the upper right hand corner. Find your data file and click <font color="green">Open</font>.
-- Give your data a name using the <font color="green">Name: </font> field in the lower left corner.
+- You can give your data a name using the <font color="green">Name: </font> field in the lower left corner.
 
 
 ## What's in a name?
@@ -117,13 +113,13 @@ If you forget your username or password, ask your teacher to remind you.
 
 ## read.csv()
 
-- After you click import you might notice something appeared in your console.
+- After you click _Import_ you might notice something appeared in your console.
 ```{r, eval = FALSE, echo = TRUE}
 data.file <- read_csv("~/SurveyResponse.csv")
 View(data.file)
 ```
 
-- This is the actual code `RStudio` uses to read your data when you clicked the import button. 
+- This is the actual code `RStudio` uses to read your data when you clicked the _Import_ button. 
   - So instead of using the `RStudio` buttons, we can actually <font color="green">Import</font> by writing code similar to what was output into the console!
   - This will come in handy later in the course.
 
@@ -140,6 +136,6 @@ View(data.file)
 
 ## Export, upload, import
 
-- After you _export_, _upload_, _import_ your data you're ready to analyse. 
+- After you _export_, _upload_, _import_ your data you're ready to analyze. 
 - **`View` your data, select a variable and try to make an appropriate plot for that variable.**
     - If you're having issues, make sure you're spelling the name of your data correctly.

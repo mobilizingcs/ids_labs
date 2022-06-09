@@ -3,6 +3,7 @@ title: "A Diamond in the Rough"
 author: "Lab 1F"
 date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
 output: 
+  word_document:
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
     mathjax: ../../extras/mathjax-local/MathJax.js
@@ -48,7 +49,7 @@ data(atu_dirty)
 - What is ATU survey?
     - It's a survey conducted by the US government (Specifically the Bureau of Labor Statistics).
     - They survey thousands of people to find out exactly what activities they do throughout a single day.
-    - These thousands of people combined together give an idea about how much time the typical person living in the US spends doing various activites.
+    - These thousands of people combined together give an idea about how much time the typical person living in the US spends doing various activities.
 
 
 ## Load and go:
@@ -196,23 +197,67 @@ atu_cleaner <- mutate(atu_cleaner, gender =
 - **Recode the categorical variable about whether the person surveyed had a physical challenge or not. The coding is currently:**
     - `"01"`: Person surveyed _did not_ have a physical challenge.
     - `"02"`: Person surveyed _did_ have a physical challenge.
+
 - **Write a script that:**
     1. Loads the `atu_dirty` data set
-    2. Cleans the the data as we have in this lab
+    2. Cleans the data as we have in this lab
     3. Saves a copy of the cleaned data (see next slide).
 
 
 ## The final lines
 
-- The last few lines of your script to clean and then save your American Time Use data might look like:
+- The last few lines of your script are extremely important because they will save all of your work.
+
+- Be sure to `View` your data  and check its `str`ucture to make sure it looks clean and tidy before saving.
+
+Run the code below:
 
 ```{r, eval = FALSE, echo = TRUE}
 atu_clean <- atu_cleaner
 ```
+
+
+  - This code will create a new data frame in your `Environment` called atu_clean which is a final copy of atu_cleaner
+    - If atu_clean is swept from your `Environment` all of the changes you made will NOT be saved
+    - You would need to re-run the script to clean the data again
+    
+- To permanently save your changes you need to save the file as an R data file or `.Rda`
+
+Run the code below:
+
 ```{r, eval = FALSE, echo = TRUE}
 save(atu_clean, file = "atu_clean.Rda")
 ```
 
-- Be sure to `View` your data to make sure it looks clean and tidy before saving.
+
+- Look in your `Files` pane for the `atu_clean.Rda` file
+  - This is as permanent copy of your clean atu data
+  - To load the data onto your `Environment` click on the file
+  - A pop-up window confirming the upload will appear
 
 
+
+## Flex your skills
+
+- Now that you have learned some cleaning data basics, it's time to revisit the `food` data.
+
+Run the code below:
+```{r, eval = FALSE, echo = TRUE}
+histogram(~calories | healthy_level, data = food)
+```
+
+- **Use the `as.factor()` function to convert `healthy_level` into a categorical variable and re-run the `histogram` function.**
+
+Notice that the `healthy_level` categories are now numbers as opposed to tick-marks. This is an improvement but an even better solution would be to `recode` the categories.
+
+- **Recode the `healthy_level` categories and re-run the `histogram` function.**
+
+    - "1" = "Very Unhealthy"
+    - "2" = "Unhealthy"
+    - "3" = "Neutral"
+    - "4" = "Healthy"
+    - "5" = "Very Healthy"
+
+- If your `food` data is cleared from your `Environment`, the changes that you made to the `healhty_level` variable will not be saved.
+
+- To save your changes permanently save your `food` file as an R data file.

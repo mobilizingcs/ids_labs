@@ -21,7 +21,7 @@ Finding patterns in data.
 - Import the data from your class' _Food Habits_ campaign and name it `food`.
 
 
-Where's the variables?
+Where are the variables?
 ========================
 
 <img src="lab1e-figure/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" />
@@ -58,9 +58,9 @@ Scatterplots in action
 ======================================
 
 - Use a scatterplot to answer the following questions:
-    - **Do snacks that have more `calories` also have more `total_fat`? Why do you think that?**
-    - **What happens if you swap the `calories` and `total_fat` variables in your code? Does the relationship between the variables change?**
-    - **Does the relationship between `calories` and `total_fat` change when the snack is either `Salty` or `Sweet`? Write down the code you used to answer this question.**
+    - **Do snacks that have more `protein` also have more `calories`? Why do you think that?**
+    - **What happens if you swap the `protein` and `calories` variables in your code? Does the relationship between the variables change?**
+    - **Does the relationship between `protein` and `calories` change when the snack is either `Salty` or `Sweet`? Write down the code you used to answer this question.**
 
 4-variable scatterplots
 ======================
