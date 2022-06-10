@@ -4,10 +4,10 @@ author: "Lab 1A"
 date: 'Directions: Follow along with the slides and answer the questions in **red**
   font in your journal.'
 output:
-  word_document:
   slidy_presentation:
     css: ../../IDSLabCSSRev.css
     mathjax: ../../extras/mathjax-local/MathJax.js
+  word_document:
   ioslides_presentation: default
 ---
 
@@ -155,6 +155,8 @@ bargraph(~grade, data = cdc)
 
 - **Which one of these plots would be useful for answering the question: _Is it unusual for students in the CDC dataset to be taller than 1.8 meters?_**
 
+- Run the three commands below then answer the question that follows.
+
 ```{r, echo=TRUE, eval=FALSE}
 histogram(~height, data = cdc)
 ```
@@ -167,6 +169,7 @@ xyplot(weight~height, data = cdc)
 
 - **Do you think it's unusual for students in the data to be taller than 1.8 meters? Why or why not?**
 
+- Hint: Use the arrow keys on the `Plots` tab to toggle between the plots.
 
 ## On your own:
 
