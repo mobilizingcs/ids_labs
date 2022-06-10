@@ -61,7 +61,7 @@ str(cdc)
 - Choose one numeric and one categorical variable from the data and create both a `bargraph` and a `histogram` for each variable.
     - **Which function, either `bargraph` or `histogram` is better at visualizing categorical variables? Which is better at visualizing numerical variables?**
     
-## Wait, let's examine weight
+## We have options
 
 - Make a graph that shows the distribution of people's weight.
 - **Describe the distribution of `weight`. Make sure to describe the shape, center and spread of the distribution.**
