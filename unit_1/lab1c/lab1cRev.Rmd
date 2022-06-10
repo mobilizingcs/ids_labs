@@ -47,7 +47,8 @@ If you forget your username or password, ask your teacher to remind you.
 <center>![Campaign Manager](images/campaign_manager1.png){ width=90% }</center>
 
 - After logging in, your screen should look similar to this.
-- Click on the dropdown arrow for the campaign you are interested in downloading.
+- Click on the dropdown arrow for the campaign you are interested in downloading 
+  - At this point in the course, it will most likely be the Food Habits campaign
 
 
 ## Dropdown Arrow
