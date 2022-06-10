@@ -22,7 +22,7 @@ require(mobilizr)
     - We've learned how to make plots for different types of variables.
     - We know how to subset our data to get a more refined view of our data.
     - We've covered cleaning data and making two-way frequency tables.
-- In this lab, we're going to combine all of these ideas and topics together to find out how we spend out time.
+- In this lab, we're going to combine all of these ideas and topics together to find out how we spend our time.
 
 
 ## First steps first.
@@ -40,7 +40,7 @@ timeuse <- timeuse_format( _____ )
 
 - In case you're wondering, the timeuse_format function:
     - Takes each student's daily data and adds up all of the time spent doing each activity for each day.
-    - The time spent on each activity for each day is then average together to create a _typical day_ in the life of each student.
+    - The time spent on each activity for each day is then averaged together to create a _typical day_ in the life of each student.
 
 
 ## Exploring your data

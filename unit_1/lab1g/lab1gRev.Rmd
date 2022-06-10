@@ -61,7 +61,7 @@ bargraph(~phys_challenge | gender, data = atu_clean)
 
 ```
 
-- The split bargraph helps us get and idea of the answer to the question, but we need to provide precise values.
+- The split bargraph helps us get an idea of the answer to the question, but we need to provide precise values.
 - **Use a line of code, that's similar to how we facet plots, to obtain a tally of the number of people with physical challenges and their genders.**
 
 
