@@ -51,6 +51,8 @@ View(cdc)
 ?cdc
 ```
 
+- To get back to the slides find and click on the `Viewer` tab.  
+
 ## Data: Variables & Observations
 
 - Data can be broken up into two parts. 
