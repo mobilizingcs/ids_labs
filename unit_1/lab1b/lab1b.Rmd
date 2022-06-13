@@ -63,10 +63,11 @@ str(cdc)
     
 ## We have options
 
-- Make a graph that shows the distribution of people's weight.
-- **Describe the distribution of `weight`. Make sure to describe the shape, center and spread of the distribution.**
+- **Make a graph that shows the distribution of people's weight.**
+  - **Describe the distribution of `weight`. Make sure to describe the shape, center and spread of the distribution.**
 
 - Options can be added to plotting functions to change their appearance. The code below includes the `nint` option which controls the number of _intervals_ in a numerical plot.
+  - Type the command below on your console and then answer the questions that follow.
 
 ```{r, eval = FALSE, echo = TRUE}
 histogram(~weight, data = cdc, nint = 3)

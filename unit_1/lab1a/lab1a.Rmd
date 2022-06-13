@@ -46,12 +46,13 @@ View(cdc)
     - **What sorts of information about them was collected?**
 
 - To find out more information about the `cdc` data, type the command below into your console.
+  - To get back to the slides find and click on the `Viewer` tab.
 
 ```{r, eval = FALSE, echo = TRUE}
 ?cdc
 ```
 
-- To get back to the slides find and click on the `Viewer` tab.  
+
 
 ## Data: Variables & Observations
 
