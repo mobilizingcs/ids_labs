@@ -3,6 +3,7 @@ title: "Zooming Through Data"
 author: "Lab 1D"
 date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
 output: 
+  word_document:
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
     mathjax: ../../extras/mathjax-local/MathJax.js
@@ -162,7 +163,7 @@ my_sub <- filter(food , salty_sweet == "Salty", calories < 200)
     - **About how much `sugar` does the typical sweet snack have?**
     - **How does the typical amount of `sugar` compare when `healthy_level < 3` and when `healthy_level > 3`?**
     
-- Because you are now working with subsets of data, it is important to be able to label our plots and make this distinction.
+- Because you are now working with subsets of data, it is important to label our plots and make this distinction.
 
   - We can use the `main` option to add a title to our plots 
     - Add the following option to the code you used to create the `dotPlot` of the sugar in `Sweet` snacks.
