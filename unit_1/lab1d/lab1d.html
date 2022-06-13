@@ -532,21 +532,34 @@ Lab 1D
 <div id="another-plotting-function" class="slide section level2">
 <h1>Another plotting function</h1>
 <ul>
-<li><p>A <code>dotPlot</code> is another plot that can be used to analyze a numerical variable.</p>
+<li>A <code>dotPlot</code> is another plot that can be used to analyze a numerical variable.
 <ul>
 <li>Dotplots are better suited for smaller data sets. If data sets are too large, the dots become too small to see.</li>
 <li>Similarly, distributions with a large spread might impact the readability of the plot.</li>
 </ul></li>
-<li><p><strong>Use the <code>dotPlot()</code> function to create a <code>dotPlot</code> of the amount of <code>sugar</code> in our <code>food</code> data.</strong></p>
+<li><strong>Use the <code>dotPlot()</code> function to create a <code>dotPlot</code> of the amount of <code>sugar</code> in our <code>food</code> data.</strong>
 <ul>
 <li>The code to create a <code>dotPlot</code> is exactly like you’d use to make a <code>histogram</code>.</li>
 <li>Make sure to use a capital <em>P</em> in <code>dotPlot</code>.</li>
 </ul></li>
-<li><p>While a <code>dotPlot</code> should conserve the exact value of each data point, sometimes it behaves like a histogram in that it lumps values together.</p></li>
-<li><p><strong>Create a more accurate <code>dotPlot</code> by using the <code>nint</code> option.</strong></p>
+</ul>
+</div>
+<div id="more-options" class="slide section level2">
+<h1>More options</h1>
 <ul>
-<li>Set nint equal to max sugar - min sugar + 1</li>
+<li><p>While a <code>dotPlot</code> should conserve the exact value of each data point, sometimes it behaves like a histogram in that it lumps values together.</p></li>
+<li><p><strong>Create a more accurate <code>dotPlot</code> by including the <code>nint</code> option.</strong></p>
+<ul>
+<li>Set nint equal to max sugar - min sugar + 1
+<ul>
+<li>On your <code>food</code> data spreadsheet, click on the sugar header to sort in ascending order (to obtain minimum)</li>
+<li>Click on the sugar header again to sort in descending order (to obtain maximum)</li>
+</ul></li>
 <li>Use your history pane to see how we included the option <code>nint</code> with the <code>histogram</code> function.</li>
+</ul></li>
+<li><p>Pro-tip: If the <code>dotPlot</code> comes out looking wonky, try changing the value of the <em>character expansion</em> option, <code>cex</code>.</p>
+<ul>
+<li>The default value is <code>1</code>. Try a few values between <code>0</code> and <code>1</code> and a few more values larger than <code>1</code>.</li>
 </ul></li>
 </ul>
 </div>
@@ -567,7 +580,7 @@ Lab 1D
 <li>It would be much easier to compare the sugar levels of salty and sweet snacks if the dotPlots were stacked on top of one another.</li>
 <li>We can change the <strong>layout</strong> of our separated plots by including the <code>layout</code> option in our <code>dotPlot</code> function.
 <ul>
-<li>Add the following option to the code you used create the <code>dotPlot</code> split by <code>salty_sweet</code></li>
+<li>Add the following option to the code you used to create the <code>dotPlot</code> split by <code>salty_sweet</code></li>
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>layout =<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)</span></code></pre></div>
@@ -698,7 +711,7 @@ Lab 1D
 <ul>
 <li>We can use the <code>main</code> option to add a title to our plots
 <ul>
-<li>Add the following option to the code you used create the <code>dotPlot</code> of the sugar in <code>Sweet</code> snacks.</li>
+<li>Add the following option to the code you used to create the <code>dotPlot</code> of the sugar in <code>Sweet</code> snacks.</li>
 </ul></li>
 </ul></li>
 </ul>

@@ -3,7 +3,6 @@ title: "Zooming Through Data"
 author: "Lab 1D"
 date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
 output: 
-  word_document:
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
     mathjax: ../../extras/mathjax-local/MathJax.js
@@ -33,12 +32,20 @@ library(mobilizr)
 - **Use the `dotPlot()` function to create a `dotPlot` of the amount of `sugar` in our `food` data.**
     - The code to create a `dotPlot` is exactly like you'd use to make a `histogram`.
     - Make sure to use a capital _P_ in `dotPlot`.
+    
+
+## More options
 
 - While a `dotPlot` should conserve the exact value of each data point, sometimes it behaves like a histogram in that it lumps values together.
 
-- **Create a more accurate `dotPlot` by using the `nint` option.**
+- **Create a more accurate `dotPlot` by including the `nint` option.**
   - Set nint equal to max sugar - min sugar + 1
+    - On your `food` data spreadsheet, click on the sugar header to sort in ascending order (to obtain minimum)
+    - Click on the sugar header again to sort in descending order (to obtain maximum)
   - Use your history pane to see how we included the option `nint` with the `histogram` function.
+  
+- Pro-tip: If the `dotPlot` comes out looking wonky, try changing the value of the _character expansion_ option, `cex`. 
+    - The default value is `1`. Try a few values between `0` and `1` and a few more values larger than `1`.
 
 ## Splitting data sets
 
