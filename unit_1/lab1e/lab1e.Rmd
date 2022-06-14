@@ -3,7 +3,6 @@ title: "What's the Relationship?"
 author: "Lab 1E"
 date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
 output: 
-  word_document:
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
     mathjax: ../../extras/mathjax-local/MathJax.js
@@ -27,7 +26,7 @@ library(mobilizr)
 - Import the data from your class' _Food Habits_ campaign and name it `food`.
 
 
-## Where's the variables?
+## Where are the variables?
 
 ```{r,eval=TRUE, echo=FALSE, fig.align='center', fig.width=14, fig.height=6, out.width = '90%'}
 histogram(~height | gender, data = cdc, layout = c(2,1),
