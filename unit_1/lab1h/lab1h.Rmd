@@ -27,7 +27,8 @@ require(mobilizr)
 
 ## First steps first.
 
-_Export_, _Upload_, _Import_ the data from your class' _Time Use_ campaign.
+_Export_, _Upload_, _Import_ the data from your class' _Time Use_ campaign.  
+
 - The data, as-is, is very messy and hard to interpret/analyze.
     - Fill in the blank with the name of your imported data to format it:
 ```{r, eval = FALSE, echo = TRUE}
