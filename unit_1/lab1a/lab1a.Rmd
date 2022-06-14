@@ -128,14 +128,6 @@ names(CDC)
 
 ## R's most important syntax
 
-<div class='greenequation'> _function_ (y~x, data = ____ )  </div>
-
-- Notice the command and its corresponding plot. 
-
-```{r, echo=TRUE, eval=TRUE, fig.width=6, fig.height=4}
-bargraph(~grade, data = cdc)
-```
-
 - Most of the commands you will be using follow the syntax below:
 
 <div class='greenequation'> _function_ (y~x, data = ____ )  </div>
@@ -144,6 +136,12 @@ bargraph(~grade, data = cdc)
   - The name of the R function, often the plot’s name, that tells the computer how to create your graph.
   - The variable(s) containing the information we want the function to use.
   - The data set containing the variables.
+  
+- Notice that when we analyze a single variable the value for _y_ is left blank. 
+
+```{r, echo=TRUE, eval=TRUE, fig.width=6, fig.height=4}
+bargraph(~grade, data = cdc)
+```
 
 - Later on, we’ll see we can use this syntax to do more than create graphs.
 

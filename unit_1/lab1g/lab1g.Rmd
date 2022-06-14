@@ -4,10 +4,10 @@ author: "Lab 1G"
 date: 'Directions: Follow along with the slides and answer the questions in **red**
   font in your journal.'
 output:
+  word_document:
   slidy_presentation:
     css: ../../IDSLabCSSRev.css
     mathjax: ../../extras/mathjax-local/MathJax.js
-  word_document:
   beamer_presentation: default
 ---
 
@@ -97,9 +97,8 @@ tally(~gender | phys_challenge, data = atu_clean, margin = TRUE)
 - The totals are telling us that `R` calculates conditional frequencies by column!
 
 - What does this mean?
-  - The totals in the first two-way frequency table indicate that the groups being compared are `Male` and `Female` on the distribution of physical challenges.
-  - The totals in the second two-way frequency table indicate that the groups being compared are `No difficulty` and `Has difficulty` on the distribution of gender.
-
+  - In the first two-way frequency table the groups being compared are `Male` and `Female` on the distribution of physical challenges.
+  - In the second two-way frequency table the groups being compared are the people with `No difficulty` and those that `Has difficulty` on the distribution of gender.
 - **Add the option `format = "percent"` to the first tally function. How were the percents calculated? Interpret what they mean.**
 
 ## On your own
