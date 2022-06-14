@@ -27,13 +27,14 @@ require(mobilizr)
 
 ## First steps first.
 
-- _Export_, _Upload_, _Import_ the class' `timeuse` data from your class' Home Page as `timeuse_raw`.
+_Export_, _Upload_, _Import_ the data from your class' _Time Use_ campaign.
 - The data, as-is, is very messy and hard to interpret/analyze.
     - Fill in the blank with the name of your imported data to format it:
 ```{r, eval = FALSE, echo = TRUE}
 timeuse <- timeuse_format( _____ )
 ```
 - This function formats/cleans the data so that each row represents a typical day for each student in the class
+- Hint: Search your `History` tab for the code to save your formatted timeuse data as an R data file (.Rda)
 
 
 ## timeuse_format specifics
