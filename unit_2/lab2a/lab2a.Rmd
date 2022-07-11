@@ -37,7 +37,7 @@ knitr::opts_chunk$set(echo = FALSE)
     - Name your data `colors` when you load it.
 - Before analyzing a new data set, it's often helpful to get familiar with it. So:
     - **Write down the `names` of the 4 variables that contain the point-totals, or _scores_, for each personality color.**
-    - **Write down the `names` of the variables that tell us an observation's introverts/extroverts designation and whether they participated in playing _sports_.**
+    - **Write down the `names` of the variables that tell us an observation's introvert/extrovert designation and whether they are involved in _sports_.**
     - **How many variables are in the data set?**
     - **How many observations are in the data set?**
 
@@ -45,10 +45,9 @@ knitr::opts_chunk$set(echo = FALSE)
 ## Estimating centers
 
 - Create a `dotPlot` of the scores for your _predominant color_.
-    - Pro-tip: If the `dotPlot` comes out looking wonky, try changing the value of the _character expansion_ argument, `cex`. 
-    - The default value is `1`. Try a few values between `0` and `1` and a few more values larger than `1`.
-- Based on your `dotPlot`: 
-    - **Which values came up the most frequently? About how many people in your class had a score similar to yours?**
+    - Pro-tip: If the `dotPlot` comes out looking wonky, include the `nint` and `cex` options.
+- Based on your `dotPlot`:
+    - **Which values came up the most frequently? About how many people in  your class had a score similar to yours?**
     - **What, would you say, was a _typical_ score for a person in your class for your predominant color? How does your own score for this color compare?**
 
 
@@ -64,39 +63,43 @@ mean(~____, data = colors)
 - **Use a similar line of code to calculate the `median` value of _your_ predominant color.**
     - **Are the `mean` and `median` roughly the same? If not, use the `dotPlot` you made in the last slide to describe why.**
 
-
-## Comparing introverts/extroverts
-
-- Make a `dotPlot` of your _predominant color_ again; but this time, facet the plot based on introvert/extrovert variable.
-- Use a line of code, using similar syntax to how you facet plots, to _calculate_ a value that describes the _center_ of your predominant color for introverts and extroverts.
-    - **Do introverts or extroverts differ in their typical scores for your predominant color? Answer this statistical question using your `dotPlot`.**
-- **`Assign` the mean values a name. Then place the name into the `diff()` function to calculate the difference. How much more/less did introverts/extroverts score over the other for your predominant color?**
-
-
 ## Estimating Spread
 
 - Now that we know how to describe our data's _typical_ value we might also like to describe how closely the rest of the data are to this _typical_ value. 
     - We often refer to this as the **variability** of the data. 
     - Variability is seen in a `histogram` or `dotPlot` as the horizontal *spread*.
-- **Look at the spread of the `dotPlot` you made for your predominant color then fill in the blank:**
+    
+- Re-create a `dotPlot` of the scores for your _predominant color_ and then run the code below filling in the blank with the name of your predominant color:
+
+```{r, eval = FALSE, echo = TRUE}
+add_line(vline = mean(~____, data = colors))
+```
+
+- **Look at the spread of the scores from the mean score then complete the sentence below:**
 
 _Data points in my plot will usually fall within_ ____ _units of the center._
 
-- **Which group (introverts or extroverts), if either, seem to have values that are more spread out from the center?**
-
-    
 ## Mean Absolute Deviation
 
 - The **mean absolute deviation** finds how far away, on average, the data are from the mean.
     - We often write _mean absolute deviation_ as _MAD_.
-- Calculate the MAD of your _predominant color_ by filling in the blanks:
+- Calculate the MAD of your _predominant color_ by filling in the blank:
 
 ```{r, eval = FALSE, echo = TRUE}
 MAD(~_____, data = colors)
 ```
 
+- **How close was your estimate of the spread for your predominant color (from the previous slide) to the actual value?**
+
+## Comparing introverts/extroverts
+
+- Make a `dotPlot` of your _predominant color_ again; but this time, facet the plot by introvert/extrovert variable. Include the `layout` argument to stack the plots.
+- Use a line of code, using similar syntax to how you facet plots, to _calculate_ a value that describes the _center_ of your predominant color for introverts and extroverts.
+    - **Do introverts or extroverts differ in their typical scores for your predominant color? Answer this statistical question using your `dotPlot` and numerical summaries.**
+
+- **Which group (introverts or extroverts), if either, seem to have values that are more spread out from the center?**
+
 - **Based on the MAD, which group (introverts or extroverts) has more variability for your predominant color's scores?**
-    - **Does this match the answer you gave for the last question in the previous slide?** 
 
 
 ## On your own
