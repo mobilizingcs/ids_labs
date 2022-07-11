@@ -1,12 +1,15 @@
 ---
 title: "A Diamond in the Rough"
 author: "Lab 1F"
-date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
-output: 
-  word_document:
-  slidy_presentation: 
+date: 'Directions: Follow along with the slides and answer the questions in **red**
+  font in your journal.'
+output:
+  html_document:
+    df_print: paged
+  slidy_presentation:
     css: ../../IDSLabCSSRev.css
     mathjax: ../../extras/mathjax-local/MathJax.js
+  word_document: null
 ---
 
 ```{r setup, include=FALSE}
@@ -258,6 +261,6 @@ Notice that the `healthy_level` categories are now numbers as opposed to tick-ma
     - "4" = "Healthy"
     - "5" = "Very Healthy"
 
-- If your `food` data is cleared from your `Environment`, the changes that you made to the `healhty_level` variable will not be saved.
+- If your `food` data is cleared from your `Environment`, the changes that you made to the `healthy_level` variable will not be saved.
 
 - To save your changes permanently save your `food` file as an R data file.
