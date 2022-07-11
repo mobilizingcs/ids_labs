@@ -62,13 +62,14 @@ songs <- c(rap, rock)
 ```{r, eval = FALSE, echo = TRUE}
 rap <- rep("rap", times = 39)
 ```
-- Use a similar line of code to simulate the rock songs in our playlist of 100.
+- Look in the `Environment` pane for the vector containing your rap songs.
+- **Use a similar line of code to simulate the rock songs in our playlist of 100.**
 
 
 ## Put the songs in the playlist
 
 - Now that we've got some different songs, we need to combine them together.
-    - To do this, we can use the combine function in `R`, `c()`.
+    - To do this, we can use the combine function `c()` in `R`.
 - Fill in the blanks to combine your different songs:
 ```{r, eval = FALSE, echo = TRUE}
 songs <- __(rap, ____)
@@ -92,11 +93,17 @@ sample(songs, size = 1, replace = TRUE)
 ## Now do() it some more
 
 - Instead of running the same line of code multiple times ourselves we can use `R` to `do()` multiple repetitions for us.
-    - Fill in the blanks below to `do` the `sample` code from the previous slide _50_ times run:
+    - Fill in the blanks below to `do` the `sample` code from the previous slide _50_ times:
 ```{r, eval = FALSE, echo = TRUE}
 do(___) * sample(___, ___ = ___, ___ = ___)
 ```
-- _Assign_ the 50 selected songs the name `draws`. Then fill in the blank below to tally how often each genre was selected:
+- Recall that we need to store our results to be able to perform analysis.
+- _Assign_ the 50 selected songs the name `draws` and then `View` your file.
+
+- **What is the variable name?**
+  - `R` defaulted to naming the variable based on the function used. You may use the data cleaning skills you learned in lab 6 to `rename` the variable if you wish.
+
+- Fill in the blank below to tally how often each genre was selected:
 ```{r, eval = FALSE, echo = TRUE}
 tally(~___, data = draws)
 ```

@@ -577,7 +577,8 @@ Lab 2C
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>rap &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="st">&quot;rap&quot;</span>, <span class="dt">times =</span> <span class="dv">39</span>)</span></code></pre></div>
 <ul>
-<li>Use a similar line of code to simulate the rock songs in our playlist of 100.</li>
+<li>Look in the <code>Environment</code> pane for the vector containing your rap songs.</li>
+<li><strong>Use a similar line of code to simulate the rock songs in our playlist of 100.</strong></li>
 </ul>
 </div>
 <div id="put-the-songs-in-the-playlist" class="slide section level2">
@@ -585,7 +586,7 @@ Lab 2C
 <ul>
 <li>Now that we’ve got some different songs, we need to combine them together.
 <ul>
-<li>To do this, we can use the combine function in <code>R</code>, <code>c()</code>.</li>
+<li>To do this, we can use the combine function <code>c()</code> in <code>R</code>.</li>
 </ul></li>
 <li>Fill in the blanks to combine your different songs:</li>
 </ul>
@@ -618,12 +619,18 @@ Lab 2C
 <ul>
 <li>Instead of running the same line of code multiple times ourselves we can use <code>R</code> to <code>do()</code> multiple repetitions for us.
 <ul>
-<li>Fill in the blanks below to <code>do</code> the <code>sample</code> code from the previous slide <em>50</em> times run:</li>
+<li>Fill in the blanks below to <code>do</code> the <code>sample</code> code from the previous slide <em>50</em> times:</li>
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">do</span>(___) <span class="op">*</span><span class="st"> </span><span class="kw">sample</span>(___, <span class="dt">___ =</span> ___, <span class="dt">___ =</span> ___)</span></code></pre></div>
 <ul>
-<li><em>Assign</em> the 50 selected songs the name <code>draws</code>. Then fill in the blank below to tally how often each genre was selected:</li>
+<li><p>Recall that we need to store our results to be able to perform analysis.</p></li>
+<li><p><em>Assign</em> the 50 selected songs the name <code>draws</code> and then <code>View</code> your file.</p></li>
+<li><p><strong>What is the variable name?</strong></p>
+<ul>
+<li>Since we are</li>
+</ul></li>
+<li><p>Fill in the blank below to tally how often each genre was selected:</p></li>
 </ul>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">tally</span>(<span class="op">~</span>___, <span class="dt">data =</span> draws)</span></code></pre></div>
 <ul>
