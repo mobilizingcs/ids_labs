@@ -530,7 +530,7 @@ Lab 2D
 <li>In this lab, we’ll extend our simulation methods to cover situations that are more complex.
 <ul>
 <li>We’ll learn how to estimate their probabilities.</li>
-<li>We also look at the roll of sampling <em>with</em> or <em>without</em> <em>replacement</em>.</li>
+<li>We will also look at the roll of sampling <em>with</em> or <em>without</em> <em>replacement</em>.</li>
 </ul></li>
 </ul>
 </div>
@@ -558,7 +558,10 @@ Lab 2D
 <li>It’s also possible to select <em>without replacement</em> by setting the <code>replace</code> option in the <code>sample</code> function to <code>FALSE</code>.</li>
 <li>Take a sample of <code>size</code> 100 from our playlist of songs <em>without replacement</em>. Assign this sample the name <code>without</code>.
 <ul>
-<li><strong>What do you notice if you run <code>tally(~without)</code>? Does something similar happen if you sample <em>with replacement</em>?</strong></li>
+<li><strong>Run <code>tally(without)</code> and describe the output. Does something similar happen if you sample <em>with replacement</em>?</strong>
+<ul>
+<li>Notice that the tilde <code>~</code> was not needed with the <code>tally</code> function. This is because <code>without</code> was not a variable within a data frame but rather a vector which acts like a lone variable.</li>
+</ul></li>
 <li><strong>What happens if <code>size = 101</code> and <code>replace = FALSE</code>?</strong></li>
 </ul></li>
 </ul>
@@ -586,9 +589,10 @@ Lab 2D
 </ul></li>
 <li>Let’s write a more realistic simulation and estimate the probability that if we select two songs at random, without replacement, that both are rap songs.
 <ul>
-<li>Use the <code>do</code> function to perform 10 simulated <code>sample</code>s of <code>size</code> 2, without replacement and <em>assign</em> the simulations the name <code>draws</code>.</li>
+<li>Use the <code>do</code> function to perform 10 simulated <code>sample</code>s of <code>size</code> 2, without replacement and <em>assign</em> the simulations the name <code>draws</code> and then <code>View</code> your file.</li>
 </ul></li>
 </ul>
+<p><strong>What are the variable names? What happened in the first simulation? Did any of your 10 simulations contain two rap songs?</strong></p>
 </div>
 <div id="simulations-and-probability" class="slide section level2">
 <h1>Simulations and probability</h1>
@@ -605,21 +609,24 @@ Lab 2D
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">mutate</span>(draws, <span class="dt">nrap =</span> <span class="kw">rowSums</span>(draws<span class="op">==</span><span class="st">&quot;rap&quot;</span>))</span></code></pre></div>
 <ul>
-<li><strong>For each of the lines of code below, describe how the output of the code changes as we move from line to line.</strong></li>
+<li><strong>Let’s break down the code above by running each part of the code one piece at a time. As you run each line of code below describe the output.</strong></li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>draws <span class="op">==</span><span class="st"> &quot;rap&quot;</span></span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">rowSums</span>(draws <span class="op">==</span><span class="st"> &quot;rap&quot;</span>)</span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">mutate</span>(draws, <span class="dt">nrap =</span> <span class="kw">rowSums</span>(draws<span class="op">==</span><span class="st">&quot;rap&quot;</span>))</span></code></pre></div>
+<ul>
+<li>Remember to assign a name to your mutated data set.</li>
+</ul>
 </div>
 <div id="counting-other-outcomes" class="slide section level2">
 <h1>Counting other outcomes</h1>
 <ul>
 <li>Another method we can use to estimate the probability of complex events is to use the following 2-step procedure:
 <ol style="list-style-type: decimal">
-<li>Subset the rows of the simulations that match our desired outcomes.</li>
+<li>Subset or filter the rows of the simulations that match our desired outcomes.</li>
 <li>Count the number of rows in the subset and divide by the number of simulations.</li>
 </ol></li>
-<li>The result that you obtain is an estimate of the probability that a specific combination of events occured.</li>
+<li>The result that you obtain is an estimate of the probability that a specific combination of events occurred.</li>
 <li>We’ll see an example of this method on the next slide.</li>
 </ul>
 </div>
@@ -639,12 +646,13 @@ Lab 2D
 <div id="estimating-probabilities" class="slide section level2">
 <h1>Estimating probabilities</h1>
 <ul>
-<li><strong>Calculate estimated probabilities for the following situations:</strong>
+<li><p>Answer the following questions by performing 500 simulations of sampling 2 songs from a playlist of 30 rap, 23 country and 47 rock songs:</p></li>
+<li><p><strong>Calculate estimated probabilities for the following situations:</strong></p>
 <ol style="list-style-type: decimal">
 <li>You draw two <code>&quot;rap&quot;</code> songs.</li>
 <li>You draw a <code>&quot;rap&quot;</code> song in the first draw and a <code>&quot;country&quot;</code> song in the 2nd.</li>
 </ol></li>
-<li><strong>Create a histogram that displays the number of times a <code>&quot;rap&quot;</code> song occurred in each simulation. That is, how often were zero rap songs drawn? A single rap song? Two rap songs?</strong></li>
+<li><p><strong>Create a histogram that displays the number of times a <code>&quot;rap&quot;</code> song occurred in each simulation. That is, how often were zero rap songs drawn? A single rap song? Two rap songs?</strong></p></li>
 </ul>
 </div>
 <div id="on-your-own" class="slide section level2">
