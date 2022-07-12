@@ -394,7 +394,7 @@ Lab 2F
 <ul>
 <li>This helps us determine how likely it is that a difference between groups is due to chance.</li>
 </ul></li>
-<li>For this lab, will extend these ideas to <em>numerical</em> variables by using random shuffling and numerical summaries.</li>
+<li>For this lab, we will extend these ideas to <em>numerical</em> variables by using random shuffling and numerical summaries.</li>
 <li>The question we will investigate in this lab is:</li>
 </ul>
 <p><em>Is there any evidence to suggest that wealthier passengers on the Titanic were more likely to survive than poorer passengers?</em></p>
@@ -433,9 +433,9 @@ Lab 2F
 <ul>
 <li>Use the previous lab if you need some help on how to do this.</li>
 <li>For each shuffle, compute each group’s <code>median</code> fare paid.</li>
-<li><code>Assign</code> your shuffled data the name <code>shuffles</code>.</li>
+<li><code>Assign</code> your shuffled data the name <code>shuffled_survival</code>.</li>
 </ul></li>
-<li>After shuffling your data, use the <code>mutate</code> function to create a variable called <code>diff</code> to the shuffled medians you just calculated. (Assign your mutated data the name <code>shuffles</code> again).</li>
+<li>After shuffling your data, use the <code>mutate</code> function to create a variable called <code>diff</code> to the shuffled medians you just calculated. (Assign your mutated data the name <code>shuffled_survival</code> again).</li>
 </ul>
 </div>
 <div id="put-your-simulations-to-use" class="slide section level2">
@@ -452,15 +452,15 @@ Lab 2F
 <h1>Comparing Mean Fares</h1>
 <ul>
 <li><p>What about if instead of calculating the median fare price for each group after a shuffle, we calculated the mean fare price and took the difference (mean_survivor – mean_victim).</p></li>
-<li><p>**If we did this 500 times, what do you predict the distribution of differences will look like?</p></li>
-<li><p>Use the do and the shuffle functions to shuffle the passenger’s survival status 500 times.</p>
+<li><p><strong>If we did this 500 times, what do you predict the distribution of differences will look like?</strong></p></li>
+<li><p>Use the <code>do</code> and the <code>shuffle</code> functions to shuffle the passenger’s survival status 500 times.</p>
 <ul>
-<li>For each shuffle, compute each group’smeanfare paid.</li>
-<li>After shuffling your data, use themutatefunction to create a variable calleddiffto the shuffled means you just calculated.</li>
+<li>For each shuffle, compute each group’s mean fare paid.</li>
+<li>After shuffling your data, use the <code>mutate</code> function to create a variable called <code>diff</code> to the shuffled means you just calculated.</li>
 </ul></li>
-<li><p>**What does the shuffled data reveal? Does the answer to the research question below change when using the mean fares instead of the median fares?</p></li>
+<li><p><strong>What does the shuffled data reveal? Does the answer to the research question below change when using the mean fares instead of the median fares?</strong></p></li>
 </ul>
-<p>_“Is there any evidence to suggest that those who survived paid a higher fare than those who died?”</p>
+<p><em>Is there any evidence to suggest that those who survived paid a higher fare than those who died?</em></p>
 </div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->
