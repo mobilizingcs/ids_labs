@@ -28,8 +28,8 @@ library(mobilizr)
 
 - Besides looking at _typical_ values, sometimes we want to see _extreme_ values, like the smallest and largest values.
     - To find these values, we can use the `min`, `max` or `range` functions. These functions use a similar syntax as the `mean` function.
-- **Find the `min` value and `max` value for your predominant color?**
-- **Apply the `range` function to your predominant color**
+- **Find the `min` value and `max` value for your predominant color.**
+- **Apply the `range` function to your predominant color and describe the output.**
     - The _range_ of a variable is the difference between a variable's smallest and largest value. 
     - Notice, however, that our `range` function calculates the maximum and minimum values for a variable, but not the difference between them.
     - Later in this lab you will create a custom `Range` function that will calculate the difference.

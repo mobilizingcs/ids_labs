@@ -533,8 +533,8 @@ Lab 2B
 <ul>
 <li>To find these values, we can use the <code>min</code>, <code>max</code> or <code>range</code> functions. These functions use a similar syntax as the <code>mean</code> function.</li>
 </ul></li>
-<li><strong>Find the <code>min</code> value and <code>max</code> value for your predominant color?</strong></li>
-<li><strong>Apply the <code>range</code> function to your predominant color</strong>
+<li><strong>Find the <code>min</code> value and <code>max</code> value for your predominant color.</strong></li>
+<li><strong>Apply the <code>range</code> function to your predominant color and describe the output.</strong>
 <ul>
 <li>The <em>range</em> of a variable is the difference between a variable’s smallest and largest value.</li>
 <li>Notice, however, that our <code>range</code> function calculates the maximum and minimum values for a variable, but not the difference between them.</li>
@@ -641,18 +641,19 @@ Lab 2B
 </div>
 <div id="example-function" class="slide section level2">
 <h1>Example function</h1>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>mm_diff &lt;-<span class="st"> </span><span class="cf">function</span>(variable, data) {</span>
-<span id="cb5-2"><a href="#cb5-2"></a>  mean_val &lt;-<span class="st"> </span><span class="kw">mean</span>(variable, <span class="dt">data =</span> data)</span>
-<span id="cb5-3"><a href="#cb5-3"></a>  med_val &lt;-<span class="st"> </span><span class="kw">median</span>(variable, <span class="dt">data =</span> data)</span>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>mm_diff &lt;-<span class="st"> </span><span class="cf">function</span>(variable, my_data) {</span>
+<span id="cb5-2"><a href="#cb5-2"></a>  mean_val &lt;-<span class="st"> </span><span class="kw">mean</span>(variable, <span class="dt">data =</span> my_data)</span>
+<span id="cb5-3"><a href="#cb5-3"></a>  med_val &lt;-<span class="st"> </span><span class="kw">median</span>(variable, <span class="dt">data =</span> my_data)</span>
 <span id="cb5-4"><a href="#cb5-4"></a>  <span class="kw">abs</span>(mean_val <span class="op">-</span><span class="st"> </span>med_val)</span>
 <span id="cb5-5"><a href="#cb5-5"></a>}</span></code></pre></div>
 <ul>
-<li>The function takes two <em>generic</em> arguments: <code>variable</code> and <code>data</code></li>
+<li>The function takes two <em>generic</em> arguments: <code>variable</code> and <code>my_data</code></li>
 <li>It then follows the steps between the curly braces <code>{}</code>
 <ul>
 <li>Each of the <em>generic</em> arguments is used inside the <code>mean</code> and <code>median</code> functions.</li>
 </ul></li>
 <li>Copy and paste the code above into a <em>R script</em> and <em>run</em> it.</li>
+<li>The <code>mm_diff</code> function will appear in your <em>Environment</em> pane.</li>
 </ul>
 </div>
 <div id="using-mm_diff" class="slide section level2">
@@ -674,20 +675,20 @@ Lab 2B
 <div id="our-first-function" class="slide section level2">
 <h1>Our first function</h1>
 <ul>
-<li>Using the previous example as a guide, create a function called <code>Range</code> (<em>Note the capial ‘R’</em>) that calculates the <em>range</em> of a variable by filling in the blanks below:</li>
+<li>Using the previous example as a guide, create a function called <code>Range</code> (<em>Note the capital ‘R’</em>) that calculates the <em>range</em> of a variable by filling in the blanks below:</li>
 </ul>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>____ &lt;-<span class="st"> </span><span class="cf">function</span> (____, ____) {</span>
 <span id="cb7-2"><a href="#cb7-2"></a>  values &lt;-<span class="st"> </span><span class="kw">range</span>(____, <span class="dt">data =</span> ____)</span>
 <span id="cb7-3"><a href="#cb7-3"></a>  <span class="kw">diff</span>(___)</span>
 <span id="cb7-4"><a href="#cb7-4"></a>}</span></code></pre></div>
 <ul>
-<li><strong>Use a <code>dotPlot</code> or <code>histogram</code> to find the personality color with the largest difference between the <code>max</code> and <code>min</code> values. Then use the <code>Range</code> function you created to calculate its <em>range</em>.</strong></li>
+<li><strong>Use the <code>Range</code> function to find the personality color with the largest difference between the <code>max</code> and <code>min</code> values.</strong></li>
 </ul>
 </div>
 <div id="on-your-own" class="slide section level2">
 <h1>On your own</h1>
 <ul>
-<li><strong>Create a function called <code>myIQR</code> that uses the <em>only</em> <code>quantile</code> function to compute the middle 30% of the data.</strong></li>
+<li><strong>Create a function called <code>myIQR</code> that uses the <code>quantile</code> function to compute the middle 30% of the data.</strong></li>
 </ul>
 </div>
 
