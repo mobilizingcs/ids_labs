@@ -39,7 +39,7 @@ songs <- c(rap, rock)
 
 - Remember that a _probability_ is the long-run proportion of time an event occurs.
     - Many probabilities can be answered exactly with just a little math. 
-    - The probability we draw a single rap song from our playlist of 39 rap and 61 rock songs is `39/100`, or `39%`.
+    - The probability we draw a single rap song from our playlist of 39 rap and 61 rock songs is `39/100`, `0.39` or `39%`.
 - Probabilities can also be answered exactly if we were willing to randomly select a song from the playlist, write down its _genre_, place the song back in the list, and repeatedly do this _forever_.
     - Literally, _forever_ ...
     - But we don't have that much time. So we're only going to do it 500 times which will give us an _estimate of the probability_.
@@ -80,14 +80,19 @@ songs <- __(rap, ____)
 
 ## Pick a song, any song
 
-- Data scientists call the act of choosing things randomly from a set, _sampling_.
+- Data scientists call the act of choosing things randomly from a set _sampling_.
     - We can randomly choose a song from our playlist by using:
 ```{r, eval = FALSE, echo = TRUE}
 sample(songs, size = 1, replace = TRUE)
 ```
 
-- Run this code 10 times and compute the proportion of `"rap"` songs you drew from the 10.
-    - **Once everyone in your class has computed their proportions, calculate the _range_ of proportions (The largest proportion minus the smallest proportion) for your class and write it down.**
+- Run this code 10 times and compute the _proportion_ of `"rap"` songs you drew from the 10.
+  - Vocabulary Check: A _proportion_ is a fraction of the whole.
+    - For example, if 2 rap songs were drawn from the 10, the _proportion_ would be 2/10 
+    - It is more common to express a _proportion_ as a decimal, in this case, 0.20
+    - It is even more common to express a _proportion_ as a percentage,  20%
+
+- **Once everyone in your class has computed their _proportions_, calculate the _range_ of _proportions_ (the largest _proportion_ minus the smallest _proportion_) for your class and write it down.**
 
 
 ## Now do() it some more
