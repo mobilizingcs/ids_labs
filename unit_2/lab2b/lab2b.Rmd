@@ -62,7 +62,7 @@ quantile(~____, data = ____, p = 0.25)
 - The `IQR` is another way to describe _spread_.
     - It describes how _wide_ or _narrow_ the middle 50% of our data are.
 - Just like we used the `min` and `max` to compute the `range`, we can also use the _1st_ and _3rd_ quartiles to compute the _IQR_.
-- **Use the values of _Q1_ and _Q3_ you calculated previously and find the _IQR_ by hand**.
+- **Use the values of _Q1_ and _Q3_ you calculated previously for your predominant color and find the _IQR_ by hand**.
     - **Then use the `iqr()` function to calculate it for you.**
 - **Which personality color score has the widest spread according to the _IQR_? Which is narrowest?**
 
