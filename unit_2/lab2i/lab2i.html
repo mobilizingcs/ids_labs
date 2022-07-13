@@ -536,7 +536,7 @@ Lab 2I
 <ul>
 <li><code>Assign</code> this data the name <code>shfls</code>.</li>
 </ul></li>
-<li>After creating <code>shfls</code>, use <code>mutate</code> to add a new variable to the data set. This new variable should have the name <code>diff</code> and should be the <code>age</code> of those who survived minus those who died.</li>
+<li>After creating <code>shfls</code>, use <code>mutate</code> to add a new variable to the data set. This new variable should have the name <code>diff</code> and should be the <code>mean</code> <code>age</code> of those who survived minus those who died.</li>
 <li>Finally, calculate the <code>mean</code> and <code>sd</code> of the <code>diff</code> variable.
 <ul>
 <li><code>Assign</code> these values the name <code>diff_mean</code> and <code>diff_sd</code>.</li>
@@ -556,19 +556,19 @@ Lab 2I
 <div id="using-the-normal-model" class="slide section level2">
 <h1>Using the normal model</h1>
 <ul>
-<li>Since the distribution of our <code>diff</code> variable appears normally distributed, we can use a normal model to estimate the probability of seeing differences that are more extreme than our actual data.</li>
-<li>Fill in the blanks to calculate the probability of an even smaller difference occurring than our actual difference using a normal model.</li>
+<li><p>Since the distribution of our <code>diff</code> variable appears normally distributed, we can use a normal model to estimate the probability of seeing differences that are more extreme than our actual data.</p>
+<ul>
+<li><strong>Draw a sketch of a normal curve. Label the mean age difference, based on your shuffles, and the actual age difference of survivors minus non-survivors from the actual data. Then shade in the areas, under normal the curve, that are <em>smaller</em> than the actual difference.</strong></li>
+</ul></li>
+<li><p>Fill in the blanks to calculate the probability of an even smaller difference occurring than our actual difference using a normal model.</p></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">pnorm</span>(____, <span class="dt">mean =</span> diff_mean, <span class="dt">sd =</span> ____)</span></code></pre></div>
 </div>
 <div id="extreme-probabilities" class="slide section level2">
 <h1>Extreme probabilities</h1>
 <ul>
-<li>The probability you calculated in the previous slide is an estimate for how often we expect to see a difference smaller than the actual one we observed, by chance alone.
-<ul>
-<li><strong>Draw a sketch of a normal curve. Label the mean age difference, based on your shuffles, and the actual age difference of suvivors minus non-survivors from the actual data. Then shade in the areas, under normal the curve, that are <em>smaller</em> than the actual difference.</strong></li>
-</ul></li>
-<li>If you wanted to instead calculate the probability that the difference would be larger than the one observed, we could run (fill in the blanks):</li>
+<li><p>The probability you calculated in the previous slide is an estimate for how often we expect to see a difference smaller than the actual one we observed, by chance alone.</p></li>
+<li><p>If you wanted to instead calculate the probability that the difference would be larger than the one observed, we could run (fill in the blanks):</p></li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="dv">1</span> <span class="op">-</span><span class="st"> </span><span class="kw">pnorm</span>(____, <span class="dt">mean =</span> diff_mean, <span class="dt">sd =</span> ____)</span></code></pre></div>
 </div>
@@ -596,14 +596,14 @@ Lab 2I
 <ul>
 <li>Hence why we’ll call this a “Q” norm.</li>
 </ul></li>
-<li>How tall can you be and still be in the shortest 25% of heights if the mean height is 67 inches with a standard deviation of 3 inches?</li>
+<li>How tall can a man be and still be in the shortest 25% of heights if the mean height is 67 inches with a standard deviation of 3 inches?</li>
 </ul>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">qnorm</span>(____, <span class="dt">mean =</span> ____, <span class="dt">sd =</span> ____)</span></code></pre></div>
 </div>
 <div id="on-your-own" class="slide section level2">
 <h1>On your own</h1>
 <ul>
-<li>Using the <code>titanic</code> data, answer the following statistical question:
+<li>Using the <code>titanic</code> data, answer the following investigative question:
 <ul>
 <li><strong>Were women on the Titanic typically younger than men?</strong></li>
 <li><strong>Use a histogram, 500 random shuffles and a normal model to answer the question in the bullet above.</strong></li>

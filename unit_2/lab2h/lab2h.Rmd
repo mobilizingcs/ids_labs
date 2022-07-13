@@ -50,7 +50,7 @@ plotDist('norm', mean = 0, sd = 1)
 ## Finding normal distributions
 
 - Load the `cdc` data and use the `histogram` function to answer the following:
-- **Based on what you know about these variables, which of the variables do you think have distributions that will look like the normal distribution?**
+- **Think about the `height` and `weight` variables. Based on what you know about these variables, which of the variables do you think have distributions that will look like the normal distribution?**
     - **Make histograms of these variables.  Which ones look like the normal distribution?**
     - _Hint_: To help answer this question, try including the option `fit = "normal"` in the histogram function. You might also try faceting by `gender`.
 
@@ -66,8 +66,10 @@ plotDist('norm', mean = 0, sd = 1)
 
 ## On your own
 
+- Hint: Refer to Lab 2E and 2F
 - **For each of the following, determine which, if any, appear to be normally distributed. Explain your reasoning:**
-    - **The `weight` of people in our `cdc` data, faceted by `gender`.**
-    - **The difference in `mean` weights between `Male`s and `Female`s for 500 random shuffles.**
-    - **The difference in `median` weights between `Male`s and `Female`s for 500 random shuffles.**
+    - **The difference in `percentages` between male and female survivors in a slasher film for 500 random shuffles.**
+    - **The difference in `median` fares between survivors and non-survivors on the Titanic for 500 random shuffles.**
+    - **The difference in `mean` fares between survivors and non-survivors on the Titanic for 500 random shuffles.**
+
 
