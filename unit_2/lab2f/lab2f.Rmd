@@ -35,7 +35,7 @@ _Is there any evidence to suggest that wealthier passengers on the Titanic were 
     - At the time, it was claimed that the Titanic was _unsinkable_ ... it wasn't ... because it did.
 - Use the `data` function to load the `titanic` passenger and survival data.
 - Create a boxplot of the `fare`s paid by passengers and facet the plot based on whether the passenger survived or not.
-    - **Based on the plot, do you believe that those who survived paid a higher fare than those who died? Explain why and describe how certain you are of being correct.**
+    - **Based on the plot, do you believe wealthier passengers on the Titanic were more likely to survive? Explain why and describe how certain you are of being correct.**
 
 
 ## The search begins!
@@ -51,7 +51,7 @@ _Is there any evidence to suggest that wealthier passengers on the Titanic were 
     - Use the previous lab if you need some help on how to do this.
     - For each shuffle, compute each group's `median` fare paid. 
     - `Assign` your shuffled data the name `shuffled_survival`.
-- After shuffling your data, use the `mutate` function to create a variable called `diff` to the shuffled medians you just calculated. (Assign your mutated data the name `shuffled_survival` again).
+- After shuffling your data, use the mutate function to create a variable called diff which is the median fare of survivors minus the median fare of non-survivors.(Assign your mutated data the name shuffled_survival again).
   
 
 ## Put your simulations to use
@@ -71,8 +71,8 @@ _Is there any evidence to suggest that wealthier passengers on the Titanic were 
 
 - Use the `do` and the `shuffle` functions to shuffle the passenger's survival status 500 times. 
     - For each shuffle, compute each group's mean fare paid.
-    - After shuffling your data, use the `mutate` function to create a variable called `diff` to the shuffled means you just calculated. 
-
+    - After shuffling your data, use the `mutate` function to create a variable called `diff` which is the mean fare of survivors minus the mean fare of non-survivors.
+    
 - **What does the shuffled data reveal? Does the answer to the research question below change when using the mean fares instead of the median fares?**
 
 _Is there any evidence to suggest that those who survived paid a higher fare than those who died?_

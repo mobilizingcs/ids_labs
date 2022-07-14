@@ -412,7 +412,7 @@ Lab 2F
 <li>Use the <code>data</code> function to load the <code>titanic</code> passenger and survival data.</li>
 <li>Create a boxplot of the <code>fare</code>s paid by passengers and facet the plot based on whether the passenger survived or not.
 <ul>
-<li><strong>Based on the plot, do you believe that those who survived paid a higher fare than those who died? Explain why and describe how certain you are of being correct.</strong></li>
+<li><strong>Based on the plot, do you believe wealthier passengers on the Titanic were more likely to survive? Explain why and describe how certain you are of being correct.</strong></li>
 </ul></li>
 </ul>
 </div>
@@ -435,7 +435,7 @@ Lab 2F
 <li>For each shuffle, compute each group’s <code>median</code> fare paid.</li>
 <li><code>Assign</code> your shuffled data the name <code>shuffled_survival</code>.</li>
 </ul></li>
-<li>After shuffling your data, use the <code>mutate</code> function to create a variable called <code>diff</code> to the shuffled medians you just calculated. (Assign your mutated data the name <code>shuffled_survival</code> again).</li>
+<li>After shuffling your data, use the mutate function to create a variable called diff which is the median fare of survivors minus the median fare of non-survivors.(Assign your mutated data the name shuffled_survival again).</li>
 </ul>
 </div>
 <div id="put-your-simulations-to-use" class="slide section level2">
@@ -456,7 +456,7 @@ Lab 2F
 <li><p>Use the <code>do</code> and the <code>shuffle</code> functions to shuffle the passenger’s survival status 500 times.</p>
 <ul>
 <li>For each shuffle, compute each group’s mean fare paid.</li>
-<li>After shuffling your data, use the <code>mutate</code> function to create a variable called <code>diff</code> to the shuffled means you just calculated.</li>
+<li>After shuffling your data, use the <code>mutate</code> function to create a variable called <code>diff</code> which is the mean fare of survivors minus the mean fare of non-survivors.</li>
 </ul></li>
 <li><p><strong>What does the shuffled data reveal? Does the answer to the research question below change when using the mean fares instead of the median fares?</strong></p></li>
 </ul>
