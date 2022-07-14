@@ -66,8 +66,9 @@ plotDist('norm', mean = 0, sd = 1)
 
 ## On your own
 
-- Hint: Refer to Lab 2E and 2F
+
 - **For each of the following, determine which, if any, appear to be normally distributed. Explain your reasoning:**
+- Hint: Refer to Lab 2E and 2F
     - **The difference in `percentages` between male and female survivors in a slasher film for 500 random shuffles.**
     - **The difference in `median` fares between survivors and non-survivors on the Titanic for 500 random shuffles.**
     - **The difference in `mean` fares between survivors and non-survivors on the Titanic for 500 random shuffles.**
