@@ -112,14 +112,14 @@ diff(values)
 ## Example function
 
 ```{r, eval = FALSE, echo = TRUE}
-mm_diff <- function(variable, my_data) {
-  mean_val <- mean(variable, data = my_data)
-  med_val <- median(variable, data = my_data)
+mm_diff <- function(variable, data) {
+  mean_val <- mean(variable, data = data)
+  med_val <- median(variable, data = data)
   abs(mean_val - med_val)
 }
 ```
 
-- The function takes two _generic_ arguments: `variable` and `my_data`
+- The function takes two _generic_ arguments: `variable` and `data`
 - It then follows the steps between the curly braces `{}`
     - Each of the _generic_ arguments is used inside the `mean` and `median` functions.
 - Copy and paste the code above into a _R script_ and _run_ it. 
