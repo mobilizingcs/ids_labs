@@ -48,6 +48,7 @@ tally(survival ~ gender, data = slasher, margin = TRUE)
 - The first line of code takes the group of _survivors_ and tells us how many of them were `Male` or `Female`.
 - The other takes the group of _females_ / _males_ and tells us how many of them `Dies` or `Survives`.
 - **The last question on the previous slide can be answered using the line of code below. Why?**
+    - - Pro-tip: Include the option `format = "percent"` to obtain a two-way table with percentages.
 
 ```{r, eval = TRUE, echo = TRUE}
 tally(survival ~ gender, format = "percent", data = slasher, margin = TRUE)
@@ -65,7 +66,6 @@ tally(survival ~ gender, format = "percent", data = slasher, margin = TRUE)
 
 - When we shuffle data, we use our original data set as a starting point.
     - Run the following and write down the resulting table on a piece of paper.
-      - Pro-tip: Include the option `format = "percent"` to obtain a two-way table with percentages.
 ```{r, eval = FALSE, echo = TRUE}
 tally(survival ~ gender, data = slasher)
 ```

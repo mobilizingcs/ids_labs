@@ -551,7 +551,12 @@ Lab 2E
 <ul>
 <li>The first line of code takes the group of <em>survivors</em> and tells us how many of them were <code>Male</code> or <code>Female</code>.</li>
 <li>The other takes the group of <em>females</em> / <em>males</em> and tells us how many of them <code>Dies</code> or <code>Survives</code>.</li>
-<li><strong>The last question on the previous slide can be answered using the line of code below. Why?</strong></li>
+<li><strong>The last question on the previous slide can be answered using the line of code below. Why?</strong>
+<ul>
+<li><ul>
+<li>Pro-tip: Include the option <code>format = &quot;percent&quot;</code> to obtain a two-way table with percentages.</li>
+</ul></li>
+</ul></li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">tally</span>(survival <span class="op">~</span><span class="st"> </span>gender, <span class="dt">format =</span> <span class="st">&quot;percent&quot;</span>, <span class="dt">data =</span> slasher, <span class="dt">margin =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
 <pre><code>##           gender
@@ -575,10 +580,7 @@ Lab 2E
 <ul>
 <li>When we shuffle data, we use our original data set as a starting point.
 <ul>
-<li>Run the following and write down the resulting table on a piece of paper.
-<ul>
-<li>Pro-tip: Include the option <code>format = &quot;percent&quot;</code> to obtain a two-way table with percentages.</li>
-</ul></li>
+<li>Run the following and write down the resulting table on a piece of paper.</li>
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">tally</span>(survival <span class="op">~</span><span class="st"> </span>gender, <span class="dt">data =</span> slasher)</span></code></pre></div>
