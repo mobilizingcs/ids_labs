@@ -566,7 +566,10 @@ Lab 2B
 <li>Make a <code>dotPlot</code> of your <em>predominant</em> color’s scores. Make sure to include the <code>nint</code> option.</li>
 <li>Visually (Don’t worry about being super-precise):
 <ul>
-<li>Cut the distribution into quarters so the <em>number</em> of <em>data points</em> is equal for each piece. (Each piece should contain 25% of the data.)</li>
+<li>Cut the distribution into quarters so the <em>number</em> of <em>data points</em> is equal for each piece. (Each piece should contain 25% of the data.)
+<ul>
+<li>Hint: You might consider using the <code>add_line(vline =  )</code> to add vertical lines at the quarter marks.</li>
+</ul></li>
 <li><strong>Write down the numbers that split the data up into these 4 pieces.</strong></li>
 <li><strong>How long is the interval of the middle two pieces?</strong></li>
 <li>This length is the <em>IQR</em>.</li>
@@ -621,7 +624,7 @@ Lab 2B
 </ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>values &lt;-<span class="st"> </span><span class="kw">range</span>(<span class="op">~</span>____, <span class="dt">data=</span>colors)</span></code></pre></div>
 <ul>
-<li>Step 2: Use the <code>diff</code> function to calculate the difference of <code>values</code>.</li>
+<li>Step 2: Use the <code>diff</code> function to calculate the difference of <code>values</code>. The input for the <code>diff</code> function needs to be a vector containig two numeric values.</li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">diff</span>(values)</span></code></pre></div>
 <ul>

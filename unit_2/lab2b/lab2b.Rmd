@@ -52,6 +52,7 @@ quantile(~____, data = ____, p = 0.25)
 - Make a `dotPlot` of your _predominant_ color's scores. Make sure to include the `nint` option.
 - Visually (Don't worry about being super-precise): 
     - Cut the distribution into quarters so the _number_ of _data points_ is equal for each piece. (Each piece should contain 25% of the data.)
+      - Hint: You might consider using the `add_line(vline =  )` to add vertical lines at the quarter marks.
     - **Write down the numbers that split the data up into these 4 pieces.**
     - **How long is the interval of the middle two pieces?**
     - This length is the _IQR_.
@@ -92,7 +93,7 @@ favstats(~____, data=colors)
 values <- range(~____, data=colors)
 ```
 
-  - Step 2: Use the `diff` function to calculate the difference of `values`.
+  - Step 2: Use the `diff` function to calculate the difference of `values`. The input for the `diff` function needs to be a vector containig two numeric values.
 
     
 ```{r, eval = FALSE, echo = TRUE}

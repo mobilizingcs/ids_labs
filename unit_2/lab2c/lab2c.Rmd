@@ -58,7 +58,7 @@ songs <- c(rap, rock)
 
 - Simulations are meant to mimic what happens in real-life using randomness and computers.
     - Before we can start simulating picking songs from a playlist, we need to simulate that playlist in `R`.
-- To simulate our 39 `rap` songs, we'll use the repeat (`rep`) function.
+- To simulate our 39 `rap` songs, we'll use the repeat `rep()` function.
 ```{r, eval = FALSE, echo = TRUE}
 rap <- rep("rap", times = 39)
 ```
