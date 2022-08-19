@@ -122,7 +122,7 @@ nrow(___) / ___
 
 ## Estimating probabilities
 
-- Answer the following questions by performing 500 simulations of sampling 2 songs from a playlist of 30 rap, 23 country and 47 rock songs:
+- Answer the following questions by performing 500 simulations of sampling 2 songs from a playlist of 30 rap, 23 country and 47 rock songs. You might consider running `set.seed` so that your results can be reproduced:
 
 - **Calculate estimated probabilities for the following situations:**
     1. You draw two `"rap"` songs.

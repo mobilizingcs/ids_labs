@@ -105,7 +105,7 @@ View(shuffled_outcomes)
 - **What is the largest difference in percentages of survival between males and females?**
 - **What patterns are emerging from these simulations?**
 
-- Ten simulations is not enough. Use `do`, `tally` and `shuffle` functions to `shuffle` the `survival` variable and `tally` the percentage of women who survived 500 times. `Assign` your 500 shuffles the name `shuffled_survivors`
+- Ten simulations is not enough. Use `do`, `tally` and `shuffle` functions to `shuffle` the `survival` variable and `tally` the percentage of women who survived 500 times. `Assign` your 500 shuffles the name `shuffled_survivors`. Use `set.seed(1)`
 
 ## Now what?
 
@@ -148,6 +148,6 @@ add_line(vline = 22.52252 - 13.30798)
 ## On your own
 
 - Carry out another 500 simulations but this time shuffle the `gender` variable instead of the `survival` variable. 
-    - Include the code `set.seed(7)` before your 500 simulations to make your answer reproducible.
+    - Include the code `set.seed(1)` before your 500 simulations to make your answer reproducible.
 - **Does shuffling the `gender` variable instead of the `survival` variable change your answer to the question _Does `gender` play a role in whether or not a character will survive in a horror film?_**
     - **Why or why not?**
