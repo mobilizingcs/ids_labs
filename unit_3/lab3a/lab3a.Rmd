@@ -35,7 +35,7 @@ _Does the stimulus your class chose change people's perception of time?_
 
 ## Analyzing our data
 
-- Create appropriate plots to answer your statistical questions.
+- Create appropriate plots to answer your statistical investigative questions.
     - **Are there any outliers or unusual observations that require some cleaning before you can interpret your plots?**
 - Calculate appropriate numerical summaries to answer your statistical investigative questions.
 - Interpret your plots and summaries.

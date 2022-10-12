@@ -1,28 +1,33 @@
-Confound it all!
-========================================================
-transition: none
-css: ../../IDSLabCSS.css
+---
+title: "Confound it all!"
+author: "Lab 3B"
+date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
+output: 
+  slidy_presentation: 
+    css: ../../IDSLabCSSRev.css
+    mathjax: ../../extras/mathjax-local/MathJax.js
+---
 
-Lab 3B
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
 
-Directions: Follow along with the slides and answer the questions in **red** font in your journal.
+```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+library(mobilizr)
+```
 
+## Finding data in new places
 
-
-
-Finding data in new places
-===
 
 - Since your first forays into doing data science, you've used data from two-sources:
     - Built-in datasets from RStudio.
-    - Campaign data from Mobilize Campaign Manager.
+    - Campaign data from the Campaign Manager.
 - Data can be found in many other places though, especially online.
 - In this lab, we'll read an _observational study_ dataset from a website.
     - We'll use this data to then explore what factors are associated with a person's lung capacity.
 
 
-Our new data
-===
+## Our new data
 
 - You can find the data online here:
     - (Right-click and select _Open in New Window_) [https://raw.githubusercontent.com/IDSUCLA/dataset/main/fev.csv](https://raw.githubusercontent.com/IDSUCLA/dataset/main/fev.csv)
@@ -33,21 +38,20 @@ Our new data
     - Genders; `"1"` for males, `"0"` for females.  
     - Whether the participant was a smoker, `"1"`, or non-smoker `"0"`.
 
-Importing our data
-===
+
+## Importing our data
 
 - Rather than _export_-ing the data and then _upload_-ing and _importing_-ing it, we'll pull the data straight from the webpage into R.
 - Click on the _Import Dataset_ button under the _Environment_ tab.
-    - Then click on the _From CSV_ option.
-    - Type or copy/paste the URL into the box and then hit _Update_.
+    - Then click on the _From Text (readr)_ option.
+    - Type or copy/paste the URL into the box and then click _Update_.
 - Before importing, change the following _Import Options_:
     - Name: `lungs`
     - _Uncheck_ the _First Row as Names_  
     - Change _Delimiter_ to _Whitespace_
 
 
-About the data
-===
+## About the data
 
 - The data come from the _Forced Expiratory Volume (FEV)_ study that took place in the late 1970's.
     - The observations come from a sample of 654 youths, aged 3 to 19, in/around East Boston.
@@ -56,8 +60,7 @@ About the data
 _What is the effect of childhood smoking on lung health?_
 
 
-Cleaning your data
-===
+## Cleaning your data
 
 - Now that we've got the data loaded, we need to clean it to get it ready for use _(Look at lab 1F for help)_. Specifically:
     - We want to name the variables: `"age"`, `"lung_cap"`, `"height"`, `"gender"`,`"smoker"`, in that order.
@@ -67,8 +70,7 @@ Cleaning your data
     - For `smoker`, use `recode` to change `"1"` to `"Yes"` and `"0"` to `"No"`.
     
 
-Analyzing our data
-===
+## Analyzing our data
 
 - Our `lungs` data is from an observational study.
 - **Write down a reason the researchers couldn't use an experiment to test the effects of smoking on children's lungs.**
@@ -78,10 +80,9 @@ Analyzing our data
     - **Interpret the plot and describe why the relationship between the two variables makes sense.**
 
     
-Smoking and lung capacity
-===
+## Smoking and lung capacity
 
-- Make a plot that can be used to answer the statistical question:
+- Make a plot that can be used to answer the statistical investigative question:
 
 _Do people who smoke tend to have lower lung capacity than those who do not smoke?_
 
@@ -90,8 +91,7 @@ _Do people who smoke tend to have lower lung capacity than those who do not smok
     - **Can you suggest a possible confounding factor that might be affecting the result?**
 
 
-Let's compare
-===
+## Let's compare
 
 - Create three subsets of the data: 
     - One that includes _only_ 13 year olds ...
@@ -101,8 +101,7 @@ Let's compare
 - **How does the relationship between smoking and lung capacity change as we increase the age from 13 to 15 to 17?**
 
 
-Sum it up!
-===
+## Sum it up!
 
 - **Does smoking affect lung capacity? If so, how?**
     - Support your answers with appropriate plots. 
