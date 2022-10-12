@@ -27,9 +27,9 @@ _Does the stimulus your class chose change people's perception of time?_
 
 ## Coming up with questions
 
-- **Write down two statistical questions that will help you answer the _research question_ from the previous slide.**
+- **Write down two statistical investigative questions that will help you answer the _research question_ from the previous slide.**
 - Then, _export_, _upload_, _import_ your experiment data into RStudio.
-    - If you're having trouble coming up with good statistical questions, try loading the data and looking at the variables.
+    - If you're having trouble coming up with good statistical investigative questions, try loading the data and looking at the variables.
     - Ask yourself, _How would I use these variables to answer the research question?_
 
 
@@ -37,7 +37,7 @@ _Does the stimulus your class chose change people's perception of time?_
 
 - Create appropriate plots to answer your statistical questions.
     - **Are there any outliers or unusual observations that require some cleaning before you can interpret your plots?**
-- Calculate appropriate numerical summaries to answer your statistical questions.
+- Calculate appropriate numerical summaries to answer your statistical investigative questions.
 - Interpret your plots and summaries.
     - **Write down a few sentences with your interpretations.**
 
