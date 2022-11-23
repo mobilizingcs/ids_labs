@@ -18,7 +18,7 @@ library(mobilizr)
 
 ## Just the beginning
 
-- Means, medians,and MAD are just a few examples of _numerical summaries_.
+- Means, medians, and MAD are just a few examples of _numerical summaries_.
 - In this lab, we will learn how to calculate and interpret additional summaries of  distributions such as: minimums, maximums, ranges, quartiles and IQRs. 
     - We'll also learn how to write our first custom function!
 - Start by loading your _Personality Color_ data again and name it `colors`.
