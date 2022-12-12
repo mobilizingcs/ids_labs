@@ -1,0 +1,153 @@
+---
+title: "Hiring Discrimination"
+author: "Lab 2E_mod"
+date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
+output: 
+  slidy_presentation: 
+    css: ../../IDSLabCSSRev.css
+    mathjax: ../../extras/mathjax-local/MathJax.js
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+library(mobilizr)
+load("./hiring.rda")
+```
+
+## Playing with permutations
+
+- Unfortunately in today's day and age there are still discriminatory hiring practices.
+- This lab will focus on the statistical question: _Are employers more likely to hire a candidate that is white as opposed to a black candidate?_
+- To answer this question, we'll learn how to use permuted data to gauge how likely an event occurs by chance.
+- To begin, use the `data` function to load the `hiring` data file.
+    - The data contains information from an experiment conducted by Marianne Bertrand and Sendhill Mullainathan on labor market discrimination.
+
+## Initial thoughts...
+
+- To familiarize yourself with the data, answer the following:
+    - **How many variables and observations are contained in the data and what are the possible values of the variables?**
+    - **Which name had more call-backs? Write down a few sentences as to how you came to your conclusion. Be sure to look at both the _counts_ and _percentages_ of call-backs in each group before deciding.**
+    - **Calculate the difference between the percentage of whites who received a call-back and the percentage of blacks who received a call-back. Is the difference large enough to conclude that whites tend to be called back more often than blacks?**
+
+
+## Tally whoa ... !
+
+- Something you might have noticed is that these two lines of code aren't equivalent:
+```{r, eval = FALSE, echo = TRUE}
+tally(~names | called, data = hiring, margin = TRUE)
+
+```
+
+```{r, eval = FALSE, echo = TRUE}
+tally(~called | names, data = hiring, margin = TRUE)
+```
+
+- The first line of code takes the group of called _yes_ / _no_  and tells us how many of them were `white` or `black`.
+- The other takes the group of _black_ / _white_ and tells us how many of them were called `no` or `yes`.
+- **The last question on the previous slide can be answered using the line of code below. Why?**
+    - - Pro-tip: Include the option `format = "percent"` to obtain a two-way table with percentages.
+
+```{r, eval = TRUE, echo = TRUE}
+tally(~called | names, data = hiring, margin = TRUE, format = "percent")
+```
+
+
+## Examining differences
+
+- When we're comparing the difference between two quantities, such as hiring rates between two groups, it can be difficult to decide how _different_ two values need to be before we can conclude that the difference didn't just happen by chance.
+    - To help us decide when a difference is not due to chance, we'll use repeated random shuffling.
+- By using repeated random shuffling, we'll estimate how often our _actual_ difference occurs by _chance_.
+
+
+## Do the shuffle!
+
+- When we shuffle data, we use our original data set as a starting point.
+    - Run the following and write down the resulting table on a piece of paper.
+```{r, eval = FALSE, echo = TRUE}
+tally(~called | names, data = slasher)
+```
+- Now run the following to randomly reassign each `called` status to each observation. Compare the resulting table to the one you wrote down.
+```{r, eval = FALSE, echo = TRUE}
+tally(~shuffle(called) | names, 
+      data = hiring)
+```
+
+## Let's compare ...
+
+- **How many people, in total, were called before shuffling? How many people were called after shuffling?**
+- **How has shuffling our data changed the percentage of whites who were called compared to blacks who were called?**
+    - **Is the difference in percentages from your shuffled data larger or smaller than the difference from the original data? Interpret what this means.**
+- **Explain why shuffling our data one time is not enough to decide if the difference seen in our _actual_ data occurs by chance or not.**
+
+## Detecting differences
+
+- To help us decide if the difference in percentages in our _actual_ data occurs by chance or not, we can use the `do()` function to shuffle our data many times and see how often our _actual_ difference occurred by chance.
+
+Run the following lines of code:
+
+```{r, eval = FALSE, echo = TRUE}
+set.seed(7)
+```
+
+```{r, eval = FALSE, echo = TRUE}
+shuffled_outcomes <- do(10) * tally(~shuffle(called) | names, format = "percent", 
+                                    data = hiring)
+```
+
+```{r, eval = FALSE, echo = TRUE}
+View(shuffled_outcomes)
+```
+
+- **In how many simulations did a higher percentage of whites receive a call-back than blacks?**
+- **What is the largest difference in percentages of call-backs between whites and blacks?**
+- **What patterns are emerging from these simulations?**
+
+- Ten simulations is not enough. Use `do`, `tally` and `shuffle` functions to `shuffle` the `called` variable and `tally` the percentage of whites and blacks who got a call-back. Do this 500 times and  `assign` your 500 shuffles the name `shuffled_called`. Use `set.seed(1)`
+
+## Now what?
+
+- The next step to find out how often our _actual_ difference occur by chance is to compare it to the differences in our shuffled data.
+- To compute the differences for each shuffle we can use the `mutate` function.
+    - Fill in the blanks to add a new column that contains the difference between `yes.white` and `yes.black` to our `shuffled_called` data.
+    
+```{r, eval = FALSE, echo = TRUE}
+shuffled_called <- mutate(shuffled_called, 
+            diff = ____ - ____)
+```
+
+
+## Time to decide
+
+- Create a `histogram` of the `difference`s in our `shuffled_called` data. Based on your plot, answer the following:
+
+  - **What was the typical difference in percentages between white and blacks that were called back?**
+    
+- Include a vertical line in your histogram of the _actual_ difference by running the code below:
+
+```{r, eval = FALSE, echo = TRUE}
+add_line(vline = 10.061350 - 6.707566)
+```
+
+- **Does the actual difference occur very often by chance alone?**
+- **Does `race`` play a role in whether or not a person will get hired? Explain your reasoning.**
+- **If you wanted to be hired, would you want to use a white name or black name on your resume?**
+
+
+## Summary
+
+- By shuffling the `called` label, we made it so that the proportion of whites and blacks who were hired was random.
+    - The whites and blacks were hired by chance alone.
+- If being hired occurred purely by chance, then most of the time the difference in hiring proportions was close to zero.
+    - Notice how most values in the histogram occur close to zero.
+- When we look to see how often our actual difference occurs in our shuffled data, if the actual difference doesn't occur very often then perhaps there is something more going on than just chance alone ...
+
+
+## On your own
+
+- Carry out another 500 simulations but this time shuffle the `names` variable instead of the `called` variable. 
+    - Include the code `set.seed(1)` before your 500 simulations to make your answer reproducible.
+- **Does shuffling the `names` variable instead of the `called` variable change your answer to the question _Are employers more likely to hire a candidate that is white as opposed to a black candidate?_**
+    - **Why or why not?**
