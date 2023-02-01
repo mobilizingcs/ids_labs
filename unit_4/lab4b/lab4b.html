@@ -536,8 +536,8 @@ Lab 4B
 </ul></li>
 <li>Fill in the blanks below to create a function that will make predictions of people’s <code>height</code>s based on their <code>armspan</code>:</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>make_predictions &lt;-<span class="st"> </span><span class="cf">function</span>(armspans) {</span>
-<span id="cb1-2"><a href="#cb1-2"></a>  ____ <span class="op">*</span><span class="st"> </span>armspans <span class="op">+</span><span class="st"> </span>____</span>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>predict_height &lt;-<span class="st"> </span><span class="cf">function</span>(armspan) {</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  ____ <span class="op">*</span><span class="st"> </span>armspan <span class="op">+</span><span class="st"> </span>____</span>
 <span id="cb1-3"><a href="#cb1-3"></a>}</span></code></pre></div>
 </div>
 <div id="make-your-predictions" class="slide section level2">
@@ -545,7 +545,7 @@ Lab 4B
 <ul>
 <li>Fill in the blanks to include your predictions in the <code>arm_span</code> data.</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>____ &lt;-<span class="st"> </span><span class="kw">mutate</span>(____, <span class="dt">predictions =</span> <span class="kw">____</span>(____))</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>____ &lt;-<span class="st"> </span><span class="kw">mutate</span>(____, <span class="dt">predicted_height =</span> <span class="kw">____</span>(____))</span></code></pre></div>
 <ul>
 <li>Now that we’ve made our predictions, we’ll need to figure out a way to decide how accurate our predictions are.
 <ul>
@@ -557,19 +557,19 @@ Lab 4B
 <div id="sums-of-differences" class="slide section level2">
 <h1>Sums of differences</h1>
 <ul>
-<li>One method we might consider to measure our model’s accuracy is to sum the differences in the actual heights minus our predicted heights.
-<ul>
-<li><strong>What do these differences measure?</strong></li>
-<li>Fill in the blanks below to create a function which calculates the sum of differences:</li>
-</ul></li>
+<li>A <em>residual</em> is the difference between the actual and predicted value of a quantity of interest.</li>
+<li>Fill in the blanks below to add a column of residuals to <code>arm_span</code>.</li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>accuracy &lt;-<span class="st"> </span><span class="cf">function</span>(actual, predicted) {</span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="kw">sum</span>(____ <span class="op">-</span><span class="st"> </span>____)</span>
-<span id="cb3-3"><a href="#cb3-3"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>____ &lt;-<span class="st"> </span><span class="kw">mutate</span>(____, <span class="dt">residual =</span> ____ <span class="op">-</span><span class="st"> </span>____)</span></code></pre></div>
 <ul>
-<li>Then fill in the blanks to calculate our accuracy summary.</li>
+<li><p><strong>What do the residuals measure?</strong></p></li>
+<li><p>One method we might consider to measure our model’s accuracy is to sum the residuals.</p></li>
+<li><p>Fill in the blanks below to calculate our accuracy summary.</p></li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">summarize</span>(____, <span class="kw">____</span>(____, ____))</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">summarize</span>(____, <span class="kw">sum</span>(____))</span></code></pre></div>
+<ul>
+<li>Hint: Like <code>mutate</code>, the first argument of <code>summarize</code> is a dataframe, and the second argument is the action to perform on a column of the dataframe. Whereas the output of <code>mutate</code> is a column, the output of <code>summarize</code> is (usually) a single number summary.</li>
+</ul>
 </div>
 <div id="checking-our-work" class="slide section level2">
 <h1>Checking our work</h1>
@@ -582,11 +582,10 @@ Lab 4B
 <ul>
 <li><strong>Why does calculating the squared values for the differences solve this problem?</strong></li>
 </ul></li>
-<li>Alter your accuracy function to first calculate the differences, then square them and finally take the <code>mean</code> of the squared differences. This is called the <em>mean squared error</em> (MSE).
-<ul>
-<li>Calculate the MSE of your line.</li>
-</ul></li>
+<li>The <em>mean squared error</em> (MSE) is calculated by squaring all of the residuals, and then taking the mean of the squared residuals.</li>
+<li>Fill in the blanks below to calculate the MSE of your line.</li>
 </ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">summarize</span>(____, <span class="kw">mean</span>((____)<span class="op">^</span><span class="dv">2</span>))</span></code></pre></div>
 </div>
 <div id="on-your-own" class="slide section level2">
 <h1>On your own</h1>
@@ -601,8 +600,9 @@ Lab 4B
 <li>Fill in the blanks to make predictions using <code>best_fit</code>:</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>____ &lt;-<span class="st"> </span><span class="kw">mutate</span>(____, <span class="dt">predictions =</span> <span class="kw">predict</span>(____))</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>____ &lt;-<span class="st"> </span><span class="kw">mutate</span>(____, <span class="dt">predicted_height =</span> <span class="kw">predict</span>(____))</span></code></pre></div>
 <ul>
+<li>Hint: the <code>predict</code> function takes a linear model as input, and outputs the predictions of that model.</li>
 <li>Calculate the MSE for these new predicted values.</li>
 </ul>
 </div>
@@ -616,7 +616,7 @@ Lab 4B
 </ul></li>
 <li>To see how the <code>lm</code> line fits your data, create a scatterplot and then run:</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">add_line</span>(<span class="dt">intercept =</span> ____, <span class="dt">slope =</span> ____)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">add_line</span>(<span class="dt">intercept =</span> ____, <span class="dt">slope =</span> ____)</span></code></pre></div>
 </div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->
