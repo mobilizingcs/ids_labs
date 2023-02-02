@@ -16,41 +16,39 @@ knitr::opts_chunk$set(echo = FALSE)
 library(mobilizr)
 ```
 
-## Predictions
+## What is cross-validation?
 
-- In the previous lab, we learned how to calculate the _mean squared error_ (MSE).
-    - This let us measure how well our model predicts values of our `y`-variable.
-- To really measure how well our _line of best fit_ predicts people's `heights`, we want see how well we predict the `heights` of people that we haven't yet measured.
-- To do this, we'll divide our data into two sets:
-    - A _training_ set used to build our model.
-    - And a _testing_ set we can use to measure how well our model predicts _new_ data values.
-- This method of dividing data into sets is called _cross-validation_.
+- In the previous two labs, we learned how to:
+    - Create a linear model predicting `height` from the `arm_span` data (4A).
+    - See how well our model predicts `height` on the `arm_span` data by computing mean squared error (MSE) (4B).
+- In this lab, we will see how well our model predicts the heights *of people we haven't yet measured*.
+- To do this, we will use a method called _cross-validation_.
+- Cross-validation consists of three steps:
+    - Step 1: Split the data into `training` and `test` sets.
+    - Step 2: Create a model using the `training` set.
+    - Step 3: Use this model to make predictions on the `test` set.
 
-
-## Why cross-validate?
-
-- Data scientists are often tasked with predicting some aspect of future observations.
-    - Relying on a single data set to both _train_ and _test_ models can lead to models that are so specific to the current batch of data that they're unable to make good predictions for these future observations.
-- Cross-validating allows data scientists to measure how well their models predict new observations.
-    - It also gives them the ability to compare different models to see which models make better/worse predictions.
-
-
-## Splitting the data
+## Step 1: train-test split
 
 - Waiting for new observations can take a long time. The U.S. takes a census of its population once every 10 years, for example.
 - Instead of waiting for new observations, data scientists will take their current data and divide it into two distinct sets.
-- For our `arm_span` data, fill in the blanks to create a `training` and `testing` data set.
+- Split the `arm_span` data into `training` and `test` sets using the following two steps.
+- First, fill in the blanks below to randomly select which rows of `arm_span` will go into the `training` set.
 ```{r, eval = FALSE, echo = TRUE}
 set.seed(123)
 train_rows <- sample(1:____, size = 85)
+```
+
+- Second, use the `slice` function to create two dataframes: one called `train` consisting of the `train_rows`, and another called `test` consisting of the remaining rows of `arm_span`.
+
+```{r, eval = FALSE, echo = TRUE}
 train <- slice(arm_span, ____)
 test <- slice(____, - ____)
 ```
 
 - **Explain these lines of code and describe the `train` and `test` data sets.**
 
-
-## set.seed then split
+## Aside: set.seed()
 
 - When we split data, we're randomly separating our observations into _training_ and _testing_ sets.
     - It's important to notice that no single observation will be placed in both sets.
@@ -60,44 +58,45 @@ test <- slice(____, - ____)
 
 _Whenever you split data into training and testing, always use `set.seed` first._
 
+## Aside: train-test ratio
 
-## Building on training
-
-- When splitting data into _training_ and _testing_ sets, we need to have enough observations in our data so that we can build a good model.
+- When splitting data into `training` and `testing` sets, we need to have enough observations in our data so that we can build a good model.
     - This is why we kept 85 observations in our `training` data.
-- As data sets grow larger, we can use a larger proportion of the data to _test_ with.
-- Fit a _line of best fit_ model to our training data and assign it the name `best_train`.
+- As data sets grow larger, we can use a larger proportion of the data to `test` with.
 
+## Step 2: train the model
 
-## Predicting on testing
+- Step 2 is to create a linear model relating `height` and `armspan` using the `training` data.
+- Fit a linear model to our `training` data and assign it the name `best_train`.
+- Recall that the slope and intercept of our linear model are chosen to minimize MSE. 
+- Since the MSE being minimized is from the training data, we can call it _training MSE_.
 
-- Now that our model has been built, we can use it to predict the values of `height` in our `test` data.
+## Step 3: test the model
+
+- Step 3 is to use the model we built on the `training` data to make predictions on the `test` data.
+- Note that we are NOT recomputing the slope and intercept to fit the test data best. We use the same slope and intercept that were computed in step 2.
 - Because we're using the _line of best fit_, we can use the `predict()` function we introduced in the last lab to make predictions.
     - Fill in the blanks below to add predicted heights to our `test` data:
 ```{r, eval = FALSE, echo = TRUE}
 test <- mutate(test, ____ = predict(best_train, newdata = ____))
 ```
 
-- Calculate the MSE in the same way as you did in the previous lab. 
+- Hint: the `predict` function without the argument `newdata` will output predictions on the `training` data. To output predictions on the `test` data, supply the `test` data to the `newdata` argument.
+- Calculate the _test MSE_ in the same way as you did in the previous lab (test MSE is simply MSE of the predictions on the test data).
 
+## Recap
 
-## Avoiding being too specific
+- Another way to describe the three steps is
+- Step 1: Split the data into `training` and `test` sets.
+- Step 2: Choose a slope and intercept that minimize training MSE.
+- Step 3: Using the same slope and intercept from step 2, make predictions on the `test` set, and use these predictions to compute test MSE.
+- This begs the question, why do we care about test MSE?
 
-- When we build models without cross-validating, we run the risk of building models that are _too_ specific to the data we already have.
-    - Meaning, the model predicts values we know about really well BUT predicts new values very poorly.
-- The plot on the following slide shows a single, randomly chosen `height` for each value of `armspan`.
+## Why cross-validate?
 
-
-## 
-
-```{r, echo = FALSE, fig.align = 'center', out.width = '50%'}
-set.seed(2)
-tmp <- arm_span %>% group_by(armspan) %>% dplyr::summarize(height = sample(height, 1))
-xyplot(height ~ armspan, data = tmp, cex = 2, pch = 19,
-       scales=list(cex=2.5),
-          xlab = list(cex=2.5),
-          ylab = list(cex=2.5))
-```
-
-- **With a neighbor, write down a prediction rule that would predict a person's `height` based on their `armspan` really well for people already shown in our plot but would predict people not in our plot very poorly.**
-
+- Why go to all this trouble to compute test MSE when we could just compute MSE on the original dataset?
+- When we compute MSE on the original dataset, we are measuring the ability of a model to make predictions *on the current batch of data*.
+- Relying on a single dataset can lead to models that are so specific to the current batch of data that they're unable to make good predictions for future observations.
+    - This phenomenon is known as _overfitting_.
+- By splitting the data into a training and test set, we are *hiding a proportion of the data* from the model. This emulates future observations, which are unseen.
+- Test MSE estimates the ability of a model to make predictions on *future observations*.
