@@ -72,7 +72,7 @@ summarize(____, sum(____))
 
 - **Describe and interpret, in words, what the output of your accuracy summary means.**
     - **Compare your accuracy summary with a neighbor. Whose line was more accurate and why?**
-- **Write down why adding positive and negative errors together is problematic for accessing prediction accuracy.**
+- **Write down why adding positive and negative errors together is problematic for assessing prediction accuracy.**
     - **Why does calculating the squared values for the differences solve this problem?**
     
 - The _mean squared error_ (MSE) is calculated by squaring all of the residuals, and then taking the mean of the squared residuals.
