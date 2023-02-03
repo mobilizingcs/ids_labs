@@ -48,7 +48,7 @@ lm(____ ~ ____ + ____, data = training)
 - **Write down the code you would use to include a 3rd variable, of your choosing, in your `lm()`.**
 
 
-## Own your own
+## On your own
 
 - **Write down which other variables in the `movie` data you think would help you make better predictions.** 
     - **Are there any variables that you think would not improve our predictions?**
