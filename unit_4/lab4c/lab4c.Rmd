@@ -67,7 +67,7 @@ _Whenever you split data into training and testing, always use `set.seed` first.
 ## Step 2: train the model
 
 - Step 2 is to create a linear model relating `height` and `armspan` using the `training` data.
-- Fit a linear model to our `training` data and assign it the name `best_train`.
+- Fit a line of best fit model to our `training` data and assign it the name `best_train`.
 - Recall that the slope and intercept of our linear model are chosen to minimize MSE. 
 - Since the MSE being minimized is from the training data, we can call it _training MSE_.
 
