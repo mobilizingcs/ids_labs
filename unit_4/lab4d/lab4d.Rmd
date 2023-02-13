@@ -18,7 +18,7 @@ library(mobilizr)
 
 ## Some background...
 
-- So far, we’ve learned about measuring the success of a model based on how close it’s predictions come to the actual observations. 
+- So far, we’ve learned about measuring the success of a model based on how close its predictions come to the actual observations. 
 - The _correlation coefficient_ is a tool that gives us a fairly good idea of how these predictions will turn out without having to make predictions on future observations.
 - For this lab, we will be using the `movie` data set to investigate the following questions:
 
@@ -74,7 +74,7 @@ xyplot(audience_rating~critics_rating, data = movie,
     - The `critics_rating` contains values between 0 and 100, 100 being the best.
     - The `audience_rating` contains values that range between 0 and 10, 10 being the best.
     - `n_critics` and `n_audience` describe the number of reviews used for the ratings.
-    - `gross` and `budget` descibes the amount of money the film made and took to make.
+    - `gross` and `budget` describe the amount of money the film made and took to make.
 
 
 ## Calculating Correlation Coefficients!
@@ -130,7 +130,7 @@ xyplot(audience_rating~critics_rating, data = movie,
 
 - Select two different numerical variables from the `movie` data.
 - Plot the variables using the `xyplot()` function.
-    - **Would calculating a correlation coefficient for the two variables be appropriate. Justify your answer.**
+    - **Would calculating a correlation coefficient for the two variables be appropriate? Justify your answer.**
     - **Predict what value you think the correlation coefficient will be. Compare this value to the actual value. Finally, interpret what the actual correlation coefficient means.**
 - Work with your classmates to determine which two variables have the strongest correlation coefficient.
   - **Why do you think these variables are so strongly related? Is using the correlation coefficient to describe the relationship appropriate and why/why not?**
