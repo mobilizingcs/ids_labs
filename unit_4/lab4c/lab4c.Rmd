@@ -100,3 +100,27 @@ test <- mutate(test, ____ = predict(best_train, newdata = ____))
     - This phenomenon is known as _overfitting_.
 - By splitting the data into a training and test set, we are *hiding a proportion of the data* from the model. This emulates future observations, which are unseen.
 - Test MSE estimates the ability of a model to make predictions on *future observations*.
+
+## Example of overfitting
+
+- The following example motivates cross-validation by illustrating the dangers of overfitting.
+- We randomly select 7 points from the `arm_span` dataset and fit two models: a linear model, and a _polynomial model_.
+    - You will learn how to fit a polynomial model in lab 4F.
+- Below is a plot of these 7 `training` points, and two curves representing the value of height each model would predict given a value of armspan.
+
+```{r, out.width="50%", out.height="50%"}
+knitr::include_graphics("lab4c-figure/training.png")
+```
+
+- Which model does a better job of predicting the 7 `training` points?
+- Which model do you think will do a better job of predicting the rest of the data?
+
+## Example of overfitting, continued
+
+- Below is a plot of the rest of the `arm_span` dataset, along with the predictions each model would make.
+
+```{r, out.width="50%", out.height="50%"}
+knitr::include_graphics("lab4c-figure/test.png")
+```
+
+- Which model does a better job of generalizing to the rest of the `arm_span` dataset?
