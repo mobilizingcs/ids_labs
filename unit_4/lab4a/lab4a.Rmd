@@ -89,7 +89,7 @@ add_line()
     - Which is a problem because everyone's line will make slightly different predictions.
 - To avoid this variation in predictions, data scientists will use _regression lines_.
     - This line connects the mean `height` of people with similar `arm_spans`.
-    - Fill in the blanks below to create a _regression line_ using n `lm`, or _linear model_:
+    - Fill in the blanks below to create a _regression line_ using `lm`, or _linear model_:
 
 ```{r, eval = FALSE, echo = TRUE}
 lm(____ ~ ____, data = arm_span)
