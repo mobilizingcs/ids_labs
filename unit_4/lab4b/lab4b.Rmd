@@ -100,7 +100,7 @@ ____ <- mutate(____, predicted_height = predict(____))
 ## The magic of lm()
 
 - The `lm()` function creates the _line of best fit_ equation by finding the line that minimizes the _mean squared error_. Meaning, it's the _best fitting line possible_. 
-    - Compare the MSE value you calculated using the line you fitted with `add_line()` to the the same value you calculated using the `lm` function.
+    - Compare the MSE value you calculated using the line you fitted with `add_line()` to the same value you calculated using the `lm` function.
     - Ask your neighbors if any of their lines beat the `lm` line in terms of the MSE. Were any of them successful?
 - To see how the `lm` line fits your data, create a scatterplot and then run:
 ```{r, eval = FALSE, echo = TRUE}
