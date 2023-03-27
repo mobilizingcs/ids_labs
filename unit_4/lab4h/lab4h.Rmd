@@ -54,8 +54,8 @@ kclusters(____~____, data = futbol, k = ____)
 
 ## On your own
 
-- Load your class' `timeuse` data (remember to run `timeuse_format` so each row represents the mean time each student in spent participating in the various activities).
+- Load your class' `timeuse` data (remember to run `timeuse_format` so each row represents the mean time each student spent participating in the various activities).
 - Create a scatterplot of `homework` and `videogames` variables.
-    - Based on this graph, identify and remove any outliers by using the `subset` function.
+    - Based on this graph, identify and remove any outliers by using the `filter` function.
 - Use `kclusters` with `k=2` for `homework` and `videogames`. 
     - **Describe how the groups differ from each other in terms of how long each group spends playing `videogames` and doing `homework`.**
