@@ -36,6 +36,8 @@ utils::data(cdc)
   - <font color="green">Upload</font> data to _RStudio_ server
   - <font color="green">Import</font> the data into R's working memory
   
+    - *NOTE: You can watch the following video for a step-by-step walk-through of the process:*
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/4mChtv5qy1g" title="Export, Upload, Import" frameborder="0" data-external="1"></iframe>
 
 ## Exporting
 
