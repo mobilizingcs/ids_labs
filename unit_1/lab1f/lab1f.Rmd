@@ -6,10 +6,11 @@ date: 'Directions: Follow along with the slides and answer the questions in **re
 output:
   slidy_presentation:
     css: ../../IDSLabCSSRev.css
-    mathjax: ../../extras/mathjax-local/MathJax.js
+    mathjax: "../../extras/mathjax-local/MathJax.js"
   html_document:
     df_print: paged
   word_document: null
+  beamer_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -205,6 +206,9 @@ atu_cleaner <- mutate(atu_cleaner, gender =
     1. Loads the `atu_dirty` data set
     2. Cleans the data as we have in this lab
     3. Saves a copy of the cleaned data (see next slide).
+  
+    - *NOTE: You can watch this video to learn about RScripts:*
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/OPqjL9AzmkE" title="YouTube video player" frameborder="0" data-external="1"></iframe>
 
 
 ## The final lines
