@@ -1,12 +1,15 @@
 ---
 title: "Export, Upload, Import"
 author: "Lab 1C"
-date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
+date: 'Directions: Follow along with the slides and answer the questions in **red**
+  font in your journal.'
 output:
-  word_document:
-  slidy_presentation: 
+  html_document:
+    df_print: paged
+  slidy_presentation:
     css: ../../IDSLabCSSRev.css
-    mathjax: ../../extras/mathjax-local/MathJax.js
+    mathjax: "../../extras/mathjax-local/MathJax.js"
+  word_document: null
 ---
 
 ```{r setup, include=FALSE}
@@ -133,7 +136,7 @@ View(data.file)
 - The <font color="green">Files</font> tab has a few other features to help keep you organized.
   - _SurveyResponse_ probably isn't the best name for your data. Click <font color="green">Rename</font> to give it a clearer name.
   - Often, it's helpful to give your data file the same name as when you import your data.
-  - So in this case, we could name our data file _foodhabits.csv_
+  - So in this case, we could name our data file _food.csv_
 
 
 ## Export, upload, import
