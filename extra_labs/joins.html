@@ -518,7 +518,7 @@ Lab
 <h1>Overview</h1>
 <ul>
 <li>
-Previously, you learned how to use <span style="color: blue;">merge</span> to <b>join</b> data sets horizontally. This is where we take one data set’s columns and add them to the end of the other data set’s columns based on matching an <b>ID</b> variable. <span style="color: blue;">colors</span> and <span style="color: blue;">time_use</span> were merged using <span style="color: blue;">user.id</span> as an ID.
+Previously, you learned how to use <span style="color: blue;">merge</span> to <b>join</b> data sets horizontally. This is where we take one data set’s columns and add them to the end of the other data set’s columns based on matching an <b>ID</b> variable. <span style="color: blue;">colors</span> and <span style="color: blue;">timeuse</span> were merged using <span style="color: blue;">user.id</span> as an ID.
 </li>
 <li>
 In this lab, we will learn some alternative ways to join two datasets. These are <b>inner joins</b>, <b>outer joins</b>, <b>left and right joins</b>, and <b>anti joins</b>. Before diving in, let’s get to know our example datasets.
@@ -545,7 +545,7 @@ Type the following commands into your console:
 Notice that both <span style="color: blue;">purchases</span> and <span style="color: blue;">surveys</span> contain the variable <span style="color: blue;">customer_id</span> - this will be the ID on which we join <span style="color: blue;">purchases</span> and <span style="color: blue;">surveys</span>.
 </li>
 <li>
-Previously, <span style="color: blue;">colors</span> and <span style="color: blue;">time_use</span> had the same number of observations. Moreover, the values for <span style="color: blue;">user.id</span> were exactly the same in <span style="color: blue;">colors</span> and <span style="color: blue;">time_use</span>.
+Previously, <span style="color: blue;">colors</span> and <span style="color: blue;">timeuse</span> had the same number of observations. Moreover, the values for <span style="color: blue;">user.id</span> were exactly the same in <span style="color: blue;">colors</span> and <span style="color: blue;">timeuse</span>.
 </li>
 <li>
 In contrast, <span style="color: blue;">purchases</span> and <span style="color: blue;">surveys</span> contain different amounts of observations. Moreover, some values of <span style="color: blue;">customer_id</span> occur in both <span style="color: blue;">purchases</span> and <span style="color: blue;">surveys</span>, some occur only in <span style="color: blue;">purchases</span>, and some occur only in <span style="color: blue;">surveys</span>. We can express this relationship using a <b>Venn diagram</b>.
