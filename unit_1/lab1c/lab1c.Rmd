@@ -1,15 +1,16 @@
 ---
 title: "Export, Upload, Import"
 author: "Lab 1C"
-date: 'Directions: Follow along with the slides and answer the questions in **red**
-  font in your journal.'
+date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
+  
+  
+  Space, Click, Right Arrow or swipe left to move to the next slide.'
 output:
   slidy_presentation:
     css: ../../IDSLabCSSRev.css
-    mathjax: "../../extras/mathjax-local/MathJax.js"
-  html_document:
-    df_print: paged
-  word_document: null
+    mathjax: ../../extras/mathjax-local/MathJax.js
+  word_document:
+  ioslides_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -25,7 +26,7 @@ utils::data(cdc)
 
 - Throughout the previous labs, we've been using data that was already loaded in RStudio.
     - But what if we want to analyze our own data?
-- This lab is all about learning how to load our own participatory sensing data into RStudio
+- This lab is all about learning how to load our own participatory sensing data into RStudio.
 
 
 ## Export, upload, import
@@ -33,17 +34,17 @@ utils::data(cdc)
 - Before we can perform any analysis, we have to load data into R. 
 - When we want to get our participatory sensing data into RStudio, we:
   - <font color="green">Export</font> the data from your class' campaign page.
-  - <font color="green">Upload</font> data to _RStudio_ server
-  - <font color="green">Import</font> the data into R's working memory
+  - <font color="green">Upload</font> data to _RStudio_ server.
+  - <font color="green">Import</font> the data into R's working memory.
   
     - *NOTE: You can watch the following video for a step-by-step walk-through of the process:*
     <iframe width="560" height="315" src="https://www.youtube.com/embed/4mChtv5qy1g" title="Export, Upload, Import" frameborder="0" data-external="1"></iframe>
 
 ## Exporting
 
-- To begin, go to the IDS Tools page.
-  - Click on the <font color="green">Campaign Manager</font>
-  - Fill in your username and password and click "Sign in."
+- <span class="blue">To begin, go to the IDS Tools page.</span>
+  - <span class="blue">Click on the <font color="green">Campaign Manager</font>.</span>
+  - <span class="blue">Fill in your username and password and click "Sign in."</span>
 <center>![Campaign manager](images/campaign_manager.png){ style="max-height: 40vh; max-width: 80%;" }</center>
 If you forget your username or password, ask your teacher to remind you. 
 
@@ -53,15 +54,15 @@ If you forget your username or password, ask your teacher to remind you.
 <center>![Campaign Manager](images/campaign_manager1.png){ width=90% }</center>
 
 - After logging in, your screen should look similar to this.
-- Click on the dropdown arrow for the campaign you are interested in downloading 
-  - At this point in the course, it will most likely be the Food Habits campaign
+- <span class="blue">Click on the dropdown arrow for the campaign you are interested in downloading.</span>
+  - At this point in the course, it will most likely be the Food Habits campaign.
 
 
 ## Dropdown Arrow
 
-- The options for the dropdown menu will look like this. 
+- The options for the dropdown menu will look like this: 
 <center>![Campaign tab](images/dropdown.png){ style="max-height: 50vh; max-width: 30%;" }</center>
-- Look for the option labeled <font color="green">Export Data</font>. Click it.
+- <span class="blue">Click on the option labeled <font color="green">Export Data</font>.</span>
   - Remember where you save your file!
 
 
@@ -73,15 +74,15 @@ If you forget your username or password, ask your teacher to remind you.
 
 ## Uploading
 
-- Look at the four different _panes_ in RStudio.
-  - Find the _pane_ with a <font color="green">Files</font> tab.
-  - Click it!
+- <span class="blue">Look at the four different _panes_ in RStudio.</span>
+  - <span class="blue">Find the _pane_ with a <font color="green">Files</font> tab.</span>
+  - <span class="blue">Click it!</span>
 
 <center> ![Upload Button](images/FilesPane.png){ width=50% } </center>
 
-- Click the button on the Files pane that says "Upload"
-  - Click on "Choose File" and find the SurveyResponses.csv file you saved to your computer.
-  - Hit the _OK_ button.
+- <span class="blue">Click the button on the Files pane that says "Upload".</span>
+  - <span class="blue">Click on "Choose File" and find the _SurveyResponses.csv_ file you saved to your computer.</span>
+  - <span class="blue">Hit the _OK_ button.</span>
 - Voila!
   - If you look in the <font color="green">Files</font> pane, you should be able to find your data!
 
@@ -99,8 +100,8 @@ If you forget your username or password, ask your teacher to remind you.
 
 <center>![import data](images/RStudioCloudImport.png){ width=50% }</center>
 
-- On the Files pane, find the data you want to import.
-- Click on the name of the file and choose the option "Import Data set..." 
+- <span class="blue">On the Files pane, find the data you want to <font color="green">Import</font>.</span>
+- <span class="blue">Click on the name of the file and choose the option "Import Data set...".</span>
 
 
 ## Data Preview
@@ -114,7 +115,7 @@ If you forget your username or password, ask your teacher to remind you.
 
 - The name you give your data is what you will use when you write code to analyze your data.
     - Good names are short and descriptive. 
-    - For your food habits campaign, some good names to use would be  "foodhabits" or even just "food".
+    - For your food habits campaign, some good names to use would be "foodhabits" or even just "food".
 - When you're ready, click the _Import_ button.
 
 
@@ -138,11 +139,10 @@ View(data.file)
 - The <font color="green">Files</font> tab has a few other features to help keep you organized.
   - _SurveyResponse_ probably isn't the best name for your data. Click <font color="green">Rename</font> to give it a clearer name.
   - Often, it's helpful to give your data file the same name as when you import your data.
-  - So in this case, we could name our data file _food.csv_
+  - So in this case, we could name our data file _food.csv_.
 
 
 ## Export, upload, import
 
-- After you _export_, _upload_, _import_ your data you're ready to analyze. 
-- **`View` your data, select a variable and try to make an appropriate plot for that variable.**
-    - If you're having issues, make sure you're spelling the name of your data correctly.
+- After you <font color="green">Export</font>, <font color="green">Upload</font>, <font color="green">Import</font> your data you're ready to analyze. 
+- <span class="blue">`View` your data, select a variable and try to make an appropriate plot for that variable.</span>

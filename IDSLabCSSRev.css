@@ -3,6 +3,11 @@ code {
   color: #10437F;
 }
 
+span.blue {
+  color: #25679E;
+  font-weight: bold;
+}
+
 strong {
   color: #B21212;
 }

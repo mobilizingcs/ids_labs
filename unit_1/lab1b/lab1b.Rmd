@@ -1,12 +1,16 @@
 ---
 title: "Get the picture?"
 author: "Lab 1B"
-date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
-output: 
-  word_document:
-  slidy_presentation: 
+date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
+  
+  
+  Space, Click, Right Arrow or swipe left to move to the next slide.'
+output:
+  slidy_presentation:
     css: ../../IDSLabCSSRev.css
     mathjax: ../../extras/mathjax-local/MathJax.js
+  word_document:
+  ioslides_presentation: default
 ---
 
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
@@ -19,15 +23,15 @@ data(cdc)
 - In the previous lab, we started to get acquainted with the layout of RStudio and some of the commands.
 - In this lab, we'll learn about different _types_ of variables. 
     - Such as those that are measured by numbers and others that have values that are categories.
-- We'll also look at ways to visualize these different types of data using _plots_ (A word data scientists use interchangeably with the word _graph_).
-- Find the _History_ tab in RStudio and click on it. Figure out how to use the information to reload the `cdc` `data`.
+- We'll also look at ways to visualize these different types of data using _plots_ (a word data scientists use interchangeably with the word _graph_).
+- <span class="blue">Find the _History_ tab in RStudio and click on it. Figure out how to use the information to reload the `cdc` `data`.</span>
 
 
 ## Variable Types
 
 - Numerical variables have values that are measured in units.
-- Categorical Variables have values that describe or categorize our observations.
-- `View` your `cdc` data and find the columns for `height` and `gender` (Use the _History_ pane again if you need help to `View` your data).
+- Categorical variables have values that describe or categorize our observations.
+- <span class="blue">`View` your `cdc` data and find the columns for `height` and `gender` (use the _History_ pane again if you need help to `View` your data).</span>
     - **Is `height` a numerical or categorical variable? Why?**
     - **Is `gender` a numerical or categorical variable? Why?**
     - **List either the different categories or what you think the measured units are for `height` and `gender`.**
@@ -35,7 +39,7 @@ data(cdc)
     
 ## Which is which?
 
-- Run the code you used in the previous lab to display the `names` of your `cdc` data's variables (Use the code displayed in the _History_ pane to resubmit previously typed commands). Use the code's output to help you complete the following:
+- <span class="blue">Run the code you used in the previous lab to display the `names` of your `cdc` data's variables (Use the code displayed in the _History_ pane to resubmit previously typed commands).</span> **Use the code's output to help you complete the following:**
     - **Write down 3 variables that you think are _categorical_ variables and why.**
     - **Write down 3 variables that you think are _numerical_ variables and why.**
 
@@ -49,27 +53,25 @@ data(cdc)
 str(cdc)
 ```
 
-- Look at the `str`ucture of your `cdc` data and answer:
-- **List all the types of info the `str()` function outputs**
-- **Were you able to correctly guess which variables were categorical and numeric? Which ones did you mis-label?**
+- <span class="blue">Look at the `str`ucture of your `cdc` data and answer:</span>
+- **What information does the `str` function output?**
+- **Were you able to correctly guess which variables were categorical and numeric? Which ones did you mislabel?**
     
 
 ## Visualizing data
 
 - Visualizing data is a really helpful way to learn about our variables.
-    - Making a picture of the distribution of a variable is a good way to begin visualizing data.
-    - Remember: A distribution gives us the values of the variable and tells us how many of these values we have in our data set.
-- Choose one numeric and one categorical variable from the data and create both a `bargraph` and a `histogram` for each variable.
+- <span class="blue">Choose one numeric and one categorical variable from the data and create both a `bargraph` and a `histogram` for each variable.</span>
     - **Which function, either `bargraph` or `histogram` is better at visualizing categorical variables? Which is better at visualizing numerical variables?**
     
 ## We have options
 
-- **Make a graph that shows the distribution of people's weight.**
+- <span class="blue">Make a graph that shows the distribution of people's weight.</span>
   - **Describe the distribution of `weight`. Make sure to describe the shape, center and spread of the distribution.**
 
-- Options can be added to plotting functions to change their appearance. The code below includes the `nint` option which controls the number of _intervals_ in a numerical plot.
-  - Type the command below on your console and then answer the questions that follow.
-
+- _Options_ can be added to plotting functions to change their appearance. The code below includes the `nint` option which controls the number of _intervals_ in a numerical plot.
+  - Options, also known as _arguments_, are additional pieces of information you provide to a function, and are separated by commas.
+  - <span class="blue">Type the command below on your console and then answer the questions that follow:</span>
 ```{r, eval = FALSE, echo = TRUE}
 histogram(~weight, data = cdc, nint = 3)
 ```
@@ -80,43 +82,50 @@ histogram(~weight, data = cdc, nint = 3)
  
 ## How often do people text & drive?
 
-- Make a graph that shows how often people in our data texted while driving.
+- <span class="blue">Make a graph that shows how often people in our data texted while driving.</span>
     - **What does the y-axis represent?**
     - **What does the x-axis tell us?**
     - **Would you say that _most_ people _never_ texted while driving? What does the word _most_ mean?**
-    - **Approximately what percent of the people texted while driving for 20 or more days? (Hint: There's `r nrow(cdc)` students in our data.)**
+    - **Approximately what percent of the people texted while driving for 20 or more days?** (Hint: There's `r nrow(cdc)` students in our data.)
 
 
 ## Does texting and driving differ by gender?
 
-- Fill in the blanks with the correct variables to create a side-by-side bargraph:
-<div class='greenequation'> _bargraph_ (~ ____ , data = ____ , groups = ____ ) </div>
+- <span class="blue">Fill in the blanks with the correct variables to create a side-by-side bargraph:</span>
+
+```{r, eval = FALSE, echo = TRUE}
+bargraph(~ ___, data = ___, groups = ___)
+```
+
 - **Write a sentence explaining how boys and girls differ when it comes to texting while driving.**
 - **Would you say that most girls never text and drive?  Would you say that most boys never text and drive?**
 - **How did including the `groups` argument in your code change the graph?**
 
 
-## Do males/females have similar heights?
+## Do males and females have similar heights?
 
 - To answer this, what we'd like to do is visualize the distributions of heights, separately, for males and females.
     - This way, we can easily compare them.
-- Use the `groups` argument to create a `histogram` for the `height` of males and females.
+- <span class="blue">Use the `groups` argument to create a `histogram` for the `height` of males and females.</span>
     - **Can you use this graphic to answer the question at the top of the slide? Why or why not?**
     - **Is grouping numeric values, such as heights, as helpful as grouping categorical variables, such as texting & driving?**
     
 
-## Do males/females have similar heights?
+## Do males and females have similar heights?
 
 - `groups` uses color to differentiate between groups.
-    - **Why does this work for bargraphs but not for histograms?**
-- Fill in the blanks with the correct variables to create a split histogram (The " | " symbol is usually between the delete and enter keys on a keyboard) to answer the questions below:
-<div class='greenequation'> _histogram_ (~ ____ | ____ , data = ____ ) </div>
-- **Do you think males & females have similar heights? Use the plot you create to justify your answer.**
-- **Just like we did for the histogram, is it possible to create a _split_ bargraph? Try to create a bargraph of `drive_text` that's split by `gender` to find out.**
+    - Why does this work for bargraphs but not for histograms?
+- <span class="blue">Fill in the blanks with the correct variables to create a split histogram to answer the questions below:</span>
 
+```{r, eval = FALSE, echo = TRUE}
+histogram(~ ____ | ____ , data = ____ )
+```
+
+- **Do you think males and females have similar heights? Use the plot you create to justify your answer.**
+- <span class="blue">Just like we did for the histogram, is it possible to create a _split_ bargraph? Try to create a bargraph of `drive_text` that's split by `gender` to find out.</span>
 
 ## On your own:
 
-- In this lab, we looked at boy's and girl's texting & driving habits: 
-- **What other factors do you think might affect how often people text and drive?**
+- In this lab, we looked at the texting & driving habits of boys and girls. 
+- What other factors do you think might affect how often people text and drive?
     - **Choose one variable from the `cdc` data, make a graph, and use the graph to describe how `drive_text` use differs with this variable.**
