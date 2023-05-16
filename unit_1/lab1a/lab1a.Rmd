@@ -1,8 +1,7 @@
 ---
 title: "Data, Code & RStudio"
 author: "Lab 1A"
-date: 'Directions: Follow along with the slides and answer the questions in **red**
-  font in your journal.  
+date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
   
   
   Space, Click, Right Arrow or swipe left to move to the next slide.'
@@ -35,7 +34,7 @@ data(cdc)
 
 - The data for our first few labs comes from the Centers for Disease Control (CDC)
     - The CDC is a federal institution that studies public health.
-- Type these two commands into your console:
+- <font color=#10437F><b>Type these two commands into your console:</b></font>
 
 ```{r, eval = FALSE, echo = TRUE}
 data(cdc)
@@ -75,15 +74,17 @@ View(cdc)
 ## Uncovering our Data's Structure
 
 - Now that we've looked at our data, let's look at how RStudio is organized.
-- RStudio's main window is composed of four _panes_
-- Find the pane that has a _tab_ titled _Environment_ and click on the _tab_.
+- RStudio's main window is composed of four _panes_.
+- <font color=#25679E><b>Find the pane that has a _tab_ titled _Environment_ and click on the _tab_.</b></font>
     - This pane contains a list of everything that's currently available for R to use.
     - Notice that R knows we have our `cdc` data loaded.
 - **How many students are in our `cdc` data set?**
 - **How many variables were measured for each student?**
 
   
-## Type the following commands into the console
+## Some new functions
+
+- <font color=#25679E><b>Type the following commands into the console:</b></font>
 
 ```{r, echo=TRUE, results='hide'}
 dim(cdc)
@@ -113,7 +114,7 @@ names(cdc)
 
 ## Syntax matters
 
-- **Run the following commands and write down what happens after each. Which does R understand?**
+- <font color=#25679E><b>Run the following commands.</b></font> **What happens after each command?** 
 
 ```{r, eval = FALSE, echo = TRUE}
 Names(cdc)
@@ -128,12 +129,15 @@ names(cdc)
 names(CDC)
 ```
 
+- **Which does R understand?**
 
 ## R's most important syntax
 
 - Most of the commands you will be using follow the syntax below:
 
-<div class='greenequation'> _function_ (y~x, data = ____ )  </div>
+```{r, eval = FALSE, echo = TRUE}
+function(y ~ x, data = ___)
+```
 
 - To create graphs or plots you need to provide `R` with the following:
   - The name of the R function, often the plot’s name, that tells the computer how to create your graph.
@@ -152,14 +156,12 @@ bargraph(~grade, data = cdc)
 
 ## Syntax in action
 
-<div class='greenequation'> _function_ (y~x, data = ____ )  </div>
-
-- Search through the different panes. Find and then click on the _Plots_ tab.
+- <font color=#25679E><b>Search through the different panes. Find and then click on the _Plots_ tab.</b></font>
     - To get back to the slides, find and then click on the _Viewer_ tab.
 
 - **Which one of these plots would be useful for answering the question: _Is it unusual for students in the CDC dataset to be taller than 1.8 meters?_**
 
-- Run the three commands below then answer the question that follows.
+- <font color=#25679E><b>Run the three commands below then answer the question that follows.</b></font>
 
 ```{r, echo=TRUE, eval=FALSE}
 histogram(~height, data = cdc)
@@ -181,5 +183,5 @@ xyplot(weight~height, data = cdc)
     - **What is _public health_ and do we collect data about it?**
     - **How do you think our data was collected? Does it include every high school aged student in the US?**
     - **How might the CDC use this data? Who else could benefit from using this data?**
-    - **Write the code to visualize the distribution of weights of the students in the CDC data with a histogram. What is the _typical_ weight?**
-    - **Write the code to create a bargraph to visualize the distribution of how often students ate fruit. About how many students did not eat fruit over the previous 7 days?**
+    - <font color=#25679E><b>Write the code to visualize the distribution of weights of the students in the CDC data with a histogram.</b></font> **What is the _typical_ weight?**
+    - <font color=#25679E><b>Write the code to create a bargraph to visualize the distribution of how often students ate fruit.</b></font> **About how many students did not eat fruit over the previous 7 days?**
