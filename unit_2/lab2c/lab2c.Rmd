@@ -1,11 +1,16 @@
 ---
 title: "Which song plays next?"
 author: "Lab 2C"
-date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
-output: 
-  slidy_presentation: 
+date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
+  
+  
+  Space, Click, Right Arrow or swipe left to move to the next slide.'
+output:
+  slidy_presentation:
     css: ../../IDSLabCSSRev.css
     mathjax: ../../extras/mathjax-local/MathJax.js
+  word_document:
+  ioslides_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -63,19 +68,19 @@ songs <- c(rap, rock)
 rap <- rep("rap", times = 39)
 ```
 - Look in the `Environment` pane for the vector containing your rap songs.
-- **Use a similar line of code to simulate the rock songs in our playlist of 100.**
+- <span class="blue">Use a similar line of code to simulate the rock songs in our playlist of 100.</span>
 
 
 ## Put the songs in the playlist
 
 - Now that we've got some different songs, we need to combine them together.
     - To do this, we can use the combine function `c()` in `R`.
-- Fill in the blanks to combine your different songs:
+- <span class="blue">Fill in the blanks to combine your different songs:</span>
 ```{r, eval = FALSE, echo = TRUE}
 songs <- __(rap, ____)
 ```
 - And with that, our playlist of songs should be ready to go. 
-    - Type `songs` into the console and hit enter to see your individual _songs_.
+    - <span class="blue">Type `songs` into the console and hit enter to see your individual _songs_.</span>
 
 
 ## Pick a song, any song
@@ -86,8 +91,8 @@ songs <- __(rap, ____)
 sample(songs, size = 1, replace = TRUE)
 ```
 
-- Run this code 10 times and compute the _proportion_ of `"rap"` songs you drew from the 10.
-  - Vocabulary Check: A _proportion_ is a fraction of the whole.
+- <span class="blue">Run this code 10 times and compute the _proportion_ of `"rap"` songs you drew from the 10.</span>
+  - Vocabulary Check: A <b>proportion</b> is a fraction of the whole.
     - For example, if 2 rap songs were drawn from the 10, the _proportion_ would be 2/10 
     - It is more common to express a _proportion_ as a decimal, in this case, 0.20
     - It is even more common to express a _proportion_ as a percentage,  20%
@@ -98,17 +103,17 @@ sample(songs, size = 1, replace = TRUE)
 ## Now do() it some more
 
 - Instead of running the same line of code multiple times ourselves we can use `R` to `do()` multiple repetitions for us.
-    - Fill in the blanks below to `do` the `sample` code from the previous slide _50_ times:
+    - <span class="blue">Fill in the blanks below to `do` the `sample` code from the previous slide _50_ times:</span>
 ```{r, eval = FALSE, echo = TRUE}
 do(___) * sample(___, ___ = ___, ___ = ___)
 ```
 - Recall that we need to store our results to be able to perform analysis.
-- _Assign_ the 50 selected songs the name `draws` and then `View` your file.
+- <span class="blue">_Assign_ the 50 selected songs the name `draws` and then `View` your file.</span>
 
 - **What is the variable name?**
   - `R` defaulted to naming the variable based on the function used. You may use the data cleaning skills you learned in lab 6 to `rename` the variable if you wish.
 
-- Fill in the blank below to tally how often each genre was selected:
+- <span class="blue">Fill in the blank below to tally how often each genre was selected:</span>
 ```{r, eval = FALSE, echo = TRUE}
 tally(~___, data = draws)
 ```
@@ -142,11 +147,11 @@ sample(songs, size = 1, replace = TRUE)
 
 ## Playing with seeds
 
-- With a partner, choose a number to include in `set.seed` then redo the simulation of 50 songs. 
+- <span class="blue">With a partner, choose a number to include in `set.seed` then redo the simulation of 50 songs. </span>
     - Both partners should run `set.seed(___)` just before simulating the 50 draws. 
     - The blank in `set.seed(___)` should be the same number for both partners.
-    - Verify that both partners compute the same proportion of `"rap"` songs.
-- Redo the 50 simulations one last time but have each partner choose a different number for `set.seed(___)`. 
+    - **Verify that both partners compute the same proportion of `"rap"` songs.**
+- <span class="blue">Redo the 50 simulations one last time but have each partner choose a different number for `set.seed(___)`. </span>
     - **Are the proportions still the same? If so, can you find two different values for `set.seed` that give different answers?**
 
 
@@ -156,6 +161,6 @@ sample(songs, size = 1, replace = TRUE)
 
 _If we select a student at random, what is the probability that this student is one of the one's who went to the movies last Friday?_
 
-- **Answer this by estimating the probability that a randomly chosen student went to the movies using 500 simulations.**
+- <span class="blue">Answer this by estimating the probability that a randomly chosen student went to the movies using 500 simulations.</span>
     - **Write down both the estimated probability and the code you used to compute your estimate. You might find it helpful to write your answer in an R Script _(File -> New File -> R Script)_**
-    - **Include `set.seed(123)` in your code before you `do` 500 repeated samples.**
+    - <span class="blue">Include `set.seed(123)` in your code before you `do` 500 repeated samples.</span>

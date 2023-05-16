@@ -1,11 +1,16 @@
 ---
 title: "Queue it up!"
 author: "Lab 2D"
-date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
-output: 
-  slidy_presentation: 
+date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
+  
+  
+  Space, Click, Right Arrow or swipe left to move to the next slide.'
+output:
+  slidy_presentation:
     css: ../../IDSLabCSSRev.css
     mathjax: ../../extras/mathjax-local/MathJax.js
+  word_document:
+  ioslides_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -30,9 +35,9 @@ library(mobilizr)
 
 ## Back to songs
 
-- In `R`, simulate a _playlist of songs_ containing 30 `"rap"` songs, 23 `"country"` songs and 47 `"rock"` songs.
-    - _Assign_ the `c`ombined playlist the name `songs`.
-- Simulate choosing a single song 50 times. Then use your simulated draws to estimate the probability of choosing a _rap_ song.
+- <span class="blue">In `R`, simulate a _playlist of songs_ containing 30 `"rap"` songs, 23 `"country"` songs and 47 `"rock"` songs.</span>
+    - <span class="blue">_Assign_ the `c`ombined playlist the name `songs`.</span>
+- <span class="blue">Simulate choosing a single song 50 times. Then use your simulated draws to estimate the probability of choosing a _rap_ song.</span>
     - The actual (theoretical) probability of choosing a _rap song_ in this case is `0.30`.
     - **Write a sentence comparing your estimated probability to the actual probability.**
 
@@ -42,7 +47,7 @@ library(mobilizr)
 - So far, you've selected songs _with replacement_. 
     - We called it that, because each time you made a selection, you started with the same playlist. That is, you chose a song, wrote down its data, and then placed it back on the list.
 - It's also possible to select _without replacement_ by setting the `replace` option in the `sample` function to `FALSE`.
-- Take a sample of `size` 100 from our playlist of songs _without replacement_. Assign this sample the name `without`. 
+- <span class="blue">Take a sample of `size` 100 from our playlist of songs _without replacement_. Assign this sample the name `without`. </span>
     - **Run `tally(without)` and describe the output. Does something similar happen if you sample _with replacement_?**
       - Notice that the tilde `~` was not needed with the `tally` function. This is because `without` was not a variable within a data frame but rather a vector which acts like a lone variable.
     - **What happens if `size = 101` and `replace = FALSE`?**
@@ -62,9 +67,9 @@ library(mobilizr)
 - In reality, songs from a playlist are chosen without replacement.
     - This way, you won't hear the same song several times in a row.
 - Let's write a more realistic simulation and estimate the probability that if we select two songs at random, without replacement, that both are rap songs.
-    - Use the `do` function to perform 10 simulated `sample`s of `size` 2, without replacement and _assign_ the simulations the name `draws` and then `View` your file. Use `set.seed(1)`.
+    - <span class="blue">Use the `do` function to perform 10 simulated `sample`s of `size` 2, without replacement and _assign_ the simulations the name `draws` and then `View` your file. Use `set.seed(1)`.</span>
 
-**What are the variable names? What happened in the first simulation? Did any of your 10 simulations contain two rap songs?**
+- **What are the variable names? What happened in the first simulation? Did any of your 10 simulations contain two rap songs?**
 
 ## Simulations and probability
 
@@ -107,7 +112,7 @@ mutate(draws, nrap = rowSums(draws=="rap"))
 
 ## Step 1: Creating a subset
 
-- Fill in the blanks below to: 
+- <span class="blue">Fill in the blanks below to: </span>
     1. Create a subset of our simulations when both draws were `"rap"` songs.
     2. Count the number of rows in this subset
     3. And divide by the total number of repeated simulations.
@@ -122,7 +127,7 @@ nrow(___) / ___
 
 ## Estimating probabilities
 
-- Answer the following questions by performing 500 simulations of sampling 2 songs from a playlist of 30 rap, 23 country and 47 rock songs. You might consider running `set.seed` so that your results can be reproduced:
+- <span class="blue">Answer the following questions by performing 500 simulations of sampling 2 songs from a playlist of 30 rap, 23 country and 47 rock songs. You might consider running `set.seed` so that your results can be reproduced:</span>
 
 - **Calculate estimated probabilities for the following situations:**
     1. You draw two `"rap"` songs.
@@ -133,11 +138,11 @@ nrow(___) / ___
 
 ## On your own
 
-- Using what you've learned in the previous two labs, answer the following question by performing two computer simulations with 500 repetitions a piece:
+- <span class="blue">Using what you've learned in the previous two labs, answer the following question by performing two computer simulations with 500 repetitions a piece:</span>
 
 **_If we draw 5 songs from a playlist of 30 rap, 23 country and 47 rock songs, how does the estimated probability of all 5 songs being rap songs change if we draw the songs with or without replacement?_**
 
 - For each simulation:
-    - **Create a histogram for the number of _rap_ songs that occurred for each of the 500 repetitions.**
+    - <span class="blue">Create a histogram for the number of _rap_ songs that occurred for each of the 500 repetitions.</span>
 - **Describe how the distribution of the number of _rap_ songs changes depending on if we use replacement or not.**
 

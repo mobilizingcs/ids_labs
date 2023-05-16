@@ -1,11 +1,16 @@
 ---
 title: "Oh the Summaries ..."
 author: "Lab 2B"
-date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
-output: 
-  slidy_presentation: 
+date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
+  
+  
+  Space, Click, Right Arrow or swipe left to move to the next slide.'
+output:
+  slidy_presentation:
     css: ../../IDSLabCSSRev.css
     mathjax: ../../extras/mathjax-local/MathJax.js
+  word_document:
+  ioslides_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -28,7 +33,7 @@ library(mobilizr)
 
 - Besides looking at _typical_ values, sometimes we want to see _extreme_ values, like the smallest and largest values.
     - To find these values, we can use the `min`, `max` or `range` functions. These functions use a similar syntax as the `mean` function.
-- **Find the `min` value and `max` value for your predominant color.**
+- **Find and write down the `min` value and `max` value for your predominant color.**
 - **Apply the `range` function to your predominant color and describe the output.**
     - The _range_ of a variable is the difference between a variable's smallest and largest value. 
     - Notice, however, that our `range` function calculates the maximum and minimum values for a variable, but not the difference between them.
@@ -36,7 +41,7 @@ library(mobilizr)
 
 ## Quartiles (Q1 & Q3)
 
-- The _median_ of our data is the value that splits our data in half.
+- The <b>median</b> of our data is the value that splits our data in half.
     - Half of our data is smaller than the _median_, half is larger.
 - _Q1_ and _Q3_ are similar.
     - 25% of our data is smaller than _Q1_, 75% are larger.
@@ -45,17 +50,17 @@ library(mobilizr)
 quantile(~____, data = ____, p = 0.25)
 ```
 
-- **Use a similar line of code to calculate _Q3_, which is the value that's larger than 75% of our data.**
+- **Use a similar line of code to calculate and write down _Q3_, which is the value that's larger than 75% of our data.**
 
 ## The Inter-Quartile-Range (IQR)
 
-- Make a `dotPlot` of your _predominant_ color's scores. Make sure to include the `nint` option.
+- <span class="blue">Make a `dotPlot` of your _predominant_ color's scores. Make sure to include the `nint` option.</span>
 - Visually (Don't worry about being super-precise): 
-    - Cut the distribution into quarters so the _number_ of _data points_ is equal for each piece. (Each piece should contain 25% of the data.)
+    - <span class="blue">Cut the distribution into quarters so the _number_ of _data points_ is equal for each piece. (Each piece should contain 25% of the data.)</span>
       - Hint: You might consider using the `add_line(vline =  )` to add vertical lines at the quarter marks.
     - **Write down the numbers that split the data up into these 4 pieces.**
     - **How long is the interval of the middle two pieces?**
-    - This length is the _IQR_.
+    - This length is the <b>IQR</b>.
 
 
 ## Calculating the IQR
@@ -64,21 +69,21 @@ quantile(~____, data = ____, p = 0.25)
     - It describes how _wide_ or _narrow_ the middle 50% of our data are.
 - Just like we used the `min` and `max` to compute the `range`, we can also use the _1st_ and _3rd_ quartiles to compute the _IQR_.
 - **Use the values of _Q1_ and _Q3_ you calculated previously for your predominant color and find the _IQR_ by hand**.
-    - **Then use the `iqr()` function to calculate it for you.**
+    - <span class="blue">Then use the `iqr()` function to calculate it for you.</span>
 - **Which personality color score has the widest spread according to the _IQR_? Which is narrowest?**
 
 ## Boxplots
 
-- By using the medians, quartiles, and min/max, we can construct a new single variable plot called the _box and whisker_ plot, often shortened to just _boxplot_.
+- By using the medians, quartiles, and min/max, we can construct a new single variable plot called the <b>box and whisker</b> plot, often shortened to just <b>boxplot</b>.
 - **By showing someone a `dotPlot`, how would you teach them to make a _boxplot_? Write out your explanation in a series of steps for the person to use.**
     - **Use the steps you write to create a sketch of a _boxplot_ for your predominant color's scores in your journal.**
-    - **Then use the `bwplot` function to create a _boxplot_ using `R`.**
+    - <span class="blue">Then use the `bwplot` function to create a _boxplot_ using `R`.</span>
     
 ## Our favorite summaries
 
 - In the past two labs, we've learned how to calculate numerous _numerical summaries_.
     - Computing lots of different summaries can be tedious.
-- Fill in the blanks below to compute some of our _favorite_ summaries for your predominant color all at once.
+- <span class="blue">Fill in the blanks below to compute some of our _favorite_ summaries for your predominant color all at once.</span>
 ```{r, eval = FALSE, echo = TRUE}
 favstats(~____, data=colors)
 ```
@@ -99,7 +104,7 @@ values <- range(~____, data=colors)
 ```{r, eval = FALSE, echo = TRUE}
 diff(values)
 ```
-- **Use these two steps to calculate the _range_ of your predominant color.**
+- **Use these two steps to calculate and write down the _range_ of your predominant color.**
 
 
 ## Introducing custom functions 
@@ -123,14 +128,14 @@ mm_diff <- function(variable, data) {
 - The function takes two _generic_ arguments: `variable` and `data`
 - It then follows the steps between the curly braces `{}`
     - Each of the _generic_ arguments is used inside the `mean` and `median` functions.
-- Copy and paste the code above into a _R script_ and _run_ it. 
+- <span class="blue">Copy and paste the code above into a _R script_ and _run_ it. </span>
 - The `mm_diff` function will appear in your _Environment_ pane.
 
 
 ## Using mm_diff()
 
 - After running the code used to create the function, we can use it just like we would any other numerical summary.
-    - In the _console_, fill in the blanks below to calculate the absolute difference between the `mean` and `median` values of your predominant color:
+    - <span class="blue">In the _console_, fill in the blanks below to calculate the absolute difference between the `mean` and `median` values of your predominant color:</span>
 ```{r, eval = FALSE, echo = TRUE}
 ____(~____, data = ____)
 ```
@@ -141,7 +146,7 @@ ____(~____, data = ____)
 
 ## Our first function
 
-- Using the previous example as a guide, create a function called `Range` (_Note the capital 'R'_) that calculates the _range_ of a variable by filling in the blanks below:
+- <span class="blue">Using the previous example as a guide, create a function called `Range` (note the capital 'R') that calculates the _range_ of a variable by filling in the blanks below:</span>
 
 ```{r, eval = FALSE, echo = TRUE}
 ____ <- function (____, ____) {
@@ -155,7 +160,7 @@ ____ <- function (____, ____) {
 
 ## On your own
 
-- **Create a function called `myIQR` that uses the `quantile` function to compute the middle 30% of the data.**
+- <span class="blue">Create a function called `myIQR` that uses the `quantile` function to compute the middle 30% of the data.</span>
 
 
 

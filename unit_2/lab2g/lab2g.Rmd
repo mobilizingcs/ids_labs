@@ -1,11 +1,16 @@
 ---
 title: "Getting It Together"
 author: "Lab 2G"
-date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
-output: 
-  slidy_presentation: 
+date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
+  
+  
+  Space, Click, Right Arrow or swipe left to move to the next slide.'
+output:
+  slidy_presentation:
     css: ../../IDSLabCSSRev.css
     mathjax: ../../extras/mathjax-local/MathJax.js
+  word_document:
+  ioslides_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -21,8 +26,8 @@ library(mobilizr)
 - In the labs so far, we've only ever looked at individual data files.
   - But often times, we gain additional insights by including additional information from a separate data set.
 - In this lab, we will learn how to merge information from our _personality color_ data with our _stress/chill_ data.
-- _Export, upload, import_ your _Personality Color_ data set and name it `colors`.
-- Then, _export, upload, import_ your _Stress/Chill_ data set and name it `stress`.
+- <span class="blue">_Export, upload, import_ your _Personality Color_ data set and name it `colors`.</span>
+- <span class="blue">Then, _export, upload, import_ your _Stress/Chill_ data set and name it `stress`.</span>
 
 
 ## Looking at Stress/Chill
@@ -65,39 +70,39 @@ _How do people's personality colors and/or sports participation affect their str
 ## Getting ready
 
 - Our goal is to add the variables from the `colors` data onto the `stress` data.
-- Start by ensuring that every `user.id` in the `colors` data is unique.
-    - If there's a duplicate, have your teacher remove the duplicate from your class' Web Response Manager and then re-_export_, _upload_, _import_ your `colors` data.
+- <span class="blue">Start by ensuring that every `user.id` in the `colors` data is unique.
+    - If there's a duplicate, have your teacher remove the duplicate from your class' Web Response Manager and then re-_export_, _upload_, _import_ your `colors` data.</span>
 - **After we add the data from _colors_ to _stress_, how many rows should our merged data have? Write this number down.**
 
 
 ## Putting them together
 
 - We can use the `merge` function to _join_ our data sets together using the variables that appear in both sets.
-- **Fill in the blanks below to join the information from the `colors` data onto the `stress`.**
+- <span class="blue">Fill in the blanks below to join the information from the `colors` data onto the `stress`.</span>
 ```{r, eval = FALSE, echo = TRUE}
 merge(____, ____, by = "____")
 ```
-- `Assign` this `merged` data set the name `stress_colors`.
+- <span class="blue">`Assign` this `merged` data set the name `stress_colors`.</span>
     - Make sure your data has the same number of observations that you wrote down on the previous slide.
 
 
 ## Saving your data:
 
-- `View` your merged data and make sure nothing appears to be blatantly wrong with it.
+- <span class="blue">`View` your merged data and make sure nothing appears to be blatantly wrong with it.</span>
 - **Why didn't we stack the rows of data instead?**
 - **What happens if you swap the order of the data sets in the `merge` function?**
-- Fill in the blank below to `save` our `stress_color` data for later use.
+- <span class="blue">Fill in the blank below to `save` our `stress_color` data for later use.</span>
     
 ```{r, eval = FALSE, echo = TRUE}
 save(stress_colors, file = "stress_colors.Rda")
 ```
 
-- Be sure to look in the _Files_ tab to make sure your data was saved.
+- <span class="blue">Be sure to look in the _Files_ tab to make sure your data was saved.</span>
 
 
 ## Moving on
 
 - In the next practicum, we'll begin analyzing our merged data. In the meantime: 
-- **Make a few plots using variables from the `stress` data and _facet_ or _group_ the plots based on variables from the `colors` data.**
-    - **Write down the most interesting discovery you make by just exploring your data. Write out how you found your discovery and interpret what it means for the people in your class.**
+- <span class="blue">Make a few plots using variables from the `stress` data and _facet_ or _group_ the plots based on variables from the `colors` data.</span>
+- **Write down the most interesting discovery you make by just exploring your data. Write out how you found your discovery and interpret what it means for the people in your class.**
 - **With our _colors_ data, we could answer questions about the _typical_ color scores in your class. Why can we no longer answer this question in our `stress_color` data?**
