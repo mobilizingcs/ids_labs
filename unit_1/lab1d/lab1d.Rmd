@@ -44,7 +44,7 @@ library(mobilizr)
 - While a `dotPlot` should conserve the exact value of each data point, sometimes it behaves like a histogram in that it lumps values together.
 
 - <span class="blue">Create a more accurate `dotPlot` by including the `nint` option.</span>
-  - <span class="blue">Set `nint` equal to `max sugar - min sugar + 1`.
+  - Set `nint` equal to the maximum value for sugar minus the minimum value for sugar plus one.
     - <span class="blue">On your `food` data spreadsheet, click on the sugar header to sort in ascending order (to obtain minimum). </span>
     - <span class="blue">Click on the sugar header again to sort in descending order (to obtain maximum). </span>
   - <span class="blue">Use your history pane to see how we included the option `nint` with the `histogram` function.</span>
