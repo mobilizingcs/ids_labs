@@ -1,16 +1,16 @@
 ---
 title: "A Diamond in the Rough"
 author: "Lab 1F"
-date: 'Directions: Follow along with the slides and answer the questions in **red**
-  font in your journal.'
+date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
+  
+  
+  Space, Click, Right Arrow or swipe left to move to the next slide.'
 output:
   slidy_presentation:
     css: ../../IDSLabCSSRev.css
-    mathjax: "../../extras/mathjax-local/MathJax.js"
-  html_document:
-    df_print: paged
-  word_document: null
-  beamer_presentation: default
+    mathjax: ../../extras/mathjax-local/MathJax.js
+  word_document:
+  ioslides_presentation: default
 ---
 
 ```{r setup, include=FALSE}
@@ -43,7 +43,7 @@ data(atu_dirty)
     - _"blue"_, _"Blue"_, _"blu"_, ...
 - Numerical variables might have been _input incorrectly_. For example, if we're talk about people's height in inches:
     - _64.7_, _6.86_, _676_, ... 
-- Numerical variables might be _incorrectly coded_ as categorical variables (Or vice-versa)
+- Numerical variables might be _incorrectly coded_ as categorical variables (or vice-versa)
     - "64.7", "68.6", "67.6"
 
 
@@ -58,7 +58,7 @@ data(atu_dirty)
 
 ## Load and go:
 
-- Type the following commands into your console:
+- <span class="blue">Type the following commands into your console:</span>
 ```{r, eval = FALSE, echo = TRUE}
 data(atu_dirty)
 ```
@@ -90,7 +90,8 @@ atu_cleaner <- rename(atu_dirty, age = V1,
                        gender = V2)
 ```
 
-- **Use the example code and the variable information on the previous slide to rename the rest of the variables in `atu_dirty`.**
+- <span class="blue">Use the example code and the variable information on the previous slide to rename the rest of the variables in `atu_dirty`.</span>
+- **Write down the new names you chose for the rest of the variables in `atu_dirty`.**
     - Names should be short, contain no spaces and describe what the variable is related to. So use abbreviations to your heart's content.
 
 
@@ -98,7 +99,7 @@ atu_cleaner <- rename(atu_dirty, age = V1,
 
 - In programming, a _string_ is sort of like a _word_.
     - It's a value made up of _characters_ (i.e. letters)
-- The following are example of strings. Notice that each **string** has quotes before and after.
+- The following are example of strings. Notice that each _string_ has quotes before and after.
 ```{r, eval = FALSE, echo = TRUE}
 "string"
 ```
@@ -143,7 +144,7 @@ atu_cleaner <- mutate(atu_cleaner,
                  age = as.numeric(age),
                  ___ = as.numeric(___))
 ```
-- **Once you have this code working, use a similar line of code to correctly code the other _numeric_ variables as numbers.**
+- <span class="blue">Once you have this code working, use a similar line of code to correctly code the other _numeric_ variables as numbers.</span>
 
 
 ## Deciphering Categorical Variables
@@ -168,7 +169,7 @@ tally(~gender, data = atu_cleaner)
 ## A level by any other name...
 
 - If we know that '`01`' means '`Male`' and '`02`' means '`Female`' then we can use the following code to recode the _levels_ of _gender_.
-- Type the following command into your console:
+- <span class="blue">Type the following command into your console:</span>
 ```{r, eval = FALSE, echo = TRUE}
 atu_cleaner <- mutate(atu_cleaner, gender = 
                  recode(gender, 
@@ -198,17 +199,14 @@ atu_cleaner <- mutate(atu_cleaner, gender =
 
 ## Finish it off!
 
-- **Recode the categorical variable about whether the person surveyed had a physical challenge or not. The coding is currently:**
+- <span class="blue">Recode the categorical variable about whether the person surveyed had a physical challenge or not. The coding is currently:</span>
     - `"01"`: Person surveyed _did not_ have a physical challenge.
     - `"02"`: Person surveyed _did_ have a physical challenge.
 
-- **Write a script that:**
+- <span class="blue">Write a script that:</span>
     1. Loads the `atu_dirty` data set
     2. Cleans the data as we have in this lab
     3. Saves a copy of the cleaned data (see next slide).
-  
-    - *NOTE: You can watch this video to learn about RScripts:*
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/OPqjL9AzmkE" title="YouTube video player" frameborder="0" data-external="1"></iframe>
 
 
 ## The final lines
@@ -217,30 +215,30 @@ atu_cleaner <- mutate(atu_cleaner, gender =
 
 - Be sure to `View` your data  and check its `str`ucture to make sure it looks clean and tidy before saving.
 
-Run the code below:
+- <span class="blue">Run the code below:</span>
 
 ```{r, eval = FALSE, echo = TRUE}
 atu_clean <- atu_cleaner
 ```
 
 
-  - This code will create a new data frame in your `Environment` called atu_clean which is a final copy of atu_cleaner
-    - If atu_clean is swept from your `Environment` all of the changes you made will NOT be saved
-    - You would need to re-run the script to clean the data again
+- This code will create a new data frame in your `Environment` called `atu_clean` which is a final copy of `atu_cleaner`.
+    - If `atu_clean` is swept from your `Environment` all of the changes you made will NOT be saved.
+    - You would need to re-run the script to clean the data again.
     
-- To permanently save your changes you need to save the file as an R data file or `.Rda`
+- To permanently save your changes you need to save the file as an R data file or `.Rda`.
 
-Run the code below:
+- <span class="blue">Run the code below:</span>
 
 ```{r, eval = FALSE, echo = TRUE}
 save(atu_clean, file = "atu_clean.Rda")
 ```
 
 
-- Look in your `Files` pane for the `atu_clean.Rda` file
-  - This is as permanent copy of your clean atu data
-  - To load the data onto your `Environment` click on the file
-  - A pop-up window confirming the upload will appear
+- Look in your `Files` pane for the `atu_clean.Rda` file.
+  - This is as permanent copy of your clean atu data.
+  - To load the data onto your `Environment` click on the file.
+  - A pop-up window confirming the upload will appear.
 
 
 
@@ -248,16 +246,16 @@ save(atu_clean, file = "atu_clean.Rda")
 
 - Now that you have learned some cleaning data basics, it's time to revisit the `food` data.
 
-Run the code below:
+- <span class="blue">Run the code below:</span>
 ```{r, eval = FALSE, echo = TRUE}
 histogram(~calories | healthy_level, data = food)
 ```
 
-- **Use the `as.factor()` function to convert `healthy_level` into a categorical variable and re-run the `histogram` function.**
+- <span class="blue">Use the `as.factor()` function to convert `healthy_level` into a categorical variable and re-run the `histogram` function.</span>
 
-Notice that the `healthy_level` categories are now numbers as opposed to tick-marks. This is an improvement but an even better solution would be to `recode` the categories.
+- Notice that the `healthy_level` categories are now numbers as opposed to tick-marks. This is an improvement but an even better solution would be to `recode` the categories.
 
-- **Recode the `healthy_level` categories and re-run the `histogram` function.**
+- <span class="blue">Recode the `healthy_level` categories and re-run the `histogram` function.</span>
 
     - "1" = "Very Unhealthy"
     - "2" = "Unhealthy"
@@ -267,4 +265,4 @@ Notice that the `healthy_level` categories are now numbers as opposed to tick-ma
 
 - If your `food` data is cleared from your `Environment`, the changes that you made to the `healthy_level` variable will not be saved.
 
-- To save your changes permanently save your `food` file as an R data file.
+- <span class="blue">To save your changes permanently save your `food` file as an R data file.</span>
