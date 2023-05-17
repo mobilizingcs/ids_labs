@@ -73,7 +73,7 @@ bargraph(~phys_challenge | gender, data = atu_clean)
     - If there are more women, then we might expect women to have more physical challenges (compared to men).
 - Instead of using _counts_ we use _percentages_.
 - Include: `format = "percent"` as an option to the code you used to make your 2-way frequency table. Then answer this question again: 
-    - **Does one `gender` seem to have a higher occurrence of physical challenges than the other? If so, which one and explain your reasoning?**
+    - **Does one `gender` seem to have a higher occurrence of physical challenges than the other? If so, which one and explain your reasoning.**
     - **Did your answer change from before? Why?**
 
 - It's often helpful to display totals in our 2-way frequency tables.

@@ -55,6 +55,8 @@ histogram(~height | gender, data = cdc, layout = c(2,1),
 
 ## Scatterplots
 
+- Scatterplots are useful for viewing how one _numerical_ variable relates to another _numerical_ variable.
+
 ```{r,echo=FALSE, fig.align='center', fig.width=8, fig.height=6, out.width = '60%'}
 n = 50
 x <- runif(n, 0, 20)
@@ -70,7 +72,6 @@ xyplot(y~x, data = df,
 
 ## Creating scatterplots
 
-- Scatterplots are useful for viewing how one _numerical_ variable relates to another _numerical_ variable.
 - <span class="blue">Fill in the blanks to create a scatterplot with `sodium` on the y-axis and `sugar` on the x-axis.</span>
 ```{r, eval = FALSE, echo = TRUE}
 xyplot(____ ~ ____, data = food)
