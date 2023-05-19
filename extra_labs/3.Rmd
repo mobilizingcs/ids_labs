@@ -1,0 +1,17 @@
+---
+title: "Lab 3 20230519 2:44pm"
+author: "Lab 3"
+date: "Directions: Follow along with the slides and answer the questions in red font in your journal."
+output: 
+  slidy_presentation: 
+    #css: ../../IDSLabCSSRev.css
+    mathjax: ../../extras/mathjax-local/MathJax.js
+  word_document:
+  ioslides_presentation: default
+---
+
+## Overview
+
+<ul>
+
+<li>This is lab 3, use extra_lab(3)</li>
