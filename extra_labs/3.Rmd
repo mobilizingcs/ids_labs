@@ -1,17 +1,124 @@
 ---
-title: "Lab 3 20230519 2:44pm"
+title: "Text Analysis"
 author: "Lab 3"
 date: "Directions: Follow along with the slides and answer the questions in red font in your journal."
 output: 
   slidy_presentation: 
     #css: ../../IDSLabCSSRev.css
     mathjax: ../../extras/mathjax-local/MathJax.js
-  word_document:
-  ioslides_presentation: default
 ---
 
-## Overview
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(mobilizr)
+```
+
+## What is Text Analysis?
 
 <ul>
 
-<li>This is lab 3, use extra_lab(3)</li>
+<li>So far, you have learned how to properly visualize different kinds of data, including categorical data, numeric data, and time series data. Another kind of dataset we are often interested in analyzing is a text dataset. Text datasets consist of the words that occur in a written resource, such as websites, books, and emails. Today, you will perform basic text analysis on the novel <i>Pride and Prejudice</i> by Jane Austen.</li>
+
+<li><span style="color: red;">Load in the <span style="color: blue;">pride</span> dataset, which consists of the words in <i>Pride and Prejudice</i>.</span></li>
+
+<li><span style="color: red;">How many words long is <i>Pride and Prejudice</i>?</span></li>
+
+</ul>
+
+## Counting words
+
+<ul>
+
+<li>Let's start by adding a variable to <span style="color: blue;">pride</span> corresponding to the number of times a word appears in <i>Pride and Prejudice</i>. To do this, we will make use of the <span style="color: blue;">tally</span> function. </li>
+
+<li>In lab 1G, you learned that the <span style="color: blue;">tally</span> function has an optional argument <span style="color: blue;">format</span> that specifies the format of the results (e.g., you used <span style="color: blue;">format = "percent"</span> to obtain percentages rather than counts).</li>
+
+<li>Suppose that we are using <span style="color: blue;">tally</span> to obtain the counts of a categorical variable. If we provide <span style="color: blue;">format = "data.frame"</span> to <span style="color: blue;">tally</span>, the result is formatted as a dataset with two variables. The first variable stores the levels of the categorical variable being counted, and takes the name of that categorical variable. The second variable is named <span style="color: blue;">Freq</span> and stores the number of times each level of the categorical variable occurs.</li>
+
+<li><span style="color: red;">Fill in the blanks to obtain <span style="color: blue;">pride_words</span>, a dataset containing the words of <i>Pride and Prejudice</i> and their frequencies.</span></li>
+
+```{r, eval = FALSE, echo = TRUE}
+pride_words <- tally(~___, data = ___, format = "data.frame")
+```
+
+<li><span style="color: red;">How many times does the word "pride" occur in <i>Pride and Prejudice</i>? How about the word "prejudice"?</span></li>
+
+</ul>
+
+## Word clouds
+
+<ul>
+
+<li>One very popular method of displaying text data is with <b>word clouds</b>. In a word cloud, the size of a word is proportional to its frequency. <span style="color: red;">Fill in the blanks below to create a wordcloud of <i>Pride and Prejudice</i>.</span></li>
+
+<li>(Hint: Since <span style="color: blue;">Freq</span> depends on <span style="color: blue;">word</span>, <span style="color: blue;">Freq</span> should appear to the left of the tilde (~).</li>
+
+```{r, eval = FALSE, echo = TRUE}
+wordcloud(_____~_____, data = _____)
+```
+
+<li><span style="color: red;">Notice any problems?</span></li>
+
+</ul>
+
+## Stop words
+
+<ul>
+
+<li>When analyzing text, we're not often interested in common words like "I", "a", "the". We call these words <b>stop words</b> (because we should <b>stop</b> using them in our analysis).</li>
+
+<li><span style="color: red;">Load in the <span style="color: blue;">stop_words</span> dataset, a list of stop words. <span style="color: blue;">View</span> the <span style="color: blue;">stop_words</span> dataset.</span></li>
+
+<li><span style="color: red;">Create a new dataset containing observations of <span style="color: blue;">pride_words</span> that are not stop words. Assign this dataset to <span style="color: blue;">pride_interesting</span>.</span></li>
+
+<li>(Hint: notice that <span style="color: blue;">pride_words</span> and <span style="color: blue;">stop_words</span> share a column named <span style="color: blue;">word</span>. Perhaps an appropriate join function will yield the desired result.)</li>
+
+</ul>
+
+## Recreate your word cloud
+
+<ul>
+
+<li><span style="color: red;">Recreate your word cloud.</span></li>
+
+<li><span style="color: red;">Is the new word cloud more informative?</span></li>
+
+<li><span style="color: red;">Which words are the most frequent?</span></li>
+
+<li><span style="color: red;">What happens if you include the argument <span style="color: blue;">color = "steelblue"</span> within the <span style="color: blue;">wordcloud</span> function?</span></li>
+
+</ul>
+
+## Sentiments
+
+<ul>
+
+<li>Words carry meaning. And we might be interested in altering our plot to show these different meanings. </li>
+
+<li><span style="color: red;">Load in the <span style="color: blue;">sentiments</span> dataset, a list of words along with the sentiments most commonly associated with them (<span style="color: blue;">"positive"</span> or <span style="color: blue;">"negative"</span>). <span style="color: blue;">View</span> the <span style="color: blue;">sentiments</span> dataset.</span></li>
+
+<li><span style="color: red;">Inner join <span style="color: blue;">pride_interesting</span> and <span style="color: blue;">sentiments</span>, and assign the resulting dataset to <span style="color: blue;">pride_sentiments</span>.</span></li>
+
+</ul>
+
+## Color & Sentiment
+
+<ul>
+
+<li>Now that we have sentiments assigned to our words, our next goal is to assign colors to each word based on its sentiment. We will add a variable to <span style="color: blue;">pride_sentiments</span> called <span style="color: blue;">colors</span> in two steps.</li>  
+
+<li><span style="color: red;">First, use <span style="color: blue;">mutate</span> to add a variable to <span style="color: blue;">pride_sentiments</span> called <span style="color: blue;">colors</span> that is a copy of the <span style="color: blue;">sentiment</span> variable.</span></li>
+
+<li><span style="color: red;">Second, use <span style="color: blue;">mutate</span> to <span style="color: blue;">recode</span> the <span style="color: blue;">colors</span> variable in the following way: replace every instance of <span style="color: blue;">"positive"</span> with <span style="color: blue;">"steelblue"</span>, and every instance of <span style="color: blue;">"negative"</span> with <span style="color: blue;">"darkred"</span>.</span></li>
+
+<li>Optional challenge: <span style="color: red;">Can you think of a way to do these two steps in one line?</span></li>
+
+<li><span style="color: red;">Recreate your word cloud one more time. This time, include the argument <span style="color: blue;">color = colors</span> in your <span style="color: blue;">wordcloud</span> function.</span></li>
+
+<li><span style="color: red;">Which positive sentiment words appeared most often?</span></li>  
+
+<li><span style="color: red;">Which negative sentiment words appeared most often?</span></li>
+
+<li><span style="color: red;">Are there any words you feel are miscategorized?</span></li>
+
+</ul>

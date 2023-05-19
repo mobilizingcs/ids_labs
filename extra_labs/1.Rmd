@@ -1,0 +1,17 @@
+---
+title: "If you can't beat 'em, JOIN 'em!"
+author: "Lab 1"
+date: "Directions: Follow along with the slides and answer the questions in red font in your journal."
+output: 
+  slidy_presentation: 
+    #css: ../../IDSLabCSSRev.css
+    mathjax: ../../extras/mathjax-local/MathJax.js
+  word_document:
+  ioslides_presentation: default
+---
+
+## Overview
+
+<ul>
+
+<li>Previously, you learned how to use <span style="color: blue;">merge</span> to <b>join</b> data sets horizontally. This is where we take one data set's columns and add them to the end of the other data set's columns based on matching an <b>ID</b> variable. <span style="color: blue;">colors</span> and <span style="color: blue;">timeuse</span> were merged using <span style="color: blue;">user.id</span> as an ID.</li>
