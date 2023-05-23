@@ -111,7 +111,7 @@ bargraph(~ ___, data = ___, groups = ___)
     - **Is grouping numeric values, such as heights, as helpful as grouping categorical variables, such as texting & driving?**
     
 
-## Do males and females have similar heights?
+## Do males and females have similar heights?, continued
 
 - `groups` uses color to differentiate between groups.
     - Why does this work for bargraphs but not for histograms?
