@@ -207,6 +207,9 @@ atu_cleaner <- mutate(atu_cleaner, gender =
     1. Loads the `atu_dirty` data set
     2. Cleans the data as we have in this lab
     3. Saves a copy of the cleaned data (see next slide).
+    
+- *NOTE: You can watch this video to learn about RScripts:*
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/OPqjL9AzmkE" title="YouTube video player" frameborder="0" data-external="1"></iframe>
 
 
 ## The final lines
