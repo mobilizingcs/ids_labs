@@ -76,7 +76,7 @@ bargraph(~phys_challenge | gender, data = atu_clean)
     - **Does one `gender` seem to have a higher occurrence of physical challenges than the other? If so, which one and explain your reasoning.**
 
 - It's often helpful to display totals in our 2-way frequency tables.
-    - To include them, include `margins = TRUE` as an option in the tally function.
+    - To include them, include `margin = TRUE` as an option in the tally function.
     
 ## Conditional Relative Frequencies
 
