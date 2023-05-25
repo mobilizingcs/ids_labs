@@ -113,8 +113,11 @@ bargraph(~ ___, data = ___, groups = ___)
 
 ## Do males and females have similar heights?, continued
 
-- `groups` uses color to differentiate between groups.
-    - Why does this work for bargraphs but not for histograms?
+- Why does this work for bargraphs but not for histograms?
+    - The `groups` argument uses color to differentiate between groups.
+    - With bargraphs, each group is split with bars next to each other on the x-axis. 
+    - With histograms, the x-axis is a continuous set of numbers so the bars overlap making it difficult to compare center and spread.
+
 - <span class="blue">Fill in the blanks with the correct variables to create a split histogram to answer the questions below:</span>
 
 ```{r, eval = FALSE, echo = TRUE}
