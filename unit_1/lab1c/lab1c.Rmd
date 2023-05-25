@@ -142,7 +142,7 @@ View(data.file)
   - So in this case, we could name our data file _food.csv_.
 
 
-## Export, upload, import
+## Analysis Time
 
 - After you <font color="green">Export</font>, <font color="green">Upload</font>, <font color="green">Import</font> your data you're ready to analyze. 
 - <span class="blue">`View` your data, select a variable and try to make an appropriate plot for that variable.</span>
