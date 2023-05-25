@@ -62,7 +62,7 @@ str(cdc)
 
 - Visualizing data is a really helpful way to learn about our variables.
 - <span class="blue">Choose one numeric and one categorical variable from the data and create both a `bargraph` and a `histogram` for each variable.</span>
-    - **Which function, either `bargraph` or `histogram` is better at visualizing categorical variables? Which is better at visualizing numerical variables?**
+    - **Which function, either `bargraph` or `histogram`, is better at visualizing categorical variables? Which is better at visualizing numerical variables?**
     
 ## We have options
 
