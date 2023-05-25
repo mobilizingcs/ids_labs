@@ -268,4 +268,4 @@ histogram(~calories | healthy_level, data = food)
 
 - If your `food` data is cleared from your `Environment`, the changes that you made to the `healthy_level` variable will not be saved.
 
-- <span class="blue">To save your changes permanently save your `food` file as an R data file.</span>
+- <span class="blue">To save your changes permanently, save your `food` file as an R data file.</span>
