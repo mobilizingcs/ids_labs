@@ -41,12 +41,12 @@ require(mobilizr)
 timeuse <- timeuse_format( _____ )
 ```
 - This function formats/cleans the data so that each row represents a typical day for each student in the class
-- Hint: Search your `History` tab for the code to save your formatted timeuse data as an R data file (.Rda)
+- Hint: Search your _History_ tab for the code to save your formatted `timeuse` data as an `R` data file (.Rda)
 
 
 ## timeuse_format specifics
 
-- In case you're wondering, the timeuse_format function:
+- In case you're wondering, the `timeuse_format` function:
     - Takes each student's daily data and adds up all of the time spent doing each activity for each day.
     - The time spent on each activity for each day is then averaged together to create a _typical day_ in the life of each student.
 
