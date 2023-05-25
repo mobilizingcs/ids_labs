@@ -28,8 +28,8 @@ data(atu_clean)
     - You cleaned a small set of variables from the American Time Use (ATU) survey.
     - The process of cleaning and then analyzing data is _very_ common in Data Science.
 - In this lab, we'll learn how we can create frequency tables to detect relationships between categorical variables.
-    - For the sake of consistency, rather than using the data that you cleaned, you will use the pre-loaded ATU data.
-    - Use the `data()` function to load the `atu_clean` data file to use in this lab.
+    - <span class="blue">For the sake of consistency, rather than using the data that you cleaned, you will use the pre-loaded ATU data.</span>
+    - <span class="blue">Use the `data()` function to load the `atu_clean` data file to use in this lab.</span>
 
 
 
