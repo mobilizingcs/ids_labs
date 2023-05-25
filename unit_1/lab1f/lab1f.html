@@ -627,7 +627,7 @@ Space, Click, Right Arrow or swipe left to move to the next slide.</p>
 <div id="numbers-are-words-sometimes" class="slide section level2">
 <h1>Numbers are words? (Sometimes)</h1>
 <ul>
-<li>In some cases, R will treat values that look like <em>numbers</em> as if they were <em>strings</em>.</li>
+<li>In some cases, <code>R</code> will treat values that look like <em>numbers</em> as if they were <em>strings</em>.</li>
 <li>Sometimes we do this on purpose.
 <ul>
 <li>For example, we can code <code>Yes/No</code> variables as <code>&quot;1&quot;</code>/<code>&quot;0&quot;</code>.</li>
@@ -645,7 +645,7 @@ Space, Click, Right Arrow or swipe left to move to the next slide.</p>
 <div id="changing-strings-into-numbers" class="slide section level2">
 <h1>Changing strings into numbers</h1>
 <ul>
-<li>To fix this problem, we need to tell R to think of our <em>“numeric”</em> variables as numeric variables.</li>
+<li>To fix this problem, we need to tell <code>R</code> to think of our <em>“numeric”</em> variables as numeric variables.</li>
 <li>We can do this with the <code>as.numeric</code> function.
 <ul>
 <li>An example using this function is below:</li>
@@ -751,20 +751,20 @@ Space, Click, Right Arrow or swipe left to move to the next slide.</p>
 </ul>
 <div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>atu_clean &lt;-<span class="st"> </span>atu_cleaner</span></code></pre></div>
 <ul>
-<li><p>This code will create a new data frame in your <code>Environment</code> called <code>atu_clean</code> which is a final copy of <code>atu_cleaner</code>.</p>
+<li><p>This code will create a new data frame in your <em>Environment</em> called <code>atu_clean</code> which is a final copy of <code>atu_cleaner</code>.</p>
 <ul>
-<li>If <code>atu_clean</code> is swept from your <code>Environment</code> all of the changes you made will NOT be saved.</li>
+<li>If <code>atu_clean</code> is swept from your <em>Environment</em> all of the changes you made will NOT be saved.</li>
 <li>You would need to re-run the script to clean the data again.</li>
 </ul></li>
-<li><p>To permanently save your changes you need to save the file as an R data file or <code>.Rda</code>.</p></li>
+<li><p>To permanently save your changes you need to save the file as an <code>R</code> data file or <code>.Rda</code>.</p></li>
 <li><p><span class="blue">Run the code below:</span></p></li>
 </ul>
 <div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">save</span>(atu_clean, <span class="dt">file =</span> <span class="st">&quot;atu_clean.Rda&quot;</span>)</span></code></pre></div>
 <ul>
-<li>Look in your <code>Files</code> pane for the <code>atu_clean.Rda</code> file.
+<li>Look in your <em>Files</em> pane for the <code>atu_clean.Rda</code> file.
 <ul>
 <li>This is as permanent copy of your clean atu data.</li>
-<li>To load the data onto your <code>Environment</code> click on the file.</li>
+<li>To load the data onto your <em>Environment</em> click on the file.</li>
 <li>A pop-up window confirming the upload will appear.</li>
 </ul></li>
 </ul>
@@ -779,7 +779,7 @@ Space, Click, Right Arrow or swipe left to move to the next slide.</p>
 <ul>
 <li><p><span class="blue">Use the <code>as.factor()</code> function to convert <code>healthy_level</code> into a categorical variable and re-run the <code>histogram</code> function.</span></p></li>
 <li><p>Notice that the <code>healthy_level</code> categories are now numbers as opposed to tick-marks. This is an improvement but an even better solution would be to <code>recode</code> the categories.</p></li>
-<li><p><span class="blue">Recode the <code>healthy_level</code> categories and re-run the <code>histogram</code> function.</span></p>
+<li><p><span class="blue"><code>Recode</code> the <code>healthy_level</code> categories and re-run the <code>histogram</code> function.</span></p>
 <ul>
 <li>“1” = “Very Unhealthy”</li>
 <li>“2” = “Unhealthy”</li>
@@ -787,8 +787,8 @@ Space, Click, Right Arrow or swipe left to move to the next slide.</p>
 <li>“4” = “Healthy”</li>
 <li>“5” = “Very Healthy”</li>
 </ul></li>
-<li><p>If your <code>food</code> data is cleared from your <code>Environment</code>, the changes that you made to the <code>healthy_level</code> variable will not be saved.</p></li>
-<li><p><span class="blue">To save your changes permanently, save your <code>food</code> file as an R data file.</span></p></li>
+<li><p>If your <code>food</code> data is cleared from your <em>Environment</em>, the changes that you made to the <code>healthy_level</code> variable will not be saved.</p></li>
+<li><p><span class="blue">To save your changes permanently, save your <code>food</code> file as an <code>R</code> data file.</span></p></li>
 </ul>
 </div>
 

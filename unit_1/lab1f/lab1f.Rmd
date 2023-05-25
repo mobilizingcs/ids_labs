@@ -116,7 +116,7 @@ atu_cleaner <- rename(atu_dirty, age = V1,
 
 ## Numbers are words? (Sometimes)
 
-- In some cases, R will treat values that look like _numbers_ as if they were _strings_.
+- In some cases, `R` will treat values that look like _numbers_ as if they were _strings_.
 - Sometimes we do this on purpose.
     - For example, we can code `Yes/No` variables as `"1"`/`"0"`.
 - Sometimes we don't mean for this to happen.
@@ -127,7 +127,7 @@ atu_cleaner <- rename(atu_dirty, age = V1,
 
 ## Changing strings into numbers
 
-- To fix this problem, we need to tell R to think of our _"numeric"_ variables as numeric variables.
+- To fix this problem, we need to tell `R` to think of our _"numeric"_ variables as numeric variables.
 - We can do this with the `as.numeric` function. 
     - An example using this function is below:
 ```{r, eval = TRUE, echo = TRUE}
@@ -225,11 +225,11 @@ atu_clean <- atu_cleaner
 ```
 
 
-- This code will create a new data frame in your `Environment` called `atu_clean` which is a final copy of `atu_cleaner`.
-    - If `atu_clean` is swept from your `Environment` all of the changes you made will NOT be saved.
+- This code will create a new data frame in your _Environment_ called `atu_clean` which is a final copy of `atu_cleaner`.
+    - If `atu_clean` is swept from your _Environment_ all of the changes you made will NOT be saved.
     - You would need to re-run the script to clean the data again.
     
-- To permanently save your changes you need to save the file as an R data file or `.Rda`.
+- To permanently save your changes you need to save the file as an `R` data file or `.Rda`.
 
 - <span class="blue">Run the code below:</span>
 
@@ -238,9 +238,9 @@ save(atu_clean, file = "atu_clean.Rda")
 ```
 
 
-- Look in your `Files` pane for the `atu_clean.Rda` file.
+- Look in your _Files_ pane for the `atu_clean.Rda` file.
   - This is as permanent copy of your clean atu data.
-  - To load the data onto your `Environment` click on the file.
+  - To load the data onto your _Environment_ click on the file.
   - A pop-up window confirming the upload will appear.
 
 
@@ -258,7 +258,7 @@ histogram(~calories | healthy_level, data = food)
 
 - Notice that the `healthy_level` categories are now numbers as opposed to tick-marks. This is an improvement but an even better solution would be to `recode` the categories.
 
-- <span class="blue">Recode the `healthy_level` categories and re-run the `histogram` function.</span>
+- <span class="blue">`Recode` the `healthy_level` categories and re-run the `histogram` function.</span>
 
     - "1" = "Very Unhealthy"
     - "2" = "Unhealthy"
@@ -266,6 +266,6 @@ histogram(~calories | healthy_level, data = food)
     - "4" = "Healthy"
     - "5" = "Very Healthy"
 
-- If your `food` data is cleared from your `Environment`, the changes that you made to the `healthy_level` variable will not be saved.
+- If your `food` data is cleared from your _Environment_, the changes that you made to the `healthy_level` variable will not be saved.
 
-- <span class="blue">To save your changes permanently, save your `food` file as an R data file.</span>
+- <span class="blue">To save your changes permanently, save your `food` file as an `R` data file.</span>

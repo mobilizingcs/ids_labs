@@ -41,7 +41,7 @@ library(mobilizr)
 
 ## More options
 
-- While a `dotPlot` should conserve the exact value of each data point, sometimes it behaves like a histogram in that it lumps values together.
+- While a `dotPlot` should conserve the exact value of each data point, sometimes it behaves like a `histogram` in that it lumps values together.
 
 - <span class="blue">Create a more accurate `dotPlot` by including the `nint` option.</span>
   - Set `nint` equal to the maximum value for sugar minus the minimum value for sugar plus one.
@@ -57,7 +57,7 @@ library(mobilizr)
 - In lab 1B, we learned that we can _facet_ (or split) our data based on a categorical variable.
 
 - <span class="blue">Split the `dotPlot` displaying the distribution of grams of sugar in two, by faceting on our observations' `salty_sweet` variable.</span>
-    - **Describe how R decides which observations go into the left or right plot.**
+    - **Describe how `R` decides which observations go into the left or right plot.**
     - **What does each _dot_ in the plot represent?**
 
 
@@ -93,7 +93,7 @@ food_salty <- filter(food, salty_sweet == "Salty")
 
 ## So what's really going on?
 
-- Coding in R is really just about supplying directions in a way that R understands. 
+- Coding in `R` is really just about supplying directions in a way that `R` understands. 
     - We'll start by focusing on everything to the right of the `<-` symbol
 ```{r, eval = FALSE, echo = TRUE}
 food_salty <- filter(food, salty_sweet == "Salty")
@@ -126,7 +126,7 @@ head(~salty_sweet == "Salty", data = food)
 ## Saving values
 
 - To use our subset data we need to save it first.
-    - When we _save_ something in R what we are really doing is giving a value, or set of values, a specific name for us to use later.
+    - When we _save_ something in `R` what we are really doing is giving a value, or set of values, a specific name for us to use later.
 - The arrow <- is called the "assignment" operator. It assigns names (on the left) to values (on the right).
     - We now focus on everything to the left of, and including, the "<-" symbol.
 ```{r, eval = FALSE, echo = TRUE}
@@ -146,8 +146,8 @@ food_salty <- filter(food, salty_sweet == "Salty")
     - the name `food_salty`.
 - We can now use `food_salty` to do anything we could do with the regular `food` data ...
     - but only including those snacks who reported being `Salty`.
-- As a result of assigning the subset data to `food_salty`, `food_salty` now appears in the Environment pane. Whenever data is assigned to a variable name, that variable name will appear in the Environment pane.
-- <span class="blue">Use `food_salty` to make a dotPlot of the `sodium` in our `Salty` snacks.</span>
+- As a result of assigning the subset data to `food_salty`, `food_salty` now appears in the _Environment_ pane. Whenever data is assigned to a variable name, that variable name will appear in the _Environment_ pane.
+- <span class="blue">Use `food_salty` to make a `dotPlot` of the `sodium` in our `Salty` snacks.</span>
 
 ## Including more filters
 
@@ -171,7 +171,7 @@ my_sub <- filter(food , salty_sweet == "Salty", calories < 200)
 - Because you are now working with subsets of data, it is important to label our plots and make this distinction.
 
   - We can use the `main` option to add a title to our plots.
-    - <span class="blue">Add the following option to the code you used to create the `dotPlot` of the sugar in `Sweet` snacks.</span>
+    - <span class="blue">Add the following option to the code you used to create the `dotPlot` of the `sugar` in `Sweet` snacks.</span>
 ```{r, eval = FALSE, echo = TRUE }
 main = "Distribution of sugar in sweet snacks"
 ```

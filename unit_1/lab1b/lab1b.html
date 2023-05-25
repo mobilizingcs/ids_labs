@@ -525,7 +525,7 @@ Space, Click, Right Arrow or swipe left to move to the next slide.</p>
 <li>Such as those that are measured by numbers and others that have values that are categories.</li>
 </ul></li>
 <li>We’ll also look at ways to visualize these different types of data using <em>plots</em> (a word data scientists use interchangeably with the word <em>graph</em>).</li>
-<li><span class="blue">Find the <em>History</em> tab in RStudio and click on it. Figure out how to use the information to reload the <code>cdc</code> <code>data</code>.</span></li>
+<li><span class="blue">Find the <em>History</em> tab in RStudio and click on it. Figure out how to use the information to reload the <code>cdc</code> data.</span></li>
 </ul>
 </div>
 <div id="variable-types" class="slide section level2">
@@ -557,7 +557,7 @@ Space, Click, Right Arrow or swipe left to move to the next slide.</p>
 <li>One way to get a good summary of your data is to look at the data’s <em>structure</em>.
 <ul>
 <li>One way to view this info would be to click on the little blue arrow next to <code>cdc</code> in the <em>Environment</em> pane.</li>
-<li>Another way would be to run the following in the console:</li>
+<li>Another way would be to run the following in the <em>console</em>:</li>
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">str</span>(cdc)</span></code></pre></div>
@@ -580,9 +580,9 @@ Space, Click, Right Arrow or swipe left to move to the next slide.</p>
 <div id="we-have-options" class="slide section level2">
 <h1>We have options</h1>
 <ul>
-<li><span class="blue">Make a graph that shows the distribution of people’s weight.</span>
+<li><span class="blue">Make a graph that shows the distribution of people’s <code>weight</code>.</span>
 <ul>
-<li><strong>Describe the distribution of <code>weight</code>. Make sure to describe the shape, center and spread of the distribution.</strong></li>
+<li><strong>Describe the distribution of <code>weight</code>. Make sure to describe the <em>shape</em>, <em>center</em> and <em>spread</em> of the distribution.</strong></li>
 </ul></li>
 <li><em>Options</em> can be added to plotting functions to change their appearance. The code below includes the <code>nint</code> option which controls the number of <em>intervals</em> in a numerical plot.
 <ul>
@@ -592,9 +592,11 @@ Space, Click, Right Arrow or swipe left to move to the next slide.</p>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">histogram</span>(<span class="op">~</span>weight, <span class="dt">data =</span> cdc, <span class="dt">nint =</span> <span class="dv">3</span>)</span></code></pre></div>
 <ul>
+<li><ul>
 <li><strong>How did including the option <code>nint = 3</code> change the <code>histogram</code>?</strong></li>
 <li><strong>Does setting <code>nint = 3</code> impact how you would describe the shape, center and spread?</strong></li>
 <li><strong>Try other values for <code>nint</code>. What value produced the best graph? Why?</strong></li>
+</ul></li>
 </ul>
 </div>
 <div id="how-often-do-people-text-drive" class="slide section level2">
@@ -644,12 +646,12 @@ Space, Click, Right Arrow or swipe left to move to the next slide.</p>
 <li>With bargraphs, each group is split with bars next to each other on the x-axis.</li>
 <li>With histograms, the x-axis is a continuous set of numbers so the bars overlap making it difficult to compare center and spread.</li>
 </ul></li>
-<li><span class="blue">Fill in the blanks with the correct variables to create a split histogram to answer the questions below:</span></li>
+<li><span class="blue">Fill in the blanks with the correct variables to create a split <code>histogram</code> to answer the questions below:</span></li>
 </ul>
 <div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">histogram</span>(<span class="op">~</span><span class="st"> </span>____ <span class="op">|</span><span class="st"> </span>____ , <span class="dt">data =</span> ____ )</span></code></pre></div>
 <ul>
 <li><strong>Do you think males and females have similar heights? Use the plot you create to justify your answer.</strong></li>
-<li><span class="blue">Just like we did for the histogram, is it possible to create a <em>split</em> bargraph? Try to create a bargraph of <code>drive_text</code> that’s split by <code>gender</code> to find out.</span></li>
+<li><span class="blue">Just like we did for the <code>histogram</code>, is it possible to create a <em>split</em> <code>bargraph</code>? Try to create a <code>bargraph</code> of <code>drive_text</code> that’s split by <code>gender</code> to find out.</span></li>
 </ul>
 </div>
 <div id="on-your-own" class="slide section level2">

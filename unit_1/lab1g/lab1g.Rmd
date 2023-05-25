@@ -57,13 +57,13 @@ tally(~ ____, data = ____)
   
 - We could use the following plot to try and answer this question:
   
-```{r, eval=TRUE, echo=TRUE, fig.width=7, fig.height=5}
+```{r, eval=TRUE, echo=TRUE, fig.width=5, fig.height=3}
 bargraph(~phys_challenge | gender, data = atu_clean)
 ```
 
-- The split bargraph helps us get an idea of the answer to the question, but we need to provide precise values.
-- <span class="blue">Use a line of code, that's similar to how we facet plots, to obtain a tally of the number of people with physical challenges and their genders.</span>
-- **Write down the resulting table.**
+- The split `bargraph` helps us get an idea of the answer to the question, but we need to provide precise values.
+- <span class="blue">Use a line of code, that's similar to how we facet plots, to obtain a `tally` of the number of people with physical challenges and their genders.</span>
+  - **Write down the resulting table.**
 
 
 
@@ -76,30 +76,33 @@ bargraph(~phys_challenge | gender, data = atu_clean)
     - **Does one `gender` seem to have a higher occurrence of physical challenges than the other? If so, which one and explain your reasoning.**
 
 - It's often helpful to display totals in our 2-way frequency tables.
-    - To include them, include `margin = TRUE` as an option in the tally function.
+    - To include them, include `margin = TRUE` as an option in the `tally` function.
     
 ## Conditional Relative Frequencies
 
-- There is as difference between `phys_challenge | gender` and `gender | phys_challenge`. 
+- There is as difference between `phys_challenge | gender` and `gender | phys_challenge`! 
 
-```{r, eval=TRUE, echo=TRUE}
+```{r, eval=TRUE, echo=TRUE, fig.width=3, fig.height=3}
 tally(~phys_challenge | gender, data = atu_clean, margin = TRUE)
 ```
 
 ```{r, eval=TRUE, echo=TRUE}
 tally(~gender | phys_challenge, data = atu_clean, margin = TRUE)
 ```
+
+## Conditional Relative Frequencies, continued
+
 - At first glance, the two-way frequency tables might look similar (especially when the `margin` option is excluded). Notice, however, that the totals are different.
 - The totals are telling us that `R` calculates conditional frequencies by column!
 
 - What does this mean?
   - In the first two-way frequency table the groups being compared are `Male` and `Female` on the distribution of physical challenges.
-  - In the second two-way frequency table the groups being compared are the people with `No difficulty` and those that `Has difficulty` on the distribution of gender.
-- **Add the option `format = "percent"` to the first tally function. How were the percents calculated? Interpret what they mean.**
+  - In the second two-way frequency table the groups being compared are people with `No difficulty` and `Has difficulty` on the distribution of gender.
+- **Add the option `format = "percent"` to the first `tally` function. How were the percents calculated? Interpret what they mean.**
 
 ## On your own
 
 - **Describe what happens if you create a 2-way frequency table with a numerical variable and a categorical variable.**
 - **How are the types of statistical questions that 2-way frequency tables can answer different than 1-way frequency tables?**
-- **Which gender has a higher rate of _part time employment_?**
+- **Which `gender` has a higher rate of _part time employment_?**
 

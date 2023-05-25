@@ -48,7 +48,7 @@ View(cdc)
     - **What sorts of information about them was collected?**
 
 - To find out more information about the `cdc` data, type the command below into your console.
-  - To get back to the slides find and click on the `Viewer` tab.
+  - To get back to the slides find and click on the _Viewer_ tab.
 
 ```{r, eval = FALSE, echo = TRUE}
 ?cdc
@@ -76,8 +76,8 @@ View(cdc)
 - Now that we've looked at our data, let's look at how RStudio is organized.
 - RStudio's main window is composed of four _panes_.
 - <font color=#25679E><b>Find the pane that has a _tab_ titled _Environment_ and click on the _tab_.</b></font>
-    - This pane contains a list of everything that's currently available for R to use.
-    - Notice that R knows we have our `cdc` data loaded.
+    - This pane contains a list of everything that's currently available for `R` to use.
+    - Notice that `R` knows we have our `cdc` data loaded.
 - **How many students are in our `cdc` data set?**
 - **How many variables were measured for each student?**
 
@@ -129,7 +129,7 @@ names(cdc)
 names(CDC)
 ```
 
-- **Which does R understand?**
+- **Which does `R` understand?**
 
 ## R's most important syntax
 
@@ -140,7 +140,7 @@ function(y ~ x, data = ___)
 ```
 
 - To create graphs or plots you need to provide `R` with the following:
-  - The name of the R function, often the plot’s name, that tells the computer how to create your graph.
+  - The name of the `R` function, often the plot’s name, that tells the computer how to create your graph.
   - The variable(s) containing the information we want the function to use.
   - The data set containing the variables.
   
@@ -175,13 +175,13 @@ xyplot(weight~height, data = cdc)
 
 - **Do you think it's unusual for students in the data to be taller than 1.8 meters? Why or why not?**
 
-- Hint: Use the arrow keys on the `Plots` tab to toggle between the plots.
+- Hint: Use the arrow keys on the _Plots_ tab to toggle between the plots.
 
-## On your own:
+## On your own
 
 - After completing the lab, answer the following questions:
     - **What is _public health_ and do we collect data about it?**
     - **How do you think our data was collected? Does it include every high school aged student in the US?**
     - **How might the CDC use this data? Who else could benefit from using this data?**
     - <font color=#25679E><b>Write the code to visualize the distribution of weights of the students in the CDC data with a histogram.</b></font> **What is the _typical_ weight?**
-    - <font color=#25679E><b>Write the code to create a bargraph to visualize the distribution of how often students ate fruit.</b></font> **About how many students did not eat fruit over the previous 7 days?**
+    - <font color=#25679E><b>Write the code to create a `bargraph` to visualize the distribution of how often students ate fruit.</b></font> **About how many students did not eat fruit over the previous 7 days?**

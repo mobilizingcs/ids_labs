@@ -24,7 +24,7 @@ data(cdc)
 - In this lab, we'll learn about different _types_ of variables. 
     - Such as those that are measured by numbers and others that have values that are categories.
 - We'll also look at ways to visualize these different types of data using _plots_ (a word data scientists use interchangeably with the word _graph_).
-- <span class="blue">Find the _History_ tab in RStudio and click on it. Figure out how to use the information to reload the `cdc` `data`.</span>
+- <span class="blue">Find the _History_ tab in RStudio and click on it. Figure out how to use the information to reload the `cdc` data.</span>
 
 
 ## Variable Types
@@ -48,7 +48,7 @@ data(cdc)
 
 - One way to get a good summary of your data is to look at the data's _structure_.
     - One way to view this info would be to click on the little blue arrow next to `cdc` in the _Environment_ pane.
-    - Another way would be to run the following in the console:
+    - Another way would be to run the following in the _console_:
 ```{r, eval = FALSE, echo = TRUE}
 str(cdc)
 ```
@@ -66,8 +66,8 @@ str(cdc)
     
 ## We have options
 
-- <span class="blue">Make a graph that shows the distribution of people's weight.</span>
-  - **Describe the distribution of `weight`. Make sure to describe the shape, center and spread of the distribution.**
+- <span class="blue">Make a graph that shows the distribution of people's `weight`.</span>
+  - **Describe the distribution of `weight`. Make sure to describe the _shape_, _center_ and _spread_ of the distribution.**
 
 - _Options_ can be added to plotting functions to change their appearance. The code below includes the `nint` option which controls the number of _intervals_ in a numerical plot.
   - Options, also known as _arguments_, are additional pieces of information you provide to a function, and are separated by commas.
@@ -75,10 +75,10 @@ str(cdc)
 ```{r, eval = FALSE, echo = TRUE}
 histogram(~weight, data = cdc, nint = 3)
 ```
-
- - **How did including the option `nint = 3` change the `histogram`?**
- - **Does setting `nint = 3` impact how you would describe the shape, center and spread?**
- - **Try other values for `nint`. What value produced the best graph? Why?**
+-
+  - **How did including the option `nint = 3` change the `histogram`?**
+  - **Does setting `nint = 3` impact how you would describe the shape, center and spread?**
+  - **Try other values for `nint`. What value produced the best graph? Why?**
  
 ## How often do people text & drive?
 
@@ -118,14 +118,14 @@ bargraph(~ ___, data = ___, groups = ___)
     - With bargraphs, each group is split with bars next to each other on the x-axis. 
     - With histograms, the x-axis is a continuous set of numbers so the bars overlap making it difficult to compare center and spread.
 
-- <span class="blue">Fill in the blanks with the correct variables to create a split histogram to answer the questions below:</span>
+- <span class="blue">Fill in the blanks with the correct variables to create a split `histogram` to answer the questions below:</span>
 
 ```{r, eval = FALSE, echo = TRUE}
 histogram(~ ____ | ____ , data = ____ )
 ```
 
 - **Do you think males and females have similar heights? Use the plot you create to justify your answer.**
-- <span class="blue">Just like we did for the histogram, is it possible to create a _split_ bargraph? Try to create a bargraph of `drive_text` that's split by `gender` to find out.</span>
+- <span class="blue">Just like we did for the `histogram`, is it possible to create a _split_ `bargraph`? Try to create a `bargraph` of `drive_text` that's split by `gender` to find out.</span>
 
 ## On your own:
 

@@ -47,8 +47,8 @@ histogram(~height | gender, data = cdc, layout = c(2,1),
 ## Multiple variable plots
 
 - The previous graph is an example of a _multiple variable plot_, which means that more than a single variable was used. In this case:
-  - Variable 1: _height_
-  - Variable 2: _gender_
+  - Variable 1: `height`
+  - Variable 2: `gender`
 - Multiple variable plots are tools for finding _relationships_ between data.
 - Let's take our `food` data and make some new multiple variable plots you haven't created before!
 
@@ -110,7 +110,7 @@ healthy_level + salty_sweet
 
 - Although we are treating `healthy_level` as a categorical variable, `R` recognizes it as a numerical variable. 
   - <span class="blue">Verify this using the `str` function.</span>
-  - Notice that the faceted `histograms` or `dotPlots` do not have labels, but rather tick-marks.
+  - Notice that the faceted histograms or dotPlots do not have labels, but rather tick-marks.
   - You will have the opportunity to convert the `healthy_level` variable into a factor later on.
 
 - Faceting your data on a numerical variable is NOT recommended.
