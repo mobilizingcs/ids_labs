@@ -117,7 +117,7 @@ food_salty <- filter(food, salty_sweet == "Salty")
 - We can use the `head()` function to help us see what's happening when we write `salty_sweet == "Salty"`.
     - `head()` returns the values of the first 6 observations.
     - The `tail()` function returns the last 6 observations.
-- Run the following code and answer the question below:
+- <span class="blue">Run the following code and answer the question below:</span>
 ```{r, eval = FALSE, echo = TRUE}
 head(~salty_sweet == "Salty", data = food)
 ```
@@ -159,7 +159,7 @@ food_salty <- filter(food, salty_sweet == "Salty")
 my_sub <- filter(food , salty_sweet == "Salty", calories < 200)
 ```
 
-- `View` the  `my_sub` data we filtered in the above line of code and verify that it only includes salty snacks that have less than 200 calories.
+- <span class="blue">`View` the  `my_sub` data we filtered in the above line of code and verify that it only includes salty snacks that have less than 200 calories.</span>
 
 
 ## Put it all together
