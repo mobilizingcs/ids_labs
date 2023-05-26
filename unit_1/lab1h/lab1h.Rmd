@@ -36,7 +36,7 @@ require(mobilizr)
 
 - The data, as-is, is very messy and hard to interpret/analyze.
 
-    - Fill in the blank with the name of your imported data to format it:
+    - <span class="blue">Fill in the blank with the name of your imported data to format it:</span>
 ```{r, eval = FALSE, echo = TRUE}
 timeuse <- timeuse_format( _____ )
 ```
