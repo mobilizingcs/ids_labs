@@ -183,5 +183,5 @@ xyplot(weight~height, data = cdc)
     - **What is _public health_ and do we collect data about it?**
     - **How do you think our data was collected? Does it include every high school aged student in the US?**
     - **How might the CDC use this data? Who else could benefit from using this data?**
-    - <font color=#25679E><b>Write the code to visualize the distribution of weights of the students in the CDC data with a histogram.</b></font> **What is the _typical_ weight?**
+    - <font color=#25679E><b>Write the code to visualize the distribution of weights of the students in the CDC data with a `histogram`.</b></font> **What is the _typical_ weight?**
     - <font color=#25679E><b>Write the code to create a `bargraph` to visualize the distribution of how often students ate fruit.</b></font> **About how many students did not eat fruit over the previous 7 days?**
