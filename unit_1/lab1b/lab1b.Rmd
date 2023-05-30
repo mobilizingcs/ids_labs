@@ -92,7 +92,7 @@ histogram(~weight, data = cdc, nint = 3)
 
 ## Does texting and driving differ by gender?
 
-- <span class="blue">Fill in the blanks with the correct variables to create a side-by-side bargraph:</span>
+- <span class="blue">Fill in the blanks with the correct variables to create a side-by-side `bargraph`:</span>
 
 ```{r, eval = FALSE, echo = TRUE}
 bargraph(~ ___, data = ___, groups = ___)

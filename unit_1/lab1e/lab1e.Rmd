@@ -107,7 +107,7 @@ xyplot(____ ~ ____, data = food)
 ```{r, eval = FALSE, echo = TRUE}
 healthy_level + salty_sweet 
 ```
-- **How does the `healthy_level` of a `Salty` or `Sweet` snack impact the number of calories in the snack?**
+- **How does the `healthy_level` of a `Salty` or `Sweet` snack impact the number of `calories` in the snack?**
 
 - Although we are treating `healthy_level` as a categorical variable, `R` recognizes it as a numerical variable. 
   - <span class="blue">Verify this using the `str` function.</span>

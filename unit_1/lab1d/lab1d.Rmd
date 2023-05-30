@@ -45,10 +45,10 @@ library(mobilizr)
 - While a `dotPlot` should conserve the exact value of each data point, sometimes it behaves like a `histogram` in that it lumps values together.
 
 - <span class="blue">Create a more accurate `dotPlot` by including the `nint` option.</span>
-  - Set `nint` equal to the maximum value for sugar minus the minimum value for sugar plus one.
-    - <span class="blue">On your `food` data spreadsheet, click on the sugar header to sort in ascending order (to obtain minimum). </span>
-    - <span class="blue">Click on the sugar header again to sort in descending order (to obtain maximum). </span>
-  - <span class="blue">Use your history pane to see how we included the option `nint` with the `histogram` function.</span>
+  - Set `nint` equal to the maximum value for `sugar` minus the minimum value for `sugar` plus one.
+    - <span class="blue">On your `food` data spreadsheet, click on the `sugar` header to sort in ascending order (to obtain minimum). </span>
+    - <span class="blue">Click on the `sugar` header again to sort in descending order (to obtain maximum). </span>
+  - <span class="blue">Use your _History_ pane to see how we included the option `nint` with the `histogram` function.</span>
   
 - Pro tip: If the `dotPlot` comes out looking wonky, try changing the value of the _character expansion_ option, `cex`. 
     - The default value is `1`. Try a few values between `0` and `1` and a few more values larger than `1`.
@@ -57,14 +57,14 @@ library(mobilizr)
 
 - In lab 1B, we learned that we can _facet_ (or split) our data based on a categorical variable.
 
-- <span class="blue">Split the `dotPlot` displaying the distribution of grams of sugar in two, by faceting on our observations' `salty_sweet` variable.</span>
+- <span class="blue">Split the `dotPlot` displaying the distribution of grams of `sugar` in two, by faceting on our observations' `salty_sweet` variable.</span>
     - **Describe how `R` decides which observations go into the left or right plot.**
     - **What does each _dot_ in the plot represent?**
 
 
 ## Altering the layout
 
-- It would be much easier to compare the sugar levels of salty and sweet snacks if the dotPlots were stacked on top of one another.
+- It would be much easier to compare the `sugar` levels of salty and sweet snacks if the dotPlots were stacked on top of one another.
 - We can change the _layout_ of our separated plots by including the `layout` option in our `dotPlot` function. 
     - <span class="blue">Add the following option to the code you used to create the `dotPlot` split by `salty_sweet`.</span>
 ```{r, eval = FALSE, echo = TRUE }
