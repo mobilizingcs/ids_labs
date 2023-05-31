@@ -33,7 +33,7 @@ library(mobilizr)
 ## Another plotting function
 
 - A `dotPlot` is another plot that can be used to analyze a numerical variable.
-  - Dotplots are better suited for smaller data sets. If data sets are too large, the dots become too small to see.
+  - Dotplots are better suited for smaller datasets. If datasets are too large, the dots become too small to see.
   - Similarly, distributions with a large spread might impact the readability of the plot.
 - <span class="blue">Use the `dotPlot()` function to create a `dotPlot` of the amount of `sugar` in our `food` data.</span>
     - The code to create a `dotPlot` is exactly like you'd use to make a `histogram`.
@@ -53,7 +53,7 @@ library(mobilizr)
 - Pro tip: If the `dotPlot` comes out looking wonky, try changing the value of the _character expansion_ option, `cex`. 
     - The default value is `1`. Try a few values between `0` and `1` and a few more values larger than `1`.
 
-## Splitting data sets
+## Splitting datasets
 
 - In lab 1B, we learned that we can _facet_ (or split) our data based on a categorical variable.
 
