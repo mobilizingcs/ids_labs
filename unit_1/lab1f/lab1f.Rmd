@@ -42,7 +42,7 @@ data(atu_dirty)
     - _Var01_, _V2_, _a_, ...
 - Categorical variables might have _misspelled categories_
     - _"blue"_, _"Blue"_, _"blu"_, ...
-- Numerical variables might have been _input incorrectly_. For example, if we're talk about people's height in inches:
+- Numerical variables might have been _input incorrectly_. For example, if we're talking about people's height in inches:
     - _64.7_, _6.86_, _676_, ... 
 - Numerical variables might be _incorrectly coded_ as categorical variables (or vice-versa)
     - "64.7", "68.6", "67.6"
@@ -100,7 +100,7 @@ atu_cleaner <- rename(atu_dirty, age = V1,
 
 - In programming, a _string_ is sort of like a _word_.
     - It's a value made up of _characters_ (i.e. letters)
-- The following are example of strings. Notice that each _string_ has quotes before and after.
+- The following are examples of strings. Notice that each _string_ has quotes before and after.
 ```{r, eval = FALSE, echo = TRUE}
 "string"
 ```
@@ -157,8 +157,8 @@ atu_cleaner <- mutate(atu_cleaner,
 
 ## Factors and Levels
 
-- R has a special name for _categorical_ variables, called _factors_.
-- R also has a special name for the different _categories_ of a _categorical_ variable.
+- `R` has a special name for _categorical_ variables, called _factors_.
+- `R` also has a special name for the different _categories_ of a _categorical_ variable.
     - The individual categories are called _levels_.
 - To see the levels of `gender` and their counts type:
 ```{r, eval = FALSE, echo = TRUE}
@@ -257,7 +257,7 @@ histogram(~calories | healthy_level, data = food)
 
 - <span class="blue">Use the `as.factor()` function to convert `healthy_level` into a categorical variable and re-run the `histogram` function.</span>
 
-- Notice that the `healthy_level` categories are now numbers as opposed to tick-marks. This is an improvement but an even better solution would be to `recode` the categories.
+  - Notice that the `healthy_level` categories are now numbers as opposed to tick-marks. This is an improvement but an even better solution would be to `recode` the categories.
 
 - <span class="blue">`Recode` the `healthy_level` categories and re-run the `histogram` function.</span>
 

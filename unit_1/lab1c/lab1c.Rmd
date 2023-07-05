@@ -69,7 +69,7 @@ If you forget your username or password, ask your teacher to remind you.
 
 ## Exporting
 
-- When you clicked the <font color="green">Export</font> link a _.csv_ file was saved on your computer.
+- When you clicked the <font color="green">Export</font> link, a _.csv_ file was saved on your computer.
 - Now that the file is on your computer, we need to <font color="green">upload</font> it into RStudio.
 
 
