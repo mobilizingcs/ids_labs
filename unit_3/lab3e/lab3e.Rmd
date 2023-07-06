@@ -1,7 +1,11 @@
 ---
 title: "Scraping web data"
 author: "Lab 3E"
-date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
+date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
+  
+  <br>
+  <br>
+  Space, Click, Right Arrow or swipe left to move to the next slide.'
 output: 
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
@@ -28,7 +32,7 @@ library(mobilizr)
 
 ## Our first web scraper
 
-- Copy and paste the link below into a web browser to view the website of data we'd like to _scrape_ and analyze.
+- <span class="blue">Copy and paste the link below into a web browser to view the website of data we'd like to _scrape_ and analyze.</span>
 
 [https://labs.idsucla.org/extras/webdata/mountains.html](https://labs.idsucla.org/extras/webdata/mountains.html)
 
@@ -80,9 +84,9 @@ library(mobilizr)
 
 ## Get to scraping!
 
-- Use your browser to go back to the website with the data we're interested in scraping.
-- Find the URL address for the site and assign it the name `data_url` in `R`.
-    - Then fill in the blanks below to have `R` scrape _every_ web table available on the site:
+- <span class="blue">Use your browser to go back to the website with the data we're interested in scraping.</span>
+- <span class="blue">Find the URL address for the site and assign it the name `data_url` in `R`.</span>
+- <span class="blue">Then fill in the blanks below to have `R` scrape _every_ web table available on the site:</span>
 
 ```{r, eval = FALSE, echo = TRUE}
 tables <- readHTMLTable(____)
@@ -94,22 +98,22 @@ tables <- readHTMLTable(____)
 - Since `readHTMLTable()` scrapes _every_ table that is on a particular web URL, we need to find out which table has the data we're interested in.
     - For example, `wikipedia.org` often has articles with 3 or more tables.
     - This means we need to check all 3 tables to find the one we're interested in.
-- Use the `length()` function to find out how many tables of data were scraped in our set of `tables`.
+- <span class="blue">Use the `length()` function to find out how many tables of data were scraped in our set of `tables`.</span>
 
 
 ## Saving tables
 
 - Now that we know how many tables we've scraped, we can go back and scrape individual tables by adding the `which` argument to the `readHTMLTable()` function.
-    - Use `readHTMLTable()` to re-scrape the data from the web but this time use the `which` argument to scrape just the individual table.
+- <span class="blue">Use `readHTMLTable()` to re-scrape the data from the web but this time use the `which` argument to scrape just the individual table.</span>
     - The `which` argument should be the integer denoting which table you want scraped.
-    - Assign the scraped data the name `mtns`
+    - Assign the scraped data the name `mtns`.
 
 
 ## Check, save and use!
 
 - After scraping the data, the only thing left to do is to save it and use it.
 
-- Fill in the blanks to save the data and give it a file name
+- <span class="blue">Fill in the blanks to save the data and give it a file name.</span>
 ```{r, eval = FALSE, echo = TRUE}
 save(____, file = "____.Rda")
 ```

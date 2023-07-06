@@ -8,13 +8,26 @@
   <meta name="author" content="Lab 3B" />
   <title>Confound it all!</title>
   <style type="text/css">
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-              </style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+  <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
   <style type="text/css">
 body
 {
@@ -377,7 +390,7 @@ list-style-type: none;
   });
 })()
 </script>
-  <link href="data:text/css;charset=utf-8,code%20%7B%0Afont%2Dfamily%3A%20monospace%3B%0Acolor%3A%20%2310437F%3B%0A%7D%0Astrong%20%7B%0Acolor%3A%20%23B21212%3B%0A%7D%0Afooter%20%7B%0Adisplay%3A%20block%3B%0Aposition%3A%20absolute%3B%0Abottom%3A%200%3B%0Awidth%3A%20100%25%3B%0Afont%2Dsize%3A%2020pt%3B%0Acolor%3A%20%2325679E%3B%0Atext%2Dalign%3A%20center%3B%20%7D%0A%2Eslide%20%2Etitle%20%7B%0Afont%2Dsize%3A%20250%25%3B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0Afont%2Dstyle%3A%20normal%3B%0A%7D%0A%2Etitle%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Eauthor%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Edate%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Egreenequation%20%7B%0Afont%2Dsize%3A%20150%25%3B%0Acolor%3A%20green%3B%0Atext%2Dalign%3A%20center%3B%0Aline%2Dheight%3A%20normal%3B%0A%7D%0Ali%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Ali%20ul%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Abody%20%7B%0Afont%2Dfamily%3A%20sans%2Dserif%3B%0A%7D%0Apre%2EsourceCode%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0Acode%2EsourceCode%20%7B%0Afont%2Dsize%3A%2095%25%3B%0A%7D%0Apre%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0A%2EsourceCode%20%7B%0Aoverflow%3A%20auto%3B%0A%7D%0A%2Eslidy%5Ftoc%20%7B%0Amax%2Dheight%3A%2080vh%3B%0A%7D" rel="stylesheet" type="text/css" media="screen, projection, print" />
+  <link href="data:text/css,code%20%7B%0Afont%2Dfamily%3A%20monospace%3B%0Acolor%3A%20%2310437F%3B%0A%7D%0Aspan%2Eblue%20%7B%0Acolor%3A%20%2325679E%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Astrong%20%7B%0Acolor%3A%20%23B21212%3B%0A%7D%0Afooter%20%7B%0Adisplay%3A%20block%3B%0Aposition%3A%20absolute%3B%0Abottom%3A%200%3B%0Awidth%3A%20100%25%3B%0Afont%2Dsize%3A%2020pt%3B%0Acolor%3A%20%2325679E%3B%0Atext%2Dalign%3A%20center%3B%20%7D%0A%2Eslide%20%2Etitle%20%7B%0Afont%2Dsize%3A%20250%25%3B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0Afont%2Dstyle%3A%20normal%3B%0A%7D%0A%2Etitle%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Eauthor%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Edate%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Egreenequation%20%7B%0Afont%2Dsize%3A%20150%25%3B%0Acolor%3A%20green%3B%0Atext%2Dalign%3A%20center%3B%0Aline%2Dheight%3A%20normal%3B%0A%7D%0Ali%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Ali%20ul%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Abody%20%7B%0Afont%2Dfamily%3A%20sans%2Dserif%3B%0A%7D%0Apre%2EsourceCode%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0Acode%2EsourceCode%20%7B%0Afont%2Dsize%3A%2095%25%3B%0A%7D%0Apre%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0A%2EsourceCode%20%7B%0Aoverflow%3A%20auto%3B%0A%7D%0A%2Eslidy%5Ftoc%20%7B%0Amax%2Dheight%3A%2080vh%3B%0A%7D" rel="stylesheet" type="text/css" media="screen, projection, print" />
 </head>
 <body>
 <div class="slide titlepage">
@@ -385,20 +398,28 @@ list-style-type: none;
   <p class="author">
 Lab 3B
   </p>
-  <p class="date">Directions: Follow along with the slides and answer the questions in <strong>red</strong> font in your journal.</p>
+  <p class="date">Directions: Follow along with the slides, completing
+the questions in <font color="#25679E"><b>blue</b></font> on your
+computer, and answering the questions in <strong>red</strong> in your
+journal. <br> <br> Space, Click, Right Arrow or swipe left to move to
+the next slide.</p>
 </div>
 <div id="finding-data-in-new-places" class="slide section level2">
 <h1>Finding data in new places</h1>
 <ul>
-<li>Since your first forays into doing data science, you’ve used data from two-sources:
+<li>Since your first forays into doing data science, you’ve used data
+from two-sources:
 <ul>
 <li>Built-in datasets from RStudio.</li>
 <li>Campaign data from the Campaign Manager.</li>
 </ul></li>
-<li>Data can be found in many other places though, especially online.</li>
-<li>In this lab, we’ll read an <em>observational study</em> dataset from a website.
+<li>Data can be found in many other places though, especially
+online.</li>
+<li>In this lab, we’ll read an <em>observational study</em> dataset from
+a website.
 <ul>
-<li>We’ll use this data to then explore what factors are associated with a person’s lung capacity.</li>
+<li>We’ll use this data to then explore what factors are associated with
+a person’s lung capacity.</li>
 </ul></li>
 </ul>
 </div>
@@ -414,22 +435,29 @@ Lab 3B
 <li>Age in years.</li>
 <li>Lung capacity, measured in liters.</li>
 <li>The youth’s heights, in inches</li>
-<li>Genders; <code>&quot;1&quot;</code> for males, <code>&quot;0&quot;</code> for females.<br />
+<li>Genders; <code>&quot;1&quot;</code> for males, <code>&quot;0&quot;</code> for
+females.<br />
 </li>
-<li>Whether the participant was a smoker, <code>&quot;1&quot;</code>, or non-smoker <code>&quot;0&quot;</code>.</li>
+<li>Whether the participant was a smoker, <code>&quot;1&quot;</code>, or
+non-smoker <code>&quot;0&quot;</code>.</li>
 </ul></li>
 </ul>
 </div>
 <div id="importing-our-data" class="slide section level2">
 <h1>Importing our data</h1>
 <ul>
-<li>Rather than <em>export</em>-ing the data and then <em>upload</em>-ing and <em>importing</em>-ing it, we’ll pull the data straight from the webpage into R.</li>
-<li>Click on the <em>Import Dataset</em> button under the <em>Environment</em> tab.
+<li>Rather than <em>export</em>-ing the data and then
+<em>upload</em>-ing and <em>importing</em>-ing it, we’ll pull the data
+straight from the webpage into R.</li>
+<li><span class="blue">Click on the <em>Import Dataset</em> button under
+the <em>Environment</em> tab.</span>
 <ul>
 <li>Then click on the <em>From Text (readr)</em> option.</li>
-<li>Type or copy/paste the URL into the box and then click <em>Update</em>.</li>
+<li>Type or copy/paste the URL into the box and then click
+<em>Update</em>.</li>
 </ul></li>
-<li>Before importing, change the following <em>Import Options</em>:
+<li><span class="blue">Before importing, change the following <em>Import
+Options</em>:</span>
 <ul>
 <li>Name: <code>lungs</code></li>
 <li><em>Uncheck</em> the <em>First Row as Names</em><br />
@@ -441,26 +469,37 @@ Lab 3B
 <div id="about-the-data" class="slide section level2">
 <h1>About the data</h1>
 <ul>
-<li>The data come from the <em>Forced Expiratory Volume (FEV)</em> study that took place in the late 1970’s.
-<ul>
-<li>The observations come from a sample of 654 youths, aged 3 to 19, in/around East Boston.</li>
-<li>Researchers were interested in answering the <em>research question</em>:</li>
-</ul></li>
+<li>The data come from the <em>Forced Expiratory Volume (FEV)</em> study
+that took place in the late 1970’s.</li>
+<li>The observations come from a sample of 654 youths, aged 3 to 19,
+in/around East Boston.</li>
+<li>Researchers were interested in answering the <em>research
+question</em>:</li>
 </ul>
 <p><em>What is the effect of childhood smoking on lung health?</em></p>
 </div>
 <div id="cleaning-your-data" class="slide section level2">
 <h1>Cleaning your data</h1>
 <ul>
-<li>Now that we’ve got the data loaded, we need to clean it to get it ready for use <em>(Look at lab 1F for help)</em>. Specifically:
+<li><span class="blue">Now that we’ve got the data loaded, we need to
+clean it to get it ready for use <em>(Look at lab 1F for help)</em>.
+Specifically:</span>
 <ul>
-<li>We want to name the variables: <code>&quot;age&quot;</code>, <code>&quot;lung_cap&quot;</code>, <code>&quot;height&quot;</code>, <code>&quot;gender&quot;</code>,<code>&quot;smoker&quot;</code>, in that order.</li>
-<li>Change the type of variable for <code>gender</code> and <code>smoker</code> from <em>numeric</em> to <em>character</em>.</li>
+<li>We want to name the variables: <code>&quot;age&quot;</code>,
+<code>&quot;lung_cap&quot;</code>, <code>&quot;height&quot;</code>,
+<code>&quot;gender&quot;</code>,<code>&quot;smoker&quot;</code>, in that order.</li>
+<li>Change the type of variable for <code>gender</code> and
+<code>smoker</code> from <em>numeric</em> to <em>character</em>.</li>
 </ul></li>
-<li>After changing the variable types for <code>gender</code> and <code>smoker</code>:
+<li><span class="blue">After changing the variable types for
+<code>gender</code> and <code>smoker</code>:</span>
 <ul>
-<li>For <code>gender</code>, use <code>recode</code> to change <code>&quot;1&quot;</code> to <code>&quot;Male&quot;</code> and <code>&quot;0&quot;</code> to <code>&quot;Female&quot;</code>.</li>
-<li>For <code>smoker</code>, use <code>recode</code> to change <code>&quot;1&quot;</code> to <code>&quot;Yes&quot;</code> and <code>&quot;0&quot;</code> to <code>&quot;No&quot;</code>.</li>
+<li>For <code>gender</code>, use <code>recode</code> to change
+<code>&quot;1&quot;</code> to <code>&quot;Male&quot;</code> and <code>&quot;0&quot;</code> to
+<code>&quot;Female&quot;</code>.</li>
+<li>For <code>smoker</code>, use <code>recode</code> to change
+<code>&quot;1&quot;</code> to <code>&quot;Yes&quot;</code> and <code>&quot;0&quot;</code> to
+<code>&quot;No&quot;</code>.</li>
 </ul></li>
 </ul>
 </div>
@@ -468,42 +507,55 @@ Lab 3B
 <h1>Analyzing our data</h1>
 <ul>
 <li>Our <code>lungs</code> data is from an observational study.</li>
-<li><strong>Write down a reason the researchers couldn’t use an experiment to test the effects of smoking on children’s lungs.</strong></li>
-<li>Observational studies are often helpful for analyzing how variables are related:
+<li><strong>Write down a reason the researchers couldn’t use an
+experiment to test the effects of smoking on children’s
+lungs.</strong></li>
+<li>Observational studies are often helpful for analyzing how variables
+are related:
 <ul>
-<li><strong>Do you think that a person’s age affects their lung capacity? Make a sketch of what you think a scatterplot of the two variables would look like and explain.</strong></li>
+<li><strong>Do you think that a person’s age affects their lung
+capacity? Make a sketch of what you think a scatterplot of the two
+variables would look like and explain.</strong></li>
 </ul></li>
-<li>Use the <code>lungs</code> data to create an <code>xyplot</code> of <code>age</code> and <code>lung_cap</code>.
+<li><span class="blue">Use the <code>lungs</code> data to create an
+<code>xyplot</code> of <code>age</code> and
+<code>lung_cap</code>.</span>
 <ul>
-<li><strong>Interpret the plot and describe why the relationship between the two variables makes sense.</strong></li>
+<li><strong>Interpret the plot and describe why the relationship between
+the two variables makes sense.</strong></li>
 </ul></li>
 </ul>
 </div>
 <div id="smoking-and-lung-capacity" class="slide section level2">
 <h1>Smoking and lung capacity</h1>
 <ul>
-<li>Make a plot that can be used to answer the statistical investigative question:</li>
+<li><span class="blue">Make a plot that can be used to answer the
+statistical investigative question:</span></li>
 </ul>
-<p><em>Do people who smoke tend to have lower lung capacity than those who do not smoke?</em></p>
+<p><em>Do people who smoke tend to have lower lung capacity than those
+who do not smoke?</em></p>
 <ul>
 <li><strong>Use your plot to answer the question</strong>.
 <ul>
 <li><strong>Were you surprised by the answer? Why?</strong></li>
-<li><strong>Can you suggest a possible confounding factor that might be affecting the result?</strong></li>
+<li><strong>Can you suggest a possible confounding factor that might be
+affecting the result?</strong></li>
 </ul></li>
 </ul>
 </div>
 <div id="lets-compare" class="slide section level2">
 <h1>Let’s compare</h1>
 <ul>
-<li>Create three subsets of the data:
+<li><span class="blue">Create three subsets of the data: </span>
 <ul>
 <li>One that includes <em>only</em> 13 year olds …</li>
 <li>One that includes <em>only</em> 15 year olds …</li>
 <li>and one that includes <em>only</em> 17 year olds.</li>
 </ul></li>
-<li>Make a plot that compares the lung capacity of smokers and non-smokers for each subset.</li>
-<li><strong>How does the relationship between smoking and lung capacity change as we increase the age from 13 to 15 to 17?</strong></li>
+<li><span class="blue">Make a plot that compares the lung capacity of
+smokers and non-smokers for each subset.</span></li>
+<li><strong>How does the relationship between smoking and lung capacity
+change as we increase the age from 13 to 15 to 17?</strong></li>
 </ul>
 </div>
 <div id="sum-it-up" class="slide section level2">

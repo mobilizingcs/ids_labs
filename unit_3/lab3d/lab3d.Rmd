@@ -1,7 +1,11 @@
 ---
 title: "Are you sure about that?"
 author: "Lab 3D"
-date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
+date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
+  
+  <br>
+  <br>
+  Space, Click, Right Arrow or swipe left to move to the next slide.'
 output: 
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
@@ -28,7 +32,7 @@ library(mobilizr)
 
 ## In this lab
 
-- Load the built-in `atus` (_American Time Use Survey_) data set, which is a survey of how a sample of Americans spent their day.
+- <span class="blue">Load the built-in `atus` (_American Time Use Survey_) data set, which is a survey of how a sample of Americans spent their day.</span>
     - **The United States has an estimated population of 327,350,075. How many people were surveyed for this particular data set?**
 - The statistical question we wish to investigate is:
 
@@ -50,7 +54,7 @@ _What is the mean age of people older than 15 living in the United States?_
 
 ## Our first bootstrap
 
-- Fill in the blanks to `sample` the row numbers we'll use in our _bootstrapped_ sample.
+- <span class="blue">Fill in the blanks to `sample` the row numbers we'll use in our _bootstrapped_ sample.</span>
     - Be sure to re-read what a _bootstrapped_ sample is from the previous slide to help you fill in the blanks.
     - Use `set.seed(123)` before taking the sample.
 
@@ -58,7 +62,7 @@ _What is the mean age of people older than 15 living in the United States?_
 bs_rows <- ____(1:____, size = ____, replace = ____)
 ```
 
-- We can use the `slice` function to create a new data set that includes each row from our `sample`
+- <span class="blue">Use the `slice` function to create a new data set that includes each row from our `sample`.</span>
 
 ```{r, eval = FALSE, echo = TRUE}
 bs_atus <- slice(atus, bs_rows)
@@ -68,13 +72,13 @@ bs_atus <- slice(atus, bs_rows)
 ## Take a look
 
 - Look at the values of `bs_rows` and `bs_atus`.
-    - **Write a paragraph that explains to someone that's not familiar with `R` how you created `bs_rows` and `bs_atus`. Be sure to include an explanation of what the _values_ of `bs_rows` mean and how those values are used to create `bs_atus`. Also, be sure to explain what each argument of each function does.**
+- **Write a paragraph that explains to someone that's not familiar with `R` how you created `bs_rows` and `bs_atus`. Be sure to include an explanation of what the _values_ of `bs_rows` mean and how those values are used to create `bs_atus`. Also, be sure to explain what each argument of each function does.**
 
 
 ## One strap, two strap
 
-- Calculate the `mean` of the `age` variable in your `bootstrapped` data, then use a different value of `set.seed()` to create your own, personal _bootstrapped_ sample. Then calculate its `mean`.
-    - Compare this second _bootstrapped_ sample with three other classmates and write a sentence about how similar or different the _bootstrapped_ sample means were.
+- <span class="blue">Calculate the `mean` of the `age` variable in your `bootstrapped` data, then use a different value of `set.seed()` to create your own, personal _bootstrapped_ sample. Then calculate its `mean`.</span>
+- **Compare this second _bootstrapped_ sample with three other classmates and write a sentence about how similar or different the _bootstrapped_ sample means were.**
 
 
 ## Many bootstraps
@@ -83,12 +87,12 @@ bs_atus <- slice(atus, bs_rows)
     - Normally, the more _bootstrapped_ samples we use, the better the _confidence interval_.
     - In this lab, we'll `do()` 500 _bootstrapped_ samples.
 - To make `do()`-ing 500 _bootstraps_ easier, we'll code our 3-step bootstrap method into a function.
-    - Open a new R script (File -> New File -> R Script) to write your function into.
+    - <span class="blue">Open a new R script (File -> New File -> R Script) to write your function into.</span>
     
 
 ## Bootstrap function
 
-- Fill in the blank space below with the 3-steps needed to create a _bootstrapped_ sample `mean` for our `atus` data.
+- <span class="blue">Fill in the blank space below with the 3-steps needed to create a _bootstrapped_ sample `mean` for our `atus` data.</span>
     - Each step should be written on its own line between the curly braces.
 
 ```{r, eval = FALSE, echo = TRUE}
@@ -99,12 +103,12 @@ bs_func <- function() {
 }
 ```
 
-- Highlight and _Run_ the code you write. 
+- <span class="blue">Highlight and _Run_ the code you write. </span>
 
 
 ## Visualizing our bootstraps
 
-- Once your function is created, fill in the blanks to create 500 _bootstrapped_ sample means:
+- <span class="blue">Once your function is created, fill in the blanks to create 500 _bootstrapped_ sample means:</span>
 
 ```{r, eval = FALSE, echo = TRUE}
 bs_means <- do(____) * bs_func()
@@ -123,12 +127,12 @@ bs_means <- do(____) * bs_func()
 
 The lowest 5% of our estimates are below _______ years and the highest 5% of our estimates are above_______ years.
 
-- Use the quantile() function to check your estimates.
+- <span class="blue">Use the quantile() function to check your estimates.</span>
 - **Based on your bootstrapped estimates, between which two ages are we 90% confident the actual mean age of people living in the U.S. is contained?**
 
 
 ## On your own
 
-- Using your _bootstrapped_ sample means, create a 95% confidence interval for the mean age of people living in the U.S.
-    - **Why is the 95% confidence interval wider than the 90% interval?**
-    - **Write down how you would explain what a 95% confidence interval means to someone not taking _Introduction to Data Science_.**
+- <span class="blue">Using your _bootstrapped_ sample means, create a 95% confidence interval for the mean age of people living in the U.S.</span>
+- **Why is the 95% confidence interval wider than the 90% interval?**
+- **Write down how you would explain what a 95% confidence interval means to someone not taking _Introduction to Data Science_.**

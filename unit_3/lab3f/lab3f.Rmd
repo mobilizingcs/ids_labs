@@ -1,7 +1,11 @@
 ---
 title: "Maps"
 author: "Lab 3F"
-date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
+date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
+  
+  <br>
+  <br>
+  Space, Click, Right Arrow or swipe left to move to the next slide.'
 output: 
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
@@ -36,7 +40,7 @@ library(mobilizr)
 
 ## Load your data!
 
-- In Lab 3E you created a dataset. Load it into Rstudio now by filling in the blank with the file name of the data.
+- <span class="blue">In Lab 3E you created a dataset. Load it into Rstudio now by filling in the blank with the file name of the data.</span>
 ```{r, eval = FALSE, echo = TRUE}
 load("___.Rda")
 ```
@@ -46,48 +50,48 @@ load("___.Rda")
 ## Build a Basic Map
 
 - Let's start by building a basic map!
-- Use the `leaflet()` function and the `mtns` data to create the `leaf` that we can use for mapping.
+- <span class="blue">Use the `leaflet()` function and the `mtns` data to create the `leaf` that we can use for mapping.</span>
 
 ```{r, eval = FALSE, echo = TRUE}
 mtns_leaf <- leaflet(____)
 ```
 
-- Then, insert `mtns_leaf` into the `addTiles()` function and assign the output the name `mtns_map`
-- Run `mtns_map` in the console to look at your basic map with no data displayed.
+- <span class="blue">Then, insert `mtns_leaf` into the `addTiles()` function and assign the output the name `mtns_map`</span>
+- <span class="blue">Run `mtns_map` in the console to look at your basic map with no data displayed.</span>
     - Be sure to try clicking on the map to pan and zoom.
 
 
 ## Including our data
 
 - Now we can add markers for the locations of the mountains using the `addMarkers()` function.
-    - Fill in the blanks below with the basic map we've created and the values for latitude and longitude.
+- <span class="blue">Fill in the blanks below with the basic map we've created and the values for latitude and longitude.</span>
     
 ```{r, eval = FALSE, echo = TRUE}
 addMarkers(map = ____, lng = ~____, lat = ~____)
 ```
 
-- Supply the `peak` variable, in a similar way as we supplied the `lat` and `long` variables, to the `popup` argument and include it in the code above.
-    - **Click on a marker within California and write down the name of the mountain you clicked on.**
+- <span class="blue">Supply the `peak` variable, in a similar way as we supplied the `lat` and `long` variables, to the `popup` argument and include it in the code above.</span>
+- **Click on a marker within California and write down the name of the mountain you clicked on.**
 
 
 ## Colorize
 
 - Our current map looks pretty good, but what if we wanted to add some colors to our plot? 
-- Fill in the blanks below to create a new variable that assigns a color to each mountain based on the `state` its located.
+- <span class="blue">Fill in the blanks below to create a new variable that assigns a color to each mountain based on the `state` its located in.</span>
 ```{r, eval = FALSE, echo = TRUE}
 mtns <- mutate(____, state_colors = colorize(____))
 ```
 - Now that we've added a new variable, we need to re-build `mtns_leaf` and `mtns_map` to use it.
-    - Create `mtns_leaf` and `mtns_map` as you did before.
-    - Then change `addMarkers` to `addCircleMarkers` and keep all of the arguments the same.
+    - <span class="blue">Create `mtns_leaf` and `mtns_map` as you did before.</span>
+    - <span class="blue">Then change `addMarkers` to `addCircleMarkers` and keep all of the arguments the same.</span>
 
 
 ## Showing off our colors
 
-- To add the colors to our plot, use the `addCircleMarkers` like before but this time include `color = ~state_colors` as an argument.
+- <span class="blue">To add the colors to our plot, use the `addCircleMarkers` like before but this time include `color = ~state_colors` as an argument.</span>
 - It's hard to know just what the different colors mean so let's add a legend.
-  - First, assign the map with the circle markers as `mtns_map`.
-  - Then, fill in the blanks below to place a legend in the top-right hand corner.
+  - <span class="blue">First, assign the map with the circle markers as `mtns_map`.</span>
+  - <span class="blue">Then, fill in the blanks below to place a legend in the top-right hand corner.</span>
 ```{r, eval = FALSE, echo = TRUE}
 addLegend(____, colors = ~unique(____), labels = ~unique(____))
 ```
