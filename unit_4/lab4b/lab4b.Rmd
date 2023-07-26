@@ -1,7 +1,11 @@
 ---
 title: "What's the score?"
 author: "Lab 4B"
-date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
+date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
+  
+  <br>
+  <br>
+  Space, Click, Right Arrow or swipe left to move to the next slide.'
 output: 
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
@@ -26,10 +30,10 @@ library(mobilizr)
 
 ## Predictions using a line
 
-- Load the `arm_span` data again.
-    - Create an `xyplot` with `height` on the y-axis and `armspan` on the x-axis.
-    - Type `add_line()` to run the `add_line` function; you'll be prompted to click twice in the plot window to create a line that you think fits the data well.
-- Fill in the blanks below to create a function that will make predictions of people's `height`s based on their `armspan`:
+- <span class="blue">Load the `arm_span` data again.</span>
+    - <span class="blue">Create an `xyplot` with `height` on the y-axis and `armspan` on the x-axis.</span>
+    - <span class="blue">Type `add_line()` to run the `add_line` function; you'll be prompted to click twice in the plot window to create a line that you think fits the data well.</span>
+- <span class="blue">Fill in the blanks below to create a function that will make predictions of people's `height`s based on their `armspan`:</span>
 ```{r, eval = FALSE, echo = TRUE}
 predict_height <- function(armspan) {
   ____ * armspan + ____
@@ -39,7 +43,7 @@ predict_height <- function(armspan) {
 
 ## Make your predictions
 
-- Fill in the blanks to include your predictions in the `arm_span` data.
+- <span class="blue">Fill in the blanks to include your predictions in the `arm_span` data.</span>
 ```{r, eval = FALSE, echo = TRUE}
 ____ <- mutate(____, predicted_height = ____(____))
 ```
@@ -51,7 +55,7 @@ ____ <- mutate(____, predicted_height = ____(____))
 ## Sums of differences
 
 - A _residual_ is the difference between the actual and predicted value of a quantity of interest.
-- Fill in the blanks below to add a column of residuals to `arm_span`.
+- <span class="blue">Fill in the blanks below to add a column of residuals to `arm_span`.</span>
 
 ```{r, eval = FALSE, echo = TRUE}
 ____ <- mutate(____, residual = ____ - ____)
@@ -60,7 +64,7 @@ ____ <- mutate(____, residual = ____ - ____)
 - **What do the residuals measure?**
 
 - One method we might consider to measure our model's accuracy is to sum the residuals.
-- Fill in the blanks below to calculate our accuracy summary.
+- <span class="blue">Fill in the blanks below to calculate our accuracy summary.</span>
 
 ```{r, eval = FALSE, echo = TRUE}
 summarize(____, sum(____))
@@ -76,7 +80,7 @@ summarize(____, sum(____))
     - **Why does calculating the squared values for the differences solve this problem?**
     
 - The _mean squared error_ (MSE) is calculated by squaring all of the residuals, and then taking the mean of the squared residuals.
-- Fill in the blanks below to calculate the MSE of your line.
+- <span class="blue">Fill in the blanks below to calculate the MSE of your line.</span>
 
 ```{r, eval = FALSE, echo = TRUE}
 summarize(____, mean((____)^2))
@@ -84,26 +88,25 @@ summarize(____, mean((____)^2))
 
 ## On your own
 
-- Create a _regression line_ as you did in the previous lab, for `height` and `armspan`.
+- <span class="blue">Create a _regression line_ as you did in the previous lab, for `height` and `armspan`.</span>
     - We also refer to _regression lines_ as _linear models_.
-    - Assign this model the name `best_fit`. 
+    - <span class="blue">Assign this model the name `best_fit`. </span>
 - Making predictions with models `R` is familiar with is simpler than with lines, or models, we come up with ourselves.
-    - Fill in the blanks to make predictions using `best_fit`:
+    - <span class="blue">Fill in the blanks to make predictions using `best_fit`:</span>
 ```{r, eval = FALSE, echo = TRUE}
 ____ <- mutate(____, predicted_height = predict(____))
 ```
 
 - Hint: the `predict` function takes a linear model as input, and outputs the predictions of that model.
-- Calculate the MSE for these new predicted values.
+- <span class="blue">Calculate the MSE for these new predicted values.</span>
 
 
 ## The magic of lm()
 
 - The `lm()` function creates the _line of best fit_ equation by finding the line that minimizes the _mean squared error_. Meaning, it's the _best fitting line possible_. 
-    - Compare the MSE value you calculated using the line you fitted with `add_line()` to the same value you calculated using the `lm` function.
-    - Ask your neighbors if any of their lines beat the `lm` line in terms of the MSE. Were any of them successful?
-- To see how the `lm` line fits your data, create a scatterplot and then run:
+    - **Compare the MSE value you calculated using the line you fitted with `add_line()` to the same value you calculated using the `lm` function.**
+    - **Ask your neighbors if any of their lines beat the `lm` line in terms of the MSE. Were any of them successful?**
+- <span class="blue">To see how the `lm` line fits your data, create a scatterplot and then run:</span>
 ```{r, eval = FALSE, echo = TRUE}
 add_line(intercept = ____, slope = ____)
 ```
-

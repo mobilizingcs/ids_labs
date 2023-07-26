@@ -1,7 +1,11 @@
 ---
 title: "Some models have curves"
 author: "Lab 4F"
-date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
+date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
+  
+  <br>
+  <br>
+  Space, Click, Right Arrow or swipe left to move to the next slide.'
 output: 
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
@@ -21,24 +25,24 @@ library(mobilizr)
 - So far, we have only worked with prediction models that fit the _line of best fit_ to the data.
 - What happens if the true relationship between the data is nonlinear?
 - In this lab, we will learn about prediction models that fit _best fitting curves_ to data.
-- **Before moving on, load the `movie` data and split it into two sets:**
-    - **A set named `training` that includes 75% of the data.**
-    - **And a set named `testing` that includes the remaining 25%.**
-    - Remember to use `set.seed`.
+- <span class="blue">Before moving on, load the `movie` data and split it into two sets:</span>
+    - <span class="blue">A set named `training` that includes 75% of the data.</span>
+    - <span class="blue">And a set named `testing` that includes the remaining 25%.</span>
+    - <span class="blue">Remember to use `set.seed`.</span>
 
 
 ## Problems with lines
 
 - Before learning how to fit curves, let's first fit a linear model for reference.
-- **Train a linear model predicting `audience_rating` based on `critics_rating` for the `training` data. Assign this model to `movie_linear`.**
-- **Fill in the blanks below to create a scatterplot with `audience_rating` on the y-axis and `critics_rating` on the x-axis using your `testing` data.**
+- <span class="blue">Train a linear model predicting `audience_rating` based on `critics_rating` for the `training` data. Assign this model to `movie_linear`.</span>
+- <span class="blue">Fill in the blanks below to create a scatterplot with `audience_rating` on the y-axis and `critics_rating` on the x-axis using your `testing` data.</span>
     
 ```{r, eval = FALSE, echo = TRUE}
 xyplot(____ ~ ____, data = ____)
 ```
 
 - Previously, you used `add_line` to plot the _line of best fit_. An alternative function for plotting the _line of best fit_ is `add_curve`, which takes the name of the model as an argument.
-- **Run the code below to add the _line of best fit_ for the `training` data to the plot.**
+- <span class="blue">Run the code below to add the _line of best fit_ for the `training` data to the plot.</span>
 
 ```{r, eval = FALSE, echo = TRUE}
 add_curve(movie_linear)
@@ -70,7 +74,7 @@ knitr::include_graphics("lab4f-figure/polynomials.png")
 ## Making bend-y models
 
 - To fit a quadratic model in `R`, we can use the `poly()` function.
-    - **Fill in the blanks below to train a quadratic model predicting `audience_rating` from `critics_rating`, and assign that model to `movie_quad`.**
+    - <span class="blue">Fill in the blanks below to train a quadratic model predicting `audience_rating` from `critics_rating`, and assign that model to `movie_quad`.</span>
 
 ```{r, eval = FALSE, echo = TRUE}
 movie_quad <- lm(____ ~ poly(____, 2), data = training)
@@ -80,9 +84,9 @@ movie_quad <- lm(____ ~ poly(____, 2), data = training)
 
 ## Comparing lines and curves
 
-- **Fill in the blanks below to**
-    - **create a scatterplot with `audience_rating` on the y-axis and `critics_rating` on the x-axis using your `testing` data, and**
-    - **add the _line of best fit_ and _best fitting quadratic curve_.**
+- <span class="blue">Fill in the blanks below to</span>
+    - <span class="blue">create a scatterplot with `audience_rating` on the y-axis and `critics_rating` on the x-axis using your `testing` data, and</span>
+    - <span class="blue">add the _line of best fit_ and _best fitting quadratic curve_.</span>
     - Hint: the `col` argument is added to the `add_curve` functions to help distinguish the two curves.
     
 ```{r, eval = FALSE, echo = TRUE}
@@ -97,8 +101,8 @@ add_curve(____, col = "red")
 
 ## On your own
 
-- **Create a model that predicts `audience_rating` using a cubic curve (polynomial with degree `3`), and assign this model to `movie_cubic`**.
-- **Create a scatterplot with `audience_rating` on the y-axis and `critics_rating` on the x-axis using your `test` data.**
-- **Using the names of the three models you have trained, add the _line of best fit_, _best fitting quadratic curve_, and _best fitting cubic curve_ for the `training data` to the plot.**
+- <span class="blue">Create a model that predicts `audience_rating` using a cubic curve (polynomial with degree `3`), and assign this model to `movie_cubic`.</span>
+- <span class="blue">Create a scatterplot with `audience_rating` on the y-axis and `critics_rating` on the x-axis using your `test` data.</span>
+- <span class="blue">Using the names of the three models you have trained, add the _line of best fit_, _best fitting quadratic curve_, and _best fitting cubic curve_ for the `training data` to the plot.</span>
 - **Based on the plot, which model do you think is the best at predicting the `testing` data?**
 - **Use the difference in testing MSE to verify which model is the best at predicting the `testing data`.**

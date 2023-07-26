@@ -1,7 +1,11 @@
 ---
 title: "Interpreting correlations"
 author: "Lab 4D"
-date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
+date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
+  
+  <br>
+  <br>
+  Space, Click, Right Arrow or swipe left to move to the next slide.'
 output: 
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
@@ -51,7 +55,7 @@ xyplot(audience_rating~critics_rating, data = movie,
 ```
 
 - Correlation coefficients with values close to 1 are very strong with a positive slope. Values close to -1 means the correlation is very strong with a negative slope. 
-    - **Does this plot have a positive or negative correlation?**
+- **Does this plot have a positive or negative correlation?**
 
 
 ## Correlation review II
@@ -64,12 +68,13 @@ xyplot(audience_rating~critics_rating, data = movie,
           ylab = list("Variable 2", cex=2.5))
 ```
 
-- **Recall that if there is no linear relation between two numerical variables, the correlation coefficient is close to 0. What do you guess the correlation coefficient will be for these two variables?**
+- Recall that if there is no linear relation between two numerical variables, the correlation coefficient is close to 0. 
+- **What do you guess the correlation coefficient will be for these two variables?**
 
 
 ## The movie data
 
-- Load the `movie` data using the `data` command.
+- <span class="blue">Load the `movie` data using the `data` command.</span>
 - The data comes from a variety of sources like _IMDB_ and _Rotten Tomatoes_. 
     - The `critics_rating` contains values between 0 and 100, 100 being the best.
     - The `audience_rating` contains values that range between 0 and 10, 10 being the best.
@@ -77,11 +82,11 @@ xyplot(audience_rating~critics_rating, data = movie,
     - `gross` and `budget` describe the amount of money the film made and took to make.
 
 
-## Calculating Correlation Coefficients!
+## Calculating correlation coefficients!
 
 - We can use the `cor()` function to find the particular correlation coefficient of the variables from the previous plot, which happen to be `audience_rating` and `critics_rating`.
-    - But note, the `cor()` function removes any observations which contains an `NA` value in either variable.
-    - **Calculate the correlation coefficient for these variables using the `cor` function. The inputs to the functions work just like the inputs of the `xyplot` function.**
+- But note, the `cor()` function removes any observations which contains an `NA` value in either variable.
+- <span class="blue">Calculate the correlation coefficient for these variables using the `cor` function. The inputs to the functions work just like the inputs of the `xyplot` function.</span>
 
 
 ## Now answer the following.
@@ -118,19 +123,18 @@ xyplot(audience_rating~critics_rating, data = movie,
 
 ## Correlation and Predictions
 
-- Find the two variables that look to have the strongest correlation with `critics_rating`.
-    - Compute the correlation coefficients for `critics_rating` and each of the two variables.
+- <span class="blue">Find the two variables that look to have the strongest correlation with `critics_rating`.</span>
+    - <span class="blue">Compute the correlation coefficients for `critics_rating` and each of the two variables.</span>
     - **Use the correlation coefficient to determine which variable has a stronger linear relationship with `critics_rating`.**
-- Fit two `lm` models to predict `critics_rating` with each variable and compute the MSE for each. 
+- <span class="blue">Fit two `lm` models to predict `critics_rating` with each variable and compute the MSE for each.</span> 
     - **Use the MSE to determine which variable is a better predictor of `critics_rating`.**
 - **How are the correlation coefficient and the MSE related?**
 
 
 ## On your own
 
-- Select two different numerical variables from the `movie` data.
-- Plot the variables using the `xyplot()` function.
+- <span class="blue">Select two different numerical variables from the `movie` data. Plot the variables using the `xyplot()` function.</span>
     - **Would calculating a correlation coefficient for the two variables be appropriate? Justify your answer.**
     - **Predict what value you think the correlation coefficient will be. Compare this value to the actual value. Finally, interpret what the actual correlation coefficient means.**
-- Work with your classmates to determine which two variables have the strongest correlation coefficient.
+- **Work with your classmates to determine which two variables have the strongest correlation coefficient.**
   - **Why do you think these variables are so strongly related? Is using the correlation coefficient to describe the relationship appropriate and why/why not?**

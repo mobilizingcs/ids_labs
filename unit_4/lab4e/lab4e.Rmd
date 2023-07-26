@@ -1,7 +1,11 @@
 ---
 title: "This model is big enough for all of us!"
 author: "Lab 4E"
-date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
+date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
+  
+  <br>
+  <br>
+  Space, Click, Right Arrow or swipe left to move to the next slide.'
 output: 
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
@@ -18,8 +22,7 @@ library(mobilizr)
 
 ## Building better models
 
-- So far, in the labs, we've learned how to make predictions using the _line of best fit_
-    - Which we also call _linear models_ or _regression models_.
+- So far, in the labs, we've learned how to make predictions using the _line of best fit_, also known as _linear models_ or _regression models_.
 - We've also learned how to measure our model's prediction accuracy by cross-validation.
 - In this lab, we'll investigate the following question:
 
@@ -28,18 +31,19 @@ _Will including more variables in our model improve its predictions?_
 
 ## Divide & Conquer
 
-- Start by loading the `movie` data and split it into two sets (See Lab 4C for help). Remember to use `set.seed`.
-    - A set named `training` that includes 75% of the data.
-    - A set named `testing` that includes the remaining 25%.
-- Create a linear model, using the `training` data, that predicts `gross` using `runtime`.
-    - Compute the MSE of the model by making predictions for the `testing` data.
+- <span class="blue">Start by loading the `movie` data and split it into two sets (See Lab 4C for help).</span>
+    - <span class="blue">A set named `training` that includes 75% of the data.</span>
+    - <span class="blue">A set named `testing` that includes the remaining 25%.</span>
+    - <span class="blue">Remember to use `set.seed`.</span>
+- <span class="blue">Create a linear model, using the `training` data, that predicts `gross` using `runtime`.</span>
+    - <span class="blue">Compute the MSE of the model by making predictions for the `testing` data.</span>
 - **Do you think that a movie's `runtime` is the only factor that goes into how much a movie will make? What else might affect a movie's `gross`?**
 
 
 ## Including more info
 
 - Data scientists often find that including more relevant information in their models leads to better predictions.
-    - Fill in the blanks below to predict `gross` using `runtime` and `reviews_num`.
+    - <span class="blue">Fill in the blanks below to predict `gross` using `runtime` and `reviews_num`.</span>
 ```{r, eval = FALSE, echo = TRUE}
 lm(____ ~ ____ + ____, data = training)
 ```
@@ -52,6 +56,6 @@ lm(____ ~ ____ + ____, data = training)
 
 - **Write down which other variables in the `movie` data you think would help you make better predictions.** 
     - **Are there any variables that you think would not improve our predictions?**
-- **Create a model for all of the variables you think are relevant.**
-    - **Assess whether your model makes more accurate predictions for the `testing` data than the model that included only `runtime` and `reviews_num`**
+- <span class="blue">Create a model for all of the variables you think are relevant.</span>
+    - **Assess whether your model makes more accurate predictions for the `testing` data than the model that included only `runtime` and `reviews_num`.**
 - **With your neighbors, determine which combination of variables leads to the best predictions for the `testing` data.**

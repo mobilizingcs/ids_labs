@@ -8,141 +8,154 @@
   <meta name="author" content="Lab 4C" />
   <title>Cross-Validation</title>
   <style type="text/css">
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-            code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode { white-space: pre; position: relative; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    code.sourceCode { white-space: pre-wrap; }
-    code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-          </style>
-  <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
-  { counter-reset: source-line 0; }
+{ counter-reset: source-line 0; }
 pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
+{ position: relative; left: -4em; counter-increment: source-line; }
 pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
   <style type="text/css">
 body
 {
@@ -505,7 +518,7 @@ list-style-type: none;
   });
 })()
 </script>
-  <link href="data:text/css;charset=utf-8,code%20%7B%0Afont%2Dfamily%3A%20monospace%3B%0Acolor%3A%20%2310437F%3B%0A%7D%0Astrong%20%7B%0Acolor%3A%20%23B21212%3B%0A%7D%0Afooter%20%7B%0Adisplay%3A%20block%3B%0Aposition%3A%20absolute%3B%0Abottom%3A%200%3B%0Awidth%3A%20100%25%3B%0Afont%2Dsize%3A%2020pt%3B%0Acolor%3A%20%2325679E%3B%0Atext%2Dalign%3A%20center%3B%20%7D%0A%2Eslide%20%2Etitle%20%7B%0Afont%2Dsize%3A%20250%25%3B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0Afont%2Dstyle%3A%20normal%3B%0A%7D%0A%2Etitle%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Eauthor%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Edate%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Egreenequation%20%7B%0Afont%2Dsize%3A%20150%25%3B%0Acolor%3A%20green%3B%0Atext%2Dalign%3A%20center%3B%0Aline%2Dheight%3A%20normal%3B%0A%7D%0Ali%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Ali%20ul%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Abody%20%7B%0Afont%2Dfamily%3A%20sans%2Dserif%3B%0A%7D%0Apre%2EsourceCode%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0Acode%2EsourceCode%20%7B%0Afont%2Dsize%3A%2095%25%3B%0A%7D%0Apre%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0A%2EsourceCode%20%7B%0Aoverflow%3A%20auto%3B%0A%7D%0A%2Eslidy%5Ftoc%20%7B%0Amax%2Dheight%3A%2080vh%3B%0A%7D" rel="stylesheet" type="text/css" media="screen, projection, print" />
+  <link href="data:text/css,code%20%7B%0Afont%2Dfamily%3A%20monospace%3B%0Acolor%3A%20%2310437F%3B%0A%7D%0Aspan%2Eblue%20%7B%0Acolor%3A%20%2325679E%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Astrong%20%7B%0Acolor%3A%20%23B21212%3B%0A%7D%0Afooter%20%7B%0Adisplay%3A%20block%3B%0Aposition%3A%20absolute%3B%0Abottom%3A%200%3B%0Awidth%3A%20100%25%3B%0Afont%2Dsize%3A%2020pt%3B%0Acolor%3A%20%2325679E%3B%0Atext%2Dalign%3A%20center%3B%20%7D%0A%2Eslide%20%2Etitle%20%7B%0Afont%2Dsize%3A%20250%25%3B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0Afont%2Dstyle%3A%20normal%3B%0A%7D%0A%2Etitle%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Eauthor%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Edate%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Egreenequation%20%7B%0Afont%2Dsize%3A%20150%25%3B%0Acolor%3A%20green%3B%0Atext%2Dalign%3A%20center%3B%0Aline%2Dheight%3A%20normal%3B%0A%7D%0Ali%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Ali%20ul%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Abody%20%7B%0Afont%2Dfamily%3A%20sans%2Dserif%3B%0A%7D%0Apre%2EsourceCode%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0Acode%2EsourceCode%20%7B%0Afont%2Dsize%3A%2095%25%3B%0A%7D%0Apre%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0A%2EsourceCode%20%7B%0Aoverflow%3A%20auto%3B%0A%7D%0A%2Eslidy%5Ftoc%20%7B%0Amax%2Dheight%3A%2080vh%3B%0A%7D" rel="stylesheet" type="text/css" media="screen, projection, print" />
 </head>
 <body>
 <div class="slide titlepage">
@@ -513,142 +526,209 @@ list-style-type: none;
   <p class="author">
 Lab 4C
   </p>
-  <p class="date">Directions: Follow along with the slides and answer the questions in <strong>red</strong> font in your journal.</p>
+  <p class="date">Directions: Follow along with the slides, completing
+the questions in <font color="#25679E"><b>blue</b></font> on your
+computer, and answering the questions in <strong>red</strong> in your
+journal. <br> <br> Space, Click, Right Arrow or swipe left to move to
+the next slide.</p>
 </div>
 <div id="what-is-cross-validation" class="slide section level2">
 <h1>What is cross-validation?</h1>
 <ul>
 <li>In the previous two labs, we learned how to:
 <ul>
-<li>Create a linear model predicting <code>height</code> from the <code>arm_span</code> data (4A).</li>
-<li>See how well our model predicts <code>height</code> on the <code>arm_span</code> data by computing mean squared error (MSE) (4B).</li>
+<li>Create a linear model predicting <code>height</code> from the
+<code>arm_span</code> data (4A).</li>
+<li>See how well our model predicts <code>height</code> on the
+<code>arm_span</code> data by computing mean squared error (MSE)
+(4B).</li>
 </ul></li>
-<li>In this lab, we will see how well our model predicts the heights <em>of people we haven’t yet measured</em>.</li>
-<li>To do this, we will use a method called <em>cross-validation</em>.</li>
+<li>In this lab, we will see how well our model predicts the heights
+<em>of people we haven’t yet measured</em>.</li>
+<li>To do this, we will use a method called
+<em>cross-validation</em>.</li>
 <li>Cross-validation consists of three steps:
 <ul>
-<li>Step 1: Split the data into <code>training</code> and <code>test</code> sets.</li>
+<li>Step 1: Split the data into <code>training</code> and
+<code>test</code> sets.</li>
 <li>Step 2: Create a model using the <code>training</code> set.</li>
-<li>Step 3: Use this model to make predictions on the <code>test</code> set.</li>
+<li>Step 3: Use this model to make predictions on the <code>test</code>
+set.</li>
 </ul></li>
 </ul>
 </div>
 <div id="step-1-train-test-split" class="slide section level2">
 <h1>Step 1: train-test split</h1>
 <ul>
-<li>Waiting for new observations can take a long time. The U.S. takes a census of its population once every 10 years, for example.</li>
-<li>Instead of waiting for new observations, data scientists will take their current data and divide it into two distinct sets.</li>
-<li>Split the <code>arm_span</code> data into <code>training</code> and <code>test</code> sets using the following two steps.</li>
-<li>First, fill in the blanks below to randomly select which rows of <code>arm_span</code> will go into the <code>training</code> set.</li>
+<li>Waiting for new observations can take a long time. The U.S. takes a
+census of its population once every 10 years, for example.</li>
+<li>Instead of waiting for new observations, data scientists will take
+their current data and divide it into two distinct sets.</li>
+<li><span class="blue">Split the <code>arm_span</code> data into
+<code>training</code> and <code>test</code> sets using the following two
+steps.</span></li>
+<li><span class="blue">First, fill in the blanks below to randomly
+select which rows of <code>arm_span</code> will go into the
+<code>training</code> set.</span></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a>train_rows &lt;-<span class="st"> </span><span class="kw">sample</span>(<span class="dv">1</span><span class="op">:</span>____, <span class="dt">size =</span> <span class="dv">85</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>train_rows <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>____, <span class="at">size =</span> <span class="dv">85</span>)</span></code></pre></div>
 <ul>
-<li>Second, use the <code>slice</code> function to create two dataframes: one called <code>train</code> consisting of the <code>train_rows</code>, and another called <code>test</code> consisting of the remaining rows of <code>arm_span</code>.</li>
+<li><span class="blue">Second, use the <code>slice</code> function to
+create two dataframes: one called <code>train</code> consisting of the
+<code>train_rows</code>, and another called <code>test</code> consisting
+of the remaining rows of <code>arm_span</code>.</span></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>train &lt;-<span class="st"> </span><span class="kw">slice</span>(arm_span, ____)</span>
-<span id="cb2-2"><a href="#cb2-2"></a>test &lt;-<span class="st"> </span><span class="kw">slice</span>(____, <span class="op">-</span><span class="st"> </span>____)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>train <span class="ot">&lt;-</span> <span class="fu">slice</span>(arm_span, ____)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">slice</span>(____, <span class="sc">-</span> ____)</span></code></pre></div>
 <ul>
-<li><strong>Explain these lines of code and describe the <code>train</code> and <code>test</code> data sets.</strong></li>
+<li><strong>Explain these lines of code and describe the
+<code>train</code> and <code>test</code> data sets.</strong></li>
 </ul>
 </div>
 <div id="aside-set.seed" class="slide section level2">
 <h1>Aside: set.seed()</h1>
 <ul>
-<li>When we split data, we’re randomly separating our observations into <em>training</em> and <em>testing</em> sets.
+<li>When we split data, we’re randomly separating our observations into
+<em>training</em> and <em>testing</em> sets.
 <ul>
-<li>It’s important to notice that no single observation will be placed in both sets.</li>
+<li>It’s important to notice that no single observation will be placed
+in both sets.</li>
 </ul></li>
-<li>Because we’re splitting the data sets randomly, our models can will also vary slightly, person-to-person.
+<li>Because we’re splitting the data sets randomly, our models can will
+also vary slightly, person-to-person.
 <ul>
 <li>This is why it’s important to use <code>set.seed</code>.</li>
 </ul></li>
-<li>By using <code>set.seed</code>, we’re able to reproduce the random splitting so that each person’s model outputs the same results.</li>
+<li>By using <code>set.seed</code>, we’re able to reproduce the random
+splitting so that each person’s model outputs the same results.</li>
 </ul>
-<p><em>Whenever you split data into training and testing, always use <code>set.seed</code> first.</em></p>
+<p><em>Whenever you split data into training and testing, always use
+<code>set.seed</code> first.</em></p>
 </div>
 <div id="aside-train-test-ratio" class="slide section level2">
 <h1>Aside: train-test ratio</h1>
 <ul>
-<li>When splitting data into <code>training</code> and <code>testing</code> sets, we need to have enough observations in our data so that we can build a good model.
+<li>When splitting data into <code>training</code> and
+<code>testing</code> sets, we need to have enough observations in our
+data so that we can build a good model.
 <ul>
-<li>This is why we kept 85 observations in our <code>training</code> data.</li>
+<li>This is why we kept 85 observations in our <code>training</code>
+data.</li>
 </ul></li>
-<li>As data sets grow larger, we can use a larger proportion of the data to <code>test</code> with.</li>
+<li>As data sets grow larger, we can use a larger proportion of the data
+to <code>test</code> with.</li>
 </ul>
 </div>
 <div id="step-2-train-the-model" class="slide section level2">
 <h1>Step 2: train the model</h1>
 <ul>
-<li>Step 2 is to create a linear model relating <code>height</code> and <code>armspan</code> using the <code>training</code> data.</li>
-<li>Fit a line of best fit model to our <code>training</code> data and assign it the name <code>best_train</code>.</li>
-<li>Recall that the slope and intercept of our linear model are chosen to minimize MSE.</li>
-<li>Since the MSE being minimized is from the training data, we can call it <em>training MSE</em>.</li>
+<li>Step 2 is to create a linear model relating <code>height</code> and
+<code>armspan</code> using the <code>training</code> data.</li>
+<li><span class="blue">Fit a line of best fit model to our
+<code>training</code> data and assign it the name
+<code>best_train</code>.</span></li>
+<li>Recall that the slope and intercept of our linear model are chosen
+to minimize MSE.</li>
+<li>Since the MSE being minimized is from the training data, we can call
+it <em>training MSE</em>.</li>
 </ul>
 </div>
 <div id="step-3-test-the-model" class="slide section level2">
 <h1>Step 3: test the model</h1>
 <ul>
-<li>Step 3 is to use the model we built on the <code>training</code> data to make predictions on the <code>test</code> data.</li>
-<li>Note that we are NOT recomputing the slope and intercept to fit the test data best. We use the same slope and intercept that were computed in step 2.</li>
-<li>Because we’re using the <em>line of best fit</em>, we can use the <code>predict()</code> function we introduced in the last lab to make predictions.
+<li>Step 3 is to use the model we built on the <code>training</code>
+data to make predictions on the <code>test</code> data.</li>
+<li>Note that we are NOT recomputing the slope and intercept to fit the
+test data best. We use the same slope and intercept that were computed
+in step 2.</li>
+<li>Because we’re using the <em>line of best fit</em>, we can use the
+<code>predict()</code> function we introduced in the last lab to make
+predictions.
 <ul>
-<li>Fill in the blanks below to add predicted heights to our <code>test</code> data:</li>
+<li><span class="blue">Fill in the blanks below to add predicted heights
+to our <code>test</code> data:</span></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>test &lt;-<span class="st"> </span><span class="kw">mutate</span>(test, <span class="dt">____ =</span> <span class="kw">predict</span>(best_train, <span class="dt">newdata =</span> ____))</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">mutate</span>(test, <span class="at">____ =</span> <span class="fu">predict</span>(best_train, <span class="at">newdata =</span> ____))</span></code></pre></div>
 <ul>
-<li>Hint: the <code>predict</code> function without the argument <code>newdata</code> will output predictions on the <code>training</code> data. To output predictions on the <code>test</code> data, supply the <code>test</code> data to the <code>newdata</code> argument.</li>
-<li><strong>Calculate the <em>test MSE</em> in the same way as you did in the previous lab (test MSE is simply MSE of the predictions on the test data).</strong></li>
+<li>Hint: the <code>predict</code> function without the argument
+<code>newdata</code> will output predictions on the
+<code>training</code> data. To output predictions on the
+<code>test</code> data, supply the <code>test</code> data to the
+<code>newdata</code> argument.</li>
+<li><span class="blue">Calculate the <em>test MSE</em> in the same way
+as you did in the previous lab (test MSE is simply MSE of the
+predictions on the test data).</span></li>
 </ul>
 </div>
 <div id="recap" class="slide section level2">
 <h1>Recap</h1>
 <ul>
 <li>Another way to describe the three steps is</li>
-<li>Step 1: Split the data into <code>training</code> and <code>test</code> sets.</li>
-<li>Step 2: Choose a slope and intercept that minimize training MSE.</li>
-<li>Step 3: Using the same slope and intercept from step 2, make predictions on the <code>test</code> set, and use these predictions to compute test MSE.</li>
+<li>Step 1: Split the data into <code>training</code> and
+<code>test</code> sets.</li>
+<li>Step 2: Choose a slope and intercept that minimize training
+MSE.</li>
+<li>Step 3: Using the same slope and intercept from step 2, make
+predictions on the <code>test</code> set, and use these predictions to
+compute test MSE.</li>
 <li>This begs the question, why do we care about test MSE?</li>
 </ul>
 </div>
 <div id="why-cross-validate" class="slide section level2">
 <h1>Why cross-validate?</h1>
 <ul>
-<li>Why go to all this trouble to compute test MSE when we could just compute MSE on the original dataset?</li>
-<li>When we compute MSE on the original dataset, we are measuring the ability of a model to make predictions <em>on the current batch of data</em>.</li>
-<li>Relying on a single dataset can lead to models that are so specific to the current batch of data that they’re unable to make good predictions for future observations.
+<li>Why go to all this trouble to compute test MSE when we could just
+compute MSE on the original dataset?</li>
+<li>When we compute MSE on the original dataset, we are measuring the
+ability of a model to make predictions <em>on the current batch of
+data</em>.</li>
+<li>Relying on a single dataset can lead to models that are so specific
+to the current batch of data that they’re unable to make good
+predictions for future observations.
 <ul>
 <li>This phenomenon is known as <em>overfitting</em>.</li>
 </ul></li>
-<li>By splitting the data into a training and test set, we are <em>hiding a proportion of the data</em> from the model. This emulates future observations, which are unseen.</li>
-<li>Test MSE estimates the ability of a model to make predictions on <em>future observations</em>.</li>
+<li>By splitting the data into a training and test set, we are
+<em>hiding a proportion of the data</em> from the model. This emulates
+future observations, which are unseen.</li>
+<li>Test MSE estimates the ability of a model to make predictions on
+<em>future observations</em>.</li>
 </ul>
 </div>
 <div id="example-of-overfitting" class="slide section level2">
 <h1>Example of overfitting</h1>
 <ul>
-<li>The following example motivates cross-validation by illustrating the dangers of overfitting.</li>
-<li>We randomly select 7 points from the <code>arm_span</code> dataset and fit two models: a linear model, and a <em>polynomial model</em>.
+<li>The following example motivates cross-validation by illustrating the
+dangers of overfitting.</li>
+<li>We randomly select 7 points from the <code>arm_span</code> dataset
+and fit two models: a linear model, and a <em>polynomial model</em>.
 <ul>
 <li>You will learn how to fit a polynomial model in lab 4F.</li>
 </ul></li>
-<li>Below is a plot of these 7 <code>training</code> points, and two curves representing the value of height each model would predict given a value of armspan.</li>
+<li>Below is a plot of these 7 <code>training</code> points, and two
+curves representing the value of height each model would predict given a
+value of armspan.</li>
 </ul>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAckAAAHOCAMAAADE5AL7AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFKUExURf///wAAAP8AAP0AAAIAAP39/f8CAv/9/QICAgIC//39/wAA/wAAAv//25A6AAAAZrb//9uQOjqQ2/+2ZgA6kNv/////tmYAAGa2/zpmZjoAAABmtgIA/f0AAv8BAf/+/gEB//7+/wEA/v4AAQEBAf4AAAEAAP7+/mYAOpDb/7ZmAP/bkAAAOjoAOjsBAABmtf7//2YBAf+2Z2W1/gIBAY/a/gE6kNr+/zsBOpDa/mcBAQFltQIBOpA7ATqQ2tuQOwEAZrX+/wEBZtuRO7X+/pE7ATuP2rZnAgFmtf3+/wFmtv/bkTsBATqP2ma1/bX9/rb/trX+trZmATo6OrZnAQEBZTsBOwIBZgEAOgEBOma1/gE6j9r+/gEBAGa2/mYBOpCQZrbakDoBAGa2tpC1kGa1tZDa/2YBANr//7b+/5A6AbXakGaQkAAAAFp/Qn4AAABudFJOU/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////8AoAU8MwAAAAlwSFlzAAAOwwAADsMBx2+oZAAAERlJREFUeF7t3Ulv48gZxnFTV8GLRrDkuL9AQ+5GDoM+5RQM5thAgGAu8SVBcku+/zm1keJSy8tayJfF5w9MW+2Wyqz6DRfLlv2AEEIIIYQQQgghlKUmtYN5u8uiJm9WPnfJ4x7M210WM3lIcgyStQTJWoJkLUGyliBZS5CsJUhWUtTcIckwSNYSJGsJkrUEyVqCZC1BspbqktwzJSRrCZK1BMlagmQtQbKWIFlLkKwlSNYSJGsJkrUEyVqCZC1BspYgWUuQrCVI1hIkawmStQTJWoJkLUGyliBZSXEzhyS/IFlLkKwlSNYSJGsJkrUEyVqCZC1BspYgWUuQrCVIVlJziFo8SHKrETOPWT1IMkssnJh5xPJBklkVSu6UEpLVVN95cq+S9V277lYycuKQ5BckawmStRQ38aN5mztIxhcz8eMR+yS7oiBxdGVYxLzlkRWS7Jo/b3WKjFzxx9/1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" width="50%" height="50%" /></p>
 <ul>
-<li><strong>Which model does a better job of predicting the 7 <code>training</code> points?</strong></li>
-<li><strong>Which model do you think will do a better job of predicting the rest of the data?</strong></li>
+<li><strong>Which model does a better job of predicting the 7
+<code>training</code> points?</strong></li>
+<li><strong>Which model do you think will do a better job of predicting
+the rest of the data?</strong></li>
 </ul>
 </div>
 <div id="example-of-overfitting-continued" class="slide section level2">
 <h1>Example of overfitting, continued</h1>
 <ul>
-<li>Below is a plot of the rest of the <code>arm_span</code> dataset, along with the predictions each model would make.</li>
+<li>Below is a plot of the rest of the <code>arm_span</code> dataset,
+along with the predictions each model would make.</li>
 </ul>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAdYAAAHbCAMAAABBWku2AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFQUExURf///wAAAP8AAP0AAAIAAP39/f8CAv/9/QICAgEBAf7+/gIC//39/wAA/wAAAv//25A6AAAAZrb//9uQOjqQ2/+2ZgA6kNv/////tmYAAGa2/zpmZjoAAABmtgIA/f0AAv8BAf/+/gEAAAEB//7+/wEA/v4AAf4AAGYAOpDb/7ZmAP/bkAAAOgAA/joAOgAAATsBAABmtf7//2YBAf+2Z2W1/gIBAY/a/gE6kNr+/zsBOpDa/mcBAQFltQIBOpA7ATqQ2tuQOwEAZrX+/wEBZtuRO7X+/pE7ATuP2rZnAgFmtf3+/wFmtv/bkTsBATqP2ma1/bX9/rb/trX+trZmATo6OrZnAQEBZTsBOwIBZgEBOgEAOma1/gE6j9r+/gEBAGa2/mYBOpCQZrbakDoBAGa2tpC1kGa1tZDa/2YBANr//7b+/5A6AbXakGaQkAAAAEi29WUAAABwdFJOU////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////wC3YWLSAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAUZklEQVR4Xu2dTW8buxWGLe8Nx1HVSKmzv7CDAF1c5AdcXHRVBChQdNNsWrTL/v9l+TUfnOHHGfJwRHLeB4gl0eQhD59whhpZ0gMAAAAAAAAAAAAAAAAAAAAAAIB7c8rl0dwekqTkzcwXJbuTR3N7SFKSh9bqgdYugdYugdYugdYugdYugdYugdYeScodWmsHWrsEWrsEWrsEWrsEWrsEWrukY61H9gqtXQKtXQKtXQKtXQKtXQKtXQKtXQKtXQKtXQKtXQKtXQKtXQKtXQKtjeN+/+I6dcL7HKG1GuQsOWZqlbqnnkX+jBPI7+QAWvUkradqmbqvnkX+jBPI7wRaR3z1LPJnnEB+J9A64qtnkT/jBPI7OYBWNUuOmVql7qlnkT/jBPI7OYJW7ISPRFLq0Fo5aZlDa+VAa5dAa5dAa5dAa5dAa5dAa5dAa5dAa5dAa5dAa5dA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" width="50%" height="50%" /></p>
 <ul>
-<li><strong>Which model does a better job of generalizing to the rest of the <code>arm_span</code> dataset?</strong></li>
+<li><strong>Which model does a better job of generalizing to the rest of
+the <code>arm_span</code> dataset?</strong></li>
 </ul>
 </div>
 

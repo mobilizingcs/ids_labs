@@ -1,7 +1,11 @@
 ---
 title: "Cross-Validation"
 author: "Lab 4C"
-date: "Directions: Follow along with the slides and answer the questions in **red** font in your journal."
+date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
+  
+  <br>
+  <br>
+  Space, Click, Right Arrow or swipe left to move to the next slide.'
 output: 
   slidy_presentation: 
     css: ../../IDSLabCSSRev.css
@@ -32,14 +36,14 @@ library(mobilizr)
 
 - Waiting for new observations can take a long time. The U.S. takes a census of its population once every 10 years, for example.
 - Instead of waiting for new observations, data scientists will take their current data and divide it into two distinct sets.
-- Split the `arm_span` data into `training` and `test` sets using the following two steps.
-- First, fill in the blanks below to randomly select which rows of `arm_span` will go into the `training` set.
+- <span class="blue">Split the `arm_span` data into `training` and `test` sets using the following two steps.</span>
+- <span class="blue">First, fill in the blanks below to randomly select which rows of `arm_span` will go into the `training` set.</span>
 ```{r, eval = FALSE, echo = TRUE}
 set.seed(123)
 train_rows <- sample(1:____, size = 85)
 ```
 
-- Second, use the `slice` function to create two dataframes: one called `train` consisting of the `train_rows`, and another called `test` consisting of the remaining rows of `arm_span`.
+- <span class="blue">Second, use the `slice` function to create two dataframes: one called `train` consisting of the `train_rows`, and another called `test` consisting of the remaining rows of `arm_span`.</span>
 
 ```{r, eval = FALSE, echo = TRUE}
 train <- slice(arm_span, ____)
@@ -67,7 +71,7 @@ _Whenever you split data into training and testing, always use `set.seed` first.
 ## Step 2: train the model
 
 - Step 2 is to create a linear model relating `height` and `armspan` using the `training` data.
-- Fit a line of best fit model to our `training` data and assign it the name `best_train`.
+- <span class="blue">Fit a line of best fit model to our `training` data and assign it the name `best_train`.</span>
 - Recall that the slope and intercept of our linear model are chosen to minimize MSE. 
 - Since the MSE being minimized is from the training data, we can call it _training MSE_.
 
@@ -76,13 +80,13 @@ _Whenever you split data into training and testing, always use `set.seed` first.
 - Step 3 is to use the model we built on the `training` data to make predictions on the `test` data.
 - Note that we are NOT recomputing the slope and intercept to fit the test data best. We use the same slope and intercept that were computed in step 2.
 - Because we're using the _line of best fit_, we can use the `predict()` function we introduced in the last lab to make predictions.
-    - Fill in the blanks below to add predicted heights to our `test` data:
+    - <span class="blue">Fill in the blanks below to add predicted heights to our `test` data:</span>
 ```{r, eval = FALSE, echo = TRUE}
 test <- mutate(test, ____ = predict(best_train, newdata = ____))
 ```
 
 - Hint: the `predict` function without the argument `newdata` will output predictions on the `training` data. To output predictions on the `test` data, supply the `test` data to the `newdata` argument.
-- **Calculate the _test MSE_ in the same way as you did in the previous lab (test MSE is simply MSE of the predictions on the test data).**
+- <span class="blue">Calculate the _test MSE_ in the same way as you did in the previous lab (test MSE is simply MSE of the predictions on the test data).</span>
 
 ## Recap
 

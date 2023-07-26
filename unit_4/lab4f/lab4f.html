@@ -8,141 +8,154 @@
   <meta name="author" content="Lab 4F" />
   <title>Some models have curves</title>
   <style type="text/css">
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-            code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode { white-space: pre; position: relative; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    code.sourceCode { white-space: pre-wrap; }
-    code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-          </style>
-  <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
-  { counter-reset: source-line 0; }
+{ counter-reset: source-line 0; }
 pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
+{ position: relative; left: -4em; counter-increment: source-line; }
 pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
   <style type="text/css">
 body
 {
@@ -505,7 +518,7 @@ list-style-type: none;
   });
 })()
 </script>
-  <link href="data:text/css;charset=utf-8,code%20%7B%0Afont%2Dfamily%3A%20monospace%3B%0Acolor%3A%20%2310437F%3B%0A%7D%0Astrong%20%7B%0Acolor%3A%20%23B21212%3B%0A%7D%0Afooter%20%7B%0Adisplay%3A%20block%3B%0Aposition%3A%20absolute%3B%0Abottom%3A%200%3B%0Awidth%3A%20100%25%3B%0Afont%2Dsize%3A%2020pt%3B%0Acolor%3A%20%2325679E%3B%0Atext%2Dalign%3A%20center%3B%20%7D%0A%2Eslide%20%2Etitle%20%7B%0Afont%2Dsize%3A%20250%25%3B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0Afont%2Dstyle%3A%20normal%3B%0A%7D%0A%2Etitle%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Eauthor%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Edate%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Egreenequation%20%7B%0Afont%2Dsize%3A%20150%25%3B%0Acolor%3A%20green%3B%0Atext%2Dalign%3A%20center%3B%0Aline%2Dheight%3A%20normal%3B%0A%7D%0Ali%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Ali%20ul%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Abody%20%7B%0Afont%2Dfamily%3A%20sans%2Dserif%3B%0A%7D%0Apre%2EsourceCode%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0Acode%2EsourceCode%20%7B%0Afont%2Dsize%3A%2095%25%3B%0A%7D%0Apre%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0A%2EsourceCode%20%7B%0Aoverflow%3A%20auto%3B%0A%7D%0A%2Eslidy%5Ftoc%20%7B%0Amax%2Dheight%3A%2080vh%3B%0A%7D" rel="stylesheet" type="text/css" media="screen, projection, print" />
+  <link href="data:text/css,code%20%7B%0Afont%2Dfamily%3A%20monospace%3B%0Acolor%3A%20%2310437F%3B%0A%7D%0Aspan%2Eblue%20%7B%0Acolor%3A%20%2325679E%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Astrong%20%7B%0Acolor%3A%20%23B21212%3B%0A%7D%0Afooter%20%7B%0Adisplay%3A%20block%3B%0Aposition%3A%20absolute%3B%0Abottom%3A%200%3B%0Awidth%3A%20100%25%3B%0Afont%2Dsize%3A%2020pt%3B%0Acolor%3A%20%2325679E%3B%0Atext%2Dalign%3A%20center%3B%20%7D%0A%2Eslide%20%2Etitle%20%7B%0Afont%2Dsize%3A%20250%25%3B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0Afont%2Dstyle%3A%20normal%3B%0A%7D%0A%2Etitle%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Eauthor%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Edate%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Egreenequation%20%7B%0Afont%2Dsize%3A%20150%25%3B%0Acolor%3A%20green%3B%0Atext%2Dalign%3A%20center%3B%0Aline%2Dheight%3A%20normal%3B%0A%7D%0Ali%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Ali%20ul%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Abody%20%7B%0Afont%2Dfamily%3A%20sans%2Dserif%3B%0A%7D%0Apre%2EsourceCode%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0Acode%2EsourceCode%20%7B%0Afont%2Dsize%3A%2095%25%3B%0A%7D%0Apre%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0A%2EsourceCode%20%7B%0Aoverflow%3A%20auto%3B%0A%7D%0A%2Eslidy%5Ftoc%20%7B%0Amax%2Dheight%3A%2080vh%3B%0A%7D" rel="stylesheet" type="text/css" media="screen, projection, print" />
 </head>
 <body>
 <div class="slide titlepage">
@@ -513,41 +526,67 @@ list-style-type: none;
   <p class="author">
 Lab 4F
   </p>
-  <p class="date">Directions: Follow along with the slides and answer the questions in <strong>red</strong> font in your journal.</p>
+  <p class="date">Directions: Follow along with the slides, completing
+the questions in <font color="#25679E"><b>blue</b></font> on your
+computer, and answering the questions in <strong>red</strong> in your
+journal. <br> <br> Space, Click, Right Arrow or swipe left to move to
+the next slide.</p>
 </div>
 <div id="making-models-do-yoga" class="slide section level2">
 <h1>Making models do yoga</h1>
 <ul>
-<li>So far, we have only worked with prediction models that fit the <em>line of best fit</em> to the data.</li>
-<li>What happens if the true relationship between the data is nonlinear?</li>
-<li>In this lab, we will learn about prediction models that fit <em>best fitting curves</em> to data.</li>
-<li><strong>Before moving on, load the <code>movie</code> data and split it into two sets:</strong>
+<li>So far, we have only worked with prediction models that fit the
+<em>line of best fit</em> to the data.</li>
+<li>What happens if the true relationship between the data is
+nonlinear?</li>
+<li>In this lab, we will learn about prediction models that fit <em>best
+fitting curves</em> to data.</li>
+<li><span class="blue">Before moving on, load the <code>movie</code>
+data and split it into two sets:</span>
 <ul>
-<li><strong>A set named <code>training</code> that includes 75% of the data.</strong></li>
-<li><strong>And a set named <code>testing</code> that includes the remaining 25%.</strong></li>
-<li>Remember to use <code>set.seed</code>.</li>
+<li><span class="blue">A set named <code>training</code> that includes
+75% of the data.</span></li>
+<li><span class="blue">And a set named <code>testing</code> that
+includes the remaining 25%.</span></li>
+<li><span class="blue">Remember to use
+<code>set.seed</code>.</span></li>
 </ul></li>
 </ul>
 </div>
 <div id="problems-with-lines" class="slide section level2">
 <h1>Problems with lines</h1>
 <ul>
-<li>Before learning how to fit curves, let’s first fit a linear model for reference.</li>
-<li><strong>Train a linear model predicting <code>audience_rating</code> based on <code>critics_rating</code> for the <code>training</code> data. Assign this model to <code>movie_linear</code>.</strong></li>
-<li><strong>Fill in the blanks below to create a scatterplot with <code>audience_rating</code> on the y-axis and <code>critics_rating</code> on the x-axis using your <code>testing</code> data.</strong></li>
+<li>Before learning how to fit curves, let’s first fit a linear model
+for reference.</li>
+<li><span class="blue">Train a linear model predicting
+<code>audience_rating</code> based on <code>critics_rating</code> for
+the <code>training</code> data. Assign this model to
+<code>movie_linear</code>.</span></li>
+<li><span class="blue">Fill in the blanks below to create a scatterplot
+with <code>audience_rating</code> on the y-axis and
+<code>critics_rating</code> on the x-axis using your
+<code>testing</code> data.</span></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">xyplot</span>(____ <span class="op">~</span><span class="st"> </span>____, <span class="dt">data =</span> ____)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xyplot</span>(____ <span class="sc">~</span> ____, <span class="at">data =</span> ____)</span></code></pre></div>
 <ul>
-<li>Previously, you used <code>add_line</code> to plot the <em>line of best fit</em>. An alternative function for plotting the <em>line of best fit</em> is <code>add_curve</code>, which takes the name of the model as an argument.</li>
-<li><strong>Run the code below to add the <em>line of best fit</em> for the <code>training</code> data to the plot.</strong></li>
+<li>Previously, you used <code>add_line</code> to plot the <em>line of
+best fit</em>. An alternative function for plotting the <em>line of best
+fit</em> is <code>add_curve</code>, which takes the name of the model as
+an argument.</li>
+<li><span class="blue">Run the code below to add the <em>line of best
+fit</em> for the <code>training</code> data to the plot.</span></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">add_curve</span>(movie_linear)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_curve</span>(movie_linear)</span></code></pre></div>
 <ul>
-<li><strong>Describe, in words, how the line fits the data. Are there any values for <code>critics_rating</code> that would make obviously poor predictions?</strong>
+<li><strong>Describe, in words, how the line fits the data. Are there
+any values for <code>critics_rating</code> that would make obviously
+poor predictions?</strong>
 <ul>
-<li>Hint: how does the linear model perform on very low and very high values of <code>critics_rating</code>?</li>
+<li>Hint: how does the linear model perform on very low and very high
+values of <code>critics_rating</code>?</li>
 </ul></li>
-<li><strong>Compute the MSE of the linear model for the <code>testing</code> data and write it down for later.</strong>
+<li><strong>Compute the MSE of the linear model for the
+<code>testing</code> data and write it down for later.</strong>
 <ul>
 <li>Hint: refer to lab 4B.</li>
 </ul></li>
@@ -556,13 +595,15 @@ Lab 4F
 <div id="adding-flexibility" class="slide section level2">
 <h1>Adding flexibility</h1>
 <ul>
-<li>You don’t need to be a full-fledged Data Scientist to realize that trying to fit a line to curved data is a poor modeling choice.</li>
+<li>You don’t need to be a full-fledged Data Scientist to realize that
+trying to fit a line to curved data is a poor modeling choice.</li>
 <li>If our data is curved, we should try to model it with a curve.</li>
 <li>Instead of fitting a line, with equation of the form
 <center>
 <code>y = a + bx</code>
 </center></li>
-<li>we might consider fitting a <em>quadratic curve</em>, with equation of the form
+<li>we might consider fitting a <em>quadratic curve</em>, with equation
+of the form
 <center>
 <code>y = a + bx + cx</code><sup><code>2</code></sup>
 </center></li>
@@ -570,50 +611,77 @@ Lab 4F
 <center>
 <code>y = a + bx + cx</code><sup><code>2</code></sup><code>+ dx</code><sup><code>3</code></sup>
 </center></li>
-<li>In general, the more coefficients in the model, the more flexible its predictions can be.</li>
+<li>In general, the more coefficients in the model, the more flexible
+its predictions can be.</li>
 </ul>
 <p><img src="data:image/png;base64,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" width="50%" height="50%" /></p>
 </div>
 <div id="making-bend-y-models" class="slide section level2">
 <h1>Making bend-y models</h1>
 <ul>
-<li>To fit a quadratic model in <code>R</code>, we can use the <code>poly()</code> function.
+<li>To fit a quadratic model in <code>R</code>, we can use the
+<code>poly()</code> function.
 <ul>
-<li><strong>Fill in the blanks below to train a quadratic model predicting <code>audience_rating</code> from <code>critics_rating</code>, and assign that model to <code>movie_quad</code>.</strong></li>
+<li><span class="blue">Fill in the blanks below to train a quadratic
+model predicting <code>audience_rating</code> from
+<code>critics_rating</code>, and assign that model to
+<code>movie_quad</code>.</span></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>movie_quad &lt;-<span class="st"> </span><span class="kw">lm</span>(____ <span class="op">~</span><span class="st"> </span><span class="kw">poly</span>(____, <span class="dv">2</span>), <span class="dt">data =</span> training)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>movie_quad <span class="ot">&lt;-</span> <span class="fu">lm</span>(____ <span class="sc">~</span> <span class="fu">poly</span>(____, <span class="dv">2</span>), <span class="at">data =</span> training)</span></code></pre></div>
 <ul>
-<li><strong>What is the role of the number <code>2</code> in the <code>poly()</code> function?</strong></li>
+<li><strong>What is the role of the number <code>2</code> in the
+<code>poly()</code> function?</strong></li>
 </ul>
 </div>
 <div id="comparing-lines-and-curves" class="slide section level2">
 <h1>Comparing lines and curves</h1>
 <ul>
-<li><strong>Fill in the blanks below to</strong>
+<li><span class="blue">Fill in the blanks below to</span>
 <ul>
-<li><strong>create a scatterplot with <code>audience_rating</code> on the y-axis and <code>critics_rating</code> on the x-axis using your <code>testing</code> data, and</strong></li>
-<li><strong>add the <em>line of best fit</em> and <em>best fitting quadratic curve</em>.</strong></li>
-<li>Hint: the <code>col</code> argument is added to the <code>add_curve</code> functions to help distinguish the two curves.</li>
+<li><span class="blue">create a scatterplot with
+<code>audience_rating</code> on the y-axis and
+<code>critics_rating</code> on the x-axis using your
+<code>testing</code> data, and</span></li>
+<li><span class="blue">add the <em>line of best fit</em> and <em>best
+fitting quadratic curve</em>.</span></li>
+<li>Hint: the <code>col</code> argument is added to the
+<code>add_curve</code> functions to help distinguish the two
+curves.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">xyplot</span>(____ <span class="op">~</span><span class="st"> </span>____, <span class="dt">data =</span> ____)</span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="kw">add_curve</span>(____, <span class="dt">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="kw">add_curve</span>(____, <span class="dt">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xyplot</span>(____ <span class="sc">~</span> ____, <span class="at">data =</span> ____)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">add_curve</span>(____, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">add_curve</span>(____, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
 <ul>
-<li><strong>Compare how the <em>line of best fit</em> and the <em>quadratic</em> model fit the data. Which do you think has a lower <code>test</code> MSE?</strong></li>
-<li><strong>Compute the MSE of the quadratic model for the <code>test</code> data and write it down for later</strong>.</li>
-<li><strong>Use the difference in each model’s <code>test</code> MSE to describe why one model fits better than the other.</strong></li>
+<li><strong>Compare how the <em>line of best fit</em> and the
+<em>quadratic</em> model fit the data. Which do you think has a lower
+<code>test</code> MSE?</strong></li>
+<li><strong>Compute the MSE of the quadratic model for the
+<code>test</code> data and write it down for later</strong>.</li>
+<li><strong>Use the difference in each model’s <code>test</code> MSE to
+describe why one model fits better than the other.</strong></li>
 </ul>
 </div>
 <div id="on-your-own" class="slide section level2">
 <h1>On your own</h1>
 <ul>
-<li><strong>Create a model that predicts <code>audience_rating</code> using a cubic curve (polynomial with degree <code>3</code>), and assign this model to <code>movie_cubic</code></strong>.</li>
-<li><strong>Create a scatterplot with <code>audience_rating</code> on the y-axis and <code>critics_rating</code> on the x-axis using your <code>test</code> data.</strong></li>
-<li><strong>Using the names of the three models you have trained, add the <em>line of best fit</em>, <em>best fitting quadratic curve</em>, and <em>best fitting cubic curve</em> for the <code>training data</code> to the plot.</strong></li>
-<li><strong>Based on the plot, which model do you think is the best at predicting the <code>testing</code> data?</strong></li>
-<li><strong>Use the difference in testing MSE to verify which model is the best at predicting the <code>testing data</code>.</strong></li>
+<li><span class="blue">Create a model that predicts
+<code>audience_rating</code> using a cubic curve (polynomial with degree
+<code>3</code>), and assign this model to
+<code>movie_cubic</code>.</span></li>
+<li><span class="blue">Create a scatterplot with
+<code>audience_rating</code> on the y-axis and
+<code>critics_rating</code> on the x-axis using your <code>test</code>
+data.</span></li>
+<li><span class="blue">Using the names of the three models you have
+trained, add the <em>line of best fit</em>, <em>best fitting quadratic
+curve</em>, and <em>best fitting cubic curve</em> for the
+<code>training data</code> to the plot.</span></li>
+<li><strong>Based on the plot, which model do you think is the best at
+predicting the <code>testing</code> data?</strong></li>
+<li><strong>Use the difference in testing MSE to verify which model is
+the best at predicting the <code>testing data</code>.</strong></li>
 </ul>
 </div>
 
