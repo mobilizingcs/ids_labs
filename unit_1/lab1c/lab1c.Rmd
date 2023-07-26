@@ -93,8 +93,8 @@ If you forget your username or password, ask your teacher to remind you.
 - By <font color="green">Uploading</font> your data into RStudio you've really only given yourself access to it.
   - Don't believe me? Look at the <font color="green">Environment</font> pane ... where's your data?
 - To actually use the data we need to <font color="green">Import</font> it into your computer's memory.
-- To compute more quickly and efficiently, `R` will only keep a few data sets stored in its memory at a time.
-    - By importing data, you are telling `R` that this is a data set that is important to store it in its memory so you can use it.
+- To compute more quickly and efficiently, `R` will only keep a few datasets stored in its memory at a time.
+    - By importing data, you are telling `R` that this is a dataset that is important to store it in its memory so you can use it.
 
 
 ## Importing

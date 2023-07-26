@@ -79,7 +79,7 @@ View(cdc)
 - <font color=#25679E><b>Find the pane that has a _tab_ titled _Environment_ and click on the _tab_.</b></font>
     - This pane contains a list of everything that's currently available for `R` to use.
     - Notice that `R` knows we have our `cdc` data loaded.
-- **How many students are in our `cdc` data set?**
+- **How many students are in our `cdc` dataset?**
 - **How many variables were measured for each student?**
 
   
@@ -143,7 +143,7 @@ function(y ~ x, data = ___)
 - To create graphs or plots you need to provide `R` with the following:
   - The name of the `R` function, often the plot’s name, that tells the computer how to create your graph.
   - The variable(s) containing the information we want the function to use.
-  - The data set containing the variables.
+  - The dataset containing the variables.
   
 - Notice that when we analyze a single variable the value for _y_ is left blank. 
 

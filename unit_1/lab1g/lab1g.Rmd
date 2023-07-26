@@ -70,7 +70,7 @@ bargraph(~phys_challenge | gender, data = atu_clean)
 
 ## Interpreting 2-way frequency tables
 
-- Recall that  there were `r tally(~gender, data = atu_clean)[2] - tally(~gender, data = atu_clean)[1]` more women than men in our data set.
+- Recall that  there were `r tally(~gender, data = atu_clean)[2] - tally(~gender, data = atu_clean)[1]` more women than men in our dataset.
     - If there are more women, then we might expect women to have more physical challenges (compared to men).
 - Instead of using _counts_ we use _percentages_.
 - <span class="blue">Include: `format = "percent"` as an option to the code you used to make your 2-way frequency table.</span> 

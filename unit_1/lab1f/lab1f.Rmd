@@ -205,7 +205,7 @@ atu_cleaner <- mutate(atu_cleaner, gender =
     - `"02"`: Person surveyed _did_ have a physical challenge.
 
 - <span class="blue">Write a script that:</span>
-    1. Loads the `atu_dirty` data set
+    1. Loads the `atu_dirty` dataset
     2. Cleans the data as we have in this lab
     3. Saves a copy of the cleaned data (see next slide).
     
