@@ -73,7 +73,7 @@ library(mobilizr)
 - First, we need to compute the predictions that our model makes on test data.
     - <span class="blue">Use the `data` function to load the `titanic_test` data.</span>
     - <span class="blue">Fill in the blanks below to predict whether people in the `titanic_test` data survived or not using `tree1`.</span>
-    - Note: the argument `type = "class"` tells the `predict` function that we are classifying a categorical variable instead of regressing a numerical variable.
+    - Note: the argument `type = "class"` tells the `predict` function that we are classifying a categorical variable instead of predicting a numerical variable.
 
 ```{r, eval = FALSE, echo = TRUE}
 titanic_test <- mutate(____, prediction = predict(____, newdata = ____, type = "class"))
