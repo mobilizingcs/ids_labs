@@ -3,7 +3,8 @@ title: "Which song plays next?"
 author: "Lab 2C"
 date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
   
-  
+  <br>
+  <br>
   Space, Click, Right Arrow or swipe left to move to the next slide.'
 output:
   slidy_presentation:
@@ -63,11 +64,11 @@ songs <- c(rap, rock)
 
 - Simulations are meant to mimic what happens in real-life using randomness and computers.
     - Before we can start simulating picking songs from a playlist, we need to simulate that playlist in `R`.
-- To simulate our 39 `rap` songs, we'll use the repeat `rep()` function.
+- <span class="blue">Simulate our 39 `rap` songs using the repeat `rep()` function.</span>
 ```{r, eval = FALSE, echo = TRUE}
 rap <- rep("rap", times = 39)
 ```
-- Look in the `Environment` pane for the vector containing your rap songs.
+- <span class="blue">Look in the `Environment` pane for the vector containing your `rap` songs.</span>
 - <span class="blue">Use a similar line of code to simulate the rock songs in our playlist of 100.</span>
 
 
@@ -113,7 +114,7 @@ do(___) * sample(___, ___ = ___, ___ = ___)
 - **What is the variable name?**
   - `R` defaulted to naming the variable based on the function used. You may use the data cleaning skills you learned in lab 6 to `rename` the variable if you wish.
 
-- <span class="blue">Fill in the blank below to tally how often each genre was selected:</span>
+- <span class="blue">Fill in the blank below to `tally` how often each genre was selected:</span>
 ```{r, eval = FALSE, echo = TRUE}
 tally(~___, data = draws)
 ```

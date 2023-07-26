@@ -3,7 +3,8 @@ title: "All About Distributions"
 author: "Lab 2A"
 date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
   
-  
+  <br>
+  <br>
   Space, Click, Right Arrow or swipe left to move to the next slide.'
 output:
   slidy_presentation:
@@ -40,11 +41,11 @@ knitr::opts_chunk$set(echo = FALSE)
 
 - _Export_, _upload_ and _import_ your class' _Personality Color_ data.
     - Name your data `colors` when you load it.
-- Before analyzing a new data set, it's often helpful to get familiar with it. So:
+- Before analyzing a new dataset, it's often helpful to get familiar with it. So:
     - **Write down the `names` of the 4 variables that contain the point-totals, or _scores_, for each personality color.**
     - **Write down the `names` of the variables that tell us an observation's introvert/extrovert designation and whether they are involved in _sports_.**
-    - **How many variables are in the data set?**
-    - **How many observations are in the data set?**
+    - **How many variables are in the dataset?**
+    - **How many observations are in the dataset?**
 
 
 ## Estimating centers

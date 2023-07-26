@@ -3,7 +3,8 @@ title: "The Titanic Shuffle"
 author: "Lab 2F"
 date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
   
-  
+  <br>
+  <br>
   Space, Click, Right Arrow or swipe left to move to the next slide.'
 output:
   slidy_presentation:
@@ -52,17 +53,17 @@ _Is there any evidence to suggest that those who survived paid a higher fare tha
 
 ## Do the shuffle!
 
-- <span class="blue">Use the `do` and the `shuffle` functions to shuffle the passenger's survival status 500 times.</span>
+- <span class="blue">Use the `do` and the `shuffle` functions to `shuffle` the passenger's survival status 500 times.</span>
     - Use the previous lab if you need some help on how to do this.
-    - For each shuffle, compute each group's `median` fare paid. 
-    - `Assign` your shuffled data the name `shuffled_survival`.
-- <span class="blue">After shuffling your data, use the mutate function to create a variable called diff which is the median fare of survivors minus the median fare of non-survivors.</span>
-    - Assign your mutated data the name shuffled_survival again.
+    - For each shuffle, compute each group's median fare paid. 
+    - Assign your shuffled data the name `shuffled_survival`.
+- <span class="blue">After shuffling your data, use the `mutate` function to create a variable called _diff_ which is the `median` fare of survivors minus the `median` fare of non-survivors.</span>
+    - Assign your mutated data the name `shuffled_survival` again.
   
 
 ## Put your simulations to use
 
-- **By using your shuffled data, answer the research question we posed at the beginning of the lab.**
+- **Using your shuffled data, answer the research question we posed at the beginning of the lab.**
 
 _Is there any evidence to suggest that those who survived paid a higher fare than those who died?_
 

@@ -8,141 +8,154 @@
   <meta name="author" content="Lab 2C" />
   <title>Which song plays next?</title>
   <style type="text/css">
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-            code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode { white-space: pre; position: relative; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    code.sourceCode { white-space: pre-wrap; }
-    code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-          </style>
-  <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
-  { counter-reset: source-line 0; }
+{ counter-reset: source-line 0; }
 pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
+{ position: relative; left: -4em; counter-increment: source-line; }
 pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
   <style type="text/css">
 body
 {
@@ -505,7 +518,7 @@ list-style-type: none;
   });
 })()
 </script>
-  <link href="data:text/css;charset=utf-8,code%20%7B%0Afont%2Dfamily%3A%20monospace%3B%0Acolor%3A%20%2310437F%3B%0A%7D%0Aspan%2Eblue%20%7B%0Acolor%3A%20%2325679E%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Astrong%20%7B%0Acolor%3A%20%23B21212%3B%0A%7D%0Afooter%20%7B%0Adisplay%3A%20block%3B%0Aposition%3A%20absolute%3B%0Abottom%3A%200%3B%0Awidth%3A%20100%25%3B%0Afont%2Dsize%3A%2020pt%3B%0Acolor%3A%20%2325679E%3B%0Atext%2Dalign%3A%20center%3B%20%7D%0A%2Eslide%20%2Etitle%20%7B%0Afont%2Dsize%3A%20250%25%3B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0Afont%2Dstyle%3A%20normal%3B%0A%7D%0A%2Etitle%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Eauthor%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Edate%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Egreenequation%20%7B%0Afont%2Dsize%3A%20150%25%3B%0Acolor%3A%20green%3B%0Atext%2Dalign%3A%20center%3B%0Aline%2Dheight%3A%20normal%3B%0A%7D%0Ali%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Ali%20ul%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Abody%20%7B%0Afont%2Dfamily%3A%20sans%2Dserif%3B%0A%7D%0Apre%2EsourceCode%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0Acode%2EsourceCode%20%7B%0Afont%2Dsize%3A%2095%25%3B%0A%7D%0Apre%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0A%2EsourceCode%20%7B%0Aoverflow%3A%20auto%3B%0A%7D%0A%2Eslidy%5Ftoc%20%7B%0Amax%2Dheight%3A%2080vh%3B%0A%7D" rel="stylesheet" type="text/css" media="screen, projection, print" />
+  <link href="data:text/css,code%20%7B%0Afont%2Dfamily%3A%20monospace%3B%0Acolor%3A%20%2310437F%3B%0A%7D%0Aspan%2Eblue%20%7B%0Acolor%3A%20%2325679E%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Astrong%20%7B%0Acolor%3A%20%23B21212%3B%0A%7D%0Afooter%20%7B%0Adisplay%3A%20block%3B%0Aposition%3A%20absolute%3B%0Abottom%3A%200%3B%0Awidth%3A%20100%25%3B%0Afont%2Dsize%3A%2020pt%3B%0Acolor%3A%20%2325679E%3B%0Atext%2Dalign%3A%20center%3B%20%7D%0A%2Eslide%20%2Etitle%20%7B%0Afont%2Dsize%3A%20250%25%3B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0Afont%2Dstyle%3A%20normal%3B%0A%7D%0A%2Etitle%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Eauthor%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Edate%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Egreenequation%20%7B%0Afont%2Dsize%3A%20150%25%3B%0Acolor%3A%20green%3B%0Atext%2Dalign%3A%20center%3B%0Aline%2Dheight%3A%20normal%3B%0A%7D%0Ali%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Ali%20ul%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Abody%20%7B%0Afont%2Dfamily%3A%20sans%2Dserif%3B%0A%7D%0Apre%2EsourceCode%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0Acode%2EsourceCode%20%7B%0Afont%2Dsize%3A%2095%25%3B%0A%7D%0Apre%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0A%2EsourceCode%20%7B%0Aoverflow%3A%20auto%3B%0A%7D%0A%2Eslidy%5Ftoc%20%7B%0Amax%2Dheight%3A%2080vh%3B%0A%7D" rel="stylesheet" type="text/css" media="screen, projection, print" />
 </head>
 <body>
 <div class="slide titlepage">
@@ -513,135 +526,190 @@ list-style-type: none;
   <p class="author">
 Lab 2C
   </p>
-  <p class="date"><p>Directions: Follow along with the slides, completing the questions in <font color="#25679E"><b>blue</b></font> on your computer, and answering the questions in <strong>red</strong> in your journal.</p>
-Space, Click, Right Arrow or swipe left to move to the next slide.</p>
+  <p class="date">Directions: Follow along with the slides, completing
+the questions in <font color="#25679E"><b>blue</b></font> on your
+computer, and answering the questions in <strong>red</strong> in your
+journal. <br> <br> Space, Click, Right Arrow or swipe left to move to
+the next slide.</p>
 </div>
 <div id="a-new-direction" class="slide section level2">
 <h1>A new direction</h1>
 <ul>
-<li>For the past two labs, we’ve looked at ways that we can summarize data with numbers.
+<li>For the past two labs, we’ve looked at ways that we can summarize
+data with numbers.
 <ul>
-<li>Specifically, you learned how to describe the <em>center</em>, <em>shape</em> and <em>spread</em> of variables in our data.</li>
+<li>Specifically, you learned how to describe the <em>center</em>,
+<em>shape</em> and <em>spread</em> of variables in our data.</li>
 </ul></li>
-<li>In this lab, we’re going to <em>estimate the probability</em> that a rap song will be chosen from a playlist with both rap and rock songs, if the choice is made at random.
+<li>In this lab, we’re going to <em>estimate the probability</em> that a
+rap song will be chosen from a playlist with both rap and rock songs, if
+the choice is made at random.
 <ul>
-<li>The playlist we’ll work with has 100 songs: 39 are rap and 61 are rock.</li>
+<li>The playlist we’ll work with has 100 songs: 39 are rap and 61 are
+rock.</li>
 </ul></li>
 </ul>
 </div>
 <div id="estimate-what" class="slide section level2">
 <h1>Estimate what … ?</h1>
 <ul>
-<li>To <em>estimate the probability</em>, we’re going to imagine that we select a song at random, write down its genre (<em>rock</em> or <em>rap</em>), put the song back in the playlist, and repeat 499 more times for a total of 500 times.</li>
-<li>The statistical question we want to address is: <em>On average, what proportion of our selections will be rap?</em></li>
-<li><strong>Why do we <em>put a song back</em> each time we make a selection?</strong></li>
-<li><strong>What would happen in our little experiment if we did not do this?</strong></li>
+<li>To <em>estimate the probability</em>, we’re going to imagine that we
+select a song at random, write down its genre (<em>rock</em> or
+<em>rap</em>), put the song back in the playlist, and repeat 499 more
+times for a total of 500 times.</li>
+<li>The statistical question we want to address is: <em>On average, what
+proportion of our selections will be rap?</em></li>
+<li><strong>Why do we <em>put a song back</em> each time we make a
+selection?</strong></li>
+<li><strong>What would happen in our little experiment if we did not do
+this?</strong></li>
 </ul>
 </div>
 <div id="calculating-probabilities" class="slide section level2">
 <h1>Calculating probabilities</h1>
 <ul>
-<li>Remember that a <em>probability</em> is the long-run proportion of time an event occurs.
+<li>Remember that a <em>probability</em> is the long-run proportion of
+time an event occurs.
 <ul>
-<li>Many probabilities can be answered exactly with just a little math.</li>
-<li>The probability we draw a single rap song from our playlist of 39 rap and 61 rock songs is <code>39/100</code>, <code>0.39</code> or <code>39%</code>.</li>
+<li>Many probabilities can be answered exactly with just a little
+math.</li>
+<li>The probability we draw a single rap song from our playlist of 39
+rap and 61 rock songs is <code>39/100</code>, <code>0.39</code> or
+<code>39%</code>.</li>
 </ul></li>
-<li>Probabilities can also be answered exactly if we were willing to randomly select a song from the playlist, write down its <em>genre</em>, place the song back in the list, and repeatedly do this <em>forever</em>.
+<li>Probabilities can also be answered exactly if we were willing to
+randomly select a song from the playlist, write down its <em>genre</em>,
+place the song back in the list, and repeatedly do this
+<em>forever</em>.
 <ul>
 <li>Literally, <em>forever</em> …</li>
-<li>But we don’t have that much time. So we’re only going to do it 500 times which will give us an <em>estimate of the probability</em>.</li>
+<li>But we don’t have that much time. So we’re only going to do it 500
+times which will give us an <em>estimate of the probability</em>.</li>
 </ul></li>
 </ul>
 </div>
 <div id="estimating-probabilities" class="slide section level2">
 <h1>Estimating probabilities</h1>
 <ul>
-<li>You might ask, <em>Why are we estimating the probability if we know the answer is 39%?</em>
+<li>You might ask, <em>Why are we estimating the probability if we know
+the answer is 39%?</em>
 <ul>
-<li>Sometimes, probabilities are too hard to calculate with simple division as we did above. In which case, we can often program a computer to run an experiment to estimate the probability.</li>
+<li>Sometimes, probabilities are too hard to calculate with simple
+division as we did above. In which case, we can often program a computer
+to run an experiment to estimate the probability.</li>
 <li>We refer to these programs as <em>simulations</em>.</li>
 </ul></li>
-<li>The techniques you learn in this lab could be applied to very simple probability calculations or very hard and complex calculations.
+<li>The techniques you learn in this lab could be applied to very simple
+probability calculations or very hard and complex calculations.
 <ul>
-<li>In both cases, your <em>estimated</em> probability would be very close to the <em>actual</em> probability.</li>
+<li>In both cases, your <em>estimated</em> probability would be very
+close to the <em>actual</em> probability.</li>
 </ul></li>
 </ul>
 </div>
 <div id="getting-ready" class="slide section level2">
 <h1>Getting ready</h1>
 <ul>
-<li>Simulations are meant to mimic what happens in real-life using randomness and computers.
+<li>Simulations are meant to mimic what happens in real-life using
+randomness and computers.
 <ul>
-<li>Before we can start simulating picking songs from a playlist, we need to simulate that playlist in <code>R</code>.</li>
+<li>Before we can start simulating picking songs from a playlist, we
+need to simulate that playlist in <code>R</code>.</li>
 </ul></li>
-<li>To simulate our 39 <code>rap</code> songs, we’ll use the repeat <code>rep()</code> function.</li>
+<li><span class="blue">Simulate our 39 <code>rap</code> songs using the
+repeat <code>rep()</code> function.</span></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>rap &lt;-<span class="st"> </span><span class="kw">rep</span>(<span class="st">&quot;rap&quot;</span>, <span class="dt">times =</span> <span class="dv">39</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>rap <span class="ot">&lt;-</span> <span class="fu">rep</span>(<span class="st">&quot;rap&quot;</span>, <span class="at">times =</span> <span class="dv">39</span>)</span></code></pre></div>
 <ul>
-<li>Look in the <code>Environment</code> pane for the vector containing your rap songs.</li>
-<li><span class="blue">Use a similar line of code to simulate the rock songs in our playlist of 100.</span></li>
+<li><span class="blue">Look in the <code>Environment</code> pane for the
+vector containing your <code>rap</code> songs.</span></li>
+<li><span class="blue">Use a similar line of code to simulate the rock
+songs in our playlist of 100.</span></li>
 </ul>
 </div>
 <div id="put-the-songs-in-the-playlist" class="slide section level2">
 <h1>Put the songs in the playlist</h1>
 <ul>
-<li>Now that we’ve got some different songs, we need to combine them together.
+<li>Now that we’ve got some different songs, we need to combine them
+together.
 <ul>
-<li>To do this, we can use the combine function <code>c()</code> in <code>R</code>.</li>
+<li>To do this, we can use the combine function <code>c()</code> in
+<code>R</code>.</li>
 </ul></li>
-<li><span class="blue">Fill in the blanks to combine your different songs:</span></li>
+<li><span class="blue">Fill in the blanks to combine your different
+songs:</span></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>songs &lt;-<span class="st"> </span><span class="kw">__</span>(rap, ____)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>songs <span class="ot">&lt;-</span> <span class="fu">__</span>(rap, ____)</span></code></pre></div>
 <ul>
 <li>And with that, our playlist of songs should be ready to go.
 <ul>
-<li><span class="blue">Type <code>songs</code> into the console and hit enter to see your individual <em>songs</em>.</span></li>
+<li><span class="blue">Type <code>songs</code> into the console and hit
+enter to see your individual <em>songs</em>.</span></li>
 </ul></li>
 </ul>
 </div>
 <div id="pick-a-song-any-song" class="slide section level2">
 <h1>Pick a song, any song</h1>
 <ul>
-<li>Data scientists call the act of choosing things randomly from a set <em>sampling</em>.
+<li>Data scientists call the act of choosing things randomly from a set
+<em>sampling</em>.
 <ul>
 <li>We can randomly choose a song from our playlist by using:</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">sample</span>(songs, <span class="dt">size =</span> <span class="dv">1</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(songs, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <ul>
-<li><span class="blue">Run this code 10 times and compute the <em>proportion</em> of <code>&quot;rap&quot;</code> songs you drew from the 10.</span>
+<li><span class="blue">Run this code 10 times and compute the
+<em>proportion</em> of <code>&quot;rap&quot;</code> songs you drew from the
+10.</span>
 <ul>
 <li>Vocabulary Check: A <b>proportion</b> is a fraction of the whole.
 <ul>
-<li>For example, if 2 rap songs were drawn from the 10, the <em>proportion</em> would be 2/10</li>
-<li>It is more common to express a <em>proportion</em> as a decimal, in this case, 0.20</li>
-<li>It is even more common to express a <em>proportion</em> as a percentage, 20%</li>
+<li>For example, if 2 rap songs were drawn from the 10, the
+<em>proportion</em> would be 2/10</li>
+<li>It is more common to express a <em>proportion</em> as a decimal, in
+this case, 0.20</li>
+<li>It is even more common to express a <em>proportion</em> as a
+percentage, 20%</li>
 </ul></li>
 </ul></li>
-<li><strong>Once everyone in your class has computed their <em>proportions</em>, calculate the <em>range</em> of <em>proportions</em> (the largest <em>proportion</em> minus the smallest <em>proportion</em>) for your class and write it down.</strong></li>
+<li><strong>Once everyone in your class has computed their
+<em>proportions</em>, calculate the <em>range</em> of
+<em>proportions</em> (the largest <em>proportion</em> minus the smallest
+<em>proportion</em>) for your class and write it down.</strong></li>
 </ul>
 </div>
 <div id="now-do-it-some-more" class="slide section level2">
 <h1>Now do() it some more</h1>
 <ul>
-<li>Instead of running the same line of code multiple times ourselves we can use <code>R</code> to <code>do()</code> multiple repetitions for us.
+<li>Instead of running the same line of code multiple times ourselves we
+can use <code>R</code> to <code>do()</code> multiple repetitions for us.
 <ul>
-<li><span class="blue">Fill in the blanks below to <code>do</code> the <code>sample</code> code from the previous slide <em>50</em> times:</span></li>
+<li><span class="blue">Fill in the blanks below to <code>do</code> the
+<code>sample</code> code from the previous slide <em>50</em>
+times:</span></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">do</span>(___) <span class="op">*</span><span class="st"> </span><span class="kw">sample</span>(___, <span class="dt">___ =</span> ___, <span class="dt">___ =</span> ___)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">do</span>(___) <span class="sc">*</span> <span class="fu">sample</span>(___, <span class="at">___ =</span> ___, <span class="at">___ =</span> ___)</span></code></pre></div>
 <ul>
-<li><p>Recall that we need to store our results to be able to perform analysis.</p></li>
-<li><p><span class="blue"><em>Assign</em> the 50 selected songs the name <code>draws</code> and then <code>View</code> your file.</span></p></li>
+<li><p>Recall that we need to store our results to be able to perform
+analysis.</p></li>
+<li><p><span class="blue"><em>Assign</em> the 50 selected songs the name
+<code>draws</code> and then <code>View</code> your file.</span></p></li>
 <li><p><strong>What is the variable name?</strong></p>
 <ul>
-<li><code>R</code> defaulted to naming the variable based on the function used. You may use the data cleaning skills you learned in lab 6 to <code>rename</code> the variable if you wish.</li>
+<li><code>R</code> defaulted to naming the variable based on the
+function used. You may use the data cleaning skills you learned in lab 6
+to <code>rename</code> the variable if you wish.</li>
 </ul></li>
-<li><p><span class="blue">Fill in the blank below to tally how often each genre was selected:</span></p></li>
+<li><p><span class="blue">Fill in the blank below to <code>tally</code>
+how often each genre was selected:</span></p></li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">tally</span>(<span class="op">~</span>___, <span class="dt">data =</span> draws)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span>___, <span class="at">data =</span> draws)</span></code></pre></div>
 <ul>
-<li><strong>Compute the proportion of <code>&quot;rap&quot;</code> songs for your 50 draws and find out if the <em>range</em> for your class’ proportions is bigger or smaller than when we drew 10 songs.</strong></li>
+<li><strong>Compute the proportion of <code>&quot;rap&quot;</code> songs for your
+50 draws and find out if the <em>range</em> for your class’ proportions
+is bigger or smaller than when we drew 10 songs.</strong></li>
 </ul>
 </div>
 <div id="proportions-vs.-probability" class="slide section level2">
@@ -650,59 +718,85 @@ Space, Click, Right Arrow or swipe left to move to the next slide.</p>
 <li>To review, so far in this lab we’ve:
 <ul>
 <li>Simulated a “playlist” of songs.</li>
-<li>Repeatedly simulated drawing a song from the playlist, noting its genre and placing it back in the playlist.</li>
-<li>Computed the proportion of the draws that were <code>&quot;rap&quot;</code>.</li>
+<li>Repeatedly simulated drawing a song from the playlist, noting its
+genre and placing it back in the playlist.</li>
+<li>Computed the proportion of the draws that were
+<code>&quot;rap&quot;</code>.</li>
 </ul></li>
-<li>These proportions are all <em>estimates</em> of the theoretical probability of choosing a rap song from a playlist.
+<li>These proportions are all <em>estimates</em> of the theoretical
+probability of choosing a rap song from a playlist.
 <ul>
-<li>As we increase the number of draws, the <em>range</em> of proportions should shrink.</li>
+<li>As we increase the number of draws, the <em>range</em> of
+proportions should shrink.</li>
 </ul></li>
 </ul>
-<p><em>When using simulations to estimate probabilities, using a large number of repeats is better because the estimates have less variability and so we can be confident we’re closer to the actual value.</em></p>
+<p><em>When using simulations to estimate probabilities, using a large
+number of repeats is better because the estimates have less variability
+and so we can be confident we’re closer to the actual value.</em></p>
 </div>
 <div id="non-random-randomness" class="slide section level2">
 <h1>Non-random Randomness</h1>
 <ul>
-<li>We’ve seen that random simulations can produce many different outcomes.
+<li>We’ve seen that random simulations can produce many different
+outcomes.
 <ul>
-<li>Some estimated probabilities in your class were smaller/larger relative to others.</li>
+<li>Some estimated probabilities in your class were smaller/larger
+relative to others.</li>
 </ul></li>
-<li>There are instances where you might like the same random events to occur for everyone.
+<li>There are instances where you might like the same random events to
+occur for everyone.
 <ul>
 <li>We can do this by using <code>set.seed()</code>.</li>
 </ul></li>
 <li>For example, the output of this code will always be the same:</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="kw">sample</span>(songs, <span class="dt">size =</span> <span class="dv">1</span>, <span class="dt">replace =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sample</span>(songs, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## [1] &quot;rap&quot;</code></pre>
 </div>
 <div id="playing-with-seeds" class="slide section level2">
 <h1>Playing with seeds</h1>
 <ul>
-<li><span class="blue">With a partner, choose a number to include in <code>set.seed</code> then redo the simulation of 50 songs. </span>
+<li><span class="blue">With a partner, choose a number to include in
+<code>set.seed</code> then redo the simulation of 50 songs. </span>
 <ul>
-<li>Both partners should run <code>set.seed(___)</code> just before simulating the 50 draws.</li>
-<li>The blank in <code>set.seed(___)</code> should be the same number for both partners.</li>
-<li><strong>Verify that both partners compute the same proportion of <code>&quot;rap&quot;</code> songs.</strong></li>
+<li>Both partners should run <code>set.seed(___)</code> just before
+simulating the 50 draws.</li>
+<li>The blank in <code>set.seed(___)</code> should be the same number
+for both partners.</li>
+<li><strong>Verify that both partners compute the same proportion of
+<code>&quot;rap&quot;</code> songs.</strong></li>
 </ul></li>
-<li><span class="blue">Redo the 50 simulations one last time but have each partner choose a different number for <code>set.seed(___)</code>. </span>
+<li><span class="blue">Redo the 50 simulations one last time but have
+each partner choose a different number for <code>set.seed(___)</code>.
+</span>
 <ul>
-<li><strong>Are the proportions still the same? If so, can you find two different values for <code>set.seed</code> that give different answers?</strong></li>
+<li><strong>Are the proportions still the same? If so, can you find two
+different values for <code>set.seed</code> that give different
+answers?</strong></li>
 </ul></li>
 </ul>
 </div>
 <div id="on-your-own" class="slide section level2">
 <h1>On your own</h1>
 <ul>
-<li>Suppose there are 1,200 students at your school. 400 of them went to the movies last Friday, 600 went to the park and the rest read at home.</li>
+<li>Suppose there are 1,200 students at your school. 400 of them went to
+the movies last Friday, 600 went to the park and the rest read at
+home.</li>
 </ul>
-<p><em>If we select a student at random, what is the probability that this student is one of the one’s who went to the movies last Friday?</em></p>
+<p><em>If we select a student at random, what is the probability that
+this student is one of the one’s who went to the movies last
+Friday?</em></p>
 <ul>
-<li><span class="blue">Answer this by estimating the probability that a randomly chosen student went to the movies using 500 simulations.</span>
+<li><span class="blue">Answer this by estimating the probability that a
+randomly chosen student went to the movies using 500 simulations.</span>
 <ul>
-<li><strong>Write down both the estimated probability and the code you used to compute your estimate. You might find it helpful to write your answer in an R Script <em>(File -&gt; New File -&gt; R Script)</em></strong></li>
-<li><span class="blue">Include <code>set.seed(123)</code> in your code before you <code>do</code> 500 repeated samples.</span></li>
+<li><strong>Write down both the estimated probability and the code you
+used to compute your estimate. You might find it helpful to write your
+answer in an R Script <em>(File -&gt; New File -&gt; R
+Script)</em></strong></li>
+<li><span class="blue">Include <code>set.seed(123)</code> in your code
+before you <code>do</code> 500 repeated samples.</span></li>
 </ul></li>
 </ul>
 </div>

@@ -8,141 +8,154 @@
   <meta name="author" content="Lab 2G" />
   <title>Getting It Together</title>
   <style type="text/css">
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-            code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode { white-space: pre; position: relative; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    code.sourceCode { white-space: pre-wrap; }
-    code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-          </style>
-  <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
-  { counter-reset: source-line 0; }
+{ counter-reset: source-line 0; }
 pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
+{ position: relative; left: -4em; counter-increment: source-line; }
 pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
   <style type="text/css">
 body
 {
@@ -505,7 +518,7 @@ list-style-type: none;
   });
 })()
 </script>
-  <link href="data:text/css;charset=utf-8,code%20%7B%0Afont%2Dfamily%3A%20monospace%3B%0Acolor%3A%20%2310437F%3B%0A%7D%0Aspan%2Eblue%20%7B%0Acolor%3A%20%2325679E%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Astrong%20%7B%0Acolor%3A%20%23B21212%3B%0A%7D%0Afooter%20%7B%0Adisplay%3A%20block%3B%0Aposition%3A%20absolute%3B%0Abottom%3A%200%3B%0Awidth%3A%20100%25%3B%0Afont%2Dsize%3A%2020pt%3B%0Acolor%3A%20%2325679E%3B%0Atext%2Dalign%3A%20center%3B%20%7D%0A%2Eslide%20%2Etitle%20%7B%0Afont%2Dsize%3A%20250%25%3B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0Afont%2Dstyle%3A%20normal%3B%0A%7D%0A%2Etitle%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Eauthor%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Edate%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Egreenequation%20%7B%0Afont%2Dsize%3A%20150%25%3B%0Acolor%3A%20green%3B%0Atext%2Dalign%3A%20center%3B%0Aline%2Dheight%3A%20normal%3B%0A%7D%0Ali%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Ali%20ul%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Abody%20%7B%0Afont%2Dfamily%3A%20sans%2Dserif%3B%0A%7D%0Apre%2EsourceCode%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0Acode%2EsourceCode%20%7B%0Afont%2Dsize%3A%2095%25%3B%0A%7D%0Apre%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0A%2EsourceCode%20%7B%0Aoverflow%3A%20auto%3B%0A%7D%0A%2Eslidy%5Ftoc%20%7B%0Amax%2Dheight%3A%2080vh%3B%0A%7D" rel="stylesheet" type="text/css" media="screen, projection, print" />
+  <link href="data:text/css,code%20%7B%0Afont%2Dfamily%3A%20monospace%3B%0Acolor%3A%20%2310437F%3B%0A%7D%0Aspan%2Eblue%20%7B%0Acolor%3A%20%2325679E%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Astrong%20%7B%0Acolor%3A%20%23B21212%3B%0A%7D%0Afooter%20%7B%0Adisplay%3A%20block%3B%0Aposition%3A%20absolute%3B%0Abottom%3A%200%3B%0Awidth%3A%20100%25%3B%0Afont%2Dsize%3A%2020pt%3B%0Acolor%3A%20%2325679E%3B%0Atext%2Dalign%3A%20center%3B%20%7D%0A%2Eslide%20%2Etitle%20%7B%0Afont%2Dsize%3A%20250%25%3B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0Afont%2Dstyle%3A%20normal%3B%0A%7D%0A%2Etitle%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Eauthor%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Edate%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Egreenequation%20%7B%0Afont%2Dsize%3A%20150%25%3B%0Acolor%3A%20green%3B%0Atext%2Dalign%3A%20center%3B%0Aline%2Dheight%3A%20normal%3B%0A%7D%0Ali%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Ali%20ul%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Abody%20%7B%0Afont%2Dfamily%3A%20sans%2Dserif%3B%0A%7D%0Apre%2EsourceCode%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0Acode%2EsourceCode%20%7B%0Afont%2Dsize%3A%2095%25%3B%0A%7D%0Apre%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0A%2EsourceCode%20%7B%0Aoverflow%3A%20auto%3B%0A%7D%0A%2Eslidy%5Ftoc%20%7B%0Amax%2Dheight%3A%2080vh%3B%0A%7D" rel="stylesheet" type="text/css" media="screen, projection, print" />
 </head>
 <body>
 <div class="slide titlepage">
@@ -513,19 +526,29 @@ list-style-type: none;
   <p class="author">
 Lab 2G
   </p>
-  <p class="date"><p>Directions: Follow along with the slides, completing the questions in <font color="#25679E"><b>blue</b></font> on your computer, and answering the questions in <strong>red</strong> in your journal.</p>
-Space, Click, Right Arrow or swipe left to move to the next slide.</p>
+  <p class="date">Directions: Follow along with the slides, completing
+the questions in <font color="#25679E"><b>blue</b></font> on your
+computer, and answering the questions in <strong>red</strong> in your
+journal. <br> <br> Space, Click, Right Arrow or swipe left to move to
+the next slide.</p>
 </div>
 <div id="putting-data-together" class="slide section level2">
 <h1>Putting data together</h1>
 <ul>
 <li>In the labs so far, we’ve only ever looked at individual data files.
 <ul>
-<li>But often times, we gain additional insights by including additional information from a separate data set.</li>
+<li>But often times, we gain additional insights by including additional
+information from a separate dataset.</li>
 </ul></li>
-<li>In this lab, we will learn how to merge information from our <em>personality color</em> data with our <em>stress/chill</em> data.</li>
-<li><span class="blue"><em>Export, upload, import</em> your <em>Personality Color</em> data set and name it <code>colors</code>.</span></li>
-<li><span class="blue">Then, <em>export, upload, import</em> your <em>Stress/Chill</em> data set and name it <code>stress</code>.</span></li>
+<li>In this lab, we will learn how to merge information from our
+<em>personality color</em> data with our <em>stress/chill</em>
+data.</li>
+<li><span class="blue"><em>Export, upload, import</em> your
+<em>Personality Color</em> dataset and name it
+<code>colors</code>.</span></li>
+<li><span class="blue">Then, <em>export, upload, import</em> your
+<em>Stress/Chill</em> dataset and name it
+<code>stress</code>.</span></li>
 </ul>
 </div>
 <div id="looking-at-stresschill" class="slide section level2">
@@ -533,97 +556,142 @@ Space, Click, Right Arrow or swipe left to move to the next slide.</p>
 <ul>
 <li>We would like to analyze the research question:</li>
 </ul>
-<p><em>How do people’s personality colors and/or sports participation affect their stress levels?</em></p>
+<p><em>How do people’s personality colors and/or sports participation
+affect their stress levels?</em></p>
 <ul>
-<li>We already have data about <em>personality color</em> and a separate data set about <em>stress</em>.
+<li>We already have data about <em>personality color</em> and a separate
+dataset about <em>stress</em>.
 <ul>
-<li>What we don’t have is a single data set with information from both … yet.</li>
+<li>What we don’t have is a single dataset with information from both …
+yet.</li>
 </ul></li>
-<li>We’ll start then by strategizing how to merge our data together.</li>
+<li>We’ll start then by strategizing how to merge our data
+together.</li>
 </ul>
 </div>
 <div id="deciding-how-to-merge" class="slide section level2">
 <h1>Deciding how to merge</h1>
 <ul>
-<li>Before we merge data, we need to decide <em>how</em> we plan to merge it:</li>
-<li>We can <em>stack</em> our data sets, that is, take one data set’s rows and add them to the bottom of the other data set.</li>
-<li>We can also <em>join</em> our data sets horizontally. This is where we take one data set’s columns and add them to the end of the other data set’s columns based on matching an <em>ID</em> variable.
+<li>Before we merge data, we need to decide <em>how</em> we plan to
+merge it:</li>
+<li>We can <em>stack</em> our datasets, that is, take one dataset’s rows
+and add them to the bottom of the other dataset.</li>
+<li>We can also <em>join</em> our datasets horizontally. This is where
+we take one dataset’s columns and add them to the end of the other
+dataset’s columns based on matching an <em>ID</em> variable.
 <ul>
-<li>The <em>ID</em> variable will have entries that we use to <em>match</em> observations in both data sets.</li>
+<li>The <em>ID</em> variable will have entries that we use to
+<em>match</em> observations in both datasets.</li>
 </ul></li>
-<li><strong>To answer the statistical question of interest, would it make more sense to <em>stack</em> or <em>join</em> our <code>colors</code> and <code>stress</code> data?</strong></li>
+<li><strong>To answer the statistical question of interest, would it
+make more sense to <em>stack</em> or <em>join</em> our
+<code>colors</code> and <code>stress</code> data?</strong></li>
 </ul>
 </div>
 <div id="finding-variables-in-common" class="slide section level2">
 <h1>Finding variables in common:</h1>
 <ul>
-<li>Look at the <code>names</code> of the variables in each data set.
+<li>Look at the <code>names</code> of the variables in each dataset.
 <ul>
-<li>To merge different data sets together, we need to find variables they have in common.</li>
+<li>To merge different datasets together, we need to find variables they
+have in common.</li>
 </ul></li>
-<li><strong>Which variables do the data sets have in common?</strong></li>
-<li><strong>Which variable would make sense to merge the data sets together with? Why not the others?</strong></li>
+<li><strong>Which variables do the datasets have in
+common?</strong></li>
+<li><strong>Which variable would make sense to merge the datasets
+together with? Why not the others?</strong></li>
 </ul>
 </div>
 <div id="caution-required" class="slide section level2">
 <h1>Caution required</h1>
 <ul>
-<li>Whether <em>stacking</em> or <em>joining</em>, we need to be careful when we merge data:</li>
-<li>When <em>stacking</em> data, we need to be absolutely certain that the variables we’re stacking represent the exact same measurements.
+<li>Whether <em>stacking</em> or <em>joining</em>, we need to be careful
+when we merge data:</li>
+<li>When <em>stacking</em> data, we need to be absolutely certain that
+the variables we’re stacking represent the exact same measurements.
 <ul>
-<li>We wouldn’t want to stack <code>height</code> in meters and <code>height</code> in inches, for instance (without converting one to the other).</li>
+<li>We wouldn’t want to stack <code>height</code> in meters and
+<code>height</code> in inches, for instance (without converting one to
+the other).</li>
 </ul></li>
-<li>When <em>joining</em> data, we need to make sure that the <em>id</em> variable in our primary data set matches to <em>one and only one</em> observation in the joining data.
+<li>When <em>joining</em> data, we need to make sure that the
+<em>id</em> variable in our primary dataset matches to <em>one and only
+one</em> observation in the joining data.
 <ul>
-<li>Otherwise, <code>R</code> won’t know which observation to match to.</li>
+<li>Otherwise, <code>R</code> won’t know which observation to match
+to.</li>
 </ul></li>
 </ul>
 </div>
 <div id="getting-ready" class="slide section level2">
 <h1>Getting ready</h1>
 <ul>
-<li>Our goal is to add the variables from the <code>colors</code> data onto the <code>stress</code> data.</li>
-<li><span class="blue">Start by ensuring that every <code>user.id</code> in the <code>colors</code> data is unique.
+<li>Our goal is to add the variables from the <code>colors</code> data
+onto the <code>stress</code> data.</li>
+<li><span class="blue">Start by ensuring that every <code>user.id</code>
+in the <code>colors</code> data is unique.
 <ul>
-<li>If there’s a duplicate, have your teacher remove the duplicate from your class’ Web Response Manager and then re-<em>export</em>, <em>upload</em>, <em>import</em> your <code>colors</code> data.</span></li>
+<li>If there’s a duplicate, have your teacher remove the duplicate from
+your class’ Web Response Manager and then re-<em>export</em>,
+<em>upload</em>, <em>import</em> your <code>colors</code>
+data.</span></li>
 </ul></li>
-<li><strong>After we add the data from <em>colors</em> to <em>stress</em>, how many rows should our merged data have? Write this number down.</strong></li>
+<li><strong>After we add the data from <em>colors</em> to
+<em>stress</em>, how many rows should our merged data have? Write this
+number down.</strong></li>
 </ul>
 </div>
 <div id="putting-them-together" class="slide section level2">
 <h1>Putting them together</h1>
 <ul>
-<li>We can use the <code>merge</code> function to <em>join</em> our data sets together using the variables that appear in both sets.</li>
-<li><span class="blue">Fill in the blanks below to join the information from the <code>colors</code> data onto the <code>stress</code>.</span></li>
+<li>We can use the <code>merge</code> function to <em>join</em> our
+datasets together using the variables that appear in both sets.</li>
+<li><span class="blue">Fill in the blanks below to join the information
+from the <code>colors</code> data onto the <code>stress</code>
+data.</span></li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">merge</span>(____, ____, <span class="dt">by =</span> <span class="st">&quot;____&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">merge</span>(____, ____, <span class="at">by =</span> <span class="st">&quot;____&quot;</span>)</span></code></pre></div>
 <ul>
-<li><span class="blue"><code>Assign</code> this <code>merged</code> data set the name <code>stress_colors</code>.</span>
+<li><span class="blue"><code>Assign</code> this <code>merged</code>
+dataset the name <code>stress_colorss</code>.</span>
 <ul>
-<li>Make sure your data has the same number of observations that you wrote down on the previous slide.</li>
+<li>Make sure your data has the same number of observations that you
+wrote down on the previous slide.</li>
 </ul></li>
 </ul>
 </div>
 <div id="saving-your-data" class="slide section level2">
 <h1>Saving your data:</h1>
 <ul>
-<li><span class="blue"><code>View</code> your merged data and make sure nothing appears to be blatantly wrong with it.</span></li>
+<li><span class="blue"><code>View</code> your merged data and make sure
+nothing appears to be blatantly wrong with it.</span></li>
 <li><strong>Why didn’t we stack the rows of data instead?</strong></li>
-<li><strong>What happens if you swap the order of the data sets in the <code>merge</code> function?</strong></li>
-<li><span class="blue">Fill in the blank below to <code>save</code> our <code>stress_color</code> data for later use.</span></li>
+<li><strong>What happens if you swap the order of the datasets in the
+<code>merge</code> function?</strong></li>
+<li><span class="blue">Fill in the blank below to <code>save</code> our
+<code>stress_colors</code> data for later use.</span></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">save</span>(stress_colors, <span class="dt">file =</span> <span class="st">&quot;stress_colors.Rda&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(stress_colorss, <span class="at">file =</span> <span class="st">&quot;stress_colorss.Rda&quot;</span>)</span></code></pre></div>
 <ul>
-<li><span class="blue">Be sure to look in the <em>Files</em> tab to make sure your data was saved.</span></li>
+<li><span class="blue">Be sure to look in the <em>Files</em> tab to make
+sure your data was saved.</span></li>
 </ul>
 </div>
 <div id="moving-on" class="slide section level2">
 <h1>Moving on</h1>
 <ul>
-<li>In the next practicum, we’ll begin analyzing our merged data. In the meantime:</li>
-<li><span class="blue">Make a few plots using variables from the <code>stress</code> data and <em>facet</em> or <em>group</em> the plots based on variables from the <code>colors</code> data.</span></li>
-<li><strong>Write down the most interesting discovery you make by just exploring your data. Write out how you found your discovery and interpret what it means for the people in your class.</strong></li>
-<li><strong>With our <em>colors</em> data, we could answer questions about the <em>typical</em> color scores in your class. Why can we no longer answer this question in our <code>stress_color</code> data?</strong></li>
+<li>In the next practicum, we’ll begin analyzing our merged data. In the
+meantime:</li>
+<li><span class="blue">Make a few plots using variables from the
+<code>stress</code> data and <em>facet</em> or <em>group</em> the plots
+based on variables from the <code>colors</code> data.</span></li>
+<li><strong>Write down the most interesting discovery you make by just
+exploring your data. Write out how you found your discovery and
+interpret what it means for the people in your class.</strong></li>
+<li><strong>With our <em>colors</em> data, we could answer questions
+about the <em>typical</em> color scores in your class. Why can we no
+longer answer this question in our <code>stress_colors</code>
+data?</strong></li>
 </ul>
 </div>
 

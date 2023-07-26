@@ -3,7 +3,8 @@ title: "Oh the Summaries ..."
 author: "Lab 2B"
 date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
   
-  
+  <br>
+  <br>
   Space, Click, Right Arrow or swipe left to move to the next slide.'
 output:
   slidy_presentation:
@@ -44,8 +45,10 @@ library(mobilizr)
 - The <b>median</b> of our data is the value that splits our data in half.
     - Half of our data is smaller than the _median_, half is larger.
 - _Q1_ and _Q3_ are similar.
-    - 25% of our data is smaller than _Q1_, 75% are larger.
-- Fill in the blanks to compute the value of _Q1_ for your predominant color.
+    - 25% of our data are smaller than _Q1_, 75% are larger.
+    - 75% of our data are smaller than _Q3_, 25% are larger.
+    
+- <span class="blue">Fill in the blanks to compute the value of _Q1_ for your predominant color.</span>
 ```{r, eval = FALSE, echo = TRUE}
 quantile(~____, data = ____, p = 0.25)
 ```
@@ -128,7 +131,7 @@ mm_diff <- function(variable, data) {
 - The function takes two _generic_ arguments: `variable` and `data`
 - It then follows the steps between the curly braces `{}`
     - Each of the _generic_ arguments is used inside the `mean` and `median` functions.
-- <span class="blue">Copy and paste the code above into a _R script_ and _run_ it. </span>
+- <span class="blue">Copy and paste the code above into an _R script_ and _run_ it. </span>
 - The `mm_diff` function will appear in your _Environment_ pane.
 
 

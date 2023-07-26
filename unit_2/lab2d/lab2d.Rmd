@@ -3,7 +3,8 @@ title: "Queue it up!"
 author: "Lab 2D"
 date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
   
-  
+  <br>
+  <br>
   Space, Click, Right Arrow or swipe left to move to the next slide.'
 output:
   slidy_presentation:
@@ -30,7 +31,7 @@ library(mobilizr)
     - Had estimates that _varied less_.
 - In this lab, we'll extend our simulation methods to cover situations that are more complex.
     - We'll learn how to estimate their probabilities.
-    - We will also look at the roll of sampling _with_ or _without_ _replacement_.
+    - We will also look at the role of sampling _with_ or _without_ _replacement_.
     
 
 ## Back to songs
@@ -57,7 +58,7 @@ library(mobilizr)
 
 - Imagine the following two scenarios.
     1. You have a coin with two sides: _Heads_ and _Tails_. You're not sure if the coin is fair and so you want to estimate the probability of getting a _Head_.
-    2. A child reaches into a candy jar with 10 _strawberry_, 50 _chocolate_ and 25 _watermelon_ candies. The child is able to grab three candies with their hand and you're interested in probability that all three candies will be chocolate.
+    2. A child reaches into a candy jar with 10 _strawberry_, 50 _chocolate_ and 25 _watermelon_ candies. The child is able to grab three candies with their hand and you're interested in the probability that all three candies will be chocolate.
 - **Which of these scenarios would you sample _with replacement_ and which would you sample _without replacement_? Why?**
     - **Write down the line of code you would run to `sample` from the candy jar. Assume the simulated jar is named `candies`.**
 
@@ -99,7 +100,7 @@ rowSums(draws == "rap")
 mutate(draws, nrap = rowSums(draws=="rap"))
 ```
 
-- Remember to assign a name to your mutated data set.
+- <span class="blue">Remember to assign a name to your mutated dataset.</span>
 
 ## Counting other outcomes
 
@@ -114,7 +115,7 @@ mutate(draws, nrap = rowSums(draws=="rap"))
 
 - <span class="blue">Fill in the blanks below to: </span>
     1. Create a subset of our simulations when both draws were `"rap"` songs.
-    2. Count the number of rows in this subset
+    2. Count the number of rows in this subset.
     3. And divide by the total number of repeated simulations.
     
 ```{r, eval = FALSE, echo = TRUE}

@@ -3,7 +3,8 @@ title: "The Horror Movie Shuffle"
 author: "Lab 2E"
 date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
   
-  
+  <br>
+  <br>
   Space, Click, Right Arrow or swipe left to move to the next slide.'
 output:
   slidy_presentation:
@@ -69,7 +70,7 @@ tally(~survival | gender, format = "percent", data = slasher, margin = TRUE)
 
 ## Do the shuffle!
 
-- When we shuffle data, we use our original data set as a starting point.
+- When we shuffle data, we use our original dataset as a starting point.
     - **Run the following and write down the resulting table on a piece of paper.**
 ```{r, eval = FALSE, echo = TRUE}
 tally(~survival | gender, data = slasher)
@@ -98,7 +99,8 @@ set.seed(7)
 ```
 
 ```{r, eval = FALSE, echo = TRUE}
-shuffled_outcomes <- do(10) * tally(~shuffle(survival) | gender, format = "percent", 
+shuffled_outcomes <- do(10) * tally(~shuffle(survival) | gender, 
+                                    format = "percent", 
                                     data = slasher)
 ```
 

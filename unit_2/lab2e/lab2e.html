@@ -8,141 +8,154 @@
   <meta name="author" content="Lab 2E" />
   <title>The Horror Movie Shuffle</title>
   <style type="text/css">
-    code{white-space: pre-wrap;}
-    span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
-    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
-            code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode { white-space: pre; position: relative; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    code.sourceCode { white-space: pre-wrap; }
-    code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      {   }
-    @media screen {
-    code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-    code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-    code span.at { color: #7d9029; } /* Attribute */
-    code span.bn { color: #40a070; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-    code span.ch { color: #4070a0; } /* Char */
-    code span.cn { color: #880000; } /* Constant */
-    code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-    code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-    code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-    code span.dt { color: #902000; } /* DataType */
-    code span.dv { color: #40a070; } /* DecVal */
-    code span.er { color: #ff0000; font-weight: bold; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #40a070; } /* Float */
-    code span.fu { color: #06287e; } /* Function */
-    code span.im { } /* Import */
-    code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-    code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-    code span.op { color: #666666; } /* Operator */
-    code span.ot { color: #007020; } /* Other */
-    code span.pp { color: #bc7a00; } /* Preprocessor */
-    code span.sc { color: #4070a0; } /* SpecialChar */
-    code span.ss { color: #bb6688; } /* SpecialString */
-    code span.st { color: #4070a0; } /* String */
-    code span.va { color: #19177c; } /* Variable */
-    code span.vs { color: #4070a0; } /* VerbatimString */
-    code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-          </style>
-  <style type="text/css">
-code.sourceCode > span { display: inline-block; line-height: 1.25; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-code.sourceCode > span:empty { height: 1.2em; }
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
-  { counter-reset: source-line 0; }
+{ counter-reset: source-line 0; }
 pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
+{ position: relative; left: -4em; counter-increment: source-line; }
 pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-  </style>
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
+div.sourceCode
+{ }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
+</style>
+  <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
   <style type="text/css">
 body
 {
@@ -505,7 +518,7 @@ list-style-type: none;
   });
 })()
 </script>
-  <link href="data:text/css;charset=utf-8,code%20%7B%0Afont%2Dfamily%3A%20monospace%3B%0Acolor%3A%20%2310437F%3B%0A%7D%0Aspan%2Eblue%20%7B%0Acolor%3A%20%2325679E%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Astrong%20%7B%0Acolor%3A%20%23B21212%3B%0A%7D%0Afooter%20%7B%0Adisplay%3A%20block%3B%0Aposition%3A%20absolute%3B%0Abottom%3A%200%3B%0Awidth%3A%20100%25%3B%0Afont%2Dsize%3A%2020pt%3B%0Acolor%3A%20%2325679E%3B%0Atext%2Dalign%3A%20center%3B%20%7D%0A%2Eslide%20%2Etitle%20%7B%0Afont%2Dsize%3A%20250%25%3B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0Afont%2Dstyle%3A%20normal%3B%0A%7D%0A%2Etitle%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Eauthor%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Edate%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Egreenequation%20%7B%0Afont%2Dsize%3A%20150%25%3B%0Acolor%3A%20green%3B%0Atext%2Dalign%3A%20center%3B%0Aline%2Dheight%3A%20normal%3B%0A%7D%0Ali%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Ali%20ul%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Abody%20%7B%0Afont%2Dfamily%3A%20sans%2Dserif%3B%0A%7D%0Apre%2EsourceCode%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0Acode%2EsourceCode%20%7B%0Afont%2Dsize%3A%2095%25%3B%0A%7D%0Apre%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0A%2EsourceCode%20%7B%0Aoverflow%3A%20auto%3B%0A%7D%0A%2Eslidy%5Ftoc%20%7B%0Amax%2Dheight%3A%2080vh%3B%0A%7D" rel="stylesheet" type="text/css" media="screen, projection, print" />
+  <link href="data:text/css,code%20%7B%0Afont%2Dfamily%3A%20monospace%3B%0Acolor%3A%20%2310437F%3B%0A%7D%0Aspan%2Eblue%20%7B%0Acolor%3A%20%2325679E%3B%0Afont%2Dweight%3A%20bold%3B%0A%7D%0Astrong%20%7B%0Acolor%3A%20%23B21212%3B%0A%7D%0Afooter%20%7B%0Adisplay%3A%20block%3B%0Aposition%3A%20absolute%3B%0Abottom%3A%200%3B%0Awidth%3A%20100%25%3B%0Afont%2Dsize%3A%2020pt%3B%0Acolor%3A%20%2325679E%3B%0Atext%2Dalign%3A%20center%3B%20%7D%0A%2Eslide%20%2Etitle%20%7B%0Afont%2Dsize%3A%20250%25%3B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0Afont%2Dstyle%3A%20normal%3B%0A%7D%0A%2Etitle%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Eauthor%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Edate%20%7B%0Atext%2Dalign%3A%20left%3B%0Acolor%3A%20%2325679E%3B%0A%7D%0A%2Egreenequation%20%7B%0Afont%2Dsize%3A%20150%25%3B%0Acolor%3A%20green%3B%0Atext%2Dalign%3A%20center%3B%0Aline%2Dheight%3A%20normal%3B%0A%7D%0Ali%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Ali%20ul%20li%20%7B%0Afont%2Dstyle%3A%20normal%3B%20%7D%0Abody%20%7B%0Afont%2Dfamily%3A%20sans%2Dserif%3B%0A%7D%0Apre%2EsourceCode%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0Acode%2EsourceCode%20%7B%0Afont%2Dsize%3A%2095%25%3B%0A%7D%0Apre%20%7B%0Amargin%2Dleft%3A%202em%3B%0A%7D%0A%2EsourceCode%20%7B%0Aoverflow%3A%20auto%3B%0A%7D%0A%2Eslidy%5Ftoc%20%7B%0Amax%2Dheight%3A%2080vh%3B%0A%7D" rel="stylesheet" type="text/css" media="screen, projection, print" />
 </head>
 <body>
 <div class="slide titlepage">
@@ -513,21 +526,31 @@ list-style-type: none;
   <p class="author">
 Lab 2E
   </p>
-  <p class="date"><p>Directions: Follow along with the slides, completing the questions in <font color="#25679E"><b>blue</b></font> on your computer, and answering the questions in <strong>red</strong> in your journal.</p>
-Space, Click, Right Arrow or swipe left to move to the next slide.</p>
+  <p class="date">Directions: Follow along with the slides, completing
+the questions in <font color="#25679E"><b>blue</b></font> on your
+computer, and answering the questions in <strong>red</strong> in your
+journal. <br> <br> Space, Click, Right Arrow or swipe left to move to
+the next slide.</p>
 </div>
 <div id="playing-with-permutations" class="slide section level2">
 <h1>Playing with permutations</h1>
 <ul>
-<li><em>Slasher</em> films are notoriously gory and are said to contain recurring biases.
+<li><em>Slasher</em> films are notoriously gory and are said to contain
+recurring biases.
 <ul>
-<li>One such bias, is that women in slasher films are more likely to survive than men.</li>
+<li>One such bias, is that women in slasher films are more likely to
+survive than men.</li>
 </ul></li>
-<li>This lab will focus on the statistical question: <em>Are women in slasher films more likely to survive until the end of the film than men?</em></li>
-<li>To answer this question, we’ll learn how to use permuted data to gauge how likely an event occurs by chance.</li>
-<li><span class="blue">To begin, use the <code>data</code> function to load the <code>slasher</code> data file.</span>
+<li>This lab will focus on the statistical question: <em>Are women in
+slasher films more likely to survive until the end of the film than
+men?</em></li>
+<li>To answer this question, we’ll learn how to use permuted data to
+gauge how likely an event occurs by chance.</li>
+<li><span class="blue">To begin, use the <code>data</code> function to
+load the <code>slasher</code> data file.</span>
 <ul>
-<li>The data contains information about 485 characters from a random sample of 50 <em>slasher</em> horror films.</li>
+<li>The data contains information about 485 characters from a random
+sample of 50 <em>slasher</em> horror films.</li>
 </ul></li>
 </ul>
 </div>
@@ -536,28 +559,42 @@ Space, Click, Right Arrow or swipe left to move to the next slide.</p>
 <ul>
 <li>To familiarize yourself with the data, answer the following:
 <ul>
-<li><strong>How many variables and observations are contained in the data and what are the possible values of the variables?</strong></li>
-<li><strong>Which gender had more survivors? Write down a few sentences as to how you came to your conclusion. Be sure to look at both the <em>counts</em> and <em>percentages</em> of survivors in each group before deciding.</strong></li>
-<li><strong>Calculate the difference between the percentage of females who survived and the percentage of males who survived. Is the difference large enough to conclude that women tend to survive more often than men?</strong></li>
+<li><strong>How many variables and observations are contained in the
+data and what are the possible values of the variables?</strong></li>
+<li><strong>Which gender had more survivors? Write down a few sentences
+as to how you came to your conclusion. Be sure to look at both the
+<em>counts</em> and <em>percentages</em> of survivors in each group
+before deciding.</strong></li>
+<li><strong>Calculate the difference between the percentage of females
+who survived and the percentage of males who survived. Is the difference
+large enough to conclude that women tend to survive more often than
+men?</strong></li>
 </ul></li>
 </ul>
 </div>
 <div id="tally-whoa" class="slide section level2">
 <h1>Tally whoa … !</h1>
 <ul>
-<li>Something you might have noticed is that these two lines of code aren’t equivalent:</li>
+<li>Something you might have noticed is that these two lines of code
+aren’t equivalent:</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">tally</span>(<span class="op">~</span>gender <span class="op">|</span><span class="st"> </span>survival, <span class="dt">data =</span> slasher, <span class="dt">margin =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">tally</span>(<span class="op">~</span>survival <span class="op">|</span><span class="st"> </span>gender, <span class="dt">data =</span> slasher, <span class="dt">margin =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span>gender <span class="sc">|</span> survival, <span class="at">data =</span> slasher, <span class="at">margin =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span>survival <span class="sc">|</span> gender, <span class="at">data =</span> slasher, <span class="at">margin =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <ul>
-<li>The first line of code takes the group of <em>survivors</em> and tells us how many of them were <code>Male</code> or <code>Female</code>.</li>
-<li>The other takes the group of <em>females</em> / <em>males</em> and tells us how many of them <code>Dies</code> or <code>Survives</code>.</li>
-<li><strong>The last question on the previous slide can be answered using the line of code below. Why?</strong>
+<li>The first line of code takes the group of <em>survivors</em> and
+tells us how many of them were <code>Male</code> or
+<code>Female</code>.</li>
+<li>The other takes the group of <em>females</em> / <em>males</em> and
+tells us how many of them <code>Dies</code> or
+<code>Survives</code>.</li>
+<li><strong>The last question on the previous slide can be answered
+using the line of code below. Why?</strong>
 <ul>
-<li>Pro-tip: Include the option <code>format = &quot;percent&quot;</code> to obtain a two-way table with percentages.</li>
+<li>Pro-tip: Include the option <code>format = &quot;percent&quot;</code> to
+obtain a two-way table with percentages.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">tally</span>(<span class="op">~</span>survival <span class="op">|</span><span class="st"> </span>gender, <span class="dt">format =</span> <span class="st">&quot;percent&quot;</span>, <span class="dt">data =</span> slasher, <span class="dt">margin =</span> <span class="ot">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span>survival <span class="sc">|</span> gender, <span class="at">format =</span> <span class="st">&quot;percent&quot;</span>, <span class="at">data =</span> slasher, <span class="at">margin =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>##           gender
 ## survival      Female      Male
 ##   Dies      77.47748  86.69202
@@ -567,107 +604,162 @@ Space, Click, Right Arrow or swipe left to move to the next slide.</p>
 <div id="examining-differences" class="slide section level2">
 <h1>Examining differences</h1>
 <ul>
-<li>When we’re comparing the difference between two quantities, such as survival rates of slasher films, it can be difficult to decide how <em>different</em> two values need to be before we can conclude that the difference didn’t just happen by chance.
+<li>When we’re comparing the difference between two quantities, such as
+survival rates of slasher films, it can be difficult to decide how
+<em>different</em> two values need to be before we can conclude that the
+difference didn’t just happen by chance.
 <ul>
-<li>To help us decide when a difference is not due to chance, we’ll use repeated random shuffling.</li>
+<li>To help us decide when a difference is not due to chance, we’ll use
+repeated random shuffling.</li>
 </ul></li>
-<li>By using repeated random shuffling, we’ll estimate how often our <em>actual</em> difference occurs by <em>chance</em>.</li>
+<li>By using repeated random shuffling, we’ll estimate how often our
+<em>actual</em> difference occurs by <em>chance</em>.</li>
 </ul>
 </div>
 <div id="do-the-shuffle" class="slide section level2">
 <h1>Do the shuffle!</h1>
 <ul>
-<li>When we shuffle data, we use our original data set as a starting point.
+<li>When we shuffle data, we use our original dataset as a starting
+point.
 <ul>
-<li><strong>Run the following and write down the resulting table on a piece of paper.</strong></li>
+<li><strong>Run the following and write down the resulting table on a
+piece of paper.</strong></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">tally</span>(<span class="op">~</span>survival <span class="op">|</span><span class="st"> </span>gender, <span class="dt">data =</span> slasher)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span>survival <span class="sc">|</span> gender, <span class="at">data =</span> slasher)</span></code></pre></div>
 <ul>
-<li><strong>Now run the following to randomly reassign each <code>survival</code> status to each observation. Compare the resulting table to the one you wrote down.</strong></li>
+<li><strong>Now run the following to randomly reassign each
+<code>survival</code> status to each observation. Compare the resulting
+table to the one you wrote down.</strong></li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">tally</span>(<span class="op">~</span><span class="kw">shuffle</span>(survival) <span class="op">|</span><span class="st"> </span>gender, </span>
-<span id="cb6-2"><a href="#cb6-2"></a>      <span class="dt">data =</span> slasher)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span><span class="fu">shuffle</span>(survival) <span class="sc">|</span> gender, </span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">data =</span> slasher)</span></code></pre></div>
 </div>
 <div id="lets-compare" class="slide section level2">
 <h1>Let’s compare …</h1>
 <ul>
-<li><strong>How many people, in total, survived the slasher film before shuffling? How many people survived after shuffling?</strong></li>
-<li><strong>How has shuffling our data changed the percentage of women who survived compared to men who survived?</strong>
+<li><strong>How many people, in total, survived the slasher film before
+shuffling? How many people survived after shuffling?</strong></li>
+<li><strong>How has shuffling our data changed the percentage of women
+who survived compared to men who survived?</strong>
 <ul>
-<li><strong>Is the difference in percentages from your shuffled data larger or smaller than the difference from the original data? Interpret what this means.</strong></li>
+<li><strong>Is the difference in percentages from your shuffled data
+larger or smaller than the difference from the original data? Interpret
+what this means.</strong></li>
 </ul></li>
-<li><strong>Explain why shuffling our data one time is not enough to decide if the difference seen in our <em>actual</em> data occurs by chance or not.</strong></li>
+<li><strong>Explain why shuffling our data one time is not enough to
+decide if the difference seen in our <em>actual</em> data occurs by
+chance or not.</strong></li>
 </ul>
 </div>
 <div id="detecting-differences" class="slide section level2">
 <h1>Detecting differences</h1>
 <ul>
-<li><p>To help us decide if the difference in percentages in our <em>actual</em> data occurs by chance or not, we can use the <code>do()</code> function to shuffle our data many times and see how often our <em>actual</em> difference occurred by chance.</p></li>
-<li><p><span class="blue">Run the following lines of code:</span></p></li>
+<li><p>To help us decide if the difference in percentages in our
+<em>actual</em> data occurs by chance or not, we can use the
+<code>do()</code> function to shuffle our data many times and see how
+often our <em>actual</em> difference occurred by chance.</p></li>
+<li><p><span class="blue">Run the following lines of
+code:</span></p></li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">set.seed</span>(<span class="dv">7</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>shuffled_outcomes &lt;-<span class="st"> </span><span class="kw">do</span>(<span class="dv">10</span>) <span class="op">*</span><span class="st"> </span><span class="kw">tally</span>(<span class="op">~</span><span class="kw">shuffle</span>(survival) <span class="op">|</span><span class="st"> </span>gender, <span class="dt">format =</span> <span class="st">&quot;percent&quot;</span>, </span>
-<span id="cb8-2"><a href="#cb8-2"></a>                                    <span class="dt">data =</span> slasher)</span></code></pre></div>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">View</span>(shuffled_outcomes)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">7</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>shuffled_outcomes <span class="ot">&lt;-</span> <span class="fu">do</span>(<span class="dv">10</span>) <span class="sc">*</span> <span class="fu">tally</span>(<span class="sc">~</span><span class="fu">shuffle</span>(survival) <span class="sc">|</span> gender, </span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">format =</span> <span class="st">&quot;percent&quot;</span>, </span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>                                    <span class="at">data =</span> slasher)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(shuffled_outcomes)</span></code></pre></div>
 <ul>
-<li><p><strong>In how many simulations did a higher percentage of males survive than females?</strong></p></li>
-<li><p><strong>What is the largest difference in percentages of survival between males and females?</strong></p></li>
-<li><p><strong>What patterns are emerging from these simulations?</strong></p></li>
-<li><p><span class="blue">Ten simulations is not enough. Use <code>do</code>, <code>tally</code> and <code>shuffle</code> functions to <code>shuffle</code> the <code>survival</code> variable and <code>tally</code> the percentage of women who survived 500 times. <code>Assign</code> your 500 shuffles the name <code>shuffled_survivors</code>. Use <code>set.seed(1)</code>. </span></p></li>
+<li><p><strong>In how many simulations did a higher percentage of males
+survive than females?</strong></p></li>
+<li><p><strong>What is the largest difference in percentages of survival
+between males and females?</strong></p></li>
+<li><p><strong>What patterns are emerging from these
+simulations?</strong></p></li>
+<li><p><span class="blue">Ten simulations is not enough. Use
+<code>do</code>, <code>tally</code> and <code>shuffle</code> functions
+to <code>shuffle</code> the <code>survival</code> variable and
+<code>tally</code> the percentage of women who survived 500 times.
+<code>Assign</code> your 500 shuffles the name
+<code>shuffled_survivors</code>. Use <code>set.seed(1)</code>.
+</span></p></li>
 </ul>
 </div>
 <div id="now-what" class="slide section level2">
 <h1>Now what?</h1>
 <ul>
-<li>The next step to find out how often our <em>actual</em> difference occur by chance is to compare it to the differences in our shuffled data.</li>
-<li>To compute the differences for each shuffle we can use the <code>mutate</code> function.
+<li>The next step to find out how often our <em>actual</em> difference
+occur by chance is to compare it to the differences in our shuffled
+data.</li>
+<li>To compute the differences for each shuffle we can use the
+<code>mutate</code> function.
 <ul>
-<li><span class="blue">Fill in the blanks to add a new column that contains the difference between <code>Survives.Female</code> and <code>Survives.Male</code> to our <code>shuffled_survivors</code> data.</span></li>
+<li><span class="blue">Fill in the blanks to add a new column that
+contains the difference between <code>Survives.Female</code> and
+<code>Survives.Male</code> to our <code>shuffled_survivors</code>
+data.</span></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>shuffled_survivors &lt;-<span class="st"> </span><span class="kw">mutate</span>(shuffled_survivors, </span>
-<span id="cb10-2"><a href="#cb10-2"></a>            <span class="dt">diff =</span> ____ <span class="op">-</span><span class="st"> </span>____)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>shuffled_survivors <span class="ot">&lt;-</span> <span class="fu">mutate</span>(shuffled_survivors, </span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">diff =</span> ____ <span class="sc">-</span> ____)</span></code></pre></div>
 </div>
 <div id="time-to-decide" class="slide section level2">
 <h1>Time to decide</h1>
 <ul>
-<li><p><span class="blue">Create a <code>histogram</code> of the <code>difference</code>s in our <code>shuffled_survivors</code> data. Based on your plot, answer the following:</span></p>
+<li><p><span class="blue">Create a <code>histogram</code> of the
+<code>difference</code>s in our <code>shuffled_survivors</code> data.
+Based on your plot, answer the following:</span></p>
 <ul>
-<li><strong>What was the typical difference in percentages between men and women survivors?</strong></li>
+<li><strong>What was the typical difference in percentages between men
+and women survivors?</strong></li>
 </ul></li>
-<li><p><span class="blue">Include a vertical line in your histogram of the <em>actual</em> difference by running the code below:</span></p></li>
+<li><p><span class="blue">Include a vertical line in your histogram of
+the <em>actual</em> difference by running the code
+below:</span></p></li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">add_line</span>(<span class="dt">vline =</span> <span class="fl">22.52252</span> <span class="op">-</span><span class="st"> </span><span class="fl">13.30798</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_line</span>(<span class="at">vline =</span> <span class="fl">22.52252</span> <span class="sc">-</span> <span class="fl">13.30798</span>)</span></code></pre></div>
 <ul>
-<li><strong>Does the actual difference occur very often by chance alone?</strong></li>
-<li><strong>Does <code>gender</code> play a role in whether or not a character will survive in a horror film? Explain your reasoning.</strong></li>
-<li><strong>If you wanted to survive in a horror film, would you want to play a female character or a male character?</strong></li>
+<li><strong>Does the actual difference occur very often by chance
+alone?</strong></li>
+<li><strong>Does <code>gender</code> play a role in whether or not a
+character will survive in a horror film? Explain your
+reasoning.</strong></li>
+<li><strong>If you wanted to survive in a horror film, would you want to
+play a female character or a male character?</strong></li>
 </ul>
 </div>
 <div id="summary" class="slide section level2">
 <h1>Summary</h1>
 <ul>
-<li>By shuffling the <code>survival</code> label, we made it so that the proportion of males and females who survived the slasher film was random.
+<li>By shuffling the <code>survival</code> label, we made it so that the
+proportion of males and females who survived the slasher film was
+random.
 <ul>
 <li>The males and females survived by chance alone.</li>
 </ul></li>
-<li>If surviving the film occurred purely by chance, then most of the time the difference in survival proportions was close to zero.
+<li>If surviving the film occurred purely by chance, then most of the
+time the difference in survival proportions was close to zero.
 <ul>
 <li>Notice how most values in the histogram occur close to zero.</li>
 </ul></li>
-<li>When we look to see how often our actual difference occurs in our shuffled data, if the actual difference doesn’t occur very often then perhaps there is something more going on than just chance alone …</li>
+<li>When we look to see how often our actual difference occurs in our
+shuffled data, if the actual difference doesn’t occur very often then
+perhaps there is something more going on than just chance alone …</li>
 </ul>
 </div>
 <div id="on-your-own" class="slide section level2">
 <h1>On your own</h1>
 <ul>
-<li><span class="blue">Carry out another 500 simulations but this time shuffle the <code>gender</code> variable instead of the <code>survival</code> variable. </span>
+<li><span class="blue">Carry out another 500 simulations but this time
+shuffle the <code>gender</code> variable instead of the
+<code>survival</code> variable. </span>
 <ul>
-<li>Include the code <code>set.seed(1)</code> before your 500 simulations to make your answer reproducible.</li>
+<li>Include the code <code>set.seed(1)</code> before your 500
+simulations to make your answer reproducible.</li>
 </ul></li>
-<li><strong>Does shuffling the <code>gender</code> variable instead of the <code>survival</code> variable change your answer to the question?</strong></li>
-<li><strong>Does <code>gender</code> play a role in whether or not a character will survive in a horror film?</strong>
+<li><strong>Does shuffling the <code>gender</code> variable instead of
+the <code>survival</code> variable change your answer to the
+question?</strong></li>
+<li><strong>Does <code>gender</code> play a role in whether or not a
+character will survive in a horror film?</strong>
 <ul>
 <li><strong>Why or why not?</strong></li>
 </ul></li>

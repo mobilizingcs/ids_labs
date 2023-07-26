@@ -3,7 +3,8 @@ title: "R's Normal Distribution Alphabet"
 author: "Lab 2I"
 date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
   
-  
+  <br>
+  <br>
   Space, Click, Right Arrow or swipe left to move to the next slide.'
 output:
   slidy_presentation:
@@ -30,7 +31,7 @@ library(mobilizr)
 
 - <span class="blue">Start by loading the `titanic` data and calculate the `mean` `age` of people in the data but `shuffle` their `survival` status 500 times.</span>
     - `Assign` this data the name `shfls`.
-- <span class="blue">After creating `shfls`, use `mutate` to add a new variable to the data set. This new variable should have the name `diff` and should be the `mean` `age` of those who survived minus those who died.</span>
+- <span class="blue">After creating `shfls`, use `mutate` to add a new variable to the dataset. This new variable should have the name `diff` and should be the `mean` `age` of those who survived minus those who died.</span>
 - <span class="blue">Finally, calculate the `mean` and `sd` of the `diff` variable.</span>
     - `Assign` these values the name `diff_mean` and `diff_sd`.
 
@@ -103,7 +104,7 @@ Conduct one of the statistical investigations below:
     
 - Using the `cdc` data:
     - **Using 500 random shuffles and a normal model, how much taller would the typical male have to be than the typical female in order for the difference to be in the upper 1% by chance alone?**
-    - **How can we use this value to justify the claim that the average Male in our data is taller than the average Female?**
+    - **How can we use this value to justify the claim that the average `Male` in our data is taller than the average `Female`?**
     
     
     

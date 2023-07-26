@@ -3,7 +3,8 @@ title: "Eyeballing Normal"
 author: "Lab 2H"
 date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
   
-  
+  <br>
+  <br>
   Space, Click, Right Arrow or swipe left to move to the next slide.'
 output:
   slidy_presentation:
@@ -28,7 +29,7 @@ library(mobilizr)
 - When data appears to be _normally distributed_, we can use the _normal model_ to:
   - Simulate _normally distributed_ data.
   - Easily compute probabilities.
-- In this lab, we'll look at some previous data sets to see if we can find data that are roughly normally distributed.
+- In this lab, we'll look at some previous datasets to see if we can find data that are roughly normally distributed.
 
 
 ## The normal distribution
