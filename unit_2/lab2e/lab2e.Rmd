@@ -118,7 +118,7 @@ View(shuffled_outcomes)
 
 - The next step to find out how often our _actual_ difference occur by chance is to compare it to the differences in our shuffled data.
 - To compute the differences for each shuffle we can use the `mutate` function.
-    - <span class="blue">Fill in the blanks to add a new column that contains the difference between `Survives.Female` and `Survives.Male` to our `shuffled_survivors` data.</span>
+    - <span class="blue">Fill in the blanks to add a new column that contains the difference between `Survives.Female` and `Survives.Male` to our `shuffled_outcomes` data.</span>
     
 ```{r, eval = FALSE, echo = TRUE}
 shuffled_outcomes <- mutate(shuffled_outcomes, 
