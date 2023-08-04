@@ -674,13 +674,10 @@ survive than females?</strong></p></li>
 between males and females?</strong></p></li>
 <li><p><strong>What patterns are emerging from these
 simulations?</strong></p></li>
-<li><p><span class="blue">Ten simulations is not enough. Use
-<code>do</code>, <code>tally</code> and <code>shuffle</code> functions
-to <code>shuffle</code> the <code>survival</code> variable and
-<code>tally</code> the percentage of women who survived 500 times.
-<code>Assign</code> your 500 shuffles the name
-<code>shuffled_survivors</code>. Use <code>set.seed(1)</code>.
-</span></p></li>
+<li><p><span class="blue">Ten simulations is not enough. Use the code
+above and perform 500 shuffles. <code>Assign</code> your 500 shuffles
+the same name <code>shuffled_outcomes</code>. Use
+<code>set.seed(1)</code>. </span></p></li>
 </ul>
 </div>
 <div id="now-what" class="slide section level2">
@@ -698,14 +695,14 @@ contains the difference between <code>Survives.Female</code> and
 data.</span></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>shuffled_survivors <span class="ot">&lt;-</span> <span class="fu">mutate</span>(shuffled_survivors, </span>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>shuffled_outcomes <span class="ot">&lt;-</span> <span class="fu">mutate</span>(shuffled_outcomes, </span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">diff =</span> ____ <span class="sc">-</span> ____)</span></code></pre></div>
 </div>
 <div id="time-to-decide" class="slide section level2">
 <h1>Time to decide</h1>
 <ul>
 <li><p><span class="blue">Create a <code>histogram</code> of the
-<code>difference</code>s in our <code>shuffled_survivors</code> data.
+<code>difference</code>s in our <code>shuffled_outcomes</code> data.
 Based on your plot, answer the following:</span></p>
 <ul>
 <li><strong>What was the typical difference in percentages between men
