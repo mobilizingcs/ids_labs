@@ -112,7 +112,7 @@ View(shuffled_outcomes)
 - **What is the largest difference in percentages of survival between males and females?**
 - **What patterns are emerging from these simulations?**
 
-- <span class="blue">Ten simulations is not enough. Use `do`, `tally` and `shuffle` functions to `shuffle` the `survival` variable and `tally` the percentage of women who survived 500 times. `Assign` your 500 shuffles the name `shuffled_survivors`. Use `set.seed(1)`. </span>
+- <span class="blue">Ten simulations is not enough. Use the code above and perform 500 shuffles. `Assign` your 500 shuffles the same name `shuffled_outcomes`. Use `set.seed(1)`. </span>
 
 ## Now what?
 
@@ -121,14 +121,14 @@ View(shuffled_outcomes)
     - <span class="blue">Fill in the blanks to add a new column that contains the difference between `Survives.Female` and `Survives.Male` to our `shuffled_survivors` data.</span>
     
 ```{r, eval = FALSE, echo = TRUE}
-shuffled_survivors <- mutate(shuffled_survivors, 
+shuffled_outcomes <- mutate(shuffled_outcomes, 
             diff = ____ - ____)
 ```
 
 
 ## Time to decide
 
-- <span class="blue">Create a `histogram` of the `difference`s in our `shuffled_survivors` data. Based on your plot, answer the following:</span>
+- <span class="blue">Create a `histogram` of the `difference`s in our `shuffled_outcomes` data. Based on your plot, answer the following:</span>
 
   - **What was the typical difference in percentages between men and women survivors?**
     
