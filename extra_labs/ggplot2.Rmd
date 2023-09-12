@@ -1,0 +1,69 @@
+---
+title: "ggplot 2 classics"
+author:
+date: The following slides contain codes to create cool graphics that can be utilized in the IDS course.
+output:
+  slidy_presentation: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+```
+
+```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+library(mobilizr)
+library(readr)
+library(ggplot2)
+# colors <- read_csv("colors.csv")
+colors <- extra_data("colors_ids")
+colors <- colors_ids
+```
+
+## Boxplots and color scores
+
+```{r}
+ggplot(data=colors)+
+  geom_boxplot(mapping=aes(x=blue), fill="blue")+
+  #need to change the value of y so plots don't overlap
+  geom_boxplot(mapping=aes(x=orange, y=1), fill="orange")+
+  geom_boxplot(mapping=aes(x=green, y=2), fill="green")+
+  geom_boxplot(mapping=aes(x=gold, y=3), fill="gold")+
+  #show values on the x-axis
+  scale_x_continuous(breaks=seq(5,20,1))+
+  labs(title="Distribution of color scores",x="scores", y="")+
+  theme_bw()+
+  #hides the y-axis labels
+  theme(axis.text.y=element_blank(),
+        axis.ticks.y=element_blank())
+```
+
+## Boxplots and dotplots
+
+```{r}
+ggplot(data=colors)+
+  geom_boxplot(mapping=aes(x=blue, y=1))+
+  scale_x_continuous(breaks=seq(5,20,1))+
+  labs(title="Distribution of blue scores")+
+  theme_bw()+
+  geom_dotplot(mapping=aes(x=blue),fill="blue",binwidth = 0.5)
+```
+
+## Bargraphs and faceting
+
+```{r}
+ggplot(data=colors)+
+  geom_bar(mapping=aes(x=p_color, fill=p_color))+
+  scale_fill_manual(values=c("blue", "gold", "green","orange"))+
+  theme_classic()
+```
+
+
+```{r}
+ggplot(data=colors)+
+  geom_bar(mapping=aes(x=p_color, fill=p_color))+
+  scale_fill_manual(values=c("blue", "gold", "green","orange"))+
+  theme_classic()+
+  facet_grid(rows=vars(int_ext))
+  #replace `rows` with `cols` above
+```
+
