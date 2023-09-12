@@ -66,4 +66,15 @@ ggplot(data=colors)+
   facet_grid(rows=vars(int_ext))
   #replace `rows` with `cols` above
 ```
+## On Your Own
 
+Choose one of the plots from this lab and make at least 3 modifications to it.
+
+Here are some other themes you can choose from:
+
+  - theme_gray()
+  - theme_dark()
+  - theme_light()
+  - theme_linedraw()
+  - theme_minimal()
+  - theme_void()

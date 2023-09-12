@@ -65,12 +65,14 @@ points(72, 71.5, col = "red", cex = 2)
 
 ## On Your Own
 
-Select a pre-loaded data set of your choice using the command:
+Select a pre-loaded data set of your choice and create the four basic plots using the dollar sign syntax. Include arguments to make your graphic clear.
+
+If you are tired of the same old data sets, check out other pre-loaded data sets available by running the command:
 
 ```{r, eval=FALSE}
 data()
 ```
 
-Create the four basic plots using the dollar sign syntax. Include arguments to make your graphic clear.
+
 
 
