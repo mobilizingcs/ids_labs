@@ -7,7 +7,7 @@ output:
   pdf_document: default
 ---
 
-```{r setup, include=FALSE, fig.height=4, fig.width=5}
+```{r setup, include=FALSE}
 ```
 
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
@@ -21,21 +21,21 @@ data(arm_span)
 
 ## The basic plots
 
-```{r}
+```{r, fig.height=4, fig.width=5}
 hist(colors$blue)
 ```
 
 
-```{r}
+```{r, fig.height=4, fig.width=5}
 boxplot(colors$blue)
 ```
 
-```{r}
+```{r, fig.height=4, fig.width=5}
 barplot(table(colors$p_color))
 ```
 
 
-```{r}
+```{r, fig.height=4, fig.width=5}
 plot(colors$blue, colors$gold)
 ```
 
@@ -52,7 +52,7 @@ Many of the arguments that work for the lattice graphics transfer to base R.
 
 ## Some useful functions
 
-```{r}
+```{r, fig.height=4, fig.width=5}
 plot(arm_span$armspan, arm_span$height)
 #Points function in base R is more user friendly
 points(60, 62.6667, col = "red", cex = 2)
