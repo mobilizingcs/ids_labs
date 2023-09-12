@@ -78,3 +78,7 @@ Here are some other themes you can choose from:
   - theme_linedraw()
   - theme_minimal()
   - theme_void()
+  
+Here are the colors you can choose from:
+  
+  -   Click <b><a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf"  target="_blank">here</a></b> to see the colors that are available!
