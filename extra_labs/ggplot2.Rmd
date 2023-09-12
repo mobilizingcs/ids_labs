@@ -1,5 +1,5 @@
 ---
-title: "ggplot 2 classics"
+title: "ggplot 2 basics"
 author:
 date: The following slides contain codes to create cool graphics that can be utilized in the IDS course.
 output:

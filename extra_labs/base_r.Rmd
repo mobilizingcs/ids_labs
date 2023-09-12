@@ -1,0 +1,67 @@
+---
+title: "Base R Basics"
+author:
+date: The following slides contain codes to create graphics that can be utilized in the IDS course.
+output:
+  slidy_presentation: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+```
+
+```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+library(mobilizr)
+library(readr)
+# colors <- read_csv("colors.csv")
+colors <- extra_data("colors_ids")
+colors <- colors_ids
+data(arm_span)
+```
+
+## The basic plots
+
+```{r}
+hist(colors$blue)
+```
+
+
+```{r}
+boxplot(colors$blue)
+```
+
+```{r}
+barplot(table(colors$p_color))
+```
+
+
+```{r}
+plot(colors$blue, colors$gold)
+```
+
+## Arguments
+
+
+Many of the arguments that work for the lattice graphics transfer to base R.
+
+- `main`
+- `col`
+- `ylab`
+- `xlab`
+- `pch` for scatterplots
+
+## Some useful functions
+
+```{r}
+plot(arm_span$armspan, arm_span$height)
+#Points function in base R is more user friendly
+points(60, 62.6667, col = "red", cex = 2)
+points(64, 64, col = "red", cex = 2)
+points(68, 68, col = "red", cex = 2)
+points(72, 71.5, col = "red", cex = 2)
+```
+
+
+
+
+
