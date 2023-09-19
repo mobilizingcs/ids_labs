@@ -244,10 +244,10 @@ extra_data('colors_ids')
 
 ```{r, eval = TRUE, echo = TRUE}
 # these should appear in your Environment pane as a List
-plot1<-bwplot(~blue, data = colors, col ="blue")
-plot2<-bwplot(~gold, data = colors, col ="gold")
-plot3<-bwplot(~green, data = colors, col ="green", xlim=c(4, 21))
-plot4<-bwplot(~orange, data = colors, col ="orange")
+plot1<-bwplot(~blue, data = colors_ids, col ="blue")
+plot2<-bwplot(~gold, data = colors_ids, col ="gold")
+plot3<-bwplot(~green, data = colors_ids, col ="green", xlim=c(4, 21))
+plot4<-bwplot(~orange, data = colors_ids, col ="orange")
 ```
 
 -   Step 2: Use the `grid.arrange` from the gridExtra Package
@@ -255,3 +255,5 @@ plot4<-bwplot(~orange, data = colors, col ="orange")
 ```{r, eval = TRUE, echo = TRUE, fig.height=6, fig.width=5 }
 gridExtra::grid.arrange(plot1, plot2, plot3, plot4, nrow = 4)
 ```
+
+Note:  You might need to click on the zoom button to see all 4 boxplots.
