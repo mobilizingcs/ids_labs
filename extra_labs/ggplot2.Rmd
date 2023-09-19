@@ -22,7 +22,7 @@ colors <- colors_ids
 ## Boxplots and color scores
 
 ```{r}
-ggplot(data=colors)+
+ggplot(data=colors_ids)+
   geom_boxplot(mapping=aes(x=blue), fill="blue")+
   #need to change the value of y so plots don't overlap
   geom_boxplot(mapping=aes(x=orange, y=1), fill="orange")+
@@ -40,7 +40,7 @@ ggplot(data=colors)+
 ## Boxplots and dotplots
 
 ```{r}
-ggplot(data=colors)+
+ggplot(data=colors_ids)+
   geom_boxplot(mapping=aes(x=blue, y=1))+
   scale_x_continuous(breaks=seq(5,20,1))+
   labs(title="Distribution of blue scores")+
@@ -51,7 +51,7 @@ ggplot(data=colors)+
 ## Bargraphs and faceting
 
 ```{r}
-ggplot(data=colors)+
+ggplot(data=colors_ids)+
   geom_bar(mapping=aes(x=p_color, fill=p_color))+
   scale_fill_manual(values=c("blue", "gold", "green","orange"))+
   theme_classic()
@@ -59,7 +59,7 @@ ggplot(data=colors)+
 
 
 ```{r}
-ggplot(data=colors)+
+ggplot(data=colors_ids)+
   geom_bar(mapping=aes(x=p_color, fill=p_color))+
   scale_fill_manual(values=c("blue", "gold", "green","orange"))+
   theme_classic()+

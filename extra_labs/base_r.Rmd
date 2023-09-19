@@ -22,21 +22,21 @@ data(arm_span)
 ## The basic plots
 
 ```{r, fig.height=4, fig.width=5}
-hist(colors$blue)
+hist(colors_ids$blue)
 ```
 
 
 ```{r, fig.height=4, fig.width=5}
-boxplot(colors$blue)
+boxplot(colors_ids$blue)
 ```
 
 ```{r, fig.height=4, fig.width=5}
-barplot(table(colors$p_color))
+barplot(table(colors_ids$p_color))
 ```
 
 
 ```{r, fig.height=4, fig.width=5}
-plot(colors$blue, colors$gold)
+plot(colors_ids$blue, colors$gold)
 ```
 
 ## Arguments
