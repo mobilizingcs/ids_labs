@@ -257,3 +257,7 @@ gridExtra::grid.arrange(plot1, plot2, plot3, plot4, nrow = 4)
 ```
 
 Note:  You might need to click on the zoom button to see all 4 boxplots.
+
+## On Your Own
+
+Create a plot of your choice and include new arguments from this lab to spruce it up.
