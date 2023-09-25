@@ -21,6 +21,13 @@ colors <- colors_ids
 
 ## Boxplots and color scores
 
+Use the command below to load the colors_ids dataset:
+
+```{r, eval=FALSE}
+extra_data("colors_ids")
+```
+
+
 ```{r}
 ggplot(data=colors_ids)+
   geom_boxplot(mapping=aes(x=blue), fill="blue")+
@@ -65,7 +72,37 @@ ggplot(data=colors_ids)+
   theme_classic()+
   facet_grid(rows=vars(int_ext))
   #replace `rows` with `cols` above
+
+
 ```
+## Scatterplots
+
+The scatterplot below has 90 data points but because some of the armspans and corresponding heights overlap there appear to be less.
+
+
+```{r}
+ggplot(data=arm_span)+
+  geom_point(mapping=aes(x=armspan, y= height))
+```
+
+A solution to this problem is to utilize the `geom_jitter` function. 
+
+
+```{r}
+ggplot(data=arm_span)+
+  geom_point(mapping=aes(x=armspan, y= height))+
+  geom_jitter(mapping=aes(x=armspan, y= height))
+```
+
+Alternative code
+
+```{r, eval=FALSE}
+ggplot(data=arm_span, mapping=aes(x=armspan, y= height))+
+  geom_point()+
+  geom_jitter()
+```
+
+
 ## On Your Own
 
 Choose one of the plots from this lab and make at least 3 modifications to it.

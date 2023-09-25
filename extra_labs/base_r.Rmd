@@ -21,6 +21,13 @@ data(arm_span)
 
 ## The basic plots
 
+Use the command below to load the colors_ids dataset:
+
+```{r, eval=FALSE}
+extra_data("colors_ids")
+```
+
+
 ```{r, fig.height=4, fig.width=5}
 hist(colors_ids$blue)
 ```
