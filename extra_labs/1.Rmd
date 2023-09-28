@@ -34,7 +34,8 @@ colors <- colors_ids
 bargraph(~drink_water, data=cdc, 
          main = "Are US Teens Drinking Enough Water?",
          sub ="CDC Youth Risk Behaviour Survey",
-         xlab = "How often teens consumed water over the past 7 days",
+         # use the newline character \n to make a new line of text
+         xlab = "How often teens consumed water \n over the past 7 days",
          ylab = "Number of teens")
 ```
 
