@@ -43,7 +43,7 @@ bargraph(~drink_water, data=cdc,
 
 -   `col` &emsp; Changes the color of your visual
 
--   Click <b><a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf"  target="_blank">here</a></b> to see the colors that are available!
+- Click <b>[here](https://r-charts.com/colors/)</b> to see the colors that are available!
 
 ```{r, eval = TRUE, echo = TRUE, fig.height=4, fig.width=5}
 bargraph(~asthma, data=cdc,
