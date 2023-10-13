@@ -33,10 +33,11 @@ library(mobilizr)
 
 ## Importing our data
 
+- Rather than _export_-ing the data and then _upload_-ing and _importing_-ing it, we'll pull the data straight from the webpage into R.
+
 - You can find the data online here:
     - (Right-click and select _Open in New Window_) [https://raw.githubusercontent.com/IDSUCLA/dataset/main/fev.csv](https://raw.githubusercontent.com/IDSUCLA/dataset/main/fev.csv)
-
-- Rather than _export_-ing the data and then _upload_-ing and _importing_-ing it, we'll pull the data straight from the webpage into R.
+    
 - <span class="blue">Click on the _Import Dataset_ button under the _Environment_ tab.</span>
     - Then click on the _From Text (readr)_ option.
     - Type or copy/paste the URL into the box.
