@@ -31,19 +31,10 @@ library(mobilizr)
     - We'll use this data to then explore what factors are associated with a person's lung capacity.
 
 
-## Our new data
+## Importing our data
 
 - You can find the data online here:
     - (Right-click and select _Open in New Window_) [https://raw.githubusercontent.com/IDSUCLA/dataset/main/fev.csv](https://raw.githubusercontent.com/IDSUCLA/dataset/main/fev.csv)
-- Variables that were measured include:
-    - Age in years.
-    - Lung capacity, measured in liters.
-    - The youth's heights, in inches 
-    - Genders; `"1"` for males, `"0"` for females.  
-    - Whether the participant was a smoker, `"1"`, or non-smoker `"0"`.
-
-
-## Importing our data
 
 - Rather than _export_-ing the data and then _upload_-ing and _importing_-ing it, we'll pull the data straight from the webpage into R.
 - <span class="blue">Click on the _Import Dataset_ button under the _Environment_ tab.</span>
@@ -55,6 +46,14 @@ library(mobilizr)
     - _Uncheck_ the _First Row as Names_  
     - Change _Delimiter_ to _Whitespace_
 
+## Our new data
+
+- Variables that were measured include:
+    - Age in years.
+    - Lung capacity, measured in liters.
+    - The youth's heights, in inches 
+    - Genders; `"1"` for males, `"0"` for females.  
+    - Whether the participant was a smoker, `"1"`, or non-smoker `"0"`.
 
 ## About the data
 
