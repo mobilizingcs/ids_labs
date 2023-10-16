@@ -1,5 +1,5 @@
 ---
-title: "Enhancing Lattice Graphics"
+title: "merging "
 author:
 date: The following slides contain **new** commands that can be used to enhance the lattice graphics used in the IDS Course.
 output:
