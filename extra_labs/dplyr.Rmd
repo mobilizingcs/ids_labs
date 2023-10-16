@@ -1,0 +1,411 @@
+---
+title: "dplyr functions"
+date: "Directions: Answer the bolded questions."
+output: 
+  slidy_presentation: 
+    css: ../../IDSLabCSSRev.css
+    mathjax: ../../extras/mathjax-local/MathJax.js
+  word_document:
+  ioslides_presentation: default
+---
+
+```{r, echo = FALSE, message = FALSE}
+library(dplyr)
+library(mobilizr)
+data(cdc)
+```
+
+## Overview
+
+<ul>
+
+<li>`dplyr` is an R package for data manipulation.</li>
+
+<li>**Data manipulation** refers to editing the structure of a data frame, such as adding or deleting variables, adding or deleting observations, etc.</li>
+
+<li>The advantage of `dplyr` is that it consists of five main functions with intuitive names:</li>
+  <ul>
+  <li> `mutate`</li>
+  <li>`select`</li>
+  <li>`filter`</li>
+  <li>`summarize`</li>
+  <li>`arrange`</li>
+  </ul>
+These five verbs, combined with the **pipe** (`%>%`) and `group_by` make for data manipulation code that is easy to interpret.</li>
+
+<li>For additional resources, run the following code:</li>
+
+```{r, eval = FALSE}
+vignette("dplyr")
+```
+
+</ul>
+
+## The pipe
+
+<ul>
+
+<li>Often in `dplyr`, functions need to be **nested**.</li>
+
+<li>**Nesting** is when a function takes another function as an argument.</li>
+
+<li>One of the most important elements of `dplyr` is the **pipe** (`%>%`). The pipe makes long sequences of nested functions much more readable.</li> 
+
+<li>Let's see how the pipe works on the next slide, using non-`dplyr` functions.</li>
+
+<li> Keyboard shortcut for the pipe:</li>
+
+Ctrl + Shift + M (Windows)
+
+Cmd + Shift + M (Mac)
+
+</ul>
+
+## How does the pipe work?
+
+<ul>
+
+<li>Suppose that for some reason, we are interested in finding the cosine of the base 3 logarithm of the square root of the number 2.</li>
+
+<li>One way to compute this value is with the following line of code:</li>
+
+```{r, eval = FALSE}
+cos(log(sqrt(2), base = 3))
+```
+
+<li>To see the order in which functions are performed on the number 2, you have to read from inside to outside.</li>
+
+<li>Using the pipe, we could instead write</li>
+
+```{r, eval = FALSE}
+2 %>% 
+  sqrt() %>%
+  log(base = 3) %>%
+  cos()
+```
+
+<li>**Verify that these two snippets evaluate to the same output.**</li>
+
+<li>The pipe takes the object on the left side and makes it the first argument of the function on the right side. Chaining pipes together allows you to read the order in which functions are performed from left to right.</li>
+
+<li>Notice how there is a new line after every pipe. This is not necessary, but it is common practice and makes the code more readable.</li>
+
+<li>**Which snippet do you think is more readable?**</li>
+
+</ul>
+
+## The dplyr verbs in action
+
+<ul>
+
+<li>In the next few slides, we will see some examples of the `dplyr` verbs used to manipulate the `cdc` dataset.</li>
+
+<li>**Run the following code to familiarize yourself with the `cdc` dataset:**</li>
+
+```{r, eval = FALSE}
+View(cdc)
+```
+
+<li>In the next few slides, note the following:</li>
+
+  <ul>
+  
+  <li>The pipe is always used to nest functions, for readability purposes.</li>
+  
+  <li>The `dplyr` verbs take data frames as input, manipulate them, and give data frames as output.</li>
+  
+  <li>The code snippets contain comments which describe what the output should look like. **As an exercise, run the code snippets yourself and verify that the comments are correct.**</li>
+  
+  <li>We will assign the outputted data frames to `df`.  To `View` the output, run `View(df)`.</li>
+  
+  </ul>
+
+</ul>
+
+## select
+
+<ul>
+
+<li>`select` is used to subset columns.</li>
+
+```{r, eval = FALSE}
+# the only remaining columns are height and weight
+df <- cdc %>%
+  select(height, weight)
+```
+
+<li>To select a range of consecutive variables, use a colon (:).</li>
+
+```{r, eval = FALSE}
+# the only remaining columns are those between race and seat_belt inclusive
+df <- cdc %>%
+  select(race:seat_belt)
+```
+
+<li>To take the complement of a set of variables, use an exclamation mark (!).</li>
+
+```{r, eval = FALSE}
+# all columns remain except for height
+df <- cdc %>%
+  select(!height)
+```
+
+<li>We can also use `where` to select those columns that satisfy a logical condition.</li>
+
+```{r, eval = FALSE}
+# height and weight are the only numeric columns, so they are the only columns that remain
+df <- cdc %>%
+  select(where(is.numeric))
+```
+
+</ul>
+
+<!-- ## pull -->
+
+<!-- <ul> -->
+
+<!-- <li>The `pull` function is also used to subset columns, but is less commonly used and subtly different than `select`.</li> -->
+
+<!-- <li>The `select` function can subset an arbitrary number of columns, and always returns a data frame. The `pull` function extracts only one column, but returns a vector.</li> -->
+
+<!-- <li>The advantage of data frames is that they can store multiple columns, and those columns can be of different classes. When you're working with only one column, its is often easier to treat it as a vector rather than a data frame.</li> -->
+
+<!-- <li>Suppose we are interested in calculating the mean `height` in the `cdc` dataset. **Which snippet below works?**</li> -->
+
+<!-- ```{r, eval = FALSE} -->
+<!-- # select the heights column -->
+<!-- cdc_heights <- cdc %>% -->
+<!--   select(height) -->
+
+<!-- # compute the mean -->
+<!-- mean(cdc_heights) -->
+<!-- ``` -->
+
+<!-- ```{r, eval = FALSE} -->
+<!-- # pull the heights column -->
+<!-- cdc_heights <- cdc %>% -->
+<!--   pull(height) -->
+
+<!-- # compute the mean -->
+<!-- mean(cdc_heights) -->
+<!-- ``` -->
+
+<!-- </ul> -->
+
+## filter
+
+<ul>
+
+<li>`filter` is used to subset rows.</li>
+
+```{r, eval = FALSE}
+# all rows satisfy the condition
+df <- cdc %>%
+  filter(height > 1.8)
+```
+
+<li>Commas can be used to subset by multiple conditions.</li>
+
+```{r, eval = FALSE}
+# all rows satisfy both conditions
+df <- cdc %>%
+  filter(height > 1.8, weight > 90)
+# taller than 1.8 meters AND weighs more than 90 kilograms
+```
+
+<li>If you want to subset by one condition OR another condition, use the vertical bar `|`.</li>
+
+```{r}
+# all rows satisfy one of the following conditions
+df <- cdc %>%
+  filter(grade == "9th grade" | grade == "10th grade")
+# 9th OR 10th grade
+```
+
+<li>In the above, if you replace the vertical bar with a comma, the output is empty (as you should verify). **Why do you think this is**?</li>
+
+</ul>
+
+<!-- ## An aside on factors -->
+
+<!-- <li>Suppose that after filtering the `cdc` dataset for only 9th and 10th graders, we were interested in `tally`ing the number of students in each grade. Using the pipe, that might look something like this:</li> -->
+
+<!-- ```{r, eval = FALSE} -->
+<!-- # this part is the same as before -->
+<!-- df_underclassmen <- cdc %>% -->
+<!--   filter(grade == "9th grade" | grade == "10th grade") %>% -->
+<!--   mutate( -->
+<!--     grade = droplevels(grade) -->
+<!--   ) -->
+
+<!-- # 11th and 12th graders appear in the tally! How strange! -->
+<!-- tally(~grade, data = df_underclassmen) -->
+<!-- ``` -->
+
+<!-- <li>Oddly, 11th grade, 12th grade, and ungraded appear in the `tally`. We would like for `tally` to count only 9th and 10th graders, since we already know that they are the only one present in `df_underclassmen`.</li> -->
+
+<!-- <li>The reason this happens is because the column `grade` is stored as a factor. (You can verify this yourself by `Viewing` df and then hovering your cursor over the name of the `grade` column.)</li> -->
+
+<!-- <li>A factor is a kind of data object used for storing categorical data. Factors have an attribute called `levels` which is the set of allowable values.</li> -->
+
+<!-- <li>**Run the code below to view the `levels` of the factor `grade` in `df_underclassmen`.**</li> -->
+
+<!-- ```{r, eval = FALSE} -->
+<!-- # we pull grade instead of selecting grade so we can work directly with grade as a factor -->
+<!-- underclassmen_grade <- df_underclassmen %>% -->
+<!--   pull(grade) -->
+
+<!-- # the levels function allows you to view the levels of a factor -->
+<!-- levels(underclassmen_grade) -->
+<!-- ``` -->
+
+## A bit of cleaning
+
+<ul>
+
+<li>Let's use `filter` to remove rows whose entries for `height`, `weight`, `grade` or `depressed` are `NA`. Let's also remove rows whose entries for `grade` are "Ungraded or other grade".</li>
+
+<li>The `is.na` function returns `TRUE` whenever the argument is `NA` and `FALSE` otherwise.</li>
+
+```{r}
+# none of the entries in height, weight, grade, depressed are NA
+cdc_complete <- cdc %>%
+  filter(!is.na(height), !is.na(weight), !is.na(grade), !is.na(depressed),) %>% 
+  filter(grade != "Ungraded or other grade")
+```
+
+<li>The remaining `dplyr` verbs work better in the absence of `NA`s. Let's use `cdc_complete` for the rest of the examples.</li>
+
+</ul>
+
+## mutate
+
+<ul>
+
+<li>`mutate` is used to add or edit the columns of a dataframe. You can add new variables that are functions of existing variables:</li>
+
+```{r, eval = FALSE}
+# now there is a column called bmi made using the formula in mutate
+df <- cdc_complete %>%
+  mutate(bmi = weight / height^2)
+```
+
+<li>You can also edit existing variables:</li>
+
+```{r, eval = FALSE}
+# the heights are now in inches
+df <- cdc_complete %>%
+  mutate(height = height * 39.3701)
+```
+
+</ul>
+
+## ifelse
+
+<ul>
+
+<li>The `ifelse` function is useful in conjunction with `mutate` to create a new column by checking a condition.</li>
+
+<li>The `ifelse` function takes three arguments:</li>
+
+<ul>
+
+  <li>`test`, which is the condition you are checking.</li>
+  
+  <li>`yes`, the return value if the condition is `TRUE`.</li>
+  
+  <li>`no`, the return value if the condition is `FALSE`.</li>
+  
+</ul>
+
+<li>Suppose we were interested in creating a column called `height_category` which indicates whether someone's height is above or below the mean for the dataset.</li>
+
+```{r, eval = FALSE}
+# added height_category which indicates whether someone's height is above or below the mean
+df <- cdc_complete %>%
+  mutate(height_category = ifelse(height > mean(height), "tall", "short"))
+```
+
+<li>In the above, we omit the argument names `test`, `yes`, and `no`. This is okay since we supplied the arguments in the correct order.</li>
+
+<li>We can also use the `ifelse` function for categorical variables. Suppose we want a column called `is_underclassman` that indicates whether a student is an "underclassman" (9th or 10th grader) or an "upperclassman" (11th or 12th grader).</li>
+
+```{r}
+# create a column called `is_underclassman` that indicates whether a student is underclassman or upperclassman
+df <- cdc_complete %>%
+  mutate(is_underclassman = ifelse(grade == "9th grade" | grade == "10th grade", "under", "upper"))
+```
+
+</ul>
+
+## summarize
+
+<ul>
+
+<li>`summarize` reduces multiple values down to a single summary:</li>
+
+```{r, eval = FALSE}
+# output is a data frame whose entries are the mean height and mean weight
+df <- cdc_complete %>%
+  summarize(mean_height = mean(height), mean_weight = mean(weight))
+```
+
+</ul>
+
+## group_by
+
+<ul>
+
+<li>Most data operations are done on groups defined by variables. `group_by` takes a dataframe and converts it into a grouped dataframe where operations are performed "by group". `group_by` will almost always come directly before a call to `summarize` or `mutate`.</li>
+
+```{r, eval = FALSE}
+# output is a data frame whose entries are mean height for men and women
+df <- cdc_complete %>%
+  group_by(grade) %>%
+  summarize(mean_height = mean(height))
+```
+
+<li>You can group by multiple columns (you may ignore the warning message):</li>
+
+```{r, eval = FALSE}
+# output is a data frame whose entries are mean height for all combinations of grade and depressed
+df <- cdc_complete %>%
+  group_by(grade, depressed) %>%
+  summarize(mean_height = mean(height))
+```
+
+</ul>
+
+## arrange
+
+<ul>
+
+<li>`arrange` orders the rows of a data frame by the values of selected columns.</li>
+
+```{r, eval = FALSE}
+# entries are in increasing height order
+df <- cdc_complete %>%
+  arrange(height)
+```
+
+```{r, eval = FALSE}
+# entries are in increasing order by height, and by weight if height is tied
+df <- cdc_complete %>%
+  arrange(height, weight)
+```
+
+</ul>
+
+## Test your understanding!
+
+<ul>
+
+<li>**In the `cdc` data frame, the `weight` column is reported in kilograms. Add a column to `cdc` called `weight_lbs` which is weights reported in pounds.**</li>
+
+<li>**Obtain the median `height` for every combination of `gender` and `grade`.**</li>
+
+<li>**Create a data frame consisting only of 14 year olds and including only the first ten columns of `cdc`.**</li>
+
+<li>**Recreate the `height_category` column, but this time, for female students, compare their height to the mean height for females, and likewise for males.**</li>
+
+</ul>
