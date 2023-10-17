@@ -349,6 +349,14 @@ df <- cdc_complete %>%
 <li>`summarize` reduces multiple values down to a single summary:</li>
 
 ```{r, eval = FALSE}
+# output is a summary of the numerical variable indicated
+cdc_complete %>%
+  summarize(mean(height), mean(weight), sd(height), median(weight))
+```
+
+If you want to store the summaries as a data frame make sure to name your summary
+
+```{r, eval = FALSE}
 # output is a data frame whose entries are the mean height and mean weight
 df <- cdc_complete %>%
   summarize(mean_height = mean(height), mean_weight = mean(weight))
