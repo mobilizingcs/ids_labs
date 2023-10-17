@@ -267,10 +267,14 @@ df <- cdc %>%
 
 <li>The `is.na` function returns `TRUE` whenever the argument is `NA` and `FALSE` otherwise.</li>
 
+The command `filter(is.na(height))` would filter all of observations that did not provide their height.
+
+We want all of the observations that did include their height so we use `!is.na()` which is equivalent to "is NOT na".
+
 ```{r}
 # none of the entries in height, weight, grade, depressed are NA
 cdc_complete <- cdc %>%
-  filter(!is.na(height), !is.na(weight), !is.na(grade), !is.na(depressed),) %>% 
+  filter(!is.na(height), !is.na(weight), !is.na(grade), !is.na(depressed)) %>% 
   filter(grade != "Ungraded or other grade")
 ```
 

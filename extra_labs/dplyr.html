@@ -792,9 +792,13 @@ entries for <code>grade</code> are “Ungraded or other grade”.
 The <code>is.na</code> function returns <code>TRUE</code> whenever the
 argument is <code>NA</code> and <code>FALSE</code> otherwise.
 </li>
+<p>The command <code>filter(is.na(height))</code> would filter all of
+observations that did not provide their height.</p>
+<p>We want all of the observations that did include their height so we
+use <code>!is.na()</code> which is equivalent to “is NOT na”.</p>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># none of the entries in height, weight, grade, depressed are NA</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>cdc_complete <span class="ot">&lt;-</span> cdc <span class="sc">%&gt;%</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(height), <span class="sc">!</span><span class="fu">is.na</span>(weight), <span class="sc">!</span><span class="fu">is.na</span>(grade), <span class="sc">!</span><span class="fu">is.na</span>(depressed),) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(height), <span class="sc">!</span><span class="fu">is.na</span>(weight), <span class="sc">!</span><span class="fu">is.na</span>(grade), <span class="sc">!</span><span class="fu">is.na</span>(depressed)) <span class="sc">%&gt;%</span> </span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(grade <span class="sc">!=</span> <span class="st">&quot;Ungraded or other grade&quot;</span>)</span></code></pre></div>
 <li>
 The remaining <code>dplyr</code> verbs work better in the absence of
