@@ -40,7 +40,7 @@ _Does the stimulus your class chose change people's perception of time?_
 ## Analyzing our data
 
 - <span class="blue">Create appropriate plots to answer your statistical investigative questions.</span>
-- **Are there any outliers or unusual observations that require some cleaning before you can interpret your plots?**
+
 - <span class="blue">Calculate appropriate numerical summaries to answer your statistical investigative questions.</span>
 - **Write down a few sentences interpreting your plots and summaries.**
 
