@@ -364,11 +364,13 @@ cdc_complete %>%
 If you want to store the summaries as a data frame make sure to name your summary
 
 ```{r, eval = FALSE}
-# output is a data frame whose entries are \n the mean height and mean weight
+# output is a data frame whose entries are
+# the mean height and mean weight
 df <- cdc_complete %>%
   summarize(
     mean_height = mean(height), 
-    mean_weight = mean(weight))
+    mean_weight = mean(weight)
+  )
 ```
 
 </ul>
