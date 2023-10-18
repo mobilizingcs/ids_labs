@@ -100,9 +100,10 @@ cos(log(sqrt(2), base = 3))
 
 <li>In the next few slides, we will see some examples of the `dplyr` verbs used to manipulate the `cdc` dataset.</li>
 
-<li>**Run the following code to familiarize yourself with the `cdc` dataset:**</li>
+<li>**Run the following codes to familiarize yourself with the `cdc` dataset:**</li>
 
 ```{r, eval = FALSE}
+data(cdc)
 View(cdc)
 ```
 
@@ -398,6 +399,12 @@ df <- cdc_complete %>%
 # entries are in increasing height order
 df <- cdc_complete %>%
   arrange(height)
+```
+
+```{r, eval = FALSE}
+# entries are in decreasing height order
+df <- cdc_complete %>%
+  arrange(desc(height))
 ```
 
 ```{r, eval = FALSE}
