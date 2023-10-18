@@ -200,24 +200,25 @@ df <- cdc %>%
 <li>`filter` is used to subset rows.</li>
 
 ```{r, eval = FALSE}
-# all rows satisfy the condition
+# all remaining rows satisfy the condition
 df <- cdc %>%
   filter(height > 1.8)
+# taller than 1.8 meters
 ```
 
 <li>Commas can be used to subset by multiple conditions.</li>
 
 ```{r, eval = FALSE}
-# all rows satisfy both conditions
+# all remaining rows satisfy both conditions
 df <- cdc %>%
   filter(height > 1.8, weight > 90)
-# taller than 1.8 meters AND weighs more than 90 kilograms
+# taller than 1.8 meters AND weigh more than 90 kilograms
 ```
 
 <li>If you want to subset by one condition OR another condition, use the vertical bar `|`.</li>
 
 ```{r}
-# all rows satisfy one of the following conditions
+# all remaining rows satisfy one of the following conditions
 df <- cdc %>%
   filter(grade == "9th grade" | grade == "10th grade")
 # 9th OR 10th grade
@@ -352,7 +353,11 @@ df <- cdc_complete %>%
 ```{r, eval = FALSE}
 # output is a summary of the numerical variable indicated
 cdc_complete %>%
-  summarize(mean(height), mean(weight), sd(height), median(weight))
+  summarize(
+    mean(height), 
+    mean(weight), 
+    sd(height),
+    median(weight))
 ```
 
 If you want to store the summaries as a data frame make sure to name your summary
@@ -360,7 +365,9 @@ If you want to store the summaries as a data frame make sure to name your summar
 ```{r, eval = FALSE}
 # output is a data frame whose entries are the mean height and mean weight
 df <- cdc_complete %>%
-  summarize(mean_height = mean(height), mean_weight = mean(weight))
+  summarize(
+    mean_height = mean(height), 
+    mean_weight = mean(weight))
 ```
 
 </ul>
