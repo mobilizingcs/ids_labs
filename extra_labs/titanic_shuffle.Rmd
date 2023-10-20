@@ -59,7 +59,9 @@ The code below will allow you to view specific columns in a dataset.
 View(select(titanic, c(name, fare, survived)))
 ```
 
-The code below shows what might have happened in an alternate universe where the Titanic sails again but this time survival is determined via a lottery system.
+The code below will add a new variable to the titanic dataframe called `alt_survived`. This new column shows what might have happened in an alternate universe where the Titanic sails again but this time survival is determined via a lottery system.
+
+After running the code below, the number of variables in the titanic dataframe should change from 8 to 9 in the Environment Pane.
 
 ```{r, eval=FALSE}
 titanic<-mutate(titanic, alt_survived = shuffle(survived))
@@ -85,7 +87,7 @@ Tip: The console can be used as a calculator.
 
 We need to perform many permutations of this dataset to determine how common a difference of 27 pounds occurs when survival is based on a lottery system.
 
-This code creates a new dataframe. Each row represents a simulation of holding a lottery to determine survival.
+The code below creates a new dataframe in the Environment Pane. Each row represents a simulation of holding a lottery to determine survival.
 
 ```{r}
 shuffled_outcomes <- do(500) * mean(~fare | shuffle(survived), data = titanic)
@@ -102,7 +104,7 @@ Although you cannot see the actual outcomes of each passenger, you can see the m
 
 ## Model
 
-The code below will create a new column in our shuffled_outcomes dataframe which shows how much the mean fare differed between survivors and non-survivors.
+The code below will create a new column in our shuffled_outcomes dataframe which shows how much the mean fare differed between survivors and non-survivors. If you look at the Environment after running the code, the shuffled_outcomes data frame will contain three variables instead of 2.
 
 ```{r}
 shuffled_outcomes <- mutate(shuffled_outcomes, diff_fares = Yes - No)
@@ -114,6 +116,8 @@ View(shuffled_outcomes)
 
 
 Using this new variable we will create a histogram which serves as a model displaying the typical difference in mean fares between survivors and non-survivors when survival is determined by chance alone.
+
+NOTE: When you run the code below, it will revert you to the Plots pane. To get back to the lab slides, click on the Viewer tab which is to the right of the Plots pane. 
 
 ```{r, eval=FALSE}
 histogram(~diff_fares, data = shuffled_outcomes)
@@ -128,7 +132,7 @@ In the 500 simulations, the smallest difference was around -10 pounds and the la
 
 Where in this model do we see a difference of 27 pounds? Since a difference of 27 pounds was a rare permutation, this provides strong evidence that people that paid a higher fare were more likely to survive.
 
-```{r, echo=FALSE, eval=TRUE}
+```{r, echo=FALSE, eval=TRUE, fig.width= 4, fig.height=6}
 histogram(~diff_fares, data = shuffled_outcomes,
           scales=list(x=list(at=seq(-12,32,4))),
           breaks = seq(-12,32,4)
