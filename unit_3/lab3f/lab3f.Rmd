@@ -35,12 +35,12 @@ library(mobilizr)
 
 - The map we'll be creating will end up in RStudio's _Viewer_ pane.
     - Which means you'll need to alternate between building the map and loading the lab.
-- You'll find it very helpful, for this lab, to write all of the commands, including the `load_lab(23)` command, as an `R` script.
+- You'll find it very helpful, for this lab, to write all of the commands, including the `load_lab(23)` command, as an `R` Script.
     - This way you can edit the code that builds the map and quickly reload the lab.
 
 ## Load your data!
 
-- <span class="blue">In Lab 3E you created a dataset. Load it into Rstudio now by filling in the blank with the file name of the data.</span>
+- <span class="blue">In Lab 3E you created a dataset. Load it into RStudio now by filling in the blank with the file name of the data.</span>
 ```{r, eval = FALSE, echo = TRUE}
 load("___.Rda")
 ```
@@ -56,7 +56,7 @@ load("___.Rda")
 mtns_leaf <- leaflet(____)
 ```
 
-- <span class="blue">Then, insert `mtns_leaf` into the `addTiles()` function and assign the output the name `mtns_map`</span>
+- <span class="blue">Then, insert `mtns_leaf` into the `addTiles()` function and assign the output the name `mtns_map`.</span>
 - <span class="blue">Run `mtns_map` in the console to look at your basic map with no data displayed.</span>
     - Be sure to try clicking on the map to pan and zoom.
 
@@ -77,7 +77,7 @@ addMarkers(map = ____, lng = ~____, lat = ~____)
 ## Colorize
 
 - Our current map looks pretty good, but what if we wanted to add some colors to our plot? 
-- <span class="blue">Fill in the blanks below to create a new variable that assigns a color to each mountain based on the `state` its located in.</span>
+- <span class="blue">Fill in the blanks below to create a new variable that assigns a color to each mountain based on the `state` it's located in.</span>
 ```{r, eval = FALSE, echo = TRUE}
 mtns <- mutate(____, state_colors = colorize(____))
 ```

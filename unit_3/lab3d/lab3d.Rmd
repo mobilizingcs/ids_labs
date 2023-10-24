@@ -32,8 +32,8 @@ library(mobilizr)
 
 ## In this lab
 
-- <span class="blue">Load the built-in `atus` (_American Time Use Survey_) data set, which is a survey of how a sample of Americans spent their day.</span>
-    - **The United States has an estimated population of 327,350,075. How many people were surveyed for this particular data set?**
+- <span class="blue">Load the built-in `atus` (_American Time Use Survey_) dataset, which is a survey of how a sample of Americans spent their day.</span>
+    - **The United States has an estimated population of 327,350,075. How many people were surveyed for this particular dataset?**
 - The statistical question we wish to investigate is:
 
 _What is the mean age of people older than 15 living in the United States?_
@@ -62,7 +62,7 @@ _What is the mean age of people older than 15 living in the United States?_
 bs_rows <- ____(1:____, size = ____, replace = ____)
 ```
 
-- <span class="blue">Use the `slice` function to create a new data set that includes each row from our `sample`.</span>
+- <span class="blue">Use the `slice` function to create a new dataset that includes each row from our `sample`.</span>
 
 ```{r, eval = FALSE, echo = TRUE}
 bs_atus <- slice(atus, bs_rows)
@@ -87,12 +87,12 @@ bs_atus <- slice(atus, bs_rows)
     - Normally, the more _bootstrapped_ samples we use, the better the _confidence interval_.
     - In this lab, we'll `do()` 500 _bootstrapped_ samples.
 - To make `do()`-ing 500 _bootstraps_ easier, we'll code our 3-step bootstrap method into a function.
-    - <span class="blue">Open a new R script (File -> New File -> R Script) to write your function into.</span>
+    - <span class="blue">Open a new R Script (File -> New File -> R Script) to write your function into.</span>
     
 
 ## Bootstrap function
 
-- <span class="blue">Fill in the blank space below with the 3-steps needed to create a _bootstrapped_ sample `mean` for our `atus` data.</span>
+- <span class="blue">Fill in the blank space below with the 3 steps needed to create a _bootstrapped_ sample `mean` for our `atus` data.</span>
     - Each step should be written on its own line between the curly braces.
 
 ```{r, eval = FALSE, echo = TRUE}
@@ -123,16 +123,16 @@ bs_means <- do(____) * bs_func()
 ## Bootstrapped confidence intervals
     
 - To create a 90% confidence interval, we need to decide between which two _ages_ the middle 90% of our bootstrapped estimates are contained.
-- **Using your histogram, fill in the statement below:**
+- **Using your `histogram`, fill in the statement below:**
 
 The lowest 5% of our estimates are below _______ years and the highest 5% of our estimates are above_______ years.
 
-- <span class="blue">Use the quantile() function to check your estimates.</span>
-- **Based on your bootstrapped estimates, between which two ages are we 90% confident the actual mean age of people living in the U.S. is contained?**
+- <span class="blue">Use the `quantile()` function to check your estimates.</span>
+- **Based on your bootstrapped estimates, between which two ages are we 90% confident the actual `mean` age of people living in the U.S. is contained?**
 
 
 ## On your own
 
-- <span class="blue">Using your _bootstrapped_ sample means, create a 95% confidence interval for the mean age of people living in the U.S.</span>
+- <span class="blue">Using your _bootstrapped_ sample means, create a 95% confidence interval for the `mean` age of people living in the U.S.</span>
 - **Why is the 95% confidence interval wider than the 90% interval?**
 - **Write down how you would explain what a 95% confidence interval means to someone not taking _Introduction to Data Science_.**

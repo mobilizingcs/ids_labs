@@ -558,12 +558,12 @@ bootstraps</em>.</li>
 <h1>In this lab</h1>
 <ul>
 <li><span class="blue">Load the built-in <code>atus</code> (<em>American
-Time Use Survey</em>) data set, which is a survey of how a sample of
+Time Use Survey</em>) dataset, which is a survey of how a sample of
 Americans spent their day.</span>
 <ul>
 <li><strong>The United States has an estimated population of
-327,350,075. How many people were surveyed for this particular data
-set?</strong></li>
+327,350,075. How many people were surveyed for this particular
+dataset?</strong></li>
 </ul></li>
 <li>The statistical question we wish to investigate is:</li>
 </ul>
@@ -610,7 +610,7 @@ previous slide to help you fill in the blanks.</li>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>bs_rows <span class="ot">&lt;-</span> <span class="fu">____</span>(<span class="dv">1</span><span class="sc">:</span>____, <span class="at">size =</span> ____, <span class="at">replace =</span> ____)</span></code></pre></div>
 <ul>
 <li><span class="blue">Use the <code>slice</code> function to create a
-new data set that includes each row from our
+new dataset that includes each row from our
 <code>sample</code>.</span></li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>bs_atus <span class="ot">&lt;-</span> <span class="fu">slice</span>(atus, bs_rows)</span></code></pre></div>
@@ -655,7 +655,7 @@ samples.</li>
 <li>To make <code>do()</code>-ing 500 <em>bootstraps</em> easier, we’ll
 code our 3-step bootstrap method into a function.
 <ul>
-<li><span class="blue">Open a new R script (File -&gt; New File -&gt; R
+<li><span class="blue">Open a new R Script (File -&gt; New File -&gt; R
 Script) to write your function into.</span></li>
 </ul></li>
 </ul>
@@ -663,7 +663,7 @@ Script) to write your function into.</span></li>
 <div id="bootstrap-function" class="slide section level2">
 <h1>Bootstrap function</h1>
 <ul>
-<li><span class="blue">Fill in the blank space below with the 3-steps
+<li><span class="blue">Fill in the blank space below with the 3 steps
 needed to create a <em>bootstrapped</em> sample <code>mean</code> for
 our <code>atus</code> data.</span>
 <ul>
@@ -708,25 +708,25 @@ means to create <em>90% confidence intervals</em>.</li>
 <li>To create a 90% confidence interval, we need to decide between which
 two <em>ages</em> the middle 90% of our bootstrapped estimates are
 contained.</li>
-<li><strong>Using your histogram, fill in the statement
+<li><strong>Using your <code>histogram</code>, fill in the statement
 below:</strong></li>
 </ul>
 <p>The lowest 5% of our estimates are below _______ years and the
 highest 5% of our estimates are above_______ years.</p>
 <ul>
-<li><span class="blue">Use the quantile() function to check your
-estimates.</span></li>
+<li><span class="blue">Use the <code>quantile()</code> function to check
+your estimates.</span></li>
 <li><strong>Based on your bootstrapped estimates, between which two ages
-are we 90% confident the actual mean age of people living in the U.S. is
-contained?</strong></li>
+are we 90% confident the actual <code>mean</code> age of people living
+in the U.S. is contained?</strong></li>
 </ul>
 </div>
 <div id="on-your-own" class="slide section level2">
 <h1>On your own</h1>
 <ul>
 <li><span class="blue">Using your <em>bootstrapped</em> sample means,
-create a 95% confidence interval for the mean age of people living in
-the U.S.</span></li>
+create a 95% confidence interval for the <code>mean</code> age of people
+living in the U.S.</span></li>
 <li><strong>Why is the 95% confidence interval wider than the 90%
 interval?</strong></li>
 <li><strong>Write down how you would explain what a 95% confidence
