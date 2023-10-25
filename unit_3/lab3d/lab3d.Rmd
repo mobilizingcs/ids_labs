@@ -114,7 +114,7 @@ bs_func <- function() {
 bs_means <- do(____) * bs_func()
 ```
 
-- **Create a histogram for your bootstrapped samples and describe the _center_, _shape_ and _spread_ of its distribution.**
+- **Create a `histogram` for your bootstrapped samples and describe the _center_, _shape_ and _spread_ of its distribution.**
     - These bootstrapped estimates no longer estimate the average age of people in the U.S.
     - Instead, they estimate how much the estimate of the average age of people in the U.S. varies.
 - In the next slide, we'll look at how we can use these bootstrapped means to create _90% confidence intervals_.
