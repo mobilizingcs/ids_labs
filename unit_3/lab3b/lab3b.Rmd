@@ -23,7 +23,7 @@ library(mobilizr)
 ## Finding data in new places
 
 
-- Since your first forays into doing data science, you've used data from two-sources:
+- Since your first forays into doing data science, you've used data from two sources:
     - Built-in datasets from RStudio.
     - Campaign data from the Campaign Manager.
 - Data can be found in many other places though, especially online.
