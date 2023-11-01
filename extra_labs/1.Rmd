@@ -110,7 +110,7 @@ add_line(vline = median(~height,data=cdc), col="red")
 xyplot(weight~height,data=cdc, groups=gender, col=c("purple","blue"))
 ```
 
--  To remdey this issue, you need to create your own key. You will be utilizing the `key` argument just like you did in the last slide.
+-  To remedy this issue, you need to create your own key. You will be utilizing the `key` argument just like you did in the last slide.
 
 
 ```{r, eval = TRUE, echo = TRUE, fig.height=4, fig.width=5}
