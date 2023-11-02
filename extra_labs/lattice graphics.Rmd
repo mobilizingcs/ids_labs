@@ -34,7 +34,8 @@ colors <- colors_ids
 bargraph(~drink_water, data=cdc, 
          main = "Are US Teens Drinking Enough Water?",
          sub ="CDC Youth Risk Behaviour Survey",
-         xlab = "How often teens consumed water over the past 7 days",
+         # use the newline character \n to make a new line of text
+         xlab = "How often teens consumed water \n over the past 7 days",
          ylab = "Number of teens")
 ```
 
@@ -42,7 +43,7 @@ bargraph(~drink_water, data=cdc,
 
 -   `col` &emsp; Changes the color of your visual
 
--   Click <b><a href="http://www.stat.columbia.edu/~tzheng/files/Rcolor.pdf"  target="_blank">here</a></b> to see the colors that are available!
+- To see the colors that are available, click <b>[here](https://r-charts.com/colors/){target="_blank"}</b> or type the command `colors()` on your console, copy the output, and paste it in an RScript.
 
 ```{r, eval = TRUE, echo = TRUE, fig.height=4, fig.width=5}
 bargraph(~asthma, data=cdc,
@@ -100,6 +101,32 @@ add_line(vline = mean(~height,data=cdc), col = "black")
 ```{r, eval = TRUE, echo = FALSE, fig.height=4, fig.width=5, warning=FALSE}
 add_line(vline = median(~height,data=cdc), col="red")
 ```
+
+## More on Legends
+
+-  When you use the `groups` argument on a scatterplot, the key is automatically generated identifying the different categories. However, if you change the color of categories, the key does not automatically update.
+
+```{r, eval = TRUE, echo = TRUE, fig.height=4, fig.width=5}
+xyplot(weight~height,data=cdc, groups=gender, col=c("purple","blue"))
+```
+
+-  To remedy this issue, you need to create your own key. You will be utilizing the `key` argument just like you did in the last slide.
+
+
+```{r, eval = TRUE, echo = TRUE, fig.height=4, fig.width=5}
+
+xyplot(weight ~ height, data = cdc, groups = gender, 
+       col = c("purple", "blue"), 
+       #The code below is for the key
+       key = list(space = "top", 
+                  points = list(col = c("purple", "blue"), 
+                                #shapes of points
+                                pch = 1),
+              #Make sure colors match with the variable categories
+                  text = list(c("Female","Male")))
+)
+```
+
 
 ## Histograms and scales
 
@@ -257,3 +284,7 @@ gridExtra::grid.arrange(plot1, plot2, plot3, plot4, nrow = 4)
 ```
 
 Note:  You might need to click on the zoom button to see all 4 boxplots.
+
+## On Your Own
+
+Create a plot of your choice and include new arguments from this lab to spruce it up.
