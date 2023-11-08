@@ -13,6 +13,7 @@ output:
 ```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
 library(mobilizr)
 library(readr)
+library(RColorBrewer)
 # colors <- read_csv("colors.csv")
 colors <- extra_data("colors_ids")
 colors <- colors_ids
@@ -59,6 +60,38 @@ bargraph(~asthma, data=cdc,
          col=c("red2","pink","white"),
          stack = "TRUE")
 ```
+
+## Color Palettes
+
+On the previous slide you learned how to manually choose a color for each category of asthma. But what if there were a lot of categories for your variable? This is where a color palette might come in handy.
+
+Type the following command in the console to load the ColorBrewer Palettes:
+
+```{r, eval=FALSE}
+library(RColorBrewer)
+```
+
+To view the palettes, type the following command:
+
+```{r, eval=FALSE}
+display.brewer.all()
+```
+
+The code below shows how to incorporate a palette with the `drink_water` variable:
+
+```{r}
+#the first argument selects the number of colors 
+#in the order they appear on the palette
+#the second argument is the palette name
+palette <- brewer.pal(7, "Accent")
+
+bargraph(~drink_water, data=cdc, groups = drink_water,
+         col = palette,
+         stack=T)
+
+```
+
+
 
 ## Colored lines
 
