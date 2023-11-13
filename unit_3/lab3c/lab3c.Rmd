@@ -75,7 +75,7 @@ ___ <- sample(___, size = ___, replace = ___)
 
 ## Lessons learned
 
-- The mean, or proportion, from a _random_ sample might not always be closer to that of the true population when compared to a _convenience_ sample. 
+- The proportion (or mean), from a _random_ sample might not always be closer to that of the true population when compared to a _convenience_ sample. 
 - However, as sample sizes get larger: 
     - _Random_ samples will tend to be better estimates for the population.
     -  With _convenience_ samples, this might not be the case.
