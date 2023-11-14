@@ -83,7 +83,7 @@ _How do people's personality colors and/or sports participation affect their str
 ```{r, eval = FALSE, echo = TRUE}
 merge(____, ____, by = "____")
 ```
-- <span class="blue">`Assign` this `merged` dataset the name `stress_colorss`.</span>
+- <span class="blue">`Assign` this `merged` dataset the name `stress_colors`.</span>
     - Make sure your data has the same number of observations that you wrote down on the previous slide.
 
 
