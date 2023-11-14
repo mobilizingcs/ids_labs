@@ -15,6 +15,7 @@ output:
 library(dplyr)
 library(mobilizr)
 data(cdc)
+extra_data("food_ids")
 ```
 
 ## Overview
@@ -201,3 +202,25 @@ animal_weights <- data.frame(
 <li>Functions which create data frames, such as `data.frame` and `read.csv`, usually have a `stringsAsFactors` argument, which by default is set to `FALSE`. I.e., when these functions see character vectors, they will store them as character vectors. To override this behavior, you can set `stringsAsFactors` to `TRUE`.</li>
 
 </ul>
+
+## Factors and Food
+
+If you look at the `str`ucture of your food habits data, you will notice that all of the categorical variables are read in as characters. Therefore when you make a bargraph of the `when` variable, they are organized in alpha order.
+
+```{r, fig.width=4, fig.height=4}
+bargraph(~when, data=food_ids)
+```
+
+Use what you learned in this lab to create the following:
+
+```{r, echo=FALSE}
+food_ids<-food_ids %>% 
+  mutate(when = factor(when, levels = c("morning", "afternoon",
+                                         "evening","night"))
+  )
+```
+
+
+```{r,echo=FALSE, fig.width=4, fig.height=4}
+bargraph(~when, data=food_ids)
+```
