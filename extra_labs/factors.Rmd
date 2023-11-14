@@ -102,7 +102,8 @@ bargraph(~favorite_product, data = surveys)
 ```{r, eval = FALSE}
 surveys <- surveys %>%
   mutate(
-    favorite_product = factor(favorite_product, levels = c("T-shirt", "Sweater", "Hoodie", "Cardigan", "Button-up", "Blouse"))
+    favorite_product = factor(favorite_product, 
+                              levels = c("T-shirt", "Sweater", "Hoodie", "Cardigan", "Button-up", "Blouse"))
   )
 ```
 
@@ -148,7 +149,7 @@ underclassmen <- underclassmen %>%
 
 ## All in one shot
 
-On the last slide, the final product was a visualization. The codes below shows how to incorporate a graphic using the pipe. The first utilizes lattice graphics and the second ggplot2.
+On the last slide, the final product was a visualization. The codes below show how to incorporate a graphic using the pipe. The first utilizes lattice graphics and the second ggplot2.
 
 ```{r, eval=FALSE}
 cdc %>% 

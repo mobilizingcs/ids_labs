@@ -652,8 +652,9 @@ new factor, <strong>in the order you want them to be displayed</strong>.
 </li>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>surveys <span class="ot">&lt;-</span> surveys <span class="sc">%&gt;%</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">favorite_product =</span> <span class="fu">factor</span>(favorite_product, <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;T-shirt&quot;</span>, <span class="st">&quot;Sweater&quot;</span>, <span class="st">&quot;Hoodie&quot;</span>, <span class="st">&quot;Cardigan&quot;</span>, <span class="st">&quot;Button-up&quot;</span>, <span class="st">&quot;Blouse&quot;</span>))</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">favorite_product =</span> <span class="fu">factor</span>(favorite_product, </span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>                              <span class="at">levels =</span> <span class="fu">c</span>(<span class="st">&quot;T-shirt&quot;</span>, <span class="st">&quot;Sweater&quot;</span>, <span class="st">&quot;Hoodie&quot;</span>, <span class="st">&quot;Cardigan&quot;</span>, <span class="st">&quot;Button-up&quot;</span>, <span class="st">&quot;Blouse&quot;</span>))</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
 <li>
 <strong>Create a new bargraph of <code>favorite_product</code>, using a
 different column ordering of your choosing.</strong>
@@ -710,7 +711,7 @@ Which columns are included in the bargraph?</strong>
 <div id="all-in-one-shot" class="slide section level2">
 <h1>All in one shot</h1>
 <p>On the last slide, the final product was a visualization. The codes
-below shows how to incorporate a graphic using the pipe. The first
+below show how to incorporate a graphic using the pipe. The first
 utilizes lattice graphics and the second ggplot2.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>cdc <span class="sc">%&gt;%</span> </span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(grade <span class="sc">==</span> <span class="st">&quot;9th grade&quot;</span> <span class="sc">|</span> grade <span class="sc">==</span> <span class="st">&quot;10th grade&quot;</span>) <span class="sc">%&gt;%</span> </span>
