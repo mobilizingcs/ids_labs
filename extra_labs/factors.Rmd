@@ -224,3 +224,25 @@ food_ids<-food_ids %>%
 ```{r,echo=FALSE, fig.width=4, fig.height=4}
 bargraph(~when, data=food_ids)
 ```
+
+## Factors from the get go
+
+You learned how to change the structure of a variable in Lab 1F and got a refresher here as well. What if you wanted to read in a csv file and automatically make the categorical variables factors? You need to read the file in using code.
+
+
+```{r, echo=FALSE, out.width="60%", out.height="60%"}
+knitr::include_graphics("importingfood.png")
+```
+
+You can find the code by clicking on the name of the csv file and choosing `Import Dataset...` but DO NOT click on Import. Rather, copy the code below `library(readr)` and paste it onto your console along with the argument `stringsAsFactors = TRUE`.
+
+This code is specific to this file. Notice the food habits data is in a folder called Day 1.
+
+```{r, eval=FALSE}
+food <- read_csv("Day 1/food.csv", stringsAsFactors = TRUE)
+```
+
+Check the 'str`ucture of the dataframe.
+
+Unfortunately, the order of the levels are assigned in alpha order.  To change the order of the levels you would use the same code learned in slide #5.
+
