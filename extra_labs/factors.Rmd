@@ -211,7 +211,7 @@ If you look at the `str`ucture of your food habits data, you will notice that al
 bargraph(~when, data=food_ids)
 ```
 
-Use what you learned in this lab to create the following:
+Use what you learned in this lab to create the following (Hint: refer to slide 5):
 
 ```{r, echo=FALSE}
 food_ids<-food_ids %>% 
@@ -230,7 +230,7 @@ bargraph(~when, data=food_ids)
 You learned how to change the structure of a variable in Lab 1F and got a refresher here as well. What if you wanted to read in a csv file and automatically make the categorical variables factors? You need to read the file in using code.
 
 
-```{r, echo=FALSE, out.width="60%", out.height="60%"}
+```{r, echo=FALSE, out.width="80%", out.height="80%"}
 knitr::include_graphics("importingfood.png")
 ```
 
