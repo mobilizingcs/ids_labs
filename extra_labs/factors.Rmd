@@ -1,7 +1,7 @@
 ---
 title: "Factors"
-author:
-date: R's basic data structures include the data frame, vector, list, matrix and array.The following slides contain information about factors, which are special types of vectors that store categorical data.
+author: R's basic data structures include the data frame, vector, list, matrix and array.
+date: The following slides contain information about factors, which are special types of vectors that store categorical data.
 output:
   slidy_presentation: default
   pdf_document: default
@@ -98,7 +98,7 @@ bargraph(~favorite_product, data = surveys)
   
   </ul>
   
-<li>**Run the code below and then create another bargraph of `size`. What order are the columns displayed in?**</li>
+<li>**Run the code below and then create another bargraph of `favorite_product`. What order are the columns displayed in?**</li>
 
 ```{r, eval = FALSE}
 surveys <- surveys %>%
