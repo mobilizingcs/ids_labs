@@ -43,7 +43,7 @@ barplot(table(colors_ids$p_color))
 
 
 ```{r, fig.height=4, fig.width=5}
-plot(colors_ids$blue, colors$gold)
+plot(colors_ids$blue, colors_ids$gold)
 ```
 
 ## Arguments
@@ -56,6 +56,58 @@ Many of the arguments that work for the lattice graphics transfer to base R.
 - `ylab`
 - `xlab`
 - `pch` for scatterplots
+- `border` for bars
+
+## Split histogram
+
+There are times when you facet a histogram and you would like each histogram to be a different color. The code below shows how to accomplish this:
+
+```{r}
+##personality color
+# Separate colors into vectors
+green <- colors_ids$green
+blue <- colors_ids$blue
+gold <- colors_ids$gold
+orange <- colors_ids$orange
+
+# Set up margins (for Error: margins are too large)
+#par sets the parameters for graphs
+#mar sets the margins
+#the c() function is creating a vector for the bottom, left, top, right margins
+par(mar = c(2, 1, 1, 1) + 0.1)
+
+# Set up the layout
+layout(matrix(1:4, nrow = 4, byrow = TRUE))
+
+# Create stacked histograms for each personality color
+hist(green, col = "seagreen3", 
+     main = "Green", 
+     xlab = "Score", 
+     border = "white",
+     breaks = seq(5, 20, by=1))
+
+hist(blue, col = "royalblue1", 
+     main = "Blue", 
+     xlab = "Score", 
+     border = "white",
+     breaks = seq(5, 20, by=1))
+
+hist(gold, col = "gold", 
+     main = "Gold", 
+     xlab = "Score", 
+     border = "white",
+     breaks = seq(5, 20, by=1))
+
+hist(orange, col = "orange", 
+     main = "Orange", 
+     xlab = "Score", 
+     border = "white",
+     breaks = seq(5, 20, by=1))
+
+# Reset the layout for your next plot
+layout(1)
+```
+
 
 ## Some useful functions
 

@@ -344,6 +344,47 @@ df <- cdc_complete %>%
 
 </ul>
 
+## case_when
+
+<ul>
+
+<li>`ifelse` allows us to check a condition with two possible outcomes. If we want more than two possible outcomes, then we should use the `case_when` function.</li>
+
+<li>Suppose we are interested in adding a column of bmi ranges. These are:</li>
+
+  <ul>
+  
+    <li>(0, 18.5): underweight</li>
+    
+    <li>(18.5, 25): healthy</li>
+    
+    <li>(25, 30): overweight</li>
+    
+    <li>(30, 40): obese</li>
+    
+    <li>40+: severely obese</li>
+    
+  </ul>
+  
+<li>Since there are five possible outcomes, it would be very cumbersome to use `ifelse` to create this column.</li>
+
+<li>Instead, we use `case_when`. `case_when` takes arbitrarily many arguments, separated by commas. Each argument is comprised of a logical condition and a value to return if that logical condition is true. The logical condition and return value are separated by a tilde.</li>
+
+```{r, eval = FALSE}
+# add a column called bmi_range that categorizes students by bmi range
+df <- cdc_complete %>%
+  mutate(
+    bmi_range = case_when(
+      bmi < 18.5 ~ "underweight",
+      18.5 <= bmi & bmi < 25 ~ "healthy",
+      25 <= bmi & bmi < 30 ~ "overweight",
+      30 <= bmi & bmi < 40 ~ "obese",
+      40 <= bmi ~ "severely obese"
+    )
+  )
+```
+
+
 ## summarize
 
 <ul>
