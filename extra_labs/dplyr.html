@@ -914,16 +914,18 @@ condition is true. The logical condition and return value are separated
 by a tilde.
 </li>
 <div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add a column called bmi_range that categorizes students by bmi range</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc_complete <span class="sc">%&gt;%</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">bmi_range =</span> <span class="fu">case_when</span>(</span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>      bmi <span class="sc">&lt;</span> <span class="fl">18.5</span> <span class="sc">~</span> <span class="st">&quot;underweight&quot;</span>,</span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>      <span class="fl">18.5</span> <span class="sc">&lt;=</span> bmi <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">25</span> <span class="sc">~</span> <span class="st">&quot;healthy&quot;</span>,</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>      <span class="dv">25</span> <span class="sc">&lt;=</span> bmi <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">30</span> <span class="sc">~</span> <span class="st">&quot;overweight&quot;</span>,</span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>      <span class="dv">30</span> <span class="sc">&lt;=</span> bmi <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">40</span> <span class="sc">~</span> <span class="st">&quot;obese&quot;</span>,</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>      <span class="dv">40</span> <span class="sc">&lt;=</span> bmi <span class="sc">~</span> <span class="st">&quot;severely obese&quot;</span></span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>    )</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(height), <span class="sc">!</span><span class="fu">is.na</span>(weight)) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">bmi =</span> weight <span class="sc">/</span> height<span class="sc">^</span><span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>           <span class="fu">mutate</span>(</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">bmi_range =</span> <span class="fu">case_when</span>(</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>               bmi <span class="sc">&lt;</span> <span class="fl">18.5</span> <span class="sc">~</span> <span class="st">&quot;underweight&quot;</span>,</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>               <span class="fl">18.5</span> <span class="sc">&lt;=</span> bmi <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">25</span> <span class="sc">~</span> <span class="st">&quot;healthy&quot;</span>,</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>               <span class="dv">25</span> <span class="sc">&lt;=</span> bmi <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">30</span> <span class="sc">~</span> <span class="st">&quot;overweight&quot;</span>,</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>               <span class="dv">30</span> <span class="sc">&lt;=</span> bmi <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">40</span> <span class="sc">~</span> <span class="st">&quot;obese&quot;</span>,</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>               <span class="dv">40</span> <span class="sc">&lt;=</span> bmi <span class="sc">~</span> <span class="st">&quot;severely obese&quot;</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>             )</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>           )</span></code></pre></div>
 </div>
 <div id="summarize" class="slide section level2">
 <h1>summarize</h1>

@@ -372,16 +372,18 @@ df <- cdc_complete %>%
 
 ```{r, eval = FALSE}
 # add a column called bmi_range that categorizes students by bmi range
-df <- cdc_complete %>%
-  mutate(
-    bmi_range = case_when(
-      bmi < 18.5 ~ "underweight",
-      18.5 <= bmi & bmi < 25 ~ "healthy",
-      25 <= bmi & bmi < 30 ~ "overweight",
-      30 <= bmi & bmi < 40 ~ "obese",
-      40 <= bmi ~ "severely obese"
-    )
-  )
+df <- cdc %>%
+  filter(!is.na(height), !is.na(weight)) %>% 
+           mutate(bmi = weight / height^2) %>% 
+           mutate(
+             bmi_range = case_when(
+               bmi < 18.5 ~ "underweight",
+               18.5 <= bmi & bmi < 25 ~ "healthy",
+               25 <= bmi & bmi < 30 ~ "overweight",
+               30 <= bmi & bmi < 40 ~ "obese",
+               40 <= bmi ~ "severely obese"
+             )
+           )
 ```
 
 
