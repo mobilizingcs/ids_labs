@@ -95,7 +95,7 @@ merge(____, ____, by = "____")
 - <span class="blue">Fill in the blank below to `save` our `stress_colors` data for later use.</span>
     
 ```{r, eval = FALSE, echo = TRUE}
-save(stress_colorss, file = "stress_colorss.Rda")
+save(stress_colors, file = "stress_colors.Rda")
 ```
 
 - <span class="blue">Be sure to look in the _Files_ tab to make sure your data was saved.</span>
