@@ -26,7 +26,7 @@ library(mobilizr)
 - The _correlation coefficient_ is a tool that gives us a fairly good idea of how these predictions will turn out without having to make predictions on future observations.
 - For this lab, we will be using the `movie` data set to investigate the following question:
 
-_Which variables are better predictors of a movie's `audience_rating` when the predictions are made using a line of best fit?_
+_Which variables are better predictors of a movie's `critics_rating` when the predictions are made using a line of best fit?_
 
 
 ## Correlation coefficients
@@ -34,7 +34,7 @@ _Which variables are better predictors of a movie's `audience_rating` when the p
 - The _correlation coefficient_ describes the _strength_ and _direction_ of the linear trend.
 - It's only useful when the trend is linear and both variables are numeric.
 ```{r, eval=TRUE, echo=FALSE, fig.align='center', fig.height = 5, fig.width = 12, out.width = '90%'}
-xyplot(audience_rating~critics_rating, data = movie,
+xyplot(critics_rating~audience_rating, data = movie,
        cex = 2,
        scales=list(cex=2.5),
           xlab = list("Variable 1", cex=2.5),
@@ -47,7 +47,7 @@ xyplot(audience_rating~critics_rating, data = movie,
 ## Correlation review I
 
 ```{r, eval=TRUE, echo=FALSE, fig.align='center', fig.height = 5, fig.width = 12, out.width = '90%'}
-xyplot(audience_rating~critics_rating, data = movie,
+xyplot(critics_rating~audience_rating, data = movie,
        cex = 2,
        scales=list(cex=2.5),
           xlab = list("Variable 1", cex=2.5),
@@ -61,7 +61,7 @@ xyplot(audience_rating~critics_rating, data = movie,
 ## Correlation review II
 
 ```{r, eval=TRUE, echo=FALSE, fig.align='center', fig.height = 4.5, fig.width = 12, out.width = '90%'}
-xyplot(audience_rating~critics_rating, data = movie,
+xyplot(critics_rating~audience_rating, data = movie,
        cex = 2,
        scales=list(cex=2.5),
           xlab = list("Variable 1", cex=2.5),
