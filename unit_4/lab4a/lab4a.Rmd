@@ -44,11 +44,11 @@ library(mobilizr)
 - <span class="blue">Create two subsets of our `arm_span` data: 
     - One for `armspan >= 61` and `armspan <= 63`. 
     - A second for `armspan >= 64` and `armspan <= 66`.</span>
-- <span class="blue">Create a histogram for the `height` of people in each subset.</span>
+- <span class="blue">Create a `histogram` for the `height` of people in each subset.</span>
 - **Answer the following based on the data:**
     - **What `height` would you predict if you knew a person had an `armspan` around 62 inches?**
     - **What `height` would you predict if you knew a person had an `armspan` around 65 inches?**
-    - **Does knowing someone's `armspan` help you predict their height? Why or why not?**
+    - **Does knowing someone's `armspan` help you predict their `height`? Why or why not?**
 
 
 
@@ -71,16 +71,17 @@ library(mobilizr)
     - One way of describing this sort of trend is with a line.
 - Data scientists often _fit_ lines to their data to make predictions.    
     - What we mean by _fit_ is to come up with a line that's close to as many of the data points as possible.
-- <span class="blue">Create a scatterplot for `height` and `armspan`. Then run the following code. Draw a line by clicking twice on the _Plot_ pane.</span>
+- <span class="blue">Create a scatterplot for `height` and `armspan`. Then run the following code.</span>
 ```{r, eval = FALSE, echo = TRUE}
 add_line()
 ```
 
+- <span class="blue">On the _Plot_ pane, click two data points to draw a line through.</span>
 
 ## Predicting with lines
 
 - **Draw a line that you think is a good _fit_ and write down its equation. Using this equation:**
-    - **Predict how tall a person with a 62 inch armspan and a person with a 65 inch `armspan` would be.**
+    - **Predict how tall a person with a 62 inch `armspan` and a person with a 65 inch `armspan` would be.**
     
 <!-- - **How much taller is the person with a 70 inch `armspan` than the 69 inch `armspan`? Does this difference seem more reasonable than the difference we calculated using the means?**   -->
 - Using a line to make predictions also lets us make predictions for `armspan`s that aren't in our data.
@@ -110,5 +111,5 @@ lm(____ ~ ____, data = arm_span)
 add_line(intercept = ____, slope = ____)
 ```
 
-- **Predict the height of a person with a 63.5 inch `armspan` and compare it with a neighbor. Ensure you both arrive at the same predicted value.**
-- **Measure your `armspan` and use the regression line to predict your height. How close was the prediction?**
+- **Predict the `height` of a person with a 63.5 inch `armspan` and compare it with a neighbor. Ensure you both arrive at the same predicted value.**
+- **Measure your `armspan` and use the regression line to predict your `height`. How close was the prediction?**
