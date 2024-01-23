@@ -74,44 +74,6 @@ cdc %>%
 
 </ul>
 
-## Example
-
-<ul>
-
-<li>To see why we might prefer factors, let's consider an example using the `surveys` dataset.</li>
-
-<li>**Use the `str` function to view the `str`ucture of `surveys`. Does it contain any factors? How is the `favorite_product` column stored?**</li>
-
-<li>Suppose we were interested in seeing a `bargraph` of the `favorite_product` column. Then we might run</li>
-
-```{r, eval = FALSE}
-bargraph(~favorite_product, data = surveys)
-```
-
-<li>Notice that the columns are listed alphabetically. What if we wanted to list the columns in a different order?</li>
-
-<li>To do so, we will have to turn the `favorite_product` column into a factor, and specify an order for the levels.</li>
-
-  <ul>
-  
-  <li>The `factor` function is used to turn character vectors into factors. It takes two arguments. The first is the character vector you would like to convert into a factor. The second is the levels of your new factor, **in the order you want them to be displayed**.</li>
-  
-  </ul>
-  
-<li>**Run the code below and then create another bargraph of `favorite_product`. What order are the columns displayed in?**</li>
-
-```{r, eval = FALSE}
-surveys <- surveys %>%
-  mutate(
-    favorite_product = factor(favorite_product, 
-                              levels = c("T-shirt", "Sweater", "Hoodie", "Cardigan", "Button-up", "Blouse"))
-  )
-```
-
-<li>**Create a new bargraph of `favorite_product`, using a different column ordering of your choosing.**</li>
-
-</ul>
-
 ## droplevels
 
 <ul>
@@ -167,6 +129,48 @@ cdc %>%
   geom_bar()
 ```
 
+## Characters to factors
+
+<ul>
+
+<li>To see why we might prefer factors, let's consider an example using a toy dataset named `surveys`.</li>
+
+```{r, eval = FALSE}
+data(surveys)
+```
+
+
+<li>**Use the `str` function to view the `str`ucture of `surveys`. Does it contain any factors? How is the `favorite_product` column stored?**</li>
+
+<li>Suppose we were interested in seeing a `bargraph` of the `favorite_product` column. Then we might run</li>
+
+```{r, eval = FALSE}
+bargraph(~favorite_product, data = surveys)
+```
+
+<li>Notice that the columns are listed alphabetically. What if we wanted to list the columns in a different order?</li>
+
+<li>To do so, we will have to turn the `favorite_product` column into a factor, and specify an order for the levels.</li>
+
+  <ul>
+  
+  <li>The `factor` function is used to turn character vectors into factors. It takes two arguments. The first is the character vector you would like to convert into a factor. The second is the levels of your new factor, **in the order you want them to be displayed**.</li>
+  
+  </ul>
+  
+<li>**Run the code below and then create another bargraph of `favorite_product`. What order are the columns displayed in?**</li>
+
+```{r, eval = FALSE}
+surveys <- surveys %>%
+  mutate(
+    favorite_product = factor(favorite_product, 
+                              levels = c("T-shirt", "Sweater", "Hoodie", "Cardigan", "Button-up", "Blouse"))
+  )
+```
+
+<li>**Create a new bargraph of `favorite_product`, using a different column ordering of your choosing.**</li>
+
+</ul>
 
 ## stringsAsFactors
 
@@ -205,13 +209,19 @@ animal_weights <- data.frame(
 
 ## Factors and Food
 
+Use the following command to load the food habits data from the extra datasets:
+
+```{r, eval = FALSE}
+extra_data("food_ids")
+```
+
 If you look at the `str`ucture of your food habits data, you will notice that all of the categorical variables are read in as characters. Therefore when you make a bargraph of the `when` variable, they are organized in alpha order.
 
 ```{r, fig.width=4, fig.height=4}
 bargraph(~when, data=food_ids)
 ```
 
-Use what you learned in this lab to create the following (Hint: refer to slide 5):
+Use what you learned in this lab to create the following (Hint: refer to slide 7):
 
 ```{r, echo=FALSE}
 food_ids<-food_ids %>% 
@@ -227,22 +237,21 @@ bargraph(~when, data=food_ids)
 
 ## Factors from the get go
 
-You learned how to change the structure of a variable in Lab 1F and got a refresher here as well. What if you wanted to read in a csv file and automatically make the categorical variables factors? You need to read the file in using code.
+You learned how to change the structure of a variable in Lab 1F and got a refresher here as well. What if you wanted to read in a csv file and automatically make the categorical variables into factors? You need to read the file in using code.
 
-
-```{r, echo=FALSE, out.width="80%", out.height="80%"}
-knitr::include_graphics("importingfood.png")
-```
-
-You can find the code by clicking on the name of the csv file and choosing `Import Dataset...` but DO NOT click on Import. Rather, copy the code below `library(readr)` and paste it onto your console along with the argument `stringsAsFactors = TRUE`.
-
-This code is specific to this file. Notice the food habits data is in a folder called Day 1.
+Make sure you have your food habits csv in your `Files`. The code below can be used under the assumption that your csv file is named `food`.
 
 ```{r, eval=FALSE}
-food <- read_csv("Day 1/food.csv", stringsAsFactors = TRUE)
+food <- read_csv("food.csv", stringsAsFactors = TRUE)
 ```
+
+If you obtain an error message stating that food was not found, make sure you include the correct file path. For example if you have the food habits csv file saved in a folder called Period 1, then your code would look like this:
+
+```{r, eval=FALSE}
+food <- read_csv("Period 1/food.csv", stringsAsFactors = TRUE)
+```
+
 
 Check the 'str`ucture of the dataframe.
 
-Unfortunately, the order of the levels are assigned in alpha order.  To change the order of the levels you would use the same code learned in slide #5.
-
+Unfortunately, the order of the levels are assigned in alpha order.  To change the order of the levels you would use the same code learned in slide #7.
