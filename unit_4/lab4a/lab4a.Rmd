@@ -78,6 +78,8 @@ add_line()
 
 - <span class="blue">On the _Plot_ pane, click two data points to draw a line through.</span>
 
+- NOTE: If your line does not appear, zoom out on your browser (50% if you have a Mac, 80% on Windows). Then run the `add_line()` function again and click on two points.
+
 ## Predicting with lines
 
 - **Draw a line that you think is a good _fit_ and write down its equation. Using this equation:**
@@ -89,7 +91,7 @@ add_line()
 - **Compare your answers with a neighbor. Did both of you come up with the same equation for a line? If not, can you tell which line fits the data best?**
 
 
-## Regression lines
+<!--## Regression lines
 
 - If you were to go around your class, each student would have created a different line that they feel _fit_ the data best.
     - Which is a problem because everyone's line will make slightly different predictions.
@@ -112,4 +114,4 @@ add_line(intercept = ____, slope = ____)
 ```
 
 - **Predict the `height` of a person with a 63.5 inch `armspan` and compare it with a neighbor. Ensure you both arrive at the same predicted value.**
-- **Measure your `armspan` and use the regression line to predict your `height`. How close was the prediction?**
+- **Measure your `armspan` and use the regression line to predict your `height`. How close was the prediction?**-->

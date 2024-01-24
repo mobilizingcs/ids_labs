@@ -72,12 +72,15 @@ summarize(____, sum(____))
 
 - Hint: Like `mutate`, the first argument of `summarize` is a dataframe, and the second argument is the action to perform on a column of the dataframe. Whereas the output of `mutate` is a column, the output of `summarize` is (usually) a single number summary.
 
-## Checking our work
-
 - **Describe and interpret, in words, what the output of your accuracy summary means.**
-    - **Compare your accuracy summary with a neighbor. Whose line was more accurate and why?**
+
 - **Write down why adding positive and negative errors together is problematic for assessing prediction accuracy.**
-    - **Why does calculating the squared values for the differences solve this problem?**
+
+## Mean squared error
+
+- When adding residuals, the positive errors in our predictions (underestimates) are cancelled out by negative errors (overestimates) which lead to the impression that our model is making better predictions than it actually is.
+
+- To solve this problem we calculate the squared values of the errors.
     
 - The _mean squared error_ (MSE) is calculated by squaring all of the residuals, and then taking the mean of the squared residuals.
 - <span class="blue">Fill in the blanks below to calculate the MSE of your line.</span>
@@ -86,10 +89,30 @@ summarize(____, sum(____))
 summarize(____, mean((____)^2))
 ```
 
-## On your own
+- **Compare your MSE with a neighbor. Whose line was more accurate and why?**
 
-- <span class="blue">Create a _regression line_ as you did in the previous lab, for `height` and `armspan`.</span>
-    - We also refer to _regression lines_ as _linear models_.
+## Regression lines
+
+- If you were to go around your class, each student would have created a different line that they feel _fit_ the data best.
+    - Which is a problem because everyone's line will make slightly different predictions.
+- To avoid this variation in predictions, data scientists will use _regression lines_.
+    - This line connects the mean `height` of people with similar `arm_spans`.
+    - <span class="blue">Fill in the blanks below to create a _regression line_ using `lm`, or _linear model_:</span>
+
+```{r, eval = FALSE, echo = TRUE}
+lm(____ ~ ____, data = arm_span)
+```
+
+- <span class="blue">To see how the `lm` line fits your data, create a scatterplot and then run:</span>
+```{r, eval = FALSE, echo = TRUE}
+add_line(intercept = ____, slope = ____)
+```
+
+## The magic of lm()
+
+- The `lm()` function creates the _line of best fit_ equation by finding the line that minimizes the _mean squared error_. Meaning, it's the _best fitting line possible_. 
+
+- <span class="blue">Create a _regression line_ or _linear model_ for `height` and `armspan`.</span>
     - <span class="blue">Assign this model the name `best_fit`. </span>
 - Making predictions with models `R` is familiar with is simpler than with lines, or models, we come up with ourselves.
     - <span class="blue">Fill in the blanks to make predictions using `best_fit`:</span>
@@ -100,13 +123,14 @@ ____ <- mutate(____, predicted_height = predict(____))
 - Hint: the `predict` function takes a linear model as input, and outputs the predictions of that model.
 - <span class="blue">Calculate the MSE for these new predicted values.</span>
 
+## On your own
 
-## The magic of lm()
+- **Compare the MSE value you calculated using the line you fitted with `add_line()` to the same value you calculated using the `lm` function.**
 
-- The `lm()` function creates the _line of best fit_ equation by finding the line that minimizes the _mean squared error_. Meaning, it's the _best fitting line possible_. 
-    - **Compare the MSE value you calculated using the line you fitted with `add_line()` to the same value you calculated using the `lm` function.**
-    - **Ask your neighbors if any of their lines beat the `lm` line in terms of the MSE. Were any of them successful?**
-- <span class="blue">To see how the `lm` line fits your data, create a scatterplot and then run:</span>
-```{r, eval = FALSE, echo = TRUE}
-add_line(intercept = ____, slope = ____)
-```
+- **Ask your neighbors if any of their lines beat the `lm` line in terms of the MSE. Were any of them successful?**
+
+- **What do you think the value of the sum of the residuals wil be for the line of best fit? Why?**
+
+- <span class="blue">Calculate the sum of the residuals for the _line of best fit_ .</span>
+
+- **Why do you think it is so close to zero?**
