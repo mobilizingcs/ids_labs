@@ -85,7 +85,7 @@ xyplot(critics_rating~audience_rating, data = movie,
 ## Calculating correlation coefficients!
 
 - We can use the `cor()` function to find the particular correlation coefficient of the variables from the previous plot, which happen to be `audience_rating` and `critics_rating`.
-- But note, the `cor()` function removes any observations which contains an `NA` value in either variable.
+- But note, the `cor()` function removes any observations which contain an `NA` value in either variable.
 - <span class="blue">Calculate the correlation coefficient for these variables using the `cor` function. The inputs to the functions work just like the inputs of the `xyplot` function.</span>
 
 
@@ -94,7 +94,7 @@ xyplot(critics_rating~audience_rating, data = movie,
 - **What was the value of the correlation coefficient you calculated?**
 - **How does this actual value compare with the one you estimated previously?**
 - **Does this indicate a strong, weak, or moderate association? Why?**
-- **How would the scatter plot need to change in order for the correlation to be stronger?**
+- **How would the scatterplot need to change in order for the correlation to be stronger?**
 - **How would it need to change in order for the correlation to be weaker?**
 
 
