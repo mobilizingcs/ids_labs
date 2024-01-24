@@ -624,8 +624,11 @@ to as many of the data points as possible.</li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_line</span>()</span></code></pre></div>
 <ul>
-<li><span class="blue">On the <em>Plot</em> pane, click two data points
-to draw a line through.</span></li>
+<li><p><span class="blue">On the <em>Plot</em> pane, click two data
+points to draw a line through.</span></p></li>
+<li><p>NOTE: If your line does not appear, zoom out on your browser (50%
+if you have a Mac, 80% on Windows). Then run the <code>add_line()</code>
+function again and click on two points.</p></li>
 </ul>
 </div>
 <div id="predicting-with-lines" class="slide section level2">
@@ -650,48 +653,6 @@ would be.</strong></li>
 <li><strong>Compare your answers with a neighbor. Did both of you come
 up with the same equation for a line? If not, can you tell which line
 fits the data best?</strong></li>
-</ul>
-</div>
-<div id="regression-lines" class="slide section level2">
-<h1>Regression lines</h1>
-<ul>
-<li>If you were to go around your class, each student would have created
-a different line that they feel <em>fit</em> the data best.
-<ul>
-<li>Which is a problem because everyone’s line will make slightly
-different predictions.</li>
-</ul></li>
-<li>To avoid this variation in predictions, data scientists will use
-<em>regression lines</em>.
-<ul>
-<li>This line connects the mean <code>height</code> of people with
-similar <code>arm_spans</code>.</li>
-<li><span class="blue">Fill in the blanks below to create a
-<em>regression line</em> using <code>lm</code>, or <em>linear
-model</em>:</span></li>
-</ul></li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(____ <span class="sc">~</span> ____, <span class="at">data =</span> arm_span)</span></code></pre></div>
-</div>
-<div id="predicting-with-regression-lines" class="slide section level2">
-<h1>Predicting with regression lines</h1>
-<ul>
-<li><strong>Use the output of the code from the previous slide to write
-down the equation of the <em>regression line</em> in the form</strong>
-<center>
-<code>y = a + bx</code>.
-</center></li>
-<li><span class="blue">Add this line to a scatterplot by filling in the
-blanks below:</span></li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_line</span>(<span class="at">intercept =</span> ____, <span class="at">slope =</span> ____)</span></code></pre></div>
-<ul>
-<li><strong>Predict the <code>height</code> of a person with a 63.5 inch
-<code>armspan</code> and compare it with a neighbor. Ensure you both
-arrive at the same predicted value.</strong></li>
-<li><strong>Measure your <code>armspan</code> and use the regression
-line to predict your <code>height</code>. How close was the
-prediction?</strong></li>
 </ul>
 </div>
 
