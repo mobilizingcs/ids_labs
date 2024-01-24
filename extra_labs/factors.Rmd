@@ -252,6 +252,8 @@ food <- read_csv("Period 1/food.csv", stringsAsFactors = TRUE)
 ```
 
 
-Check the 'str`ucture of the dataframe.
+Check the `str`ucture of the dataframe.
 
-Unfortunately, the order of the levels are assigned in alpha order.  To change the order of the levels you would use the same code learned in slide #7.
+The order of the levels are assigned in alpha order. To change the order of the levels you would use the same code learned in slide #7.
+
+Challenge: Reorder the `why` variable.
