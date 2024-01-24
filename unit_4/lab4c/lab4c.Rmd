@@ -1,4 +1,3 @@
----
 title: "Cross-Validation"
 author: "Lab 4C"
 date: 'Directions: Follow along with the slides, completing the questions in <font color=#25679E><b>blue</b></font> on your computer, and answering the questions in **red** in your journal.  
@@ -50,13 +49,13 @@ train <- slice(arm_span, ____)
 test <- slice(____, - ____)
 ```
 
-- **Explain these lines of code and describe the `train` and `test` data sets.**
+- **Explain these lines of code and describe the `train` and `test` datasets.**
 
 ## Aside: set.seed()
 
 - When we split data, we're randomly separating our observations into _training_ and _testing_ sets.
     - It's important to notice that no single observation will be placed in both sets.
-- Because we're splitting the data sets randomly, our models can will also vary slightly, person-to-person.
+- Because we're splitting the datasets randomly, our models can will also vary slightly, person-to-person.
     - This is why it's important to use `set.seed`.
 - By using `set.seed`, we're able to reproduce the random splitting so that each person's model outputs the same results.
 
@@ -66,7 +65,7 @@ _Whenever you split data into training and testing, always use `set.seed` first.
 
 - When splitting data into `training` and `testing` sets, we need to have enough observations in our data so that we can build a good model.
     - This is why we kept 85 observations in our `training` data.
-- As data sets grow larger, we can use a larger proportion of the data to `test` with.
+- As datasets grow larger, we can use a larger proportion of the data to `test` with.
 
 ## Step 2: train the model
 
@@ -109,7 +108,7 @@ test <- mutate(test, ____ = predict(best_train, newdata = ____))
 
 - The following example motivates cross-validation by illustrating the dangers of overfitting.
 - We randomly select 7 points from the `arm_span` dataset and fit two models: a linear model, and a _polynomial model_.
-    - You will learn how to fit a polynomial model in lab 4F.
+    - You will learn how to fit a polynomial model in the next lab.
 - Below is a plot of these 7 `training` points, and two curves representing the value of height each model would predict given a value of armspan.
 
 ```{r, out.width="50%", out.height="50%"}
