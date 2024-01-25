@@ -624,7 +624,7 @@ accuracy.</strong></p></li>
 which lead to the impression that our model is making better predictions
 than it actually is.</p></li>
 <li><p>To solve this problem we calculate the squared values of the
-errors.</p></li>
+errors because squared values are always positive.</p></li>
 <li><p>The <em>mean squared error</em> (MSE) is calculated by squaring
 all of the residuals, and then taking the mean of the squared
 residuals.</p></li>
@@ -649,36 +649,32 @@ different predictions.</li>
 <li>To avoid this variation in predictions, data scientists will use
 <em>regression lines</em>.
 <ul>
+<li>We also refer to <em>regression lines</em> as <em>linear
+models</em>.</li>
 <li>This line connects the mean <code>height</code> of people with
 similar <code>arm_spans</code>.</li>
 <li><span class="blue">Fill in the blanks below to create a
-<em>regression line</em> using <code>lm</code>, or <em>linear
-model</em>:</span></li>
+<em>regression line</em> using <code>lm</code>, which stands for
+<em>linear model</em>:</span></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(____ <span class="sc">~</span> ____, <span class="at">data =</span> arm_span)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>best_fit <span class="ot">&lt;-</span> <span class="fu">lm</span>(____ <span class="sc">~</span> ____, <span class="at">data =</span> arm_span)</span></code></pre></div>
+</div>
+<div id="plotting-regression-lines" class="slide section level2">
+<h1>Plotting regression lines</h1>
 <ul>
-<li><span class="blue">To see how the <code>lm</code> line fits your
-data, create a scatterplot and then run:</span></li>
+<li><p><span class="blue">Type <code>best_fit</code> into the console to
+see the slope and intercept of the regression line.</span></p></li>
+<li><p><span class="blue">Add this line to a scatterplot by filling in
+the blanks below.</span></p></li>
 </ul>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_line</span>(<span class="at">intercept =</span> ____, <span class="at">slope =</span> ____)</span></code></pre></div>
 </div>
-<div id="the-magic-of-lm" class="slide section level2">
-<h1>The magic of lm()</h1>
+<div id="predicting-with-regression-lines" class="slide section level2">
+<h1>Predicting with regression lines</h1>
 <ul>
-<li><p>The <code>lm()</code> function creates the <em>line of best
-fit</em> equation by finding the line that minimizes the <em>mean
-squared error</em>. Meaning, it’s the <em>best fitting line
-possible</em>.</p></li>
-<li><p><span class="blue">Create a <em>regression line</em> or
-<em>linear model</em> for <code>height</code> and
-<code>armspan</code>.</span></p>
-<ul>
-<li><span class="blue">Assign this model the name <code>best_fit</code>.
-</span></li>
-</ul></li>
-<li><p>Making predictions with models <code>R</code> is familiar with is
-simpler than with lines, or models, we come up with ourselves.</p>
+<li>Making predictions with models <code>R</code> is familiar with is
+simpler than with lines, or models, we come up with ourselves.
 <ul>
 <li><span class="blue">Fill in the blanks to make predictions using
 <code>best_fit</code>:</span></li>
@@ -688,25 +684,23 @@ simpler than with lines, or models, we come up with ourselves.</p>
 <ul>
 <li>Hint: the <code>predict</code> function takes a linear model as
 input, and outputs the predictions of that model.</li>
-<li><span class="blue">Calculate the MSE for these new predicted
-values.</span></li>
 </ul>
 </div>
-<div id="on-your-own" class="slide section level2">
-<h1>On your own</h1>
+<div id="the-magic-of-lm" class="slide section level2">
+<h1>The magic of lm()</h1>
 <ul>
+<li><p>The <code>lm()</code> function creates the <em>line of best
+fit</em> equation by finding the line that minimizes the <em>mean
+squared error</em>. Meaning, it’s the <em>best fitting line
+possible</em>.</p></li>
+<li><p><span class="blue">Calculate the MSE for the values predicted
+using the regression line.</span></p></li>
 <li><p><strong>Compare the MSE value you calculated using the line you
 fitted with <code>add_line()</code> to the same value you calculated
 using the <code>lm</code> function.</strong></p></li>
 <li><p><strong>Ask your neighbors if any of their lines beat the
 <code>lm</code> line in terms of the MSE. Were any of them
 successful?</strong></p></li>
-<li><p><strong>What do you think the value of the sum of the residuals
-wil be for the line of best fit? Why?</strong></p></li>
-<li><p><span class="blue">Calculate the sum of the residuals for the
-<em>line of best fit</em> .</span></p></li>
-<li><p><strong>Why do you think it is so close to
-zero?</strong></p></li>
 </ul>
 </div>
 
