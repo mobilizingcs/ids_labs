@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content="Lab 4F" />
-  <title>Some models have curves</title>
+  <title>This model is big enough for all of us!</title>
   <style type="text/css">
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -522,7 +522,7 @@ list-style-type: none;
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title">Some models have curves</h1>
+  <h1 class="title">This model is big enough for all of us!</h1>
   <p class="author">
 Lab 4F
   </p>
@@ -532,156 +532,83 @@ computer, and answering the questions in <strong>red</strong> in your
 journal. <br> <br> Space, Click, Right Arrow or swipe left to move to
 the next slide.</p>
 </div>
-<div id="making-models-do-yoga" class="slide section level2">
-<h1>Making models do yoga</h1>
+<div id="building-better-models" class="slide section level2">
+<h1>Building better models</h1>
 <ul>
-<li>So far, we have only worked with prediction models that fit the
-<em>line of best fit</em> to the data.</li>
-<li>What happens if the true relationship between the data is
-nonlinear?</li>
-<li>In this lab, we will learn about prediction models that fit <em>best
-fitting curves</em> to data.</li>
-<li><span class="blue">Before moving on, load the <code>movie</code>
-data and split it into two sets:</span>
+<li>So far, in the labs, we’ve learned how to make predictions using the
+<em>line of best fit</em>, also known as <em>linear models</em> or
+<em>regression models</em>.</li>
+<li>We’ve also learned how to measure our model’s prediction accuracy by
+cross-validation.</li>
+<li>In this lab, we’ll investigate the following question:</li>
+</ul>
+<p><em>Will including more variables in our model improve its
+predictions?</em></p>
+</div>
+<div id="divide-conquer" class="slide section level2">
+<h1>Divide &amp; Conquer</h1>
+<ul>
+<li><span class="blue">Start by loading the <code>movie</code> data and
+split it into two sets (See Lab 4C for help).</span>
 <ul>
 <li><span class="blue">A set named <code>training</code> that includes
 75% of the data.</span></li>
-<li><span class="blue">And a set named <code>testing</code> that
-includes the remaining 25%.</span></li>
+<li><span class="blue">A set named <code>testing</code> that includes
+the remaining 25%.</span></li>
 <li><span class="blue">Remember to use
 <code>set.seed</code>.</span></li>
 </ul></li>
+<li><span class="blue">Create a linear model, using the
+<code>training</code> data, that predicts <code>gross</code> using
+<code>runtime</code>.</span>
+<ul>
+<li><span class="blue">Compute the MSE of the model by making
+predictions for the <code>testing</code> data.</span></li>
+</ul></li>
+<li><strong>Do you think that a movie’s <code>runtime</code> is the only
+factor that goes into how much a movie will make? What else might affect
+a movie’s <code>gross</code>?</strong></li>
 </ul>
 </div>
-<div id="problems-with-lines" class="slide section level2">
-<h1>Problems with lines</h1>
+<div id="including-more-info" class="slide section level2">
+<h1>Including more info</h1>
 <ul>
-<li>Before learning how to fit curves, let’s first fit a linear model
-for reference.</li>
-<li><span class="blue">Train a linear model predicting
-<code>audience_rating</code> based on <code>critics_rating</code> for
-the <code>training</code> data. Assign this model to
-<code>movie_linear</code>.</span></li>
-<li><span class="blue">Fill in the blanks below to create a scatterplot
-with <code>audience_rating</code> on the y-axis and
-<code>critics_rating</code> on the x-axis using your
-<code>testing</code> data.</span></li>
-</ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xyplot</span>(____ <span class="sc">~</span> ____, <span class="at">data =</span> ____)</span></code></pre></div>
+<li>Data scientists often find that including more relevant information
+in their models leads to better predictions.
 <ul>
-<li>Previously, you used <code>add_line</code> to plot the <em>line of
-best fit</em>. An alternative function for plotting the <em>line of best
-fit</em> is <code>add_curve</code>, which takes the name of the model as
-an argument.</li>
-<li><span class="blue">Run the code below to add the <em>line of best
-fit</em> for the <code>training</code> data to the plot.</span></li>
-</ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">add_curve</span>(movie_linear)</span></code></pre></div>
-<ul>
-<li><strong>Describe, in words, how the line fits the data. Are there
-any values for <code>critics_rating</code> that would make obviously
-poor predictions?</strong>
-<ul>
-<li>Hint: how does the linear model perform on very low and very high
-values of <code>critics_rating</code>?</li>
-</ul></li>
-<li><strong>Compute the MSE of the linear model for the
-<code>testing</code> data and write it down for later.</strong>
-<ul>
-<li>Hint: refer to lab 4B.</li>
+<li><span class="blue">Fill in the blanks below to predict
+<code>gross</code> using <code>runtime</code> and
+<code>reviews_num</code>.</span></li>
 </ul></li>
 </ul>
-</div>
-<div id="adding-flexibility" class="slide section level2">
-<h1>Adding flexibility</h1>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">lm</span>(____ <span class="sc">~</span> ____ <span class="sc">+</span> ____, <span class="at">data =</span> training)</span></code></pre></div>
 <ul>
-<li>You don’t need to be a full-fledged Data Scientist to realize that
-trying to fit a line to curved data is a poor modeling choice.</li>
-<li>If our data is curved, we should try to model it with a curve.</li>
-<li>Instead of fitting a line, with equation of the form
-<center>
-<code>y = a + bx</code>
-</center></li>
-<li>we might consider fitting a <em>quadratic curve</em>, with equation
-of the form
-<center>
-<code>y = a + bx + cx</code><sup><code>2</code></sup>
-</center></li>
-<li>or even a <em>cubic curve</em>, with equation of the form
-<center>
-<code>y = a + bx + cx</code><sup><code>2</code></sup><code>+ dx</code><sup><code>3</code></sup>
-</center></li>
-<li>In general, the more coefficients in the model, the more flexible
-its predictions can be.</li>
-</ul>
-<p><img src="data:image/png;base64,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" width="50%" height="50%" /></p>
-</div>
-<div id="making-bend-y-models" class="slide section level2">
-<h1>Making bend-y models</h1>
-<ul>
-<li>To fit a quadratic model in <code>R</code>, we can use the
-<code>poly()</code> function.
-<ul>
-<li><span class="blue">Fill in the blanks below to train a quadratic
-model predicting <code>audience_rating</code> from
-<code>critics_rating</code>, and assign that model to
-<code>movie_quad</code>.</span></li>
-</ul></li>
-</ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>movie_quad <span class="ot">&lt;-</span> <span class="fu">lm</span>(____ <span class="sc">~</span> <span class="fu">poly</span>(____, <span class="dv">2</span>), <span class="at">data =</span> training)</span></code></pre></div>
-<ul>
-<li><strong>What is the role of the number <code>2</code> in the
-<code>poly()</code> function?</strong></li>
-</ul>
-</div>
-<div id="comparing-lines-and-curves" class="slide section level2">
-<h1>Comparing lines and curves</h1>
-<ul>
-<li><span class="blue">Fill in the blanks below to</span>
-<ul>
-<li><span class="blue">create a scatterplot with
-<code>audience_rating</code> on the y-axis and
-<code>critics_rating</code> on the x-axis using your
-<code>testing</code> data, and</span></li>
-<li><span class="blue">add the <em>line of best fit</em> and <em>best
-fitting quadratic curve</em>.</span></li>
-<li>Hint: the <code>col</code> argument is added to the
-<code>add_curve</code> functions to help distinguish the two
-curves.</li>
-</ul></li>
-</ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xyplot</span>(____ <span class="sc">~</span> ____, <span class="at">data =</span> ____)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">add_curve</span>(____, <span class="at">col =</span> <span class="st">&quot;blue&quot;</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">add_curve</span>(____, <span class="at">col =</span> <span class="st">&quot;red&quot;</span>)</span></code></pre></div>
-<ul>
-<li><strong>Compare how the <em>line of best fit</em> and the
-<em>quadratic</em> model fit the data. Which do you think has a lower
-<code>test</code> MSE?</strong></li>
-<li><strong>Compute the MSE of the quadratic model for the
-<code>test</code> data and write it down for later</strong>.</li>
-<li><strong>Use the difference in each model’s <code>test</code> MSE to
-describe why one model fits better than the other.</strong></li>
+<li><strong>Does this new model make more or less accurate predictions?
+Describe the process you used to arrive at your
+conclusion.</strong></li>
+<li><strong>Write down the code you would use to include a 3rd variable,
+of your choosing, in your <code>lm()</code>.</strong></li>
 </ul>
 </div>
 <div id="on-your-own" class="slide section level2">
 <h1>On your own</h1>
 <ul>
-<li><span class="blue">Create a model that predicts
-<code>audience_rating</code> using a cubic curve (polynomial with degree
-<code>3</code>), and assign this model to
-<code>movie_cubic</code>.</span></li>
-<li><span class="blue">Create a scatterplot with
-<code>audience_rating</code> on the y-axis and
-<code>critics_rating</code> on the x-axis using your <code>test</code>
-data.</span></li>
-<li><span class="blue">Using the names of the three models you have
-trained, add the <em>line of best fit</em>, <em>best fitting quadratic
-curve</em>, and <em>best fitting cubic curve</em> for the
-<code>training data</code> to the plot.</span></li>
-<li><strong>Based on the plot, which model do you think is the best at
-predicting the <code>testing</code> data?</strong></li>
-<li><strong>Use the difference in testing MSE to verify which model is
-the best at predicting the <code>testing data</code>.</strong></li>
+<li><strong>Write down which other variables in the <code>movie</code>
+data you think would help you make better predictions.</strong>
+<ul>
+<li><strong>Are there any variables that you think would not improve our
+predictions?</strong></li>
+</ul></li>
+<li><span class="blue">Create a model for all of the variables you think
+are relevant.</span>
+<ul>
+<li><strong>Assess whether your model makes more accurate predictions
+for the <code>testing</code> data than the model that included only
+<code>runtime</code> and <code>reviews_num</code>.</strong></li>
+</ul></li>
+<li><strong>With your neighbors, determine which combination of
+variables leads to the best predictions for the <code>testing</code>
+data.</strong></li>
 </ul>
 </div>
 

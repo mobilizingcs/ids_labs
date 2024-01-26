@@ -67,7 +67,7 @@ add_curve(movie_linear)
 - In general, the more coefficients in the model, the more flexible its predictions can be.
 
 ```{r, out.width="50%", out.height="50%"}
-knitr::include_graphics("lab4f-figure/polynomials.png")
+knitr::include_graphics("lab4e-figure/polynomials.png")
 ```
 
 
