@@ -97,7 +97,7 @@ summarize(____, mean((____)^2))
     - Which is a problem because everyone's line will make slightly different predictions.
 - To avoid this variation in predictions, data scientists will use _regression lines_.
     - We also refer to _regression lines_ as _linear models_.
-    - This line connects the mean `height` of people with similar `arm_spans`.
+    - This line connects the mean `height` of people with similar `armspan`s.
     - <span class="blue">Fill in the blanks below to create a _regression line_ using `lm`, which stands for _linear model_:</span>
 
 ```{r, eval = FALSE, echo = TRUE}

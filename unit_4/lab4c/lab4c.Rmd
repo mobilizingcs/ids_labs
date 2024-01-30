@@ -56,7 +56,7 @@ test <- slice(____, - ____)
 
 - When we split data, we're randomly separating our observations into _training_ and _testing_ sets.
     - It's important to notice that no single observation will be placed in both sets.
-- Because we're splitting the datasets randomly, our models can will also vary slightly, person-to-person.
+- Because we're splitting the datasets randomly, our models can also vary slightly, person-to-person.
     - This is why it's important to use `set.seed`.
 - By using `set.seed`, we're able to reproduce the random splitting so that each person's model outputs the same results.
 
@@ -91,9 +91,9 @@ test <- mutate(test, ____ = predict(best_train, newdata = ____))
 ## Recap
 
 - Another way to describe the three steps is
-- Step 1: Split the data into `training` and `test` sets.
-- Step 2: Choose a slope and intercept that minimize training MSE.
-- Step 3: Using the same slope and intercept from step 2, make predictions on the `test` set, and use these predictions to compute test MSE.
+  - Step 1: Split the data into `training` and `test` sets.
+  - Step 2: Choose a slope and intercept that minimize training MSE.
+  - Step 3: Using the same slope and intercept from step 2, make predictions on the `test` set, and use these predictions to compute test MSE.
 - This begs the question, why do we care about test MSE?
 
 ## Why cross-validate?

@@ -595,8 +595,8 @@ of the remaining rows of <code>arm_span</code>.</span></li>
 <li>It’s important to notice that no single observation will be placed
 in both sets.</li>
 </ul></li>
-<li>Because we’re splitting the datasets randomly, our models can will
-also vary slightly, person-to-person.
+<li>Because we’re splitting the datasets randomly, our models can also
+vary slightly, person-to-person.
 <ul>
 <li>This is why it’s important to use <code>set.seed</code>.</li>
 </ul></li>
@@ -665,7 +665,8 @@ predictions on the test data).</span></li>
 <div id="recap" class="slide section level2">
 <h1>Recap</h1>
 <ul>
-<li>Another way to describe the three steps is</li>
+<li>Another way to describe the three steps is
+<ul>
 <li>Step 1: Split the data into <code>training</code> and
 <code>test</code> sets.</li>
 <li>Step 2: Choose a slope and intercept that minimize training
@@ -673,6 +674,7 @@ MSE.</li>
 <li>Step 3: Using the same slope and intercept from step 2, make
 predictions on the <code>test</code> set, and use these predictions to
 compute test MSE.</li>
+</ul></li>
 <li>This begs the question, why do we care about test MSE?</li>
 </ul>
 </div>
