@@ -132,6 +132,6 @@ ____ <- mutate(____, predicted_height = predict(____))
 
 - <span class="blue">Calculate the MSE for the values predicted using the regression line.</span>
 
-- **Compare the MSE value you calculated using the line you fitted with `add_line()` to the same value you calculated using the `lm` function.**
+- **Compare the MSE of the linear model you fitted using `add_line()` to the MSE of the linear model obtained with `lm()`. Which linear model performed better?**
 
 - **Ask your neighbors if any of their lines beat the `lm` line in terms of the MSE. Were any of them successful?**
