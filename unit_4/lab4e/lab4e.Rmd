@@ -97,7 +97,7 @@ add_curve(____, col = "red")
 
 - **Compare how the _line of best fit_ and the _quadratic_ model fit the data. Which do you think has a lower `test` MSE?**
 - **Compute the MSE of the quadratic model for the `test` data and write it down for later**.
-- **Use the difference in each model's `test` MSE to describe why one model fits better than the other.**
+- **Use the `test` MSE to explain why one model fits better than the other.**
 
 ## On your own
 
@@ -105,4 +105,4 @@ add_curve(____, col = "red")
 - <span class="blue">Create a scatterplot with `audience_rating` on the y-axis and `critics_rating` on the x-axis using your `test` data.</span>
 - <span class="blue">Using the names of the three models you have trained, add the _line of best fit_, _best fitting quadratic curve_, and _best fitting cubic curve_ for the `training` data to the plot.</span>
 - **Based on the plot, which model do you think is the best at predicting the `testing` data?**
-- **Use the difference in testing MSE to verify which model is the best at predicting the `testing` data.**
+- **Use the `test` MSE to verify which model is the best at predicting the `testing` data.**
