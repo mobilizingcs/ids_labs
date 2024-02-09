@@ -1,6 +1,5 @@
 ---
 title: "Factors"
-author: R's basic data structures include the data frame, vector, list, matrix and array.
 date: The following slides contain information about factors, which are special types of vectors that store categorical data.
 output:
   slidy_presentation: default
@@ -32,7 +31,7 @@ extra_data("food_ids")
 
 <ul>
 
-<li>A factor is a lot like a vector, except it has an additional attribute called **levels**. The levels are the different values that the factor is allowed to take on.</li>
+<li>Factors are stored as a vector of integer values called **levels** with a corresponding set of character values.</li>
 
 <li>The `str` function can be used to check which columns of a data frame are stored as factors, and how many levels they have.</li>
 
@@ -41,9 +40,7 @@ extra_data("food_ids")
 <li>**Run the following code to extract the `levels` from `grade`.**.</li>
 
 ```{r, eval = FALSE}
-cdc %>%
-  pull(grade) %>% 
-  levels()
+levels(pull(cdc, grade))
 ```
 
 <li>**How many levels does `grade` have? What are the levels of `grade`?**</li>
@@ -74,7 +71,7 @@ cdc %>%
 
 </ul>
 
-## droplevels
+## Filtering and factors
 
 <ul>
 
@@ -82,8 +79,7 @@ cdc %>%
 
 ```{r, eval = FALSE}
 # filter out observations that are not 9th or 10th graders
-underclassmen <- cdc %>%
-  filter(grade == "9th grade" | grade == "10th grade")
+underclassmen <- filter(cdc, grade == "9th grade" | grade == "10th grade")
 ```
 
 ```{r, eval = FALSE}
@@ -102,32 +98,10 @@ bargraph(~grade, data = underclassmen)
 <li>**Run the code below and then recreate the bargraph of `grade` using the new `underclassmen` dataset. Which columns are included in the bargraph?**</li>
 
 ```{r, eval = FALSE}
-underclassmen <- underclassmen %>%
-  mutate(
-    grade = droplevels(grade)
-  )
+underclassmen <- mutate(underclassmen, grade = droplevels(grade))
 ```
 
 </ul>
-
-## All in one shot
-
-On the last slide, the final product was a visualization. The codes below show how to incorporate a graphic using the pipe. The first utilizes lattice graphics and the second ggplot2.
-
-```{r, eval=FALSE}
-cdc %>% 
-  filter(grade == "9th grade" | grade == "10th grade") %>% 
-  mutate(grade = droplevels(grade)) %>% 
-  bargraph(~grade,.)
-```
-
-```{r, eval=FALSE}
-cdc %>% 
-  filter(grade == "9th grade" | grade == "10th grade") %>% 
-  mutate(grade = droplevels(grade)) %>% 
-  ggplot(mapping=aes(x=grade))+
-  geom_bar()
-```
 
 ## Characters to factors
 
@@ -161,11 +135,9 @@ bargraph(~favorite_product, data = surveys)
 <li>**Run the code below and then create another bargraph of `favorite_product`. What order are the columns displayed in?**</li>
 
 ```{r, eval = FALSE}
-surveys <- surveys %>%
-  mutate(
-    favorite_product = factor(favorite_product, 
-                              levels = c("T-shirt", "Sweater", "Hoodie", "Cardigan", "Button-up", "Blouse"))
-  )
+surveys <- mutate(surveys, 
+                  favorite_product = factor(favorite_product,
+                                            levels = c("T-shirt", "Sweater", "Hoodie", "Cardigan", "Button-up", "Blouse")))
 ```
 
 <li>**Create a new bargraph of `favorite_product`, using a different column ordering of your choosing.**</li>
@@ -189,7 +161,7 @@ animal_weights <- data.frame(
 
 <li>You may have noticed that the animal column is stored as a character vector. We would like for it to be stored as a factor, since `animal` is a categorical variable with three levels.</li>
 
-<li>One way to change the `animal` column into a factor is by mutating it, like in slide 5.</li>
+<li>One way to change the `animal` column into a factor is by mutating it, like in slide 6.</li>
 
 <li>If we wanted `animal` to be stored as a factor from the get go, we could include the `stringsAsFactors` argument when initializing the data frame.</li>
 
@@ -254,6 +226,6 @@ food <- read_csv("Period 1/food.csv", stringsAsFactors = TRUE)
 
 Check the `str`ucture of the dataframe.
 
-The order of the levels are assigned in alpha order. To change the order of the levels you would use the same code learned in slide #7.
+The order of the levels are assigned in alpha order. To change the order of the levels you would use the same code learned in slide #6.
 
 Challenge: Reorder the `why` variable.
