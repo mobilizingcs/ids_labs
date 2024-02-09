@@ -1,0 +1,77 @@
+---
+title: "Time Series"
+author:
+date: "Directions: Follow along with the slides and answer the questions in red font in your journal."
+output: 
+  slidy_presentation: 
+    #css: ../../IDSLabCSSRev.css
+    mathjax: ../../extras/mathjax-local/MathJax.js
+---
+
+## What is Time Series?
+
+<ul>
+
+<li>Previously, you learned how to create bargraphs, histograms, and scatterplots.</li>
+
+<li>The best visualization depended on the types of the variables - for instance, bargraphs were best for a single categorical variable, histograms were best for a single numerical variable, and scatterplots were best for two numerical variables. All of these plots could be faceted to accommodate an additional categorical variable.</li>
+
+<li>In this lab, we'll learn the best way to visualize a variable that was measured over time, also known as a <b>time series</b>.</li>
+
+</ul>
+
+## Load the data
+
+<ul>
+
+<li>Type the following commands into your console:</li>
+
+```{r, eval = FALSE, echo = TRUE}
+data(flights)
+```
+
+```{r, eval = FALSE, echo = TRUE}
+?flights
+```
+
+```{r, eval = FALSE, echo = TRUE}
+str(flights)
+```
+
+<li><span style="color: red;"> What kind of variable is <span style="color: blue;">date</span>?</span></li>
+
+</ul>
+
+## Creating Time Series Plots
+
+<ul>
+
+<li><b>Time series plots</b> are useful for visualizing time series, allowing you to view how a variable changes over time.</li>
+
+<li>Recall the <span style="color: blue;">xyplot</span> function, which was used to produce scatterplots from two numeric variables. This function can also be used to create time series plots from a <b>Date</b> variable and a numeric variable. (We call <span style="color: blue;">xyplot</span> <b>polymorphic</b> because it can handle arguments of different types.)</li>
+
+<li><span style="color: red;">Suppose we are interested in examining how <span style="color: blue;">total_operations</span> changes over time for each <span style="color: blue;">airport</span>. Fill in the blanks to create a time series plot with <span style="color: blue;">total_operations</span> on the y-axis and <span style="color: blue;">date</span> on the x-axis, faceting by <span style="color: blue;">airport</span>.</span></li>
+
+<li>Note: Since a time series tracks how a variable changes over time, it makes sense to connect successive data points with a line. Include the argument <span style="color: blue;">type = "l"</span> to do this. </li>
+
+</ul>
+
+```{r, eval = FALSE, echo = TRUE}
+xyplot(_____ ~ _____|_____, data = _____, type = _____)
+```
+
+## Zoom in on Atlanta
+
+<ul>
+
+<li>Suppose we would like to focus on the airport in Atlanta (<span style="color: blue;">ATL</span>). <span style="color: red;">Start by using the <span style="color: blue;">filter</span> function to extract the data from the airport in Atlanta, and call this new dataset <span style="color: blue;">ATL_flights</span>.</li>
+
+<li><span style="color: red;">Create a time series plot with <span style="color: blue;">total_operations</span> on the y-axis and <span style="color: blue;">date</span> on the x-axis, using <span style="color: blue;">ATL_flights</span>.</li>
+
+## Further Exploration
+
+<li><span style="color: red;">Do you notice any patterns in the first two weeks of March?</span> (hint: are any dates noticeably less busy than other dates? On what days of the week do these lulls occur?)</li>
+
+<li><span style="color: red;">Do other airports exhibit patterns similar to those of the airport in Atlanta?</span></li>
+
+</ul>

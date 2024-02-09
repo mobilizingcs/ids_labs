@@ -1,0 +1,139 @@
+---
+title: "Base R Basics"
+author:
+date: The following slides contain codes to create graphics that can be utilized in the IDS course.
+output:
+  slidy_presentation: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+```
+
+```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+library(mobilizr)
+library(readr)
+# colors <- read_csv("colors.csv")
+colors <- extra_data("colors_ids")
+colors <- colors_ids
+data(arm_span)
+```
+
+## The basic plots
+
+Use the command below to load the colors_ids dataset:
+
+```{r, eval=FALSE}
+extra_data("colors_ids")
+```
+
+
+```{r, fig.height=4, fig.width=5}
+hist(colors_ids$blue)
+```
+
+
+```{r, fig.height=4, fig.width=5}
+boxplot(colors_ids$blue)
+```
+
+```{r, fig.height=4, fig.width=5}
+barplot(table(colors_ids$p_color))
+```
+
+
+```{r, fig.height=4, fig.width=5}
+plot(colors_ids$blue, colors_ids$gold)
+```
+
+## Arguments
+
+
+Many of the arguments that work for the lattice graphics transfer to base R.
+
+- `main`
+- `col`
+- `ylab`
+- `xlab`
+- `pch` for scatterplots
+- `border` for bars
+
+## Split histogram
+
+There are times when you facet a histogram and you would like each histogram to be a different color. The code below shows how to accomplish this:
+
+```{r}
+##personality color
+# Separate colors into vectors
+green <- colors_ids$green
+blue <- colors_ids$blue
+gold <- colors_ids$gold
+orange <- colors_ids$orange
+
+# Set up margins (for Error: margins are too large)
+#par sets the parameters for graphs
+#mar sets the margins
+#the c() function is creating a vector for the bottom, left, top, right margins
+par(mar = c(2, 1, 1, 1) + 0.1)
+
+# Set up the layout
+layout(matrix(1:4, nrow = 4, byrow = TRUE))
+
+# Create stacked histograms for each personality color
+hist(green, col = "seagreen3", 
+     main = "Green", 
+     xlab = "Score", 
+     border = "white",
+     breaks = seq(5, 20, by=1))
+
+hist(blue, col = "royalblue1", 
+     main = "Blue", 
+     xlab = "Score", 
+     border = "white",
+     breaks = seq(5, 20, by=1))
+
+hist(gold, col = "gold", 
+     main = "Gold", 
+     xlab = "Score", 
+     border = "white",
+     breaks = seq(5, 20, by=1))
+
+hist(orange, col = "orange", 
+     main = "Orange", 
+     xlab = "Score", 
+     border = "white",
+     breaks = seq(5, 20, by=1))
+
+# Reset the layout for your next plot
+layout(1)
+```
+
+
+## Some useful functions
+
+```{r, fig.height=4, fig.width=5}
+plot(arm_span$armspan, arm_span$height)
+#Points function in base R is more user friendly
+points(60, 62.6667, col = "red", cex = 2)
+points(64, 64, col = "red", cex = 2)
+points(68, 68, col = "red", cex = 2)
+points(72, 71.5, col = "red", cex = 2)
+```
+
+
+
+## On Your Own
+
+If you are looking for some new datasets, check out our available pre-loaded data sets by running the command:
+
+```{r, eval=FALSE}
+data()
+```
+
+Select a pre-loaded data set of your choice, and create the four basic plots using the dollar sign syntax. Include arguments to make your graphic clear.
+
+
+
+
+
+

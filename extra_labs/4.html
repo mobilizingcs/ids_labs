@@ -5,8 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
-  <meta name="author" content />
-  <title>Text Analysis</title>
+  <title>dplyr functions</title>
   <style type="text/css">
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -518,187 +517,502 @@ list-style-type: none;
   });
 })()
 </script>
+  <link rel="stylesheet" type="text/css" media="screen, projection, print" href="../../IDSLabCSSRev.css" />
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title">Text Analysis</h1>
+  <h1 class="title">dplyr functions</h1>
   <p class="author">
 
   </p>
-  <p class="date">Directions: Follow along with the slides and answer
-the questions in red font in your journal.</p>
+  <p class="date">Directions: Answer the bolded questions.</p>
 </div>
-<div id="what-is-text-analysis" class="slide section level2">
-<h1>What is Text Analysis?</h1>
+<div id="overview" class="slide section level2">
+<h1>Overview</h1>
 <ul>
 <li>
-So far, you have learned how to properly visualize different kinds of
-data, including categorical data, numeric data, and time series data.
-Another kind of dataset we are often interested in analyzing is a text
-dataset. Text datasets consist of the words that occur in a written
-resource, such as websites, books, and emails. Today, you will perform
-basic text analysis on the novel <i>Pride and Prejudice</i> by Jane
-Austen.
+<code>dplyr</code> is an R package for data manipulation.
 </li>
 <li>
-<span style="color: red;">Load in the <span style="color: blue;">pride</span> dataset, which consists of the words
-in <i>Pride and Prejudice</i>.</span>
+<strong>Data manipulation</strong> refers to editing the structure of a
+data frame, such as adding or deleting variables, adding or deleting
+observations, etc.
 </li>
 <li>
-<span style="color: red;">How many words long is <i>Pride and
-Prejudice</i>?</span>
+The advantage of <code>dplyr</code> is that it consists of five main
+functions with intuitive names:
+</li>
+<ul>
+<li>
+<code>mutate</code>
+</li>
+<li>
+<code>select</code>
+</li>
+<li>
+<code>filter</code>
+</li>
+<li>
+<code>summarize</code>
+</li>
+<li>
+<code>arrange</code>
+</li>
+</ul>
+These five verbs, combined with the <strong>pipe</strong>
+(<code>%&gt;%</code>) and <code>group_by</code> make for data
+manipulation code that is easy to interpret.
+</li>
+<li>
+For additional resources, run the following code:
+</li>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">vignette</span>(<span class="st">&quot;dplyr&quot;</span>)</span></code></pre></div>
+</ul>
+</div>
+<div id="the-pipe" class="slide section level2">
+<h1>The pipe</h1>
+<ul>
+<li>
+Often in <code>dplyr</code>, functions need to be
+<strong>nested</strong>.
+</li>
+<li>
+<strong>Nesting</strong> is when a function takes another function as an
+argument.
+</li>
+<li>
+One of the most important elements of <code>dplyr</code> is the
+<strong>pipe</strong> (<code>%&gt;%</code>). The pipe makes long
+sequences of nested functions much more readable.
+</li>
+<li>
+Let’s see how the pipe works on the next slide, using
+non-<code>dplyr</code> functions.
+</li>
+<li>
+Keyboard shortcut for the pipe:
+</li>
+<p>Ctrl + Shift + M (Windows)</p>
+<p>Cmd + Shift + M (Mac)</p>
+</ul>
+</div>
+<div id="how-does-the-pipe-work" class="slide section level2">
+<h1>How does the pipe work?</h1>
+<ul>
+<li>
+Suppose that for some reason, we are interested in finding the cosine of
+the base 3 logarithm of the square root of the number 2.
+</li>
+<li>
+One way to compute this value is with the following line of code:
+</li>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cos</span>(<span class="fu">log</span>(<span class="fu">sqrt</span>(<span class="dv">2</span>), <span class="at">base =</span> <span class="dv">3</span>))</span></code></pre></div>
+<li>
+To see the order in which functions are performed on the number 2, you
+have to read from inside to outside.
+</li>
+<li>
+Using the pipe, we could instead write
+</li>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="dv">2</span> <span class="sc">%&gt;%</span> </span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sqrt</span>() <span class="sc">%&gt;%</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">log</span>(<span class="at">base =</span> <span class="dv">3</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cos</span>()</span></code></pre></div>
+<li>
+<strong>Verify that these two snippets evaluate to the same
+output.</strong>
+</li>
+<li>
+The pipe takes the object on the left side and makes it the first
+argument of the function on the right side. Chaining pipes together
+allows you to read the order in which functions are performed from left
+to right.
+</li>
+<li>
+Notice how there is a new line after every pipe. This is not necessary,
+but it is common practice and makes the code more readable.
+</li>
+<li>
+<strong>Which snippet do you think is more readable?</strong>
 </li>
 </ul>
 </div>
-<div id="counting-words" class="slide section level2">
-<h1>Counting words</h1>
+<div id="the-dplyr-verbs-in-action" class="slide section level2">
+<h1>The dplyr verbs in action</h1>
 <ul>
 <li>
-Let’s start by adding a variable to <span style="color: blue;">pride</span> corresponding to the number of times a
-word appears in <i>Pride and Prejudice</i>. To do this, we will make use
-of the <span style="color: blue;">tally</span> function.
+In the next few slides, we will see some examples of the
+<code>dplyr</code> verbs used to manipulate the <code>cdc</code>
+dataset.
 </li>
 <li>
-In lab 1G, you learned that the <span style="color: blue;">tally</span>
-function has an optional argument <span style="color: blue;">format</span> that specifies the format of the
-results (e.g., you used <span style="color: blue;">format =
-“percent”</span> to obtain percentages rather than counts).
+<strong>Run the following codes to familiarize yourself with the
+<code>cdc</code> dataset:</strong>
+</li>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>(cdc)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(cdc)</span></code></pre></div>
+<li>
+In the next few slides, note the following:
+</li>
+<ul>
+<li>
+The pipe is always used to nest functions, for readability purposes.
 </li>
 <li>
-Suppose that we are using <span style="color: blue;">tally</span> to
-obtain the counts of a categorical variable. If we provide <span style="color: blue;">format = “data.frame”</span> to <span style="color: blue;">tally</span>, the result is formatted as a dataset
-with two variables. The first variable stores the levels of the
-categorical variable being counted, and takes the name of that
-categorical variable. The second variable is named <span style="color: blue;">Freq</span> and stores the number of times each
-level of the categorical variable occurs.
+The <code>dplyr</code> verbs take data frames as input, manipulate them,
+and give data frames as output.
 </li>
 <li>
-<span style="color: red;">Fill in the blanks to obtain <span style="color: blue;">pride_words</span>, a dataset containing the words
-of <i>Pride and Prejudice</i> and their frequencies.</span>
+The code snippets contain comments which describe what the output should
+look like. <strong>As an exercise, run the code snippets yourself and
+verify that the comments are correct.</strong>
 </li>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pride_words <span class="ot">&lt;-</span> <span class="fu">tally</span>(<span class="sc">~</span>___, <span class="at">data =</span> ___, <span class="at">format =</span> <span class="st">&quot;data.frame&quot;</span>)</span></code></pre></div>
 <li>
-<span style="color: red;">How many times does the word “pride” occur in
-<i>Pride and Prejudice</i>? How about the word “prejudice”?</span>
+We will assign the outputted data frames to <code>df</code>. To
+<code>View</code> the output, run <code>View(df)</code>.
+</li>
+</ul>
+</ul>
+</div>
+<div id="select" class="slide section level2">
+<h1>select</h1>
+<ul>
+<li>
+<code>select</code> is used to subset columns.
+</li>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the only remaining columns are height and weight</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc <span class="sc">%&gt;%</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(height, weight)</span></code></pre></div>
+<li>
+To select a range of consecutive variables, use a colon (:).
+</li>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the only remaining columns are those between race and seat_belt inclusive</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc <span class="sc">%&gt;%</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(race<span class="sc">:</span>seat_belt)</span></code></pre></div>
+<li>
+To take the complement of a set of variables, use an exclamation mark
+(!).
+</li>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># all columns remain except for height</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc <span class="sc">%&gt;%</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">!</span>height)</span></code></pre></div>
+<li>
+We can also use <code>where</code> to select those columns that satisfy
+a logical condition.
+</li>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># height and weight are the only numeric columns, so they are the only columns that remain</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc <span class="sc">%&gt;%</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="fu">where</span>(is.numeric))</span></code></pre></div>
+</ul>
+<!-- ## pull -->
+<!-- <ul> -->
+<!-- <li>The `pull` function is also used to subset columns, but is less commonly used and subtly different than `select`.</li> -->
+<!-- <li>The `select` function can subset an arbitrary number of columns, and always returns a data frame. The `pull` function extracts only one column, but returns a vector.</li> -->
+<!-- <li>The advantage of data frames is that they can store multiple columns, and those columns can be of different classes. When you're working with only one column, its is often easier to treat it as a vector rather than a data frame.</li> -->
+<!-- <li>Suppose we are interested in calculating the mean `height` in the `cdc` dataset. **Which snippet below works?**</li> -->
+<!-- ```{r, eval = FALSE} -->
+<!-- # select the heights column -->
+<!-- cdc_heights <- cdc %>% -->
+<!--   select(height) -->
+<!-- # compute the mean -->
+<!-- mean(cdc_heights) -->
+<!-- ``` -->
+<!-- ```{r, eval = FALSE} -->
+<!-- # pull the heights column -->
+<!-- cdc_heights <- cdc %>% -->
+<!--   pull(height) -->
+<!-- # compute the mean -->
+<!-- mean(cdc_heights) -->
+<!-- ``` -->
+<!-- </ul> -->
+</div>
+<div id="filter" class="slide section level2">
+<h1>filter</h1>
+<ul>
+<li>
+<code>filter</code> is used to subset rows.
+</li>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># all remaining rows satisfy the condition</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc <span class="sc">%&gt;%</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(height <span class="sc">&gt;</span> <span class="fl">1.8</span>)</span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># taller than 1.8 meters</span></span></code></pre></div>
+<li>
+Commas can be used to subset by multiple conditions.
+</li>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># all remaining rows satisfy both conditions</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(height <span class="sc">&gt;</span> <span class="fl">1.8</span>, weight <span class="sc">&gt;</span> <span class="dv">90</span>)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># taller than 1.8 meters AND weigh more than 90 kilograms</span></span></code></pre></div>
+<li>
+If you want to subset by one condition OR another condition, use the
+vertical bar <code>|</code>.
+</li>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># all remaining rows satisfy one of the following conditions</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc <span class="sc">%&gt;%</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(grade <span class="sc">==</span> <span class="st">&quot;9th grade&quot;</span> <span class="sc">|</span> grade <span class="sc">==</span> <span class="st">&quot;10th grade&quot;</span>)</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 9th OR 10th grade</span></span></code></pre></div>
+<li>
+In the above, if you replace the vertical bar with a comma, the output
+is empty (as you should verify). <strong>Why do you think this
+is</strong>?
+</li>
+</ul>
+<!-- ## An aside on factors -->
+<!-- <li>Suppose that after filtering the `cdc` dataset for only 9th and 10th graders, we were interested in `tally`ing the number of students in each grade. Using the pipe, that might look something like this:</li> -->
+<!-- ```{r, eval = FALSE} -->
+<!-- # this part is the same as before -->
+<!-- df_underclassmen <- cdc %>% -->
+<!--   filter(grade == "9th grade" | grade == "10th grade") %>% -->
+<!--   mutate( -->
+<!--     grade = droplevels(grade) -->
+<!--   ) -->
+<!-- # 11th and 12th graders appear in the tally! How strange! -->
+<!-- tally(~grade, data = df_underclassmen) -->
+<!-- ``` -->
+<!-- <li>Oddly, 11th grade, 12th grade, and ungraded appear in the `tally`. We would like for `tally` to count only 9th and 10th graders, since we already know that they are the only one present in `df_underclassmen`.</li> -->
+<!-- <li>The reason this happens is because the column `grade` is stored as a factor. (You can verify this yourself by `Viewing` df and then hovering your cursor over the name of the `grade` column.)</li> -->
+<!-- <li>A factor is a kind of data object used for storing categorical data. Factors have an attribute called `levels` which is the set of allowable values.</li> -->
+<!-- <li>**Run the code below to view the `levels` of the factor `grade` in `df_underclassmen`.**</li> -->
+<!-- ```{r, eval = FALSE} -->
+<!-- # we pull grade instead of selecting grade so we can work directly with grade as a factor -->
+<!-- underclassmen_grade <- df_underclassmen %>% -->
+<!--   pull(grade) -->
+<!-- # the levels function allows you to view the levels of a factor -->
+<!-- levels(underclassmen_grade) -->
+<!-- ``` -->
+</div>
+<div id="a-bit-of-cleaning" class="slide section level2">
+<h1>A bit of cleaning</h1>
+<ul>
+<li>
+Let’s use <code>filter</code> to remove rows whose entries for
+<code>height</code>, <code>weight</code>, <code>grade</code> or
+<code>depressed</code> are <code>NA</code>. Let’s also remove rows whose
+entries for <code>grade</code> are “Ungraded or other grade”.
+</li>
+<li>
+The <code>is.na</code> function returns <code>TRUE</code> whenever the
+argument is <code>NA</code> and <code>FALSE</code> otherwise.
+</li>
+<p>The command <code>filter(is.na(height))</code> would filter all of
+observations that did not provide their height.</p>
+<p>We want all of the observations that did include their height so we
+use <code>!is.na()</code> which is equivalent to “is NOT na”.</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># none of the entries in height, weight, grade, depressed are NA</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>cdc_complete <span class="ot">&lt;-</span> cdc <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(height), <span class="sc">!</span><span class="fu">is.na</span>(weight), <span class="sc">!</span><span class="fu">is.na</span>(grade), <span class="sc">!</span><span class="fu">is.na</span>(depressed)) <span class="sc">%&gt;%</span> </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(grade <span class="sc">!=</span> <span class="st">&quot;Ungraded or other grade&quot;</span>)</span></code></pre></div>
+<li>
+The remaining <code>dplyr</code> verbs work better in the absence of
+<code>NA</code>s. Let’s use <code>cdc_complete</code> for the rest of
+the examples.
 </li>
 </ul>
 </div>
-<div id="word-clouds" class="slide section level2">
-<h1>Word clouds</h1>
+<div id="mutate" class="slide section level2">
+<h1>mutate</h1>
 <ul>
 <li>
-One very popular method of displaying text data is with <b>word
-clouds</b>. In a word cloud, the size of a word is proportional to its
-frequency. <span style="color: red;">Fill in the blanks below to create
-a wordcloud of <i>Pride and Prejudice</i>.</span>
+<code>mutate</code> is used to add or edit the columns of a dataframe.
+You can add new variables that are functions of existing variables:
 </li>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># now there is a column called bmi made using the formula in mutate</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc_complete <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">bmi =</span> weight <span class="sc">/</span> height<span class="sc">^</span><span class="dv">2</span>)</span></code></pre></div>
 <li>
-(Hint: Since <span style="color: blue;">Freq</span> depends on <span style="color: blue;">word</span>, <span style="color: blue;">Freq</span>
-should appear to the left of the tilde (~).
+You can also edit existing variables:
 </li>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">wordcloud</span>(_____<span class="sc">~</span>_____, <span class="at">data =</span> _____)</span></code></pre></div>
-<li>
-<span style="color: red;">Notice any problems?</span>
-</li>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># the heights are now in inches</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc_complete <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">height =</span> height <span class="sc">*</span> <span class="fl">39.3701</span>)</span></code></pre></div>
 </ul>
 </div>
-<div id="stop-words" class="slide section level2">
-<h1>Stop words</h1>
+<div id="ifelse" class="slide section level2">
+<h1>ifelse</h1>
 <ul>
 <li>
-When analyzing text, we’re not often interested in common words like
-“I”, “a”, “the”. We call these words <b>stop words</b> (because we
-should <b>stop</b> using them in our analysis).
+The <code>ifelse</code> function is useful in conjunction with
+<code>mutate</code> to create a new column by checking a condition.
 </li>
 <li>
-<span style="color: red;">Load in the <span style="color: blue;">stop_words</span> dataset, a list of stop words.
-<span style="color: blue;">View</span> the <span style="color: blue;">stop_words</span> dataset.</span>
+The <code>ifelse</code> function takes three arguments:
+</li>
+<ul>
+<li>
+<code>test</code>, which is the condition you are checking.
 </li>
 <li>
-<span style="color: red;">Create a new dataset containing observations
-of <span style="color: blue;">pride_words</span> that are not stop
-words. Assign this dataset to <span style="color: blue;">pride_interesting</span>.</span>
+<code>yes</code>, the return value if the condition is
+<code>TRUE</code>.
 </li>
 <li>
-(Hint: notice that <span style="color: blue;">pride_words</span> and
-<span style="color: blue;">stop_words</span> share a column named <span style="color: blue;">word</span>. Perhaps an appropriate join function
-will yield the desired result.)
+<code>no</code>, the return value if the condition is
+<code>FALSE</code>.
 </li>
 </ul>
-</div>
-<div id="recreate-your-word-cloud" class="slide section level2">
-<h1>Recreate your word cloud</h1>
-<ul>
 <li>
-<span style="color: red;">Recreate your word cloud.</span>
+Suppose we were interested in creating a column called
+<code>height_category</code> which indicates whether someone’s height is
+above or below the mean for the dataset.
+</li>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># added height_category which indicates whether someone&#39;s height is above or below the mean</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc_complete <span class="sc">%&gt;%</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">height_category =</span> <span class="fu">ifelse</span>(height <span class="sc">&gt;</span> <span class="fu">mean</span>(height), <span class="st">&quot;tall&quot;</span>, <span class="st">&quot;short&quot;</span>))</span></code></pre></div>
+<li>
+In the above, we omit the argument names <code>test</code>,
+<code>yes</code>, and <code>no</code>. This is okay since we supplied
+the arguments in the correct order.
 </li>
 <li>
-<span style="color: red;">Is the new word cloud more informative?</span>
+We can also use the <code>ifelse</code> function for categorical
+variables. Suppose we want a column called <code>is_underclassman</code>
+that indicates whether a student is an “underclassman” (9th or 10th
+grader) or an “upperclassman” (11th or 12th grader).
 </li>
-<li>
-<span style="color: red;">Which words are the most frequent?</span>
-</li>
-<li>
-<span style="color: red;">What happens if you include the argument <span style="color: blue;">color = “steelblue”</span> within the <span style="color: blue;">wordcloud</span> function?</span>
-</li>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a column called `is_underclassman` that indicates whether a student is underclassman or upperclassman</span></span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc_complete <span class="sc">%&gt;%</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">is_underclassman =</span> <span class="fu">ifelse</span>(grade <span class="sc">==</span> <span class="st">&quot;9th grade&quot;</span> <span class="sc">|</span> grade <span class="sc">==</span> <span class="st">&quot;10th grade&quot;</span>, <span class="st">&quot;under&quot;</span>, <span class="st">&quot;upper&quot;</span>))</span></code></pre></div>
 </ul>
 </div>
-<div id="sentiments" class="slide section level2">
-<h1>Sentiments</h1>
+<div id="case_when" class="slide section level2">
+<h1>case_when</h1>
 <ul>
 <li>
-Words carry meaning. And we might be interested in altering our plot to
-show these different meanings.
+<code>ifelse</code> allows us to check a condition with two possible
+outcomes. If we want more than two possible outcomes, then we should use
+the <code>case_when</code> function.
 </li>
 <li>
-<span style="color: red;">Load in the <span style="color: blue;">sentiments</span> dataset, a list of words along
-with the sentiments most commonly associated with them (<span style="color: blue;">“positive”</span> or <span style="color: blue;">“negative”</span>). <span style="color: blue;">View</span> the <span style="color: blue;">sentiments</span> dataset.</span>
+Suppose we are interested in adding a column of bmi ranges. These are:
+</li>
+<ul>
+<li>
+(0, 18.5): underweight
 </li>
 <li>
-<span style="color: red;">Inner join <span style="color: blue;">pride_interesting</span> and <span style="color: blue;">sentiments</span>, and assign the resulting dataset
-to <span style="color: blue;">pride_sentiments</span>.</span>
+(18.5, 25): healthy
+</li>
+<li>
+(25, 30): overweight
+</li>
+<li>
+(30, 40): obese
+</li>
+<li>
+40+: severely obese
 </li>
 </ul>
+<li>
+Since there are five possible outcomes, it would be very cumbersome to
+use <code>ifelse</code> to create this column.
+</li>
+<li>
+Instead, we use <code>case_when</code>. <code>case_when</code> takes
+arbitrarily many arguments, separated by commas. Each argument is
+comprised of a logical condition and a value to return if that logical
+condition is true. The logical condition and return value are separated
+by a tilde.
+</li>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="co"># add a column called bmi_range that categorizes students by bmi range</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc <span class="sc">%&gt;%</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(<span class="sc">!</span><span class="fu">is.na</span>(height), <span class="sc">!</span><span class="fu">is.na</span>(weight)) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>           <span class="fu">mutate</span>(<span class="at">bmi =</span> weight <span class="sc">/</span> height<span class="sc">^</span><span class="dv">2</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>           <span class="fu">mutate</span>(</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>             <span class="at">bmi_range =</span> <span class="fu">case_when</span>(</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>               bmi <span class="sc">&lt;</span> <span class="fl">18.5</span> <span class="sc">~</span> <span class="st">&quot;underweight&quot;</span>,</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>               <span class="fl">18.5</span> <span class="sc">&lt;=</span> bmi <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">25</span> <span class="sc">~</span> <span class="st">&quot;healthy&quot;</span>,</span>
+<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>               <span class="dv">25</span> <span class="sc">&lt;=</span> bmi <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">30</span> <span class="sc">~</span> <span class="st">&quot;overweight&quot;</span>,</span>
+<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>               <span class="dv">30</span> <span class="sc">&lt;=</span> bmi <span class="sc">&amp;</span> bmi <span class="sc">&lt;</span> <span class="dv">40</span> <span class="sc">~</span> <span class="st">&quot;obese&quot;</span>,</span>
+<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a>               <span class="dv">40</span> <span class="sc">&lt;=</span> bmi <span class="sc">~</span> <span class="st">&quot;severely obese&quot;</span></span>
+<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>             )</span>
+<span id="cb17-13"><a href="#cb17-13" aria-hidden="true" tabindex="-1"></a>           )</span></code></pre></div>
 </div>
-<div id="color-sentiment" class="slide section level2">
-<h1>Color &amp; Sentiment</h1>
+<div id="summarize" class="slide section level2">
+<h1>summarize</h1>
 <ul>
 <li>
-Now that we have sentiments assigned to our words, our next goal is to
-assign colors to each word based on its sentiment. We will add a
-variable to <span style="color: blue;">pride_sentiments</span> called
-<span style="color: blue;">colors</span> in two steps.
+<code>summarize</code> reduces multiple values down to a single summary:
+</li>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># output is a summary of the numerical variable indicated</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>cdc_complete <span class="sc">%&gt;%</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mean</span>(height), </span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">mean</span>(weight), </span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">sd</span>(height),</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">median</span>(weight)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+<p>If you want to store the summaries as a data frame make sure to name
+your summary</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="co"># output is a data frame whose entries are</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="co"># the mean height and mean weight</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc_complete <span class="sc">%&gt;%</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_height =</span> <span class="fu">mean</span>(height), </span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">mean_weight =</span> <span class="fu">mean</span>(weight)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div>
+</ul>
+</div>
+<div id="group_by" class="slide section level2">
+<h1>group_by</h1>
+<ul>
+<li>
+Most data operations are done on groups defined by variables.
+<code>group_by</code> takes a dataframe and converts it into a grouped
+dataframe where operations are performed “by group”.
+<code>group_by</code> will almost always come directly before a call to
+<code>summarize</code> or <code>mutate</code>.
+</li>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co"># output is a data frame whose entries are mean height for men and women</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc_complete <span class="sc">%&gt;%</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(grade) <span class="sc">%&gt;%</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_height =</span> <span class="fu">mean</span>(height))</span></code></pre></div>
+<li>
+You can group by multiple columns (you may ignore the warning message):
+</li>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co"># output is a data frame whose entries are mean height for all combinations of grade and depressed</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc_complete <span class="sc">%&gt;%</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(grade, depressed) <span class="sc">%&gt;%</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_height =</span> <span class="fu">mean</span>(height))</span></code></pre></div>
+</ul>
+</div>
+<div id="arrange" class="slide section level2">
+<h1>arrange</h1>
+<ul>
+<li>
+<code>arrange</code> orders the rows of a data frame by the values of
+selected columns.
+</li>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># entries are in increasing height order</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc_complete <span class="sc">%&gt;%</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(height)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="co"># entries are in decreasing height order</span></span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc_complete <span class="sc">%&gt;%</span></span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(height))</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># entries are in increasing order by height, and by weight if height is tied</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> cdc_complete <span class="sc">%&gt;%</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(height, weight)</span></code></pre></div>
+</ul>
+</div>
+<div id="test-your-understanding" class="slide section level2">
+<h1>Test your understanding!</h1>
+<ul>
+<li>
+<strong>In the <code>cdc</code> data frame, the <code>weight</code>
+column is reported in kilograms. Add a column to <code>cdc</code> called
+<code>weight_lbs</code> which is weights reported in pounds.</strong>
 </li>
 <li>
-<span style="color: red;">First, use <span style="color: blue;">mutate</span> to add a variable to <span style="color: blue;">pride_sentiments</span> called <span style="color: blue;">colors</span> that is a copy of the <span style="color: blue;">sentiment</span> variable.</span>
+<strong>Obtain the median <code>height</code> for every combination of
+<code>gender</code> and <code>grade</code>.</strong>
 </li>
 <li>
-<span style="color: red;">Second, use <span style="color: blue;">mutate</span> to <span style="color: blue;">recode</span> the <span style="color: blue;">colors</span> variable in the following way:
-replace every instance of <span style="color: blue;">“positive”</span>
-with <span style="color: blue;">“steelblue”</span>, and every instance
-of <span style="color: blue;">“negative”</span> with <span style="color: blue;">“darkred”</span>.</span>
+<strong>Create a data frame consisting only of 14 year olds and
+including only the first ten columns of <code>cdc</code>.</strong>
 </li>
 <li>
-Optional challenge: <span style="color: red;">Can you think of a way to
-do these two steps in one line?</span>
-</li>
-<li>
-<span style="color: red;">Recreate your word cloud one more time. This
-time, include the argument <span style="color: blue;">color =
-colors</span> in your <span style="color: blue;">wordcloud</span>
-function.</span>
-</li>
-<li>
-<span style="color: red;">Which positive sentiment words appeared most
-often?</span>
-</li>
-<li>
-<span style="color: red;">Which negative sentiment words appeared most
-often?</span>
-</li>
-<li>
-<span style="color: red;">Are there any words you feel are
-miscategorized?</span>
+<strong>Recreate the <code>height_category</code> column, but this time,
+for female students, compare their height to the mean height for
+females, and likewise for males.</strong>
 </li>
 </ul>
 </div>
