@@ -193,7 +193,7 @@ If you look at the `str`ucture of your food habits data, you will notice that al
 bargraph(~when, data=food_ids)
 ```
 
-Use what you learned in this lab to create the following (Hint: refer to slide 7):
+Use what you learned in this lab to create the following (Hint: refer to slide 6):
 
 ```{r, echo=FALSE}
 food_ids<-food_ids %>% 
