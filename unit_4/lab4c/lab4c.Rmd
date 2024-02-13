@@ -54,17 +54,17 @@ test <- slice(____, - ____)
 
 ## Aside: set.seed()
 
-- When we split data, we're randomly separating our observations into _training_ and _testing_ sets.
+- When we split data, we're randomly separating our observations into _training_ and _test_ sets.
     - It's important to notice that no single observation will be placed in both sets.
 - Because we're splitting the datasets randomly, our models can also vary slightly, person-to-person.
     - This is why it's important to use `set.seed`.
 - By using `set.seed`, we're able to reproduce the random splitting so that each person's model outputs the same results.
 
-_Whenever you split data into training and testing, always use `set.seed` first._
+_Whenever you split data into training and test, always use `set.seed` first._
 
 ## Aside: train-test ratio
 
-- When splitting data into `training` and `testing` sets, we need to have enough observations in our data so that we can build a good model.
+- When splitting data into `training` and `test` sets, we need to have enough observations in our data so that we can build a good model.
     - This is why we kept 85 observations in our `training` data.
 - As datasets grow larger, we can use a larger proportion of the data to `test` with.
 
