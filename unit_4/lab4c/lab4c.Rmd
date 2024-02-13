@@ -32,7 +32,7 @@ library(mobilizr)
     - Step 2: Create a model using the `training` set.
     - Step 3: Use this model to make predictions on the `test` set.
 
-## Step 1: train-test split
+## Step 1: training-test split
 
 - Waiting for new observations can take a long time. The U.S. takes a census of its population once every 10 years, for example.
 - Instead of waiting for new observations, data scientists will take their current data and divide it into two distinct sets.
@@ -40,17 +40,17 @@ library(mobilizr)
 - <span class="blue">First, fill in the blanks below to randomly select which rows of `arm_span` will go into the `training` set.</span>
 ```{r, eval = FALSE, echo = TRUE}
 set.seed(123)
-train_rows <- sample(1:____, size = 85)
+training_rows <- sample(1:____, size = 85)
 ```
 
-- <span class="blue">Second, use the `slice` function to create two dataframes: one called `train` consisting of the `train_rows`, and another called `test` consisting of the remaining rows of `arm_span`.</span>
+- <span class="blue">Second, use the `slice` function to create two dataframes: one called `training` consisting of the `training_rows`, and another called `test` consisting of the remaining rows of `arm_span`.</span>
 
 ```{r, eval = FALSE, echo = TRUE}
-train <- slice(arm_span, ____)
+training <- slice(arm_span, ____)
 test <- slice(____, - ____)
 ```
 
-- **Explain these lines of code and describe the `train` and `test` datasets.**
+- **Explain these lines of code and describe the `training` and `test` datasets.**
 
 ## Aside: set.seed()
 
@@ -62,16 +62,16 @@ test <- slice(____, - ____)
 
 _Whenever you split data into training and test, always use `set.seed` first._
 
-## Aside: train-test ratio
+## Aside: training-test ratio
 
 - When splitting data into `training` and `test` sets, we need to have enough observations in our data so that we can build a good model.
     - This is why we kept 85 observations in our `training` data.
 - As datasets grow larger, we can use a larger proportion of the data to `test` with.
 
-## Step 2: train the model
+## Step 2: training the model
 
 - Step 2 is to create a linear model relating `height` and `armspan` using the `training` data.
-- <span class="blue">Fit a line of best fit model to our `training` data and assign it the name `best_train`.</span>
+- <span class="blue">Fit a line of best fit model to our `training` data and assign it the name `best_training`.</span>
 - Recall that the slope and intercept of our linear model are chosen to minimize MSE. 
 - Since the MSE being minimized is from the training data, we can call it _training MSE_.
 
@@ -82,7 +82,7 @@ _Whenever you split data into training and test, always use `set.seed` first._
 - Because we're using the _line of best fit_, we can use the `predict()` function we introduced in the last lab to make predictions.
     - <span class="blue">Fill in the blanks below to add predicted heights to our `test` data:</span>
 ```{r, eval = FALSE, echo = TRUE}
-test <- mutate(test, ____ = predict(best_train, newdata = ____))
+test <- mutate(test, ____ = predict(best_training, newdata = ____))
 ```
 
 - Hint: the `predict` function without the argument `newdata` will output predictions on the `training` data. To output predictions on the `test` data, supply the `test` data to the `newdata` argument.

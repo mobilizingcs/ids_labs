@@ -557,8 +557,8 @@ set.</li>
 </ul></li>
 </ul>
 </div>
-<div id="step-1-train-test-split" class="slide section level2">
-<h1>Step 1: train-test split</h1>
+<div id="step-1-training-test-split" class="slide section level2">
+<h1>Step 1: training-test split</h1>
 <ul>
 <li>Waiting for new observations can take a long time. The U.S. takes a
 census of its population once every 10 years, for example.</li>
@@ -572,18 +572,18 @@ select which rows of <code>arm_span</code> will go into the
 <code>training</code> set.</span></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>train_rows <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>____, <span class="at">size =</span> <span class="dv">85</span>)</span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>training_rows <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span>____, <span class="at">size =</span> <span class="dv">85</span>)</span></code></pre></div>
 <ul>
 <li><span class="blue">Second, use the <code>slice</code> function to
-create two dataframes: one called <code>train</code> consisting of the
-<code>train_rows</code>, and another called <code>test</code> consisting
-of the remaining rows of <code>arm_span</code>.</span></li>
+create two dataframes: one called <code>training</code> consisting of
+the <code>training_rows</code>, and another called <code>test</code>
+consisting of the remaining rows of <code>arm_span</code>.</span></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>train <span class="ot">&lt;-</span> <span class="fu">slice</span>(arm_span, ____)</span>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>training <span class="ot">&lt;-</span> <span class="fu">slice</span>(arm_span, ____)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">slice</span>(____, <span class="sc">-</span> ____)</span></code></pre></div>
 <ul>
 <li><strong>Explain these lines of code and describe the
-<code>train</code> and <code>test</code> datasets.</strong></li>
+<code>training</code> and <code>test</code> datasets.</strong></li>
 </ul>
 </div>
 <div id="aside-set.seed" class="slide section level2">
@@ -606,8 +606,8 @@ splitting so that each person’s model outputs the same results.</li>
 <p><em>Whenever you split data into training and test, always use
 <code>set.seed</code> first.</em></p>
 </div>
-<div id="aside-train-test-ratio" class="slide section level2">
-<h1>Aside: train-test ratio</h1>
+<div id="aside-training-test-ratio" class="slide section level2">
+<h1>Aside: training-test ratio</h1>
 <ul>
 <li>When splitting data into <code>training</code> and <code>test</code>
 sets, we need to have enough observations in our data so that we can
@@ -620,14 +620,14 @@ data.</li>
 to <code>test</code> with.</li>
 </ul>
 </div>
-<div id="step-2-train-the-model" class="slide section level2">
-<h1>Step 2: train the model</h1>
+<div id="step-2-training-the-model" class="slide section level2">
+<h1>Step 2: training the model</h1>
 <ul>
 <li>Step 2 is to create a linear model relating <code>height</code> and
 <code>armspan</code> using the <code>training</code> data.</li>
 <li><span class="blue">Fit a line of best fit model to our
 <code>training</code> data and assign it the name
-<code>best_train</code>.</span></li>
+<code>best_training</code>.</span></li>
 <li>Recall that the slope and intercept of our linear model are chosen
 to minimize MSE.</li>
 <li>Since the MSE being minimized is from the training data, we can call
@@ -650,7 +650,7 @@ predictions.
 to our <code>test</code> data:</span></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">mutate</span>(test, <span class="at">____ =</span> <span class="fu">predict</span>(best_train, <span class="at">newdata =</span> ____))</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>test <span class="ot">&lt;-</span> <span class="fu">mutate</span>(test, <span class="at">____ =</span> <span class="fu">predict</span>(best_training, <span class="at">newdata =</span> ____))</span></code></pre></div>
 <ul>
 <li>Hint: the <code>predict</code> function without the argument
 <code>newdata</code> will output predictions on the
