@@ -546,8 +546,8 @@ data and split it into two sets:</span>
 <ul>
 <li><span class="blue">A set named <code>training</code> that includes
 75% of the data.</span></li>
-<li><span class="blue">And a set named <code>testing</code> that
-includes the remaining 25%.</span></li>
+<li><span class="blue">And a set named <code>test</code> that includes
+the remaining 25%.</span></li>
 <li><span class="blue">Remember to use
 <code>set.seed</code>.</span></li>
 </ul></li>
@@ -564,8 +564,8 @@ the <code>training</code> data. Assign this model to
 <code>movie_linear</code>.</span></li>
 <li><span class="blue">Fill in the blanks below to create a scatterplot
 with <code>audience_rating</code> on the y-axis and
-<code>critics_rating</code> on the x-axis using your
-<code>testing</code> data.</span></li>
+<code>critics_rating</code> on the x-axis using your <code>test</code>
+data.</span></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">xyplot</span>(____ <span class="sc">~</span> ____, <span class="at">data =</span> ____)</span></code></pre></div>
 <ul>
@@ -586,7 +586,7 @@ poor predictions?</strong>
 values of <code>critics_rating</code>?</li>
 </ul></li>
 <li><strong>Compute the MSE of the linear model for the
-<code>testing</code> data and write it down for later.</strong>
+<code>test</code> data and write it down for later.</strong>
 <ul>
 <li>Hint: refer to lab 4B.</li>
 </ul></li>
@@ -641,8 +641,8 @@ model predicting <code>audience_rating</code> from
 <ul>
 <li><span class="blue">create a scatterplot with
 <code>audience_rating</code> on the y-axis and
-<code>critics_rating</code> on the x-axis using your
-<code>testing</code> data, and</span></li>
+<code>critics_rating</code> on the x-axis using your <code>test</code>
+data, and</span></li>
 <li><span class="blue">add the <em>line of best fit</em> and <em>best
 fitting quadratic curve</em>.</span></li>
 <li>Hint: the <code>col</code> argument is added to the
@@ -679,9 +679,9 @@ trained, add the <em>line of best fit</em>, <em>best fitting quadratic
 curve</em>, and <em>best fitting cubic curve</em> for the
 <code>training</code> data to the plot.</span></li>
 <li><strong>Based on the plot, which model do you think is the best at
-predicting the <code>testing</code> data?</strong></li>
+predicting the <code>test</code> data?</strong></li>
 <li><strong>Use the <code>test</code> MSE to verify which model is the
-best at predicting the <code>testing</code> data.</strong></li>
+best at predicting the <code>test</code> data.</strong></li>
 </ul>
 </div>
 
