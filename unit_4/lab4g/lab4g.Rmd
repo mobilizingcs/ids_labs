@@ -55,7 +55,7 @@ library(mobilizr)
 - <span class="blue">Similar to how you included multiple variables for a linear model, create a `tree` that predicts whether a person `survived` based on their `gender`, `age`, `class`, and where they `embarked`.</span>
     - <span class="blue">Assign this model the name `tree2`.</span>
 - **Create a `treeplot` for this model and answer the following question:**
-    - **Mrs. Cumings was a 38 year old female with a 1st class ticket from Cherbourg. Does the model predict that she survived?**
+    - **Mrs. Cumings was a 38-year-old female with a 1st class ticket from Cherbourg. Does the model predict that she survived?**
     - **Which variable ended up not being used by `tree`?**
 
 

@@ -1,0 +1,77 @@
+---
+title: "Enhancing Lattice Graphics"
+author:
+date: The following slides contain **new** commands that can be used to enhance the lattice graphics used in the IDS Course.
+output:
+  slidy_presentation: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+```
+
+```{r, eval=TRUE, echo=FALSE, results='hide', message=FALSE, warning=FALSE}
+library(mobilizr)
+library(readr)
+library(RColorBrewer)
+```
+
+## Let's get our data
+
+-   We usually load datasets by using the command `data()`, but for this lab, we are going to read in your data using the commands below:
+
+Copy and paste these commands into your console and press enter:
+
+```{r, eval=FALSE}
+utah<-read.csv("https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/insurance.csv")
+```
+
+You should see a dataframe called "utah" in your `Environment Pane`.
+
+## Categorical Variables
+
+A plot that is appropriate to analyze categorical data is a `bargraph`.
+
+The command that `R` recognizes to make a bargraph IS `bargraph`. There are two pieces of information, or arguments, that you need to provide to `R` to make a bargraph:
+
+- variable
+- dataframe
+
+Syntax is extremely important so let's look and see how the variables were named by running the command below:
+
+```{r, eval = F}
+names(utah)
+```
+
+Now we are ready to make our `bargraph`.
+Replace the word `variable` with one of the names of a categorical variable and run the code.
+
+```{r, eval=F}
+bargraph(~variable, data = utah)
+```
+
+- What is this bargraph telling you?
+
+## More Arguments
+
+Although the `bargraph` function only needs two arguments to make a bargraph, there are additional arguments that can be used to increase the readability of your graph. 
+
+Let's add a title by adding the argument main.
+
+```{r, eval = F}
+bargraph(~variable, data = utah, main = "Here is your title")
+```
+
+
+## Numerical Variables
+
+There are many plots that can be used to analyze the distribution of a single numerical variable such as a histogram, dotplot, and boxplot. Since we have a small dataset to work with, we will use a dotplot.
+
+The command that `R` recognizes to make a dotplot is `dotPlot`(note the capital P). You need the same two arguments to make a `dotPlot`.
+
+Use what you have learned so far, to create a `dotPlot` of a numerical variable. (You are engaging in computational thinking!)
+
+
+
+
+
