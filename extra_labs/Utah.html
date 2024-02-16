@@ -6,7 +6,7 @@
   <meta http-equiv="Content-Style-Type" content="text/css" />
   <meta name="generator" content="pandoc" />
   <meta name="author" content />
-  <title>Enhancing Lattice Graphics</title>
+  <title>A Sample RStudio Lab</title>
   <style type="text/css">
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -521,25 +521,22 @@ list-style-type: none;
 </head>
 <body>
 <div class="slide titlepage">
-  <h1 class="title">Enhancing Lattice Graphics</h1>
+  <h1 class="title">A Sample RStudio Lab</h1>
   <p class="author">
 
   </p>
-  <p class="date">The following slides contain <strong>new</strong>
-commands that can be used to enhance the lattice graphics used in the
-IDS Course.</p>
+  <p class="date">You are going to learn how to make basic
+visualizations in RStudio using your own data.</p>
 </div>
 <div id="lets-get-our-data" class="slide section level2">
 <h1>Let’s get our data</h1>
 <ul>
-<li>We usually load datasets by using the command <code>data()</code>,
-but for this lab, we are going to read in your data using the commands
-below:</li>
+<li>We load datasets in various ways. For this lab, we are going to read
+in your data using the command below:</li>
 </ul>
-<p>Copy and paste these commands into your console and press enter:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>id <span class="ot">&lt;-</span> <span class="st">&quot;1KIQJ_c-3Q9J-uOI1Aj0trTsY1opH05Gp&quot;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>utah <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="fu">sprintf</span>(<span class="st">&quot;https://docs.google.com/uc?id=%s&amp;export=download&quot;</span>, id), <span class="at">stringsAsFactors=</span>T)</span></code></pre></div>
+<p>Copy and paste the command below into your console and press
+enter:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>utah<span class="ot">&lt;-</span><span class="fu">read.csv</span>(<span class="st">&quot;https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/insurance.csv&quot;</span>)</span></code></pre></div>
 <p>You should see a dataframe called “utah” in your
 <code>Environment Pane</code>.</p>
 </div>
@@ -558,9 +555,11 @@ bargraph:</p>
 <p>Syntax is extremely important so let’s look and see how the variables
 were named by running the command below:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">names</span>(utah)</span></code></pre></div>
-<p>Now we are ready to make our <code>bargraph</code>. Replace the word
-<code>variable</code> with one of the names of a categorical variable
-and run the code.</p>
+<ul>
+<li>Now we are ready to make our <code>bargraph</code>.</li>
+<li>In the code below, replace the word <code>variable</code> with one
+of the names of a categorical variable and run the code.</li>
+</ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">bargraph</span>(<span class="sc">~</span>variable, <span class="at">data =</span> utah)</span></code></pre></div>
 <ul>
 <li>What is this bargraph telling you?</li>
@@ -578,12 +577,30 @@ increase the readability of your graph.</p>
 <h1>Numerical Variables</h1>
 <p>There are many plots that can be used to analyze the distribution of
 a single numerical variable such as a histogram, dotplot, and boxplot.
-Since we have a small dataset to work with, we will use a dotplot.</p>
+Since we are working with a small dataset, we will use a dotplot.</p>
 <p>The command that <code>R</code> recognizes to make a dotplot is
 <code>dotPlot</code>(note the capital P). You need the same two
-arguments to make a <code>dotPlot</code>.</p>
+arguments to make a <code>dotPlot</code> that were used to make a
+bargraph.</p>
 <p>Use what you have learned so far, to create a <code>dotPlot</code> of
 a numerical variable. (You are engaging in computational thinking!)</p>
+</div>
+<div id="making-your-dotplot-more-readable" class="slide section level2">
+<h1>Making your dotplot more readable</h1>
+<p>While a <code>dotPlot</code> should conserve the exact value of each
+data point, sometimes it behaves like a <code>histogram</code> in that
+it lumps values together.</p>
+<ul>
+<li>Create a more readable <code>dotPlot</code> by using the
+<code>nint</code> argument which stands for number of intervals. Try
+different positive integer values for <code>nint</code>.</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">dotPlot</span>(<span class="sc">~</span>variable, <span class="at">data =</span> utah, <span class="at">nint =</span> ____)</span></code></pre></div>
+<ul>
+<li>What value for <code>nint</code> produced a more readable
+dotplot?</li>
+<li>What is your dotplot telling you?</li>
+</ul>
 </div>
 
   <!-- dynamically load mathjax for compatibility with self-contained -->

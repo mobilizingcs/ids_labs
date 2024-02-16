@@ -1,7 +1,7 @@
 ---
-title: "Enhancing Lattice Graphics"
+title: "A Sample RStudio Lab"
 author:
-date: The following slides contain **new** commands that can be used to enhance the lattice graphics used in the IDS Course.
+date: You are going to learn how to make basic visualizations in RStudio using your own data.
 output:
   slidy_presentation: default
   pdf_document: default
@@ -18,9 +18,9 @@ library(RColorBrewer)
 
 ## Let's get our data
 
--   We usually load datasets by using the command `data()`, but for this lab, we are going to read in your data using the commands below:
+-   We load datasets in various ways. For this lab, we are going to read in your data using the command below:
 
-Copy and paste these commands into your console and press enter:
+Copy and paste the command below into your console and press enter:
 
 ```{r, eval=FALSE}
 utah<-read.csv("https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/insurance.csv")
@@ -43,8 +43,8 @@ Syntax is extremely important so let's look and see how the variables were named
 names(utah)
 ```
 
-Now we are ready to make our `bargraph`.
-Replace the word `variable` with one of the names of a categorical variable and run the code.
+- Now we are ready to make our `bargraph`.
+- In the code below, replace the word `variable` with one of the names of a categorical variable and run the code.
 
 ```{r, eval=F}
 bargraph(~variable, data = utah)
@@ -65,13 +65,24 @@ bargraph(~variable, data = utah, main = "Here is your title")
 
 ## Numerical Variables
 
-There are many plots that can be used to analyze the distribution of a single numerical variable such as a histogram, dotplot, and boxplot. Since we have a small dataset to work with, we will use a dotplot.
+There are many plots that can be used to analyze the distribution of a single numerical variable such as a histogram, dotplot, and boxplot. Since we are working with a small dataset, we will use a dotplot.
 
-The command that `R` recognizes to make a dotplot is `dotPlot`(note the capital P). You need the same two arguments to make a `dotPlot`.
+The command that `R` recognizes to make a dotplot is `dotPlot`(note the capital P). You need the same two arguments to make a `dotPlot` that were used to make a bargraph.
 
 Use what you have learned so far, to create a `dotPlot` of a numerical variable. (You are engaging in computational thinking!)
 
+## Making your dotplot more readable
+
+While a `dotPlot` should conserve the exact value of each data point, sometimes it behaves like a `histogram` in that it lumps values together.
+
+- Create a more readable `dotPlot` by using the `nint` argument which stands for number of intervals. Try different positive integer values for `nint`.
 
 
+```{r, eval = F}
+dotPlot(~variable, data = utah, nint = ____)
+```
+
+- What value for `nint` produced a more readable dotplot?
+- What is your dotplot telling you?
 
 
