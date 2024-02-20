@@ -23,7 +23,7 @@ library(RColorBrewer)
 Copy and paste the command below into your console and press enter:
 
 ```{r, eval=FALSE}
-utah<-read.csv("https://raw.githubusercontent.com/stedy/Machine-Learning-with-R-datasets/master/insurance.csv")
+utah<-read.csv("https://raw.githubusercontent.com/monica23-c/Intro-to-Data-Science/main/utah.csv")
 ```
 
 You should see a dataframe called "utah" in your `Environment Pane`.
