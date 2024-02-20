@@ -87,7 +87,7 @@ dotPlot(~variable, data = utah, nint = ____)
 
 ## The first lab in the curriculum
 
-Type the following command into your console to engage in the first lab in the curriculum:
+Type the following command into your console to engage in the first lab of the curriculum:
 
 ```{r, eval = F}
 load_lab(1)
