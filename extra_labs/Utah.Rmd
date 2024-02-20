@@ -56,7 +56,7 @@ bargraph(~variable, data = utah)
 
 Although the `bargraph` function only needs two arguments to make a bargraph, there are additional arguments that can be used to increase the readability of your graph. 
 
-Let's add a title by adding the argument main.
+Let's add a title by adding the argument `main`.
 
 ```{r, eval = F}
 bargraph(~variable, data = utah, main = "Here is your title")
@@ -85,4 +85,11 @@ dotPlot(~variable, data = utah, nint = ____)
 - What value for `nint` produced a more readable dotplot?
 - What is your dotplot telling you?
 
+## The first lab in the curriculum
+
+Type the following command into your console to engage in the first lab in the curriculum:
+
+```{r, eval = F}
+load_lab(1)
+```
 
