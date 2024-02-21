@@ -91,15 +91,16 @@ titanic_test <- mutate(____, prediction = predict(____, newdata = ____, type = "
 View(select(titanic_test, survived, prediction))
 ```
 
-- **Where do you see the first misclassification occur?**
+- **Where does the first misclassification occur?**
 
 ## Misclassification rate
 
-- In order to tally up the total number of misclassifications, we need to create a function that compares the actual outcome with the predicted outcome. The not equal to operator (!=) will be useful here.
+- In order to tally up the total number of misclassifications, we need to create a function that compares the actual outcome with the predicted outcome. The <b>not equal to</b> operator (!=) will be useful here.
 
-- In R, TRUE statements are assinged a value of 1 and FALSE statements are assigned a value of zero.
+- <span class="blue">Fill in the blanks to create a function to calculate the MCR.</span>
 
-    - <span class="blue">Fill in the blanks to create a function to calculate the MCR.</span>
+ - Hint: sum(____!=____) will count the number of times that the left-hand side does not equal the right-hand side.
+ - We want to count the number of times that actual does not equal predicted and then divide by the total number of observations.
 
 
 ```{r, eval = FALSE, echo = TRUE}
