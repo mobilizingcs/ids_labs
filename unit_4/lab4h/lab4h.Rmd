@@ -32,12 +32,12 @@ knitr::opts_chunk$set(echo = FALSE)
 - The algorithm works _only_ for numerical variables and _only_ when we have no missing data.
 - <span class="blue">To start, use the `data` function to load the `futbol` data set.</span>
     - This data contains 23 players from the US Men's National Soccer team (USMNT) and 22 quarterbacks from the National Football League (NFL).
-- <span class="blue">Create a scatterplot of the players `ht_inches` and `wt_lbs` and color each dot based on the `league` they play for.</span>
+- <span class="blue">Create a scatterplot of the players' `ht_inches` and `wt_lbs` and color each dot based on the `league` they play for.</span>
 
 
 ## Running k-means
 
-- After plotting the player's heights and weights, we can see that there are two clusters, or different types, of players:
+- After plotting the players' heights and weights, we can see that there are two clusters, or different types, of players:
     - Players in the NFL tend to be taller and weigh more than the shorter and lighter USMNT players.
 - <span class="blue">Fill in the blanks below to use k-means to cluster the same height and weight data into two groups:</span>
 
