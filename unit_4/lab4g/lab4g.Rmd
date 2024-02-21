@@ -67,7 +67,7 @@ library(mobilizr)
 - <span class="blue">Using the same variables that you used in `tree2`, create a model named `tree3` but include `cp = 0.005` and `minsplit = 10` as arguments.</span>
     - **How is `tree3` different from `tree2`?**
 
-## Making predictions
+## Predictions and Cross-validation
 
 - Just like with _linear models_, we can use cross-validation to measure how well our _classification trees_ perform on unseen data.
 - First, we need to compute the predictions that our model makes on test data.
@@ -79,48 +79,8 @@ library(mobilizr)
 titanic_test <- mutate(____, prediction = predict(____, newdata = ____, type = "class"))
 ```
 
-## Tabulating results
-
-- Now that we have predictions on the test data, we need a way to measure the accuracy of those predictions.
-- Before that, let's first summarize all of our predictions using a table.
-- Specifically, the table should display the actual outcomes vs. the predicted outcomes.
-- <span class="blue">Fill in the blanks below to create a table for the actual results vs. the predictions of `tree1` on `titanic_test`.</span>
-
-```{r, eval = FALSE, echo = TRUE}
-tally(survived ~ ___, data = ___)
-```
-
-- Note: Tables with actual outcomes vs. predicted outcomes are called _confusion matrices_. They are called such because they tell us when our model _confuses_ one class for another.
-
-## Interpreting the confusion matrix
-
-- The diagram below represents the layout of your confusion matrix.
-- The green boxes are where the classification tree was correct. A _true positive_ occurs when the classification tree correctly predicts that a passenger survived, and a _true negative_ occurs when the classification tree correctly predicts that a passenger did not survive.
-- Conversely, the red boxes are where the classification tree was incorrect. A _false positive_ occurs when the classification tree predicts that a passenger survived when they actually did not survive, and a _false negative_ occurs when the classification tree predicts that a passenger did not survive when they actually survived.
-- **Why do you think the boxes are given these names?**
-- **Copy the diagram below in your journal, and fill the blanks in with the outputs of your confusion matrix**.
-
-```{r, out.width="50%", out.height="50%"}
-knitr::include_graphics("confusion.png")
-```
-
-- **Which entries of the confusion matrix would we like to maximize? Which would we like to minimize? Why?**
-- **How can the confusion matrix be used to measure model performance?**
 
 ## Measuring model performance
-
-- We would like a numerical measure for the performance of our classification tree, similar to _mean squared error_ for linear models.
-- One reasonable way to measure performance would be to compute the proportion of the time that our classification tree makes a correct prediction. Thus, we have the following formula:
-
-```{r, out.width="50%", out.height="50%"}
-knitr::include_graphics("equation.png")
-```
-
-- MCR stands for _misclassification rate_. TP, TN, FP, and FN correspond to entries of the confusion matrix.
-- <span class="blue">Use this formula to compute the MCR of `tree1`</span>.
-- **In your own words, explain what MCR represents.**
-
-## Misclassification rate (this would be replaced by previous slides)
 
 - Similar to how we use the _mean squared error_ to describe how well our model predicts numerical variables, we use the _misclassification rate_ to describe how our model predicts categorical variables.
     - The _misclassification rate_ (MCR) is the number of people who were predicted to be in one category but were actually in another.
@@ -138,6 +98,7 @@ calc_mcr <- function(actual, predicted) {
 ```{r, eval = FALSE, echo = TRUE}
 summarize(titanic_test, mcr = calc_mcr(survived, prediction))
 ```
+
 
 ## On your own
 
