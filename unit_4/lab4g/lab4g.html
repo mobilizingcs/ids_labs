@@ -688,9 +688,11 @@ here.</p></li>
 <li><p><span class="blue">Fill in the blanks to create a function to
 calculate the MCR.</span></p></li>
 <li><p>Hint: sum(____!=____) will count the number of times that the
-left-hand side does not equal the right-hand side.</p></li>
-<li><p>We want to count the number of times that actual does not equal
-predicted and then divide by the total number of observations.</p></li>
+left-hand side does not equal the right-hand side.</p>
+<ul>
+<li>We want to count the number of times that actual does not equal
+predicted and then divide by the total number of observations.</li>
+</ul></li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>calc_mcr <span class="ot">&lt;-</span> <span class="cf">function</span>(actual, predicted) {</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(____ <span class="sc">!=</span> ____) <span class="sc">/</span> <span class="fu">length</span>(actual)</span>

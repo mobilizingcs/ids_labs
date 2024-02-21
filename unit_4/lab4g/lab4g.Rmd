@@ -100,7 +100,7 @@ View(select(titanic_test, survived, prediction))
 - <span class="blue">Fill in the blanks to create a function to calculate the MCR.</span>
 
  - Hint: sum(____!=____) will count the number of times that the left-hand side does not equal the right-hand side.
- - We want to count the number of times that actual does not equal predicted and then divide by the total number of observations.
+    - We want to count the number of times that actual does not equal predicted and then divide by the total number of observations.
 
 
 ```{r, eval = FALSE, echo = TRUE}
