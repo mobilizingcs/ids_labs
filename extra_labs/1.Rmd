@@ -140,7 +140,7 @@ add_line(vline = median(~height,data=cdc), col="red")
 -  When you use the `groups` argument on a scatterplot, the key is automatically generated identifying the different categories. However, if you change the color of categories, the key does not automatically update.
 
 ```{r, eval = TRUE, echo = TRUE, fig.height=4, fig.width=5}
-xyplot(weight~height,data=cdc, groups=gender, col=c("purple","blue"))
+xyplot(weight~height,data=cdc, groups=gender, col=c("red","blue"))
 ```
 
 -  To remedy this issue, you need to create your own key. You will be utilizing the `key` argument just like you did in the last slide.
@@ -149,10 +149,10 @@ xyplot(weight~height,data=cdc, groups=gender, col=c("purple","blue"))
 ```{r, eval = TRUE, echo = TRUE, fig.height=4, fig.width=5}
 
 xyplot(weight ~ height, data = cdc, groups = gender, 
-       col = c("purple", "blue"), 
+       col = c("red", "blue"), 
        #The code below is for the key
        key = list(space = "top", 
-                  points = list(col = c("purple", "blue"), 
+                  points = list(col = c("red", "blue"), 
                                 #shapes of points
                                 pch = 1),
               #Make sure colors match with the variable categories
