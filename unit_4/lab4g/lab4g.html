@@ -669,21 +669,38 @@ categorical variables.
 <li>The <em>misclassification rate</em> (MCR) is the number of people
 who were predicted to be in one category but were actually in
 another.</li>
+</ul></li>
+<li><span class="blue">Run the following command to see a side-by-side
+comparison of the actual outcome and the predicted outcome:</span></li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">View</span>(<span class="fu">select</span>(titanic_test, survived, prediction))</span></code></pre></div>
+<ul>
+<li><strong>Where do you see the first misclassification
+occur?</strong></li>
+</ul>
+</div>
+<div id="misclassification-rate" class="slide section level2">
+<h1>Misclassification rate</h1>
+<ul>
+<li><p>In order to tally up the total number of misclassifications, we
+need to create a function that compares the actual outcome with the
+predicted outcome. The not equal to operator (!=) will be useful
+here.</p></li>
+<li><p>In R, TRUE statements are assinged a value of 1 and FALSE
+statements are assigned a value of zero.</p>
+<ul>
 <li><span class="blue">Fill in the blanks to create a function to
 calculate the MCR.</span></li>
-<li>Note: The operator <code>!=</code> checks if the left hand side and
-right hand side are <em>not</em> equal. It is the opposite of
-<code>==</code>.</li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>calc_mcr <span class="ot">&lt;-</span> <span class="cf">function</span>(actual, predicted) {</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(____ <span class="sc">!=</span> ____) <span class="sc">/</span> <span class="fu">length</span>(____)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>calc_mcr <span class="ot">&lt;-</span> <span class="cf">function</span>(actual, predicted) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">sum</span>(____ <span class="sc">!=</span> ____) <span class="sc">/</span> <span class="fu">length</span>(actual)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <ul>
 <li><span class="blue">Then run the following to calculate the
 MCR.</span></li>
 </ul>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(titanic_test, <span class="at">mcr =</span> <span class="fu">calc_mcr</span>(survived, prediction))</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summarize</span>(titanic_test, <span class="at">mcr =</span> <span class="fu">calc_mcr</span>(survived, prediction))</span></code></pre></div>
 </div>
 <div id="on-your-own" class="slide section level2">
 <h1>On your own</h1>

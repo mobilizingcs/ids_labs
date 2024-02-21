@@ -84,12 +84,27 @@ titanic_test <- mutate(____, prediction = predict(____, newdata = ____, type = "
 
 - Similar to how we use the _mean squared error_ to describe how well our model predicts numerical variables, we use the _misclassification rate_ to describe how our model predicts categorical variables.
     - The _misclassification rate_ (MCR) is the number of people who were predicted to be in one category but were actually in another.
+    
+- <span class="blue">Run the following command to see a side-by-side comparison of the actual outcome and the predicted outcome:</span>
+
+```{r, eval=FALSE, echo=TRUE}
+View(select(titanic_test, survived, prediction))
+```
+
+- **Where do you see the first misclassification occur?**
+
+## Misclassification rate
+
+- In order to tally up the total number of misclassifications, we need to create a function that compares the actual outcome with the predicted outcome. The not equal to operator (!=) will be useful here.
+
+- In R, TRUE statements are assinged a value of 1 and FALSE statements are assigned a value of zero.
+
     - <span class="blue">Fill in the blanks to create a function to calculate the MCR.</span>
-    - Note: The operator `!=` checks if the left hand side and right hand side are _not_ equal. It is the opposite of `==`.
+
 
 ```{r, eval = FALSE, echo = TRUE}
 calc_mcr <- function(actual, predicted) {
-  sum(____ != ____) / length(____)
+  sum(____ != ____) / length(actual)
 }
 ```
 
