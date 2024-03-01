@@ -73,6 +73,29 @@ ggplot(data=colors_ids)+
   facet_grid(rows=vars(int_ext))
   #replace `rows` with `cols` above
 ```
+
+## Histograms and faceting
+
+When we plot height data faceted by gender using `cdc`, we get an extra plot where gender is NA. To get rid of that extra plot, use the following code to extract those observations:
+
+```{r}
+cdc2<-filter(cdc, !is.na(gender))
+```
+
+- The following code chunk is used to generate a histogram.  
+- The second line of code calls the arguments needed (variable, "fill" is equivalent to our "groups" function). 
+- The `scale_fill_manual()` function allows us to choose our colors, `facet_wrap()` stacks the histograms, `labs()` are used for the different labels and the `theme_minimal()` cleans it up.
+
+```{r, warning=FALSE}
+ggplot(data=cdc2) +
+  geom_histogram(mapping=aes(x = height, fill = gender),binwidth=0.05) +
+  scale_fill_manual(values = c("pink", "blue")) +
+  facet_wrap(~ gender, ncol = 1) +
+  labs(x = "Height", y = "Frequency", title = "Stacked Histogram of Height by Gender") +
+  theme_minimal()
+```
+
+
 ## Scatterplots
 
 The scatterplot below has 90 data points but because some of the armspans and corresponding heights overlap there appear to be less.
