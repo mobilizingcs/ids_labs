@@ -31,12 +31,12 @@ _Will including more variables in our model improve its predictions?_
 
 ## Divide & Conquer
 
-- <span class="blue">Start by loading the `movie` data and split it into two sets (See Lab 4C for help).</span>
+- <span class="blue">Start by loading the `movie` data and split it into two sets (see Lab 4C for help).</span>
     - <span class="blue">A set named `training` that includes 75% of the data.</span>
-    - <span class="blue">A set named `testing` that includes the remaining 25%.</span>
+    - <span class="blue">A set named `test` that includes the remaining 25%.</span>
     - <span class="blue">Remember to use `set.seed`.</span>
 - <span class="blue">Create a linear model, using the `training` data, that predicts `gross` using `runtime`.</span>
-    - <span class="blue">Compute the MSE of the model by making predictions for the `testing` data.</span>
+    - <span class="blue">Compute the MSE of the model by making predictions for the `test` data.</span>
 - **Do you think that a movie's `runtime` is the only factor that goes into how much a movie will make? What else might affect a movie's `gross`?**
 
 
@@ -57,5 +57,5 @@ lm(____ ~ ____ + ____, data = training)
 - **Write down which other variables in the `movie` data you think would help you make better predictions.** 
     - **Are there any variables that you think would not improve our predictions?**
 - <span class="blue">Create a model for all of the variables you think are relevant.</span>
-    - **Assess whether your model makes more accurate predictions for the `testing` data than the model that included only `runtime` and `reviews_num`.**
-- **With your neighbors, determine which combination of variables leads to the best predictions for the `testing` data.**
+    - **Assess whether your model makes more accurate predictions for the `test` data than the model that included only `runtime` and `reviews_num`.**
+- **With your neighbors, determine which combination of variables leads to the best predictions for the `test` data.**

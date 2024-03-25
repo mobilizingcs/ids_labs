@@ -51,7 +51,7 @@ add_curve(movie_linear)
 - **Describe, in words, how the line fits the data. Are there any values for `critics_rating` that would make obviously poor predictions?**
     - Hint: how does the linear model perform on very low and very high values of `critics_rating`?
 - **Compute the MSE of the linear model for the `test` data and write it down for later.**
-    - Hint: refer to lab 4B.
+    - Hint: refer to lab 4C.
 
 
 ## Adding flexibility

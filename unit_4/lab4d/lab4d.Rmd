@@ -24,7 +24,7 @@ library(mobilizr)
 
 - So far, we’ve learned about measuring the success of a model based on how close its predictions come to the actual observations. 
 - The _correlation coefficient_ is a tool that gives us a fairly good idea of how these predictions will turn out without having to make predictions on future observations.
-- For this lab, we will be using the `movie` data set to investigate the following question:
+- For this lab, we will be using the `movie` dataset to investigate the following question:
 
 _Which variables are better predictors of a movie's `critics_rating` when the predictions are made using a line of best fit?_
 
@@ -89,7 +89,7 @@ xyplot(critics_rating~audience_rating, data = movie,
 - <span class="blue">Calculate the correlation coefficient for these variables using the `cor` function. The inputs to the functions work just like the inputs of the `xyplot` function.</span>
 
 
-## Now answer the following.
+## Now answer the following
 
 - **What was the value of the correlation coefficient you calculated?**
 - **How does this actual value compare with the one you estimated previously?**
