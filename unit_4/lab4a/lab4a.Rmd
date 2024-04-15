@@ -80,6 +80,9 @@ add_line()
 
 - NOTE: If your line does not appear or it appears but is above the points you selected, zoom out on your browser (typically 50% if you have a Mac, 80% on Windows). Or if your line appears below the points you selected, zoom in on your browser. Then run the `add_line()` function again and click on two points. Zoom out (or in) until your line appears through the points you selected.
 
+  - *Watch the following video if you are experiencing difficulties obtaining your line:*
+    <iframe width="560" height="315" src="https://www.youtube.com/watch?v=pGqXHGhhwJ8" title="Using add_line()" frameborder="0" data-external="1"></iframe>
+
 ## Predicting with lines
 
 - **Draw a line that you think is a good _fit_ and write down its equation. Using this equation:**
