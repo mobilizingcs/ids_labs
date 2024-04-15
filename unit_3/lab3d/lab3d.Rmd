@@ -33,7 +33,7 @@ library(mobilizr)
 ## In this lab
 
 - <span class="blue">Load the built-in `atus` (_American Time Use Survey_) dataset, which is a survey of how a sample of Americans spent their day.</span>
-    - **The United States has an estimated population of 336,302,171 (as of April 15, 2024 9:10 a.m. PDT). How many people were surveyed for this particular data set?**
+    - **The United States has an estimated population of 336,302,171 (as of April 15, 2024 9:10 a.m. PDT). How many people were surveyed for this particular dataset?**
     
     - Note: If you want to know the current US population or world population in real time, click on this link: [https://www.census.gov/popclock/](https://www.census.gov/popclock/)
 
