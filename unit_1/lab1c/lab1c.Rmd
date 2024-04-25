@@ -27,16 +27,16 @@ utils::data(cdc)
 
 - Throughout the previous labs, we've been using data that was already loaded in RStudio.
     - But what if we want to analyze our own data?
-- This lab is all about learning how to load our own participatory sensing data into RStudio.
+- This lab is all about learning how to load our own Participatory Sensing data into RStudio.
 
 
 ## Export, upload, import
 
 - Before we can perform any analysis, we have to load data into `R`. 
-- When we want to get our participatory sensing data into RStudio, we:
+- When we want to get our Participatory Sensing data into RStudio, we:
   - <font color="green">Export</font> the data from your class' campaign page.
   - <font color="green">Upload</font> data to _RStudio_ server.
-  - <font color="green">Import</font> the data into R's working memory.
+  - <font color="green">Import</font> the data into `R`'s working memory.
   
     - *NOTE: You can watch the following video for a step-by-step walk-through of the process:*
     <iframe width="560" height="315" src="https://www.youtube.com/embed/4mChtv5qy1g" title="Export, Upload, Import" frameborder="0" data-external="1"></iframe>
@@ -99,7 +99,7 @@ If you forget your username or password, ask your teacher to remind you.
 
 ## Importing
 
-<center>![import data](images/RStudioCloudImport.png){ width=50% }</center>
+<center>![Import Data](images/RStudioCloudImport.png){ width=50% }</center>
 
 - <span class="blue">On the Files pane, find the data you want to <font color="green">Import</font>.</span>
 - <span class="blue">Click on the name of the file and choose the option "Import Data set...".</span>
@@ -116,7 +116,7 @@ If you forget your username or password, ask your teacher to remind you.
 
 - The name you give your data is what you will use when you write code to analyze your data.
     - Good names are short and descriptive. 
-    - For your food habits campaign, some good names to use would be "foodhabits" or even just "food".
+    - For your Food Habits campaign, some good names to use would be "foodhabits" or even just "food".
 - When you're ready, click the _Import_ button.
 
 

@@ -547,7 +547,7 @@ learning how to subset.
 <li>We’ll also learn a few ways to manipulate the plots we’ve been
 making to make them easier to use for analyses.</li>
 </ul></li>
-<li>Import the data from your class’ <em>Food Habits</em> campaign and
+<li>Import the data from your class’s <em>Food Habits</em> campaign and
 name it <code>food</code>.</li>
 </ul>
 </div>
@@ -654,8 +654,8 @@ earthquakes.</li>
 <li>Stock market traders may subset their trading data by looking only
 at the previous day’s trades.</li>
 </ul></li>
-<li>There’s <em>many</em> ways to subset data using RStudio, we’ll focus
-on learning the most common methods.</li>
+<li>There are <em>many</em> ways to subset data using RStudio, we’ll
+focus on learning the most common methods.</li>
 </ul>
 </div>
 <div id="the-filter-function" class="slide section level2">
@@ -671,8 +671,8 @@ piece by piece in the next few slides.</li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>food_salty <span class="ot">&lt;-</span> <span class="fu">filter</span>(food, salty_sweet <span class="sc">==</span> <span class="st">&quot;Salty&quot;</span>)</span></code></pre></div>
 <ul>
-<li><span class="blue"><code>View</code> <code>food_salty</code> and
-write down the number of observations in it.</span></li>
+<li><strong><code>View</code> <code>food_salty</code> and write down the
+number of observations in it.</strong></li>
 </ul>
 </div>
 <div id="so-whats-really-going-on" class="slide section level2">
@@ -687,8 +687,8 @@ in a way that <code>R</code> understands.
 </ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>food_salty <span class="ot">&lt;-</span> <span class="fu">filter</span>(food, salty_sweet <span class="sc">==</span> <span class="st">&quot;Salty&quot;</span>)</span></code></pre></div>
 <ul>
-<li><code>filter()</code> tells R that we’re going to look at only the
-values in our data that follow a <em>rule</em>.</li>
+<li><code>filter()</code> tells <code>R</code> that we’re going to look
+at only the values in our data that follow a <em>rule</em>.</li>
 <li>The first blank should be the data we’re going to filter down into a
 smaller set (based on our rule).</li>
 <li><code>salty_sweet == &quot;Salty&quot;</code> is the rule to follow.</li>
@@ -745,11 +745,11 @@ our data? Which of the first six observations were
 doing is giving a value, or set of values, a specific name for us to use
 later.</li>
 </ul></li>
-<li>The arrow &lt;- is called the “assignment” operator. It assigns
-names (on the left) to values (on the right).
+<li>The arrow <code>&lt;-</code> is called the “assignment” operator. It
+assigns names (on the left) to values (on the right).
 <ul>
 <li>We now focus on everything to the left of, and including, the
-“&lt;-” symbol.</li>
+<code>&lt;-</code> symbol.</li>
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>food_salty <span class="ot">&lt;-</span> <span class="fu">filter</span>(food, salty_sweet <span class="sc">==</span> <span class="st">&quot;Salty&quot;</span>)</span></code></pre></div>

@@ -28,7 +28,7 @@ library(mobilizr)
     - Doing this is helpful to get a _big picture_ idea of our data.
 - In this lab, we'll learn how to _zoom in_ on our data by learning how to subset.
     - We'll also learn a few ways to manipulate the plots we've been making to make them easier to use for analyses.
-- Import the data from your class' _Food Habits_ campaign and name it `food`.
+- Import the data from your class's _Food Habits_ campaign and name it `food`.
 
 ## Another plotting function
 
@@ -77,7 +77,7 @@ layout = c(1,2)
 - Subsetting is a term we use to describe the process of looking at only the data that conforms to some set of rules:
     - Geologists may subset earthquake data by looking at only large earthquakes.
     - Stock market traders may subset their trading data by looking only at the previous day's trades.
-- There's _many_ ways to subset data using RStudio, we'll focus on learning the most common methods.  
+- There are _many_ ways to subset data using RStudio, we'll focus on learning the most common methods.  
 
 
 ## The filter function
@@ -89,7 +89,7 @@ layout = c(1,2)
 ```{r, eval = FALSE, echo = TRUE}
 food_salty <- filter(food, salty_sweet == "Salty")
 ```
-- <span class="blue">`View` `food_salty` and write down the number of observations in it.</span>
+- **`View` `food_salty` and write down the number of observations in it.**
 
 
 ## So what's really going on?
@@ -99,7 +99,7 @@ food_salty <- filter(food, salty_sweet == "Salty")
 ```{r, eval = FALSE, echo = TRUE}
 food_salty <- filter(food, salty_sweet == "Salty")
 ```
-- `filter()` tells R that we're going to look at only the values in our data that follow a _rule_.
+- `filter()` tells `R` that we're going to look at only the values in our data that follow a _rule_.
 - The first blank should be the data we're going to filter down into a smaller set (based on our rule).
 - `salty_sweet == "Salty"` is the rule to follow.
 
@@ -128,8 +128,8 @@ head(~salty_sweet == "Salty", data = food)
 
 - To use our subset data we need to save it first.
     - When we _save_ something in `R` what we are really doing is giving a value, or set of values, a specific name for us to use later.
-- The arrow <- is called the "assignment" operator. It assigns names (on the left) to values (on the right).
-    - We now focus on everything to the left of, and including, the "<-" symbol.
+- The arrow `<-` is called the "assignment" operator. It assigns names (on the left) to values (on the right).
+    - We now focus on everything to the left of, and including, the `<-` symbol.
 ```{r, eval = FALSE, echo = TRUE}
 food_salty <- filter(food, salty_sweet == "Salty")
 ```
