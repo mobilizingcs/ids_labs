@@ -64,7 +64,7 @@ timeuse <- timeuse_format( _____ )
 
 - We would like to investigate the _research question_: "How did our class spend our time?"
     - To do this, we'll perform a statistical investigation.
-- **State and answer two investigative questions based on our _research question_.**  
+- **State and answer two statistical investigative questions based on our _research question_.**  
     - **Also, state one way in which your personal data is _typical_ and one way that it _differs_ from the rest of the class.** 
 - **Justify your answers by using appropriate statistical graphics and summary tables.** 
     - **If you subset your data, explain why and how it benefited your analysis.**
