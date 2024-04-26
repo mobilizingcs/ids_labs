@@ -185,8 +185,9 @@ atu_cleaner <- mutate(atu_cleaner, gender =
 
 ```{r, eval = FALSE, echo = TRUE}
 atu_cleaner <- mutate(atu_cleaner, gender = 
-                  recode(gender, "01" = "Male", 
-                    "02" = "Female"))
+                  recode(gender, 
+                         "01" = "Male", 
+                         "02" = "Female"))
 ```
 
 - This code is saying:

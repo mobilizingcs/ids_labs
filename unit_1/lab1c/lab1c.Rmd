@@ -34,7 +34,7 @@ utils::data(cdc)
 
 - Before we can perform any analysis, we have to load data into `R`. 
 - When we want to get our Participatory Sensing data into RStudio, we:
-  - <font color="green">Export</font> the data from your class' campaign page.
+  - <font color="green">Export</font> the data from your class's campaign page.
   - <font color="green">Upload</font> data to _RStudio_ server.
   - <font color="green">Import</font> the data into `R`'s working memory.
   
