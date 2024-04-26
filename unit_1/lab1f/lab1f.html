@@ -582,7 +582,7 @@ categorical variables (or vice-versa)
 <em>American Time Use Survey</em>, or <em>ATU</em> survey.</li>
 <li>What is ATU survey?
 <ul>
-<li>It’s a survey conducted by the US government (Specifically the
+<li>It’s a survey conducted by the US government (specifically the
 Bureau of Labor Statistics).</li>
 <li>They survey thousands of people to find out exactly what activities
 they do throughout a single day.</li>
@@ -764,7 +764,7 @@ console:</span></li>
 </ul>
 <div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>atu_cleaner <span class="ot">&lt;-</span> <span class="fu">mutate</span>(atu_cleaner, <span class="at">gender =</span> </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>                 <span class="fu">recode</span>(gender, </span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                         <span class="st">&quot;01&quot;</span><span class="ot">=</span><span class="st">&quot;Male&quot;</span>, </span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>                         <span class="st">&quot;01&quot;</span> <span class="ot">=</span> <span class="st">&quot;Male&quot;</span>, </span>
 <span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>                         <span class="st">&quot;02&quot;</span> <span class="ot">=</span> <span class="st">&quot;Female&quot;</span>))</span></code></pre></div>
 <ul>
 <li>This code is definitely a bit of a mouthful. Let’s break it
@@ -774,7 +774,7 @@ down.</li>
 <div id="allow-me-to-explain" class="slide section level2">
 <h1>Allow me to explain</h1>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>atu_cleaner <span class="ot">&lt;-</span> <span class="fu">mutate</span>(atu_cleaner, <span class="at">gender =</span> </span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">recode</span>(gender, <span class="st">&quot;01&quot;</span><span class="ot">=</span><span class="st">&quot;Male&quot;</span>, </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>                  <span class="fu">recode</span>(gender, <span class="st">&quot;01&quot;</span> <span class="ot">=</span> <span class="st">&quot;Male&quot;</span>, </span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>                    <span class="st">&quot;02&quot;</span> <span class="ot">=</span> <span class="st">&quot;Female&quot;</span>))</span></code></pre></div>
 <ul>
 <li>This code is saying:
@@ -791,23 +791,24 @@ down.</li>
 <div id="finish-it-off" class="slide section level2">
 <h1>Finish it off!</h1>
 <ul>
-<li><span class="blue">Recode the categorical variable about whether the
-person surveyed had a physical challenge or not. The coding is
-currently:</span>
+<li><p><span class="blue">Recode the categorical variable about whether
+the person surveyed had a physical challenge or not. The coding is
+currently:</span></p>
 <ul>
 <li><code>&quot;01&quot;</code>: Person surveyed <em>did not</em> have a physical
 challenge.</li>
 <li><code>&quot;02&quot;</code>: Person surveyed <em>did</em> have a physical
 challenge.</li>
 </ul></li>
-<li><span class="blue">Write a script that:</span>
+<li><p><span class="blue">Write a script that:</span></p>
 <ol style="list-style-type: decimal">
 <li>Loads the <code>atu_dirty</code> dataset</li>
 <li>Cleans the data as we have in this lab</li>
 <li>Saves a copy of the cleaned data (see next slide).</li>
 </ol></li>
-<li><em>NOTE: You can watch this video to learn about RScripts:</em>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OPqjL9AzmkE" title="YouTube video player" frameborder="0" data-external="1"></iframe></li>
+<li><p><em>NOTE: You can watch this video to learn about
+RScripts:</em></p>
+<p><iframe width="560" height="315" src="https://www.youtube.com/embed/OPqjL9AzmkE" title="YouTube video player" frameborder="0" data-external="1"></iframe></p></li>
 </ul>
 </div>
 <div id="the-final-lines" class="slide section level2">

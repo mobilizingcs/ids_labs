@@ -46,7 +46,7 @@ utils::data(cdc)
 - <span class="blue">To begin, go to the IDS Tools page.</span>
   - <span class="blue">Click on the <font color="green">Campaign Manager</font>.</span>
   - <span class="blue">Fill in your username and password and click "Sign in."</span>
-<center>![Campaign manager](images/campaign_manager.png){ style="max-height: 40vh; max-width: 80%;" }</center>
+<center>![Campaign Manager](images/campaign_manager.png){ style="max-height: 40vh; max-width: 80%;" }</center>
 If you forget your username or password, ask your teacher to remind you. 
 
 
@@ -62,7 +62,7 @@ If you forget your username or password, ask your teacher to remind you.
 ## Dropdown Arrow
 
 - The options for the dropdown menu will look like this: 
-<center>![Campaign tab](images/dropdown.png){ style="max-height: 50vh; max-width: 30%;" }</center>
+<center>![Campaign Tab](images/dropdown.png){ style="max-height: 50vh; max-width: 30%;" }</center>
 - <span class="blue">Click on the option labeled <font color="green">Export Data</font>.</span>
   - Remember where you save your file!
 

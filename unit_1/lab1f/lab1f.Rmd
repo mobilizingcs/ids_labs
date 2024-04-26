@@ -52,7 +52,7 @@ data(atu_dirty)
 
 - To show you what _dirty_ data looks like, we'll check out the _American Time Use Survey_, or _ATU_ survey.
 - What is ATU survey?
-    - It's a survey conducted by the US government (Specifically the Bureau of Labor Statistics).
+    - It's a survey conducted by the US government (specifically the Bureau of Labor Statistics).
     - They survey thousands of people to find out exactly what activities they do throughout a single day.
     - These thousands of people combined together give an idea about how much time the typical person living in the US spends doing various activities.
 
@@ -174,7 +174,7 @@ tally(~gender, data = atu_cleaner)
 ```{r, eval = FALSE, echo = TRUE}
 atu_cleaner <- mutate(atu_cleaner, gender = 
                  recode(gender, 
-                         "01"="Male", 
+                         "01" = "Male", 
                          "02" = "Female"))
 ```
 
@@ -185,7 +185,7 @@ atu_cleaner <- mutate(atu_cleaner, gender =
 
 ```{r, eval = FALSE, echo = TRUE}
 atu_cleaner <- mutate(atu_cleaner, gender = 
-                  recode(gender, "01"="Male", 
+                  recode(gender, "01" = "Male", 
                     "02" = "Female"))
 ```
 
@@ -210,6 +210,7 @@ atu_cleaner <- mutate(atu_cleaner, gender =
     3. Saves a copy of the cleaned data (see next slide).
     
 - *NOTE: You can watch this video to learn about RScripts:*
+
    <iframe width="560" height="315" src="https://www.youtube.com/embed/OPqjL9AzmkE" title="YouTube video player" frameborder="0" data-external="1"></iframe>
 
 

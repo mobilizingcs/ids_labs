@@ -29,7 +29,7 @@ library(mobilizr)
 - The best tool for finding patterns is often ... your own eyes.
     - Plots are an excellent way to help your eye search for patterns.
 - In this lab, we'll learn how to include more variables in our plots to make them more informative.
-- Import the data from your class' _Food Habits_ campaign and name it `food`.
+- Import the data from your class's _Food Habits_ campaign and name it `food`.
 
 
 ## Where are the variables?
