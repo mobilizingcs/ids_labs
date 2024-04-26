@@ -33,7 +33,7 @@ require(mobilizr)
 
 ## First steps first.
 
-- <span class="blue">_Export_, _Upload_, _Import_ the data from your class' _Time Use_ campaign.</span>
+- <span class="blue">_Export_, _Upload_, _Import_ the data from your class's _Time Use_ campaign.</span>
 
 - The data, as-is, is very messy and hard to interpret/analyze.
 
@@ -41,8 +41,8 @@ require(mobilizr)
 ```{r, eval = FALSE, echo = TRUE}
 timeuse <- timeuse_format( _____ )
 ```
-- This function formats/cleans the data so that each row represents a typical day for each student in the class
-- <span class="blue">Hint: Search your _History_ tab for the code to save your formatted `timeuse` data as an `R` data file (.Rda)</span>
+- This function formats/cleans the data so that each row represents a typical day for each student in the class.
+- <span class="blue">Hint: Search your _History_ tab for the code to save your formatted `timeuse` data as an `R` data file (`.Rda`).</span>
 
 
 ## timeuse_format specifics
