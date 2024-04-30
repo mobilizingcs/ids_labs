@@ -24,9 +24,8 @@ library(mobilizr)
 
 ## Playing with permutations
 
-- _Slasher_ films are notoriously gory and are said to contain recurring biases.
-    - One such bias, is that women in slasher films are more likely to survive than men.
-- This lab will focus on the statistical question: _Are women in slasher films more likely to survive until the end of the film than men?_
+- There is a common belief that women in _slasher_ films are more likely to survive than men.
+- This lab will focus on the statistical investigative question: _Are women in slasher films more likely to survive until the end of the film than men?_
 - To answer this question, we'll learn how to use permuted data to gauge how likely an event occurs by chance.
 - <span class="blue">To begin, use the `data` function to load the `slasher` data file.</span>
     - The data contains information about 485 characters from a random sample of 50 _slasher_ horror films.
