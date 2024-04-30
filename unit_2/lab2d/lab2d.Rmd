@@ -70,7 +70,7 @@ library(mobilizr)
 - Let's write a more realistic simulation and estimate the probability that if we select two songs at random, without replacement, that both are rap songs.
     - <span class="blue">Use the `do` function to perform 10 simulated `sample`s of `size` 2, without replacement and _assign_ the simulations the name `draws` and then `View` your file. Use `set.seed(1)`.</span>
 
-- **What are the variable names? What happened in the first simulation? Did any of your 10 simulations contain two rap songs?**
+- **What are the variable names? What happened in the first simulation? Did any of your 10 simulations contain two _rap_ songs?**
 
 ## Simulations and probability
 
@@ -84,7 +84,7 @@ library(mobilizr)
 - One way we can estimate the probability of drawing two songs of the _same_ genre is to use the following trick to count the number of _rap_ songs in each of the 10 simulations:
 
 ```{r, eval = FALSE, echo = TRUE}
-mutate(draws, nrap = rowSums(draws=="rap"))
+mutate(draws, nrap = rowSums(draws == "rap"))
 ```
 
 - **Let's break down the code above by running each part of the code one piece at a time. As you run each line of code below describe the output.**
@@ -97,7 +97,7 @@ rowSums(draws == "rap")
 ```
 
 ```{r, eval = FALSE, echo = TRUE}
-mutate(draws, nrap = rowSums(draws=="rap"))
+mutate(draws, nrap = rowSums(draws == "rap"))
 ```
 
 - <span class="blue">Remember to assign a name to your mutated dataset.</span>
@@ -128,13 +128,13 @@ nrow(___) / ___
 
 ## Estimating probabilities
 
-- <span class="blue">Answer the following questions by performing 500 simulations of sampling 2 songs from a playlist of 30 rap, 23 country and 47 rock songs. You might consider running `set.seed` so that your results can be reproduced:</span>
+- <span class="blue">Answer the following questions by performing 500 simulations of sampling 2 songs from a playlist of 30 `"rap"`, 23 `"country"` and 47 `"rock"` songs. You might consider running `set.seed` so that your results can be reproduced:</span>
 
 - **Calculate estimated probabilities for the following situations:**
     1. You draw two `"rap"` songs.
     2. You draw a `"rap"` song in the first draw and a `"country"` song in the 2nd.
 
-- **Create a histogram that displays the number of times a `"rap"` song occurred in each simulation. That is, how often were zero rap songs drawn? A single rap song? Two rap songs?**
+- **Create a `histogram` that displays the number of times a `"rap"` song occurred in each simulation. That is, how often were zero rap songs drawn? A single rap song? Two rap songs?**
 
 
 ## On your own

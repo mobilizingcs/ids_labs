@@ -68,8 +68,8 @@ songs <- c(rap, rock)
 ```{r, eval = FALSE, echo = TRUE}
 rap <- rep("rap", times = 39)
 ```
-- <span class="blue">Look in the `Environment` pane for the vector containing your `rap` songs.</span>
-- <span class="blue">Use a similar line of code to simulate the rock songs in our playlist of 100.</span>
+- <span class="blue">Look in the _Environment_ pane for the vector containing your `rap` songs.</span>
+- <span class="blue">Use a similar line of code to simulate the `rock` songs in our playlist of 100.</span>
 
 
 ## Put the songs in the playlist
@@ -112,13 +112,13 @@ do(___) * sample(___, ___ = ___, ___ = ___)
 - <span class="blue">_Assign_ the 50 selected songs the name `draws` and then `View` your file.</span>
 
 - **What is the variable name?**
-  - `R` defaulted to naming the variable based on the function used. You may use the data cleaning skills you learned in lab 6 to `rename` the variable if you wish.
+  - `R` defaulted to naming the variable based on the function used. You may use the data cleaning skills you learned in lab 1F to `rename` the variable if you wish.
 
 - <span class="blue">Fill in the blank below to `tally` how often each genre was selected:</span>
 ```{r, eval = FALSE, echo = TRUE}
 tally(~___, data = draws)
 ```
-- **Compute the proportion of `"rap"` songs for your 50 draws and find out if the _range_ for your class' proportions is bigger or smaller than when we drew 10 songs.**
+- **Compute the proportion of `"rap"` songs for your 50 draws and find out if the _range_ for your class's proportions is bigger or smaller than when we drew 10 songs.**
 
 
 ## Proportions vs. Probability

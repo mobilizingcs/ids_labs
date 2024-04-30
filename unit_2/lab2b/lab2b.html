@@ -602,7 +602,7 @@ data.</strong></li>
 <li><span class="blue">Make a <code>dotPlot</code> of your
 <em>predominant</em> color’s scores. Make sure to include the
 <code>nint</code> option.</span></li>
-<li>Visually (Don’t worry about being super-precise):
+<li>Visually (don’t worry about being super-precise):
 <ul>
 <li><span class="blue">Cut the distribution into quarters so the
 <em>number</em> of <em>data points</em> is equal for each piece. (Each
@@ -671,7 +671,7 @@ create a <em>boxplot</em> using <code>R</code>.</span></li>
 <em>favorite</em> summaries for your predominant color all at
 once.</span></li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">favstats</span>(<span class="sc">~</span>____, <span class="at">data=</span>colors)</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">favstats</span>(<span class="sc">~</span>____, <span class="at">data =</span> colors)</span></code></pre></div>
 </div>
 <div id="calculating-a-range-value" class="slide section level2">
 <h1>Calculating a range value</h1>
@@ -684,7 +684,7 @@ difference between them.</li>
 <li>Step 1: Use the <code>range</code> function to <code>assign</code>
 the max and min values of a variable the name <code>values</code>. This
 will store the output from the <code>range</code> function in the
-<em>environment</em> pane.</li>
+<em>Environment</em> pane.</li>
 </ul></li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>values <span class="ot">&lt;-</span> <span class="fu">range</span>(<span class="sc">~</span>____, <span class="at">data=</span>colors)</span></code></pre></div>
@@ -725,14 +725,14 @@ of a <code>variable</code> in our <code>data</code>.</li>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div>
 <ul>
 <li>The function takes two <em>generic</em> arguments:
-<code>variable</code> and <code>data</code></li>
-<li>It then follows the steps between the curly braces <code>{}</code>
+<code>variable</code> and <code>data</code>.</li>
+<li>It then follows the steps between the curly braces <code>{}</code>.
 <ul>
 <li>Each of the <em>generic</em> arguments is used inside the
 <code>mean</code> and <code>median</code> functions.</li>
 </ul></li>
 <li><span class="blue">Copy and paste the code above into an <em>R
-script</em> and <em>run</em> it. </span></li>
+Script</em> and <em>run</em> it. </span></li>
 <li>The <code>mm_diff</code> function will appear in your
 <em>Environment</em> pane.</li>
 </ul>

@@ -632,8 +632,7 @@ piece of paper.</strong></li>
 <code>survival</code> status to each observation. Compare the resulting
 table to the one you wrote down.</strong></li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span><span class="fu">shuffle</span>(survival) <span class="sc">|</span> gender, </span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>      <span class="at">data =</span> slasher)</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tally</span>(<span class="sc">~</span><span class="fu">shuffle</span>(survival) <span class="sc">|</span> gender, <span class="at">data =</span> slasher)</span></code></pre></div>
 </div>
 <div id="lets-compare" class="slide section level2">
 <h1>Let’s compare …</h1>
@@ -695,8 +694,7 @@ contains the difference between <code>Survives.Female</code> and
 data.</span></li>
 </ul></li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>shuffled_outcomes <span class="ot">&lt;-</span> <span class="fu">mutate</span>(shuffled_outcomes, </span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">diff =</span> ____ <span class="sc">-</span> ____)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>shuffled_outcomes <span class="ot">&lt;-</span> <span class="fu">mutate</span>(shuffled_outcomes, <span class="at">diff =</span> ____ <span class="sc">-</span> ____)</span></code></pre></div>
 </div>
 <div id="time-to-decide" class="slide section level2">
 <h1>Time to decide</h1>
@@ -717,10 +715,10 @@ below:</span></p></li>
 <li><strong>Does the actual difference occur very often by chance
 alone?</strong></li>
 <li><strong>Does <code>gender</code> play a role in whether or not a
-character will survive in a horror film? Explain your
+character will survive in a slasher film? Explain your
 reasoning.</strong></li>
-<li><strong>If you wanted to survive in a horror film, would you want to
-play a female character or a male character?</strong></li>
+<li><strong>If you wanted to survive in a slasher film, would you want
+to play a female character or a male character?</strong></li>
 </ul>
 </div>
 <div id="summary" class="slide section level2">

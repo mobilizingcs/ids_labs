@@ -77,8 +77,7 @@ tally(~survival | gender, data = slasher)
 ```
 - **Now run the following to randomly reassign each `survival` status to each observation. Compare the resulting table to the one you wrote down.**
 ```{r, eval = FALSE, echo = TRUE}
-tally(~shuffle(survival) | gender, 
-      data = slasher)
+tally(~shuffle(survival) | gender, data = slasher)
 ```
 
 ## Let's compare ...
@@ -121,8 +120,7 @@ View(shuffled_outcomes)
     - <span class="blue">Fill in the blanks to add a new column that contains the difference between `Survives.Female` and `Survives.Male` to our `shuffled_outcomes` data.</span>
     
 ```{r, eval = FALSE, echo = TRUE}
-shuffled_outcomes <- mutate(shuffled_outcomes, 
-            diff = ____ - ____)
+shuffled_outcomes <- mutate(shuffled_outcomes, diff = ____ - ____)
 ```
 
 
@@ -139,8 +137,8 @@ add_line(vline = 22.52252 - 13.30798)
 ```
 
 - **Does the actual difference occur very often by chance alone?**
-- **Does `gender` play a role in whether or not a character will survive in a horror film? Explain your reasoning.**
-- **If you wanted to survive in a horror film, would you want to play a female character or a male character?**
+- **Does `gender` play a role in whether or not a character will survive in a slasher film? Explain your reasoning.**
+- **If you wanted to survive in a slasher film, would you want to play a female character or a male character?**
 
 
 ## Summary

@@ -646,7 +646,7 @@ replacement and <em>assign</em> the simulations the name
 <code>set.seed(1)</code>.</span></li>
 </ul></li>
 <li><strong>What are the variable names? What happened in the first
-simulation? Did any of your 10 simulations contain two rap
+simulation? Did any of your 10 simulations contain two <em>rap</em>
 songs?</strong></li>
 </ul>
 </div>
@@ -669,7 +669,7 @@ of simulations).</li>
 <em>same</em> genre is to use the following trick to count the number of
 <em>rap</em> songs in each of the 10 simulations:</li>
 </ul>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(draws, <span class="at">nrap =</span> <span class="fu">rowSums</span>(draws<span class="sc">==</span><span class="st">&quot;rap&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(draws, <span class="at">nrap =</span> <span class="fu">rowSums</span>(draws <span class="sc">==</span> <span class="st">&quot;rap&quot;</span>))</span></code></pre></div>
 <ul>
 <li><strong>Let’s break down the code above by running each part of the
 code one piece at a time. As you run each line of code below describe
@@ -677,7 +677,7 @@ the output.</strong></li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>draws <span class="sc">==</span> <span class="st">&quot;rap&quot;</span></span></code></pre></div>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">rowSums</span>(draws <span class="sc">==</span> <span class="st">&quot;rap&quot;</span>)</span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(draws, <span class="at">nrap =</span> <span class="fu">rowSums</span>(draws<span class="sc">==</span><span class="st">&quot;rap&quot;</span>))</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mutate</span>(draws, <span class="at">nrap =</span> <span class="fu">rowSums</span>(draws <span class="sc">==</span> <span class="st">&quot;rap&quot;</span>))</span></code></pre></div>
 <ul>
 <li><span class="blue">Remember to assign a name to your mutated
 dataset.</span></li>
@@ -717,10 +717,10 @@ specific combination of events occurred.</li>
 <h1>Estimating probabilities</h1>
 <ul>
 <li><p><span class="blue">Answer the following questions by performing
-500 simulations of sampling 2 songs from a playlist of 30 rap, 23
-country and 47 rock songs. You might consider running
-<code>set.seed</code> so that your results can be
-reproduced:</span></p></li>
+500 simulations of sampling 2 songs from a playlist of 30
+<code>&quot;rap&quot;</code>, 23 <code>&quot;country&quot;</code> and 47 <code>&quot;rock&quot;</code>
+songs. You might consider running <code>set.seed</code> so that your
+results can be reproduced:</span></p></li>
 <li><p><strong>Calculate estimated probabilities for the following
 situations:</strong></p>
 <ol style="list-style-type: decimal">
@@ -728,9 +728,9 @@ situations:</strong></p>
 <li>You draw a <code>&quot;rap&quot;</code> song in the first draw and a
 <code>&quot;country&quot;</code> song in the 2nd.</li>
 </ol></li>
-<li><p><strong>Create a histogram that displays the number of times a
-<code>&quot;rap&quot;</code> song occurred in each simulation. That is, how often
-were zero rap songs drawn? A single rap song? Two rap
+<li><p><strong>Create a <code>histogram</code> that displays the number
+of times a <code>&quot;rap&quot;</code> song occurred in each simulation. That is,
+how often were zero rap songs drawn? A single rap song? Two rap
 songs?</strong></p></li>
 </ul>
 </div>

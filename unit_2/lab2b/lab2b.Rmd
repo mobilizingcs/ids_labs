@@ -58,7 +58,7 @@ quantile(~____, data = ____, p = 0.25)
 ## The Inter-Quartile-Range (IQR)
 
 - <span class="blue">Make a `dotPlot` of your _predominant_ color's scores. Make sure to include the `nint` option.</span>
-- Visually (Don't worry about being super-precise): 
+- Visually (don't worry about being super-precise): 
     - <span class="blue">Cut the distribution into quarters so the _number_ of _data points_ is equal for each piece. (Each piece should contain 25% of the data.)</span>
       - Hint: You might consider using the `add_line(vline =  )` to add vertical lines at the quarter marks.
     - **Write down the numbers that split the data up into these 4 pieces.**
@@ -88,14 +88,14 @@ quantile(~____, data = ____, p = 0.25)
     - Computing lots of different summaries can be tedious.
 - <span class="blue">Fill in the blanks below to compute some of our _favorite_ summaries for your predominant color all at once.</span>
 ```{r, eval = FALSE, echo = TRUE}
-favstats(~____, data=colors)
+favstats(~____, data = colors)
 ```
 
 ## Calculating a range value
 
 - We saw in a previous slide that the `range` function calculates the maximum and minimum values for a variable, but not the difference between them.
 - We could calulate this difference in two steps:
-  - Step 1: Use the `range` function to `assign` the max and min values of a variable the name `values`. This will store the output from the `range` function in the _environment_ pane.
+  - Step 1: Use the `range` function to `assign` the max and min values of a variable the name `values`. This will store the output from the `range` function in the _Environment_ pane.
     
 ```{r, eval = FALSE, echo = TRUE}
 values <- range(~____, data=colors)
@@ -128,10 +128,10 @@ mm_diff <- function(variable, data) {
 }
 ```
 
-- The function takes two _generic_ arguments: `variable` and `data`
-- It then follows the steps between the curly braces `{}`
+- The function takes two _generic_ arguments: `variable` and `data`.
+- It then follows the steps between the curly braces `{}`.
     - Each of the _generic_ arguments is used inside the `mean` and `median` functions.
-- <span class="blue">Copy and paste the code above into an _R script_ and _run_ it. </span>
+- <span class="blue">Copy and paste the code above into an _R Script_ and _run_ it. </span>
 - The `mm_diff` function will appear in your _Environment_ pane.
 
 
