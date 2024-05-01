@@ -40,7 +40,7 @@ library(mobilizr)
 
 - Before we proceed, we need to verify that our `diff` variable looks approximately normally distributed.
     - **Is the distribution close to normal? Explain how you determined this. Describe the center and spread of the distribution.**
-    - **Compute and write down the mean difference in the age of the _actual_ survivors and the actual non-survivors.**
+    - **Compute and write down the mean difference in the age of the _actual_ survivors and the _actual_ non-survivors.**
 
 
 ## Using the normal model

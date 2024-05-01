@@ -583,9 +583,9 @@ dataset’s columns based on matching an <em>ID</em> variable.
 <li>The <em>ID</em> variable will have entries that we use to
 <em>match</em> observations in both datasets.</li>
 </ul></li>
-<li><strong>To answer the statistical question of interest, would it
-make more sense to <em>stack</em> or <em>join</em> our
-<code>colors</code> and <code>stress</code> data?</strong></li>
+<li><strong>To answer the research question of interest, would it make
+more sense to <em>stack</em> or <em>join</em> our <code>colors</code>
+and <code>stress</code> data?</strong></li>
 </ul>
 </div>
 <div id="finding-variables-in-common" class="slide section level2">
@@ -632,7 +632,7 @@ onto the <code>stress</code> data.</li>
 in the <code>colors</code> data is unique.
 <ul>
 <li>If there’s a duplicate, have your teacher remove the duplicate from
-your class’ Web Response Manager and then re-<em>export</em>,
+your class’s Web Response Manager and then re-<em>export</em>,
 <em>upload</em>, <em>import</em> your <code>colors</code>
 data.</span></li>
 </ul></li>
@@ -652,7 +652,7 @@ data.</span></li>
 </ul>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">merge</span>(____, ____, <span class="at">by =</span> <span class="st">&quot;____&quot;</span>)</span></code></pre></div>
 <ul>
-<li><span class="blue"><code>Assign</code> this <code>merged</code>
+<li><span class="blue"><code>Assign</code> this <code>merge</code>d
 dataset the name <code>stress_colors</code>.</span>
 <ul>
 <li>Make sure your data has the same number of observations that you
@@ -668,7 +668,7 @@ nothing appears to be blatantly wrong with it.</span></li>
 <li><strong>Why didn’t we stack the rows of data instead?</strong></li>
 <li><strong>What happens if you swap the order of the datasets in the
 <code>merge</code> function?</strong></li>
-<li><span class="blue">Fill in the blank below to <code>save</code> our
+<li><span class="blue">Use the code below to <code>save</code> our
 <code>stress_colors</code> data for later use.</span></li>
 </ul>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">save</span>(stress_colors, <span class="at">file =</span> <span class="st">&quot;stress_colors.Rda&quot;</span>)</span></code></pre></div>
@@ -685,7 +685,7 @@ meantime:</li>
 <li><span class="blue">Make a few plots using variables from the
 <code>stress</code> data and <em>facet</em> or <em>group</em> the plots
 based on variables from the <code>colors</code> data.</span></li>
-<li><strong>Write down the most interesting discovery you make by just
+<li><strong>Write down the most interesting discovery you made by just
 exploring your data. Write out how you found your discovery and
 interpret what it means for the people in your class.</strong></li>
 <li><strong>With our <em>colors</em> data, we could answer questions

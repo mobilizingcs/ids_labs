@@ -463,14 +463,15 @@ Non-survivors? How much more did the typical survivor pay?</strong></li>
 survival status 500 times.</span>
 <ul>
 <li>Use the previous lab if you need some help on how to do this.</li>
-<li>For each shuffle, compute each group’s median fare paid.</li>
+<li>For each shuffle, compute each group’s <code>median</code> fare
+paid.</li>
 <li>Assign your shuffled data the name
 <code>shuffled_survival</code>.</li>
 </ul></li>
 <li><span class="blue">After shuffling your data, use the
-<code>mutate</code> function to create a variable called <em>diff</em>
-which is the <code>median</code> fare of survivors minus the
-<code>median</code> fare of non-survivors.</span>
+<code>mutate</code> function to create a variable called
+<code>diff</code> which is the <code>median</code> fare of survivors
+minus the <code>median</code> fare of non-survivors.</span>
 <ul>
 <li>Assign your mutated data the name <code>shuffled_survival</code>
 again.</li>
@@ -500,8 +501,8 @@ the difference (mean_survivor – mean_victim)?</p></li>
 <li><p><strong>If we did this 500 times, what do you predict the
 distribution of differences will look like?</strong></p></li>
 <li><p><span class="blue">Use the <code>do</code> and the
-<code>shuffle</code> functions to shuffle the passenger’s survival
-status 500 times. </span></p>
+<code>shuffle</code> functions to shuffle the passenger survival status
+500 times. </span></p>
 <ul>
 <li>For each shuffle, compute each group’s mean fare paid.</li>
 <li>After shuffling your data, use the <code>mutate</code> function to

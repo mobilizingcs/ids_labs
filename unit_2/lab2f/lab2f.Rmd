@@ -53,9 +53,9 @@ _Is there any evidence to suggest that those who survived paid a higher fare tha
 
 - <span class="blue">Use the `do` and the `shuffle` functions to `shuffle` the passenger's survival status 500 times.</span>
     - Use the previous lab if you need some help on how to do this.
-    - For each shuffle, compute each group's median fare paid. 
+    - For each shuffle, compute each group's `median` fare paid. 
     - Assign your shuffled data the name `shuffled_survival`.
-- <span class="blue">After shuffling your data, use the `mutate` function to create a variable called _diff_ which is the `median` fare of survivors minus the `median` fare of non-survivors.</span>
+- <span class="blue">After shuffling your data, use the `mutate` function to create a variable called `diff` which is the `median` fare of survivors minus the `median` fare of non-survivors.</span>
     - Assign your mutated data the name `shuffled_survival` again.
   
 
@@ -74,7 +74,7 @@ _Is there any evidence to suggest that those who survived paid a higher fare tha
 
 - **If we did this 500 times, what do you predict the distribution of differences will look like?**
 
-- <span class="blue">Use the `do` and the `shuffle` functions to shuffle the passenger's survival status 500 times. </span>
+- <span class="blue">Use the `do` and the `shuffle` functions to shuffle the passenger survival status 500 times. </span>
     - For each shuffle, compute each group's mean fare paid.
     - After shuffling your data, use the `mutate` function to create a variable called `diff` which is the mean fare of survivors minus the mean fare of non-survivors.
     

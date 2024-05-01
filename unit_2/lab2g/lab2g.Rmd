@@ -48,7 +48,7 @@ _How do people's personality colors and/or sports participation affect their str
 - We can _stack_ our datasets, that is, take one dataset's rows and add them to the bottom of the other dataset.
 - We can also _join_ our datasets horizontally. This is where we take one dataset's columns and add them to the end of the other dataset's columns based on matching an _ID_ variable.
     - The _ID_ variable will have entries that we use to _match_ observations in both datasets.
-- **To answer the statistical question of interest, would it make more sense to _stack_ or _join_ our `colors` and `stress` data?**
+- **To answer the research question of interest, would it make more sense to _stack_ or _join_ our `colors` and `stress` data?**
 
 
 ## Finding variables in common:
@@ -72,7 +72,7 @@ _How do people's personality colors and/or sports participation affect their str
 
 - Our goal is to add the variables from the `colors` data onto the `stress` data.
 - <span class="blue">Start by ensuring that every `user.id` in the `colors` data is unique.
-    - If there's a duplicate, have your teacher remove the duplicate from your class' Web Response Manager and then re-_export_, _upload_, _import_ your `colors` data.</span>
+    - If there's a duplicate, have your teacher remove the duplicate from your class's Web Response Manager and then re-_export_, _upload_, _import_ your `colors` data.</span>
 - **After we add the data from _colors_ to _stress_, how many rows should our merged data have? Write this number down.**
 
 
@@ -83,7 +83,7 @@ _How do people's personality colors and/or sports participation affect their str
 ```{r, eval = FALSE, echo = TRUE}
 merge(____, ____, by = "____")
 ```
-- <span class="blue">`Assign` this `merged` dataset the name `stress_colors`.</span>
+- <span class="blue">`Assign` this `merge`d dataset the name `stress_colors`.</span>
     - Make sure your data has the same number of observations that you wrote down on the previous slide.
 
 
@@ -92,7 +92,7 @@ merge(____, ____, by = "____")
 - <span class="blue">`View` your merged data and make sure nothing appears to be blatantly wrong with it.</span>
 - **Why didn't we stack the rows of data instead?**
 - **What happens if you swap the order of the datasets in the `merge` function?**
-- <span class="blue">Fill in the blank below to `save` our `stress_colors` data for later use.</span>
+- <span class="blue">Use the code below to `save` our `stress_colors` data for later use.</span>
     
 ```{r, eval = FALSE, echo = TRUE}
 save(stress_colors, file = "stress_colors.Rda")
@@ -105,5 +105,5 @@ save(stress_colors, file = "stress_colors.Rda")
 
 - In the next practicum, we'll begin analyzing our merged data. In the meantime: 
 - <span class="blue">Make a few plots using variables from the `stress` data and _facet_ or _group_ the plots based on variables from the `colors` data.</span>
-- **Write down the most interesting discovery you make by just exploring your data. Write out how you found your discovery and interpret what it means for the people in your class.**
+- **Write down the most interesting discovery you made by just exploring your data. Write out how you found your discovery and interpret what it means for the people in your class.**
 - **With our _colors_ data, we could answer questions about the _typical_ color scores in your class. Why can we no longer answer this question in our `stress_colors` data?**
