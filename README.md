@@ -68,7 +68,7 @@ Links to the slides used in the labs are listed below
 
 [Lab 4E - Some Models Have Curves](https://labs.idsucla.org/unit_4/lab4e/lab4e.html)
 
-[Lab 4F -This Model is Big Enough for All of Us!](https://labs.idsucla.org/unit_4/lab4f/lab4f.html)
+[Lab 4F - This Model is Big Enough for All of Us!](https://labs.idsucla.org/unit_4/lab4f/lab4f.html)
 
 [Lab 4G - Growing Trees](https://labs.idsucla.org/unit_4/lab4g/lab4g.html)
 
